@@ -1,0 +1,69 @@
+description: "起業家育成プロジェクトのメンターと参加者という関係から始まり、徐々に信頼関係を築いていく。山田は時に厳しく誠の考えを問い直すが、その本質を見抜き成長を促す。誠にとって起業家としての道標となる存在。"
+lastUpdated: "2024-04-05T18:30:00.000Z"
+
+# 発展の履歴
+history:
+  - {
+      event: "FIRST_MEETING",
+      description: "起業家育成プロジェクトの説明会での出会い",
+      chapterNumber: 3,
+      strengthChange: 0.2,
+      emotionalImpact: "CURIOUS"
+    }
+  - {
+      event: "MENTORSHIP_START",
+      description: "プロジェクト開始、正式にメンターとなる",
+      chapterNumber: 4,
+      strengthChange: 0.3,
+      emotionalImpact: "RESPECTFUL"
+    }
+  - {
+      event: "KEY_ADVICE",
+      description: "「問いの質」についての重要な助言",
+      chapterNumber: 4,
+      strengthChange: 0.2,
+      emotionalImpact: "ENLIGHTENED"
+    }
+
+# 感情的な側面
+emotions:
+  trust: 0.8
+  respect: 0.9
+  affection: 0.4
+  dependency: 0.6
+  jealousy: 0.0
+  
+# 将来の発展可能性
+potentialDevelopments:
+  - {
+      type: "INDEPENDENCE",
+      probability: 0.7,
+      conditions: ["誠の成長", "独自の判断力の向上"],
+      triggerEvents: ["重要な意思決定での自立", "メンターの教えを超える瞬間"]
+    }
+  - {
+      type: "EQUALS",
+      probability: 0.5,
+      conditions: ["誠の成功体験の蓄積", "メンターからの認知"],
+      triggerEvents: ["大きな成功", "メンターからの対等な扱い"]
+    }
+
+# 関係性に影響する重要アイテムや思い出
+significantItems:
+  - {
+      name: "山田からのフィードバックノート",
+      description: "プロジェクト初期に山田から受け取った詳細なフィードバック",
+      emotionalValue: 0.7
+    }
+
+significantMemories:
+  - {
+      description: "最初の挫折後の励ましの言葉",
+      emotionalValue: 0.8,
+      chapterReference: 5
+    }
+  - {
+      description: "「問いの質」についての対話",
+      emotionalValue: 0.9,
+      chapterReference: 4
+    }

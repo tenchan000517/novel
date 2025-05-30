@@ -1,0 +1,25 @@
+{
+  "currentState": "PITCH_PRESENTATION",
+  "currentArcNumber": 1,
+  "currentTheme": "物語の始まり",
+  "arcStartChapter": 1,
+  "arcEndChapter": -1,
+  "arcCompleted": false,
+  "stateTransitions": [
+    {
+      "fromState": "INTRODUCTION",
+      "toState": "PITCH_PRESENTATION",
+      "chapter": 1,
+      "timestamp": "2025-05-29T00:43:57.518Z"
+    }
+  ],
+  "turningPoints": [
+    {
+      "chapter": 1,
+      "description": "ビジネスが「INTRODUCTION」から「PITCH_PRESENTATION」フェーズへと移行",
+      "significance": 6,
+      "timestamp": "2025-05-29T00:43:57.519Z"
+    }
+  ],
+  "genre": "business"
+}

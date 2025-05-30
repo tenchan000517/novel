@@ -1,0 +1,89 @@
+# 小説の文体と視点の設定
+# preferences/expressions.yaml
+
+# 文体の設定（必須）
+# 例: 「自然で読みやすい文体」「硬派な文体」「口語的な文体」「詩的な文体」など
+tone: 親しみやすく、かつリアルで知的な文体
+
+# 視点と時制の設定（必須）
+# 例: 「一人称視点、現在形」「三人称視点、過去形」「全知視点、過去形」など
+narrativeStyle: 三人称視点、過去形を基本としながらも主人公の内面描写を効果的に用いる
+
+# 表現上の制約や注意点（オプション）
+# フォーマット: type(avoid/prefer) + description
+restrictions:
+  - type: avoid
+    description: 経営理論や概念の説明が教科書的にならないよう、物語の自然な流れの中で表現する
+  - type: prefer
+    description: 登場人物が「〜についてこう考えている」と説明するのではなく、会話や行動を通じてキャラクターの考えを示す
+  - type: avoid
+    description: 過度な専門用語の羅列を避け、素人にもわかるよう噛み砕いて表現する
+
+# 文の長さの好み（オプション）
+sentenceLength:
+  preference: balanced  # short, balanced, long のいずれか
+  description: 短めの文と長めの文を適切に混ぜて、リズム感を持たせる
+
+# 文末表現の好み（オプション）
+sentenceEndings:
+  - type: prefer
+    description: 適切な「です・ます」と「だ・である」の混合
+  - type: avoid
+    description: 「〜のだ」の過剰な使用
+
+# 語彙レベル（オプション）
+vocabularyLevel: standard  # simple, standard, advanced, literary のいずれか
+
+# 表現の多様性に関する設定（オプション）
+expressionDiversity:
+  # 表現の繰り返しを避けるための設定
+  avoidRepetition: true
+  
+  # 特に避けるべき表現パターン
+  avoidPatterns:
+    - pattern: "〜だった"
+      alternatives:
+        - "〜であった"
+        - "〜していた"
+    - pattern: "〜と思った"
+      alternatives:
+        - "〜と感じた"
+        - "〜という考えが浮かんだ"
+        - "〜という印象を抱いた"
+
+# 文体スタイルの詳細設定（オプション）
+styleDetails:
+  # 修辞表現の使用頻度（0.0〜1.0）
+  rhetoric:
+    metaphor: 0.6      # 比喩
+    personification: 0.4 # 擬人法
+    repetition: 0.3    # 反復法
+  
+  # 描写の詳細度（0.0〜1.0）
+  description:
+    visual: 0.8        # 視覚的描写
+    auditory: 0.7      # 聴覚的描写
+    tactile: 0.6       # 触覚的描写
+    olfactory: 0.5     # 嗅覚的描写
+    gustatory: 0.4     # 味覚的描写
+
+# 感情表現の設定（オプション）
+emotionalExpression:
+  # 感情の直接的/間接的表現の比率（0.0: すべて間接的、1.0: すべて直接的）
+  directness: 0.6
+  
+  # 優先する感情表現手法
+  preferredMethods:
+    - "行動による感情表現"
+    - "生理的反応の描写"
+    - "環境や景色との対比"
+
+# ジャンル固有の表現設定（オプション）
+genreSpecificStyle:
+  # 特定ジャンルに適した表現技法
+  genre: "ファンタジー"  # ファンタジー、SF、恋愛、ミステリーなど
+  techniques:
+    - 理想と現実のギャップとその克服
+    - 成長には挫折が不可欠であるという真実
+    - コミュニケーションと共感の重要性
+    - 経営は芸術と科学の両面を持つこと

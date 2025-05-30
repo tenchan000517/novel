@@ -1,0 +1,53 @@
+{
+  "id": "高テンション設定",
+  "name": "高テンション設定",
+  "description": "テンションとドラマを重視した設定",
+  "createdDate": "2025-05-07T01:48:47.725Z",
+  "lastModified": "2025-05-07T01:48:47.725Z",
+  "parameters": {
+    "generation": {
+      "targetLength": 8000,
+      "minLength": 7500,
+      "maxLength": 8500,
+      "model": "gemini-2.0-flash-lite",
+      "temperature": 0.8,
+      "topP": 0.9,
+      "frequencyPenalty": 0.6,
+      "presencePenalty": 0.3
+    },
+    "memory": {
+      "shortTermChapters": 8,
+      "midTermArcSize": 4,
+      "summaryDetailLevel": 7,
+      "consistencyThreshold": 0.85
+    },
+    "characters": {
+      "maxMainCharacters": 5,
+      "maxSubCharacters": 15,
+      "characterBleedTolerance": 0.2,
+      "newCharacterIntroRate": 0.15
+    },
+    "plot": {
+      "foreshadowingDensity": 0.8,
+      "resolutionDistance": 8,
+      "abstractConcreteBalance": 0.5,
+      "coherenceCheckFrequency": 1
+    },
+    "progression": {
+      "maxSameStateChapters": 3,
+      "stagnationThreshold": 0.8,
+      "tensionMinVariance": 0.2,
+      "dialogActionRatio": 0.6
+    },
+    "system": {
+      "autoSaveInterval": 15,
+      "maxHistoryItems": 100,
+      "logLevel": "info",
+      "workingDirectory": "./data",
+      "backupEnabled": true,
+      "backupCount": 5
+    }
+  },
+  "tags": [],
+  "isDefault": false
+}

@@ -1,0 +1,160 @@
+{
+  "business": [
+    {
+      "id": "biz_001",
+      "technique": "ビジネス専門用語を使用する際は",
+      "description": "『下町ロケット』のように、技術的な内容を一般読者にも理解できる会話として表現してください",
+      "example": "専門用語を説明的にならず、キャラクター同士の自然な会話の中で意味が分かるように配置する",
+      "reference": "下町ロケット",
+      "applicableContexts": ["dialogue", "technical_discussion"]
+    },
+    {
+      "id": "biz_002", 
+      "technique": "心理描写を行う際は",
+      "description": "『海賊とよばれた男』のように、経営判断の重圧を過去の信念との対比で表現してください",
+      "example": "ビジネス上の決断に迷う内面を、創業時の理想と現実のギャップとして描写する",
+      "reference": "海賊とよばれた男",
+      "applicableContexts": ["character_development", "decision_making"]
+    },
+    {
+      "id": "biz_003",
+      "technique": "対話シーンを書く際は", 
+      "description": "『七つの会議』のように、表面的な議論の裏にある各人の本音や利害関係を、微細な表情や言葉選びで暗示してください",
+      "example": "会議での発言に隠された個人的な思惑を、仕草や視線の描写で間接的に表現する",
+      "reference": "七つの会議",
+      "applicableContexts": ["meeting_scenes", "negotiation"]
+    },
+    {
+      "id": "biz_004",
+      "technique": "危機的状況を描く際は",
+      "description": "『半沢直樹』のように、ビジネス上の危機を個人の信念と組織の論理の対立として表現してください",
+      "example": "資金繰りの危機を単なる数字の問題ではなく、経営哲学の試練として描写する",
+      "reference": "半沢直樹",
+      "applicableContexts": ["crisis_management", "conflict"]
+    },
+    {
+      "id": "biz_005",
+      "technique": "チームワークを描く際は",
+      "description": "『下町ロケット』のように、異なる専門分野のメンバーが共通目標に向かって協力する過程を具体的に表現してください",
+      "example": "技術者とマーケティング担当者の視点の違いを活かした協働プロセスの描写",
+      "reference": "下町ロケット",
+      "applicableContexts": ["team_building", "collaboration"]
+    },
+    {
+      "id": "biz_006",
+      "technique": "競合関係を描く際は",
+      "description": "『陸王』のように、ライバル企業との競争を単純な敵対関係ではなく、互いを高め合う関係として表現してください",
+      "example": "競合他社の存在が自社の技術革新を促進する様子を描写する",
+      "reference": "陸王",
+      "applicableContexts": ["competition", "market_dynamics"]
+    },
+    {
+      "id": "biz_007",
+      "technique": "技術革新を描く際は",
+      "description": "『プロジェクトX』のように、技術的ブレイクスルーの瞬間を人間ドラマとして表現してください",
+      "example": "新技術の発見を、開発者の情熱と試行錯誤の物語として描写する",
+      "reference": "プロジェクトX",
+      "applicableContexts": ["innovation", "research_development"]
+    },
+    {
+      "id": "biz_008",
+      "technique": "顧客との関係を描く際は",
+      "description": "『おもてなしの真心』のように、顧客満足を追求する過程での学びと成長を表現してください",
+      "example": "顧客からのフィードバックが従業員の価値観を変える瞬間を描写する",
+      "reference": "おもてなしの真心",
+      "applicableContexts": ["customer_relations", "service_improvement"]
+    },
+    {
+      "id": "biz_009",
+      "technique": "資金調達シーンを描く際は",
+      "description": "『ハゲタカ』のように、投資家との交渉を心理戦として表現してください",
+      "example": "プレゼンテーションでの緊張感と、投資家の表情から読み取る手応えの描写",
+      "reference": "ハゲタカ",
+      "applicableContexts": ["fundraising", "investor_relations"]
+    },
+    {
+      "id": "biz_010",
+      "technique": "企業文化を描く際は",
+      "description": "『海賊とよばれた男』のように、創業者の理念が組織全体に浸透している様子を具体的なエピソードで表現してください",
+      "example": "朝礼や社内イベントを通じて企業理念が従業員の行動に現れる場面の描写",
+      "reference": "海賊とよばれた男",
+      "applicableContexts": ["corporate_culture", "leadership"]
+    },
+    {
+      "id": "biz_011",
+      "technique": "意思決定プロセスを描く際は",
+      "description": "『沈まぬ太陽』のように、重要な経営判断に至る過程での葛藤と責任の重さを表現してください",
+      "example": "リストラの決断に至るまでの経営陣の議論と苦悩を詳細に描写する",
+      "reference": "沈まぬ太陽",
+      "applicableContexts": ["decision_making", "leadership_burden"]
+    },
+    {
+      "id": "biz_012",
+      "technique": "新規事業を描く際は",
+      "description": "『億男』のように、新しい挑戦に伴う不安と期待の混在した感情を表現してください",
+      "example": "未知の市場への参入を決断する際の経営者の複雑な心境を描写する",
+      "reference": "億男",
+      "applicableContexts": ["new_business", "entrepreneurship"]
+    },
+    {
+      "id": "biz_013",
+      "technique": "組織変革を描く際は",
+      "description": "『半沢直樹』のように、既存の組織文化と新しい価値観の衝突を人間関係の変化として表現してください",
+      "example": "組織改革による部署間の摩擦と、それを乗り越える人々の成長を描写する",
+      "reference": "半沢直樹",
+      "applicableContexts": ["organizational_change", "cultural_transformation"]
+    },
+    {
+      "id": "biz_014",
+      "technique": "失敗と挫折を描く際は",
+      "description": "『下町ロケット』のように、失敗を次の成功への糧として捉える前向きな視点を表現してください",
+      "example": "プロジェクトの失敗から学んだ教訓が、新たな技術開発に活かされる過程を描写する",
+      "reference": "下町ロケット",
+      "applicableContexts": ["failure_recovery", "learning_from_mistakes"]
+    },
+    {
+      "id": "biz_015",
+      "technique": "成功の瞬間を描く際は",
+      "description": "『陸王』のように、成功に至るまでの努力と犠牲を振り返る感慨深い瞬間として表現してください",
+      "example": "製品発表の成功を、開発に関わった全員の思いと共に描写する",
+      "reference": "陸王",
+      "applicableContexts": ["success_achievement", "team_celebration"]
+    }
+  ],
+  "fantasy": [
+    {
+      "id": "fan_001",
+      "technique": "世界観を描く際は",
+      "description": "『指輪物語』のように、異世界の詳細を自然な描写の中に織り込んでください",
+      "example": "魔法システムの説明を冒険の中で段階的に明かしていく",
+      "reference": "指輪物語",
+      "applicableContexts": ["world_building", "exposition"]
+    },
+    {
+      "id": "fan_002",
+      "technique": "魔法を描く際は",
+      "description": "『ハリー・ポッター』のように、魔法に明確なルールと制約を設けて表現してください",
+      "example": "魔法使用時の身体的・精神的負担を具体的に描写する",
+      "reference": "ハリー・ポッター",
+      "applicableContexts": ["magic_system", "power_limitations"]
+    }
+  ],
+  "mystery": [
+    {
+      "id": "mys_001", 
+      "technique": "伏線を配置する際は",
+      "description": "『白夜行』のように、重要な手がかりを日常的な描写の中に自然に隠してください",
+      "example": "犯人の特徴を、無関係に見える登場人物の習慣として描写する",
+      "reference": "白夜行",
+      "applicableContexts": ["foreshadowing", "clue_placement"]
+    },
+    {
+      "id": "mys_002",
+      "technique": "推理過程を描く際は",
+      "description": "『シャーロック・ホームズ』のように、論理的思考の流れを読者が追えるように表現してください",
+      "example": "探偵の推理を段階的に明かし、読者も同じ結論に到達できるように導く",
+      "reference": "シャーロック・ホームズ",
+      "applicableContexts": ["deduction", "logical_reasoning"]
+    }
+  ]
+}

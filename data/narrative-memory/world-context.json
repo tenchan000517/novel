@@ -1,0 +1,60 @@
+{
+  "genre": "business",
+  "previousLocation": "大学のスタートアップラボ",
+  "currentLocation": "大学のスタートアップラボ",
+  "currentTimeOfDay": "早朝のブレインストーミング",
+  "currentWeather": "アイデアが湧き出る興奮",
+  "currentAtmosphere": "イノベーションと成長への期待",
+  "currentBusinessPhase": "IDEA_PHASE",
+  "currentArcNumber": 1,
+  "environmentHistory": [
+    {
+      "location": "カフェの片隅",
+      "timeOfDay": "週末の集中作業",
+      "weather": "未来への期待感",
+      "atmosphere": "チームワークと個人の成果への意識",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:41:59.120Z"
+    },
+    {
+      "location": "大学のスタートアップラボ",
+      "timeOfDay": "平日夜の副業時間",
+      "weather": "創造的な熱気",
+      "atmosphere": "戦略的思考が求められる環境",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:42:05.582Z"
+    },
+    {
+      "location": "創業者の自宅リビング",
+      "timeOfDay": "深夜のアイデア検討",
+      "weather": "アイデアが湧き出る興奮",
+      "atmosphere": "チームワークと個人の成果への意識",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:43:08.420Z"
+    },
+    {
+      "location": "大学のスタートアップラボ",
+      "timeOfDay": "平日夜の副業時間",
+      "weather": "未来への期待感",
+      "atmosphere": "プロフェッショナルな緊張感",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:43:14.032Z"
+    },
+    {
+      "location": "カフェの片隅",
+      "timeOfDay": "平日夜の副業時間",
+      "weather": "アイデアが湧き出る興奮",
+      "atmosphere": "プロフェッショナルな緊張感",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:43:57.521Z"
+    },
+    {
+      "location": "大学のスタートアップラボ",
+      "timeOfDay": "早朝のブレインストーミング",
+      "weather": "アイデアが湧き出る興奮",
+      "atmosphere": "イノベーションと成長への期待",
+      "businessPhase": "IDEA_PHASE",
+      "timestamp": "2025-05-29T00:44:05.552Z"
+    }
+  ]
+}

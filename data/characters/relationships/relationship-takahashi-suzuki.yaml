@@ -1,0 +1,70 @@
+# キャラクター間の関係性を定義
+characters:
+  - "character-takahashi"
+  - "character-suzuki"
+type: "PARTNER"
+strength: 0.5
+description: "プロジェクト内のワークショップで出会い、互いの価値観に共感して協力関係に。誠の社会課題への問題意識と美咲のユーザー視点が補完し合うが、プロダクトイン/マーケットイン思考の違いで対立することも。"
+lastUpdated: "2024-04-12T16:30:00.000Z"
+
+# 発展の履歴
+history:
+  - {
+      event: "FIRST_MEETING",
+      description: "プロジェクト内のワークショップでの出会い",
+      chapterNumber: 7,
+      strengthChange: 0.2,
+      emotionalImpact: "NEUTRAL_TO_CURIOUS"
+    }
+  - {
+      event: "VALUE_SHARING",
+      description: "社会課題解決についての価値観の共有",
+      chapterNumber: 7,
+      strengthChange: 0.2,
+      emotionalImpact: "POSITIVE"
+    }
+  - {
+      event: "TEAM_FORMATION",
+      description: "美咲がチームに参加することを決定",
+      chapterNumber: 8,
+      strengthChange: 0.1,
+      emotionalImpact: "POSITIVE"
+    }
+
+# 感情的な側面
+emotions:
+  trust: 0.6
+  respect: 0.7
+  affection: 0.4
+  dependency: 0.5
+  jealousy: 0.0
+  
+# 将来の発展可能性
+potentialDevelopments:
+  - {
+      type: "CONFLICT",
+      probability: 0.8,
+      conditions: ["プロダクトイン/マーケットイン思考の衝突", "顧客理解の差"],
+      triggerEvents: ["サービス方向性の決定", "ユーザーフィードバックの解釈"]
+    }
+  - {
+      type: "MUTUAL_GROWTH",
+      probability: 0.7,
+      conditions: ["互いの視点からの学び", "相互理解の深化"],
+      triggerEvents: ["成功体験の共有", "危機的状況での協力"]
+    }
+
+# 関係性に影響する重要アイテムや思い出
+significantItems:
+  - {
+      name: "美咲作成の最初のユーザーペルソナ資料",
+      description: "誠のビジョンをユーザー視点で捉え直した資料",
+      emotionalValue: 0.6
+    }
+
+significantMemories:
+  - {
+      description: "社会問題について熱く語り合った初めての会話",
+      emotionalValue: 0.6,
+      chapterReference: 7
+    }

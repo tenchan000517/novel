@@ -1,0 +1,20 @@
+[
+    {
+      "skillId": "skill-persona-creation",
+      "level": 4,
+      "proficiency": 70,
+      "acquired": "2023-05-18T00:00:00.000Z"
+    },
+    {
+      "skillId": "skill-market-research",
+      "level": 3,
+      "proficiency": 65,
+      "acquired": "2023-02-20T00:00:00.000Z"
+    },
+    {
+      "skillId": "skill-user-interviewing",
+      "level": 3,
+      "proficiency": 60,
+      "acquired": "2023-06-12T00:00:00.000Z"
+    }
+  ]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "section-1747509428410-810",
+    "chapterRange": {
+      "start": 1,
+      "end": 7
+    },
+    "structure": {
+      "id": "section-1747509428410-810",
+      "number": 1,
+      "chapterRange": {
+        "start": 1,
+        "end": 7
+      },
+      "narrativePhase": "覚醒と出発",
+      "theme": "情熱と初期の目覚め",
+      "motifs": [
+        "炎",
+        "種子",
+        "地図",
+        "夜明け"
+      ],
+      "setting": "主人公の日常世界と初期の起業環境"
+    },
+    "learningJourneyDesign": {
+      "mainConcept": "目的起点のビジョン形成",
+      "secondaryConcepts": [],
+      "primaryLearningStage": "INSPIRATION",
+      "secondaryLearningStages": [],
+      "learningObjectives": {
+        "cognitive": "概念の理解を深める",
+        "affective": "感情的な共感を育む",
+        "behavioral": "行動変容につながる洞察を得る"
+      },
+      "transformationalArc": {
+        "startingState": "初期状態",
+        "challenges": [],
+        "insights": [],
+        "endState": "最終状態"
+      },
+      "conceptEmbodiments": {
+        "metaphors": [],
+        "situations": [],
+        "dialogueThemes": []
+      }
+    },
+    "emotionalDesign": {
+      "emotionalArc": {
+        "opening": "期待",
+        "midpoint": "葛藤",
+        "conclusion": "理解"
+      },
+      "tensionPoints": [],
+      "catharticMoment": {
+        "relativePosition": 0.8,
+        "type": "intellectual",
+        "description": "知的洞察のカタルシス"
+      },
+      "readerEmotionalJourney": "疑問から理解への感情の旅",
+      "emotionalPayoff": "知的満足と感情的共感"
+    },
+    "characterDesign": {
+      "mainCharacters": [
+        "田中誠",
+        "佐藤哲也",
+        "山本裕子",
+        "鈴木美咲"
+      ],
+      "characterRoles": {},
+      "relationshipDevelopments": [],
+      "characterTransformations": {}
+    },
+    "narrativeStructureDesign": {
+      "keyScenes": [],
+      "turningPoints": [],
+      "narrativeThreads": [],
+      "sectionForeshadowing": [],
+      "intersectionWithOtherSections": {
+        "previous": "",
+        "next": ""
+      }
+    },
+    "metaInformation": {
+      "created": "2025-05-17T19:17:08.410Z",
+      "lastModified": "2025-05-17T19:17:08.410Z",
+      "version": 1,
+      "editorNotes": "中期プロットからインポート: undefined",
+      "generationPrompts": [],
+      "relationToOverallStory": ""
+    }
+  }
+]

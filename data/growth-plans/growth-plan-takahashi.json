@@ -1,0 +1,74 @@
+{
+    "id": "growth-plan-takahashi",
+    "characterId": "character-takahashi",
+    "name": "高橋誠の起業家としての成長計画",
+    "description": "理想主義的な大学生から現実的な経営者へと成長するプロセス",
+    "isActive": true,
+    "growthPhases": [
+      {
+        "id": "phase-takahashi-1",
+        "name": "理想と現実の狭間",
+        "description": "起業への熱意はあるが経験不足で現実とのギャップに直面する段階",
+        "chapterEstimate": [1, 5],
+        "stageRequirement": 0,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 2 },
+          { "parameterId": "param-business-knowledge", "change": 5 },
+          { "parameterId": "param-resilience", "change": 3 }
+        ],
+        "skillAcquisitions": ["skill-basic-pitching", "skill-business-planning"]
+      },
+      {
+        "id": "phase-takahashi-2",
+        "name": "チームビルダー",
+        "description": "仲間を集め、チームとしての基盤を構築する段階",
+        "chapterEstimate": [6, 10],
+        "stageRequirement": 1,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 5 },
+          { "parameterId": "param-communication", "change": 6 },
+          { "parameterId": "param-empathy", "change": 4 }
+        ],
+        "skillAcquisitions": ["skill-team-management", "skill-delegation"]
+      },
+      {
+        "id": "phase-takahashi-3",
+        "name": "顧客視点への転換",
+        "description": "プロダクトイン思考からマーケットイン思考への転換を図る段階",
+        "chapterEstimate": [11, 15],
+        "stageRequirement": 2,
+        "parameterChanges": [
+          { "parameterId": "param-customer-understanding", "change": 8 },
+          { "parameterId": "param-adaptability", "change": 6 },
+          { "parameterId": "param-humility", "change": 5 }
+        ],
+        "skillAcquisitions": ["skill-user-research", "skill-value-proposition-design", "skill-nlp-communication"]
+      },
+      {
+        "id": "phase-takahashi-4",
+        "name": "戦略的思考者",
+        "description": "経営者として戦略的思考を身につける段階",
+        "chapterEstimate": [16, 22],
+        "stageRequirement": 3,
+        "parameterChanges": [
+          { "parameterId": "param-strategic-thinking", "change": 9 },
+          { "parameterId": "param-decision-making", "change": 7 },
+          { "parameterId": "param-business-knowledge", "change": 10 }
+        ],
+        "skillAcquisitions": ["skill-business-strategy", "skill-art-of-war", "skill-pdca-cycle", "skill-coaching"]
+      },
+      {
+        "id": "phase-takahashi-5",
+        "name": "経営者への覚醒",
+        "description": "持続可能なビジネスを率いる経営者として覚醒する段階",
+        "chapterEstimate": [23, 30],
+        "stageRequirement": 4,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 8 },
+          { "parameterId": "param-financial-acumen", "change": 10 },
+          { "parameterId": "param-vision", "change": 9 }
+        ],
+        "skillAcquisitions": ["skill-financial-management", "skill-corporate-governance", "skill-marketing-strategy", "skill-stakeholder-management"]
+      }
+    ]
+  }

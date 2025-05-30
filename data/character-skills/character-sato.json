@@ -1,0 +1,20 @@
+[
+    {
+      "skillId": "skill-a-technology-development",
+      "level": 5,
+      "proficiency": 80,
+      "acquired": "2022-06-10T00:00:00.000Z"
+    },
+    {
+      "skillId": "skill-prototype-creation",
+      "level": 4,
+      "proficiency": 75,
+      "acquired": "2022-08-20T00:00:00.000Z"
+    },
+    {
+      "skillId": "skill-technology-strategy",
+      "level": 3,
+      "proficiency": 55,
+      "acquired": "2023-03-15T00:00:00.000Z"
+    }
+  ]

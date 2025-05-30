@@ -1,0 +1,801 @@
+{
+  "id": "chapter-7",
+  "scenes": [
+    {
+      "id": "scene-7-1",
+      "type": "INTRODUCTION",
+      "title": "村での休息",
+      "characters": [
+        "ノア",
+        "セバスチャン",
+        "ルナ"
+      ],
+      "startPosition": 0,
+      "endPosition": 0,
+      "summary": "テクナスへ向かう三人は村で休息。ルナが追っ手対策の罠を仕掛ける。",
+      "location": "村の宿",
+      "emotionalTone": "",
+      "tension": 0.5
+    },
+    {
+      "id": "scene-7-2",
+      "type": "DEVELOPMENT",
+      "title": "追っ手との遭遇",
+      "characters": [
+        "ノア",
+        "セバスチャン",
+        "ルナ",
+        "兵士"
+      ],
+      "startPosition": 0,
+      "endPosition": 0,
+      "summary": "マーカスの追っ手が現れ、三人は応戦。ルナが時間を稼ぎ、ノアとセバスチャンは逃走。",
+      "location": "宿の外",
+      "emotionalTone": "",
+      "tension": 0.5
+    },
+    {
+      "id": "scene-7-3",
+      "type": "CLIMAX",
+      "title": "森の中での危機",
+      "characters": [
+        "ノア",
+        "セバスチャン",
+        "狼"
+      ],
+      "startPosition": 0,
+      "endPosition": 0,
+      "summary": "逃走中、狼に襲われるノア。古代治癒魔法の力で回復し、狼を撃退する。",
+      "location": "森の中",
+      "emotionalTone": "",
+      "tension": 0.5
+    },
+    {
+      "id": "scene-7-4",
+      "type": "RESOLUTION",
+      "title": "古代治癒魔法の覚醒",
+      "characters": [
+        "ノア",
+        "セバスチャン"
+      ],
+      "startPosition": 0,
+      "endPosition": 0,
+      "summary": "ノアは古代治癒魔法の力に目覚める。ルナへの心配を胸に、再び歩き出す。",
+      "location": "森の中",
+      "emotionalTone": "",
+      "tension": 0.5
+    }
+  ],
+  "analysis": {
+    "characterAppearances": [
+      {
+        "characterId": "C001",
+        "characterName": "ノア",
+        "scenes": [
+          "S001",
+          "S002",
+          "S003",
+          "S004",
+          "S005",
+          "S006",
+          "S007",
+          "S008",
+          "S009"
+        ],
+        "dialogueCount": 20,
+        "significance": 0.95,
+        "actions": [
+          "歩く",
+          "答える",
+          "止める",
+          "警戒する",
+          "見つめる",
+          "立ち上がる",
+          "握る",
+          "叫ぶ",
+          "言い返す",
+          "睨む",
+          "放つ",
+          "庇う",
+          "集中する",
+          "流し込む",
+          "かわす",
+          "走る",
+          "叩く",
+          "寄りかかる",
+          "確認する",
+          "癒す",
+          "振るう",
+          "倒す",
+          "呟く",
+          "励ます"
+        ],
+        "emotions": [
+          "冷静",
+          "決意",
+          "怒り",
+          "警戒",
+          "冷酷",
+          "不安",
+          "絶望",
+          "驚き",
+          "決意",
+          "疲労"
+        ]
+      },
+      {
+        "characterId": "C002",
+        "characterName": "ルナ",
+        "scenes": [
+          "S001",
+          "S002",
+          "S003",
+          "S004",
+          "S005",
+          "S006",
+          "S007",
+          "S008",
+          "S009"
+        ],
+        "dialogueCount": 10,
+        "significance": 0.9,
+        "actions": [
+          "尋ねる",
+          "上げる",
+          "仕掛ける",
+          "笑う",
+          "下がる",
+          "叫ぶ",
+          "集中する",
+          "止める",
+          "向き直る",
+          "立ち塞がる",
+          "走る"
+        ],
+        "emotions": [
+          "不安",
+          "自信",
+          "焦り",
+          "決意",
+          "恐怖",
+          "強い決意"
+        ]
+      },
+      {
+        "characterId": "C003",
+        "characterName": "セバスチャン",
+        "scenes": [
+          "S001",
+          "S002",
+          "S003",
+          "S004",
+          "S005",
+          "S006",
+          "S007",
+          "S008",
+          "S009"
+        ],
+        "dialogueCount": 8,
+        "significance": 0.85,
+        "actions": [
+          "言う",
+          "話す",
+          "感心する",
+          "励ます",
+          "嘆く",
+          "警戒する",
+          "叩く",
+          "寄り添う",
+          "聞く",
+          "走る"
+        ],
+        "emotions": [
+          "穏やか",
+          "確信",
+          "無力感",
+          "不安",
+          "悲しみ",
+          "驚き"
+        ]
+      },
+      {
+        "characterId": "C004",
+        "characterName": "ティア",
+        "scenes": [
+          "S001"
+        ],
+        "dialogueCount": 0,
+        "significance": 0.3,
+        "actions": [],
+        "emotions": []
+      },
+      {
+        "characterId": "C005",
+        "characterName": "宿の主人",
+        "scenes": [
+          "S002"
+        ],
+        "dialogueCount": 2,
+        "significance": 0.2,
+        "actions": [
+          "言う",
+          "差し出す"
+        ],
+        "emotions": [
+          "親切"
+        ]
+      },
+      {
+        "characterId": "C006",
+        "characterName": "兵士のリーダー",
+        "scenes": [
+          "S004",
+          "S005"
+        ],
+        "dialogueCount": 4,
+        "significance": 0.5,
+        "actions": [
+          "叫ぶ",
+          "言い返す",
+          "号令をかける",
+          "震える"
+        ],
+        "emotions": [
+          "威圧的",
+          "驚き"
+        ]
+      },
+      {
+        "characterId": "C007",
+        "characterName": "マーカスの刺客",
+        "scenes": [
+          "S006",
+          "S007"
+        ],
+        "dialogueCount": 4,
+        "significance": 0.7,
+        "actions": [
+          "答える",
+          "構える",
+          "睨む",
+          "構える"
+        ],
+        "emotions": [
+          "冷酷",
+          "殺意",
+          "警戒"
+        ]
+      },
+      {
+        "characterId": "C008",
+        "characterName": "狼",
+        "scenes": [
+          "S008",
+          "S009"
+        ],
+        "dialogueCount": 0,
+        "significance": 0.4,
+        "actions": [
+          "襲いかかる",
+          "退散する",
+          "倒れ伏す"
+        ],
+        "emotions": [
+          "攻撃的"
+        ]
+      },
+      {
+        "characterId": "C009",
+        "characterName": "兵士たち",
+        "scenes": [
+          "S004",
+          "S005"
+        ],
+        "dialogueCount": 0,
+        "significance": 0.4,
+        "actions": [
+          "襲いかかる",
+          "応戦する",
+          "転倒する",
+          "吹き飛ばされる",
+          "動けなくなる"
+        ],
+        "emotions": [
+          "攻撃的",
+          "苦悶"
+        ]
+      }
+    ],
+    "themeOccurrences": [
+      {
+        "themeId": "T001",
+        "themeName": "希望と絶望",
+        "expressions": [
+          "希望と不安が入り混じる",
+          "温かいスープは、わずかながらも希望を与えてくれた",
+          "絶望的な気持ちになった",
+          "希望を見つけることができるのだろうか"
+        ],
+        "strength": 0.8,
+        "theme": "希望と絶望",
+        "contexts": [
+          "移動中の心情",
+          "宿での休息",
+          "ノアの負傷"
+        ]
+      },
+      {
+        "themeId": "T002",
+        "themeName": "友情と信頼",
+        "expressions": [
+          "ルナ、お前は本当に頼りになるな",
+          "ルナの存在は、彼らにとって大きな支えだった",
+          "ルナを信じるしかない",
+          "セバスチャン先生を連れて、先に逃げて！",
+          "わかった。ルナ、絶対に生き残るんだぞ"
+        ],
+        "strength": 0.9,
+        "theme": "友情と信頼",
+        "contexts": [
+          "セバスチャンによるルナへの評価",
+          "ルナの献身",
+          "ノアとセバスチャンの協力"
+        ]
+      },
+      {
+        "themeId": "T003",
+        "themeName": "困難への挑戦",
+        "expressions": [
+          "どんな困難も乗り越えなければならない",
+          "三人は、再び歩き出した",
+          "戦いが始まった",
+          "徐々に追い詰められていった",
+          "戦いは、これからますます激しさを増していくことだろう"
+        ],
+        "strength": 0.9,
+        "theme": "困難への挑戦",
+        "contexts": [
+          "移動の困難さ",
+          "追っ手との戦闘",
+          "ルナの決意"
+        ]
+      },
+      {
+        "themeId": "T004",
+        "themeName": "過去の傷と力",
+        "expressions": [
+          "右腕は、まだ疼いている",
+          "古代治癒魔法を使った代償",
+          "この傷は、一体何なのだろうか？",
+          "古代治癒魔法……！",
+          "この力は……？",
+          "古代治癒魔法……やはり、この傷には、そんな力が秘められていたのか……"
+        ],
+        "strength": 0.9,
+        "theme": "過去の傷と力",
+        "contexts": [
+          "ノアの負傷と回復",
+          "古代治癒魔法の謎"
+        ]
+      }
+    ],
+    "foreshadowingElements": [
+      {
+        "id": "F001",
+        "description": "ノアの右腕の傷と古代治癒魔法",
+        "position": 0,
+        "text": "古代治癒魔法を使った代償",
+        "plannedResolutionChapter": [
+          2,
+          10
+        ],
+        "relatedCharacters": [
+          "ノア"
+        ],
+        "element": "ノアの右腕の傷と古代治癒魔法",
+        "chapter": 7,
+        "isResolved": false
+      },
+      {
+        "id": "F002",
+        "description": "ノアの右腕の傷の謎",
+        "position": 0,
+        "text": "この傷は、一体何なのだろうか？",
+        "plannedResolutionChapter": [
+          5,
+          15
+        ],
+        "relatedCharacters": [
+          "ノア"
+        ],
+        "element": "ノアの右腕の傷の謎",
+        "chapter": 7,
+        "isResolved": false
+      },
+      {
+        "id": "F003",
+        "description": "マーカスの追っ手",
+        "position": 0,
+        "text": "マーカスは、必ず追っ手を差し向けてくるだろう。",
+        "plannedResolutionChapter": [
+          2,
+          5
+        ],
+        "relatedCharacters": [
+          "マーカス",
+          "兵士のリーダー",
+          "マーカスの刺客"
+        ],
+        "element": "マーカスの追っ手",
+        "chapter": 7,
+        "isResolved": false
+      },
+      {
+        "id": "F004",
+        "description": "ルナの機械工学の知識",
+        "position": 0,
+        "text": "機械工学の知識を応用した、巧妙な罠である。",
+        "plannedResolutionChapter": [
+          3,
+          7
+        ],
+        "relatedCharacters": [
+          "ルナ"
+        ],
+        "element": "ルナの機械工学の知識",
+        "chapter": 7,
+        "isResolved": false
+      },
+      {
+        "id": "F005",
+        "description": "ノアの力",
+        "position": 0,
+        "text": "その時、突然、彼の右腕の傷跡が、光り輝き始めた。",
+        "plannedResolutionChapter": [
+          8,
+          15
+        ],
+        "relatedCharacters": [
+          "ノア"
+        ],
+        "element": "ノアの力",
+        "chapter": 7,
+        "isResolved": false
+      },
+      {
+        "id": "F006",
+        "description": "狼の登場",
+        "position": 0,
+        "text": "それは、巨大な狼だった。狼は、鋭い牙を剥き出し、ノアたちに襲いかかってきた。",
+        "plannedResolutionChapter": [
+          8,
+          10
+        ],
+        "relatedCharacters": [
+          "狼"
+        ],
+        "element": "狼の登場",
+        "chapter": 7,
+        "isResolved": false
+      }
+    ],
+    "qualityMetrics": {
+      "readability": 0.85,
+      "consistency": 0.9,
+      "engagement": 0.9,
+      "characterDepiction": 0.85,
+      "originality": 0.75,
+      "overall": 0.85,
+      "coherence": 0.9,
+      "characterConsistency": 0.9
+    },
+    "detectedIssues": [],
+    "readerExperience": {
+      "interestRetention": 8,
+      "empathy": 7,
+      "clarity": 9,
+      "unexpectedness": 6,
+      "anticipation": 9,
+      "overallScore": 8,
+      "weakPoints": [
+        {
+          "point": "ノアの古代治癒魔法に関する説明が繰り返しになる。",
+          "suggestion": "古代治癒魔法の力に関する説明は、最初の使用時に詳細に行い、それ以降は、その効果や使用状況を簡潔に描写する。読者はすでにその力について理解しているため、繰り返しの説明は冗長に感じる可能性がある。"
+        },
+        {
+          "point": "戦闘シーンの描写がやや冗長で、似たような展開が繰り返される。",
+          "suggestion": "戦闘シーンは、各キャラクターの役割を明確にし、それぞれの行動がどのように物語に影響を与えるのかを具体的に描写する。また、戦闘のテンポを調整し、クライマックスに向けて徐々に緊張感を高めるようにする。例えば、ルナの罠が効果を発揮する場面や、ノアの雷魔法が狼を倒す場面など、個々の行動が勝利に繋がる様子を強調する。"
+        },
+        {
+          "point": "ルナの行動がやや唐突に感じられる。",
+          "suggestion": "ルナが単身で刺客に立ち向かう決意に至るまでの過程を、もう少し丁寧に描写する。彼女の心情の変化や、なぜ自分が犠牲になることを選んだのかを具体的に示すことで、読者の共感を深める。例えば、ノアとセバスチャンの逃走を促す前に、短い会話や、過去の出来事の回想などを挿入する。"
+        }
+      ],
+      "strengths": [
+        "キャラクターの心情描写が丁寧で、読者の感情移入を促している。",
+        "物語の展開がスピーディーで、読者を飽きさせない。",
+        "ルナの献身的な行動が、物語に感動的な要素を加えている。",
+        "次章への期待感を高めるクリフハンガー（ルナの危機、ノアの謎の力）が効果的に使われている。"
+      ]
+    },
+    "characterPsychologies": {},
+    "themeResonance": {
+      "themes": {
+        "伝統と革新の対立と調和": {
+          "explicitMentions": [
+            "テクナス共和国は、アルディア王国とは全く異なる文化を持つ国だ。魔法よりも機械技術が発達しており、その思想も自由奔放。伝統を重んじるアルディア王国とは、水と油のような関係にある。",
+            "ルナは、宿の周囲に、いくつかの罠を仕掛けておいたのだ。機械工学の知識を応用した、巧妙な罠である。",
+            "ノアは、魔導杖を振るい、炎の魔法を放った。炎は、兵士たちを焼き払い、彼らの進路を阻んだ。"
+          ],
+          "implicitExpressions": [
+            "アルディア王国（伝統）とテクナス共和国（革新）の対比",
+            "魔法（伝統）と機械技術（革新）の対立と融合（ルナの罠、ノアの魔法）",
+            "ノアの古代治癒魔法（過去の遺産）と、それによってもたらされる苦悩と力の両立"
+          ],
+          "strength": 9,
+          "expressionMethods": [
+            "対話",
+            "描写",
+            "行動"
+          ],
+          "relatedThemes": [
+            "力の源泉としてのアイデンティティと遺産",
+            "個人の選択と社会的制約の葛藤"
+          ]
+        },
+        "力の源泉としてのアイデンティティと遺産": {
+          "explicitMentions": [
+            "ノアの右腕は、まだ疼いている。古代治癒魔法を使った代償は、決して小さくはない。",
+            "ノアは、自分の右腕を見つめた。そこには、過去の実験で負った深い傷跡が残っている。その傷跡は、まるで生きているかのように、脈打っていた。",
+            "ノアは、自分の右腕を見つめ、呟いた。彼は、自分の体に宿る、不思議な力の存在を確信した。"
+          ],
+          "implicitExpressions": [
+            "ノアの右腕の傷跡（過去の経験、遺産）が、彼の力と苦悩の源泉となっている。",
+            "古代治癒魔法（過去の知識）が、ノアの危機を救う。",
+            "ルナの機械工学の知識（革新的な技術）が、仲間の助けとなる。"
+          ],
+          "strength": 8,
+          "expressionMethods": [
+            "内面描写",
+            "行動",
+            "描写"
+          ],
+          "relatedThemes": [
+            "伝統と革新の対立と調和",
+            "技術発展がもたらす光と影"
+          ]
+        },
+        "個人の選択と社会的制約の葛藤": {
+          "explicitMentions": [
+            "王国全体を敵に回した今、彼らにとって安全な場所は、もはやどこにもないと言っても過言ではなかった。",
+            "「反逆罪だと？笑わせるな。私たちは、ただ真実を求めているだけだ」",
+            "ルナは、自分の命をかけて、ノアたちを守ろうとしていた。"
+          ],
+          "implicitExpressions": [
+            "ノアたちが王国から追われる（社会的制約）",
+            "ルナが自らの命を犠牲にする選択（個人の選択）",
+            "ノアが妹を救うために戦う（個人の選択と社会的制約の対立）"
+          ],
+          "strength": 7,
+          "expressionMethods": [
+            "対話",
+            "行動",
+            "内面描写"
+          ],
+          "relatedThemes": [
+            "伝統と革新の対立と調和",
+            "力の源泉としてのアイデンティティと遺産"
+          ]
+        },
+        "技術発展がもたらす光と影": {
+          "explicitMentions": [
+            "ルナは、宿の周囲に、いくつかの罠を仕掛けておいたのだ。機械工学の知識を応用した、巧妙な罠である。",
+            "男は、黒いローブを身にまとい、顔をフードで隠していた。彼の右手には、雷を操る魔導具が握られている。",
+            "ルナは、両手に魔力を集中させた。彼女の周囲に、機械仕掛けの魔法陣が展開された。"
+          ],
+          "implicitExpressions": [
+            "ルナの罠（技術の有効活用）と、マーカスの刺客の魔導具（技術の悪用）の対比",
+            "技術が、ノアたちの危機を救う可能性と、同時に新たな脅威を生み出す可能性。",
+            "機械仕掛けの魔法陣（技術と魔法の融合）"
+          ],
+          "strength": 6,
+          "expressionMethods": [
+            "描写",
+            "行動",
+            "対話"
+          ],
+          "relatedThemes": [
+            "力の源泉としてのアイデンティティと遺産",
+            "伝統と革新の対立と調和"
+          ]
+        },
+        "伝統と革新の間で揺れ動く世界における個人の成長と選択。古いものと新しいものの対立と統合を通じて、真の進歩とは何かを問う物語。\n\nメインテーマ: 伝統と革新の対立と調和": {
+          "explicitMentions": [],
+          "implicitExpressions": [],
+          "strength": 5,
+          "expressionMethods": [],
+          "relatedThemes": []
+        },
+        "過去の知恵と未来の可能性の融合": {
+          "explicitMentions": [],
+          "implicitExpressions": [],
+          "strength": 5,
+          "expressionMethods": [],
+          "relatedThemes": []
+        },
+        "個人の選択と社会的制約の葛藤\n\nサブテーマ: 力の源泉としてのアイデンティティと遺産": {
+          "explicitMentions": [],
+          "implicitExpressions": [],
+          "strength": 5,
+          "expressionMethods": [],
+          "relatedThemes": []
+        },
+        "知識の継承と革新のバランス": {
+          "explicitMentions": [],
+          "implicitExpressions": [],
+          "strength": 5,
+          "expressionMethods": [],
+          "relatedThemes": []
+        }
+      },
+      "overallCoherence": 9,
+      "dominantTheme": "伝統と革新の対立と調和",
+      "themeTensions": {
+        "伝統と革新の対立と調和と力の源泉としてのアイデンティティと遺産": 8,
+        "伝統と革新の対立と調和と個人の選択と社会的制約の葛藤": 7,
+        "伝統と革新の対立と調和と技術発展がもたらす光と影": 6
+      }
+    },
+    "plotConsistency": {
+      "consistent": false,
+      "issueCount": 11,
+      "majorIssues": 1
+    }
+  },
+  "metadata": {
+    "pov": "三人称",
+    "location": "アルディア王国国境付近",
+    "timeframe": "昼",
+    "emotionalTone": "希望と不安が入り混じる",
+    "keywords": [
+      "テクナス共和国",
+      "追っ手",
+      "古代治癒魔法",
+      "狼",
+      "罠"
+    ],
+    "qualityScore": 100,
+    "events": [
+      "追っ手との戦闘",
+      "ルナとの別離",
+      "狼との遭遇",
+      "古代治癒魔法の覚醒"
+    ],
+    "characters": [],
+    "foreshadowing": [],
+    "resolvedForeshadowing": [],
+    "resolutions": [],
+    "correctionHistory": [],
+    "updatedAt": "2025-05-13T03:27:13.628Z",
+    "generationVersion": "1.0",
+    "generationTime": 149048,
+    "plotConsistencyResult": "ISSUES_DETECTED",
+    "qualityEnhancements": {
+      "readerExperienceImprovements": [
+        "古代治癒魔法の力に関する説明は、最初の使用時に詳細に行い、それ以降は、その効果や使用状況を簡潔に描写する。読者はすでにその力について理解しているため、繰り返しの説明は冗長に感じる可能性がある。",
+        "戦闘シーンは、各キャラクターの役割を明確にし、それぞれの行動がどのように物語に影響を与えるのかを具体的に描写する。また、戦闘のテンポを調整し、クライマックスに向けて徐々に緊張感を高めるようにする。例えば、ルナの罠が効果を発揮する場面や、ノアの雷魔法が狼を倒す場面など、個々の行動が勝利に繋がる様子を強調する。",
+        "ルナが単身で刺客に立ち向かう決意に至るまでの過程を、もう少し丁寧に描写する。彼女の心情の変化や、なぜ自分が犠牲になることを選んだのかを具体的に示すことで、読者の共感を深める。例えば、ノアとセバスチャンの逃走を促す前に、短い会話や、過去の出来事の回想などを挿入する。"
+      ],
+      "themeEnhancements": [],
+      "styleGuidance": true,
+      "expressionDiversification": true,
+      "tensionOptimization": true,
+      "literaryInspiration": true,
+      "characterPsychology": true
+    },
+    "persistentEvents": [
+      {
+        "id": "persistent-MAJOR_INJURY-7-1747106777989-q7fwc",
+        "chapterNumber": 7,
+        "description": "ノアが古代治癒魔法を使った代償として、右腕に疼きが残る。過去の実験で負った深い傷跡が残っており、まるで生きているかのように脈打っている。",
+        "involvedCharacters": [
+          "ノア"
+        ],
+        "location": "不明",
+        "type": "MAJOR_INJURY",
+        "significance": 0.7,
+        "consequence": "右腕の疼きがノアを苦しめ、彼の神経を逆撫でる。古代治癒魔法の使用に制限が生じる可能性。",
+        "isPersistent": true,
+        "timestamp": "2025-05-13T03:26:17.989Z"
+      },
+      {
+        "id": "persistent-DEATH-7-1747106777989-zx9gi",
+        "chapterNumber": 7,
+        "description": "ノアが狼を雷の魔法で焼き払う。",
+        "involvedCharacters": [
+          "ノア",
+          "狼"
+        ],
+        "location": "森の中",
+        "type": "DEATH",
+        "significance": 0.9,
+        "consequence": "狼の脅威が排除される。ノアが魔法で敵を殺害することへの抵抗が薄れる可能性。",
+        "isPersistent": true,
+        "timestamp": "2025-05-13T03:26:17.989Z"
+      },
+      {
+        "id": "persistent-MAJOR_INJURY-7-1747106777989-8x8e9",
+        "chapterNumber": 7,
+        "description": "狼の爪がノアの肩を捉え、服を切り裂く。",
+        "involvedCharacters": [
+          "ノア",
+          "狼"
+        ],
+        "location": "森の中",
+        "type": "MAJOR_INJURY",
+        "significance": 0.5,
+        "consequence": "ノアが一時的に戦闘能力を失う。古代治癒魔法の力に気づくきっかけとなる。",
+        "isPersistent": true,
+        "timestamp": "2025-05-13T03:26:17.989Z"
+      },
+      {
+        "id": "persistent-TRANSFORMATION-7-1747106777989-2czcd",
+        "chapterNumber": 7,
+        "description": "古代治癒魔法の力により、ノアの肩の傷が完全に消え去り、体力が完全に回復する。右腕の傷跡から暖かい光が溢れ出し、彼の体を包み込んだ。",
+        "involvedCharacters": [
+          "ノア"
+        ],
+        "location": "森の中",
+        "type": "TRANSFORMATION",
+        "significance": 0.8,
+        "consequence": "ノアが古代治癒魔法の力に目覚め、戦闘能力が向上する。自身の体に宿る不思議な力の存在を確信する。",
+        "isPersistent": true,
+        "timestamp": "2025-05-13T03:26:17.989Z"
+      }
+    ],
+    "characterGrowth": [
+      {
+        "id": "antagonist",
+        "name": "マーカス・アイアンクレスト",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      },
+      {
+        "id": "mentor",
+        "name": "セバスチャン・グレイウィズダム",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      },
+      {
+        "id": "protagonist",
+        "name": "ルナ・シルバーウッド",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      },
+      {
+        "id": "rival",
+        "name": "ノア・フロストシャドウ",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      },
+      {
+        "id": "ally",
+        "name": "ティア・ギアハート",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      },
+      {
+        "id": "villager",
+        "name": "グレン・ウェザーフィールド",
+        "growthPhase": null,
+        "parameterChanges": [],
+        "skillAcquisitions": []
+      }
+    ]
+  }
+}

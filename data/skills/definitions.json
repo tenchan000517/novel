@@ -1,0 +1,548 @@
+[
+  {
+    "id": "skill-basic-pitching",
+    "name": "基本ピッチング",
+    "description": "ビジネスアイデアを簡潔に効果的に伝えるスキル",
+    "category": "BUSINESS",
+    "effects": [
+      { "targetId": "param-communication", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-communication", "minValue": 40 }
+    ],
+    "learningDifficulty": 2,
+    "tags": ["ビジネス", "コミュニケーション", "プレゼンテーション"],
+    "genre": ["startup", "business"]
+  },
+  {
+    "id": "skill-business-planning",
+    "name": "ビジネスプランニング",
+    "description": "ビジネスの計画を立て、戦略を策定するスキル",
+    "category": "BUSINESS",
+    "effects": [
+      { "targetId": "param-business-knowledge", "modifier": 4 },
+      { "targetId": "param-strategic-thinking", "modifier": 2 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-business-knowledge", "minValue": 25 }
+    ],
+    "learningDifficulty": 3,
+    "tags": ["ビジネス", "計画", "戦略"],
+    "genre": ["startup", "business"]
+  },
+  {
+    "id": "skill-team-management",
+    "name": "チームマネジメント",
+    "description": "チームを効果的に管理し、メンバーの能力を引き出すスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-leadership", "modifier": 5 },
+      { "targetId": "param-empathy", "modifier": 2 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-leadership", "minValue": 50 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["リーダーシップ", "マネジメント", "チームワーク"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-delegation",
+    "name": "権限委譲",
+    "description": "適切に仕事を委任し、チームの効率を高めるスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-leadership", "modifier": 3 },
+      { "targetId": "param-resource-management", "modifier": 4 }
+    ],
+    "prerequisites": ["skill-team-management"],
+    "requiredParameters": [
+      { "parameterId": "param-leadership", "minValue": 55 }
+    ],
+    "learningDifficulty": 3,
+    "tags": ["リーダーシップ", "マネジメント", "効率"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-user-research",
+    "name": "ユーザーリサーチ",
+    "description": "ユーザーのニーズや行動を調査・分析するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-customer-understanding", "modifier": 6 },
+      { "targetId": "param-research-skills", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["マーケティング", "リサーチ", "顧客"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-value-proposition-design",
+    "name": "価値提案設計",
+    "description": "顧客に提供する独自の価値を明確に設計・伝達するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-customer-understanding", "modifier": 4 },
+      { "targetId": "param-strategic-thinking", "modifier": 3 }
+    ],
+    "prerequisites": ["skill-user-research"],
+    "requiredParameters": [
+      { "parameterId": "param-customer-understanding", "minValue": 40 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["マーケティング", "価値", "戦略"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-nlp-communication",
+    "name": "NLPコミュニケーション",
+    "description": "神経言語プログラミングを活用した効果的なコミュニケーションスキル",
+    "category": "COMMUNICATION",
+    "effects": [
+      { "targetId": "param-communication", "modifier": 5 },
+      { "targetId": "param-empathy", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-communication", "minValue": 50 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["コミュニケーション", "心理学", "影響力"],
+    "genre": ["startup", "business", "psychology"]
+  },
+  {
+    "id": "skill-business-strategy",
+    "name": "ビジネス戦略",
+    "description": "ビジネスの長期的な成功を導く戦略を策定するスキル",
+    "category": "BUSINESS",
+    "effects": [
+      { "targetId": "param-strategic-thinking", "modifier": 6 },
+      { "targetId": "param-business-knowledge", "modifier": 5 }
+    ],
+    "prerequisites": ["skill-business-planning"],
+    "requiredParameters": [
+      { "parameterId": "param-strategic-thinking", "minValue": 45 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["戦略", "ビジネス", "長期計画"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-art-of-war",
+    "name": "孫氏の兵法",
+    "description": "古代中国の兵法を現代ビジネスに応用するスキル",
+    "category": "STRATEGY",
+    "effects": [
+      { "targetId": "param-strategic-thinking", "modifier": 5 },
+      { "targetId": "param-decision-making", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["戦略", "哲学", "競争"],
+    "genre": ["startup", "business", "strategy"]
+  },
+  {
+    "id": "skill-pdca-cycle",
+    "name": "PDCAサイクル",
+    "description": "計画・実行・評価・改善の循環を通じて継続的改善を行うスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-strategic-thinking", "modifier": 3 },
+      { "targetId": "param-adaptability", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 2,
+    "tags": ["マネジメント", "改善", "サイクル"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-coaching",
+    "name": "コーチング",
+    "description": "メンバーの自発的な成長を促す対話のスキル",
+    "category": "LEADERSHIP",
+    "effects": [
+      { "targetId": "param-leadership", "modifier": 4 },
+      { "targetId": "param-communication", "modifier": 3 },
+      { "targetId": "param-empathy", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-empathy", "minValue": 60 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["リーダーシップ", "育成", "成長"],
+    "genre": ["startup", "business", "psychology"]
+  },
+  {
+    "id": "skill-financial-management",
+    "name": "財務管理",
+    "description": "企業の財務状況を把握し、適切な経済的判断を行うスキル",
+    "category": "FINANCE",
+    "effects": [
+      { "targetId": "param-financial-acumen", "modifier": 7 },
+      { "targetId": "param-decision-making", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 5,
+    "tags": ["財務", "会計", "経営"],
+    "genre": ["startup", "business", "finance"]
+  },
+  {
+    "id": "skill-corporate-governance",
+    "name": "コーポレートガバナンス",
+    "description": "企業統治の原則と実践を理解し適用するスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-leadership", "modifier": 4 },
+      { "targetId": "param-business-knowledge", "modifier": 5 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-business-knowledge", "minValue": 50 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["経営", "統治", "倫理"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-marketing-strategy",
+    "name": "マーケティング戦略",
+    "description": "効果的なマーケティング戦略を策定・実行するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-marketing-knowledge", "modifier": 6 },
+      { "targetId": "param-strategic-thinking", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-marketing-knowledge", "minValue": 60 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["マーケティング", "戦略", "顧客"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-stakeholder-management",
+    "name": "ステークホルダー管理",
+    "description": "様々な利害関係者との関係を適切に構築・維持するスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-stakeholder-management", "modifier": 6 },
+      { "targetId": "param-communication", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["マネジメント", "関係", "コミュニケーション"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-a-technology-development",
+    "name": "A技術開発",
+    "description": "革新的なA技術を活用したソリューション開発スキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-skill", "modifier": 6 },
+      { "targetId": "param-technical-vision", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-technical-skill", "minValue": 70 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["技術", "開発", "革新"],
+    "genre": ["startup", "technology", "development"]
+  },
+  {
+    "id": "skill-prototype-creation",
+    "name": "プロトタイプ作成",
+    "description": "アイデアを素早く形にするプロトタイピングスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-skill", "modifier": 4 },
+      { "targetId": "param-adaptability", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["開発", "設計", "実装"],
+    "genre": ["startup", "technology", "development"]
+  },
+  {
+    "id": "skill-mvp-development",
+    "name": "MVP開発",
+    "description": "最小限の機能で価値検証可能な製品を開発するスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-skill", "modifier": 3 },
+      { "targetId": "param-business-understanding", "modifier": 4 }
+    ],
+    "prerequisites": ["skill-prototype-creation"],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["開発", "検証", "最小機能"],
+    "genre": ["startup", "technology", "development"]
+  },
+  {
+    "id": "skill-technical-documentation",
+    "name": "技術文書作成",
+    "description": "技術的な内容を明確に文書化するスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-skill", "modifier": 2 },
+      { "targetId": "param-communication", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 2,
+    "tags": ["文書", "コミュニケーション", "技術"],
+    "genre": ["startup", "technology", "communication"]
+  },
+  {
+    "id": "skill-technology-strategy",
+    "name": "技術戦略",
+    "description": "ビジネス目標に沿った技術選択と開発戦略を策定するスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-vision", "modifier": 5 },
+      { "targetId": "param-strategic-thinking", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-technical-vision", "minValue": 60 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["技術", "戦略", "ビジョン"],
+    "genre": ["startup", "technology", "strategy"]
+  },
+  {
+    "id": "skill-innovation-management",
+    "name": "イノベーション管理",
+    "description": "革新的なアイデアを創出し、実装するプロセスを管理するスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-vision", "modifier": 4 },
+      { "targetId": "param-leadership", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["イノベーション", "創造性", "管理"],
+    "genre": ["startup", "technology", "innovation"]
+  },
+  {
+    "id": "skill-technology-management",
+    "name": "テクノロジーマネジメント",
+    "description": "組織の技術資産を効果的に管理・活用するスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-resource-management", "modifier": 5 },
+      { "targetId": "param-leadership", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-leadership", "minValue": 50 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["マネジメント", "技術", "資源"],
+    "genre": ["startup", "technology", "management"]
+  },
+  {
+    "id": "skill-tech-recruitment",
+    "name": "技術人材採用",
+    "description": "優秀な技術者を見極め、採用・定着させるスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-resource-management", "modifier": 4 },
+      { "targetId": "param-leadership", "modifier": 2 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["採用", "人材", "技術"],
+    "genre": ["startup", "technology", "hr"]
+  },
+  {
+    "id": "skill-scalable-architecture",
+    "name": "スケーラブルアーキテクチャ",
+    "description": "成長に応じて拡張可能なシステム設計を行うスキル",
+    "category": "TECHNICAL",
+    "effects": [
+      { "targetId": "param-technical-skill", "modifier": 5 },
+      { "targetId": "param-technical-vision", "modifier": 4 }
+    ],
+    "prerequisites": ["skill-a-technology-development"],
+    "requiredParameters": [
+      { "parameterId": "param-technical-skill", "minValue": 80 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["設計", "拡張性", "システム"],
+    "genre": ["startup", "technology", "development"]
+  },
+  {
+    "id": "skill-persona-creation",
+    "name": "ペルソナ作成",
+    "description": "ターゲットユーザーの具体的な人物像を設定するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-customer-empathy", "modifier": 5 },
+      { "targetId": "param-marketing-knowledge", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 2,
+    "tags": ["マーケティング", "ユーザー", "設計"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-market-research",
+    "name": "市場調査",
+    "description": "市場の動向や競合状況を体系的に調査・分析するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-research-skills", "modifier": 6 },
+      { "targetId": "param-analytical-thinking", "modifier": 4 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["調査", "分析", "市場"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-user-interviewing",
+    "name": "ユーザーインタビュー",
+    "description": "ユーザーから有益な情報を引き出すインタビュースキル",
+    "category": "RESEARCH",
+    "effects": [
+      { "targetId": "param-research-skills", "modifier": 4 },
+      { "targetId": "param-communication", "modifier": 3 },
+      { "targetId": "param-customer-empathy", "modifier": 4 }
+    ],
+    "prerequisites": ["skill-persona-creation"],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["インタビュー", "リサーチ", "顧客"],
+    "genre": ["startup", "business", "research"]
+  },
+  {
+    "id": "skill-data-analysis",
+    "name": "データ分析",
+    "description": "収集したデータから意味のあるパターンや洞察を見出すスキル",
+    "category": "ANALYTICS",
+    "effects": [
+      { "targetId": "param-analytical-thinking", "modifier": 6 },
+      { "targetId": "param-data-driven-decision", "modifier": 5 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-analytical-thinking", "minValue": 50 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["分析", "データ", "洞察"],
+    "genre": ["startup", "business", "analytics"]
+  },
+  {
+    "id": "skill-insight-generation",
+    "name": "インサイト生成",
+    "description": "データや観察から有意義なビジネスインサイトを生み出すスキル",
+    "category": "ANALYTICS",
+    "effects": [
+      { "targetId": "param-analytical-thinking", "modifier": 4 },
+      { "targetId": "param-strategic-thinking", "modifier": 3 }
+    ],
+    "prerequisites": ["skill-data-analysis"],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["分析", "洞察", "戦略"],
+    "genre": ["startup", "business", "analytics"]
+  },
+  {
+    "id": "skill-campaign-management",
+    "name": "キャンペーン管理",
+    "description": "マーケティングキャンペーンを計画・実行・評価するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-marketing-knowledge", "modifier": 5 },
+      { "targetId": "param-project-management", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 3,
+    "tags": ["マーケティング", "計画", "実行"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-brand-development",
+    "name": "ブランド開発",
+    "description": "企業やサービスの一貫したブランドを構築するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-marketing-knowledge", "modifier": 4 },
+      { "targetId": "param-strategic-thinking", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["ブランド", "アイデンティティ", "価値"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-strategic-marketing",
+    "name": "戦略的マーケティング",
+    "description": "長期的な視点でマーケティング戦略を策定・実行するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-marketing-knowledge", "modifier": 5 },
+      { "targetId": "param-strategic-thinking", "modifier": 5 }
+    ],
+    "prerequisites": ["skill-marketing-strategy"],
+    "requiredParameters": [
+      { "parameterId": "param-strategic-thinking", "minValue": 60 }
+    ],
+    "learningDifficulty": 5,
+    "tags": ["マーケティング", "戦略", "長期計画"],
+    "genre": ["startup", "business", "marketing"]
+  },
+  {
+    "id": "skill-marketing-team-management",
+    "name": "マーケティングチーム管理",
+    "description": "マーケティングチームを効果的に指導・管理するスキル",
+    "category": "MANAGEMENT",
+    "effects": [
+      { "targetId": "param-leadership", "modifier": 4 },
+      { "targetId": "param-marketing-knowledge", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [
+      { "parameterId": "param-leadership", "minValue": 55 }
+    ],
+    "learningDifficulty": 4,
+    "tags": ["マネジメント", "リーダーシップ", "マーケティング"],
+    "genre": ["startup", "business", "management"]
+  },
+  {
+    "id": "skill-growth-hacking",
+    "name": "グロースハッキング",
+    "description": "創造的で分析的なアプローチで急速な成長を実現するスキル",
+    "category": "MARKETING",
+    "effects": [
+      { "targetId": "param-marketing-knowledge", "modifier": 4 },
+      { "targetId": "param-analytical-thinking", "modifier": 3 },
+      { "targetId": "param-adaptability", "modifier": 3 }
+    ],
+    "prerequisites": [],
+    "requiredParameters": [],
+    "learningDifficulty": 4,
+    "tags": ["成長", "実験", "最適化"],
+    "genre": ["startup", "business", "marketing"]
+  }
+]

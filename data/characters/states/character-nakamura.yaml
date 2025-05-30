@@ -1,0 +1,13 @@
+isActive: true
+emotionalState: CONFIDENT
+developmentStage: 3
+lastAppearance: 11
+parameters: []
+skills:
+  - 不明なスキル (3章)
+  - 不明なスキル (2章)
+activeGrowthPlanId: ''
+lastStateChange:
+  type: MAJOR_INJURY
+  chapterNumber: 4
+  description: 誠が中村の指示を受けた男たちに捕らえられ、暴行を受ける可能性が高い。倉庫の外から大きな音が聞こえ、状況は不明だが、誠に危害が加えられる可能性が高い。

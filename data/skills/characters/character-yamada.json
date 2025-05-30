@@ -1,0 +1,62 @@
+[
+  {
+    "skillId": "skill-basic-pitching",
+    "level": 3,
+    "proficiency": 25,
+    "acquired": "2024-01-15T09:00:00.000Z"
+  },
+  {
+    "skillId": "skill-business-planning",
+    "level": 4,
+    "proficiency": 60,
+    "acquired": "2023-06-20T14:30:00.000Z"
+  },
+  {
+    "skillId": "skill-team-management",
+    "level": 3,
+    "proficiency": 80,
+    "acquired": "2023-08-10T11:15:00.000Z"
+  },
+  {
+    "skillId": "skill-user-research",
+    "level": 2,
+    "proficiency": 40,
+    "acquired": "2024-03-05T16:45:00.000Z"
+  },
+  {
+    "skillId": "skill-pdca-cycle",
+    "level": 4,
+    "proficiency": 15,
+    "acquired": "2023-04-12T10:20:00.000Z"
+  },
+  {
+    "skillId": "skill-coaching",
+    "level": 2,
+    "proficiency": 75,
+    "acquired": "2024-02-18T13:30:00.000Z"
+  },
+  {
+    "skillId": "skill-stakeholder-management",
+    "level": 3,
+    "proficiency": 50,
+    "acquired": "2023-09-25T12:00:00.000Z"
+  },
+  {
+    "skillId": "skill-market-research",
+    "level": 2,
+    "proficiency": 65,
+    "acquired": "2024-01-30T15:20:00.000Z"
+  },
+  {
+    "skillId": "skill-persona-creation",
+    "level": 2,
+    "proficiency": 30,
+    "acquired": "2024-04-08T14:10:00.000Z"
+  },
+  {
+    "skillId": "skill-business-strategy",
+    "level": 3,
+    "proficiency": 35,
+    "acquired": "2023-11-15T09:45:00.000Z"
+  }
+]

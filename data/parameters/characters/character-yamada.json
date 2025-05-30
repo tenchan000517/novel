@@ -1,0 +1,218 @@
+[
+  {
+    "id": "param-leadership",
+    "name": "リーダーシップ",
+    "description": "チームを導き、方向性を示し、メンバーの能力を引き出す力",
+    "category": "SOCIAL",
+    "tags": ["リーダー", "組織", "チーム"],
+    "value": 65,
+    "growth": 0
+  },
+  {
+    "id": "param-business-knowledge",
+    "name": "ビジネス知識",
+    "description": "経営、マーケティング、財務など、ビジネスに関する知識",
+    "category": "MENTAL",
+    "tags": ["知識", "経営", "ビジネス"],
+    "value": 70,
+    "growth": 0
+  },
+  {
+    "id": "param-resilience",
+    "name": "回復力",
+    "description": "挫折や失敗から立ち直り、前進し続ける力",
+    "category": "PERSONAL",
+    "tags": ["精神力", "忍耐", "克服"],
+    "value": 55,
+    "growth": 0
+  },
+  {
+    "id": "param-communication",
+    "name": "コミュニケーション能力",
+    "description": "自分の考えを効果的に伝え、他者の意見を理解する力",
+    "category": "SOCIAL",
+    "tags": ["対話", "表現", "理解"],
+    "value": 60,
+    "growth": 0
+  },
+  {
+    "id": "param-empathy",
+    "name": "共感力",
+    "description": "他者の感情や立場を理解し、寄り添う能力",
+    "category": "SOCIAL",
+    "tags": ["理解", "感情", "人間関係"],
+    "value": 50,
+    "growth": 0
+  },
+  {
+    "id": "param-customer-understanding",
+    "name": "顧客理解",
+    "description": "顧客のニーズや行動、動機を深く理解する能力",
+    "category": "BUSINESS",
+    "tags": ["顧客", "ニーズ", "洞察"],
+    "value": 45,
+    "growth": 0
+  },
+  {
+    "id": "param-adaptability",
+    "name": "適応力",
+    "description": "変化する状況や新しい情報に柔軟に対応する能力",
+    "category": "PERSONAL",
+    "tags": ["柔軟", "変化", "対応"],
+    "value": 58,
+    "growth": 0
+  },
+  {
+    "id": "param-humility",
+    "name": "謙虚さ",
+    "description": "自分の限界を認め、学び続ける姿勢",
+    "category": "PERSONAL",
+    "tags": ["謙虚", "学習", "自己認識"],
+    "value": 72,
+    "growth": 0
+  },
+  {
+    "id": "param-strategic-thinking",
+    "name": "戦略的思考",
+    "description": "長期的視点で全体像を捉え、計画を立てる能力",
+    "category": "MENTAL",
+    "tags": ["戦略", "計画", "思考"],
+    "value": 62,
+    "growth": 0
+  },
+  {
+    "id": "param-decision-making",
+    "name": "意思決定力",
+    "description": "情報を分析し、適切な判断を下す能力",
+    "category": "MENTAL",
+    "tags": ["判断", "決断", "分析"],
+    "value": 68,
+    "growth": 0
+  },
+  {
+    "id": "param-financial-acumen",
+    "name": "財務感覚",
+    "description": "財務状況を理解し、適切な経済的判断を下す能力",
+    "category": "BUSINESS",
+    "tags": ["財務", "経済", "資金"],
+    "value": 42,
+    "growth": 0
+  },
+  {
+    "id": "param-vision",
+    "name": "ビジョン力",
+    "description": "将来の可能性を描き、目標を設定する能力",
+    "category": "MENTAL",
+    "tags": ["将来", "目標", "イメージ"],
+    "value": 66,
+    "growth": 0
+  },
+  {
+    "id": "param-technical-skill",
+    "name": "技術力",
+    "description": "専門的な技術やスキルを習得し、活用する能力",
+    "category": "TECHNICAL",
+    "tags": ["技術", "専門", "スキル"],
+    "value": 35,
+    "growth": 0
+  },
+  {
+    "id": "param-teamwork",
+    "name": "チームワーク",
+    "description": "チームの一員として協力し、貢献する能力",
+    "category": "SOCIAL",
+    "tags": ["協力", "貢献", "調和"],
+    "value": 75,
+    "growth": 0
+  },
+  {
+    "id": "param-business-understanding",
+    "name": "ビジネス理解",
+    "description": "ビジネスの仕組みや目的、戦略を理解する能力",
+    "category": "BUSINESS",
+    "tags": ["理解", "ビジネス", "目的"],
+    "value": 68,
+    "growth": 0
+  },
+  {
+    "id": "param-technical-vision",
+    "name": "技術的ビジョン",
+    "description": "技術の将来性や可能性を見通す能力",
+    "category": "TECHNICAL",
+    "tags": ["将来", "技術", "展望"],
+    "value": 38,
+    "growth": 0
+  },
+  {
+    "id": "param-resource-management",
+    "name": "リソース管理",
+    "description": "人材、時間、予算などのリソースを効果的に配分・管理する能力",
+    "category": "MANAGEMENT",
+    "tags": ["管理", "配分", "効率"],
+    "value": 58,
+    "growth": 0
+  },
+  {
+    "id": "param-marketing-knowledge",
+    "name": "マーケティング知識",
+    "description": "マーケティングの理論や手法に関する専門知識",
+    "category": "BUSINESS",
+    "tags": ["マーケティング", "知識", "理論"],
+    "value": 52,
+    "growth": 0
+  },
+  {
+    "id": "param-customer-empathy",
+    "name": "顧客共感力",
+    "description": "顧客の感情や体験に共感し、理解する能力",
+    "category": "BUSINESS",
+    "tags": ["共感", "顧客", "理解"],
+    "value": 48,
+    "growth": 0
+  },
+  {
+    "id": "param-research-skills",
+    "name": "リサーチスキル",
+    "description": "情報を収集し、分析する能力",
+    "category": "MENTAL",
+    "tags": ["調査", "情報", "分析"],
+    "value": 55,
+    "growth": 0
+  },
+  {
+    "id": "param-analytical-thinking",
+    "name": "分析的思考",
+    "description": "情報を論理的に分析し、パターンや関連性を見出す能力",
+    "category": "MENTAL",
+    "tags": ["分析", "論理", "思考"],
+    "value": 64,
+    "growth": 0
+  },
+  {
+    "id": "param-data-driven-decision",
+    "name": "データ駆動型意思決定",
+    "description": "データに基づいて意思決定を行う能力",
+    "category": "BUSINESS",
+    "tags": ["データ", "分析", "判断"],
+    "value": 46,
+    "growth": 0
+  },
+  {
+    "id": "param-business-acumen",
+    "name": "ビジネス洞察力",
+    "description": "ビジネスチャンスやリスクを見抜く直感的な能力",
+    "category": "BUSINESS",
+    "tags": ["洞察", "機会", "リスク"],
+    "value": 60,
+    "growth": 0
+  },
+  {
+    "id": "param-stakeholder-management",
+    "name": "ステークホルダー管理",
+    "description": "様々な利害関係者との関係を構築・維持する能力",
+    "category": "MANAGEMENT",
+    "tags": ["関係", "交渉", "バランス"],
+    "value": 54,
+    "growth": 0
+  }
+]

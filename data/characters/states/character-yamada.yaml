@@ -1,0 +1,25 @@
+isActive: true
+emotionalState: NEUTRAL
+developmentStage: 5
+lastAppearance: 1
+parameters: []
+skills:
+  - 不明なスキル (5章)
+  - 不明なスキル (1章)
+  - 不明なスキル (3章)
+  - 不明なスキル (11章)
+activeGrowthPlanId: ''
+location: 山田哲也の会社
+lastStateChange:
+  type: TRANSFORMATION
+  chapterNumber: 2
+  description: 誠が起業を決意したものの、その始まりが想像と全く異なっていた。また、メンターである山田哲也の態度が豹変し、冷酷で機械的な声になる。
+promotionHistory:
+  - chapter: 4
+    title: Unknown Position
+    description: 高橋がネクストライフの社長から、一緒に新卒離職問題に取り組むように誘われる。
+    timestamp: 2025-05-15T11:56:49.553Z
+  - chapter: 5
+    title: Unknown Position
+    description: 高橋たちのプランへの協力をネクストライフが見送る。
+    timestamp: 2025-05-15T12:06:01.110Z

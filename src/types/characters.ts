@@ -1,0 +1,980 @@
+/**
+ * キャラクターに関連する型定義
+ */
+
+/**
+ * キャラクターの種類を表す型
+ * MAIN: メインキャラクター
+ * SUB: サブキャラクター
+ * MOB: モブキャラクター
+ */
+export type CharacterType = 'MAIN' | 'SUB' | 'MOB';
+
+/**
+ * キャラクターの役割を表す型
+ */
+export type CharacterRole = 'PROTAGONIST' | 'ANTAGONIST' | 'MENTOR' | 'ALLY' | 'RIVAL' | 'OTHER';
+
+/**
+ * 感情状態を表す型
+ */
+export type EmotionalState = 'HAPPY' | 'SAD' | 'ANGRY' | 'FEARFUL' | 'NEUTRAL' | 'EXCITED' | 'CONFUSED' | 'DETERMINED' | 'CONCERNED';
+
+/**
+ * 感情状態の定数
+ */
+export const EmotionalStateValues = {
+    HAPPY: 'HAPPY' as EmotionalState,
+    SAD: 'SAD' as EmotionalState,
+    ANGRY: 'ANGRY' as EmotionalState,
+    FEARFUL: 'FEARFUL' as EmotionalState,
+    NEUTRAL: 'NEUTRAL' as EmotionalState,
+    EXCITED: 'EXCITED' as EmotionalState,
+    CONFUSED: 'CONFUSED' as EmotionalState,
+    DETERMINED: 'DETERMINED' as EmotionalState,
+    CONCERNED: 'CONCERNED' as EmotionalState
+} as const;
+
+/**
+ * 関係性の種類を表す型
+ */
+export type RelationshipType =
+    'PARENT' | 'CHILD' | 'MENTOR' | 'STUDENT' | 'LEADER' | 'FOLLOWER' |
+    'LOVER' | 'PROTECTOR' | 'PROTECTED' | 'FRIEND' | 'ENEMY' | 'RIVAL' |
+    'COLLEAGUE' | 'NEUTRAL';
+
+/**
+ * 性格特性の定義
+ */
+export interface PersonalityTraits {
+    /** 特性のリスト（例: "勇敢", "慎重", "明るい"など） */
+    traits: string[];
+
+    /** 言葉使いや話し方のパターン */
+    speechPatterns?: string[];
+
+    /** 特徴的な癖や習慣 */
+    quirks?: string[];
+
+    /** 重要視する価値観 */
+    values?: string[];
+
+    /** 動的な性格特性（発展処理で使用） */
+    [key: string]: any;
+}
+
+/**
+ * キャラクターの外見に関する定義
+ */
+export interface Appearance {
+    /** 物理的特徴の説明 */
+    physicalDescription: string;
+
+    /** 特徴的な衣装や装飾品 */
+    clothing: string;
+
+    /** 際立った特徴 */
+    distinguishingFeatures: string[];
+}
+
+/**
+ * キャラクターの背景設定
+ */
+export interface Backstory {
+    /** 背景の概要 */
+    summary: string;
+
+    /** 重要な過去の出来事 */
+    significantEvents: string[];
+
+    /** 過去のトラウマや影響を受けた出来事 */
+    trauma?: string[];
+
+    /** 生い立ちに関する情報 */
+    origin?: string;
+
+    /** 詳細な歴史 (昇格時に生成) */
+    detailedHistory?: string;
+
+    /** 動機 (昇格時に生成) */
+    motivations?: string;
+
+    /** 秘密 (昇格時に生成) */
+    secrets?: string;
+}
+
+/**
+ * キャラクター間の関係性
+ */
+export interface Relationship {
+    /** 関係のある相手のキャラクターID */
+    targetId: string;
+
+    /** 関係を持つ相手の名前 */
+    targetName?: string;
+
+    /** 関係の種類 */
+    type: RelationshipType;
+
+    /** 関係の強さ（0-1） */
+    strength: number;
+
+    /** 関係の説明 */
+    description?: string;
+
+    /** 最後のインタラクション */
+    lastInteraction?: Date;
+
+    /** 関係の履歴 */
+    history?: any[];
+}
+
+/**
+ * 登場記録
+ */
+export interface CharacterAppearance {
+    chapterNumber: number;
+    timestamp: Date;
+    significance: number;
+    summary?: string;
+    emotionalImpact?: number;
+}
+
+/**
+ * インタラクション記録
+ */
+export interface Interaction {
+    chapterNumber: number;
+    targetCharacterId: string;
+    type: string;
+    description: string;
+    impact: number;
+    timestamp: Date;
+}
+
+/**
+ * 発展マイルストーン
+ */
+export interface DevelopmentMilestone {
+    stage: number;
+    description: string;
+    achievedAt?: Date;
+    chapterNumber?: number;
+}
+
+/**
+ * キャラクターの履歴
+ */
+export interface CharacterHistory {
+    appearances: CharacterAppearance[];
+    interactions: Interaction[];
+    developmentPath: DevelopmentMilestone[];
+}
+
+/**
+ * キャラクターの状態
+ */
+export interface CharacterState {
+    isActive: boolean;
+    relationships?: Relationship[];
+    developmentStage: number;
+    lastAppearance: number | null;
+    emotionalState: EmotionalState;
+    summary?: string;
+    significance?: number;
+    hasDialogue?: boolean;
+    changes?: CharacterChangeInfo[];
+    development: string;
+    isDeceased?: boolean;              // 死亡状態
+    maritalStatus?: string;            // 結婚状態
+    spouseId?: string | null;          // 配偶者ID
+    parentIds?: string[];              // 親キャラクターID
+    childrenIds?: string[];            // 子キャラクターID
+    skills?: string[];                 // 習得スキル
+    location?: string;                 // 現在地
+    lastStateChange?: {                // 最終状態変化
+        type: string;
+        chapterNumber: number;
+        description: string;
+    };
+    parameters?: CharacterParameter[];
+    skill?: Array<{
+        skillId: string;
+        acquired: Date;
+        level: number;
+        proficiency: number; // 0-100 習熟度
+    }>;
+    activeGrowthPlanId?: string;
+    completedGrowthPlans?: string[];
+    growthPhaseHistory?: Array<{
+        phaseId: string;
+        startedAt: Date;
+        completedAt?: Date;
+        chapterStart: number;
+        chapterEnd?: number;
+    }>;
+
+    promotionHistory?: Array<{
+        chapter: number;
+        title: string;
+        description: string;
+        timestamp: string;
+    }>;
+
+    injuries?: Array<{
+        id: string;
+        description: string;
+        severity: 'MINOR' | 'MODERATE' | 'SEVERE' | 'CRITICAL';
+        chapter: number;
+        isHealed: boolean;
+        timestamp: string;
+    }>;
+
+    health?: number; // 0-100の健康状態
+
+    transformations?: Array<{
+        type: string;
+        description: string;
+        chapter: number;
+        isPermanent: boolean;
+        timestamp: string;
+    }>;
+
+    forms?: Array<{
+        name: string;
+        description: string;
+        acquiredInChapter: number;
+    }>;
+
+    currentForm?: string; // 現在の形態
+}
+
+/**
+ * キャラクター変化情報
+ */
+export interface CharacterChangeInfo {
+    attribute: string;
+    previousValue: any;
+    currentValue: any;
+    classification?: {
+        type: string;
+        scope: string;
+        confidence: number;
+        explanation: string;
+        narrativeSignificance?: number;
+    };
+}
+
+/**
+ * 昇格履歴
+ */
+export interface PromotionRecord {
+    fromType: CharacterType;
+    toType: CharacterType;
+    timestamp: Date;
+    reason?: string;
+}
+
+/**
+ * キャラクターメタデータ
+ */
+export interface CharacterMetadata {
+    createdAt: Date;
+    lastUpdated: Date;
+    version?: number;
+    tags?: string[];
+    /** 永続的イベント履歴 */
+    persistentEvents?: Array<{
+        type: string;
+        chapterNumber: number;
+        description: string;
+    }>;
+}
+
+
+// スキル定義型
+export interface Skill {
+    id: string;
+    name: string;
+    description: string;
+    level: number;         // 0: 未習得, 1-5: 初級〜伝説級
+    requiredParameters: Array<{
+        parameterId: string;
+        minValue: number;    // このパラメータの最小必要値
+    }>;
+    prerequisites: string[]; // 前提スキルID
+    effects: Array<{
+        targetId: string;    // 影響するパラメータID
+        modifier: number;    // 修正値
+    }>;
+    learningDifficulty: number; // 1-10 習得難易度
+    tags: string[];        // タグ（「戦闘」「ビジネス」「魔法」など）
+    genre: string[];       // 該当ジャンル
+}
+
+// 成長計画型
+export interface GrowthPlan {
+    id: string;
+    characterId: string;
+    name: string;
+    description: string;
+    targetParameters: Array<{
+        parameterId: string;
+        targetValue: number;
+        priority: number;    // 1-10 優先度
+    }>;
+    targetSkills: Array<{
+        skillId: string;
+        priority: number;    // 1-10 優先度
+        narrativeRequirement?: string; // 物語的要件（「師匠との出会い」など）
+    }>;
+    growthPhases: GrowthPhase[];
+    estimatedDuration: number;  // 予想所要章数
+    isActive: boolean;
+}
+
+export interface GrowthPhase {
+    id: string;
+    name: string;
+    description: string;
+    stageRequirement: number;   // 必要発展段階
+    chapterEstimate: [number, number]; // 予想章範囲
+    parameterChanges: Array<{
+        parameterId: string;
+        change: number;      // 変化量
+    }>;
+    skillAcquisitions: string[]; // 習得スキルID
+    narrativeElements: string[]; // 物語要素（「挫折」「師匠との出会い」など）
+    completionCriteria: string; // 完了条件
+}
+
+export interface CharacterParameter {
+    id: string;
+    name: string;
+    description: string;
+    value: number;         // 現在値（0-100）
+    growth: number;        // 成長率
+    category: ParameterCategory;
+    tags: string[];        // タグ（「戦闘」「ビジネス」「対人」など）
+}
+
+export type ParameterCategory = 'PHYSICAL' | 'MENTAL' | 'SOCIAL' | 'TECHNICAL' | 'SPECIAL';
+
+
+// キャラクターの精神的成長状態
+export interface MentalGrowthState {
+    traumas: Array<{
+        id: string;
+        description: string;
+        resolved: boolean;
+        resolutionChapter?: number;
+    }>;
+    beliefs: Array<{
+        id: string;
+        description: string;
+        strength: number;    // 1-10 信念の強さ
+        acquired: number;    // 獲得章番号
+    }>;
+    worldview: string;     // 世界観/人生観
+    motivation: string;    // 根本的な動機
+    emotionalPatterns: Array<{
+        trigger: string;
+        response: string;
+        intensity: number;   // 1-10 強度
+    }>;
+}
+
+/**
+ * キャラクター情報の完全な定義
+ */
+export interface Character {
+    /** 一意のキャラクターID */
+    id: string;
+
+    /** キャラクター名 */
+    name: string;
+
+    /** ショートネーム配列 */
+    shortNames: string[];
+
+    /** 他キャラからの呼称 */
+    nicknames?: Record<string, string[]>;
+
+    /** キャラクターの説明 */
+    description: string;
+
+    /** キャラクターの種類 */
+    type: CharacterType;
+
+    /** キャラクターの重要度 (0-1) */
+    significance?: number;
+
+    /** キャラクターの役割 */
+    role?: CharacterRole;
+
+    /** キャラクターの目標 */
+    goals?: string[];
+
+    /** キャラクターの初登場章 */
+    firstAppearance?: number;
+
+    /** 性格特性 */
+    personality?: PersonalityTraits;
+
+    /** 外見 */
+    appearance?: Appearance;
+
+    /** 背景設定 */
+    backstory?: Backstory;
+
+    /** 他キャラクターとの関係性 */
+    relationships?: Relationship[];
+
+    /** キャラクターの状態 */
+    state: CharacterState;
+
+    /** キャラクターの現在の状態 */
+    currentState?: string;
+
+    /** キャラクターの感情状態 */
+    emotionalState?: string;
+
+    /** キャラクターの履歴 */
+    history: CharacterHistory;
+
+    /** 昇格履歴 */
+    promotionHistory?: PromotionRecord[];
+
+    /** メタデータ */
+    metadata: CharacterMetadata;
+
+    /** 心理情報 - フェーズ1: 深層キャラクター心理モデル */
+    psychology?: CharacterPsychology;
+}
+
+/**
+ * キャラクター作成時のデータ
+ */
+export interface CharacterData {
+    name: string;
+    shortNames?: string[];
+    nicknames?: Record<string, string[]>;
+    type: CharacterType;
+    description: string;
+    role?: CharacterRole;
+    personality?: PersonalityTraits;
+    appearance?: Appearance;
+    backstory?: Backstory;
+    relationships?: Relationship[];
+    state?: {
+        isActive?: boolean;
+        emotionalState?: EmotionalState;
+        developmentStage?: number;
+        lastAppearance?: number | null;
+        activeGrowthPlanId?: string;
+        completedGrowthPlans?: string[];
+        growthPhaseHistory?: Array<{
+            phaseId: string;
+            startedAt: Date;
+            completedAt?: Date;
+            chapterStart: number;
+            chapterEnd?: number;
+        }>;
+
+        // 既存のプロパティ
+        isDeceased?: boolean;
+        maritalStatus?: string;
+        spouseId?: string | null;
+        parentIds?: string[];
+        childrenIds?: string[];
+        skills?: string[];
+        location?: string;
+        lastStateChange?: {
+            type: string;
+            chapterNumber: number;
+            description: string;
+        };
+        parameters?: CharacterParameter[];
+        skill?: Array<{
+            skillId: string;
+            acquired: Date;
+            level: number;
+            proficiency: number; // 0-100 習熟度
+        }>;
+
+        // 新規追加プロパティ - CharacterStateに既に存在するが、CharacterData.stateには未定義だったプロパティ
+        development?: string;
+        significance?: number;
+        hasDialogue?: boolean;
+        changes?: CharacterChangeInfo[];
+        relationships?: Relationship[];
+        summary?: string;
+
+        // 永続的イベント処理のために追加が必要なプロパティ
+        promotionHistory?: Array<{
+            chapter: number;
+            title: string;
+            description: string;
+            timestamp: string;
+        }>;
+
+        injuries?: Array<{
+            id: string;
+            description: string;
+            severity: 'MINOR' | 'MODERATE' | 'SEVERE' | 'CRITICAL';
+            chapter: number;
+            isHealed: boolean;
+            timestamp: string;
+        }>;
+
+        health?: number;
+
+        transformations?: Array<{
+            type: string;
+            description: string;
+            chapter: number;
+            isPermanent: boolean;
+            timestamp: string;
+        }>;
+
+        forms?: Array<{
+            name: string;
+            description: string;
+            acquiredInChapter: number;
+        }>;
+
+        currentForm?: string;
+    };
+    metadata?: {
+        tags?: string[];
+    };
+}
+
+/**
+ * キャラクター評価メトリクス
+ */
+export interface CharacterMetrics {
+    appearances: number;
+    interactions: number;
+    plotRelevance: number;
+    characterDevelopment: number;
+    readerEngagement: number;
+}
+
+/**
+ * キャラクター昇格の評価結果
+ */
+export interface PromotionEvaluation {
+    /** 昇格の適格性 */
+    eligible: boolean;
+
+    /** 目標キャラクタータイプ */
+    targetType: CharacterType | null;
+
+    /** 昇格スコア */
+    score: number;
+
+    /** 評価レコメンデーション */
+    recommendation: string;
+}
+
+/**
+ * キャラクタークラスター
+ */
+export interface CharacterCluster {
+    id: string;
+    members: string[];
+    dominantRelation: RelationshipType;
+    cohesion: number;
+}
+
+/**
+ * 関係性の対立
+ */
+export interface RelationshipTension {
+    characters: string[];
+    type: RelationshipType;
+    intensity: number;
+    description: string;
+}
+
+/**
+ * 関係性分析
+ */
+export interface RelationshipAnalysis {
+    clusters: CharacterCluster[];
+    tensions: RelationshipTension[];
+    developments: any[];
+    visualData: any;
+}
+
+/**
+ * 発展影響
+ */
+export interface DevelopmentImpact {
+    personality: Record<string, number>;
+    relationships: Record<string, { change: number; reason: string }>;
+    skills: Record<string, { improvement: number; reason: string }>;
+    emotional: Record<string, any>;
+    narrative: number;
+}
+
+/**
+ * キャラクター発展
+ */
+export interface CharacterDevelopment {
+    personalityChanges: Record<string, number>;
+    relationshipChanges: Record<string, { change: number; reason: string }>;
+    skillChanges: Record<string, { improvement: number; reason: string }>;
+    emotionalGrowth: Record<string, any>;
+    narrativeSignificance: number;
+    stageProgression?: {
+        from: number;
+        to: number;
+        reason: string;
+    };
+}
+
+/**
+ * 発展経路
+ */
+export interface DevelopmentPath {
+    milestones: Milestone[];
+    growthEvents: GrowthEvent[];
+    transformationArcs: TransformationArc[];
+    phase: DevelopmentPathPhase;
+    targetStage: number;
+    currentStage: number;
+    estimatedCompletionChapter: number;
+}
+
+/**
+ * チャプターイベント
+ */
+export interface ChapterEvent {
+    id: string;
+    type: string;
+    subType?: string;
+    description?: string;
+    affectedCharacters: string[];
+    relatedCharacters?: string[];
+    intensity?: number;
+    outcome?: 'SUCCESS' | 'FAILURE' | 'NEUTRAL';
+    skillArea?: string;
+    additionalData?: {
+        relatedSkills?: string[];
+        masteryLevel?: number;
+        [key: string]: any;
+    };
+}
+
+/**
+ * タイミング要因
+ */
+export interface TimingFactor {
+    type: 'PLOT_RELEVANCE' | 'CHARACTER_DEVELOPMENT' | 'NARRATIVE_PACING' | 'READER_EXPECTATIONS';
+    score: number;
+    impact: 'LOW' | 'MEDIUM' | 'HIGH';
+    description: string;
+}
+
+/**
+ * タイミング分析
+ */
+export interface TimingAnalysis {
+    optimalChapter: number;
+    significance: 'LOW' | 'MEDIUM' | 'HIGH';
+    score: number;
+    reason: string;
+    factors: TimingFactor[];
+    alternatives: number[];
+    preparation: string[];
+}
+
+/**
+ * タイミング推奨
+ */
+export interface TimingRecommendation {
+    recommendedChapter: number;
+    significance: 'LOW' | 'MEDIUM' | 'HIGH';
+    reason: string;
+    alternatives: number[];
+    preparationNeeded: string[];
+}
+
+/**
+ * ストーリーコンテキスト
+ */
+export interface StoryContext {
+    currentChapter: number;
+    totalChapters: number;
+    plotPoints: any[];
+    storyPacing?: string;
+    currentArc?: {
+        name: string;
+        theme: string;
+        approximateChapters: [number, number];
+    };
+    recentAppearances: any[];
+    [key: string]: any;
+}
+
+/**
+ * キャラクター発展経路のフェーズを表す型
+ */
+export type DevelopmentPathPhase =
+    'INTRODUCTION' | 'PROGRESSION' | 'MAJOR_TRANSFORMATION' |
+    'REFINEMENT' | 'MINOR_DEVELOPMENT' | 'SUPPORTING_ROLE' | 'STATIC';
+
+/**
+ * 変容アークのタイプを表す型
+ */
+export type ArcType =
+    'REDEMPTION' | 'FALL' | 'GROWTH' | 'CORRUPTION' | 'DISILLUSIONMENT' |
+    'MATURATION' | 'EDUCATION' | 'ENLIGHTENMENT' | 'TRAGEDY' | 'REBIRTH' |
+    'DISCOVERY' | 'SUPPORTING' | 'PARALLEL';
+
+/**
+ * 変容アーク情報
+ */
+export interface TransformationArc {
+    type: ArcType;
+    description: string;
+    theme: string;
+    beginStage: number;
+    peakStage: number;
+    resolutionStage: number;
+    keyPoints: string[];
+}
+
+/**
+ * 成長イベント情報
+ */
+export interface GrowthEvent {
+    type: string;
+    targetChapter: number;
+    description: string;
+    significance: number;
+    triggers: string[];
+    outcomes: string[];
+    completed: boolean;
+}
+
+/**
+ * 発展マイルストーン情報
+ */
+export interface Milestone {
+    stage: number;
+    description: string;
+    requirements: any;
+    estimatedChapter: number;
+    achieved: boolean;
+}
+
+/**
+ * キャラクター変化のタイプを表す型
+ * - GROWTH: 永続的な成長や性格の発展
+ * - TEMPORARY: 一時的な感情や状態の変化
+ * - CONTRADICTION: 既存の性格・設定と矛盾する変化
+ */
+export type ChangeType = 'GROWTH' | 'TEMPORARY' | 'CONTRADICTION';
+
+/**
+ * 変化の影響範囲を表す型
+ */
+export type ChangeScope = 'CORE_PERSONALITY' | 'RELATIONSHIPS' | 'SKILLS' | 'EMOTIONAL_STATE' | 'APPEARANCE' | 'MOTIVATION';
+
+/**
+ * キャラクター変化の分類結果を表すインターフェース
+ */
+export interface ChangeClassification {
+    /** 変化のタイプ */
+    type: ChangeType;
+    /** 変化の影響範囲 */
+    scope: ChangeScope;
+    /** 分類の確信度（0-1） */
+    confidence: number;
+    /** 分類の説明 */
+    explanation: string;
+    /** プロット上の重要度（0-1）*/
+    narrativeSignificance?: number;
+}
+
+/**
+ * キャラクターの変化項目を表すインターフェース
+ */
+export interface CharacterChange {
+    /** 変化した属性名 */
+    attribute: string;
+    /** 変化前の値 */
+    previousValue: any;
+    /** 変化後の値 */
+    currentValue: any;
+    /** 変化の分類（分類後に設定） */
+    classification?: ChangeClassification;
+}
+
+/**
+ * キャラクター状態の差分を表すインターフェース
+ */
+export interface CharacterDiff {
+    /** キャラクター名 */
+    name: string;
+    /** キャラクターID */
+    id: string;
+    /** 最後の登場チャプター */
+    lastAppearance?: number;
+    /** 現在の発展段階 */
+    developmentStage?: number;
+    /** 検出された変化のリスト */
+    changes: CharacterChange[];
+}
+
+/**
+ * プロット文脈情報を表すインターフェース
+ */
+export interface PlotContext {
+    /** 最近のチャプター要約 */
+    recentSummaries: string;
+    /** 重要イベント */
+    keyEvents: string[];
+    /** 現在のアーク情報 */
+    currentArc?: string;
+    /** テーマ情報 */
+    themes?: string[];
+}
+
+/**
+ * キャラクターテンプレート
+ */
+export interface CharacterTemplate {
+    id: string;
+    name: string;
+    description?: string;
+    personality?: {
+        traits?: string[];
+        values?: string[];
+        quirks?: string[];
+    };
+    backstory?: {
+        template?: string;
+        significantEvents?: string[];
+        origin?: string;
+    };
+    relationships?: Relationship[];
+    suggestedType?: CharacterType;
+    developmentPath?: any;
+    roleSettings?: {
+        preferredEmotionalState?: EmotionalState;
+        initialDevelopmentStage?: number;
+    };
+}
+
+/**
+* 動的に生成されたキャラクター
+*/
+export interface DynamicCharacter extends Character {
+    // 特別なプロパティが必要な場合は追加
+}
+
+/**
+* ナラティブ状態
+*/
+export interface NarrativeState {
+    theme?: string;
+    tone?: string;
+    setting?: string;
+    arc?: string;
+    pacing?: string;
+}
+
+/**
+ * キャラクターの心理状態を表す型 - フェーズ1: 深層キャラクター心理モデル
+ */
+export interface CharacterPsychology {
+    /** 現在の欲求 */
+    currentDesires: string[];
+
+    /** 現在の恐れ */
+    currentFears: string[];
+
+    /** 内的葛藤 */
+    internalConflicts: string[];
+
+    /** 感情状態（感情名:強度） */
+    emotionalState: { [key: string]: number };
+
+    /** 他キャラへの感情的態度 */
+    relationshipAttitudes: { [characterId: string]: RelationshipAttitude };
+}
+
+/**
+ * キャラクターの他者への感情的態度 - フェーズ1: 深層キャラクター心理モデル
+ */
+export interface RelationshipAttitude {
+    /** 感情（信頼、疑念、愛情など） */
+    attitude: string;
+
+    /** 強度（0-1） */
+    intensity: number;
+
+    /** 変化しつつあるか */
+    isDynamic: boolean;
+
+    /** 最近の変化の説明 */
+    recentChange: string;
+}
+
+/**
+ * 章の感情分析を表す型 - フェーズ1: 感情アークの設計システム
+ */
+export interface ChapterEmotionAnalysis {
+    /** 感情的次元の分析 */
+    emotionalDimensions: {
+        /** 希望と絶望の間の感情的変移 */
+        hopeVsDespair: EmotionalProgression;
+        /** 安心と緊張の間の感情的変移 */
+        comfortVsTension: EmotionalProgression;
+        /** 喜びと悲しみの間の感情的変移 */
+        joyVsSadness: EmotionalProgression;
+        /** 共感と孤立の間の感情的変移 */
+        empathyVsIsolation: EmotionalProgression;
+        /** 好奇心と無関心の間の感情的変移 */
+        curiosityVsIndifference: EmotionalProgression;
+    };
+    /** 全体的な感情的トーン */
+    overallTone: string;
+    /** 感情的影響力 (0-10) */
+    emotionalImpact: number;
+}
+
+/**
+ * 感情的変移を表す型 - フェーズ1: 感情アークの設計システム
+ */
+export interface EmotionalProgression {
+    /** 開始時の感情レベル (0-10) */
+    start: number;
+    /** 中間時の感情レベル (0-10) */
+    middle: number;
+    /** 終了時の感情レベル (0-10) */
+    end: number;
+}
+
+/**
+ * 感情アークの設計を表す型 - フェーズ1: 感情アークの設計システム
+ */
+export interface EmotionalArcDesign {
+    /** 推奨される感情的トーン */
+    recommendedTone: string;
+    /** 感情的な旅 */
+    emotionalJourney: {
+        /** 冒頭部の感情設計 */
+        opening: { dimension: string, level: number }[];
+        /** 展開部の感情設計 */
+        development: { dimension: string, level: number }[];
+        /** 結末部の感情設計 */
+        conclusion: { dimension: string, level: number }[];
+    };
+    /** 設計理由の説明 */
+    reason: string;
+}

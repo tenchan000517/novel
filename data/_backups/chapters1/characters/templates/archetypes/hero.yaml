@@ -1,0 +1,22 @@
+# アーキタイプテンプレート例 (characters/templates/archetypes/hero.yaml)
+id: "hero"
+name: "英雄"
+description: "勇敢で正義感が強く、他者を守るために立ち上がるキャラクター"
+personality:
+  traits:
+    - "勇敢"
+    - "正義感"
+    - "責任感"
+  values:
+    - "正義"
+    - "勇気"
+    - "自己犠牲"
+  quirks:
+    - "危険を顧みない"
+    - "弱者を守る"
+backstory:
+  template: "{name}は幼い頃から正義を重んじ、弱い立場の人々を守ることに使命感を持っていました。"
+  significantEvents:
+    - "幼少期に弱い者いじめを目撃し立ち向かった"
+    - "強大な敵に立ち向かい勝利した経験"
+  origin: "平凡な家庭の出身だが、非凡な資質を持っていた"

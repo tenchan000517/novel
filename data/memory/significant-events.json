@@ -1,0 +1,149 @@
+[
+  {
+    "id": "char-mem-character-takahashi-ch1-1748479440600",
+    "chapterNumber": 1,
+    "description": "章1に登場",
+    "involvedCharacters": [
+      "高橋誠"
+    ],
+    "type": "event",
+    "significance": 0.7,
+    "timestamp": "2025-05-29T00:44:00.600Z",
+    "location": "",
+    "relatedEvents": []
+  },
+  {
+    "id": "char-mem-character-yamada-ch1-1748479440608",
+    "chapterNumber": 1,
+    "description": "章1に登場",
+    "involvedCharacters": [
+      "山田哲也"
+    ],
+    "type": "event",
+    "significance": 0.7,
+    "timestamp": "2025-05-29T00:44:00.608Z",
+    "location": "",
+    "relatedEvents": []
+  },
+  {
+    "id": "char-mem-character-sato-ch1-1748479440620",
+    "chapterNumber": 1,
+    "description": "章1に登場",
+    "involvedCharacters": [
+      "佐藤健太"
+    ],
+    "type": "event",
+    "significance": 0.7,
+    "timestamp": "2025-05-29T00:44:00.620Z",
+    "location": "",
+    "relatedEvents": []
+  },
+  {
+    "id": "char-mem-character-suzuki-ch1-1748479440635",
+    "chapterNumber": 1,
+    "description": "章1に登場",
+    "involvedCharacters": [
+      "鈴木美咲"
+    ],
+    "type": "event",
+    "significance": 0.7,
+    "timestamp": "2025-05-29T00:44:00.635Z",
+    "location": "",
+    "relatedEvents": []
+  },
+  {
+    "id": "event-1-1748479445490-rxkox",
+    "chapterNumber": 1,
+    "description": "ビジネスコンテストで高橋は理想論を語り、審査員から批判を受け、敗北する。同期の田中は大手IT企業への内定が決まっており、高橋は焦燥感を覚える。",
+    "involvedCharacters": [
+      "高橋誠",
+      "田中"
+    ],
+    "location": "大学のスタートアップラボ",
+    "type": "CONFLICT",
+    "significance": 0.8,
+    "consequence": "高橋の自信喪失と焦燥感。起業への意識の高まり。",
+    "timestamp": "2025-05-29T00:44:05.490Z",
+    "relatedEvents": [
+      "event-1-1748479445523-6hbsx"
+    ]
+  },
+  {
+    "id": "event-1-1748479445492-3zyaf",
+    "chapterNumber": 1,
+    "description": "高橋は起業家育成プロジェクトの説明会に参加し、メンターの山田哲也と出会う。山田は「問いの質」の重要性を説く。",
+    "involvedCharacters": [
+      "高橋誠",
+      "山田哲也"
+    ],
+    "location": "大学内講義室",
+    "type": "DISCOVERY",
+    "significance": 0.9,
+    "consequence": "高橋は起業に必要な本質を理解し、顧客視点の重要性に気づく。起業家育成プロジェクトへの参加を決意。",
+    "timestamp": "2025-05-29T00:44:05.492Z",
+    "relatedEvents": []
+  },
+  {
+    "id": "event-1-1748479445501-6yez8",
+    "chapterNumber": 1,
+    "description": "高橋は山田に起業家育成プロジェクトへの参加を申し込む。山田は高橋の覚悟を問い、プロジェクトへの参加を許可する。",
+    "involvedCharacters": [
+      "高橋誠",
+      "山田哲也"
+    ],
+    "location": "大学内講義室",
+    "type": "PROMISE",
+    "significance": 0.7,
+    "consequence": "高橋は起業家としての第一歩を踏み出す。高橋の生活が一変する。",
+    "timestamp": "2025-05-29T00:44:05.501Z",
+    "relatedEvents": []
+  },
+  {
+    "id": "event-1-1748479445514-cl5vw",
+    "chapterNumber": 1,
+    "description": "高橋は佐藤と鈴木をチームに誘い、新卒の早期離職問題に取り組む。高橋は企業側の視点から問題を見ていたが、佐藤と鈴木の意見を聞き、新卒自身の視点の重要性に気づく。",
+    "involvedCharacters": [
+      "高橋誠",
+      "佐藤健太",
+      "鈴木美咲"
+    ],
+    "location": "大学のスタートアップラボ",
+    "type": "DISCOVERY",
+    "significance": 0.8,
+    "consequence": "高橋は顧客視点の重要性を再認識し、問題解決へのアプローチを修正する。",
+    "timestamp": "2025-05-29T00:44:05.514Z",
+    "relatedEvents": []
+  },
+  {
+    "id": "event-1-1748479445523-6hbsx",
+    "chapterNumber": 1,
+    "description": "顧客リサーチの結果、新卒の早期離職の原因が複雑であることが判明し、高橋は問題の複雑さに圧倒され、自己肯定感が揺らぎ始める。",
+    "involvedCharacters": [
+      "高橋誠",
+      "佐藤健太",
+      "鈴木美咲"
+    ],
+    "location": "大学のスタートアップラボ",
+    "type": "CONFLICT",
+    "significance": 0.7999999999999999,
+    "consequence": "高橋は自分の無力さを痛感し、自己肯定感が低下する。しかし、学び続ける決意をする。",
+    "timestamp": "2025-05-29T00:44:05.523Z",
+    "relatedEvents": [
+      "event-1-1748479445490-rxkox"
+    ]
+  },
+  {
+    "id": "event-1-1748479445533-ar7u9",
+    "chapterNumber": 1,
+    "description": "高橋は、自分の弱点と向き合い、学び続けることを決意する。起業家としての第一歩を踏み出す。",
+    "involvedCharacters": [
+      "高橋誠"
+    ],
+    "location": "大学の屋上",
+    "type": "RESOLUTION",
+    "significance": 1,
+    "consequence": "高橋は起業家としての成長を始める。",
+    "timestamp": "2025-05-29T00:44:05.533Z",
+    "relatedEvents": []
+  }
+]

@@ -1,0 +1,220 @@
+id: supporting_character
+name: エリナ・ブックキーパー
+shortNames:
+  - エリナ
+  - 司書
+nicknames:
+  protagonist:
+    - エリナさん
+    - 司書さん
+  mentor:
+    - ブックキーパー君
+    - エリナ君
+  antagonist:
+    - 司書
+    - ブックキーパー
+  student:
+    - エリナ先生
+type: SUB
+role: ALLY
+description: 45歳。アルディア王立魔法アカデミーの図書館司書長。膨大な書物に関する知識と、秘密の情報網を持つ。表向きは穏やかな学者だが、古代魔法の隠された知識の守護者でもある。
+personality:
+  traits:
+    - 博識
+    - 観察力が鋭い
+    - 慎重
+    - 表面上は控えめ
+    - 内面は強靭
+  speechPatterns:
+    - 文学的な言い回しを好む
+    - 静かな声だが、要点を明確に伝える
+    - 時折古語や引用を挟む
+  quirks:
+    - 会話中に適切な本や文献を即座に思い出して引用する
+    - 常に小さなメモ帳に観察したことを書き留める
+    - 本を扱う時だけ眼鏡を掛ける
+  values:
+    - 知識の保存
+    - 自由な学問
+    - バランスの取れた改革
+    - 歴史からの学び
+appearance:
+  summary: 落ち着いた茶色の髪を質素にまとめた中年女性。常に上質だが地味な司書用ローブを着用。鋭い観察力を感じさせる知的な瞳と、微かな笑みを浮かべることが多い穏やかな表情。
+  distinctiveFeatures:
+    - 知性を感じさせる明るい茶色の瞳
+    - 常に携帯している古い革製のメモ帳
+    - 本を読む時だけつける半月型の眼鏡
+  clothing: 紺色と茶色の質素だが手入れの行き届いた司書ローブ。多数のポケットが実用的に配置されている。
+  physique: 平均的な体格だが、図書館での肉体労働で意外と強靭。
+  age: 45
+  gender: 女性
+backstory:
+  summary: >-
+    アルディア王国中央部の学者家系に生まれるが、大学者を輩出する名門ではなく、代々図書館や書庫で働いてきた家系。10代で王立図書館に見習いとして入り、その勤勉さと記憶力で頭角を現す。25年以上アカデミー図書館に務め、15年前に司書長に就任。表向きは伝統を重んじる穏健派として振る舞いながら、実は「知識保全ネットワーク」という秘密組織の重要メンバーで、禁断とされる古代魔法の知識や書物を密かに保護している。
+  significantEvents:
+    - 18歳で偶然発見した禁断書の隠し場所が、現在の秘密活動の始まり
+    - 25歳で当時の司書長から秘密組織への勧誘を受ける
+    - 40年前の粛清の際、多くの貴重書を隠し場所に移して保護した功績
+    - アーロン・シルバーウッドとの秘密の協力関係
+  origin: アルディア王国中央部、学術都市グレイスピア
+  trauma:
+    - 40年前の粛清で同僚が逮捕される場面を目撃
+    - 秘密保護のため、親しい友人にも真実を明かせない孤独
+  motivations: 知識の保存と継承。バランスの取れた改革の支援。次世代の適切な指導者の育成。
+  secrets:
+    - 図書館の地下に禁断書の隠し部屋がある
+    - 「知識保全ネットワーク」の主要連絡係として国境を越えた情報網を持つ
+    - アーロン・シルバーウッドの最後の手記を保管している
+relationships:
+  - targetId: protagonist
+    type: MENTOR
+    strength: 0.8
+    description: その才能と性格を高く評価し、密かに支援。祖父との関係から特別な親しみを感じている。必要な情報と助言を時折提供している。
+  - targetId: mentor
+    type: ALLY
+    strength: 0.9
+    description: 長年の同志であり、秘密の活動仲間。互いに信頼し、革新的な変化を目指す裏の協力関係。
+  - targetId: antagonist
+    type: NEUTRAL
+    strength: 0.4
+    description: 表面上は敬意を示す従順な司書だが、内心では彼の狭量さと権力志向を批判的に見ている。知識への統制に抵抗している。
+state:
+  isActive: true
+  emotionalState: HAPPY
+  developmentStage: 1
+  lastAppearance: 2
+history:
+  appearances:
+    - chapterNumber: 1
+      timestamp: 2025-05-08T08:50:19.756Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 3
+      timestamp: 2025-05-08T08:56:36.943Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーは、アカデミーで最も博識な人物の一人であり、古代魔法に関する知識も豊富だと聞いていた
+      emotionalImpact: 0.1
+    - chapterNumber: 5
+      timestamp: 2025-05-08T09:02:42.727Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーは、ルナの姿を見つけると、優しく微笑みかけた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-11T10:13:39.991Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-11T10:17:32.772Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーは、いつも穏やかな笑顔でルナを迎えてくれた
+      emotionalImpact: 0.1
+    - chapterNumber: 11
+      timestamp: 2025-05-11T10:52:40.449Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 12
+      timestamp: 2025-05-11T10:56:57.952Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーは、セバスチャンの姿を認めると、恭しく頭を下げた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-12T09:01:40.810Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-12T09:08:24.749Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-12T09:16:23.428Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-12T09:21:15.647Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 5
+      timestamp: 2025-05-12T09:34:34.786Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-12T14:13:06.272Z
+      significance: 0.3
+      summary: エリナ・ブックキーパーが登場
+      emotionalImpact: 0
+  developmentPath: []
+  interactions:
+    - chapterNumber: 3
+      targetCharacterId: 02c09bb30976556b
+      type: ENCOUNTER
+      description: エリナ・ブックキーパーとルナの交流
+      impact: 0.5
+      timestamp: 2025-05-08T08:56:37.169Z
+    - chapterNumber: 5
+      targetCharacterId: 02c09bb30976556b
+      type: ENCOUNTER
+      description: エリナ・ブックキーパーとルナの交流
+      impact: 0.6
+      timestamp: 2025-05-08T09:02:43.134Z
+abilities:
+  main:
+    - name: 完全記憶
+      description: 読んだ書物や聞いた情報を詳細に記憶する能力。アカデミー図書館の膨大な蔵書の配置を完全に把握している。
+      level: 10
+    - name: 知識保全魔法
+      description: 書物や文書を劣化や破壊から守る特殊な魔法。禁断書の秘密保管に活用。
+      level: 8
+  secondary:
+    - name: 情報解析
+      description: 断片的な情報から全体像を構築する分析能力。様々な情報源からの情報を統合して真実を見抜く。
+      level: 9
+    - name: 存在感薄化
+      description: 必要に応じて存在感を薄め、注目されないようにする小規模な魔法。監視や追跡を避けるのに有効。
+      level: 7
+goals:
+  primary: 知識、特に古代魔法に関する貴重な情報を保存し、適切な人物に継承すること
+  secondary:
+    - バランスの取れた改革を支援すること
+    - アカデミー図書館の独立性を守ること
+    - 「知識保全ネットワーク」の活動を維持・拡大すること
+  hidden: アーロン・シルバーウッドの遺志を継ぎ、彼の最後の研究を適切な時期にルナに伝えること
+metadata:
+  createdAt: 2025-05-04T09:30:00.000Z
+  lastUpdated: 2025-05-12T14:13:06.272Z
+  version: 15
+  tags:
+    - 司書
+    - 学者
+    - 情報提供者
+    - 秘密の守護者
+psychology:
+  currentDesires:
+    - 古代魔法の知識を保護し、次世代に伝えること
+    - 知識保全ネットワークの活動を円滑に進めること
+    - アカデミー図書館の秩序と伝統を守ること
+    - ルナのような才能ある人物を育成し、知識保全ネットワークに引き入れること
+    - 自身の秘密が露見しないこと
+  currentFears:
+    - 古代魔法の知識が誤った形で利用されること
+    - 知識保全ネットワークの活動が外部に漏れること
+    - 自身の秘密が暴露され、地位を失うこと
+    - 古代魔法の知識が失われること
+  internalConflicts:
+    - 伝統と革新の間での葛藤（アカデミーの秩序を守りながら、古代魔法の知識を保護すること）
+    - 表面上の穏健さと、内面の強靭さのバランス
+    - 秘密主義と、ルナのような人物との関係構築
+  emotionalState:
+    警戒心: 0.7
+    使命感: 0.8
+    安堵: 0.3
+    期待: 0.4
+    孤独: 0.2
+  relationshipAttitudes: {}

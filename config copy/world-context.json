@@ -1,0 +1,40 @@
+{
+  "genre": "classic",
+  "previousLocation": "家のリビング",
+  "currentLocation": "家のリビング",
+  "currentTimeOfDay": "早朝の静寂",
+  "currentWeather": "晴れ",
+  "currentAtmosphere": "神秘的で不思議な感覚",
+  "currentBusinessPhase": "IDEA_PHASE",
+  "currentArcNumber": 1,
+  "environmentHistory": [
+    {
+      "location": "山の頂上",
+      "timeOfDay": "深夜の静寂",
+      "weather": "霧",
+      "atmosphere": "平和で穏やかな雰囲気",
+      "timestamp": "2025-05-28T02:51:16.854Z"
+    },
+    {
+      "location": "川のほとり",
+      "timeOfDay": "夕方の落ち着いた時間",
+      "weather": "曇り",
+      "atmosphere": "静寂に包まれた集中空間",
+      "timestamp": "2025-05-28T02:54:12.465Z"
+    },
+    {
+      "location": "森の中の小道",
+      "timeOfDay": "昼間の活動時間",
+      "weather": "小雨",
+      "atmosphere": "平和で穏やかな雰囲気",
+      "timestamp": "2025-05-28T02:54:14.362Z"
+    },
+    {
+      "location": "家のリビング",
+      "timeOfDay": "早朝の静寂",
+      "weather": "晴れ",
+      "atmosphere": "神秘的で不思議な感覚",
+      "timestamp": "2025-05-28T03:38:35.410Z"
+    }
+  ]
+}

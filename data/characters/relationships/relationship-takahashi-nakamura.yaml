@@ -1,0 +1,64 @@
+# キャラクター間の関係性を定義
+characters:
+  - "character-takahashi"
+  - "character-nakamura"
+type: "RIVAL"
+strength: 0.5
+description: "同じ起業家育成プロジェクトに参加する起業家志望者同士。対照的なアプローチと価値観を持ち、互いに刺激しあう関係。表面上はライバルだが、互いに学ぶべき部分も持つ複雑な関係。"
+lastUpdated: "2024-04-15T12:30:00.000Z"
+
+# 発展の履歴
+history:
+  - {
+      event: "FIRST_MEETING",
+      description: "プロジェクト内での初対面",
+      chapterNumber: 10,
+      strengthChange: 0.2,
+      emotionalImpact: "CAUTIOUS"
+    }
+  - {
+      event: "COMPETITION",
+      description: "プロジェクト内発表会での競争",
+      chapterNumber: 10,
+      strengthChange: 0.3,
+      emotionalImpact: "COMPETITIVE"
+    }
+
+# 感情的な側面
+emotions:
+  trust: 0.3
+  respect: 0.6
+  affection: 0.1
+  dependency: 0.0
+  jealousy: 0.4
+  
+# 将来の発展可能性
+potentialDevelopments:
+  - {
+      type: "INCREASED_RIVALRY",
+      probability: 0.6,
+      conditions: ["市場での直接競合", "資源獲得競争"],
+      triggerEvents: ["同じ投資家からの資金調達競争", "メディア露出の差"]
+    }
+  - {
+      type: "MUTUAL_RESPECT",
+      probability: 0.4,
+      conditions: ["互いの強みの認識", "共通の困難"],
+      triggerEvents: ["業界の共通課題への対応", "相手の危機時の支援"]
+    }
+  - {
+      type: "COOPERATION",
+      probability: 0.3,
+      conditions: ["相互補完的な強み", "共通の敵の出現"],
+      triggerEvents: ["業界の構造的問題", "大企業からの圧力"]
+    }
+
+# 関係性に影響する重要アイテムや思い出
+significantItems: []
+
+significantMemories:
+  - {
+      description: "中村の華々しいピッチを見た瞬間",
+      emotionalValue: 0.6,
+      chapterReference: 10
+    }

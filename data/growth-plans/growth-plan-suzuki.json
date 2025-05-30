@@ -1,0 +1,59 @@
+{
+    "id": "growth-plan-suzuki",
+    "characterId": "character-suzuki",
+    "name": "鈴木美咲の成長計画",
+    "description": "マーケティング担当からCMOへの成長",
+    "isActive": true,
+    "growthPhases": [
+      {
+        "id": "phase-suzuki-1",
+        "name": "マーケティング視点の提供",
+        "description": "チームにマーケティングとユーザー視点をもたらす段階",
+        "chapterEstimate": [7, 10],
+        "stageRequirement": 0,
+        "parameterChanges": [
+          { "parameterId": "param-marketing-knowledge", "change": 4 },
+          { "parameterId": "param-customer-empathy", "change": 5 }
+        ],
+        "skillAcquisitions": ["skill-persona-creation", "skill-market-research"]
+      },
+      {
+        "id": "phase-suzuki-2",
+        "name": "顧客理解の深化",
+        "description": "ユーザーインタビューを主導し、真のニーズ発掘を担う段階",
+        "chapterEstimate": [11, 15],
+        "stageRequirement": 1,
+        "parameterChanges": [
+          { "parameterId": "param-research-skills", "change": 7 },
+          { "parameterId": "param-analytical-thinking", "change": 6 }
+        ],
+        "skillAcquisitions": ["skill-user-interviewing", "skill-data-analysis", "skill-insight-generation"]
+      },
+      {
+        "id": "phase-suzuki-3",
+        "name": "戦略的マーケター",
+        "description": "データに基づくマーケティング戦略を構築できる段階",
+        "chapterEstimate": [16, 22],
+        "stageRequirement": 2,
+        "parameterChanges": [
+          { "parameterId": "param-strategic-thinking", "change": 6 },
+          { "parameterId": "param-leadership", "change": 5 },
+          { "parameterId": "param-data-driven-decision", "change": 8 }
+        ],
+        "skillAcquisitions": ["skill-marketing-strategy", "skill-campaign-management", "skill-brand-development"]
+      },
+      {
+        "id": "phase-suzuki-4",
+        "name": "CMOとしての確立",
+        "description": "マーケティング責任者として組織全体の戦略に関わる段階",
+        "chapterEstimate": [23, 30],
+        "stageRequirement": 3,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 7 },
+          { "parameterId": "param-business-acumen", "change": 6 },
+          { "parameterId": "param-stakeholder-management", "change": 5 }
+        ],
+        "skillAcquisitions": ["skill-strategic-marketing", "skill-marketing-team-management", "skill-growth-hacking"]
+      }
+    ]
+  }

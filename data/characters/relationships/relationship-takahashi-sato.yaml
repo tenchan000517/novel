@@ -1,0 +1,70 @@
+# キャラクター間の関係性を定義
+characters:
+  - "character-takahashi"
+  - "character-sato"
+type: "PARTNER"
+strength: 0.6
+description: "技術ハッカソンで出会い、互いの強みを認め合うパートナー関係。誠のビジョンと健太の技術力が補完し合う関係だが、時に考え方の違いで衝突することも。"
+lastUpdated: "2024-04-10T14:30:00.000Z"
+
+# 発展の履歴
+history:
+  - {
+      event: "FIRST_MEETING",
+      description: "技術ハッカソンでの出会い",
+      chapterNumber: 6,
+      strengthChange: 0.3,
+      emotionalImpact: "NEUTRAL_TO_POSITIVE"
+    }
+  - {
+      event: "COLLABORATION",
+      description: "最初のアイデアブレストセッション",
+      chapterNumber: 6,
+      strengthChange: 0.2,
+      emotionalImpact: "POSITIVE"
+    }
+  - {
+      event: "TEAM_FORMATION",
+      description: "正式にチームを組むことを決定",
+      chapterNumber: 7,
+      strengthChange: 0.1,
+      emotionalImpact: "POSITIVE"
+    }
+
+# 感情的な側面
+emotions:
+  trust: 0.7
+  respect: 0.8
+  affection: 0.5
+  dependency: 0.6
+  jealousy: 0.1
+  
+# 将来の発展可能性
+potentialDevelopments:
+  - {
+      type: "CONFLICT",
+      probability: 0.7,
+      conditions: ["技術的判断と経営判断の衝突", "方向性の違いが明確になる"],
+      triggerEvents: ["サービス開発の重要局面", "資金問題"]
+    }
+  - {
+      type: "STRENGTHENED_PARTNERSHIP",
+      probability: 0.6,
+      conditions: ["互いの強みを活かす場面", "共同の成功体験"],
+      triggerEvents: ["危機的状況からの脱出", "サービスの成功"]
+    }
+
+# 関係性に影響する重要アイテムや思い出
+significantItems:
+  - {
+      name: "最初のプロトタイプコード",
+      description: "健太が誠のアイデアを形にした最初のプロトタイプ",
+      emotionalValue: 0.6
+    }
+
+significantMemories:
+  - {
+      description: "ハッカソンでの徹夜作業",
+      emotionalValue: 0.7,
+      chapterReference: 6
+    }

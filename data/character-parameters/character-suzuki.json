@@ -1,0 +1,106 @@
+[
+  {
+    "id": "param-marketing-knowledge",
+    "name": "マーケティング知識",
+    "description": "マーケティングの理論や手法に関する専門知識",
+    "category": "BUSINESS",
+    "tags": [
+      "マーケティング",
+      "知識",
+      "理論"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-customer-empathy",
+    "name": "顧客共感力",
+    "description": "顧客の感情や体験に共感し、理解する能力",
+    "category": "BUSINESS",
+    "tags": [
+      "共感",
+      "顧客",
+      "理解"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-communication",
+    "name": "コミュニケーション能力",
+    "description": "自分の考えを効果的に伝え、他者の意見を理解する力",
+    "category": "SOCIAL",
+    "tags": [
+      "対話",
+      "表現",
+      "理解"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-research-skills",
+    "name": "リサーチスキル",
+    "description": "情報を収集し、分析する能力",
+    "category": "MENTAL",
+    "tags": [
+      "調査",
+      "情報",
+      "分析"
+    ],
+    "value": 48,
+    "growth": 0
+  },
+  {
+    "id": "param-analytical-thinking",
+    "name": "分析的思考",
+    "description": "情報を論理的に分析し、パターンや関連性を見出す能力",
+    "category": "MENTAL",
+    "tags": [
+      "分析",
+      "論理",
+      "思考"
+    ],
+    "value": 32,
+    "growth": 0
+  },
+  {
+    "id": "param-leadership",
+    "name": "リーダーシップ",
+    "description": "チームを導き、方向性を示し、メンバーの能力を引き出す力",
+    "category": "SOCIAL",
+    "tags": [
+      "リーダー",
+      "組織",
+      "チーム"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-strategic-thinking",
+    "name": "戦略的思考",
+    "description": "長期的視点で全体像を捉え、計画を立てる能力",
+    "category": "MENTAL",
+    "tags": [
+      "戦略",
+      "計画",
+      "思考"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-data-driven-decision",
+    "name": "データ駆動型意思決定",
+    "description": "データに基づいて意思決定を行う能力",
+    "category": "BUSINESS",
+    "tags": [
+      "データ",
+      "分析",
+      "判断"
+    ],
+    "value": 0,
+    "growth": 0
+  }
+]

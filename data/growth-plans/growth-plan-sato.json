@@ -1,0 +1,59 @@
+{
+    "id": "growth-plan-sato",
+    "characterId": "character-sato",
+    "name": "佐藤健太の成長計画",
+    "description": "技術志向のエンジニアからビジネス視点も持つCTOへの成長",
+    "isActive": true,
+    "growthPhases": [
+      {
+        "id": "phase-sato-1",
+        "name": "技術者としての参加",
+        "description": "純粋な技術的関心からチームに参加し、プロトタイプ開発を行う段階",
+        "chapterEstimate": [6, 10],
+        "stageRequirement": 0,
+        "parameterChanges": [
+          { "parameterId": "param-technical-skill", "change": 5 },
+          { "parameterId": "param-teamwork", "change": 3 }
+        ],
+        "skillAcquisitions": ["skill-a-technology-development", "skill-prototype-creation"]
+      },
+      {
+        "id": "phase-sato-2",
+        "name": "ビジネス理解の始まり",
+        "description": "技術だけでなくビジネス的視点の重要性に気づき始める段階",
+        "chapterEstimate": [11, 15],
+        "stageRequirement": 1,
+        "parameterChanges": [
+          { "parameterId": "param-business-understanding", "change": 6 },
+          { "parameterId": "param-communication", "change": 4 }
+        ],
+        "skillAcquisitions": ["skill-mvp-development", "skill-technical-documentation"]
+      },
+      {
+        "id": "phase-sato-3",
+        "name": "技術リーダーへの成長",
+        "description": "チーム内での技術的意思決定の中心となり、独自の技術的ビジョンを持つ段階",
+        "chapterEstimate": [16, 22],
+        "stageRequirement": 2,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 7 },
+          { "parameterId": "param-strategic-thinking", "change": 5 },
+          { "parameterId": "param-technical-vision", "change": 8 }
+        ],
+        "skillAcquisitions": ["skill-technology-strategy", "skill-innovation-management"]
+      },
+      {
+        "id": "phase-sato-4",
+        "name": "CTOとしての確立",
+        "description": "技術と経営の両面を理解するCTOとして確立する段階",
+        "chapterEstimate": [23, 30],
+        "stageRequirement": 3,
+        "parameterChanges": [
+          { "parameterId": "param-leadership", "change": 6 },
+          { "parameterId": "param-business-understanding", "change": 7 },
+          { "parameterId": "param-resource-management", "change": 8 }
+        ],
+        "skillAcquisitions": ["skill-technology-management", "skill-tech-recruitment", "skill-scalable-architecture"]
+      }
+    ]
+  }

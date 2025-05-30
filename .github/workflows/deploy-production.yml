@@ -1,0 +1,192 @@
+# .github/workflows/deploy-production.yml
+name: Deploy to Production
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Lint code
+        run: npm run lint
+        
+      - name: Run tests
+        run: npm run test:all
+      
+      - name: Build project
+        run: npm run build
+        
+      - name: Check for vulnerabilities
+        run: npm audit --production
+        continue-on-error: true
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: .next/
+          retention-days: 3
+        
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Get tag version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: .next/
+      
+      - name: Set up environment variables
+        run: |
+          echo "RELEASE_VERSION=${{ steps.get_version.outputs.VERSION }}" >> $GITHUB_ENV
+          echo "DEPLOYMENT_ID=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+      
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: ./
+      
+      - name: Create deployment record
+        run: |
+          echo "{\"version\":\"${{ env.RELEASE_VERSION }}\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\",\"deploymentId\":\"${{ env.DEPLOYMENT_ID }}\",\"commit\":\"${{ github.sha }}\"}" > deployment-record.json
+      
+      - name: Upload deployment record
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-record
+          path: deployment-record.json
+          retention-days: 90
+          
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download deployment record
+        uses: actions/download-artifact@v3
+        with:
+          name: deployment-record
+      
+      - name: Read deployment record
+        id: deploy_info
+        run: |
+          DEPLOY_VERSION=$(cat deployment-record.json | jq -r .version)
+          DEPLOY_ID=$(cat deployment-record.json | jq -r .deploymentId)
+          echo "DEPLOY_VERSION=${DEPLOY_VERSION}" >> $GITHUB_OUTPUT
+          echo "DEPLOY_ID=${DEPLOY_ID}" >> $GITHUB_OUTPUT
+      
+      - name: Notify deployment success on Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: repo,message,commit,action,workflow
+          custom_payload: |
+            {
+              "attachments": [
+                {
+                  "color": "good",
+                  "title": "✅ Deployment Successful",
+                  "text": "Version ${{ steps.deploy_info.outputs.DEPLOY_VERSION }} has been deployed to production",
+                  "fields": [
+                    {
+                      "title": "Version",
+                      "value": "${{ steps.deploy_info.outputs.DEPLOY_VERSION }}",
+                      "short": true
+                    },
+                    {
+                      "title": "Deployment ID",
+                      "value": "${{ steps.deploy_info.outputs.DEPLOY_ID }}",
+                      "short": true
+                    },
+                    {
+                      "title": "Environment",
+                      "value": "Production",
+                      "short": true
+                    },
+                    {
+                      "title": "Deployed by",
+                      "value": "${{ github.actor }}",
+                      "short": true
+                    }
+                  ],
+                  "footer": "${{ github.repository }}",
+                  "footer_icon": "https://github.githubassets.com/favicon.ico",
+                  "ts": ${{ github.event.repository.updated_at }}
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        if: success()
+      
+      - name: Update Status Page
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.STATUS_PAGE_TOKEN }}" \
+            -d "{\"component_id\":\"${{ secrets.STATUS_PAGE_COMPONENT_ID }}\",\"status\":\"operational\",\"message\":\"Version ${{ steps.deploy_info.outputs.DEPLOY_VERSION }} deployed successfully\"}" \
+            ${{ secrets.STATUS_PAGE_API_URL }}
+        continue-on-error: true
+        if: success()
+      
+      - name: Notify deployment failure on Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: repo,message,commit,action,workflow
+          custom_payload: |
+            {
+              "attachments": [
+                {
+                  "color": "danger",
+                  "title": "❌ Deployment Failed",
+                  "text": "Failed to deploy version ${{ steps.deploy_info.outputs.DEPLOY_VERSION || 'unknown' }} to production",
+                  "fields": [
+                    {
+                      "title": "Environment",
+                      "value": "Production",
+                      "short": true
+                    },
+                    {
+                      "title": "Initiated by",
+                      "value": "${{ github.actor }}",
+                      "short": true
+                    }
+                  ],
+                  "footer": "${{ github.repository }}",
+                  "footer_icon": "https://github.githubassets.com/favicon.ico",
+                  "ts": ${{ github.event.repository.updated_at }}
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        if: failure()

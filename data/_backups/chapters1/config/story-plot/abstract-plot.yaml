@@ -1,0 +1,79 @@
+- phase: INTRODUCTION
+  theme: 伝統的世界観の提示と主人公の特異性
+  emotionalTone: 期待と不安の混在
+  potentialDirections:
+    - アカデミーでの研究生活と既存の価値観との軋轢
+    - 祖父の遺品である懐中時計の謎の発見
+    - 禁断とされる知識への好奇心の芽生え
+  prohibitedElements:
+    - 過度な力の急激な獲得
+    - 初期からの敵対関係の明確化
+  keyCharacters:
+    - protagonist
+    - mentor
+    - rival
+  chapterRange: [1, 3]
+
+- phase: RISING_ACTION
+  theme: 伝統の殻を破る冒険の始まり
+  emotionalTone: 興奮と葛藤
+  potentialDirections:
+    - アカデミーの禁書からの禁断の知識の発見
+    - テクナス共和国への旅立ち
+    - 古代遺跡での発見と危機
+  prohibitedElements:
+    - 容易な課題解決
+    - 明確な善悪の二元論
+  keyCharacters:
+    - protagonist
+    - ally
+    - rival
+  chapterRange: [4, 8]
+
+- phase: CLIMAX
+  theme: 伝統と革新の対立の頂点
+  emotionalTone: 緊張と決断
+  potentialDirections:
+    - 両国の政治的対立への巻き込まれ
+    - 古代魔法の危険性と可能性の直面
+    - 個人的な成長と社会的責任の相克
+  prohibitedElements:
+    - 外部からの唐突な解決
+    - 主要キャラクターの不自然な性格変化
+  keyCharacters:
+    - protagonist
+    - ally
+    - antagonist
+    - rival
+  chapterRange: [9, 12]
+
+- phase: FALLING_ACTION
+  theme: 新たな統合への模索
+  emotionalTone: 決意と挑戦
+  potentialDirections:
+    - 両国の協力を促す仲介者としての活動
+    - 古代と現代の知識の融合実験
+    - 時計の秘密の段階的解明
+  prohibitedElements:
+    - 唐突な問題解決
+    - 人物の不自然な変化
+  keyCharacters:
+    - protagonist
+    - mentor
+    - ally
+    - rival
+  chapterRange: [13, 16]
+
+- phase: RESOLUTION
+  theme: 伝統と革新の調和
+  emotionalTone: 成長と希望
+  potentialDirections:
+    - 新たな魔法体系の基礎確立
+    - 個人的成長の完結と新たな旅立ち
+    - 社会変革の始まり
+  keyCharacters:
+    - protagonist
+    - ally
+    - mentor
+    - rival
+  chapterRange: [17, 18]

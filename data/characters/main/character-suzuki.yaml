@@ -1,0 +1,1531 @@
+id: character-suzuki
+name: 鈴木美咲
+shortNames:
+  - 美咲
+  - 鈴木さん
+type: MAIN
+description: 主人公のチームに加わるマーケティング担当。顧客視点に立った思考ができ、コミュニケーション能力が高い。現実的な視点を持ちながらも、チームのビジョンに共感している。
+personality:
+  traits:
+    - 共感力が高い
+    - 現実的
+    - 観察力がある
+    - コミュニケーション上手
+    - 行動力がある
+  speechPatterns:
+    - わかりやすい言葉で伝える
+    - 質問を多用する
+    - 「ユーザー視点で考えると…」と話を切り出す
+  quirks:
+    - 人の話を聞くときに頷きが多い
+    - アイデアが浮かぶとスマホですぐにメモを取る
+    - 考え事をするときにコーヒーを飲む
+  values:
+    - ユーザーにとっての価値創造
+    - 効果的なコミュニケーション
+    - データに基づく判断
+    - 継続的な改善
+appearance:
+  age: 22
+  gender: 女性
+  height: 163
+  bodyType: スリム
+  hairColor: 黒（肩くらいの長さ）
+  eyeColor: 茶色
+  distinguishingFeatures:
+    - 明るい笑顔
+    - 常にスマートフォンを手元に置いている
+    - シンプルながらセンスの良いアクセサリー
+  clothingStyle: カジュアルでありながらも洗練された服装。ミニマルなデザインを好む。
+backstory:
+  summary: >-
+    マーケティングを専攻する大学生。学生時代からSNSマーケティングのインターンを経験し、実践的なスキルを持つ。複数の学生団体でPR担当を務めた経験があり、コミュニケーション能力に長けている。社会問題への関心も高く、ビジネスを通じた社会貢献に興味を持っている。
+  significantEvents:
+    - 高校時代に学校祭の広報担当としてSNS運用で集客に成功
+    - 大学1年次にデジタルマーケティング企業でのインターンを経験
+    - 大学2年次にボランティア団体のPR担当として活動
+    - 複数の学生広報コンテストで入賞経験
+  origin: 東京都内
+  trauma:
+    - 親の離婚による家庭環境の変化（コミュニケーションの重要性を学ぶきっかけに）
+  detailedHistory: >-
+    母子家庭で育ち、母親が広告代理店に勤めていた影響でマーケティングに興味を持つ。経済的に余裕がない環境でも工夫して学びの機会を得ようと努力。高校時代から様々な団体でボランティアとして広報活動を手伝い、実践的なスキルを磨く。大学ではマーケティングを専攻しながら、複数のインターンシップやアルバイトを経験。特にユーザー心理やSNSマーケティングに強みを持つ。
+  motivations: ビジネスを通じて社会問題を解決したい。人々の行動や心理を理解し、より良いコミュニケーションを実現したい。
+  secrets: 家庭の経済状況から、安定志向の親からは起業活動に反対されている
+state:
+  isActive: false
+  emotionalState: POSITIVE
+  developmentStage: 0
+  lastAppearance: 1
+  parameters:
+    - id: param-marketing-knowledge
+      name: マーケティング知識
+      description: マーケティングの理論や手法に関する専門知識
+      category: BUSINESS
+      tags:
+        - マーケティング
+        - 知識
+        - 理論
+      value: 100
+      growth: 0
+    - id: param-customer-empathy
+      name: 顧客共感力
+      description: 顧客の感情や体験に共感し、理解する能力
+      category: BUSINESS
+      tags:
+        - 共感
+        - 顧客
+        - 理解
+      value: 100
+      growth: 0
+    - id: param-communication
+      name: コミュニケーション能力
+      description: 自分の考えを効果的に伝え、他者の意見を理解する力
+      category: SOCIAL
+      tags:
+        - 対話
+        - 表現
+        - 理解
+      value: 0
+      growth: 0
+    - id: param-research-skills
+      name: リサーチスキル
+      description: 情報を収集し、分析する能力
+      category: MENTAL
+      tags:
+        - 調査
+        - 情報
+        - 分析
+      value: 48
+      growth: 0
+    - id: param-analytical-thinking
+      name: 分析的思考
+      description: 情報を論理的に分析し、パターンや関連性を見出す能力
+      category: MENTAL
+      tags:
+        - 分析
+        - 論理
+        - 思考
+      value: 32
+      growth: 0
+    - id: param-leadership
+      name: リーダーシップ
+      description: チームを導き、方向性を示し、メンバーの能力を引き出す力
+      category: SOCIAL
+      tags:
+        - リーダー
+        - 組織
+        - チーム
+      value: 0
+      growth: 0
+    - id: param-strategic-thinking
+      name: 戦略的思考
+      description: 長期的視点で全体像を捉え、計画を立てる能力
+      category: MENTAL
+      tags:
+        - 戦略
+        - 計画
+        - 思考
+      value: 0
+      growth: 0
+    - id: param-data-driven-decision
+      name: データ駆動型意思決定
+      description: データに基づいて意思決定を行う能力
+      category: BUSINESS
+      tags:
+        - データ
+        - 分析
+        - 判断
+      value: 0
+      growth: 0
+  skills:
+    - 不明なスキル (1章)
+    - 不明なスキル (3章)
+    - 不明なスキル (6章)
+    - 不明なスキル (8章)
+    - 不明なスキル (11章)
+    - 不明なスキル (12章)
+    - 不明なスキル (5章)
+    - 不明なスキル (2章)
+    - 不明なスキル (9章)
+  activeGrowthPlanId: growth-plan-suzuki
+  lastStateChange:
+    type: MAJOR_INJURY
+    chapterNumber: 12
+    description: 美咲が山田に殴り飛ばされ、動けなくなる。
+  location: 健太のアパート
+  isDeceased: true
+  skill:
+    - skillId: skill-persona-creation
+      level: 1
+      proficiency: 0
+      acquired: 2025-05-19T07:39:11.430Z
+    - skillId: skill-market-research
+      level: 1
+      proficiency: 0
+      acquired: 2025-05-19T07:39:11.446Z
+  transformations:
+    - type: UNKNOWN
+      description: ロボットが破壊される。
+      chapter: 4
+      isPermanent: true
+      timestamp: 2025-05-14T13:00:43.219Z
+    - type: UNKNOWN
+      description: チーム内で技術的な実現可能性とマーケティング戦略の優先順位を巡り、意見の対立が生まれたことで、チームの関係性に変化が生じた。
+      chapter: 6
+      isPermanent: true
+      timestamp: 2025-05-15T08:30:48.232Z
+    - type: UNKNOWN
+      description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
+      chapter: 3
+      isPermanent: true
+      timestamp: 2025-05-15T10:20:06.813Z
+    - type: UNKNOWN
+      description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
+      chapter: 4
+      isPermanent: true
+      timestamp: 2025-05-15T11:53:43.323Z
+    - type: UNKNOWN
+      description: 美咲が、山田からプロジェクトに参加させないと言われ、高橋との関係に変化が生じる可能性がある。
+      chapter: 5
+      isPermanent: true
+      timestamp: 2025-05-15T12:02:32.570Z
+    - type: UNKNOWN
+      description: 美咲がネクストライフの社員であることが判明。
+      chapter: 5
+      isPermanent: true
+      timestamp: 2025-05-15T12:14:23.922Z
+    - type: UNKNOWN
+      description: 美咲が中村に脅迫され、ネクストライフに協力していたことが判明。彼女の苦悩と後悔が描かれる。
+      chapter: 8
+      isPermanent: true
+      timestamp: 2025-05-15T12:32:09.053Z
+    - type: UNKNOWN
+      description: 鈴木の顧客共感力が高まる。
+      chapter: 3
+      isPermanent: true
+      timestamp: 2025-05-18T11:32:12.487Z
+  promotionHistory:
+    - chapter: 4
+      title: Unknown Position
+      description: ネクストライフから、自社のプロジェクトへの協力を提案される。
+      timestamp: 2025-05-15T11:50:45.129Z
+  injuries:
+    - id: injury-1747310023309-zi5ll
+      description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
+      severity: MODERATE
+      chapter: 4
+      isHealed: false
+      timestamp: 2025-05-15T11:53:43.309Z
+    - id: injury-1747312145481-7qt5r
+      description: 美咲がネクストライフに利用され、精神的に苦痛を受けている。
+      severity: MODERATE
+      chapter: 8
+      isHealed: false
+      timestamp: 2025-05-15T12:29:05.481Z
+    - id: injury-1747312329045-h5yfi
+      description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
+      severity: MODERATE
+      chapter: 8
+      isHealed: false
+      timestamp: 2025-05-15T12:32:09.045Z
+  health: 55
+history:
+  appearances:
+    - chapterNumber: 7
+      context: プロジェクト内のワークショップで主人公たちと出会う場面で初登場
+      significance: 0.8
+    - chapterNumber: 1
+      timestamp: 2025-05-13T04:43:25.820Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-13T05:17:08.653Z
+      significance: 0.3
+      summary: 鈴木美咲は「ええと、改めて、今日は集まってくれてありがとう」と発言
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:31:59.751Z
+      significance: 0.3
+      summary: 鈴木美咲は入ってきた
+      emotionalImpact: 0.1
+    - chapterNumber: 3
+      timestamp: 2025-05-13T05:36:09.617Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 4
+      timestamp: 2025-05-13T05:42:47.486Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:52:50.616Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:56:01.635Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:59:24.161Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:07:50.720Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:12:38.734Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T06:21:41.192Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T06:26:39.024Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T06:31:27.963Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-13T06:37:16.801Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-13T06:42:36.177Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-13T06:49:09.420Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T06:54:18.436Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T06:57:04.263Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:10:48.920Z
+      significance: 0.3
+      summary: 鈴木美咲は顔を出した
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:13:30.558Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-13T07:52:43.871Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:03:45.317Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:06:52.911Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-13T08:13:35.894Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T08:21:33.305Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T08:26:18.054Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:31:07.501Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T09:08:20.981Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-13T09:29:10.926Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 12
+      timestamp: 2025-05-13T09:48:40.262Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T10:49:03.405Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:07:52.927Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:12:18.065Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:16:52.618Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-13T12:23:51.923Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-13T12:48:18.079Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T13:12:16.761Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T11:13:10.071Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:01:42.292Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 2
+      timestamp: 2025-05-14T12:11:07.412Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:17:24.321Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-14T12:42:02.595Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-14T12:50:12.020Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-14T12:54:20.647Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-14T13:00:41.414Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-14T13:10:46.263Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:21:41.529Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:32:49.864Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:36:43.971Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:39:31.823Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-14T13:44:44.728Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-14T13:49:58.582Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-14T13:58:22.793Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-14T14:03:58.980Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-14T14:12:07.820Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-14T14:19:27.164Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-14T14:29:27.034Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-14T14:34:34.601Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T14:52:38.331Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-14T15:01:04.382Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T08:18:25.742Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-15T08:30:48.094Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-15T08:36:31.048Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T08:44:10.472Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-15T09:09:00.470Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-15T09:13:57.777Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T10:25:10.483Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T10:30:22.988Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T10:32:57.441Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.2
+    - chapterNumber: 6
+      timestamp: 2025-05-15T10:39:39.570Z
+      significance: 0.3
+      summary: 鈴木美咲は加わり、マーケティング戦略と技術的な課題について議論する
+      emotionalImpact: 0.18
+    - chapterNumber: 7
+      timestamp: 2025-05-15T10:43:58.869Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 8
+      timestamp: 2025-05-15T10:51:23.810Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 9
+      timestamp: 2025-05-15T10:56:53.363Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 12
+      timestamp: 2025-05-15T11:10:59.978Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 1
+      timestamp: 2025-05-15T11:27:56.060Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 2
+      timestamp: 2025-05-15T11:40:02.207Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-15T11:45:11.911Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:50:44.870Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:53:43.095Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:56:49.417Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:02:32.262Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:06:00.829Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:09:41.664Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:14:23.746Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-15T12:19:29.603Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-15T12:24:18.070Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T12:29:00.427Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T12:32:08.882Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T12:38:02.170Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T12:41:03.217Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-15T12:45:56.997Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-15T12:50:56.763Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-18T11:32:12.203Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-18T19:25:17.032Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-18T21:52:11.095Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-18T21:55:57.837Z
+      significance: 0.3
+      summary: 鈴木美咲はオフィスに入ってきた
+      emotionalImpact: 0.39999999999999997
+    - chapterNumber: 3
+      timestamp: 2025-05-18T22:00:00.580Z
+      significance: 0.5
+      summary: 鈴木美咲はまとめた市場調査の結果は、確かに有望な市場を示唆していた、また、心配そうに声をかけてきた
+      emotionalImpact: 0.5800000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-19T00:39:27.357Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-19T00:43:37.486Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-19T01:10:31.995Z
+      significance: 0.3
+      summary: 鈴木美咲が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 4
+      timestamp: 2025-05-19T06:06:58.099Z
+      significance: 0.3
+      summary: 鈴木美咲は「誠さん、ちょっといいですか？」と発言
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 9
+      timestamp: 2025-05-19T07:40:09.931Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-19T07:42:07.856Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-26T12:52:03.633Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-26T16:34:48.530Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-26T16:41:15.069Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-26T16:53:51.560Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-26T17:05:45.559Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-26T17:12:54.884Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:19:35.189Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:24:42.943Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:36:28.636Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T01:38:47.800Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T03:11:24.454Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:18:20.053Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:23:20.055Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:25:26.788Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:28:39.938Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:30:45.630Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:37:39.839Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-27T03:39:32.975Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-27T03:47:57.170Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-27T03:53:31.773Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-27T03:58:50.637Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-27T04:16:12.354Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-27T04:28:05.969Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T03:03:50.031Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T03:08:44.351Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:10:53.162Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:14:24.440Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の迷宮'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:14:30.595Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:15:17.719Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T03:18:10.241Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T03:21:01.508Z
+      significance: 0.5
+      summary: '第4章に登場: 育成プロジェクト、問いの迷宮'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T03:23:48.450Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T03:27:00.636Z
+      significance: 0.5
+      summary: '第5章に登場: 問いの迷路、顧客という羅針盤'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T03:29:44.798Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T03:33:13.754Z
+      significance: 0.5
+      summary: '第6章に登場: チーム結成、そして最初の火種'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:36:00.056Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:39:09.287Z
+      significance: 0.5
+      summary: '第7章に登場: 問いの質'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:41:12.910Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:43:18.616Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:46:53.803Z
+      significance: 0.5
+      summary: '第8章に登場: 顧客視点への転換'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:47:00.971Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:47:46.353Z
+      significance: 0.5
+      summary: '第8章に登場: 問いの再定義'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:50:44.126Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:53:47.993Z
+      significance: 0.5
+      summary: '第9章に登場: 顧客理解への第一歩'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:01:29.162Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:05:23.155Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:08:08.726Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:11:02.788Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの始まり'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:13:41.020Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:16:17.225Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:18:39.847Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:21:38.015Z
+      significance: 0.5
+      summary: '第4章に登場: 顧客視点という難題'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T04:24:25.918Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T04:27:39.291Z
+      significance: 0.5
+      summary: '第5章に登場: 問いの迷宮'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:30:06.889Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:33:13.314Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点という名の迷宮'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:35:41.764Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:38:40.880Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客視点の迷宮'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:55:26.042Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:59:25.910Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:02:25.280Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:05:18.456Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:07:19.800Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:09:28.661Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:12:39.911Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:12:51.656Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:23:27.563Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:27:04.182Z
+      significance: 0.5
+      summary: '第4章に登場: 胎動するチーム、動き出す現実'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:27:23.849Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:28:12.841Z
+      significance: 0.5
+      summary: '第4章に登場: 始まりの予感と現実の壁'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:31:16.509Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:34:23.758Z
+      significance: 0.5
+      summary: '第5章に登場: 再構築の夜明け'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:36:25.430Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:38:38.708Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:41:45.343Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:42:18.521Z
+      significance: 0.5
+      summary: '第6章に登場: チーム始動、それぞれの視点'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:43:55.734Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:47:36.408Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の落とし穴'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:50:46.617Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T05:52:57.427Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T06:36:49.008Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T06:40:12.480Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの迷路'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:55:19.964Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:59:29.068Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:00:16.210Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:04:37.723Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:06:39.823Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:08:48.759Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:12:33.358Z
+      significance: 0.5
+      summary: '第2章に登場: 顧客視点の迷宮'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:14:34.108Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:16:48.018Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:20:13.100Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の再燃'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:23:08.112Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:26:47.572Z
+      significance: 0.5
+      summary: '第4章に登場: 資金調達の壁'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:29:28.771Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:32:45.847Z
+      significance: 0.5
+      summary: '第5章に登場: 顧客視点という羅針盤'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:35:41.209Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:39:06.426Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の再検証'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:42:00.092Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:45:01.086Z
+      significance: 0.5
+      summary: '第7章に登場: 問いの質'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T07:47:57.903Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T07:51:11.040Z
+      significance: 0.5
+      summary: '第8章に登場: 問いの深淵、顧客視点の迷宮'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:53:50.073Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:57:16.735Z
+      significance: 0.5
+      summary: '第9章に登場: 厳しい現実、揺らぐ理想'
+    - chapterNumber: 10
+      timestamp: 2025-05-28T08:00:08.770Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-28T08:03:44.852Z
+      significance: 0.5
+      summary: '第10章に登場: 顧客視点という羅針盤'
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:06:18.952Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:09:49.430Z
+      significance: 0.5
+      summary: '第11章に登場: 顧客の声、理想との乖離'
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:12:39.092Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:16:18.071Z
+      significance: 0.5
+      summary: '第12章に登場: 顧客視点の迷宮'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T14:42:17.881Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T14:43:47.869Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの再定義'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:46:40.117Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:48:10.109Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の迷宮'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T14:51:09.540Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T14:52:39.509Z
+      significance: 0.5
+      summary: '第4章に登場: 顧客視点の迷宮'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T14:55:36.350Z
+      significance: 0.5
+      summary: 鈴木美咲が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T14:57:06.347Z
+      significance: 0.5
+      summary: '第5章に登場: 顧客視点という迷宮'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T14:59:46.459Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T15:01:16.484Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の深淵'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T15:04:08.309Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T15:05:38.308Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客視点の深淵'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T15:09:08.830Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T15:10:38.846Z
+      significance: 0.5
+      summary: '第8章に登場: 交錯する視点、見え始めた輪郭'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T15:13:42.648Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T15:16:06.919Z
+      significance: 0.5
+      summary: '第9章に登場: 問いの再定義とライバルの影'
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:22:41.251Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:23:47.299Z
+      significance: 0.5
+      summary: '第10章に登場: 審査員の言葉'
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:26:52.904Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:29:27.785Z
+      significance: 0.5
+      summary: '第11章に登場: 顧客の迷宮'
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:32:12.133Z
+      significance: 0.5
+      summary: 鈴木美咲が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:35:43.255Z
+      significance: 0.5
+      summary: '第12章に登場: 顧客視点という難題'
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:44:14.693Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+  developmentPath:
+    - stage: 0
+      description: チームに参加する前段階
+      achievedAt: 2024-04-12T16:00:00.000Z
+      chapterNumber: 7
+  interactions:
+    - chapterNumber: 1
+      targetCharacterId: character-takahashi
+      type: ENCOUNTER
+      description: 鈴木美咲と高橋誠の交流
+      impact: 0.6
+      timestamp: 2025-05-13T04:43:26.420Z
+    - chapterNumber: 1
+      targetCharacterId: character-takahashi
+      type: ENCOUNTER
+      description: 鈴木美咲と高橋誠の交流
+      impact: 0.6
+      timestamp: 2025-05-13T05:17:09.044Z
+    - chapterNumber: 3
+      targetCharacterId: character-sato
+      type: COOPERATION
+      description: 鈴木美咲と佐藤健太の協力
+      impact: 0.9
+      timestamp: 2025-05-18T22:00:00.997Z
+    - chapterNumber: 9
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:53:48.354Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:53:48.448Z
+    - chapterNumber: 3
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:16:17.246Z
+    - chapterNumber: 3
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:16:17.254Z
+    - chapterNumber: 4
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:21:38.070Z
+    - chapterNumber: 1
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:59:25.993Z
+    - chapterNumber: 1
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:59:26.002Z
+    - chapterNumber: 4
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:28:12.897Z
+    - chapterNumber: 6
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第6章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:47:36.443Z
+    - chapterNumber: 3
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:40:12.538Z
+    - chapterNumber: 5
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第5章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:32:45.869Z
+    - chapterNumber: 7
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第7章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:45:01.117Z
+    - chapterNumber: 8
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第8章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:51:11.059Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:57:16.794Z
+    - chapterNumber: 9
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:57:16.804Z
+    - chapterNumber: 10
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:03:44.886Z
+    - chapterNumber: 10
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:03:44.896Z
+    - chapterNumber: 10
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:03:44.907Z
+    - chapterNumber: 11
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.461Z
+    - chapterNumber: 11
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.471Z
+    - chapterNumber: 11
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.481Z
+    - chapterNumber: 12
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第12章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:16:18.096Z
+    - chapterNumber: 3
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T14:48:10.135Z
+    - chapterNumber: 8
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第8章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:10:38.866Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:16:06.978Z
+    - chapterNumber: 10
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:23:47.328Z
+    - chapterNumber: 10
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:23:47.339Z
+    - chapterNumber: 11
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:29:27.871Z
+    - chapterNumber: 11
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:29:27.881Z
+    - chapterNumber: 11
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:29:27.891Z
+    - chapterNumber: 12
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第12章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:35:43.328Z
+    - chapterNumber: 12
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第12章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:35:43.342Z
+relationships: []
+metadata:
+  createdAt: 2024-04-01T00:00:00.000Z
+  lastUpdated: 2025-05-29T00:44:14.696Z
+  version: 647
+  tags:
+    - マーケター
+    - コミュニケーター
+    - コアメンバー
+    - ユーザー視点
+psychology:
+  currentDesires:
+    - チームのビジョン実現への貢献
+    - 顧客視点に基づいた効果的なマーケティング戦略の実行
+    - 自身のマーケティングスキルと経験の向上
+    - 社会問題解決に繋がるビジネスへの参加
+    - チームメンバーとの良好な関係構築
+  currentFears:
+    - マーケティング戦略の失敗によるチームへの悪影響
+    - 自身の能力不足によるチームへの貢献不足
+    - チームのビジョンと自身の価値観の不一致
+  internalConflicts:
+    - 現実的な視点と、チームのビジョンへの共感の間での葛藤
+    - 社会貢献への強い関心と、ビジネスにおける成果追求のバランス
+    - 自身の経験不足に対する不安と、積極的に行動したいという意欲の葛藤
+  emotionalState:
+    期待: 0.7
+    不安: 0.6
+    意欲: 0.8
+    共感: 0.9
+  relationshipAttitudes: {}

@@ -1,103 +1,76 @@
-import Image from "next/image";
+// src/app/page.tsx
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
+/**
+ * ホームページ
+ */
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="max-w-4xl mx-auto">
+      <section className="text-center mb-16">
+        <h1 className="text-4xl font-bold mb-6">Auto Novel System</h1>
+        <p className="text-xl text-gray-600 mb-8">
+          AI技術を活用した完全自動小説生成システム
+        </p>
+        <div className="flex justify-center space-x-4">
+          <Link href="/chapters" passHref>
+            <Button variant="primary">
+              小説を読む
+            </Button>
+          </Link>
+          <Link href="/about" passHref>
+            <Button variant="outline">
+              システムについて
+            </Button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6 text-center">最新のチャプター</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* チャプター例（実際には動的に生成） */}
+          {[1, 2, 3, 4].map((id) => (
+            <Card key={id} className="p-6">
+              <h3 className="text-xl font-semibold mb-2">チャプター {id}</h3>
+              <p className="text-gray-600 mb-4 line-clamp-3">
+                これは自動生成された小説のチャプターのサンプルテキストです。実際のシステムでは、AIによって本格的な小説が生成されます。
+              </p>
+              <Link href={`/chapters/${id}`} passHref>
+                <Button size="sm" variant="link">
+                  続きを読む
+                </Button>
+              </Link>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-6 text-center">システムの特徴</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="text-center p-4">
+            <h3 className="text-lg font-semibold mb-2">高度な生成エンジン</h3>
+            <p className="text-gray-600">
+              最新のAI技術を活用し、人間のような文章を生成します。
+            </p>
+          </div>
+          <div className="text-center p-4">
+            <h3 className="text-lg font-semibold mb-2">階層的記憶管理</h3>
+            <p className="text-gray-600">
+              物語の一貫性を保つための革新的な記憶システムを実装。
+            </p>
+          </div>
+          <div className="text-center p-4">
+            <h3 className="text-lg font-semibold mb-2">キャラクター管理</h3>
+            <p className="text-gray-600">
+              登場人物の性格や関係性を自動で管理・発展させます。
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

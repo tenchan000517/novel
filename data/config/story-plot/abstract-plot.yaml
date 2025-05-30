@@ -1,0 +1,102 @@
+- phase: "OPENING"
+  theme: "理想と現実の狭間"
+  emotionalTone: "熱意と挫折の混在"
+  chapterRange: [1, 5]
+  thematicMessage: "高い志を持ちながらも現実の厳しさに直面する"
+  phasePurpose: "主人公の理想と現実のギャップを提示し、起業という挑戦の始まりを描く"
+  potentialDirections:
+    - "ビジネスコンテストでの挫折"
+    - "起業家育成プログラムへの参加"
+    - "最初のビジネスアイデアの模索"
+    - "理想と現実のギャップへの気づき"
+  prohibitedElements:
+    - "早すぎる成功体験"
+    - "重要な経営知識の安易な習得"
+    - "チームの形成が容易すぎること"
+  keyCharacters:
+    - "高橋誠（主人公）"
+    - "山田哲也（メンター）"
+
+- phase: "DEVELOPMENT"
+  theme: "基盤構築と協働"
+  emotionalTone: "期待と不安の混在"
+  chapterRange: [6, 10]
+  thematicMessage: "一人では限界があり、多様な視点と能力の重要性"
+  phasePurpose: "チーム形成とサービスコンセプトの基盤構築のプロセスを描く"
+  potentialDirections:
+    - "コアメンバーとの出会い"
+    - "初めてのサービス構想"
+    - "チームワークの構築"
+    - "最初の小さな成功体験"
+  prohibitedElements:
+    - "チーム内の深刻な対立"
+    - "サービスの完成度が高すぎること"
+    - "投資家からの大型資金調達"
+  keyCharacters:
+    - "高橋誠（主人公）"
+    - "佐藤健太（エンジニア）"
+    - "鈴木美咲（マーケター）"
+
+- phase: "CHALLENGE"
+  theme: "プロダクトインの限界"
+  emotionalTone: "葛藤と気づき"
+  chapterRange: [11, 15]
+  thematicMessage: "自分目線から顧客目線への転換の難しさ"
+  phasePurpose: "主人公のプロダクトイン思考の限界と、マーケットイン思考への転換の苦悩を描く"
+  potentialDirections:
+    - "顧客からのフィードバック"
+    - "サービス改善の試行錯誤"
+    - "マーケットイン思考への目覚め"
+    - "顧客理解の深化"
+  prohibitedElements:
+    - "プロダクトイン・マーケットインの安易な理解"
+    - "思考転換が容易すぎること"
+    - "最初から高い顧客満足度"
+  keyCharacters:
+    - "高橋誠（主人公）"
+    - "鈴木美咲（マーケター）"
+    - "初期顧客"
+
+- phase: "GROWTH"
+  theme: "リーダーシップと経営知識"
+  emotionalTone: "成長と責任感"
+  chapterRange: [16, 22]
+  thematicMessage: "リーダーとしての自覚と学びの必要性"
+  phasePurpose: "主人公が経営知識を学び、実践することで組織的な成長への道を開くプロセスを描く"
+  potentialDirections:
+    - "様々な経営理論との出会い"
+    - "チーム内の危機と克服"
+    - "戦略思考の獲得"
+    - "資金調達への挑戦"
+  prohibitedElements:
+    - "経営知識の習得が楽勝であること"
+    - "組織的な問題が簡単に解決すること"
+    - "大型の資金調達の成功"
+  keyCharacters:
+    - "高橋誠（主人公）"
+    - "佐藤健太（エンジニア）"
+    - "鈴木美咲（マーケター）"
+    - "山田哲也（メンター）"
+    - "中村大輔（ライバル）"
+
+- phase: "RESOLUTION"
+  theme: "経営者としての覚醒"
+  emotionalTone: "充実感と次なる挑戦"
+  chapterRange: [23, 30]
+  thematicMessage: "持続可能なビジネスと社会的意義の両立"
+  phasePurpose: "法人化と安定した経営基盤の確立、そして次なるビジョンへの展望を描く"
+  potentialDirections:
+    - "法人化プロセス"
+    - "競合との差別化戦略"
+    - "組織文化の構築"
+    - "安定した収益モデルの確立"
+    - "社会的意義の再認識"
+  prohibitedElements:
+    - "過度に理想主義的な結末"
+    - "すべての問題が完全に解決すること"
+    - "主人公の成長が止まること"
+  keyCharacters:
+    - "高橋誠（主人公）"
+    - "コアチームメンバー全員"
+    - "顧客代表"
+    - "投資家"

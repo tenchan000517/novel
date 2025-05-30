@@ -1,0 +1,20 @@
+{
+  "characters": [
+    "character-takahashi",
+    "character-suzuki"
+  ],
+  "type": "PARTNER",
+  "strength": 0.5,
+  "lastUpdated": "2025-05-19T07:38:19.704Z",
+  "history": [
+    {
+      "timestamp": "2025-05-19T07:38:19.704Z",
+      "previousType": "PARTNER",
+      "previousStrength": 0.5,
+      "newType": "PARTNER",
+      "newStrength": 0.5,
+      "reason": "Updated relationship"
+    }
+  ],
+  "description": "プロジェクト内のワークショップで出会い、互いの価値観に共感して協力関係に。誠の社会課題への問題意識と美咲のユーザー視点が補完し合うが、プロダクトイン/マーケットイン思考の違いで対立することも。"
+}

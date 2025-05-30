@@ -1,0 +1,27 @@
+
+# ロールテンプレート例 (characters/templates/roles/warrior.yaml)
+id: "warrior"
+name: "戦士"
+description: "戦いのスキルに長け、集団を物理的な脅威から守るキャラクター"
+personality:
+  traits:
+    - "規律正しい"
+    - "忍耐強い"
+    - "戦術的"
+  values:
+    - "忠誠"
+    - "名誉"
+    - "力"
+  quirks:
+    - "常に武器を手入れしている"
+    - "危険を察知する鋭い感覚"
+backstory:
+  template: "{name}は若い頃から{origin}で鍛錬を積み、卓越した戦闘技術を身につけました。"
+  significantEvents:
+    - "初めての実戦経験"
+    - "師匠との厳しい修行"
+  origin: "軍事家系"
+roleSettings:
+  preferredEmotionalState: "DETERMINED"
+  initialDevelopmentStage: 1
+suggestedType: "SUB"

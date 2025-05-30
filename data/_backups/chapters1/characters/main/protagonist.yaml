@@ -1,0 +1,814 @@
+id: protagonist
+name: ルナ・シルバーウッド
+shortNames:
+  - ルナ
+nicknames:
+  mentor:
+    - シルバーウッド君
+    - ルナ君
+  antagonist:
+    - シルバーウッド
+  rival:
+    - ルナ
+  love_interest:
+    - ルナちゃん
+  ally:
+    - ルナちゃん
+type: MAIN
+role: PROTAGONIST
+description: 20歳。アルディア王国出身の魔法研究者。伝統的な魔法家系に生まれたが、機械工学にも興味を持つ変わり者。好奇心旺盛で理論派だが、時に頑固な一面も。
+personality:
+  traits:
+    - 好奇心旺盛
+    - 頑固
+    - 理論派
+    - 優しい
+    - 完璧主義
+  speechPatterns:
+    - 学術用語を交えた話し方
+    - 考え込むと言葉が少なくなる
+    - 興奮すると早口になる
+  quirks:
+    - 集中すると周囲が見えなくなる
+    - 緊張すると髪を触る
+    - 発見があると思わず小さく跳ねる
+  values:
+    - 知識
+    - 革新
+    - 誠実さ
+    - 伝統の尊重
+appearance:
+  summary: 銀青色の長い髪と鋭い灰色の瞳を持つ、やや小柄な女性。常に魔法研究用のローブを身につけ、祖父の形見の懐中時計を首から下げている。
+  distinctiveFeatures:
+    - 銀青色の長い髪
+    - 鋭い灰色の瞳
+    - 左手の人差し指にある星型の魔法痕
+  clothing: アルディア王立アカデミーの紺色のローブに、実験用の多機能ベルト。
+  physique: やや小柄だが、引き締まった体つき。
+  age: 20
+  gender: 女性
+backstory:
+  summary: 名門魔法家系シルバーウッド家の末裔として厳格な教育を受けて育つ。3年前に謎の事故で祖父を失い、形見の懐中時計を受け継いだ。魔法の才能は一流だが、禁忌とされる機械工学にも興味を持ち、周囲から浮いた存在。
+  significantEvents:
+    - 10歳の時に偶然発見した古代遺跡で魔法の素質が開花
+    - 17歳で王立魔法アカデミーに首席で入学
+    - 祖父アーロン・シルバーウッドの謎の事故と懐中時計の継承
+    - アカデミー在学中に禁断とされる魔導機械に関する研究で処分の危機に
+  origin: アルディア王国北部の貴族区域、シルバーレイク地方
+  trauma:
+    - 祖父の突然の死
+    - 革新的研究の度重なる拒絶
+    - 10歳の時の古代遺跡での事故による悪夢
+  motivations: 祖父の遺志を継ぎ、古代魔法の真実を解明すること。伝統と革新の架け橋となる新たな魔法理論を確立すること。
+  secrets:
+    - 祖父の死は事故ではなく、古代魔法の研究に関連した暗殺である可能性
+    - 懐中時計には古代魔法の鍵となる仕掛けが隠されている
+    - 自分の魔法的才能の覚醒には謎の部分があり、通常の魔法発現とは異なる
+relationships:
+  - targetId: mentor
+    type: STUDENT
+    strength: 0.9
+    description: アカデミーでの指導教官であり、父親的存在。祖父の親友でもあった。深い尊敬と信頼を寄せている。
+  - targetId: rival
+    type: RIVAL
+    strength: 0.7
+    description: アカデミー時代からのライバルで、常に成績を競い合ってきた。相手の才能を認めつつも、その手段には疑問を持つ。
+  - targetId: ally
+    type: FRIEND
+    strength: 0.85
+    description: テクナス共和国出身の魔導機械技師。偶然出会って意気投合し、互いの知識を補完し合う関係に。
+state:
+  isActive: false
+  emotionalState: DETERMINED
+  developmentStage: 1
+  lastAppearance: 12
+  skills:
+    - 不明なスキル (2章)
+    - 不明なスキル (5章)
+    - 不明なスキル (6章)
+    - 不明なスキル (8章)
+    - 不明なスキル (9章)
+    - 不明なスキル (10章)
+    - 不明なスキル (11章)
+    - 不明なスキル (12章)
+    - 不明なスキル (4章)
+  isDeceased: true
+  location: 不明
+  lastStateChange:
+    type: TRANSFORMATION
+    chapterNumber: 11
+    description: ノアが黒いオーラを纏い、赤い目を持ち、右腕が禍々しい光を放つ異形の姿に変貌した。
+history:
+  appearances:
+    - chapterNumber: 1
+      timestamp: 2025-05-08T08:50:19.702Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、王立魔法研究所の薄暗い実験室で、汗ばんだ額を拭った
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-08T08:53:27.633Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、油で汚れた作業着を着て、目の前の機械に夢中になっていた
+      emotionalImpact: 0.26
+    - chapterNumber: 3
+      timestamp: 2025-05-08T08:56:36.902Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、組み立て途中の魔法動力機関に身を乗り出していた
+      emotionalImpact: 0.14
+    - chapterNumber: 4
+      timestamp: 2025-05-08T08:59:55.212Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、油と魔法の匂いが染み付いた研究室で、額の汗を拭った
+      emotionalImpact: 0.1
+    - chapterNumber: 5
+      timestamp: 2025-05-08T09:02:42.606Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、研究室に充満するオイルと魔法の微かな香りに包まれ、息を詰めていた
+      emotionalImpact: 0.22000000000000003
+    - chapterNumber: 1
+      timestamp: 2025-05-09T12:12:08.469Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、重厚な扉の前に立ち、深呼吸をした
+      emotionalImpact: 0.14
+    - chapterNumber: 1
+      timestamp: 2025-05-09T12:39:38.269Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-09T12:47:04.005Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-09T12:53:35.657Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-09T12:59:55.467Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-09T13:29:57.575Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-09T13:32:47.469Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-09T13:53:35.890Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、必ず破滅する
+      emotionalImpact: 0.14
+    - chapterNumber: 2
+      timestamp: 2025-05-09T13:55:09.331Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-09T14:03:59.847Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.12
+    - chapterNumber: 3
+      timestamp: 2025-05-09T14:06:56.890Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 3
+      timestamp: 2025-05-09T15:38:50.560Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-09T15:40:13.612Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-10T02:52:49.218Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは頭を抱えていた
+      emotionalImpact: 0.18
+    - chapterNumber: 1
+      timestamp: 2025-05-10T02:53:59.465Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-10T02:56:57.858Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-10T02:58:42.211Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.2
+    - chapterNumber: 2
+      timestamp: 2025-05-10T03:00:03.526Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-10T03:02:57.581Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.12
+    - chapterNumber: 4
+      timestamp: 2025-05-10T18:33:28.066Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、王立魔法研究所の一室で、実験に没頭していた
+      emotionalImpact: 0.14
+    - chapterNumber: 1
+      timestamp: 2025-05-10T18:37:32.213Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.42
+    - chapterNumber: 1
+      timestamp: 2025-05-10T18:39:11.023Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドは、研究室に差し込む夕焼けに目を細めた
+      emotionalImpact: 0.56
+    - chapterNumber: 2
+      timestamp: 2025-05-10T18:42:44.806Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 3
+      timestamp: 2025-05-10T18:46:43.737Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.12
+    - chapterNumber: 4
+      timestamp: 2025-05-10T18:50:52.097Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、優秀な魔法研究者です
+      emotionalImpact: 0.3
+    - chapterNumber: 5
+      timestamp: 2025-05-10T18:55:24.026Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 5
+      timestamp: 2025-05-10T18:57:30.482Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 6
+      timestamp: 2025-05-10T19:01:38.700Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 7
+      timestamp: 2025-05-10T19:05:51.442Z
+      significance: 0.3
+      summary: |-
+        ルナ・シルバーウッドはいるか！ノア・フロストシャドウはいるか！出てこなければ、皆殺しだ！」
+
+        セバスチャンは、ルナとノアに目配せをした
+      emotionalImpact: 0.39999999999999997
+    - chapterNumber: 7
+      timestamp: 2025-05-10T19:07:30.860Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-10T19:11:22.530Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-10T19:15:04.032Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 10
+      timestamp: 2025-05-10T19:18:31.235Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-10T19:22:33.780Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 12
+      timestamp: 2025-05-10T19:26:33.600Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-11T02:16:27.284Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-11T02:20:20.533Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-11T02:24:18.457Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-11T02:28:39.035Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-11T02:52:03.946Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、研究室の窓から差し込む雪明かりを浴びていた
+      emotionalImpact: 0.1
+    - chapterNumber: 1
+      timestamp: 2025-05-11T03:00:41.625Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、窓から差し込む僅かな光を頼りに、古文書を読み込んでいた
+      emotionalImpact: 0.14
+    - chapterNumber: 1
+      timestamp: 2025-05-11T10:09:41.955Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-11T10:13:39.971Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 3
+      timestamp: 2025-05-11T10:17:32.741Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 4
+      timestamp: 2025-05-11T10:21:40.229Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 5
+      timestamp: 2025-05-11T10:25:58.353Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 6
+      timestamp: 2025-05-11T10:30:17.792Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 7
+      timestamp: 2025-05-11T10:34:09.614Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-11T10:37:55.716Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-11T10:42:15.006Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-11T10:44:08.127Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 10
+      timestamp: 2025-05-11T10:48:23.672Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、その異変の中心にいることを知っていた
+      emotionalImpact: 0.22000000000000003
+    - chapterNumber: 11
+      timestamp: 2025-05-11T10:52:40.406Z
+      significance: 0.3
+      summary: |-
+        ルナ・シルバーウッドは、アカデミーから逃亡しました！」
+
+        ライナスの報告に、マーカスの顔色が険しくなった
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 12
+      timestamp: 2025-05-11T10:56:57.918Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.38
+    - chapterNumber: 1
+      timestamp: 2025-05-12T01:40:30.823Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは真剣な眼差しで魔法書を読んでいた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-12T01:45:15.309Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-12T01:49:40.223Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-12T01:54:29.793Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 5
+      timestamp: 2025-05-12T01:59:28.674Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 6
+      timestamp: 2025-05-12T02:03:45.892Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 7
+      timestamp: 2025-05-12T02:08:04.611Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.38
+    - chapterNumber: 8
+      timestamp: 2025-05-12T02:12:35.065Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-12T02:14:53.245Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 9
+      timestamp: 2025-05-12T02:19:40.143Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 10
+      timestamp: 2025-05-12T02:24:10.741Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-12T02:28:37.459Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 12
+      timestamp: 2025-05-12T02:32:45.766Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-12T02:58:17.334Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、その一室で、緊張した面持ちで立っていた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-12T03:03:07.860Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-12T03:08:00.051Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 4
+      timestamp: 2025-05-12T03:12:56.747Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 5
+      timestamp: 2025-05-12T03:18:27.073Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 6
+      timestamp: 2025-05-12T03:23:56.931Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは「私を、評議会議長であるこの私を、一体何の罪で！」と発言
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 7
+      timestamp: 2025-05-12T03:28:08.117Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-12T03:32:39.734Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-12T03:37:54.696Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-12T03:40:08.522Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 10
+      timestamp: 2025-05-12T03:47:51.057Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-12T03:56:51.020Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 12
+      timestamp: 2025-05-12T04:01:59.650Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 12
+      timestamp: 2025-05-12T04:04:50.990Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 12
+      timestamp: 2025-05-12T04:08:12.441Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 12
+      timestamp: 2025-05-12T04:11:32.013Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-12T04:35:25.208Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-12T04:38:32.971Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、難しい顔をして、魔法装置を調べていた
+      emotionalImpact: 0.14
+    - chapterNumber: 7
+      timestamp: 2025-05-12T05:07:42.957Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-12T08:57:09.194Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、埃を被った古書を熱心に調べていた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-12T09:01:40.789Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-12T09:21:15.626Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 5
+      timestamp: 2025-05-12T09:29:24.775Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは立っていた
+      emotionalImpact: 0.1
+    - chapterNumber: 6
+      timestamp: 2025-05-12T09:43:44.713Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 6
+      timestamp: 2025-05-12T09:48:44.535Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-12T10:08:38.779Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 10
+      timestamp: 2025-05-12T10:13:23.623Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 11
+      timestamp: 2025-05-12T10:20:27.653Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T02:45:16.794Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T02:52:18.708Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドが登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-13T03:03:31.492Z
+      significance: 0.3
+      summary: ルナ・シルバーウッドは、ノアの帰りを待っていた
+      emotionalImpact: 0.1
+    - chapterNumber: 4
+      timestamp: 2025-05-13T03:08:48.834Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T03:15:40.082Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-13T03:22:17.956Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T03:27:13.430Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T03:31:50.369Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-13T03:36:54.345Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-13T03:43:30.658Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-13T03:50:13.052Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T03:54:46.224Z
+      significance: 0.5
+      summary: ルナ・シルバーウッドが章12に登場
+      emotionalImpact: 0.5
+  developmentPath: []
+  interactions:
+    - chapterNumber: 3
+      targetCharacterId: 98cb0ac8d98440a5
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと魔法動力機関の交流
+      impact: 0.5
+      timestamp: 2025-05-08T08:56:37.147Z
+    - chapterNumber: 4
+      targetCharacterId: 98cb0ac8d98440a5
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと魔法動力機関の交流
+      impact: 0.7
+      timestamp: 2025-05-08T08:59:55.401Z
+    - chapterNumber: 5
+      targetCharacterId: 98cb0ac8d98440a5
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと魔法動力機関の交流
+      impact: 0.8
+      timestamp: 2025-05-08T09:02:43.112Z
+    - chapterNumber: 5
+      targetCharacterId: 71df27b295775bc5
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと古代魔法の交流
+      impact: 0.6
+      timestamp: 2025-05-08T09:02:43.115Z
+    - chapterNumber: 5
+      targetCharacterId: d1fab36c8689f629
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと機関の交流
+      impact: 0.8
+      timestamp: 2025-05-08T09:02:43.122Z
+    - chapterNumber: 1
+      targetCharacterId: 21e4cdc59f162fcf
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと彼女の交流
+      impact: 0.5
+      timestamp: 2025-05-09T12:12:08.538Z
+    - chapterNumber: 3
+      targetCharacterId: a7368dba7844ddac
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとカスの交流
+      impact: 0.7
+      timestamp: 2025-05-10T18:46:43.899Z
+    - chapterNumber: 4
+      targetCharacterId: cee0f01f12ce14f5
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとありの交流
+      impact: 0.6
+      timestamp: 2025-05-10T18:50:52.278Z
+    - chapterNumber: 7
+      targetCharacterId: rival
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとノア・フロストシャドウの交流
+      impact: 0.6
+      timestamp: 2025-05-10T19:05:51.874Z
+    - chapterNumber: 11
+      targetCharacterId: 241ee0982ed9db1d
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと水晶の交流
+      impact: 0.4
+      timestamp: 2025-05-10T19:22:34.078Z
+    - chapterNumber: 1
+      targetCharacterId: 06779040a6d75aca
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと研究室の交流
+      impact: 0.4
+      timestamp: 2025-05-11T02:52:04.053Z
+    - chapterNumber: 11
+      targetCharacterId: a750cf7e913431e0
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとカスの交流
+      impact: 0.6
+      timestamp: 2025-05-11T10:52:40.686Z
+    - chapterNumber: 12
+      targetCharacterId: b02713ddd40926ad
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとライナスの交流
+      impact: 0.5
+      timestamp: 2025-05-11T10:56:58.176Z
+    - chapterNumber: 7
+      targetCharacterId: 7ba5ae61baab54ef
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドとカスの交流
+      impact: 0.7999999999999999
+      timestamp: 2025-05-12T02:08:04.886Z
+    - chapterNumber: 12
+      targetCharacterId: 4606d767616df3cf
+      type: ENCOUNTER
+      description: ルナ・シルバーウッドと祖父の交流
+      impact: 0.6
+      timestamp: 2025-05-12T04:02:00.076Z
+abilities:
+  main:
+    - name: 元素魔法
+      description: 風と火の元素を操る高度な魔法能力。特に複数元素の融合に優れている。
+      level: 9
+    - name: 古代文字解読
+      description: 古代魔法文明の文字や印を解読する能力。祖父から学んだ稀少なスキル。
+      level: 8
+  secondary:
+    - name: 機械工学
+      description: 魔法との融合を目指した機械設計と理論研究。正規の訓練は受けていないが、独学で基礎を身につけている。
+      level: 6
+    - name: 防御魔法
+      description: 自身と周囲を守るためのバリア魔法。研究の危険性から必要に迫られて習得。
+      level: 7
+goals:
+  primary: 祖父の研究を継ぎ、古代魔法と現代技術の融合による新たな魔法体系を確立すること
+  secondary:
+    - アルディア王国の閉鎖的な魔法観を変革すること
+    - 時計に隠された秘密を解明すること
+    - アカデミーで正式な研究職を得ること
+  hidden: 祖父の死の真相を突き止め、その背後にいる者たちに正義を与えること
+metadata:
+  createdAt: 2025-05-01T00:00:00.000Z
+  lastUpdated: 2025-05-13T03:54:47.553Z
+  version: 145
+  tags:
+    - 魔法使い
+    - 研究者
+    - 貴族
+    - 改革者
+psychology:
+  currentDesires:
+    - 魔法と機械工学の融合に関する研究の成功
+    - 祖父の死の真相解明
+    - 自身の研究成果の発表と周囲からの理解
+    - 禁忌とされている機械工学への探求
+    - 実験の成功による自己肯定感の獲得
+  currentFears:
+    - 研究の失敗と成果が出ないこと
+    - 周囲からの非難と孤立
+    - 祖父の死に関わる真相の隠蔽
+    - 機械工学への興味が原因で魔法家系から見放されること
+  internalConflicts:
+    - 伝統的な魔法家系としての義務と、機械工学への興味という個人的な欲求の対立
+    - 理論と実験結果の矛盾に対する葛藤
+    - 完璧主義と研究の進捗の遅さによる焦り
+  emotionalState:
+    好奇心: 0.9
+    焦り: 0.7
+    不安: 0.6
+    決意: 0.8
+    孤独: 0.4
+  relationshipAttitudes: {}

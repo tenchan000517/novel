@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": "skill-a-technology-development",
+    "level": 4,
+    "proficiency": 85,
+    "acquired": "2022-09-15T10:30:00.000Z"
+  },
+  {
+    "skillId": "skill-prototype-creation",
+    "level": 5,
+    "proficiency": 20,
+    "acquired": "2021-11-20T14:15:00.000Z"
+  },
+  {
+    "skillId": "skill-mvp-development",
+    "level": 4,
+    "proficiency": 70,
+    "acquired": "2022-05-10T16:45:00.000Z"
+  },
+  {
+    "skillId": "skill-technical-documentation",
+    "level": 3,
+    "proficiency": 45,
+    "acquired": "2021-08-30T09:20:00.000Z"
+  },
+  {
+    "skillId": "skill-technology-strategy",
+    "level": 3,
+    "proficiency": 30,
+    "acquired": "2023-02-18T11:00:00.000Z"
+  },
+  {
+    "skillId": "skill-innovation-management",
+    "level": 2,
+    "proficiency": 60,
+    "acquired": "2023-07-25T13:30:00.000Z"
+  },
+  {
+    "skillId": "skill-scalable-architecture",
+    "level": 3,
+    "proficiency": 15,
+    "acquired": "2023-01-12T15:45:00.000Z"
+  },
+  {
+    "skillId": "skill-data-analysis",
+    "level": 4,
+    "proficiency": 55,
+    "acquired": "2022-03-08T12:20:00.000Z"
+  },
+  {
+    "skillId": "skill-insight-generation",
+    "level": 3,
+    "proficiency": 40,
+    "acquired": "2022-12-15T10:10:00.000Z"
+  },
+  {
+    "skillId": "skill-user-research",
+    "level": 2,
+    "proficiency": 25,
+    "acquired": "2023-04-20T14:00:00.000Z"
+  },
+  {
+    "skillId": "skill-basic-pitching",
+    "level": 2,
+    "proficiency": 35,
+    "acquired": "2023-06-10T16:30:00.000Z"
+  },
+  {
+    "skillId": "skill-technical-documentation",
+    "level": 4,
+    "proficiency": 80,
+    "acquired": "2021-10-05T11:15:00.000Z"
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "planned_foreshadowings": [
+    {
+      "id": "fs-planned-001",
+      "description": "主人公が学生時代に書いた「理想の会社」についてのレポート",
+      "chapter_to_introduce": 2,
+      "introduction_context": "主人公が部屋を片付けている際に、学生時代のレポートファイルが出てくる。「理想の会社」というタイトルのレポートを懐かしく眺め、当時の夢を思い出す。",
+      "chapter_to_resolve": 28,
+      "resolution_context": "法人化し事務所を構えた主人公が、引っ越し作業中に再びそのレポートを見つける。当初の理想と現実に作り上げた会社を比較し、成長と変化を実感する。",
+      "urgency": "medium",
+      "relatedCharacters": [
+        "高橋誠"
+      ],
+      "hints_before_resolution": [
+        {
+          "chapter": 16,
+          "hint": "リーダーシップの危機に直面した際、かつての「理想の会社」の考えを思い出す"
+        }
+      ],
+      "isIntroduced": true,
+      "isResolved": false
+    },
+    {
+      "id": "fs-planned-002",
+      "description": "メンターが何気なく語った「問いの質」についての言葉",
+      "chapter_to_introduce": 4,
+      "introduction_context": "起業家育成プロジェクトの講義で、山田メンターが「解の質は問いの質で決まる」と言及。主人公は意味をうまく理解できないまま記録する。",
+      "chapter_to_resolve": 13,
+      "resolution_context": "顧客インタビューの結果を分析する中で、突然メンターの言葉の意味が腑に落ち、自分がずっと「答え」にこだわりすぎていたことに気づく。",
+      "urgency": "high",
+      "relatedCharacters": [
+        "高橋誠",
+        "山田哲也"
+      ],
+      "hints_before_resolution": [
+        {
+          "chapter": 9,
+          "hint": "サービス構想発表での批判を受け、メンターが再び「問いの質」について言及する"
+        }
+      ],
+      "isIntroduced": true,
+      "isResolved": false
+    },
+    {
+      "id": "fs-planned-003",
+      "description": "佐藤が開発していた個人的なプロジェクト",
+      "chapter_to_introduce": 7,
+      "introduction_context": "チームでの作業の合間に、佐藤が自分のノートPCで何か別のコードを書いているのを主人公が目撃。尋ねると「ちょっとした個人的な実験」と言われる。",
+      "chapter_to_resolve": 20,
+      "resolution_context": "チームの危機的状況の中、佐藤が個人プロジェクトとして開発していた技術が、実はチームのサービスを大幅に強化できる可能性を秘めていたことが判明。",
+      "urgency": "medium",
+      "relatedCharacters": [
+        "高橋誠",
+        "佐藤健太"
+      ],
+      "hints_before_resolution": [
+        {
+          "chapter": 14,
+          "hint": "サービス転換の議論の中で、佐藤が「実は別のアプローチも考えている」と示唆する"
+        }
+      ],
+      "isIntroduced": false,
+      "isResolved": false
+    },
+    {
+      "id": "fs-planned-004",
+      "description": "ライバル起業家の成功と突然の危機",
+      "chapter_to_introduce": 10,
+      "introduction_context": "プロジェクト内で急速に注目を集め始める中村率いるチーム。華々しい成功を収めているように見える。",
+      "chapter_to_resolve": 22,
+      "resolution_context": "急成長していた中村チームが、持続可能性を無視した拡大戦略により資金ショートに陥る様子を目の当たりにし、持続可能なビジネス構築の重要性を学ぶ。",
+      "urgency": "medium",
+      "relatedCharacters": [
+        "高橋誠",
+        "中村大輔"
+      ],
+      "hints_before_resolution": [
+        {
+          "chapter": 17,
+          "hint": "中村チームの大型投資獲得ニュースの裏で、無理な拡大計画のリスクが垣間見える"
+        }
+      ],
+      "isIntroduced": false,
+      "isResolved": false
+    },
+    {
+      "id": "fs-planned-005",
+      "description": "顧客との何気ない会話から得た業界の課題",
+      "chapter_to_introduce": 14,
+      "introduction_context": "初期ユーザーの一人との雑談の中で、ある業界特有の課題について言及される。主人公はメモするが特に深く考えない。",
+      "chapter_to_resolve": 25,
+      "resolution_context": "競合との差別化戦略を検討する中で、その業界課題が実は大きな市場機会であることに気づき、主力サービスの方向性を決定づける。",
+      "urgency": "low",
+      "relatedCharacters": [
+        "高橋誠",
+        "初期ユーザー"
+      ],
+      "hints_before_resolution": [
+        {
+          "chapter": 19,
+          "hint": "別の顧客ミーティングで同様の業界課題が再び言及される"
+        }
+      ],
+      "isIntroduced": false,
+      "isResolved": false
+    }
+  ]
+}

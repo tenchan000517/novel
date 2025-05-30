@@ -1,0 +1,30 @@
+globalStrategy:
+  preferredMode: "mixed"
+  abstractRatio: 0.4
+  plotComplexity: "high"
+chapterModeOverrides:
+  - chapterRange: [1, 3]
+    mode: "CONCRETE"
+    reason: "物語の導入部分は登場人物と世界観を具体的に確立するため"
+  - chapterRange: [11, 15]
+    mode: "CONCRETE"
+    reason: "プロダクトインからマーケットインへの転換という重要テーマを具体的に描くため"
+  - chapterRange: [27, 30]
+    mode: "CONCRETE"
+    reason: "物語の結末部分は明確に描き、読者に満足感を与えるため"
+arcStrategies:
+  - arcName: "起業への一歩"
+    strategy: "主人公の理想主義と現実とのギャップを強調"
+    notes: "ビジネスコンテストでの挫折など、現実の厳しさを具体的に描写する"
+  - arcName: "基盤づくりの模索"
+    strategy: "チーム形成と各メンバーの個性・強みを丁寧に描写"
+    notes: "特にA技術に関する描写は専門的すぎず一般読者も理解できるレベルで"
+  - arcName: "プロダクトインの限界"
+    strategy: "顧客視点への転換の難しさを内面の葛藤も含めて描写"
+    notes: "「解の質より問いの質」というテーマを繰り返し強調する"
+  - arcName: "成長と変革"
+    strategy: "経営理論の学びを物語に自然に溶け込ませる"
+    notes: "理論の説明に終始せず、実践と失敗から学ぶプロセスを重視"
+  - arcName: "飛躍への準備"
+    strategy: "これまでの成長を総括しつつ、新たな展望も示す"
+    notes: "社会課題解決という原点に立ち返る場面を入れる"

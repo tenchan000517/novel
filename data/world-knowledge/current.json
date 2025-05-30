@@ -1,0 +1,178 @@
+{
+  "worldSettings": {
+    "description": "基本的な物語世界",
+    "regions": [],
+    "history": [],
+    "rules": [],
+    "genre": "business",
+    "narrativeSections": [
+      {
+        "id": "section-1",
+        "number": 1,
+        "title": "覚醒",
+        "theme": "起業の原点と初期の挑戦",
+        "mainConcept": "ISSUE DRIVEN",
+        "startChapter": 1,
+        "endChapter": 5,
+        "learningGoal": "課題起点思考の基礎を理解する",
+        "transformationGoal": "自己中心から顧客中心への視点転換",
+        "emotionalGoal": "混乱から好奇心への感情的変化",
+        "created": "2025-05-29T00:41:58.305Z",
+        "updated": "2025-05-29T00:41:58.305Z"
+      },
+      {
+        "id": "section-2",
+        "number": 2,
+        "title": "探求",
+        "theme": "顧客理解と価値創造",
+        "mainConcept": "ISSUE DRIVEN",
+        "startChapter": 6,
+        "endChapter": 10,
+        "learningGoal": "顧客の本質的課題を探る方法を習得する",
+        "transformationGoal": "表面的ニーズへの対応から本質的課題の探求へ",
+        "emotionalGoal": "混乱と葛藤を経て気づきへと至る感情プロセス",
+        "created": "2025-05-29T00:41:58.305Z",
+        "updated": "2025-05-29T00:41:58.305Z"
+      },
+      {
+        "id": "section-3",
+        "number": 3,
+        "title": "変容",
+        "theme": "組織づくりとリーダーシップ",
+        "mainConcept": "ISSUE DRIVEN",
+        "startChapter": 11,
+        "endChapter": 15,
+        "learningGoal": "課題起点のアプローチを組織に浸透させる方法を学ぶ",
+        "transformationGoal": "個人的な実践から組織的な浸透へ",
+        "emotionalGoal": "気づきを実践する中での自信と成長の感情",
+        "created": "2025-05-29T00:41:58.305Z",
+        "updated": "2025-05-29T00:41:58.305Z"
+      }
+    ],
+    "businessConcepts": [
+      {
+        "name": "ISSUE DRIVEN",
+        "description": "課題解決を起点としたビジネスアプローチ。顧客の抱える本質的な課題（イシュー）を深く理解し、その解決に焦点を当てたソリューションを提供する考え方。",
+        "keyPrinciples": [
+          "顧客視点での課題定義",
+          "本質的問いを通じた深い理解",
+          "解決策よりも課題の探求を優先",
+          "顧客と共に考え、共に創る",
+          "継続的な課題再定義と価値提供"
+        ],
+        "commonMisconceptions": [
+          "製品や技術起点の思考",
+          "表面的なニーズへの対応",
+          "自社の強みや都合を優先",
+          "顧客の言葉をそのまま受け取る",
+          "一度の課題解決で終わらせる"
+        ],
+        "applicationAreas": [
+          "コンサルティング",
+          "プロダクト開発",
+          "マーケティング戦略",
+          "組織開発",
+          "顧客関係管理"
+        ],
+        "relatedConcepts": [
+          "デザインシンキング",
+          "顧客中心主義",
+          "ジョブ理論",
+          "共創",
+          "アジャイル開発"
+        ],
+        "learningJourney": {
+          "MISCONCEPTION": "製品や技術起点の思考から、自社の強みや都合を優先した提案を行う。表面的なニーズに応えることで価値を提供していると考える。",
+          "EXPLORATION": "顧客視点の重要性に気づき始め、顧客の言葉や要望を集めようとする。しかし、まだ表面的なニーズの収集に留まることが多い。",
+          "CONFLICT": "顧客の言葉をそのまま受け取ることの限界に直面し、真の課題と表明された要望の違いに葛藤する。自社の視点と顧客視点の間で揺れ動く。",
+          "INSIGHT": "顧客の本質的な課題（イシュー）を見極めることの重要性に気づく。表面的な要望の背後にある根本的な問題を探求する必要性を理解する。",
+          "APPLICATION": "本質的な問いを通じて顧客との対話を深め、共に課題を定義し直す。顧客と共に考え、解決策を模索するプロセスを実践する。",
+          "INTEGRATION": "課題起点のアプローチが自然な思考習慣となり、常に顧客の本質的課題に焦点を当て、継続的な課題再定義と価値提供のサイクルを回せるようになる。"
+        },
+        "transformationalElements": {
+          "MISCONCEPTION": {
+            "EXPLORATION": [
+              "顧客の声を直接聞く経験",
+              "自社製品が顧客のニーズに合わない場面の発見",
+              "顧客視点の欠如による失敗体験"
+            ]
+          },
+          "EXPLORATION": {
+            "CONFLICT": [
+              "顧客の言葉と真のニーズの乖離の発見",
+              "表面的な要望に応えても満足されない経験",
+              "異なる顧客間で矛盾する要望への遭遇"
+            ]
+          },
+          "CONFLICT": {
+            "INSIGHT": [
+              "本質的な問いを投げかけた時の顧客の反応の変化",
+              "課題の再定義による突破口の発見",
+              "顧客自身も気づいていなかった潜在ニーズの発掘"
+            ]
+          },
+          "INSIGHT": {
+            "APPLICATION": [
+              "顧客との対話方法の意識的な変革",
+              "本質的課題に基づいたソリューション設計の実践",
+              "顧客との共創プロセスの導入"
+            ]
+          },
+          "APPLICATION": {
+            "INTEGRATION": [
+              "課題起点アプローチの日常的な適用",
+              "チーム全体への考え方の浸透",
+              "継続的な価値提供サイクルの確立"
+            ]
+          }
+        },
+        "learningRecords": [
+          {
+            "stage": "CONFLICT",
+            "chapterNumber": 1,
+            "insights": [
+              "1.  山田哲也から「問いの質」の重要性を指摘され、高橋は「どうすれば『問いの質』を高めることができるのか、まだ分かりません」と答えている。"
+            ],
+            "examples": [
+              "顧客リサーチの結果、新卒離職の原因の複雑さに圧倒され、何から手をつければ良いのか分からなくなっている。",
+              "佐藤と鈴木の意見を聞き、自分の浅はかさを痛感し、理想ばかりを追い求めていたことに気づいている。"
+            ]
+          }
+        ],
+        "created": "2025-05-29T00:41:58.307Z",
+        "updated": "2025-05-29T00:43:50.347Z"
+      }
+    ],
+    "learningStageLastUpdated": "2025-05-29T00:43:50.347Z",
+    "learningContext": {
+      "storyId": "default-story",
+      "currentChapter": 1,
+      "currentSection": null,
+      "mainConcept": "ISSUE DRIVEN",
+      "recentChapters": [
+        {
+          "chapterNumber": 1,
+          "title": "問いの始まり",
+          "summary": "ビジネスコンテストで敗北し、焦燥感に駆られた高橋は、起業家育成プロジェクト説明会で「問いの質」の重要性を知る。メンター山田との出会いを経て、顧客視点と地道な努力の必要性を痛感し、プロジェクトに参加。チームを結成し、新卒離職問題に取り組むが、理想と現実のギャップに直面し、自己肯定感が揺らぐ。しかし、仲間の助言と顧客リサーチを通して、問題の複雑さを理解し、自身の弱点と向き合い、学び続けることを決意する。学びのポイントは、理想論だけでなく、顧客視点と地道な努力、そして問題の本質を見抜く「問いの質」の重要性。",
+          "mainEvents": [
+            "山田は、穏やかな口調で語り始めた。",
+            "まずは、徹底的な顧客リサーチから始めた。",
+            "自分の無力さや知識不足を痛感し、自己肯定感が揺らぎ始めた。"
+          ]
+        }
+      ],
+      "mainCharacters": [
+        "character-takahashi",
+        "character-yamada",
+        "character-sato",
+        "character-suzuki"
+      ],
+      "recentThemes": [],
+      "currentLearningStage": "CONFLICT",
+      "customProperties": {}
+    }
+  },
+  "establishedEvents": [],
+  "foreshadowElements": [],
+  "lastChangeTimestamp": "2025-05-29T00:44:00.657Z"
+}

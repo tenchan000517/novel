@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200" font-family="'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1200" fill="#f9fafb" rx="12" ry="12"/>
+  
+  <!-- Header -->
+  <rect x="40" y="30" width="720" height="80" rx="8" ry="8" fill="#4f46e5" />
+  <text x="400" y="80" font-size="28" font-weight="bold" text-anchor="middle" fill="white">💡 学生向け有益情報まとめ</text>
+  
+  <!-- Card 1: Career Preparation -->
+  <g>
+    <rect x="40" y="130" width="720" height="180" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="130" width="16" height="180" rx="4" ry="4" fill="#3b82f6"/>
+    <text x="70" y="160" font-size="20" font-weight="bold" fill="#1e3a8a">1. キャリア準備</text>
+    
+    <circle cx="80" cy="190" r="4" fill="#3b82f6"/>
+    <text x="95" y="195" font-size="16" font-weight="bold" fill="#1f2937">インターンシップに参加する</text>
+    <text x="95" y="215" font-size="14" fill="#4b5563">実務経験を積むチャンスです。技術系ならGitHubにプロジェクトを</text>
+    <text x="95" y="235" font-size="14" fill="#4b5563">公開すると評価UP！</text>
+    
+    <circle cx="80" cy="255" r="4" fill="#3b82f6"/>
+    <text x="95" y="260" font-size="16" font-weight="bold" fill="#1f2937">自己PRの準備</text>
+    <text x="95" y="280" font-size="14" fill="#4b5563">実際に行ったプロジェクトや取り組みをしっかりまとめておきましょう。</text>
+    <text x="95" y="300" font-size="14" fill="#4b5563">成果や学びを数字で示すと効果的。</text>
+  </g>
+  
+  <!-- Card 2: Online Learning -->
+  <g>
+    <rect x="40" y="330" width="720" height="120" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="330" width="16" height="120" rx="4" ry="4" fill="#3b82f6"/>
+    
+    <circle cx="80" cy="365" r="4" fill="#3b82f6"/>
+    <text x="95" y="370" font-size="16" font-weight="bold" fill="#1f2937">オンライン学習プラットフォームの活用</text>
+    <text x="95" y="390" font-size="14" fill="#4b5563">Udemy、Coursera、Progate、Qiitaなどで最新技術や</text>
+    <text x="95" y="410" font-size="14" fill="#4b5563">ビジネススキルを学びましょう。</text>
+  </g>
+  
+  <!-- Card 3: Skill Improvement -->
+  <g>
+    <rect x="40" y="470" width="720" height="180" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="470" width="16" height="180" rx="4" ry="4" fill="#10b981"/>
+    <text x="70" y="500" font-size="20" font-weight="bold" fill="#065f46">2. スキルアップ</text>
+    
+    <circle cx="80" cy="530" r="4" fill="#10b981"/>
+    <text x="95" y="535" font-size="16" font-weight="bold" fill="#1f2937">プログラミング学習</text>
+    <text x="95" y="555" font-size="14" fill="#4b5563">Python、JavaScript、TypeScriptなどは汎用性が高くおすすめ。</text>
+    <text x="95" y="575" font-size="14" fill="#4b5563">特にAI・Web開発ならPythonとNext.jsが強力。</text>
+    
+    <circle cx="80" cy="595" r="4" fill="#10b981"/>
+    <text x="95" y="600" font-size="16" font-weight="bold" fill="#1f2937">ポートフォリオサイトを作成する</text>
+    <text x="95" y="620" font-size="14" fill="#4b5563">自身のプロジェクトや成果物をまとめて見せられる場を作ると、</text>
+    <text x="95" y="640" font-size="14" fill="#4b5563">就職活動や自己PRに便利です。</text>
+  </g>
+  
+  <!-- Card 4: Certifications -->
+  <g>
+    <rect x="40" y="670" width="720" height="120" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="670" width="16" height="120" rx="4" ry="4" fill="#10b981"/>
+    
+    <circle cx="80" cy="705" r="4" fill="#10b981"/>
+    <text x="95" y="710" font-size="16" font-weight="bold" fill="#1f2937">資格取得</text>
+    <text x="95" y="730" font-size="14" fill="#4b5563">基本情報技術者試験やAWS認定資格</text>
+    <text x="95" y="750" font-size="14" fill="#4b5563">（AWS Certified Cloud Practitionerなど）が狙い目。</text>
+  </g>
+  
+  <!-- Card 5: Networking -->
+  <g>
+    <rect x="40" y="810" width="720" height="180" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="810" width="16" height="180" rx="4" ry="4" fill="#f59e0b"/>
+    <text x="70" y="840" font-size="20" font-weight="bold" fill="#92400e">3. 人脈作りと情報収集</text>
+    
+    <circle cx="80" cy="870" r="4" fill="#f59e0b"/>
+    <text x="95" y="875" font-size="16" font-weight="bold" fill="#1f2937">勉強会やハッカソンに参加</text>
+    <text x="95" y="895" font-size="14" fill="#4b5563">コミュニティに参加するとモチベーションが高まり、</text>
+    <text x="95" y="915" font-size="14" fill="#4b5563">仲間と切磋琢磨できます。</text>
+    
+    <circle cx="80" cy="935" r="4" fill="#f59e0b"/>
+    <text x="95" y="940" font-size="16" font-weight="bold" fill="#1f2937">SNS活用とコミュニティ参加</text>
+    <text x="95" y="960" font-size="14" fill="#4b5563">TwitterやLinkedIn、Connpass、Qiita、Zennなどで</text>
+    <text x="95" y="980" font-size="14" fill="#4b5563">技術共有や勉強会情報をゲットしましょう。</text>
+  </g>
+  
+  <!-- Card 6: Efficient Learning & Mental Health -->
+  <g>
+    <rect x="40" y="1010" width="720" height="130" rx="8" ry="8" fill="white" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="40" y="1010" width="16" height="130" rx="4" ry="4" fill="#8b5cf6"/>
+    <text x="70" y="1040" font-size="20" font-weight="bold" fill="#5b21b6">4. 効率的な学習法とメンタルヘルス</text>
+    
+    <circle cx="80" cy="1070" r="4" fill="#8b5cf6"/>
+    <text x="95" y="1075" font-size="16" font-weight="bold" fill="#1f2937">アウトプット重視と休息のバランス</text>
+    <text x="95" y="1095" font-size="14" fill="#4b5563">学んだことをブログやSNSに投稿し、適度なリフレッシュも忘れずに。</text>
+    <text x="95" y="1115" font-size="14" fill="#4b5563">目標を細かく設定し、達成感を積み上げましょう。</text>
+  </g>
+  
+  <!-- Footer Action Plan -->
+  <g>
+    <rect x="40" y="1160" width="720" height="15" rx="4" ry="4" fill="#ef4444"/>
+    <text x="400" y="1185" font-size="16" font-weight="bold" text-anchor="middle" fill="#7f1d1d">🔥 特におすすめアクションプラン</text>
+  </g>
+</svg>

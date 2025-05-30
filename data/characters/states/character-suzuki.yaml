@@ -1,0 +1,177 @@
+isActive: false
+emotionalState: POSITIVE
+developmentStage: 0
+lastAppearance: 1
+parameters:
+  - id: param-marketing-knowledge
+    name: マーケティング知識
+    description: マーケティングの理論や手法に関する専門知識
+    category: BUSINESS
+    tags:
+      - マーケティング
+      - 知識
+      - 理論
+    value: 100
+    growth: 0
+  - id: param-customer-empathy
+    name: 顧客共感力
+    description: 顧客の感情や体験に共感し、理解する能力
+    category: BUSINESS
+    tags:
+      - 共感
+      - 顧客
+      - 理解
+    value: 100
+    growth: 0
+  - id: param-communication
+    name: コミュニケーション能力
+    description: 自分の考えを効果的に伝え、他者の意見を理解する力
+    category: SOCIAL
+    tags:
+      - 対話
+      - 表現
+      - 理解
+    value: 0
+    growth: 0
+  - id: param-research-skills
+    name: リサーチスキル
+    description: 情報を収集し、分析する能力
+    category: MENTAL
+    tags:
+      - 調査
+      - 情報
+      - 分析
+    value: 48
+    growth: 0
+  - id: param-analytical-thinking
+    name: 分析的思考
+    description: 情報を論理的に分析し、パターンや関連性を見出す能力
+    category: MENTAL
+    tags:
+      - 分析
+      - 論理
+      - 思考
+    value: 32
+    growth: 0
+  - id: param-leadership
+    name: リーダーシップ
+    description: チームを導き、方向性を示し、メンバーの能力を引き出す力
+    category: SOCIAL
+    tags:
+      - リーダー
+      - 組織
+      - チーム
+    value: 0
+    growth: 0
+  - id: param-strategic-thinking
+    name: 戦略的思考
+    description: 長期的視点で全体像を捉え、計画を立てる能力
+    category: MENTAL
+    tags:
+      - 戦略
+      - 計画
+      - 思考
+    value: 0
+    growth: 0
+  - id: param-data-driven-decision
+    name: データ駆動型意思決定
+    description: データに基づいて意思決定を行う能力
+    category: BUSINESS
+    tags:
+      - データ
+      - 分析
+      - 判断
+    value: 0
+    growth: 0
+skills:
+  - 不明なスキル (1章)
+  - 不明なスキル (3章)
+  - 不明なスキル (6章)
+  - 不明なスキル (8章)
+  - 不明なスキル (11章)
+  - 不明なスキル (12章)
+  - 不明なスキル (5章)
+  - 不明なスキル (2章)
+  - 不明なスキル (9章)
+activeGrowthPlanId: growth-plan-suzuki
+lastStateChange:
+  type: MAJOR_INJURY
+  chapterNumber: 12
+  description: 美咲が山田に殴り飛ばされ、動けなくなる。
+location: 健太のアパート
+isDeceased: true
+skill:
+  - skillId: skill-persona-creation
+    level: 1
+    proficiency: 0
+    acquired: 2025-05-19T07:39:11.430Z
+  - skillId: skill-market-research
+    level: 1
+    proficiency: 0
+    acquired: 2025-05-19T07:39:11.446Z
+transformations:
+  - type: UNKNOWN
+    description: ロボットが破壊される。
+    chapter: 4
+    isPermanent: true
+    timestamp: 2025-05-14T13:00:43.219Z
+  - type: UNKNOWN
+    description: チーム内で技術的な実現可能性とマーケティング戦略の優先順位を巡り、意見の対立が生まれたことで、チームの関係性に変化が生じた。
+    chapter: 6
+    isPermanent: true
+    timestamp: 2025-05-15T08:30:48.232Z
+  - type: UNKNOWN
+    description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
+    chapter: 3
+    isPermanent: true
+    timestamp: 2025-05-15T10:20:06.813Z
+  - type: UNKNOWN
+    description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
+    chapter: 4
+    isPermanent: true
+    timestamp: 2025-05-15T11:53:43.323Z
+  - type: UNKNOWN
+    description: 美咲が、山田からプロジェクトに参加させないと言われ、高橋との関係に変化が生じる可能性がある。
+    chapter: 5
+    isPermanent: true
+    timestamp: 2025-05-15T12:02:32.570Z
+  - type: UNKNOWN
+    description: 美咲がネクストライフの社員であることが判明。
+    chapter: 5
+    isPermanent: true
+    timestamp: 2025-05-15T12:14:23.922Z
+  - type: UNKNOWN
+    description: 美咲が中村に脅迫され、ネクストライフに協力していたことが判明。彼女の苦悩と後悔が描かれる。
+    chapter: 8
+    isPermanent: true
+    timestamp: 2025-05-15T12:32:09.053Z
+  - type: UNKNOWN
+    description: 鈴木の顧客共感力が高まる。
+    chapter: 3
+    isPermanent: true
+    timestamp: 2025-05-18T11:32:12.487Z
+promotionHistory:
+  - chapter: 4
+    title: Unknown Position
+    description: ネクストライフから、自社のプロジェクトへの協力を提案される。
+    timestamp: 2025-05-15T11:50:45.129Z
+injuries:
+  - id: injury-1747310023309-zi5ll
+    description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
+    severity: MODERATE
+    chapter: 4
+    isHealed: false
+    timestamp: 2025-05-15T11:53:43.309Z
+  - id: injury-1747312145481-7qt5r
+    description: 美咲がネクストライフに利用され、精神的に苦痛を受けている。
+    severity: MODERATE
+    chapter: 8
+    isHealed: false
+    timestamp: 2025-05-15T12:29:05.481Z
+  - id: injury-1747312329045-h5yfi
+    description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
+    severity: MODERATE
+    chapter: 8
+    isHealed: false
+    timestamp: 2025-05-15T12:32:09.045Z
+health: 55

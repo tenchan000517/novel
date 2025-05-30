@@ -1,0 +1,143 @@
+id: villager
+name: グレン・ウェザーフィールド
+shortNames:
+  - グレン
+  - 村人
+nicknames:
+  protagonist:
+    - グレンさん
+  antagonist:
+    - 村人
+  shopkeeper:
+    - グレン
+type: MOB
+role: OTHER
+description: 50歳。アルディアとテクナスの国境近くの農村の長。両国の対立に巻き込まれる一般市民の視点を代表する平凡だが知恵のある農夫。
+personality:
+  traits:
+    - 実践的
+    - 思慮深い
+    - 粘り強い
+    - 愛想が良い
+    - やや疑り深い
+  speechPatterns:
+    - 地方訛りのある素朴な言葉遣い
+    - 天候や作物に例えた表現を好む
+    - 直接的で飾り気のない話し方
+  quirks:
+    - 話す前に必ず咳払いをする
+    - 難しい話題になると帽子を脱いでかぶり直す
+    - 決断する前に必ず空を見上げる
+  values:
+    - 家族と共同体
+    - 実用性
+    - 中立と平和
+    - 伝統と革新のバランス
+appearance:
+  summary: 風雨に鍛えられた日焼けした顔と、労働で鍛えられた頑丈な体つきの中年男性。茶色の髪に白髪が混じり始め、穏やかだが鋭い眼差しを持つ。シンプルで実用的な農夫の服装。
+  distinctiveFeatures:
+    - 風雨に鍛えられた顔の深いしわ
+    - 常に持ち歩く手作りの天候予測器具
+    - 左腕に残る古い雷撃の跡
+  clothing: 実用的な農夫の服装だが、村長としての役目を示す青い肩掛けをしている。
+  age: 50
+  gender: 男性
+backstory:
+  summary: >-
+    代々国境地帯の農村で暮らしてきた農家の息子として生まれる。若い頃はアルディアの軍に徴兵され、その後テクナスの企業で短期間働いた経験もあり、両国を知る数少ない一般市民の一人。10年前に村長に選ばれ、以来、両国の対立から村を守るために奔走している。魔法の才能はないが、天候を予測する不思議な勘と、人々をまとめる知恵がある。
+  significantEvents:
+    - 若い頃のアルディア軍での国境警備経験
+    - テクナス企業での労働経験
+    - 大雷雨での雷撃と奇跡的な生還
+    - 村長選出と両国からの圧力の始まり
+  origin: アルディアとテクナスの国境地帯、ウェザーフィールド村
+  motivations: 村と家族の安全を守ること。両国の対立から一般市民を守ること。実用的な魔法と技術の恩恵を農村に取り入れること。
+relationships:
+  - targetId: protagonist
+    type: NEUTRAL
+    strength: 0.6
+    description: 偶然の出会いから、彼女の実用的な魔法応用に関心を持つ。村の問題解決に役立つ魔法について助言を求めることがある。
+  - targetId: love_interest
+    type: FRIEND
+    strength: 0.7
+    description: 彼の実用的な天候魔法に感謝し、村を何度か災害から救ってもらった恩義がある。互いに尊敬し合う関係。
+state:
+  isActive: true
+  emotionalState: CONCERNED
+  developmentStage: 1
+  lastAppearance: 7
+history:
+  appearances:
+    - chapterNumber: 2
+      timestamp: 2025-05-10T02:58:42.235Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+    - chapterNumber: 5
+      timestamp: 2025-05-10T18:55:24.166Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-10T19:11:22.663Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-12T02:14:53.455Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+    - chapterNumber: 12
+      timestamp: 2025-05-12T15:21:22.119Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+    - chapterNumber: 7
+      timestamp: 2025-05-13T03:27:18.726Z
+      significance: 0.3
+      summary: グレン・ウェザーフィールドが登場
+      emotionalImpact: 0
+  developmentPath: []
+  interactions: []
+abilities:
+  main:
+    - name: 天候予測
+      description: 魔法ではないが不思議な精度で天候を予測する能力。特に魔法的異常気象の前兆を感じ取ることがある。
+      level: 7
+  secondary:
+    - name: 交渉と調停
+      description: 対立する意見をまとめ、実用的な解決策を見出す能力。両国の地方役人との交渉でも発揮される。
+      level: 8
+metadata:
+  createdAt: 2025-05-04T17:00:00.000Z
+  lastUpdated: 2025-05-13T03:27:18.726Z
+  version: 7
+  tags:
+    - 村長
+    - 農夫
+    - 国境住民
+    - 一般市民
+psychology:
+  currentDesires:
+    - 村の平和と安全の維持
+    - 両国の対立から村を守ること
+    - 村人たちの生活の安定
+    - 国境地帯の不安定な状況の改善
+    - 自身の知恵と経験を活かして村を導くこと
+  currentFears:
+    - 両国の対立が激化し、村が巻き込まれること
+    - 村人たちが争いに巻き込まれ、命を落とすこと
+    - 村の生活が破壊されること
+    - 自身の判断ミスで村を危険に晒すこと
+  internalConflicts:
+    - 両国のどちらにも偏らず、中立の立場を保ちたいという願望と、どちらかの国に協力せざるを得ない状況に陥る可能性との葛藤
+    - 村の安全のために、時には強硬な手段を取らなければならないことへの葛藤
+    - 自身の無力感と、それでも村を守らなければならないという責任感の間の葛藤
+  emotionalState:
+    不安: 0.7
+    責任感: 0.8
+    希望: 0.4
+    警戒: 0.6
+    疲労: 0.5
+  relationshipAttitudes: {}

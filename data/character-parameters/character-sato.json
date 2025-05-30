@@ -1,0 +1,106 @@
+[
+  {
+    "id": "param-technical-skill",
+    "name": "技術力",
+    "description": "専門的な技術やスキルを習得し、活用する能力",
+    "category": "TECHNICAL",
+    "tags": [
+      "技術",
+      "専門",
+      "スキル"
+    ],
+    "value": 100,
+    "growth": 0
+  },
+  {
+    "id": "param-teamwork",
+    "name": "チームワーク",
+    "description": "チームの一員として協力し、貢献する能力",
+    "category": "SOCIAL",
+    "tags": [
+      "協力",
+      "貢献",
+      "調和"
+    ],
+    "value": 81,
+    "growth": 0
+  },
+  {
+    "id": "param-business-understanding",
+    "name": "ビジネス理解",
+    "description": "ビジネスの仕組みや目的、戦略を理解する能力",
+    "category": "BUSINESS",
+    "tags": [
+      "理解",
+      "ビジネス",
+      "目的"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-communication",
+    "name": "コミュニケーション能力",
+    "description": "自分の考えを効果的に伝え、他者の意見を理解する力",
+    "category": "SOCIAL",
+    "tags": [
+      "対話",
+      "表現",
+      "理解"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-leadership",
+    "name": "リーダーシップ",
+    "description": "チームを導き、方向性を示し、メンバーの能力を引き出す力",
+    "category": "SOCIAL",
+    "tags": [
+      "リーダー",
+      "組織",
+      "チーム"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-strategic-thinking",
+    "name": "戦略的思考",
+    "description": "長期的視点で全体像を捉え、計画を立てる能力",
+    "category": "MENTAL",
+    "tags": [
+      "戦略",
+      "計画",
+      "思考"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-technical-vision",
+    "name": "技術的ビジョン",
+    "description": "技術の将来性や可能性を見通す能力",
+    "category": "TECHNICAL",
+    "tags": [
+      "将来",
+      "技術",
+      "展望"
+    ],
+    "value": 36,
+    "growth": 0
+  },
+  {
+    "id": "param-resource-management",
+    "name": "リソース管理",
+    "description": "人材、時間、予算などのリソースを効果的に配分・管理する能力",
+    "category": "MANAGEMENT",
+    "tags": [
+      "管理",
+      "配分",
+      "効率"
+    ],
+    "value": 0,
+    "growth": 0
+  }
+]

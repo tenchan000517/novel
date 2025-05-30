@@ -1,0 +1,52 @@
+# data/config/story-plot.yaml
+# 物語のプロットアウトライン
+
+title: "光と闇の境界"
+author: "Auto Novel System"
+targetLength: 50000
+
+# プロット構造
+structure:
+  acts:
+    - title: "Act 1: 魔法の消失"
+      chapters: [1, 2, 3, 4, 5]
+      summary: "魔法アカデミーの卒業式から始まり、主人公リオンと友人エリアが魔法消失の謎を追う旅に出る。初期の探索と古代魔法の手がかりの発見。"
+    
+    - title: "Act 2: 古代の秘密"
+      chapters: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      summary: "シャードの荒野での探索と古代遺跡の発見。黒衣の組織との初めての対立と、魔法回復の手がかりを見つける。味方と敵の明確化。"
+    
+    - title: "Act 3: 光と闇の決断"
+      chapters: [16, 17, 18, 19, 20]
+      summary: "最終決戦と魔法の未来についての重大な決断。魔法と科学の新たな調和を見出し、世界に新たな道を示す。"
+
+# 転換点
+turningPoints:
+  - chapter: 5
+    description: "「光の祠」の発見と、黒衣の組織「闇の商人団」との初めての遭遇。"
+  
+  - chapter: 10
+    description: "古代魔法文明の遺跡で、魔法が消失した真の理由と「調和の鍵」の存在を知る。"
+  
+  - chapter: 15
+    description: "「闇の商人団」の真の目的が判明し、主人公が重傷を負うクライマックス。"
+  
+  - chapter: 20
+    description: "最終決戦と、魔法と科学を融合させる新たな道の発見。"
+
+# 伏線計画
+foreshadowing:
+  - element: "リオンの腕輪"
+    introduction: 1
+    payoff: 15
+    description: "実は「調和の鍵」の一部だった家族の形見。"
+  
+  - element: "マーカスの「闇は光を求め、光は闇を恐れる」という言葉"
+    introduction: 1
+    payoff: 10
+    description: "魔法の二つの派閥「光の守護者」と「闇の商人団」の関係を示唆していた。"
+  
+  - element: "魔法消失村の黒い石柱"
+    introduction: 2
+    payoff: 12
+    description: "実は魔法を吸収する古代装置だった。"

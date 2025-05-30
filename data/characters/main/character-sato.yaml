@@ -1,0 +1,1765 @@
+id: character-sato
+name: 佐藤健太
+shortNames:
+  - 健太
+  - 佐藤
+type: MAIN
+description: 主人公のチームに加わるエンジニア。A技術に精通し、高い技術力を持つ。実践的で冷静な判断ができるが、時に技術的な視点に偏りがち。
+personality:
+  traits:
+    - 論理的
+    - 実践的
+    - 冷静
+    - 好奇心旺盛
+    - 技術志向
+  speechPatterns:
+    - 簡潔で要点を突いた話し方
+    - 技術用語を多用する
+    - 「技術的には可能だけど...」と現実的制約を指摘する
+  quirks:
+    - 考え事をしながらコードを書く
+    - 寝不足でも集中すると何時間でも作業を続ける
+    - 気になるとすぐに検証してみる
+  values:
+    - 技術の力で世界を変えること
+    - 効率性と実用性
+    - オープンソースの精神
+    - 常に新しいことを学ぶこと
+appearance:
+  age: 23
+  gender: 男性
+  height: 178
+  bodyType: やや痩せ型
+  hairColor: 茶色
+  eyeColor: 黒
+  distinguishingFeatures:
+    - 常にノートPCを持ち歩いている
+    - 黒いパーカーを愛用
+    - 寝ぐせがついていることが多い
+  clothingStyle: カジュアルでシンプルな服装。黒やネイビーのTシャツとジーンズが定番。
+backstory:
+  summary: >-
+    中学時代からプログラミングに興味を持ち、独学で様々な言語を習得。大学ではコンピュータサイエンスを専攻しながら、複数のプログラミングコンテストで入賞。大手IT企業からの内定も得たが、自分の技術を活かせる小さなチームでの仕事に魅力を感じている。
+  significantEvents:
+    - 中学3年生の時に初めて自作アプリをリリース
+    - 高校時代に全国規模のプログラミングコンテストで3位入賞
+    - 大学2年次に国際ハッカソンに参加し、チームで優勝
+    - A技術の黎明期から関わり、コミュニティで知られる存在に
+  origin: 関東の地方都市
+  trauma:
+    - 中学時代のいじめ経験（技術に没頭するきっかけになった）
+  detailedHistory: >-
+    両親は共働きの一般家庭。父親はSE、母親は事務職。父の影響でPCに触れる機会が多く、中学生の頃から独学でプログラミングを始める。技術系の話題で盛り上がる友人が少なく、オンラインコミュニティに居場所を見つける。高校時代にはすでに小規模な受託開発を請け負うほどのスキルを持ち、大学ではさらに技術を磨く。最新の技術トレンドに敏感で、特にA技術には早期から取り組み、深い知識を持つ。
+  motivations: 革新的な技術で社会に価値を提供すること。技術的な挑戦を通じて自分の限界を試したい。
+  secrets: 実は社会性に不安を持っており、技術に逃げているところがある
+state:
+  isActive: false
+  emotionalState: NEUTRAL
+  developmentStage: 0
+  lastAppearance: 1
+  parameters:
+    - id: param-technical-skill
+      name: 技術力
+      description: 専門的な技術やスキルを習得し、活用する能力
+      category: TECHNICAL
+      tags:
+        - 技術
+        - 専門
+        - スキル
+      value: 100
+      growth: 0
+    - id: param-teamwork
+      name: チームワーク
+      description: チームの一員として協力し、貢献する能力
+      category: SOCIAL
+      tags:
+        - 協力
+        - 貢献
+        - 調和
+      value: 81
+      growth: 0
+    - id: param-business-understanding
+      name: ビジネス理解
+      description: ビジネスの仕組みや目的、戦略を理解する能力
+      category: BUSINESS
+      tags:
+        - 理解
+        - ビジネス
+        - 目的
+      value: 0
+      growth: 0
+    - id: param-communication
+      name: コミュニケーション能力
+      description: 自分の考えを効果的に伝え、他者の意見を理解する力
+      category: SOCIAL
+      tags:
+        - 対話
+        - 表現
+        - 理解
+      value: 0
+      growth: 0
+    - id: param-leadership
+      name: リーダーシップ
+      description: チームを導き、方向性を示し、メンバーの能力を引き出す力
+      category: SOCIAL
+      tags:
+        - リーダー
+        - 組織
+        - チーム
+      value: 0
+      growth: 0
+    - id: param-strategic-thinking
+      name: 戦略的思考
+      description: 長期的視点で全体像を捉え、計画を立てる能力
+      category: MENTAL
+      tags:
+        - 戦略
+        - 計画
+        - 思考
+      value: 0
+      growth: 0
+    - id: param-technical-vision
+      name: 技術的ビジョン
+      description: 技術の将来性や可能性を見通す能力
+      category: TECHNICAL
+      tags:
+        - 将来
+        - 技術
+        - 展望
+      value: 36
+      growth: 0
+    - id: param-resource-management
+      name: リソース管理
+      description: 人材、時間、予算などのリソースを効果的に配分・管理する能力
+      category: MANAGEMENT
+      tags:
+        - 管理
+        - 配分
+        - 効率
+      value: 0
+      growth: 0
+  skills:
+    - 不明なスキル (6章)
+    - 不明なスキル (1章)
+    - 不明なスキル (3章)
+    - 不明なスキル (8章)
+    - 不明なスキル (9章)
+    - 不明なスキル (5章)
+    - 不明なスキル (2章)
+    - 不明なスキル (4章)
+    - 不明なスキル (7章)
+    - 不明なスキル (11章)
+  activeGrowthPlanId: growth-plan-sato
+  lastStateChange:
+    type: TRANSFORMATION
+    chapterNumber: 5
+    description: 山田哲也が誠たちを裏切り、敵対する存在へと変貌する。温和な笑顔は消え、冷酷で底知れない闇を宿した表情となる。
+  location: 健太のアパート
+  isDeceased: true
+  skill:
+    - skillId: skill-a-technology-development
+      level: 1
+      proficiency: 0
+      acquired: 2025-05-19T07:39:11.598Z
+    - skillId: skill-prototype-creation
+      level: 1
+      proficiency: 0
+      acquired: 2025-05-19T07:39:11.674Z
+  injuries:
+    - id: injury-1747223536195-1gi1d
+      description: 高橋が佐藤を庇い、銃で撃たれる。
+      severity: MODERATE
+      chapter: 4
+      isHealed: false
+      timestamp: 2025-05-14T11:52:16.195Z
+    - id: injury-1747310023312-g1lco
+      description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
+      severity: MODERATE
+      chapter: 4
+      isHealed: false
+      timestamp: 2025-05-15T11:53:43.312Z
+    - id: injury-1747312329042-88s1f
+      description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
+      severity: MODERATE
+      chapter: 8
+      isHealed: false
+      timestamp: 2025-05-15T12:32:09.042Z
+  health: 55
+  transformations:
+    - type: UNKNOWN
+      description: ロボットが破壊される。
+      chapter: 4
+      isPermanent: true
+      timestamp: 2025-05-14T13:00:43.216Z
+    - type: UNKNOWN
+      description: 高橋が、これまでの「正しい答え」を求める姿勢から、自ら問いを立て、答えを探し続けることの重要性に気づく。
+      chapter: 3
+      isPermanent: true
+      timestamp: 2025-05-15T08:04:45.253Z
+    - type: UNKNOWN
+      description: チーム内で技術的な実現可能性とマーケティング戦略の優先順位を巡り、意見の対立が生まれたことで、チームの関係性に変化が生じた。
+      chapter: 6
+      isPermanent: true
+      timestamp: 2025-05-15T08:30:48.228Z
+    - type: UNKNOWN
+      description: チームが発表の失敗を機に、結束を強め、新たな目標に向かって進み始めた。
+      chapter: 9
+      isPermanent: true
+      timestamp: 2025-05-15T08:53:02.434Z
+    - type: UNKNOWN
+      description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
+      chapter: 3
+      isPermanent: true
+      timestamp: 2025-05-15T10:20:06.805Z
+    - type: UNKNOWN
+      description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
+      chapter: 4
+      isPermanent: true
+      timestamp: 2025-05-15T11:53:43.332Z
+    - type: UNKNOWN
+      description: 美咲がネクストライフの社員であることが判明。
+      chapter: 5
+      isPermanent: true
+      timestamp: 2025-05-15T12:14:23.926Z
+    - type: UNKNOWN
+      description: 佐藤の技術力が向上。
+      chapter: 3
+      isPermanent: true
+      timestamp: 2025-05-18T11:32:12.504Z
+    - type: UNKNOWN
+      description: 健太が、技術至上主義という強固なパラダイムから脱却し、自己疑問と不安を抱き始める。
+      chapter: 1
+      isPermanent: true
+      timestamp: 2025-05-19T00:39:27.529Z
+    - type: UNKNOWN
+      description: 健太が技術者としての思考から抜け出し、顧客の視点に立って製品を使うことで、顧客の気持ちを理解し始める。
+      chapter: 2
+      isPermanent: true
+      timestamp: 2025-05-19T00:43:37.603Z
+  promotionHistory:
+    - chapter: 4
+      title: Unknown Position
+      description: ネクストライフから、自社のプロジェクトへの協力を提案される。
+      timestamp: 2025-05-15T11:50:45.133Z
+history:
+  appearances:
+    - chapterNumber: 6
+      context: 技術ハッカソンの場で主人公と出会う場面で初登場
+      significance: 0.9
+    - chapterNumber: 1
+      timestamp: 2025-05-13T04:43:26.306Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-13T05:17:08.638Z
+      significance: 0.3
+      summary: 佐藤健太は「ええと、改めて、今日は集まってくれてありがとう」と発言
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:22:36.136Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:25:14.828Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:28:20.316Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:31:59.635Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-13T05:36:09.602Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 4
+      timestamp: 2025-05-13T05:42:47.122Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-13T05:47:27.086Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:52:50.273Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:56:01.259Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:59:23.872Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:07:50.445Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:12:38.300Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T06:21:40.954Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T06:26:38.693Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T06:31:27.567Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-13T06:37:16.485Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-13T06:42:35.826Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-13T06:49:09.402Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T06:54:18.422Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T06:57:04.243Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:10:48.882Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:13:30.536Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-13T07:52:43.816Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:58:23.712Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:03:45.307Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:06:52.902Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-13T08:13:35.877Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T08:21:33.185Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T08:26:18.017Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:31:07.350Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-13T09:08:20.971Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-13T09:29:10.915Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 12
+      timestamp: 2025-05-13T09:48:40.250Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T10:49:03.203Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:07:52.892Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:12:18.026Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:16:52.585Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-13T12:23:51.885Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-13T12:48:18.067Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 12
+      timestamp: 2025-05-13T13:12:16.748Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T11:13:10.060Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 2
+      timestamp: 2025-05-14T11:37:47.552Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-14T11:45:13.146Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-14T11:52:11.668Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-14T11:57:13.325Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:01:37.273Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-14T12:11:00.149Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:17:24.225Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-14T12:42:02.555Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-14T12:50:11.988Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-14T12:54:20.603Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-14T13:00:41.373Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-14T13:10:46.231Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:21:41.491Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:32:49.817Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:36:43.938Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-14T13:39:31.764Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-14T13:44:44.695Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-14T13:49:58.520Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-14T13:58:22.779Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 8
+      timestamp: 2025-05-14T14:03:58.963Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-14T14:12:07.908Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-14T14:19:27.225Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-14T14:29:26.977Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-14T14:34:34.582Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T14:52:38.468Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-14T15:01:04.416Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-15T07:51:44.452Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-15T07:54:35.847Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-15T07:59:06.215Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-15T08:01:27.593Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-15T08:04:45.114Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T08:09:05.173Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 4
+      timestamp: 2025-05-15T08:11:27.949Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 4
+      timestamp: 2025-05-15T08:15:05.505Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-15T08:18:25.845Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T08:23:13.316Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-15T08:30:48.128Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-15T08:36:31.082Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T08:44:10.503Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T08:53:02.292Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-15T09:01:36.657Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-15T09:04:56.405Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-15T09:09:03.455Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 12
+      timestamp: 2025-05-15T09:18:07.334Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 3
+      timestamp: 2025-05-15T10:20:02.486Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T10:30:23.090Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T10:32:57.429Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.16000000000000003
+    - chapterNumber: 6
+      timestamp: 2025-05-15T10:37:15.288Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 6
+      timestamp: 2025-05-15T10:39:39.560Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.16000000000000003
+    - chapterNumber: 7
+      timestamp: 2025-05-15T10:43:58.859Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 8
+      timestamp: 2025-05-15T10:51:23.797Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 9
+      timestamp: 2025-05-15T10:56:53.353Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 10
+      timestamp: 2025-05-15T11:01:54.306Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 11
+      timestamp: 2025-05-15T11:06:22.498Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 12
+      timestamp: 2025-05-15T11:10:59.967Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.12
+    - chapterNumber: 1
+      timestamp: 2025-05-15T11:27:56.044Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 2
+      timestamp: 2025-05-15T11:40:02.073Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-15T11:45:11.993Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:50:44.905Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:53:43.130Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:56:49.451Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:02:32.296Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:06:00.870Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:09:41.696Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:14:23.782Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-15T12:19:29.636Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 7
+      timestamp: 2025-05-15T12:24:18.104Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T12:29:00.461Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 8
+      timestamp: 2025-05-15T12:32:08.917Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T12:38:02.214Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T12:41:03.251Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 10
+      timestamp: 2025-05-15T12:45:57.041Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-15T12:50:56.776Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-18T11:32:12.156Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-18T19:25:16.996Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-18T21:52:11.139Z
+      significance: 0.3
+      summary: 佐藤健太は、オフィスで誠と美咲の姿を見守っていた
+      emotionalImpact: 0.1
+    - chapterNumber: 2
+      timestamp: 2025-05-18T21:55:57.861Z
+      significance: 0.5
+      summary: 佐藤健太は、誠の様子を心配そうに見ていた、また誠の新たな挑戦を技術面から全力でサポートすることを決意したことを思い出し、健太は続けた
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-18T22:00:00.613Z
+      significance: 0.5
+      summary: 佐藤健太は作成したプロトタイプも、技術的には申し分ない
+      emotionalImpact: 0.48
+    - chapterNumber: 1
+      timestamp: 2025-05-19T00:39:27.394Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-19T00:43:37.522Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-19T01:10:31.871Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-19T01:46:50.789Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-19T06:06:58.087Z
+      significance: 0.3
+      summary: 佐藤健太が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 9
+      timestamp: 2025-05-19T07:40:09.970Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-19T07:42:07.902Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-26T13:10:38.623Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T15:59:28.498Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-26T16:34:48.510Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-26T16:41:15.051Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-26T16:53:51.538Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-26T17:05:45.535Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-26T17:12:54.929Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:19:35.172Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:24:42.928Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-26T18:36:28.648Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T01:38:47.786Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T03:11:24.472Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:18:20.025Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:23:20.029Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:25:26.809Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T03:28:39.908Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:30:45.616Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:37:39.826Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-27T03:39:32.993Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-27T03:47:57.153Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-27T03:53:31.758Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-27T03:58:50.621Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-27T04:04:53.578Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-27T04:10:16.213Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-27T04:16:12.367Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-27T04:21:52.791Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-27T04:28:05.984Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T03:03:50.064Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T03:08:44.737Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:10:53.143Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:14:24.440Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の迷宮'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:14:30.580Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T03:15:17.719Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T03:18:10.574Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T03:21:01.508Z
+      significance: 0.5
+      summary: '第4章に登場: 育成プロジェクト、問いの迷宮'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T03:23:48.835Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T03:27:00.636Z
+      significance: 0.5
+      summary: '第5章に登場: 問いの迷路、顧客という羅針盤'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T03:29:44.814Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T03:33:13.754Z
+      significance: 0.5
+      summary: '第6章に登場: チーム結成、そして最初の火種'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:36:00.469Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:39:09.287Z
+      significance: 0.5
+      summary: '第7章に登場: 問いの質'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T03:41:13.368Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:43:18.633Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:46:53.803Z
+      significance: 0.5
+      summary: '第8章に登場: 顧客視点への転換'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:47:00.564Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T03:47:46.353Z
+      significance: 0.5
+      summary: '第8章に登場: 問いの再定義'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:50:44.504Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:53:47.993Z
+      significance: 0.5
+      summary: '第9章に登場: 顧客理解への第一歩'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:01:29.147Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:05:23.155Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:08:08.710Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:11:02.788Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの始まり'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:13:41.002Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:16:17.225Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:18:39.832Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:21:38.015Z
+      significance: 0.5
+      summary: '第4章に登場: 顧客視点という難題'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:30:06.873Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:33:13.314Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点という名の迷宮'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:35:41.736Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:38:40.880Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客視点の迷宮'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:41:27.137Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:44:43.922Z
+      significance: 0.5
+      summary: '第8章に登場: 顧客視点の迷宮、深まる疑念'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:46:45.800Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T04:49:00.251Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:55:26.020Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:59:25.910Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:02:25.296Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:05:18.456Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの始まり'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:07:19.825Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:09:28.680Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T05:12:39.890Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:12:51.656Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの再定義'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:14:48.354Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:18:13.901Z
+      significance: 0.5
+      summary: '第3章に登場: 「問い」の再定義'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:21:39.994Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:23:27.550Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:27:04.182Z
+      significance: 0.5
+      summary: '第4章に登場: 胎動するチーム、動き出す現実'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:27:23.878Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T05:28:12.841Z
+      significance: 0.5
+      summary: '第4章に登場: 始まりの予感と現実の壁'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:31:16.498Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:34:23.758Z
+      significance: 0.5
+      summary: '第5章に登場: 再構築の夜明け'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:36:25.404Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:38:38.692Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:41:45.309Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:42:18.521Z
+      significance: 0.5
+      summary: '第6章に登場: チーム始動、それぞれの視点'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:43:55.752Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:47:36.408Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の落とし穴'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:50:46.591Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T05:52:57.443Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T06:36:48.991Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T06:40:12.480Z
+      significance: 0.5
+      summary: '第3章に登場: 問いの迷路'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T06:43:13.716Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T06:45:59.090Z
+      significance: 0.5
+      summary: '第4章に登場: 顧客の声、理想との乖離'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T06:48:00.826Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T06:50:15.891Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T06:53:45.911Z
+      significance: 0.5
+      summary: '第5章に登場: プロジェクト始動、理想と現実の交差点'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:55:19.949Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:59:29.068Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:00:16.228Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:04:37.723Z
+      significance: 0.5
+      summary: '第1章に登場: 問いの始まり'
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:06:39.799Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:08:48.742Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:12:33.358Z
+      significance: 0.5
+      summary: '第2章に登場: 顧客視点の迷宮'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T07:14:34.087Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:16:48.002Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:20:13.100Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の再燃'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:23:08.100Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:26:47.572Z
+      significance: 0.5
+      summary: '第4章に登場: 資金調達の壁'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:29:28.785Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:32:45.847Z
+      significance: 0.5
+      summary: '第5章に登場: 顧客視点という羅針盤'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:35:41.193Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:39:06.426Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の再検証'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:42:00.120Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:45:01.086Z
+      significance: 0.5
+      summary: '第7章に登場: 問いの質'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T07:47:57.922Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T07:51:11.040Z
+      significance: 0.5
+      summary: '第8章に登場: 問いの深淵、顧客視点の迷宮'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:53:50.057Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:57:16.735Z
+      significance: 0.5
+      summary: '第9章に登場: 厳しい現実、揺らぐ理想'
+    - chapterNumber: 10
+      timestamp: 2025-05-28T08:00:08.785Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-28T08:03:44.852Z
+      significance: 0.5
+      summary: '第10章に登場: 顧客視点という羅針盤'
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:06:18.966Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:09:49.430Z
+      significance: 0.5
+      summary: '第11章に登場: 顧客の声、理想との乖離'
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:12:39.106Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:16:18.071Z
+      significance: 0.5
+      summary: '第12章に登場: 顧客視点の迷宮'
+    - chapterNumber: 2
+      timestamp: 2025-05-28T14:42:17.860Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T14:43:47.869Z
+      significance: 0.5
+      summary: '第2章に登場: 問いの再定義'
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:46:40.099Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:48:10.109Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客視点の迷宮'
+    - chapterNumber: 4
+      timestamp: 2025-05-28T14:51:09.507Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T14:52:39.509Z
+      significance: 0.5
+      summary: '第4章に登場: 顧客視点の迷宮'
+    - chapterNumber: 5
+      timestamp: 2025-05-28T14:55:36.324Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T14:57:06.347Z
+      significance: 0.5
+      summary: '第5章に登場: 顧客視点という迷宮'
+    - chapterNumber: 6
+      timestamp: 2025-05-28T14:59:46.474Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T15:01:16.484Z
+      significance: 0.5
+      summary: '第6章に登場: 顧客視点の深淵'
+    - chapterNumber: 7
+      timestamp: 2025-05-28T15:04:08.290Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T15:05:38.308Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客視点の深淵'
+    - chapterNumber: 8
+      timestamp: 2025-05-28T15:09:08.847Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T15:10:38.846Z
+      significance: 0.5
+      summary: '第8章に登場: 交錯する視点、見え始めた輪郭'
+    - chapterNumber: 9
+      timestamp: 2025-05-28T15:13:42.633Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T15:16:06.919Z
+      significance: 0.5
+      summary: '第9章に登場: 問いの再定義とライバルの影'
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:19:12.759Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:21:39.594Z
+      significance: 0.5
+      summary: '第10章に登場: 審査員の言葉'
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:22:41.268Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-28T15:23:47.299Z
+      significance: 0.5
+      summary: '第10章に登場: 審査員の言葉'
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:26:52.920Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:29:27.785Z
+      significance: 0.5
+      summary: '第11章に登場: 顧客の迷宮'
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:32:12.148Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:35:43.255Z
+      significance: 0.5
+      summary: '第12章に登場: 顧客視点という難題'
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:44:14.671Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+  developmentPath:
+    - stage: 0
+      description: チームに参加する前段階
+      achievedAt: 2024-04-10T14:00:00.000Z
+      chapterNumber: 6
+  interactions:
+    - chapterNumber: 1
+      targetCharacterId: character-takahashi
+      type: ENCOUNTER
+      description: 佐藤健太と高橋誠の交流
+      impact: 0.6
+      timestamp: 2025-05-13T05:17:09.031Z
+    - chapterNumber: 3
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:14:24.779Z
+    - chapterNumber: 3
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:15:17.756Z
+    - chapterNumber: 4
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:21:01.966Z
+    - chapterNumber: 8
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第8章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:47:46.393Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T03:53:48.475Z
+    - chapterNumber: 1
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:05:23.261Z
+    - chapterNumber: 3
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:16:17.262Z
+    - chapterNumber: 4
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:21:38.046Z
+    - chapterNumber: 4
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:21:38.058Z
+    - chapterNumber: 6
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第6章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:33:13.351Z
+    - chapterNumber: 7
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第7章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:38:40.907Z
+    - chapterNumber: 7
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第7章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:38:40.917Z
+    - chapterNumber: 1
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:59:26.011Z
+    - chapterNumber: 3
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:12:51.692Z
+    - chapterNumber: 4
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:27:04.206Z
+    - chapterNumber: 5
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第5章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:34:23.789Z
+    - chapterNumber: 6
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第6章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:42:18.565Z
+    - chapterNumber: 3
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:40:12.513Z
+    - chapterNumber: 3
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:40:12.526Z
+    - chapterNumber: 1
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:59:29.173Z
+    - chapterNumber: 2
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第2章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:12:33.379Z
+    - chapterNumber: 6
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第6章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:39:06.462Z
+    - chapterNumber: 9
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:57:16.764Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:57:16.774Z
+    - chapterNumber: 9
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T07:57:16.785Z
+    - chapterNumber: 10
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:03:44.918Z
+    - chapterNumber: 10
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:03:44.928Z
+    - chapterNumber: 11
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.491Z
+    - chapterNumber: 11
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.501Z
+    - chapterNumber: 2
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第2章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T14:43:47.886Z
+    - chapterNumber: 4
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第4章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T14:52:39.544Z
+    - chapterNumber: 5
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第5章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T14:57:06.390Z
+    - chapterNumber: 7
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第7章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:05:38.331Z
+    - chapterNumber: 9
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:16:06.950Z
+    - chapterNumber: 9
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第9章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:16:06.965Z
+    - chapterNumber: 10
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:21:39.610Z
+    - chapterNumber: 10
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第10章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:23:47.350Z
+    - chapterNumber: 11
+      targetCharacterId: character-nakamura
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:29:27.900Z
+    - chapterNumber: 11
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:29:27.911Z
+    - chapterNumber: 12
+      targetCharacterId: character-yamada
+      type: general_interaction
+      description: 第12章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T15:35:43.354Z
+relationships: []
+metadata:
+  createdAt: 2024-04-01T00:00:00.000Z
+  lastUpdated: 2025-05-29T00:44:14.674Z
+  version: 802
+  tags:
+    - エンジニア
+    - 技術者
+    - コアメンバー
+    - A技術専門家
+psychology:
+  currentDesires:
+    - A技術を実践的に活用し、成果を出したい
+    - 自分の技術力をチームに貢献したい
+    - 技術的な探求心を満足させたい
+    - チームの一員として認められたい
+  currentFears:
+    - 技術的な視点に偏り、チームに迷惑をかけること
+    - 自分の技術がチームで活かせないこと
+    - 技術的な問題でチームの足を引っ張ること
+  internalConflicts:
+    - 技術的な探求心とチームワークのバランス
+    - 実践的な成果を出すことと、技術的な深堀りの優先順位
+  emotionalState:
+    期待: 0.7
+    不安: 0.6
+    興味: 0.8
+    焦り: 0.3
+  relationshipAttitudes: {}

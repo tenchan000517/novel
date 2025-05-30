@@ -1,0 +1,158 @@
+[
+  {
+    "id": "param-leadership",
+    "name": "リーダーシップ",
+    "description": "チームを導き、方向性を示し、メンバーの能力を引き出す力",
+    "category": "SOCIAL",
+    "tags": [
+      "リーダー",
+      "組織",
+      "チーム"
+    ],
+    "value": 86,
+    "growth": 0
+  },
+  {
+    "id": "param-business-knowledge",
+    "name": "ビジネス知識",
+    "description": "経営、マーケティング、財務など、ビジネスに関する知識",
+    "category": "MENTAL",
+    "tags": [
+      "知識",
+      "経営",
+      "ビジネス"
+    ],
+    "value": 100,
+    "growth": 0
+  },
+  {
+    "id": "param-resilience",
+    "name": "回復力",
+    "description": "挫折や失敗から立ち直り、前進し続ける力",
+    "category": "PERSONAL",
+    "tags": [
+      "精神力",
+      "忍耐",
+      "克服"
+    ],
+    "value": 100,
+    "growth": 0
+  },
+  {
+    "id": "param-communication",
+    "name": "コミュニケーション能力",
+    "description": "自分の考えを効果的に伝え、他者の意見を理解する力",
+    "category": "SOCIAL",
+    "tags": [
+      "対話",
+      "表現",
+      "理解"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-empathy",
+    "name": "共感力",
+    "description": "他者の感情や立場を理解し、寄り添う能力",
+    "category": "SOCIAL",
+    "tags": [
+      "理解",
+      "感情",
+      "人間関係"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-customer-understanding",
+    "name": "顧客理解",
+    "description": "顧客のニーズや行動、動機を深く理解する能力",
+    "category": "BUSINESS",
+    "tags": [
+      "顧客",
+      "ニーズ",
+      "洞察"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-adaptability",
+    "name": "適応力",
+    "description": "変化する状況や新しい情報に柔軟に対応する能力",
+    "category": "PERSONAL",
+    "tags": [
+      "柔軟",
+      "変化",
+      "対応"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-humility",
+    "name": "謙虚さ",
+    "description": "自分の限界を認め、学び続ける姿勢",
+    "category": "PERSONAL",
+    "tags": [
+      "謙虚",
+      "学習",
+      "自己認識"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-strategic-thinking",
+    "name": "戦略的思考",
+    "description": "長期的視点で全体像を捉え、計画を立てる能力",
+    "category": "MENTAL",
+    "tags": [
+      "戦略",
+      "計画",
+      "思考"
+    ],
+    "value": 16,
+    "growth": 0
+  },
+  {
+    "id": "param-decision-making",
+    "name": "意思決定力",
+    "description": "情報を分析し、適切な判断を下す能力",
+    "category": "MENTAL",
+    "tags": [
+      "判断",
+      "決断",
+      "分析"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-financial-acumen",
+    "name": "財務感覚",
+    "description": "財務状況を理解し、適切な経済的判断を下す能力",
+    "category": "BUSINESS",
+    "tags": [
+      "財務",
+      "経済",
+      "資金"
+    ],
+    "value": 0,
+    "growth": 0
+  },
+  {
+    "id": "param-vision",
+    "name": "ビジョン力",
+    "description": "将来の可能性を描き、目標を設定する能力",
+    "category": "MENTAL",
+    "tags": [
+      "将来",
+      "目標",
+      "イメージ"
+    ],
+    "value": 0,
+    "growth": 0
+  }
+]

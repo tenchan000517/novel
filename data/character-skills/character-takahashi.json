@@ -1,0 +1,14 @@
+[
+    {
+      "skillId": "skill-basic-pitching",
+      "level": 2,
+      "proficiency": 30,
+      "acquired": "2024-04-01T00:00:00.000Z"
+    },
+    {
+      "skillId": "skill-team-management",
+      "level": 3,
+      "proficiency": 45,
+      "acquired": "2023-10-15T00:00:00.000Z"
+    }
+  ]

@@ -1,0 +1,188 @@
+isActive: false
+emotionalState: NEUTRAL
+developmentStage: 0
+lastAppearance: 1
+parameters:
+  - id: param-technical-skill
+    name: 技術力
+    description: 専門的な技術やスキルを習得し、活用する能力
+    category: TECHNICAL
+    tags:
+      - 技術
+      - 専門
+      - スキル
+    value: 100
+    growth: 0
+  - id: param-teamwork
+    name: チームワーク
+    description: チームの一員として協力し、貢献する能力
+    category: SOCIAL
+    tags:
+      - 協力
+      - 貢献
+      - 調和
+    value: 81
+    growth: 0
+  - id: param-business-understanding
+    name: ビジネス理解
+    description: ビジネスの仕組みや目的、戦略を理解する能力
+    category: BUSINESS
+    tags:
+      - 理解
+      - ビジネス
+      - 目的
+    value: 0
+    growth: 0
+  - id: param-communication
+    name: コミュニケーション能力
+    description: 自分の考えを効果的に伝え、他者の意見を理解する力
+    category: SOCIAL
+    tags:
+      - 対話
+      - 表現
+      - 理解
+    value: 0
+    growth: 0
+  - id: param-leadership
+    name: リーダーシップ
+    description: チームを導き、方向性を示し、メンバーの能力を引き出す力
+    category: SOCIAL
+    tags:
+      - リーダー
+      - 組織
+      - チーム
+    value: 0
+    growth: 0
+  - id: param-strategic-thinking
+    name: 戦略的思考
+    description: 長期的視点で全体像を捉え、計画を立てる能力
+    category: MENTAL
+    tags:
+      - 戦略
+      - 計画
+      - 思考
+    value: 0
+    growth: 0
+  - id: param-technical-vision
+    name: 技術的ビジョン
+    description: 技術の将来性や可能性を見通す能力
+    category: TECHNICAL
+    tags:
+      - 将来
+      - 技術
+      - 展望
+    value: 36
+    growth: 0
+  - id: param-resource-management
+    name: リソース管理
+    description: 人材、時間、予算などのリソースを効果的に配分・管理する能力
+    category: MANAGEMENT
+    tags:
+      - 管理
+      - 配分
+      - 効率
+    value: 0
+    growth: 0
+skills:
+  - 不明なスキル (6章)
+  - 不明なスキル (1章)
+  - 不明なスキル (3章)
+  - 不明なスキル (8章)
+  - 不明なスキル (9章)
+  - 不明なスキル (5章)
+  - 不明なスキル (2章)
+  - 不明なスキル (4章)
+  - 不明なスキル (7章)
+  - 不明なスキル (11章)
+activeGrowthPlanId: growth-plan-sato
+lastStateChange:
+  type: TRANSFORMATION
+  chapterNumber: 5
+  description: 山田哲也が誠たちを裏切り、敵対する存在へと変貌する。温和な笑顔は消え、冷酷で底知れない闇を宿した表情となる。
+location: 健太のアパート
+isDeceased: true
+skill:
+  - skillId: skill-a-technology-development
+    level: 1
+    proficiency: 0
+    acquired: 2025-05-19T07:39:11.598Z
+  - skillId: skill-prototype-creation
+    level: 1
+    proficiency: 0
+    acquired: 2025-05-19T07:39:11.674Z
+injuries:
+  - id: injury-1747223536195-1gi1d
+    description: 高橋が佐藤を庇い、銃で撃たれる。
+    severity: MODERATE
+    chapter: 4
+    isHealed: false
+    timestamp: 2025-05-14T11:52:16.195Z
+  - id: injury-1747310023312-g1lco
+    description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
+    severity: MODERATE
+    chapter: 4
+    isHealed: false
+    timestamp: 2025-05-15T11:53:43.312Z
+  - id: injury-1747312329042-88s1f
+    description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
+    severity: MODERATE
+    chapter: 8
+    isHealed: false
+    timestamp: 2025-05-15T12:32:09.042Z
+health: 55
+transformations:
+  - type: UNKNOWN
+    description: ロボットが破壊される。
+    chapter: 4
+    isPermanent: true
+    timestamp: 2025-05-14T13:00:43.216Z
+  - type: UNKNOWN
+    description: 高橋が、これまでの「正しい答え」を求める姿勢から、自ら問いを立て、答えを探し続けることの重要性に気づく。
+    chapter: 3
+    isPermanent: true
+    timestamp: 2025-05-15T08:04:45.253Z
+  - type: UNKNOWN
+    description: チーム内で技術的な実現可能性とマーケティング戦略の優先順位を巡り、意見の対立が生まれたことで、チームの関係性に変化が生じた。
+    chapter: 6
+    isPermanent: true
+    timestamp: 2025-05-15T08:30:48.228Z
+  - type: UNKNOWN
+    description: チームが発表の失敗を機に、結束を強め、新たな目標に向かって進み始めた。
+    chapter: 9
+    isPermanent: true
+    timestamp: 2025-05-15T08:53:02.434Z
+  - type: UNKNOWN
+    description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
+    chapter: 3
+    isPermanent: true
+    timestamp: 2025-05-15T10:20:06.805Z
+  - type: UNKNOWN
+    description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
+    chapter: 4
+    isPermanent: true
+    timestamp: 2025-05-15T11:53:43.332Z
+  - type: UNKNOWN
+    description: 美咲がネクストライフの社員であることが判明。
+    chapter: 5
+    isPermanent: true
+    timestamp: 2025-05-15T12:14:23.926Z
+  - type: UNKNOWN
+    description: 佐藤の技術力が向上。
+    chapter: 3
+    isPermanent: true
+    timestamp: 2025-05-18T11:32:12.504Z
+  - type: UNKNOWN
+    description: 健太が、技術至上主義という強固なパラダイムから脱却し、自己疑問と不安を抱き始める。
+    chapter: 1
+    isPermanent: true
+    timestamp: 2025-05-19T00:39:27.529Z
+  - type: UNKNOWN
+    description: 健太が技術者としての思考から抜け出し、顧客の視点に立って製品を使うことで、顧客の気持ちを理解し始める。
+    chapter: 2
+    isPermanent: true
+    timestamp: 2025-05-19T00:43:37.603Z
+promotionHistory:
+  - chapter: 4
+    title: Unknown Position
+    description: ネクストライフから、自社のプロジェクトへの協力を提案される。
+    timestamp: 2025-05-15T11:50:45.133Z

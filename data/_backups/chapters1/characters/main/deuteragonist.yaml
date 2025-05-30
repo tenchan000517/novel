@@ -1,0 +1,87 @@
+# data/characters/main/deuteragonist.yaml
+# メインキャラクター：第二主人公
+
+id: "char-002"
+name: "エリア・ノーブルリンド"
+shortNames:
+  - "エリア"
+nicknames:
+  protagonist: ["エリアちゃん"]
+  mentor: ["ノーブルリンド君"]
+  antagonist: ["ノーブルリンド"]
+  rival: ["エリア"]
+type: "MAIN"
+role: "ALLY"
+description: 活発な少女
+personality:
+  traits:
+    - "論理的"
+    - "冷静沈着"
+    - "完璧主義"
+    - "困っている人を放っておけない"
+  speechPatterns:
+    - "丁寧な口調"
+    - "専門用語を多用する"
+  quirks:
+    - "緊張すると眼鏡を直す"
+    - "考え事をする時に唇を噛む"
+  values:
+    - "知識と真実"
+    - "弱者の保護"
+
+appearance:
+  physicalDescription: "肩までの茶色の髪と知的な瞳を持つ17歳の少女。スレンダーな体型で、常に眼鏡をかけている。"
+  clothing: "学術的な装いに、魔法書を収納できる特製ベルト。家系の象徴である翡翠のブローチを身につけている。"
+  distinguishingFeatures:
+    - "翡翠色の瞳"
+    - "常にメモを取る習慣"
+
+backstory:
+  summary: "バルドラン王国の古い魔法使いの家系に生まれ、幼い頃から卓越した魔法の才能を示す。しかし、魔法の衰退に危機感を抱き、古代魔法の研究に没頭。魔法アカデミーで最年少の優等生として認められる。"
+  significantEvents:
+    - "7歳：家系に伝わる古代魔法書の解読を始める"
+    - "12歳：最年少でアカデミーに入学"
+    - "15歳：失われた魔法の研究で重要な発見を行う"
+    - "17歳：魔法の衰退を食い止める方法を探す旅に出ることを決意"
+  trauma:
+    - "期待に応えられないプレッシャー"
+    - "研究中の危険な事故の経験"
+  origin: "バルドラン王国王都"
+
+relationships:
+  - targetCharacterId: "char-001"
+    type: "友人"
+    strength: 8
+    description: "互いに補完し合う関係。彼の直感的アプローチと自分の論理的思考が調和する。"
+  - targetCharacterId: "char-003"
+    type: "尊敬"
+    strength: 7
+    description: "魔法の大家として尊敬している。時に意見が衝突することもある。"
+  - targetCharacterId: "char-005"
+    type: "家族"
+    strength: 9
+    description: "祖父。厳格だが深い愛情で自分を育ててくれた。"
+
+developmentStage:
+  current: "自己主張の段階"
+  nextStageConditions:
+    - "家系の秘密を発見する"
+    - "理論と現実のギャップに直面する"
+  history:
+    - "家族の期待に応える完璧主義"
+    - "他者への理解の深まり"
+    - "自分自身の価値観の確立"
+
+appearanceHistory:
+  firstAppearance: 1
+  chapters:
+    - 1
+    - 2
+    - 3
+  significance:
+    "1": 8
+    "2": 9
+    "3": 8
+
+createdAt: "2023-06-01T11:30:00Z"
+updatedAt: "2023-06-15T15:45:00Z"

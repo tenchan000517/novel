@@ -1,0 +1,95 @@
+id: "student"
+name: "ミラ・ブライトマインド"
+shortNames:
+  - "ミラ"
+nicknames:
+  protagonist: ["ミラさん"]
+  mentor: ["ブライトマインド君"]
+  supporting_character: ["ミラちゃん"]
+type: "MOB"
+role: "OTHER"
+description: "18歳。アルディア王立魔法アカデミーの新入生。魔法の才能は平均的だが、並外れた勤勉さと分析力で成績上位を維持。ルナのファンで彼女の研究に憧れている。"
+
+personality:
+  traits:
+    - "勤勉"
+    - "分析的"
+    - "熱心"
+    - "やや内向的"
+    - "正義感が強い"
+  speechPatterns:
+    - "学術用語を多用する"
+    - "早口で話すことがある"
+    - "質問形式で考えを述べる傾向"
+  quirks:
+    - "考え込むと眉間にしわを寄せる"
+    - "重要なことをメモ帳に書き留める癖"
+    - "興奮すると声が一オクターブ高くなる"
+  values:
+    - "知識"
+    - "公平さ"
+    - "努力の価値"
+    - "革新と伝統のバランス"
+
+appearance:
+  summary: "茶色の巻き毛を肩までの長さに切り揃え、常に知的好奇心に輝く明るい緑色の瞳を持つ若い女性。アカデミーの学生ローブを着用し、常に本やメモ帳を抱えている。"
+  distinctiveFeatures:
+    - "茶色の巻き毛"
+    - "明るい緑色の瞳"
+    - "常に持ち歩く特製の革のメモ帳"
+  clothing: "アカデミーの初級学生ローブ（紺色）に、自作の多機能ポーチを付けている。"
+  age: 18
+  gender: "女性"
+
+backstory:
+  summary: "アルディア王国の中流商人家庭に生まれる。幼い頃から本の虫で、魔法理論に強い関心を示す。魔法の才能は標準的だったが、その分析力と勤勉さでアカデミー入試に合格。理論研究を志望し、特に古代魔法と現代技術の接点に興味を持つ。ルナ・シルバーウッドの論文を読んで強く影響を受け、彼女の研究助手になることを目標としている。"
+  significantEvents:
+    - "13歳の時に初めて古代魔法に関する書物に出会う"
+    - "独学で準備し、アカデミー入試に合格"
+    - "入学直後の講義でルナの理論に感銘を受ける"
+    - "学生魔法コンテストで理論部門準優勝"
+  origin: "アルディア王国中部、商業都市ブライトハーバー"
+  motivations: "学問的卓越性を追求すること。ルナのような革新的研究者になること。魔法と技術の融合に貢献すること。"
+
+relationships:
+  - targetId: "protagonist"
+    type: "FOLLOWER"
+    strength: 0.8
+    description: "強い尊敬と憧れを抱いている。勇気を出して質問したことがあり、その親切な対応に感激。彼女の研究を熱心に追っている。"
+  
+  - targetId: "supporting_character"
+    type: "STUDENT"
+    strength: 0.7
+    description: "図書館で多くの時間を過ごすため、司書長とは顔なじみ。書籍の推薦や学習のアドバイスをもらう関係。"
+
+state:
+  isActive: true
+  emotionalState: "EXCITED"
+  developmentStage: 1
+  lastAppearance: null
+
+history:
+  appearances: []
+  developmentPath: []
+  interactions: []
+
+abilities:
+  main:
+    - name: "魔法理論分析"
+      description: "複雑な魔法理論を分析し、わかりやすく整理する能力。その分析レポートはアカデミーでも評価が高い。"
+      level: 8
+  
+  secondary:
+    - name: "基礎魔法実践"
+      description: "基本的な魔法の実用。特に分析や観察のための補助魔法に優れている。"
+      level: 6
+
+metadata:
+  createdAt: "2025-05-04T15:45:00Z"
+  lastUpdated: "2025-05-04T15:45:00Z"
+  version: 1
+  tags:
+    - "学生"
+    - "研究志望"
+    - "ファン"
+    - "理論家"

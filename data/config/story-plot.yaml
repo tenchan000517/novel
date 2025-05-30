@@ -1,0 +1,145 @@
+# 基本情報（必須）
+genre: "ビジネス・成長物語"
+theme: "起業家精神と自己成長"
+setting: "現代日本のスタートアップシーン"
+summary: "真面目で誠実な大学生が、社会課題を解決するためにスタートアップを立ち上げ、様々な壁にぶつかりながらも成長し、事業を軌道に乗せるまでの物語"
+
+# 物語構造（推奨）
+totalChapters: 30
+arcs:
+  - name: "起業への一歩"
+    chapters: [1, 5]
+    theme: "夢と理想と現実のギャップ"
+    goal: "ビジネスコンテストへの参加と起業の決意"
+  - name: "基盤づくりの模索"
+    chapters: [6, 10]
+    theme: "仲間との出会いと方向性の模索"
+    goal: "コアメンバーの形成とサービス方向性の確立"
+  - name: "プロダクトインの限界"
+    chapters: [11, 15]
+    theme: "思い込みからの脱却と顧客理解"
+    goal: "マーケットインへの意識転換"
+  - name: "成長と変革"
+    chapters: [16, 22]
+    theme: "挫折からの学びと組織の成長"
+    goal: "組織としての基盤確立とサービスの価値証明"
+  - name: "飛躍への準備"
+    chapters: [23, 30]
+    theme: "経営者としての覚醒と将来への展望"
+    goal: "法人化と安定した経営基盤の確立"
+
+# キャラクター基本情報（推奨）
+characters:
+  - name: "高橋誠"
+    role: "主人公"
+    type: "MAIN"
+    goal: "社会課題を解決する企業を創り社会を変えること"
+    conflict: "理想と現実のギャップ、経験不足による視野の狭さ"
+  - name: "佐藤健太"
+    role: "エンジニア仲間"
+    type: "MAIN"
+    goal: "革新的な技術で社会に価値を提供すること"
+    conflict: "技術志向と事業志向のバランス"
+  - name: "鈴木美咲"
+    role: "マーケティング担当"
+    type: "MAIN"
+    goal: "顧客に本当に響くサービスを広めること"
+    conflict: "主人公のプロダクトイン思考との衝突"
+  - name: "山田哲也"
+    role: "メンター"
+    type: "SUB"
+    goal: "次世代の起業家を育てること"
+    conflict: "支援と自立のバランス"
+  - name: "中村大輔"
+    role: "ライバル起業家"
+    type: "SUB"
+    goal: "最速で成功し注目を集めること"
+    conflict: "短期的成功と持続可能性"
+
+# プロットポイント（推奨）
+keyEvents:
+  - chapter: 1
+    event: "主人公がビジネスコンテストに参加するも惨敗"
+  - chapter: 3
+    event: "起業家育成プロジェクトへの参加を決意"
+  - chapter: 6
+    event: "天才エンジニアの佐藤との出会い"
+  - chapter: 9
+    event: "初めてのサービス構想発表で厳しい批判を受ける"
+  - chapter: 12
+    event: "プロダクトインからマーケットインへの転換点となる顧客との出会い"
+  - chapter: 15
+    event: "初めての有料サービスリリースとユーザー獲得の苦戦"
+  - chapter: 18
+    event: "重要パートナーの離脱危機"
+  - chapter: 21
+    event: "投資家からの初めての資金調達"
+  - chapter: 24
+    event: "競合との激しい競争と差別化の模索"
+  - chapter: 27
+    event: "法人化と初めての事務所設立"
+  - chapter: 30
+    event: "安定した経営基盤の確立と次なる展望"
+
+# 伏線計画（推奨）
+foreshadowing:
+  - description: "主人公が学生時代に書いた「理想の会社」についてのレポート"
+    introducedChapter: 2
+    resolutionChapter: 28
+    significance: "当初の理想と実際に作り上げた会社の比較"
+  - description: "メンターが何気なく語った「問いの質」についての言葉"
+    introducedChapter: 4
+    resolutionChapter: 13
+    significance: "マーケットイン思考への転換の鍵"
+  - description: "佐藤が開発していた個人的なプロジェクト"
+    introducedChapter: 7
+    resolutionChapter: 20
+    significance: "ピボットの際の新しいコア技術となる"
+  - description: "ライバル起業家の成功と突然の危機"
+    introducedChapter: 10
+    resolutionChapter: 22
+    significance: "持続可能なビジネスの重要性の証明"
+  - description: "顧客との何気ない会話から得た業界の課題"
+    introducedChapter: 14
+    resolutionChapter: 25
+    significance: "主力サービスへの進化の種"
+
+# テーマの展開（オプション）
+themeEvolution:
+  - chapter: 1
+    aspect: "夢想家の挫折と現実"
+  - chapter: 6
+    aspect: "協働の力と多様性の価値"
+  - chapter: 11
+    aspect: "顧客視点の重要性と謙虚さ"
+  - chapter: 16
+    aspect: "リーダーシップと責任の重さ"
+  - chapter: 21
+    aspect: "失敗からの学びと戦略思考"
+  - chapter: 26
+    aspect: "自己の器を広げることの意味"
+  - chapter: 30
+    aspect: "ビジョンの実現と新たな地平"
+
+# 世界設定要素（オプション）
+worldElements:
+  - name: "日本のスタートアップエコシステム"
+    introduction: 2
+    description: "資金調達の難しさ、リスク回避傾向が強い文化、出る杭は打たれる風土"
+    significance: "主人公が挑戦する社会環境の制約"
+  - name: "ビジネスコンテスト・ピッチイベント"
+    introduction: 1
+    description: "学生起業家の登竜門となるイベント群"
+    significance: "主人公の成長を測る定点観測の場"
+  - name: "A技術エコシステム"
+    introduction: 5
+    description: "発展途上だが可能性を秘めた最新技術分野"
+    significance: "チームの競争優位性の源泉"
+  - name: "新卒離職問題"
+    introduction: 3
+    description: "3年以内に3割が離職する社会課題"
+    significance: "主人公のビジネスの社会的意義"
+  - name: "コーポレートガバナンス"
+    introduction: 22
+    description: "企業統治と経営倫理の枠組み"
+    significance: "法人化に向けた重要な学び"

@@ -1,0 +1,11 @@
+{
+  "currentState": "INTRODUCTION",
+  "currentArcNumber": 1,
+  "currentTheme": "物語の始まり",
+  "arcStartChapter": 1,
+  "arcEndChapter": -1,
+  "arcCompleted": false,
+  "stateTransitions": [],
+  "turningPoints": [],
+  "genre": "classic"
+}
