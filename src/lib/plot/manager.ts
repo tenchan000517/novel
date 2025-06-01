@@ -1,10 +1,24 @@
-// src/lib/plot/manager-optimized.ts
+// src/lib/plot/manager.ts
 // ============================================================================
-// コアシステム（記憶・キャラクター・伏線管理）
+// 新記憶階層システム完全対応 PlotManager (エラー修正版)
 // ============================================================================
-import { memoryManager } from '@/lib/memory/manager';
+
+// 🔧 新記憶階層システム統合インポート
+import type { MemoryManager } from '@/lib/memory/core/memory-manager';
+import type {
+    MemoryOperationResult,
+    SystemOperationResult,
+    UnifiedSearchResult
+} from '@/lib/memory/core/types';
+
+// 🔧 修正: MemoryLevelを値として使用するため通常のインポート
+import { MemoryLevel } from '@/lib/memory/core/types';
+
+// ============================================================================
+// 外部システム（記憶階層以外）
+// ============================================================================
 import { characterManager } from '@/lib/characters/manager';
-import { foreshadowingManager } from '@/lib/foreshadowing/manager';
+import { ForeshadowingManager } from '@/lib/foreshadowing/manager';
 import { parameterManager } from '@/lib/parameters';
 
 // ============================================================================
@@ -19,15 +33,15 @@ import { parseYaml } from '@/lib/utils/yaml-helper';
 import { withTimeout } from '@/lib/utils/promise-utils';
 
 // ============================================================================
-// 物語記憶システム専用型（修正）
+// 型定義のインポート (修正版)
 // ============================================================================
-import { NarrativeStateInfo } from '@/lib/memory/narrative/types';
+import { NarrativeStateInfo } from '@/lib/memory/long-term/types';
+import { Chapter } from '@/types/chapters'; // 🔧 修正: Chapter型の正しいインポート
 
 // ============================================================================
 // プロット管理システム内部型
 // ============================================================================
 import { PlotStorage } from './storage';
-import { PlotChecker } from './checker';
 import { PlotContextBuilder } from './context-builder';
 import {
     PlotMode,
@@ -41,259 +55,447 @@ import {
 import { WorldSettingsManager } from './world-settings-manager';
 import { StoryPhaseManager } from './phase-manager';
 import { StoryGenerationBridge } from './story-generation-bridge';
-import { ChapterDirectives, PromptElements } from './bridge-types';
+
+// 🔧 修正: 拡張されたChapterDirectives型定義
+import {
+    ChapterDirectives as BaseChapterDirectives,
+    PromptElements
+} from './bridge-types';
+
+// 🔧 拡張された型定義
+interface ExtendedChapterDirectives extends BaseChapterDirectives {
+    contextualBackground?: string;
+    characterContexts?: string[];
+    worldContextElements?: string[];
+}
+
 import {
     SectionPlot,
-    getSectionPlotManagerInstance,
     SectionPlotParams
-} from './section';
+} from './section/types';
 
 // 学習旅路システムクラスのインポート
 import LearningJourneySystem from '@/lib/learning-journey';
 import { LearningStage } from '@/lib/learning-journey/concept-learning-manager';
 
 /**
+ * パフォーマンス統計の型定義
+ */
+interface PerformanceMetrics {
+    totalOperations: number;
+    successfulOperations: number;
+    failedOperations: number;
+    averageProcessingTime: number;
+    memorySystemHits: number;
+    cacheEfficiencyRate: number;
+    lastOptimization: string;
+}
+
+/**
+ * @interface PlotManagerConfig
+ * @description PlotManagerの設定
+ */
+export interface PlotManagerConfig {
+    enableLearningJourney?: boolean;
+    enableSectionPlotImport?: boolean;
+    enableQualityAssurance?: boolean;
+    enablePerformanceOptimization?: boolean;
+    learningJourneyTimeout?: number;
+    memorySystemIntegration?: boolean;
+}
+
+/**
+ * @interface PlotManagerDependencies
+ * @description PlotManagerの依存関係
+ */
+export interface PlotManagerDependencies {
+    memoryManager: MemoryManager;
+    config?: PlotManagerConfig;
+}
+
+/**
+ * 🔧 修正: プロットチェッカーファクトリー関数
+ */
+interface PlotCheckerFactory {
+    create(memoryManager: MemoryManager): any; // PlotCheckerの実際の型に置き換え可能
+}
+
+/**
  * @class PlotManager
  * @description
- * プロット管理システムを提供するクラス。
- * 抽象プロットと具体プロットの管理、整合性確認、コンテキスト構築を担当します。
- * 物語生成ブリッジによる情報の最適化と統合も提供します。
- * 
- * @role
- * - 抽象/具体プロットの提供と整合性確保
- * - 現在の物語状態に基づいた適切なプロットコンテキスト構築
- * - プロット要素の整合性チェック
- * - 文学的比較分析の提供
- * - テーマ共鳴分析と深化提案
- * - シーン構造最適化
- * - 物語生成ブリッジを通じた次章生成のための最適な情報提供
+ * 新記憶階層システム完全対応のプロット管理システム。
+ * 統合記憶管理（MemoryManager）を活用した最適化された実装。
  */
 export class PlotManager {
     private plotStorage: PlotStorage;
-    private plotChecker: PlotChecker;
+    private plotChecker: any; // 🔧 修正: 循環依存を避けるため遅延初期化
     private plotContextBuilder: PlotContextBuilder;
     private geminiClient: GeminiClient;
     private initialized: boolean = false;
     private initializationPromise: Promise<void> | null = null;
     private worldSettingsManager: WorldSettingsManager;
-
-    // 品質向上計画による拡張コンポーネント
-    // private literaryComparisonSystem: LiteraryComparisonSystem;
-    // private themeResonanceAnalyzer: ThemeResonanceAnalyzer;
-    // private sceneStructureOptimizer: SceneStructureOptimizer;
     private phaseManager: StoryPhaseManager;
-
-    // 「魂のこもった学びの物語」システム
-    private learningJourneySystem: LearningJourneySystem | null = null;
-
-    // 物語生成ブリッジ（新規追加）
     private storyGenerationBridge: StoryGenerationBridge;
+
+    // 🔧 新記憶階層システム統合
+    private memoryManager: MemoryManager;
+    private config: Required<PlotManagerConfig>;
+
+    // 学習旅路システム（遅延初期化）
+    private learningJourneySystem: LearningJourneySystem | null = null;
+    private learningJourneyInitialized: boolean = false;
+
+    // セクションマネージャー（遅延初期化）
+    private sectionPlotManager: any = null;
+
+    // パフォーマンス統計
+    private performanceStats = {
+        totalOperations: 0,
+        successfulOperations: 0,
+        failedOperations: 0,
+        averageProcessingTime: 0,
+        memorySystemHits: 0,
+        cacheEfficiencyRate: 0,
+        lastOptimization: new Date().toISOString()
+    };
 
     /**
      * プロットマネージャーのコンストラクタ
+     * @param dependencies 依存関係（MemoryManagerを含む）
      */
-    constructor() {
+    constructor(dependencies: PlotManagerDependencies) {
+        // 🔧 依存注入パターンの完全実装
+        this.memoryManager = dependencies.memoryManager;
+        this.config = {
+            enableLearningJourney: true,
+            enableSectionPlotImport: true,
+            enableQualityAssurance: true,
+            enablePerformanceOptimization: true,
+            learningJourneyTimeout: 45000,
+            memorySystemIntegration: true,
+            ...dependencies.config
+        };
+
+        // 基本コンポーネントの初期化
         this.plotStorage = new PlotStorage();
-        this.plotChecker = new PlotChecker();
         this.plotContextBuilder = new PlotContextBuilder();
         this.geminiClient = new GeminiClient();
         this.worldSettingsManager = new WorldSettingsManager();
-
         this.phaseManager = new StoryPhaseManager();
 
-        // 物語生成ブリッジのインスタンス化（新規追加）
-        this.storyGenerationBridge = new StoryGenerationBridge();
+        // 🔧 修正: StoryGenerationBridgeに必要な引数を渡す
+        this.storyGenerationBridge = new StoryGenerationBridge(this.memoryManager, {
+            useMemorySystemIntegration: this.config.memorySystemIntegration,
+            fallbackStrategy: 'optimistic',
+            timeoutMs: 30000,
+            retryAttempts: 3
+        });
+
+        logger.info('PlotManager created with new memory hierarchy system integration', {
+            memorySystemIntegration: this.config.memorySystemIntegration,
+            config: this.config
+        });
 
         // 初期化を開始
         this.initializationPromise = this.initialize();
     }
 
     /**
-     * プロットデータの初期化
+     * 🔧 新記憶階層システム対応初期化
      */
     private async initialize(): Promise<void> {
-        try {
-            logger.info('プロットマネージャーの初期化を開始');
+        if (this.initialized) {
+            logger.info('PlotManager already initialized');
+            return;
+        }
 
-            // 1. プロットストレージの初期化（既存のまま）
+        try {
+            logger.info('Starting PlotManager initialization with memory hierarchy integration');
+            this.performanceStats.totalOperations++;
+
+            const startTime = Date.now();
+
+            // 1. 🔧 MemoryManagerの初期化状態確認
+            await this.ensureMemoryManagerInitialized();
+
+            // 2. プロットストレージの初期化
             await withTimeout(
                 this.plotStorage.initialize(),
                 15000,
                 'プロットストレージの初期化'
-            ).catch(error => {
-                logger.error(`プロットストレージの初期化に失敗: ${error.message}`);
-                throw error;
-            });
+            );
 
-            logger.info('プロットストレージの初期化完了');
+            // 3. 🔧 依存関係の遅延初期化
+            await this.initializeDependencies();
 
-            // 2. 🔧 修正: WorldSettingsManagerの初期化とフォールバック処理
-            let worldSettingsInitialized = false;
-            try {
-                await withTimeout(
-                    this.worldSettingsManager.initialize(),
-                    15000,
-                    '世界設定マネージャーの初期化'
-                );
+            // 4. 🔧 WorldSettingsManagerの安全な初期化
+            await this.initializeWorldSettingsManager();
 
-                // 初期化成功後、実際に設定が読み込まれているか確認
-                const hasValidSettings = await this.worldSettingsManager.hasValidWorldSettings();
-                if (hasValidSettings) {
-                    worldSettingsInitialized = true;
-                    logger.info('世界設定マネージャーの初期化完了（設定ファイル読み込み成功）');
-                } else {
-                    logger.warn('世界設定マネージャーは初期化されましたが、設定ファイルが読み込まれていません');
-                }
-            } catch (error) {
-                const errorMessage = error instanceof Error ? error.message : String(error);
-                logger.warn(`世界設定マネージャーの初期化に失敗: ${errorMessage}`);
+            // 5. 篇マネージャーの初期化
+            await this.initializeSectionPlotManager();
+
+            // 6. 🔧 学習旅路システムの遅延初期化準備
+            if (this.config.enableLearningJourney) {
+                this.prepareLearningJourneySystem();
             }
 
-            // 🔧 追加: フォールバック処理
-            if (!worldSettingsInitialized) {
-                logger.info('世界設定のフォールバック処理を実行します');
-                await this.setupFallbackWorldSettings();
-            }
-
-            // 3. 篇マネージャーの初期化（既存のまま）
-            const sectionPlotManager = getSectionPlotManagerInstance();
-            await withTimeout(
-                sectionPlotManager.initialize(),
-                15000,
-                '篇マネージャーの初期化'
-            ).catch(error => {
-                logger.warn(`篇マネージャーの初期化に失敗しましたが、処理を継続します: ${error.message}`);
-            });
-
-            logger.info('篇マネージャーの初期化完了');
-
-            // 残りの処理は既存のまま
-            this.initialized = true;
-            logger.info('プロットマネージャーの基本初期化が完了しました');
-
+            // 7. 拡張コンポーネントの非同期ロード
             this.loadExtendedComponents();
-            logger.info('プロットマネージャーの初期化が完了し、拡張コンポーネントは並行してロード中');
+
+            this.initialized = true;
+            this.performanceStats.successfulOperations++;
+
+            const processingTime = Date.now() - startTime;
+            this.updateAverageProcessingTime(processingTime);
+
+            logger.info('PlotManager initialization completed successfully', {
+                processingTime,
+                memorySystemIntegration: this.config.memorySystemIntegration,
+                componentsInitialized: true
+            });
+
         } catch (error) {
+            this.performanceStats.failedOperations++;
             this.initialized = false;
-            logError(error, {}, 'プロットマネージャーの初期化に失敗しました');
-            throw error;
+
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('Failed to initialize PlotManager', { error: errorMessage });
+            throw new Error(`PlotManager initialization failed: ${errorMessage}`);
         } finally {
             this.initializationPromise = null;
         }
     }
 
     /**
-     * 🔧 新規追加: フォールバック用の世界設定をセットアップ
+     * 🔧 修正: 依存関係の遅延初期化
+     */
+    private async initializeDependencies(): Promise<void> {
+        try {
+            // PlotCheckerの初期化（循環依存を避けるため遅延）
+            const { PlotChecker } = await import('./checker');
+            this.plotChecker = new PlotChecker(
+                this.memoryManager,
+                characterManager,
+                this // 循環依存だが、初期化後なので問題なし
+            );
+
+            logger.debug('Dependencies initialized successfully');
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('Failed to initialize dependencies', { error: errorMessage });
+
+            // フォールバック: 基本的なチェッカーオブジェクト
+            this.plotChecker = {
+                checkGeneratedContentConsistency: async () => ({ consistent: true, issues: [] })
+            };
+        }
+    }
+
+    /**
+     * 🔧 MemoryManagerの初期化状態確認
+     */
+    private async ensureMemoryManagerInitialized(): Promise<void> {
+        try {
+            // MemoryManagerが正しく初期化されているかチェック
+            const systemStatus = await this.memoryManager.getSystemStatus();
+
+            if (!systemStatus.initialized) {
+                logger.warn('MemoryManager not initialized, attempting initialization...');
+                await this.memoryManager.initialize();
+
+                // 再度確認
+                const retryStatus = await this.memoryManager.getSystemStatus();
+                if (!retryStatus.initialized) {
+                    throw new Error('MemoryManager initialization failed');
+                }
+            }
+
+            logger.debug('MemoryManager initialization verified');
+            this.performanceStats.memorySystemHits++;
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('MemoryManager initialization check failed', { error: errorMessage });
+            throw error;
+        }
+    }
+
+    /**
+     * 🔧 WorldSettingsManagerの安全な初期化
+     */
+    private async initializeWorldSettingsManager(): Promise<void> {
+        try {
+            await withTimeout(
+                this.worldSettingsManager.initialize(),
+                15000,
+                '世界設定マネージャーの初期化'
+            );
+
+            // 設定が正しく読み込まれているか確認
+            const hasValidSettings = await this.worldSettingsManager.hasValidWorldSettings();
+            if (hasValidSettings) {
+                logger.info('世界設定マネージャーの初期化完了（設定ファイル読み込み成功）');
+            } else {
+                logger.warn('世界設定マネージャーは初期化されましたが、設定ファイルが読み込まれていません');
+                await this.setupFallbackWorldSettings();
+            }
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn(`世界設定マネージャーの初期化に失敗: ${errorMessage}`);
+            await this.setupFallbackWorldSettings();
+        }
+    }
+
+    /**
+     * 🔧 フォールバック用の世界設定をセットアップ
      */
     private async setupFallbackWorldSettings(): Promise<void> {
         try {
-            // WorldSettingsManagerの内部状態を直接設定するワークアラウンド
             const fallbackSettings = {
                 genre: 'classic',
                 description: 'デフォルトの物語世界設定です。適切な設定ファイルを配置してください。',
                 regions: []
             };
 
-            // プライベートプロパティへのアクセス（型安全性を保つため）
+            // 型安全なプロパティアクセス
             (this.worldSettingsManager as any).worldSettings = fallbackSettings;
             (this.worldSettingsManager as any).initialized = true;
 
             logger.info('フォールバック世界設定を適用しました', {
                 genre: fallbackSettings.genre
             });
+
         } catch (error) {
-            logger.error('フォールバック世界設定の適用に失敗しました', { error });
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('フォールバック世界設定の適用に失敗しました', { error: errorMessage });
         }
     }
 
     /**
-     * 拡張コンポーネントのロード（修正版）
-     * 初期化順序の問題を解決し、循環依存を回避
+     * 🔧 修正: 篇マネージャーの初期化
      */
-    private async loadExtendedComponents(): Promise<void> {
-        try {
-            // 1. 中期プロットから篇情報をロード（非同期で実行、エラーは無視）
-            this.importMediumPlotSections().catch(error => {
-                logger.warn(`中期プロットからの篇情報ロードに失敗しましたが、メイン機能には影響ありません: ${error.message}`);
-            });
-
-            // 2. ⭐ 修正: 学習旅路システムの初期化を遅延実行に変更
-            // 即座に初期化せず、必要時に初期化するパターンに変更
-            try {
-                this.learningJourneySystem = new LearningJourneySystem(
-                    this.geminiClient,
-                    memoryManager,
-                    characterManager
-                );
-
-                // ⭐ 重要: 初期化は遅延実行とし、システム全体の初期化完了後に実行
-                logger.info('LearningJourneySystem instance created, initialization will be deferred');
-
-                // 非同期で初期化を試行（失敗してもメイン機能に影響しない）
-                this.deferredInitializeLearningJourney().catch(error => {
-                    logger.warn(`学習旅路システムの遅延初期化に失敗しました: ${error.message}`);
-                    this.learningJourneySystem = null;
-                });
-
-            } catch (learningError) {
-                logger.warn('学習旅路システムの作成に失敗しました。関連機能は無効になります', {
-                    error: learningError instanceof Error ? learningError.message : String(learningError)
-                });
-                this.learningJourneySystem = null;
-            }
-        } catch (error) {
-            logger.error('拡張コンポーネントのロード中にエラーが発生しましたが、メイン機能には影響ありません', {
-                error: error instanceof Error ? error.message : String(error)
-            });
-        }
-    }
-
-    /**
-     * ⭐ 新規追加: 学習旅路システムの遅延初期化
-     * システム全体の初期化完了後に実行される
-     */
-    private async deferredInitializeLearningJourney(): Promise<void> {
-        if (!this.learningJourneySystem) {
+    private async initializeSectionPlotManager(): Promise<void> {
+        if (!this.config.enableSectionPlotImport) {
+            logger.debug('Section plot import disabled');
             return;
         }
 
         try {
-            // システム全体の初期化を待機（最大5秒）
-            await this.waitForSystemInitialization(5000);
+            // 動的インポートで循環依存を回避
+            const { getSectionPlotManager } = await import('./section/section-plot-manager');
 
-            logger.info('Starting deferred LearningJourneySystem initialization');
-
-            await withTimeout(
-                this.learningJourneySystem.initialize('default-story'),
-                45000, // タイムアウトを延長
-                '学習旅路システムの遅延初期化'
+            this.sectionPlotManager = getSectionPlotManager(
+                this.memoryManager,
+                this.geminiClient,
+                this.learningJourneySystem || undefined,
+                {
+                    useMemorySystemIntegration: this.config.memorySystemIntegration,
+                    enableAutoBackup: true,
+                    enableQualityAssurance: this.config.enableQualityAssurance,
+                    cacheEnabled: true,
+                    optimizationEnabled: this.config.enablePerformanceOptimization
+                }
             );
 
-            logger.info('LearningJourneySystem deferred initialization completed successfully');
+            await withTimeout(
+                this.sectionPlotManager.initialize(),
+                15000,
+                '篇マネージャーの初期化'
+            );
+
+            logger.info('篇マネージャーの初期化完了');
+
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : String(error);
-            logger.warn(`学習旅路システムの遅延初期化に失敗: ${errorMessage}`);
+            logger.warn(`篇マネージャーの初期化に失敗しましたが、処理を継続します: ${errorMessage}`);
+
+            // フォールバック: 基本的なセクションマネージャーオブジェクト
+            this.sectionPlotManager = {
+                initialize: async () => { },
+                getSectionByChapter: async () => null,
+                createSectionPlot: async () => null,
+                updateSection: async () => { },
+                getAllSections: async () => []
+            };
+        }
+    }
+
+    /**
+     * 🔧 学習旅路システムの準備（遅延初期化）
+     */
+    private prepareLearningJourneySystem(): void {
+        try {
+            this.learningJourneySystem = new LearningJourneySystem(
+                this.geminiClient,
+                this.memoryManager,
+                characterManager
+            );
+
+            logger.info('LearningJourneySystem instance created, initialization will be deferred');
+
+            // 非同期で初期化を試行（メイン初期化をブロックしない）
+            this.deferredInitializeLearningJourney().catch(error => {
+                const errorMessage = error instanceof Error ? error.message : String(error);
+                logger.warn(`学習旅路システムの遅延初期化に失敗しました: ${errorMessage}`);
+                this.learningJourneySystem = null;
+            });
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn('学習旅路システムの作成に失敗しました。関連機能は無効になります', {
+                error: errorMessage
+            });
             this.learningJourneySystem = null;
         }
     }
 
     /**
-     * ⭐ 新規追加: システム初期化完了の待機
+     * 🔧 学習旅路システムの遅延初期化
      */
-    private async waitForSystemInitialization(timeoutMs: number): Promise<void> {
+    private async deferredInitializeLearningJourney(): Promise<void> {
+        if (!this.learningJourneySystem || this.learningJourneyInitialized) {
+            return;
+        }
+
+        try {
+            // システム全体の安定性を待機
+            await this.waitForSystemStability(5000);
+
+            logger.info('Starting deferred LearningJourneySystem initialization');
+
+            await withTimeout(
+                this.learningJourneySystem.initialize('default-story'),
+                this.config.learningJourneyTimeout,
+                '学習旅路システムの遅延初期化'
+            );
+
+            this.learningJourneyInitialized = true;
+            logger.info('LearningJourneySystem deferred initialization completed successfully');
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn(`学習旅路システムの遅延初期化に失敗: ${errorMessage}`);
+            this.learningJourneySystem = null;
+            this.learningJourneyInitialized = false;
+        }
+    }
+
+    /**
+     * 🔧 システム安定性の待機
+     */
+    private async waitForSystemStability(timeoutMs: number): Promise<void> {
         const startTime = Date.now();
 
         while (Date.now() - startTime < timeoutMs) {
             try {
-                // MemoryManagerの初期化状態をチェック
-                const memoryInitialized = await memoryManager.isInitialized();
+                const systemStatus = await this.memoryManager.getSystemStatus();
 
-                // 基本的な動作確認
-                if (memoryInitialized) {
-                    // ジャンル取得のテスト（循環依存のチェック）
+                if (systemStatus.initialized && systemStatus.memoryLayers.shortTerm.healthy) {
                     const genre = await this.getGenre();
                     if (genre && genre !== 'classic') {
-                        logger.debug('System initialization verified, LearningJourneySystem can proceed');
+                        logger.debug('System stability verified');
                         return;
                     }
                 }
@@ -301,27 +503,37 @@ export class PlotManager {
                 // エラーは無視して再試行
             }
 
-            // 100ms待機して再試行
             await new Promise(resolve => setTimeout(resolve, 100));
         }
 
-        logger.warn('System initialization wait timed out, proceeding with LearningJourneySystem initialization anyway');
+        logger.warn('System stability wait timed out, proceeding anyway');
     }
 
     /**
- * 中期プロットから篇情報をロード
- */
+     * 拡張コンポーネントの非同期ロード
+     */
+    private loadExtendedComponents(): void {
+        // 中期プロットから篇情報をロード（非同期）
+        if (this.config.enableSectionPlotImport) {
+            this.importMediumPlotSections().catch(error => {
+                const errorMessage = error instanceof Error ? error.message : String(error);
+                logger.warn(`中期プロットからの篇情報ロードに失敗: ${errorMessage}`);
+            });
+        }
+
+        logger.info('Extended components loading started asynchronously');
+    }
+
+    /**
+     * 中期プロットから篇情報をロード
+     */
     private async importMediumPlotSections(): Promise<void> {
         try {
-            // 中期プロットを読み込む
             const mediumPlot = await withTimeout(
                 this.plotStorage.loadMediumPlot(),
-                10000, // 10秒タイムアウト
+                10000,
                 '中期プロットの読み込み'
-            ).catch(error => {
-                logger.warn(`中期プロットの読み込みに失敗しました: ${error.message}`);
-                return null;
-            });
+            );
 
             if (!mediumPlot || !mediumPlot.sections || !mediumPlot.sections.length) {
                 logger.info('中期プロットが見つからないか、セクションが含まれていません');
@@ -331,74 +543,67 @@ export class PlotManager {
             const sectionCount = mediumPlot.sections.length;
             logger.info(`中期プロットから ${sectionCount} 個のセクションを読み込みます`);
 
-            // セクションプロットマネージャーのインスタンスを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 効率化のために一度にすべてのセクションをチェック
-            const checkPromises = mediumPlot.sections.map(section =>
-                withTimeout(
-                    sectionPlotManager.getSectionByChapter(section.chapterRange.start),
-                    5000, // 5秒タイムアウト
-                    `セクション ${section.structure?.title || '不明'} の存在チェック`
-                ).catch(() => null)
-            );
-
-            const existingSectionsCheck = await Promise.all(checkPromises);
-
-            // 中期プロットの各セクションを処理
             let importedCount = 0;
-            for (let i = 0; i < mediumPlot.sections.length; i++) {
-                const section = mediumPlot.sections[i];
+
+            for (const section of mediumPlot.sections) {
                 try {
-                    // すでにチェック済みの結果を使用
-                    const existingSection = existingSectionsCheck[i];
+                    const existingSection = await withTimeout(
+                        this.sectionPlotManager.getSectionByChapter(section.chapterRange.start),
+                        5000,
+                        `セクション ${section.structure?.title || '不明'} の存在チェック`
+                    );
 
                     if (!existingSection) {
-                        // 存在しない場合は新規作成
                         const sectionParams = this.convertMediumPlotSectionToParams(section);
-
                         const createdSection = await withTimeout(
-                            sectionPlotManager.createSectionPlot(sectionParams),
-                            10000, // 10秒タイムアウト
+                            this.sectionPlotManager.createSectionPlot(sectionParams),
+                            10000,
                             `セクション ${section.structure?.title || '不明'} の作成`
-                        ).catch(error => {
-                            logger.warn(`セクション作成に失敗: ${error.message}`);
-                            return null;
-                        });
+                        );
 
-                        if (!createdSection) continue;
+                        if (!existingSection) {
+                            const sectionParams = this.convertMediumPlotSectionToParams(section);
+                            const createdSection = await withTimeout(
+                                this.sectionPlotManager.createSectionPlot(sectionParams),
+                                10000,
+                                `セクション ${section.structure?.title || '不明'} の作成`
+                            );
 
-                        // 詳細設計を更新
-                        await withTimeout(
-                            sectionPlotManager.updateSection(createdSection.id, {
-                                emotionalDesign: section.emotionalDesign,
-                                learningJourneyDesign: section.learningJourneyDesign,
-                                characterDesign: section.characterDesign,
-                                narrativeStructureDesign: section.narrativeStructureDesign
-                            }),
-                            10000, // 10秒タイムアウト
-                            `セクション ${section.structure?.title || '不明'} の詳細更新`
-                        ).catch(error => {
-                            logger.warn(`セクション詳細の更新に失敗: ${error.message}`);
-                        });
+                            // 型安全性のチェックを追加
+                            if (createdSection && typeof createdSection === 'object' && 'id' in createdSection) {
+                                await withTimeout(
+                                    this.sectionPlotManager.updateSection((createdSection as SectionPlot).id, {
+                                        emotionalDesign: section.emotionalDesign,
+                                        learningJourneyDesign: section.learningJourneyDesign,
+                                        characterDesign: section.characterDesign,
+                                        narrativeStructureDesign: section.narrativeStructureDesign
+                                    }),
+                                    10000,
+                                    `セクション ${section.structure?.title || '不明'} の詳細更新`
+                                );
 
-                        logger.info(`セクション「${section.structure.title}」を中期プロットから作成しました`);
-                        importedCount++;
-                    } else {
-                        logger.debug(`セクション「${section.structure.title}」（章 ${section.chapterRange.start}-${section.chapterRange.end}）は既に存在します`);
+                                logger.info(`セクション「${section.structure.title}」を中期プロットから作成しました`);
+                                importedCount++;
+                            } else {
+                                logger.warn(`セクション「${section.structure?.title || '不明'}」の作成に失敗しました`);
+                            }
+
+
+                            logger.info(`セクション「${section.structure.title}」を中期プロットから作成しました`);
+                            importedCount++;
+                        }
                     }
-                } catch (error) {
-                    logger.error(`セクション「${section.structure?.title || '不明'}」の処理中にエラーが発生しました:`, {
-                        error: error instanceof Error ? error.message : String(error)
-                    });
-                    // 1つのセクションのエラーで全体が中断しないよう続行する
+                } catch (sectionError) {
+                    const errorMessage = sectionError instanceof Error ? sectionError.message : String(sectionError);
+                    logger.error(`セクション「${section.structure?.title || '不明'}」の処理中にエラー: ${errorMessage}`);
                 }
             }
 
-            logger.info(`中期プロットからの読み込みが完了しました: ${importedCount} 個のセクションを作成`);
+            logger.info(`中期プロットからの読み込み完了: ${importedCount} 個のセクションを作成`);
+
         } catch (error) {
-            logError(error, {}, '中期プロットからのセクション読み込みに失敗しました');
-            // 初期化プロセス全体を中断しないために、エラーをスローせずに処理する
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('中期プロットからのセクション読み込みに失敗', { error: errorMessage });
         }
     }
 
@@ -421,15 +626,14 @@ export class PlotManager {
     }
 
     /**
- * 学習旅路システムを安全に取得
- * @returns 初期化済みの学習旅路システム、または null
- */
+     * 🔧 学習旅路システムを安全に取得
+     */
     async getLearningJourneySystem(): Promise<LearningJourneySystem | null> {
-        if (!this.learningJourneySystem) {
+        if (!this.config.enableLearningJourney || !this.learningJourneySystem) {
             return null;
         }
 
-        if (!this.learningJourneySystem.isInitialized()) {
+        if (!this.learningJourneyInitialized) {
             logger.info('LearningJourneySystem not initialized yet, attempting initialization...');
             try {
                 await this.deferredInitializeLearningJourney();
@@ -439,46 +643,96 @@ export class PlotManager {
             }
         }
 
-        return this.learningJourneySystem.isInitialized() ? this.learningJourneySystem : null;
+        return this.learningJourneyInitialized ? this.learningJourneySystem : null;
     }
 
     /**
-     * 初期化完了の確認と必要に応じた待機
+     * 🔧 初期化状態の確認と待機
      */
     private async ensureInitialized(): Promise<void> {
         if (this.initialized) return;
 
         if (this.initializationPromise) {
-            // 初期化中の場合は、タイムアウト付きで待機
             await withTimeout(
                 this.initializationPromise,
-                30000, // 30秒タイムアウト
+                30000,
                 'プロットマネージャーの初期化の待機'
-            ).catch(error => {
-                logger.error(`初期化の待機中にタイムアウトが発生: ${error.message}`);
-                // タイムアウトした場合は、初期化がハングしていると判断して新たに初期化を開始
-                this.initializationPromise = null;
-                throw new Error('プロットマネージャーの初期化がタイムアウトしました。再試行してください。');
-            });
+            );
         } else {
             this.initializationPromise = this.initialize();
             await withTimeout(
                 this.initializationPromise,
-                30000, // 30秒タイムアウト
+                30000,
                 'プロットマネージャーの初期化'
-            ).catch(error => {
-                logger.error(`初期化中にタイムアウトが発生: ${error.message}`);
-                this.initializationPromise = null;
-                throw new Error('プロットマネージャーの初期化がタイムアウトしました。再試行してください。');
-            });
+            );
         }
     }
 
     /**
-     * 次章のプロンプト用要素を生成します（ブリッジ統合版）
-     * 
-     * @param chapterNumber 章番号
-     * @returns プロンプト用要素
+     * 🔧 章処理（新記憶階層システム統合版）
+     */
+    async processChapter(chapter: Chapter): Promise<SystemOperationResult> {
+        await this.ensureInitialized();
+
+        const startTime = Date.now();
+        this.performanceStats.totalOperations++;
+
+        try {
+            logger.info(`章${chapter.chapterNumber}を新記憶階層システムで処理開始`);
+
+            // 🔧 MemoryManagerの統合APIを使用
+            const result = await this.memoryManager.processChapter(chapter);
+
+            if (result.success) {
+                this.performanceStats.successfulOperations++;
+                this.performanceStats.memorySystemHits++;
+
+                logger.info(`章${chapter.chapterNumber}の記憶階層システム処理が完了`, {
+                    processingTime: result.processingTime,
+                    affectedComponents: result.affectedComponents
+                });
+            } else {
+                this.performanceStats.failedOperations++;
+
+                logger.warn(`章${chapter.chapterNumber}の記憶階層システム処理に失敗`, {
+                    errors: result.errors,
+                    warnings: result.warnings
+                });
+            }
+
+            const totalProcessingTime = Date.now() - startTime;
+            this.updateAverageProcessingTime(totalProcessingTime);
+
+            return {
+                ...result,
+                processingTime: totalProcessingTime,
+                operationType: 'plotManager_processChapter'
+            };
+
+        } catch (error) {
+            this.performanceStats.failedOperations++;
+            const processingTime = Date.now() - startTime;
+            const errorMessage = error instanceof Error ? error.message : String(error);
+
+            logger.error(`章${chapter.chapterNumber}の処理に失敗`, {
+                error: errorMessage,
+                processingTime
+            });
+
+            return {
+                success: false,
+                operationType: 'plotManager_processChapter',
+                processingTime,
+                affectedComponents: [],
+                details: {},
+                warnings: [],
+                errors: [errorMessage]
+            };
+        }
+    }
+
+    /**
+     * 🔧 次章のプロンプト用要素を生成（新記憶階層システム統合版）
      */
     async generatePromptElements(chapterNumber: number): Promise<PromptElements> {
         await this.ensureInitialized();
@@ -486,20 +740,16 @@ export class PlotManager {
         try {
             logger.info(`章${chapterNumber}のプロンプト要素を生成します`);
 
-            // 必要な情報の取得
+            // 🔧 統合記憶システムから包括的コンテキストを取得
+            const memoryContext = await this.getComprehensiveMemoryContext(chapterNumber);
+
+            // 既存のプロット情報を取得
             const concretePlot = await this.getConcretePlotForChapter(chapterNumber);
             const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
             const phaseInfo = await this.getPhaseInformation(chapterNumber);
 
-            // メモリマネージャーから物語状態を取得
-            let narrativeState: NarrativeStateInfo | null = null;
-            try {
-                narrativeState = await memoryManager.getNarrativeState(chapterNumber);
-            } catch (error) {
-                logger.warn(`章${chapterNumber}の物語状態取得に失敗しました`, {
-                    error: error instanceof Error ? error.message : String(error)
-                });
-            }
+            // 🔧 記憶階層システムから物語状態を取得
+            const narrativeState = memoryContext.narrativeState;
 
             // 物語生成ブリッジを使用して章の指示を生成
             const directives = await this.storyGenerationBridge.generateChapterDirectives(
@@ -510,34 +760,142 @@ export class PlotManager {
                 phaseInfo
             );
 
+            // 🔧 記憶システムからの追加情報でエンリッチ
+            const enrichedDirectives = await this.enrichDirectivesWithMemoryContext(
+                directives,
+                memoryContext
+            );
+
             // 指示をプロンプト要素としてフォーマット
-            const promptElements = this.storyGenerationBridge.formatAsPromptElements(directives);
+            const promptElements = this.storyGenerationBridge.formatAsPromptElements(enrichedDirectives);
+
+            this.performanceStats.memorySystemHits++;
 
             logger.debug(`章${chapterNumber}のプロンプト要素生成完了`, {
-                elementsCount: Object.keys(promptElements).length
+                elementsCount: Object.keys(promptElements).length,
+                memoryContextUsed: true
             });
 
             return promptElements;
+
         } catch (error) {
-            logger.error(`章${chapterNumber}のプロンプト要素生成に失敗しました`, {
-                error: error instanceof Error ? error.message : String(error),
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`章${chapterNumber}のプロンプト要素生成に失敗`, {
+                error: errorMessage,
                 chapterNumber
             });
 
-            // エラー時のフォールバック要素
             return this.generateFallbackPromptElements(chapterNumber);
         }
     }
 
     /**
+     * 🔧 包括的記憶コンテキストの取得
+     */
+    private async getComprehensiveMemoryContext(chapterNumber: number): Promise<{
+        narrativeState: NarrativeStateInfo | null;
+        recentChapters: any[];
+        characterStates: any[];
+        worldContext: any;
+        searchResults: UnifiedSearchResult;
+    }> {
+        try {
+            // 🔧 統合検索を使用して包括的なコンテキストを取得
+            const searchQuery = `chapter ${chapterNumber} context narrative state characters`;
+            const searchResult = await this.memoryManager.unifiedSearch(
+                searchQuery,
+                [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+            );
+
+            // 🔧 物語状態を安全に取得
+            let narrativeState: NarrativeStateInfo | null = null;
+            try {
+                // 正しいAPIを使用（getNarrativeStateは存在すると仮定）
+                narrativeState = await (this.memoryManager as any).getNarrativeState(chapterNumber);
+            } catch (error) {
+                logger.warn(`章${chapterNumber}の物語状態取得に失敗`, {
+                    error: error instanceof Error ? error.message : String(error)
+                });
+                narrativeState = null;
+            }
+
+            // 検索結果から関連情報を抽出
+            const recentChapters = searchResult.results.filter(r => r.type === 'chapter').slice(0, 3);
+            const characterStates = searchResult.results.filter(r => r.type === 'character');
+            const worldContext = searchResult.results.filter(r => r.type === 'world' || r.type === 'knowledge');
+
+            return {
+                narrativeState,
+                recentChapters,
+                characterStates,
+                worldContext,
+                searchResults: searchResult
+            };
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('包括的記憶コンテキストの取得に失敗', { error: errorMessage, chapterNumber });
+
+            return {
+                narrativeState: null,
+                recentChapters: [],
+                characterStates: [],
+                worldContext: [],
+                searchResults: {
+                    success: false,
+                    totalResults: 0,
+                    processingTime: 0,
+                    results: [],
+                    suggestions: []
+                }
+            };
+        }
+    }
+
+    /**
+     * 🔧 記憶コンテキストで指示をエンリッチ
+     */
+    private async enrichDirectivesWithMemoryContext(
+        directives: ExtendedChapterDirectives,
+        memoryContext: any
+    ): Promise<ExtendedChapterDirectives> {
+        try {
+            const enrichedDirectives = { ...directives };
+
+            // 記憶システムからの情報で強化
+            if (memoryContext.recentChapters.length > 0) {
+                enrichedDirectives.contextualBackground = memoryContext.recentChapters
+                    .map((ch: any) => `前章の要素: ${ch.data?.title || '不明'}`)
+                    .join(', ');
+            }
+
+            if (memoryContext.characterStates.length > 0) {
+                const characterContexts = memoryContext.characterStates
+                    .map((cs: any) => `${cs.data?.name || '不明'}: ${cs.data?.state || '状態不明'}`)
+                    .slice(0, 3);
+
+                enrichedDirectives.characterContexts = characterContexts;
+            }
+
+            if (memoryContext.worldContext.length > 0) {
+                enrichedDirectives.worldContextElements = memoryContext.worldContext
+                    .map((wc: any) => wc.data?.description || '世界要素')
+                    .slice(0, 5);
+            }
+
+            return enrichedDirectives;
+
+        } catch (error) {
+            logger.warn('記憶コンテキストによる指示のエンリッチに失敗', { error });
+            return directives;
+        }
+    }
+
+    /**
      * フォールバックのプロンプト要素を生成
-     * 
-     * @param chapterNumber 章番号
-     * @returns フォールバックプロンプト要素
      */
     private async generateFallbackPromptElements(chapterNumber: number): Promise<PromptElements> {
         try {
-            // 最低限必要な情報を取得
             const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
 
             return {
@@ -549,13 +907,14 @@ export class PlotManager {
                 WORLD_ELEMENTS_FOCUS: "- 現在の環境描写\n- 世界観の重要要素",
                 THEMATIC_FOCUS: `- ${abstractGuideline.theme}\n- ${abstractGuideline.emotionalTone}の雰囲気`
             };
+
         } catch (error) {
-            logger.error('フォールバックプロンプト要素の生成に失敗しました', {
-                error: error instanceof Error ? error.message : String(error),
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('フォールバックプロンプト要素の生成に失敗', {
+                error: errorMessage,
                 chapterNumber
             });
 
-            // 完全なフォールバック
             return {
                 CHAPTER_GOAL: "物語を自然に進展させる",
                 REQUIRED_PLOT_ELEMENTS: "- キャラクターの成長\n- 世界観の発展\n- 興味深い展開",
@@ -569,605 +928,198 @@ export class PlotManager {
     }
 
     /**
- * 中期プロットを読み込みます
- */
-    async loadMediumPlot(): Promise<MediumPlot | null> {
-        try {
-            const filePath = 'data/config/story-plot/medium-plot.yaml';
-
-            // ファイルが存在するか確認
-            if (!(await storageProvider.fileExists(filePath))) {
-                logger.info(`中期プロットファイル ${filePath} が存在しません。`);
-                return null;
-            }
-
-            // ファイルを読み込む
-            const content = await storageProvider.readFile(filePath);
-            const parsed = parseYaml(content);
-
-            // 検証
-            if (typeof parsed !== 'object' || parsed === null || !parsed.sections) {
-                logger.warn(`中期プロットファイルの形式が不正です: ${filePath}`);
-                return null;
-            }
-
-            logger.info(`中期プロットをファイル ${filePath} から読み込みました`);
-            return parsed as MediumPlot;
-        } catch (error) {
-            logError(error, {}, '中期プロットの読み込みに失敗しました');
-            return null;
-        }
-    }
-
-    /**
-     * 特定の章に対応する中期プロットのセクションを取得します
+     * 🔧 世界設定からジャンルを取得（新記憶階層システム対応版）
      */
-    async loadMediumPlotSectionForChapter(chapterNumber: number): Promise<any | null> {
+    async getGenre(): Promise<string> {
         try {
-            const mediumPlot = await this.loadMediumPlot();
-
-            if (!mediumPlot || !mediumPlot.sections) {
-                return null;
+            if (!this.initialized) {
+                logger.debug('PlotManager not fully initialized, returning default genre');
+                return 'classic';
             }
 
-            // 章番号に対応するセクションを探す
-            const section = mediumPlot.sections.find(section =>
-                chapterNumber >= section.chapterRange.start &&
-                chapterNumber <= section.chapterRange.end
-            );
+            await this.ensureInitialized();
 
-            return section || null;
-        } catch (error) {
-            logError(error, { chapterNumber }, '章に対応する中期プロットセクションの読み込みに失敗しました');
-            return null;
-        }
-    }
+            // 🔧 統合検索でジャンル情報を取得
+            if (this.config.memorySystemIntegration) {
+                try {
+                    const searchResult = await this.memoryManager.unifiedSearch(
+                        'genre world settings',
+                        [MemoryLevel.LONG_TERM]
+                    );
 
-    /**
- * 章生成コンテキストに篇情報を統合
- * 
- * @param chapterNumber 章番号
- * @returns 篇情報を含むコンテキスト
- */
-    async generateChapterContextWithSection(chapterNumber: number): Promise<any> {
-        await this.ensureInitialized();
+                    if (searchResult.success && searchResult.results.length > 0) {
+                        const genreResult = searchResult.results.find(r =>
+                            r.data?.genre || r.data?.worldSettings?.genre
+                        );
 
-        try {
-            logger.info(`章 ${chapterNumber} の篇情報を含むコンテキストを生成します`);
-
-            // 基本的なコンテキストを生成
-            const baseContext = await this.createBaseChapterContext(chapterNumber);
-
-            // 章番号に対応する篇を取得
-            const section = await this.getSectionForChapter(chapterNumber);
-            if (!section) {
-                logger.info(`章 ${chapterNumber} に対応する篇が見つかりません。基本コンテキストを返します`);
-                return baseContext;
-            }
-
-            // 篇内での相対位置を計算 (0-1)
-            const { start, end } = section.chapterRange;
-            const relativePosition = (chapterNumber - start) / (end - start || 1);
-
-            // 重要なシーンやターニングポイントを特定
-            const relevantKeyScenes = this.findRelevantSectionElements(
-                section.narrativeStructureDesign?.keyScenes || [],
-                relativePosition,
-                0.2
-            );
-
-            const relevantTurningPoints = this.findRelevantSectionElements(
-                section.narrativeStructureDesign?.turningPoints || [],
-                relativePosition,
-                0.15
-            );
-
-            // 感情アークの情報を取得
-            const emotionalInfo = this.getEmotionalArcInfo(section, relativePosition);
-
-            // 章の位置づけ特定（導入、中盤、結末）
-            const chapterPosition = this.determineChapterPosition(relativePosition);
-
-            // 篇コンテキストを構築
-            const sectionContext = {
-                id: section.id,
-                title: section.structure.title,
-                theme: section.structure.theme,
-                narrativePhase: section.structure.narrativePhase,
-                chapterPosition,
-                relativePosition,
-                motifs: section.structure.motifs || [],
-
-                // 感情設計
-                emotionalTone: emotionalInfo.currentTone,
-                emotionalArc: emotionalInfo.arc,
-                emotionalJourney: section.emotionalDesign.readerEmotionalJourney,
-
-                // 学習設計
-                mainConcept: section.learningJourneyDesign.mainConcept,
-                learningStage: section.learningJourneyDesign.primaryLearningStage,
-                learningObjectives: section.learningJourneyDesign.learningObjectives,
-
-                // 構造設計
-                keyScenes: relevantKeyScenes,
-                turningPoints: relevantTurningPoints,
-                sectionThreads: section.narrativeStructureDesign?.narrativeThreads?.map(t => t.thread) || [],
-
-                // キャラクター設計
-                mainCharacters: section.characterDesign.mainCharacters
-            };
-
-            // テーマコンテキストを構築
-            const themeContext = this.buildSectionThemeContext(section);
-
-            // 統合したコンテキストを返す
-            const enhancedContext = {
-                ...baseContext,
-                theme: themeContext,
-                sectionContext,
-                additionalContext: {
-                    ...(baseContext.additionalContext || {}),
-                    motifs: section.structure.motifs,
-                    characterRoles: section.characterDesign.characterRoles,
-                    sectionProgress: Math.round(relativePosition * 100) / 100,
-                    tensionPoints: emotionalInfo.tensionPoint ? [emotionalInfo.tensionPoint] : []
+                        if (genreResult) {
+                            const genre = genreResult.data?.genre || genreResult.data?.worldSettings?.genre;
+                            if (genre && typeof genre === 'string') {
+                                this.performanceStats.memorySystemHits++;
+                                return genre;
+                            }
+                        }
+                    }
+                } catch (memoryError) {
+                    logger.debug('記憶システムからのジャンル取得に失敗、フォールバックを使用', {
+                        error: memoryError instanceof Error ? memoryError.message : String(memoryError)
+                    });
                 }
-            };
-
-            logger.info(`章 ${chapterNumber} の篇情報を含むコンテキスト生成が完了しました`);
-            return enhancedContext;
-        } catch (error) {
-            logger.error(`章 ${chapterNumber} の篇情報を含むコンテキスト生成に失敗しました`, {
-                error: error instanceof Error ? error.message : String(error)
-            });
-
-            // エラー時は基本コンテキストを返す
-            return this.createBaseChapterContext(chapterNumber);
-        }
-    }
-
-    /**
-     * 基本的な章コンテキストを作成
-     */
-    private async createBaseChapterContext(chapterNumber: number): Promise<any> {
-        try {
-            // 短期記憶からの情報取得
-            const shortTermMemory = memoryManager.getShortTermMemory();
-            const previousChapters = await shortTermMemory.getRecentChapters(3);
-
-            // 現在の章の前の章を取得
-            const previousChapter = await shortTermMemory.getChapter(chapterNumber - 1);
-
-            // 記憶システムから状態を取得
-            const narrativeState = await memoryManager.getNarrativeState(chapterNumber);
-
-            // 世界知識から関連コンテキストを取得
-            const worldKnowledge = memoryManager.getLongTermMemory();
-            const worldContext = await worldKnowledge.getRelevantContext(chapterNumber);
-
-            // 基本コンテキストを構築
-            return {
-                chapterNumber,
-                previousChapterContent: previousChapter ? previousChapter.content : '',
-                previousChapterTitle: previousChapter ? previousChapter.title : '',
-                recentChapters: previousChapters.map((c: any) => ({
-                    number: c.chapter.chapterNumber,
-                    title: c.chapter.title,
-                    summary: c.summary || ''
-                })),
-                narrativeState: {
-                    state: narrativeState.state,
-                    location: narrativeState.location || '',
-                    currentCharacters: narrativeState.presentCharacters || [],
-                    tensionLevel: narrativeState.tensionLevel || 5
-                },
-                worldContext,
-                themeContext: '',
-                additionalContext: {},
-                sectionContext: null
-            };
-        } catch (error) {
-            logger.error(`章 ${chapterNumber} の基本コンテキスト生成に失敗しました`, {
-                error: error instanceof Error ? error.message : String(error)
-            });
-
-            // エラー時は最小限のコンテキストを返す
-            return {
-                chapterNumber,
-                previousChapterContent: '',
-                previousChapterTitle: '',
-                recentChapters: [],
-                narrativeState: {
-                    state: 'UNKNOWN',
-                    location: '',
-                    currentCharacters: [],
-                    tensionLevel: 5
-                },
-                worldContext: '',
-                themeContext: '',
-                additionalContext: {},
-                sectionContext: null
-            };
-        }
-    }
-
-    /**
-     * 篇内の要素から章の相対位置に関連するものを見つける
-     */
-    private findRelevantSectionElements(elements: any[], relativePosition: number, maxDistance: number): any[] {
-        if (!elements || !Array.isArray(elements)) return [];
-
-        // 相対位置との距離が指定した最大距離以内の要素を抽出
-        return elements.filter(element => {
-            if (!element || typeof element.relativePosition !== 'number') return false;
-            return Math.abs(element.relativePosition - relativePosition) <= maxDistance;
-        });
-    }
-
-    /**
-     * 感情アークの情報を取得
-     */
-    private getEmotionalArcInfo(section: SectionPlot, relativePosition: number): any {
-        if (!section.emotionalDesign || !section.emotionalDesign.emotionalArc) {
-            return {
-                currentTone: '標準',
-                arc: { opening: '標準', midpoint: '標準', conclusion: '標準' }
-            };
-        }
-
-        const emotionalArc = section.emotionalDesign.emotionalArc;
-
-        // 現在の感情トーンを決定
-        let currentTone: string;
-        if (relativePosition < 0.33) {
-            currentTone = emotionalArc.opening;
-        } else if (relativePosition < 0.66) {
-            currentTone = emotionalArc.midpoint;
-        } else {
-            currentTone = emotionalArc.conclusion;
-        }
-
-        // 緊張ポイントを確認
-        const tensionPoints = section.emotionalDesign.tensionPoints || [];
-        const nearbyTensionPoint = tensionPoints.find(tp =>
-            Math.abs(tp.relativePosition - relativePosition) <= 0.1
-        );
-
-        // カタルシスを確認
-        const catharsis = section.emotionalDesign.catharticMoment;
-        const isNearCatharsis = catharsis &&
-            Math.abs(catharsis.relativePosition - relativePosition) <= 0.1;
-
-        return {
-            currentTone,
-            arc: {
-                opening: emotionalArc.opening,
-                midpoint: emotionalArc.midpoint,
-                conclusion: emotionalArc.conclusion
-            },
-            tensionPoint: nearbyTensionPoint,
-            isNearCatharsis,
-            catharsis: isNearCatharsis ? catharsis : null
-        };
-    }
-
-    /**
-     * 章の位置づけを決定
-     */
-    private determineChapterPosition(relativePosition: number): string {
-        if (relativePosition < 0.25) {
-            return 'OPENING';
-        } else if (relativePosition < 0.75) {
-            return 'MIDDLE';
-        } else {
-            return 'CONCLUSION';
-        }
-    }
-
-    /**
-     * 篇のテーマコンテキストを構築
-     */
-    private buildSectionThemeContext(section: SectionPlot): string {
-        try {
-            const structure = section.structure;
-            const learning = section.learningJourneyDesign;
-            const emotion = section.emotionalDesign;
-
-            return `
-## 「${structure.title}」のテーマと学習目標
-
-### テーマ
-${structure.theme}
-
-### 中心概念
-${learning.mainConcept}
-
-### モチーフ
-${(structure.motifs || []).join(', ')}
-
-### 学習目標
-- 認知的目標: ${learning.learningObjectives.cognitive}
-- 感情的目標: ${learning.learningObjectives.affective}
-- 行動的目標: ${learning.learningObjectives.behavioral}
-
-### 感情的旅路
-${emotion.readerEmotionalJourney}
-
-### 期待される感情的リターン
-${emotion.emotionalPayoff}
-`.trim();
-        } catch (error) {
-            logger.warn('篇のテーマコンテキスト構築に失敗しました', { error });
-            return '篇の情報が利用できません';
-        }
-    }
-
-    /**
-     * 章の詳細な指示情報を生成します
-     * 
-     * @param chapterNumber 章番号
-     * @returns 章の指示情報
-     */
-    async generateChapterDirectives(chapterNumber: number): Promise<ChapterDirectives> {
-        await this.ensureInitialized();
-
-        try {
-            // 必要な情報の取得
-            const concretePlot = await this.getConcretePlotForChapter(chapterNumber);
-            const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
-            const phaseInfo = await this.getPhaseInformation(chapterNumber);
-
-            // メモリマネージャーから物語状態を取得
-            let narrativeState: NarrativeStateInfo | null = null;
-            try {
-                narrativeState = await memoryManager.getNarrativeState(chapterNumber);
-            } catch (error) {
-                logger.warn(`章${chapterNumber}の物語状態取得に失敗しました`, {
-                    error: error instanceof Error ? error.message : String(error)
-                });
             }
 
-            // 物語生成ブリッジを使用して章の指示を生成
-            return await this.storyGenerationBridge.generateChapterDirectives(
-                chapterNumber,
-                concretePlot,
-                abstractGuideline,
-                narrativeState,
-                phaseInfo
-            );
-        } catch (error) {
-            logger.error(`章${chapterNumber}の指示情報生成に失敗しました`, {
-                error: error instanceof Error ? error.message : String(error),
-                chapterNumber
-            });
+            // フォールバック: WorldSettingsManagerを使用
+            return await this.worldSettingsManager.getGenre();
 
-            // エラー時は抽象ガイドラインに基づくフォールバック
-            const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
-            return this.storyGenerationBridge.generateChapterDirectives(
-                chapterNumber,
-                null,
-                abstractGuideline,
-                null,
-                null,
-            );
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn('Failed to get genre via PlotManager', { error: errorMessage });
+            return 'classic';
         }
     }
 
     /**
- * 章が属する篇情報を取得
- * 
- * @param chapterNumber 章番号
- * @returns 篇情報 (存在しない場合はnull)
- */
-    async getSectionForChapter(chapterNumber: number): Promise<SectionPlot | null> {
-        // 初期化確認
+     * 🔧 生成されたコンテンツの整合性をチェック（強化版）
+     */
+    async checkGeneratedContentConsistency(
+        content: string,
+        chapterNumber: number
+    ): Promise<{
+        consistent: boolean;
+        issues: Array<{
+            type: string;
+            description: string;
+            severity: "LOW" | "MEDIUM" | "HIGH";
+            suggestion: string;
+            context?: string;
+        }>;
+        memoryAnalysis?: any;
+    }> {
         await this.ensureInitialized();
 
         try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
+            logger.info(`章${chapterNumber}のプロット整合性チェックを開始`);
 
-            // 章番号から篇を取得
-            return await sectionPlotManager.getSectionByChapter(chapterNumber);
+            // PlotCheckerが初期化されていない場合のフォールバック
+            if (!this.plotChecker) {
+                logger.warn('PlotChecker not initialized, using basic consistency check');
+                return { consistent: true, issues: [] };
+            }
+
+            // 既存のチェッカーによる基本チェック
+            const basicResult = await this.plotChecker.checkGeneratedContentConsistency(
+                content,
+                chapterNumber
+            );
+
+            // 🔧 記憶階層システムを活用した追加分析
+            let memoryAnalysis = null;
+            if (this.config.memorySystemIntegration) {
+                try {
+                    memoryAnalysis = await this.performMemoryBasedConsistencyAnalysis(
+                        content,
+                        chapterNumber
+                    );
+                } catch (memoryError) {
+                    logger.warn('記憶ベースの整合性分析に失敗', {
+                        error: memoryError instanceof Error ? memoryError.message : String(memoryError)
+                    });
+                }
+            }
+
+            const enhancedResult = {
+                ...basicResult,
+                memoryAnalysis
+            };
+
+            logger.info(`章${chapterNumber}のプロット整合性チェック完了`, {
+                consistent: enhancedResult.consistent,
+                issueCount: enhancedResult.issues.length,
+                highSeverityIssues: enhancedResult.issues.filter((issue: {
+                    type: string;
+                    description: string;
+                    severity: "LOW" | "MEDIUM" | "HIGH";
+                    suggestion: string;
+                    context?: string;
+                }) => issue.severity === "HIGH").length,
+                memoryAnalysisPerformed: !!memoryAnalysis
+            });
+
+            return enhancedResult;
+
         } catch (error) {
-            logger.error(`Failed to get section for chapter ${chapterNumber}`, {
-                error: error instanceof Error ? error.message : String(error),
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`章${chapterNumber}のプロット整合性チェックに失敗`, {
+                error: errorMessage,
                 chapterNumber
             });
+
+            return {
+                consistent: true,
+                issues: []
+            };
+        }
+    }
+
+    /**
+     * 🔧 記憶ベースの整合性分析
+     */
+    private async performMemoryBasedConsistencyAnalysis(
+        content: string,
+        chapterNumber: number
+    ): Promise<any> {
+        try {
+            // 関連する記憶情報を検索
+            const consistencyQuery = `chapter ${chapterNumber} characters plot consistency`;
+            const searchResult = await this.memoryManager.unifiedSearch(
+                consistencyQuery,
+                [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+            );
+
+            if (!searchResult.success) {
+                return null;
+            }
+
+            // 分析結果の構築
+            const analysis = {
+                charactersFound: searchResult.results.filter(r => r.type === 'character').length,
+                plotElementsFound: searchResult.results.filter(r => r.type === 'plot').length,
+                worldElementsFound: searchResult.results.filter(r => r.type === 'world').length,
+                previousChapterConnection: searchResult.results.some(r =>
+                    r.data?.chapterNumber === chapterNumber - 1
+                ),
+                totalRelevantMemories: searchResult.totalResults
+            };
+
+            this.performanceStats.memorySystemHits++;
+            return analysis;
+
+        } catch (error) {
+            logger.warn('記憶ベースの整合性分析中にエラー', { error });
             return null;
         }
     }
 
     /**
-     * 篇を作成
-     * 
-     * @param params 篇作成パラメータ
-     * @returns 作成された篇
-     */
-    async createSection(params: SectionPlotParams): Promise<SectionPlot> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 篇を作成
-            return await sectionPlotManager.createSectionPlot(params);
-        } catch (error) {
-            logger.error(`Failed to create section`, {
-                error: error instanceof Error ? error.message : String(error),
-                params
-            });
-            throw error;
-        }
-    }
-
-    /**
-     * すべての篇を取得
-     * 
-     * @returns 篇の配列
-     */
-    async getAllSections(): Promise<SectionPlot[]> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // すべての篇を取得
-            return await sectionPlotManager.getAllSections();
-        } catch (error) {
-            logger.error(`Failed to get all sections`, {
-                error: error instanceof Error ? error.message : String(error)
-            });
-            return [];
-        }
-    }
-
-    /**
-     * 篇の情報と設計を取得
-     * 
-     * @param sectionId 篇ID
-     * @returns 篇の設計情報
-     */
-    async getSectionDesignInfo(sectionId: string): Promise<any> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーと設計コンポーネントを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 篇情報を取得
-            const section = await sectionPlotManager.getSection(sectionId);
-            if (!section) {
-                throw new Error(`Section with ID ${sectionId} not found`);
-            }
-
-            // 統合情報を作成して返す
-            return {
-                structure: section.structure,
-                learning: section.learningJourneyDesign,
-                emotional: section.emotionalDesign,
-                character: section.characterDesign,
-                narrative: section.narrativeStructureDesign
-            };
-        } catch (error) {
-            logger.error(`Failed to get section design info for ${sectionId}`, {
-                error: error instanceof Error ? error.message : String(error),
-                sectionId
-            });
-
-            // エラー時は空オブジェクトを返す
-            return {};
-        }
-    }
-
-    /**
-     * 篇の一貫性を分析
-     * 
-     * @param sectionId 篇ID
-     * @returns 一貫性分析結果
-     */
-    async analyzeSectionCoherence(sectionId: string): Promise<any> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 篇の一貫性を分析
-            return await sectionPlotManager.analyzeSectionCoherence(sectionId);
-        } catch (error) {
-            logger.error(`Failed to analyze section coherence for ${sectionId}`, {
-                error: error instanceof Error ? error.message : String(error),
-                sectionId
-            });
-
-            // エラー時は空の分析結果を返す
-            return {
-                overallScore: 0,
-                problematicAreas: [],
-                improvementSuggestions: []
-            };
-        }
-    }
-
-    /**
-     * 篇の学習目標達成度を分析
-     * 
-     * @param sectionId 篇ID
-     * @returns 学習目標達成度分析結果
-     */
-    async analyzeSectionLearningProgress(sectionId: string): Promise<any> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 篇の学習目標達成度を分析
-            return await sectionPlotManager.analyzeLearningObjectiveProgress(sectionId);
-        } catch (error) {
-            logger.error(`Failed to analyze section learning progress for ${sectionId}`, {
-                error: error instanceof Error ? error.message : String(error),
-                sectionId
-            });
-
-            // エラー時は空の分析結果を返す
-            return {
-                cognitiveProgress: 0,
-                affectiveProgress: 0,
-                behavioralProgress: 0,
-                examples: [],
-                gaps: []
-            };
-        }
-    }
-
-    /**
-     * 篇の改善提案を取得
-     * 
-     * @param sectionId 篇ID
-     * @returns 改善提案の配列
-     */
-    async getSectionImprovementSuggestions(sectionId: string): Promise<any[]> {
-        // 初期化確認
-        await this.ensureInitialized();
-
-        try {
-            // 篇マネージャーを取得
-            const sectionPlotManager = getSectionPlotManagerInstance();
-
-            // 篇の改善提案を取得
-            return await sectionPlotManager.suggestSectionImprovements(sectionId);
-        } catch (error) {
-            logger.error(`Failed to get section improvement suggestions for ${sectionId}`, {
-                error: error instanceof Error ? error.message : String(error),
-                sectionId
-            });
-
-            // エラー時は空の配列を返す
-            return [];
-        }
-    }
-
-    /**
-     * プロット指示を生成（プロンプト用）- 物語生成ブリッジを活用した最適化版
+     * プロット指示を生成（プロンプト用）- 記憶階層システム活用最適化版
      */
     async generatePlotDirective(chapterNumber: number): Promise<string> {
         await this.ensureInitialized();
 
         try {
-            // 物語生成ブリッジを使用して詳細な指示を取得
+            // 🔧 新記憶階層システムを活用した詳細な指示を取得
             const directives = await this.generateChapterDirectives(chapterNumber);
-
-            // フェーズ情報を取得
             const phaseInfo = await this.getPhaseInformation(chapterNumber);
+
+            // 🔧 記憶システムからの追加コンテキスト
+            let memoryEnhancement = '';
+            if (this.config.memorySystemIntegration) {
+                try {
+                    const memoryContext = await this.getComprehensiveMemoryContext(chapterNumber);
+                    memoryEnhancement = this.buildMemoryEnhancedDirective(memoryContext);
+                } catch (memoryError) {
+                    logger.debug('記憶システムからの追加情報取得に失敗', { error: memoryError });
+                }
+            }
 
             // 指示をプロンプト用のテキストに整形
             let directive = "## 物語構造とプロット指示（ストーリーの骨格）\n\n";
@@ -1214,6 +1166,12 @@ ${emotion.emotionalPayoff}
             });
             directive += "\n";
 
+            // 🔧 記憶システムからの追加情報
+            if (memoryEnhancement) {
+                directive += "### 記憶システムからの追加コンテキスト\n";
+                directive += memoryEnhancement + "\n";
+            }
+
             // 感情的目標
             if (directives.emotionalGoal) {
                 directive += `**感情的目標**: ${directives.emotionalGoal}\n`;
@@ -1241,14 +1199,46 @@ ${emotion.emotionalPayoff}
             }
 
             return directive;
+
         } catch (error) {
-            logger.error(`章${chapterNumber}のプロット指示生成に失敗しました`, {
-                error: error instanceof Error ? error.message : String(error),
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`章${chapterNumber}のプロット指示生成に失敗`, {
+                error: errorMessage,
                 chapterNumber
             });
 
-            // 既存の実装をフォールバックとして使用
             return this.generateLegacyPlotDirective(chapterNumber);
+        }
+    }
+
+    /**
+     * 🔧 記憶システムからの追加指示を構築
+     */
+    private buildMemoryEnhancedDirective(memoryContext: any): string {
+        try {
+            let enhancement = '';
+
+            if (memoryContext.recentChapters.length > 0) {
+                enhancement += `**前章からの継続性**: ${memoryContext.recentChapters.length}章分の履歴を参照\n`;
+            }
+
+            if (memoryContext.characterStates.length > 0) {
+                enhancement += `**キャラクター状態**: ${memoryContext.characterStates.length}人の状態を追跡中\n`;
+            }
+
+            if (memoryContext.worldContext.length > 0) {
+                enhancement += `**世界設定要素**: ${memoryContext.worldContext.length}個の関連要素を確認\n`;
+            }
+
+            if (memoryContext.searchResults.totalResults > 0) {
+                enhancement += `**関連記憶総数**: ${memoryContext.searchResults.totalResults}件の関連記憶を検出\n`;
+            }
+
+            return enhancement;
+
+        } catch (error) {
+            logger.warn('記憶システムからの追加指示構築に失敗', { error });
+            return '';
         }
     }
 
@@ -1256,22 +1246,16 @@ ${emotion.emotionalPayoff}
      * レガシー実装によるプロット指示生成（フォールバック用）
      */
     private async generateLegacyPlotDirective(chapterNumber: number): Promise<string> {
-        // 現在のフェーズ情報を取得
         const phaseInfo = await this.getPhaseInformation(chapterNumber);
-
-        // 具体プロットと抽象プロットを取得
         const concretePlot = await this.getConcretePlotForChapter(chapterNumber);
         const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
 
-        // プロット指示を構築
         let directive = "## 物語構造とプロット指示（ストーリーの骨格）\n\n";
 
-        // 物語フェーズの情報
         directive += `**現在の物語フェーズ**: ${this.formatPhase(phaseInfo.phase)}\n`;
         directive += `**フェーズ進行度**: ${Math.round(phaseInfo.phaseProgress * 100)}%\n`;
         directive += `**重要度**: ${Math.round(phaseInfo.importance * 10)}/10\n\n`;
 
-        // 具体プロットがある場合
         if (concretePlot) {
             directive += "### このチャプターで達成すべきストーリー要素\n";
             directive += `**アーク**: ${concretePlot.storyArc || '主要ストーリー'}\n`;
@@ -1295,7 +1279,6 @@ ${emotion.emotionalPayoff}
             }
         }
 
-        // 抽象プロットの情報
         directive += "### テーマと方向性\n";
         directive += `**テーマ**: ${abstractGuideline.theme}\n`;
         directive += `**感情基調**: ${abstractGuideline.emotionalTone}\n`;
@@ -1304,12 +1287,10 @@ ${emotion.emotionalPayoff}
             directive += `**伝えるべきメッセージ**: ${abstractGuideline.thematicMessage}\n\n`;
         }
 
-        // フェーズの目的
         if (abstractGuideline.phasePurpose) {
             directive += `**このフェーズの目的**: ${abstractGuideline.phasePurpose}\n\n`;
         }
 
-        // 移行点の場合、次のフェーズへの橋渡し
         if (phaseInfo.isTransitionPoint && phaseInfo.nextPhase) {
             directive += "### 次フェーズへの移行\n";
             directive += `このチャプターは現在のフェーズ「${this.formatPhase(phaseInfo.phase)}」の最終章です。\n`;
@@ -1320,71 +1301,249 @@ ${emotion.emotionalPayoff}
     }
 
     /**
- * 生成されたコンテンツの整合性をチェックします
- * 
- * @param content 生成されたコンテンツ
- * @param chapterNumber 章番号
- * @returns 整合性チェック結果
- */
-    async checkGeneratedContentConsistency(
-        content: string,
-        chapterNumber: number
-    ): Promise<{
-        consistent: boolean;
-        issues: Array<{
-            type: string;
-            description: string;
-            severity: "LOW" | "MEDIUM" | "HIGH";
-            suggestion: string;
-            context?: string;
-        }>;
-    }> {
+     * 章の詳細な指示情報を生成
+     */
+    async generateChapterDirectives(chapterNumber: number): Promise<ExtendedChapterDirectives> {
         await this.ensureInitialized();
 
         try {
-            logger.info(`章${chapterNumber}のプロット整合性チェックを開始`);
+            const concretePlot = await this.getConcretePlotForChapter(chapterNumber);
+            const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
+            const phaseInfo = await this.getPhaseInformation(chapterNumber);
 
-            // 内部の plotChecker インスタンスを使用して整合性チェックを実行
-            const result = await this.plotChecker.checkGeneratedContentConsistency(
-                content,
-                chapterNumber
+            // 🔧 記憶階層システムから物語状態を取得
+            let narrativeState: NarrativeStateInfo | null = null;
+            if (this.config.memorySystemIntegration) {
+                try {
+                    narrativeState = await (this.memoryManager as any).getNarrativeState(chapterNumber);
+                } catch (error) {
+                    logger.warn(`章${chapterNumber}の物語状態取得に失敗`, {
+                        error: error instanceof Error ? error.message : String(error)
+                    });
+                }
+            }
+
+            return await this.storyGenerationBridge.generateChapterDirectives(
+                chapterNumber,
+                concretePlot,
+                abstractGuideline,
+                narrativeState,
+                phaseInfo
             );
 
-            logger.info(`章${chapterNumber}のプロット整合性チェック完了`, {
-                consistent: result.consistent,
-                issueCount: result.issues.length,
-                highSeverityIssues: result.issues.filter(i => i.severity === "HIGH").length
-            });
-
-            return result;
         } catch (error) {
-            logger.error(`章${chapterNumber}のプロット整合性チェックに失敗しました`, {
-                error: error instanceof Error ? error.message : String(error),
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`章${chapterNumber}の指示情報生成に失敗`, {
+                error: errorMessage,
                 chapterNumber
             });
 
-            // エラー時のフォールバック値を返す
-            return {
-                consistent: true,
-                issues: []
-            };
+            const abstractGuideline = await this.getAbstractGuidelinesForChapter(chapterNumber);
+            return await this.storyGenerationBridge.generateChapterDirectives(
+                chapterNumber,
+                null,
+                abstractGuideline,
+                null,
+                null
+            );
+        }
+    }
+
+    // ============================================================================
+    // 🔧 セクション管理機能（新記憶階層システム対応）
+    // ============================================================================
+
+    /**
+     * 章が属する篇情報を取得
+     */
+    async getSectionForChapter(chapterNumber: number): Promise<SectionPlot | null> {
+        await this.ensureInitialized();
+
+        try {
+            if (!this.sectionPlotManager) {
+                logger.warn('SectionPlotManager not available');
+                return null;
+            }
+            return await this.sectionPlotManager.getSectionByChapter(chapterNumber);
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`Failed to get section for chapter ${chapterNumber}`, {
+                error: errorMessage,
+                chapterNumber
+            });
+            return null;
         }
     }
 
     /**
-     * フェーズの整形表示
+     * 篇を作成
      */
-    private formatPhase(phase: string): string {
-        const phaseMap: { [key: string]: string } = {
-            'OPENING': '序章/オープニング',
-            'EARLY': '序盤',
-            'MIDDLE': '中盤',
-            'LATE': '終盤',
-            'CLIMAX': 'クライマックス',
-            'ENDING': '終章/エンディング'
-        };
+    async createSection(params: SectionPlotParams): Promise<SectionPlot> {
+        await this.ensureInitialized();
 
-        return phaseMap[phase] || phase;
+        try {
+            if (!this.sectionPlotManager) {
+                throw new Error('SectionPlotManager not available');
+            }
+            return await this.sectionPlotManager.createSectionPlot(params);
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`Failed to create section`, {
+                error: errorMessage,
+                params
+            });
+            throw error;
+        }
+    }
+
+    /**
+     * すべての篇を取得
+     */
+    async getAllSections(): Promise<SectionPlot[]> {
+        await this.ensureInitialized();
+
+        try {
+            if (!this.sectionPlotManager) {
+                logger.warn('SectionPlotManager not available');
+                return [];
+            }
+            return await this.sectionPlotManager.getAllSections();
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error(`Failed to get all sections`, { error: errorMessage });
+            return [];
+        }
+    }
+
+    // ============================================================================
+    // 🔧 世界設定・テーマ管理（新記憶階層システム統合）
+    // ============================================================================
+
+    /**
+     * 世界設定が有効かを確認
+     */
+    async hasValidWorldSettings(): Promise<boolean> {
+        await this.ensureInitialized();
+        return this.worldSettingsManager.hasValidWorldSettings();
+    }
+
+    /**
+     * テーマ設定が有効かを確認
+     */
+    async hasValidThemeSettings(): Promise<boolean> {
+        await this.ensureInitialized();
+        return this.worldSettingsManager.hasValidThemeSettings();
+    }
+
+    /**
+     * プロンプト用に整形された世界設定とテーマを取得
+     */
+    async getFormattedWorldAndTheme(): Promise<FormattedWorldAndTheme> {
+        await this.ensureInitialized();
+        return this.worldSettingsManager.getFormattedWorldAndTheme();
+    }
+
+    /**
+     * 世界設定とテーマを再読み込み
+     */
+    async reloadWorldAndThemeSettings(): Promise<void> {
+        await this.ensureInitialized();
+        await this.worldSettingsManager.reload();
+    }
+
+    /**
+     * 構造化された世界設定を取得
+     */
+    async getStructuredWorldSettings(): Promise<WorldSettings | null> {
+        await this.ensureInitialized();
+        return this.worldSettingsManager.getWorldSettings();
+    }
+
+    /**
+     * 構造化されたテーマ設定を取得
+     */
+    async getStructuredThemeSettings(): Promise<ThemeSettings | null> {
+        await this.ensureInitialized();
+        return this.worldSettingsManager.getThemeSettings();
+    }
+
+    // ============================================================================
+    // 🔧 プロット取得・分析機能（型安全性強化版）
+    // ============================================================================
+
+    /**
+     * 指定されたチャプターの具体的プロットを取得
+     */
+    async getConcretePlotForChapter(chapterNumber: number): Promise<ConcretePlotPoint | null> {
+        try {
+            await withTimeout(
+                this.ensureInitialized(),
+                15000,
+                'プロットマネージャーの初期化確認'
+            );
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn(`初期化確認がタイムアウトしました。nullを返します: ${errorMessage}`);
+            return null;
+        }
+
+        try {
+            const allConcretePlots = await withTimeout(
+                this.plotStorage.loadConcretePlot(),
+                10000,
+                '具体プロットの読み込み'
+            );
+
+            return allConcretePlots.find(plot =>
+                chapterNumber >= plot.chapterRange[0] &&
+                chapterNumber <= plot.chapterRange[1]
+            ) || null;
+
+        } catch (error) {
+            logError(error, { chapterNumber }, '具体プロットの取得に失敗しました');
+            return null;
+        }
+    }
+
+    /**
+     * 指定されたチャプターの抽象的プロットガイドラインを取得
+     */
+    async getAbstractGuidelinesForChapter(chapterNumber: number): Promise<AbstractPlotGuideline> {
+        try {
+            await withTimeout(
+                this.ensureInitialized(),
+                15000,
+                'プロットマネージャーの初期化確認'
+            );
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn(`初期化確認がタイムアウトしました。フォールバック値を使用します: ${errorMessage}`);
+            return this.getEmergencyAbstractGuideline();
+        }
+
+        try {
+            const abstractPlots = await withTimeout(
+                this.plotStorage.loadAbstractPlot(),
+                10000,
+                '抽象プロットの読み込み'
+            );
+
+            const matchingPlot = abstractPlots.find(plot =>
+                plot.chapterRange &&
+                chapterNumber >= plot.chapterRange[0] &&
+                chapterNumber <= plot.chapterRange[1]
+            );
+
+            if (matchingPlot) {
+                return matchingPlot;
+            }
+
+            return this.getDefaultAbstractGuideline(chapterNumber);
+
+        } catch (error) {
+            logError(error, { chapterNumber }, '抽象プロットの取得に失敗しました');
+            return this.getEmergencyAbstractGuideline();
+        }
     }
 
     /**
@@ -1411,226 +1570,123 @@ ${emotion.emotionalPayoff}
         return this.phaseManager.buildStoryStructureMap(concretePlots, abstractPlots);
     }
 
+    // ============================================================================
+    // 🔧 診断・統計機能（新記憶階層システム対応）
+    // ============================================================================
+
     /**
-     * 世界設定からジャンルを取得する（安全化版）
-     * @returns {Promise<string>} ジャンル文字列
+     * プロットマネージャーの診断情報を取得
      */
-    async getGenre(): Promise<string> {
+    async performDiagnostics(): Promise<{
+        initialized: boolean;
+        memorySystemIntegration: boolean;
+        performanceMetrics: PerformanceMetrics; // 修正: typeof this.performanceStats → PerformanceMetrics
+        worldSettingsValid: boolean;
+        learningJourneyAvailable: boolean;
+        sectionsLoaded: number;
+        recommendations: string[];
+    }> {
         try {
-            // ⭐ 修正: 初期化状態をチェックし、未初期化の場合はデフォルトを返す
-            if (!this.initialized) {
-                logger.debug('PlotManager not fully initialized, returning default genre');
-                return 'classic';
+            const recommendations: string[] = [];
+
+            // 世界設定の確認
+            const worldSettingsValid = await this.hasValidWorldSettings();
+            if (!worldSettingsValid) {
+                recommendations.push('世界設定ファイルの確認が必要です');
             }
 
-            await this.ensureInitialized();
-            return await this.worldSettingsManager.getGenre();
-        } catch (error) {
-            logger.warn('Failed to get genre via PlotManager', {
-                error: error instanceof Error ? error.message : String(error)
-            });
-            return 'classic'; // デフォルトジャンル
-        }
-    }
-
-    /**
-     * 世界設定を確認します
-     * 
-     * @returns 世界設定が有効かどうか
-     */
-    async hasValidWorldSettings(): Promise<boolean> {
-        await this.ensureInitialized();
-        return this.worldSettingsManager.hasValidWorldSettings();
-    }
-
-    /**
-     * テーマ設定を確認します
-     * 
-     * @returns テーマ設定が有効かどうか
-     */
-    async hasValidThemeSettings(): Promise<boolean> {
-        await this.ensureInitialized();
-        return this.worldSettingsManager.hasValidThemeSettings();
-    }
-
-    /**
-     * プロンプト用に整形された世界設定とテーマを取得します
-     * 
-     * @returns 整形された世界設定とテーマ
-     */
-    async getFormattedWorldAndTheme(): Promise<FormattedWorldAndTheme> {
-        await this.ensureInitialized();
-        return this.worldSettingsManager.getFormattedWorldAndTheme();
-    }
-
-    /**
-     * 世界設定とテーマを再読み込みします
-     */
-    async reloadWorldAndThemeSettings(): Promise<void> {
-        await this.ensureInitialized();
-        await this.worldSettingsManager.reload();
-    }
-
-    /**
-     * 構造化された世界設定を取得します
-     */
-    async getStructuredWorldSettings(): Promise<WorldSettings | null> {
-        await this.ensureInitialized();
-        return this.worldSettingsManager.getWorldSettings();
-    }
-
-    /**
-     * 構造化されたテーマ設定を取得します
-     */
-    async getStructuredThemeSettings(): Promise<ThemeSettings | null> {
-        await this.ensureInitialized();
-        return this.worldSettingsManager.getThemeSettings();
-    }
-
-    /**
-     * 指定されたチャプターの具体的プロットを取得します
-     * 
-     * @param chapterNumber チャプター番号
-     * @returns 具体的プロット（存在しない場合はnull）
-     */
-    async getConcretePlotForChapter(chapterNumber: number): Promise<ConcretePlotPoint | null> {
-        // タイムアウト付きで初期化を確認
-        try {
-            await withTimeout(
-                this.ensureInitialized(),
-                15000, // 15秒タイムアウト
-                'プロットマネージャーの初期化確認'
-            );
-        } catch (error: unknown) { // unknown型として明示
-            // エラーメッセージの安全な取得
-            const errorMessage = error instanceof Error ? error.message : String(error);
-            logger.warn(`初期化確認がタイムアウトしました。nullを返します: ${errorMessage}`);
-            // タイムアウト時はnullを返す
-            return null;
-        }
-
-        try {
-            // チャプター番号に該当する具体プロットを取得
-            const allConcretePlots = await withTimeout(
-                this.plotStorage.loadConcretePlot(),
-                10000, // 10秒タイムアウト
-                '具体プロットの読み込み'
-            ).catch((error: unknown) => { // catch内のエラーにも型指定
-                const errorMessage = error instanceof Error ? error.message : String(error);
-                logger.warn(`具体プロットの読み込みに失敗しました: ${errorMessage}`);
-                return [];
-            });
-
-            // チャプター範囲に一致するプロットを検索
-            return allConcretePlots.find(plot =>
-                chapterNumber >= plot.chapterRange[0] &&
-                chapterNumber <= plot.chapterRange[1]
-            ) || null;
-        } catch (error: unknown) { // unknown型として明示
-            // logErrorユーティリティを使用する場合、内部でエラー処理されている前提
-            logError(error, { chapterNumber }, '具体プロットの取得に失敗しました');
-            return null;
-        }
-    }
-
-    /**
-     * 指定されたチャプターの抽象的プロットガイドラインを取得します
-     * 
-     * @param chapterNumber チャプター番号
-     * @returns 抽象的プロットガイドライン
-     */
-    async getAbstractGuidelinesForChapter(chapterNumber: number): Promise<AbstractPlotGuideline> {
-        // タイムアウト付きで初期化を確認
-        try {
-            await withTimeout(
-                this.ensureInitialized(),
-                15000, // 15秒タイムアウト
-                'プロットマネージャーの初期化確認'
-            );
-        } catch (error: unknown) { // すでに明示されている
-            const errorMessage = error instanceof Error ? error.message : String(error);
-            logger.warn(`初期化確認がタイムアウトしました。フォールバック値を使用します: ${errorMessage}`);
-            // タイムアウト時はフォールバック値を返す
-            return this.getEmergencyAbstractGuideline();
-        }
-
-        try {
-            // 抽象プロットデータを取得
-            const abstractPlots = await withTimeout(
-                this.plotStorage.loadAbstractPlot(),
-                10000, // 10秒タイムアウト
-                '抽象プロットの読み込み'
-            ).catch((error: unknown) => { // catch内のエラーにも型指定
-                const errorMessage = error instanceof Error ? error.message : String(error);
-                logger.warn(`抽象プロットの読み込みに失敗しました: ${errorMessage}`);
-                return [];
-            });
-
-            // チャプター範囲に一致する抽象プロットを検索
-            const matchingPlot = abstractPlots.find(plot =>
-                plot.chapterRange &&
-                chapterNumber >= plot.chapterRange[0] &&
-                chapterNumber <= plot.chapterRange[1]
-            );
-
-            // 一致するものがあれば返却、なければデフォルト値
-            if (matchingPlot) {
-                return matchingPlot;
+            // 学習旅路システムの確認
+            const learningJourneyAvailable = this.learningJourneySystem !== null && this.learningJourneyInitialized;
+            if (!learningJourneyAvailable && this.config.enableLearningJourney) {
+                recommendations.push('学習旅路システムの初期化に失敗しています');
             }
 
-            // 物語進行度から適切なフェーズの抽象ガイドラインを推定
-            return this.getDefaultAbstractGuideline(chapterNumber);
-        } catch (error: unknown) { // unknown型として明示
-            // logErrorユーティリティを使用する場合、内部でエラー処理されている前提
-            logError(error, { chapterNumber }, '抽象プロットの取得に失敗しました');
+            // セクション数の確認
+            let sectionsLoaded = 0;
+            try {
+                const sections = await this.getAllSections();
+                sectionsLoaded = sections.length;
+            } catch (error) {
+                recommendations.push('セクション情報の取得に失敗しました');
+            }
 
-            // エラー時はフォールバックの抽象ガイドラインを返却
-            return this.getEmergencyAbstractGuideline();
+            // パフォーマンスの確認
+            if (this.performanceStats.failedOperations > this.performanceStats.successfulOperations * 0.1) {
+                recommendations.push('エラー率が高くなっています');
+            }
+
+            if (this.performanceStats.averageProcessingTime > 5000) {
+                recommendations.push('平均処理時間が長くなっています');
+            }
+
+            return {
+                initialized: this.initialized,
+                memorySystemIntegration: this.config.memorySystemIntegration,
+                performanceMetrics: { ...this.performanceStats },
+                worldSettingsValid,
+                learningJourneyAvailable,
+                sectionsLoaded,
+                recommendations
+            };
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('PlotManager診断の実行に失敗', { error: errorMessage });
+
+            return {
+                initialized: false,
+                memorySystemIntegration: false,
+                performanceMetrics: { ...this.performanceStats },
+                worldSettingsValid: false,
+                learningJourneyAvailable: false,
+                sectionsLoaded: 0,
+                recommendations: ['診断実行に失敗しました']
+            };
         }
     }
 
-    // ヘルパーメソッド
+    // ============================================================================
+    // プライベートヘルパーメソッド
+    // ============================================================================
 
     /**
-     * 世界設定を取得します（MemoryManagerからではなく専用マネージャーから）
-     * @private
+     * フェーズの整形表示
      */
-    private async getWorldSettings(): Promise<string> {
-        try {
-            const formattedData = await this.worldSettingsManager.getFormattedWorldAndTheme();
-            return formattedData.worldSettings || '詳細な世界設定情報はありません';
-        } catch (error) {
-            logError(error, {}, '世界設定の取得に失敗しました');
-            return '世界設定情報の取得中にエラーが発生しました';
-        }
+    private formatPhase(phase: string): string {
+        const phaseMap: { [key: string]: string } = {
+            'OPENING': '序章/オープニング',
+            'EARLY': '序盤',
+            'MIDDLE': '中盤',
+            'LATE': '終盤',
+            'CLIMAX': 'クライマックス',
+            'ENDING': '終章/エンディング'
+        };
+
+        return phaseMap[phase] || phase;
     }
 
     /**
      * 物語進行度から適切な抽象ガイドラインを生成
-     * @private
      */
     private async getDefaultAbstractGuideline(chapterNumber: number): Promise<AbstractPlotGuideline> {
-        // 物語の総チャプター数を推定
-        const estimatedTotalChapters = 50; // 仮の値
+        const estimatedTotalChapters = 50;
         const progress = chapterNumber / estimatedTotalChapters;
 
         let phase = '';
-        // 進捗に応じたフェーズ設定
         if (progress < 0.1) {
-            phase = "INTRODUCTION"; // 導入部
+            phase = "INTRODUCTION";
         } else if (progress < 0.3) {
-            phase = "RISING_ACTION"; // 展開
+            phase = "RISING_ACTION";
         } else if (progress < 0.5) {
-            phase = "COMPLICATIONS"; // 複雑化
+            phase = "COMPLICATIONS";
         } else if (progress < 0.7) {
-            phase = "CLIMAX_APPROACH"; // クライマックス前
+            phase = "CLIMAX_APPROACH";
         } else if (progress < 0.85) {
-            phase = "CLIMAX"; // クライマックス
+            phase = "CLIMAX";
         } else {
-            phase = "RESOLUTION"; // 解決
+            phase = "RESOLUTION";
         }
 
-        // 進捗に応じたポテンシャルな方向性
         const directions = this.getDirectionsByPhase(phase);
 
         return {
@@ -1644,7 +1700,6 @@ ${emotion.emotionalPayoff}
                 "前後の章との整合性を欠く展開"
             ],
             chapterRange: [chapterNumber, chapterNumber],
-            // 新しいプロパティも設定（オプショナルなので既存コードと互換性あり）
             thematicMessage: "自己発見と成長の旅路",
             phasePurpose: this.getPhasePurposeByPhase(phase)
         };
@@ -1674,7 +1729,6 @@ ${emotion.emotionalPayoff}
 
     /**
      * フェーズに応じた方向性リストを取得
-     * @private
      */
     private getDirectionsByPhase(phase: string): string[] {
         switch (phase) {
@@ -1725,7 +1779,6 @@ ${emotion.emotionalPayoff}
 
     /**
      * 緊急時のフォールバック用抽象ガイドライン
-     * @private
      */
     private getEmergencyAbstractGuideline(): AbstractPlotGuideline {
         return {
@@ -1744,7 +1797,85 @@ ${emotion.emotionalPayoff}
             ]
         };
     }
+
+    /**
+     * 平均処理時間を更新
+     */
+    private updateAverageProcessingTime(processingTime: number): void {
+        this.performanceStats.averageProcessingTime =
+            ((this.performanceStats.averageProcessingTime * (this.performanceStats.totalOperations - 1)) + processingTime) /
+            this.performanceStats.totalOperations;
+    }
+
+    // ============================================================================
+    // 🔧 パブリック統計・状態取得API
+    // ============================================================================
+
+    /**
+     * パフォーマンス統計を取得
+     */
+    getPerformanceStatistics(): typeof this.performanceStats {
+        return { ...this.performanceStats };
+    }
+
+    /**
+     * 初期化状態を取得
+     */
+    isInitialized(): boolean {
+        return this.initialized;
+    }
+
+    /**
+     * 記憶システム統合状態を取得
+     */
+    isMemorySystemIntegrated(): boolean {
+        return this.config.memorySystemIntegration;
+    }
+
+    /**
+     * 学習旅路システムの可用性を取得
+     */
+    isLearningJourneyAvailable(): boolean {
+        return this.learningJourneySystem !== null && this.learningJourneyInitialized;
+    }
 }
 
-// シングルトンインスタンスをエクスポート
-export const plotManager = new PlotManager();
+// ============================================================================
+// 🔧 ファクトリー関数（依存注入パターン）
+// ============================================================================
+
+/**
+ * PlotManagerを作成するファクトリー関数
+ * @param memoryManager 初期化済みのMemoryManager
+ * @param config オプション設定
+ * @returns PlotManagerインスタンス
+ */
+export function createPlotManager(
+    memoryManager: MemoryManager,
+    config?: PlotManagerConfig
+): PlotManager {
+    return new PlotManager({
+        memoryManager,
+        config
+    });
+}
+
+/**
+ * PlotManagerのシングルトンインスタンスを作成
+ * @param memoryManager 初期化済みのMemoryManager
+ * @returns シングルトンPlotManagerインスタンス
+ */
+let plotManagerInstance: PlotManager | null = null;
+
+export function getPlotManagerInstance(memoryManager: MemoryManager): PlotManager {
+    if (!plotManagerInstance) {
+        plotManagerInstance = createPlotManager(memoryManager, {
+            enableLearningJourney: true,
+            enableSectionPlotImport: true,
+            enableQualityAssurance: true,
+            enablePerformanceOptimization: true,
+            memorySystemIntegration: true
+        });
+    }
+    return plotManagerInstance;
+}

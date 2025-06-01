@@ -1,0 +1,1547 @@
+{
+  "qualityData": {
+    "chapterQualityHistory": [
+      {
+        "chapterNumber": 8,
+        "qualityScore": 6.303784185276284,
+        "qualityFactors": {
+          "readability": 6.0606060606060606,
+          "consistency": 4,
+          "engagement": 5.561288507902491,
+          "characterDevelopment": 8.3,
+          "plotCoherence": 7.85,
+          "dialogueQuality": 7.3999999999999995,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:01:33.996Z"
+      },
+      {
+        "chapterNumber": 8,
+        "qualityScore": 6.22237439191423,
+        "qualityFactors": {
+          "readability": 6.258064516129032,
+          "consistency": 2.5,
+          "engagement": 5.601098096632503,
+          "characterDevelopment": 8.7,
+          "plotCoherence": 7.5,
+          "dialogueQuality": 8,
+          "pacing": 6.5
+        },
+        "timestamp": "2025-06-01T08:03:17.658Z"
+      },
+      {
+        "chapterNumber": 8,
+        "qualityScore": 6.021662930637353,
+        "qualityFactors": {
+          "readability": 5.849397590361446,
+          "consistency": 1,
+          "engagement": 5.8972441694431215,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7.85,
+          "dialogueQuality": 8.1,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:05:15.701Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.306500000000001,
+        "qualityFactors": {
+          "readability": 6.5,
+          "consistency": 6.5,
+          "engagement": 5,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7,
+          "dialogueQuality": 5,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:05:16.339Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:05:16.361Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:05:16.839Z"
+      },
+      {
+        "chapterNumber": 9,
+        "qualityScore": 6.109226165044704,
+        "qualityFactors": {
+          "readability": 6.281818181818181,
+          "consistency": 1.5,
+          "engagement": 5.596356251813171,
+          "characterDevelopment": 9.7,
+          "plotCoherence": 7.45,
+          "dialogueQuality": 8,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:09:41.359Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.306500000000001,
+        "qualityFactors": {
+          "readability": 6.5,
+          "consistency": 6.5,
+          "engagement": 5,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7,
+          "dialogueQuality": 5,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:09:42.119Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:09:42.751Z"
+      },
+      {
+        "chapterNumber": 10,
+        "qualityScore": 6.415863955606364,
+        "qualityFactors": {
+          "readability": 6.463414634146341,
+          "consistency": 3.5,
+          "engagement": 5.595678403229423,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.45,
+          "dialogueQuality": 8,
+          "pacing": 6.5
+        },
+        "timestamp": "2025-06-01T08:13:44.573Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.306500000000001,
+        "qualityFactors": {
+          "readability": 6.5,
+          "consistency": 6.5,
+          "engagement": 5,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7,
+          "dialogueQuality": 5,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:13:45.276Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:13:45.304Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:13:45.830Z"
+      },
+      {
+        "chapterNumber": 11,
+        "qualityScore": 6.100862702462077,
+        "qualityFactors": {
+          "readability": 6.471698113207547,
+          "consistency": 2.5,
+          "engagement": 5.647386569872958,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.4,
+          "dialogueQuality": 7.7,
+          "pacing": 6.5
+        },
+        "timestamp": "2025-06-01T08:17:42.832Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.306500000000001,
+        "qualityFactors": {
+          "readability": 6.5,
+          "consistency": 6.5,
+          "engagement": 5,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7,
+          "dialogueQuality": 5,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:17:44.063Z"
+      },
+      {
+        "chapterNumber": 12,
+        "qualityScore": 6.366766317016317,
+        "qualityFactors": {
+          "readability": 6.056818181818182,
+          "consistency": 4.5,
+          "engagement": 5.384957264957265,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7.9,
+          "dialogueQuality": 7.2,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.306500000000001,
+        "qualityFactors": {
+          "readability": 6.5,
+          "consistency": 6.5,
+          "engagement": 5,
+          "characterDevelopment": 8.9,
+          "plotCoherence": 7,
+          "dialogueQuality": 5,
+          "pacing": 6
+        },
+        "timestamp": "2025-06-01T08:22:02.826Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "chapterNumber": 0,
+        "qualityScore": 6.4528333333333325,
+        "qualityFactors": {
+          "readability": 7.166666666666666,
+          "consistency": 6.5,
+          "engagement": 5.06,
+          "characterDevelopment": 8.5,
+          "plotCoherence": 7.05,
+          "dialogueQuality": 5,
+          "pacing": 7
+        },
+        "timestamp": "2025-06-01T08:22:03.377Z"
+      }
+    ],
+    "systemQualityMetrics": [
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.303784185276284,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:01:33.996Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.0606060606060606,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:01:33.996Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 4,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:01:33.996Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.22237439191423,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:03:17.658Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.258064516129032,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:03:17.658Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 2.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:03:17.658Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.021662930637353,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:15.701Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 5.849397590361446,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:15.701Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 1,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:15.701Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.306500000000001,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.339Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.339Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.339Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.361Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.361Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.361Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.109226165044704,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:41.359Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.281818181818181,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:41.359Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 1.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:41.359Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.306500000000001,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.119Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.119Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.119Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.751Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.751Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:09:42.751Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.415863955606364,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:44.573Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.463414634146341,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:44.573Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 3.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:44.573Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.306500000000001,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.276Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.276Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.277Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.304Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.304Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.304Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.830Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.830Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:13:45.830Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.100862702462077,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:42.832Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.471698113207547,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:42.832Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 2.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:42.832Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.306500000000001,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:44.063Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:44.063Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:17:44.063Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.366766317016317,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.056818181818182,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 4.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.306500000000001,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.826Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.826Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.826Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "metricType": "CHAPTER_QUALITY_AVERAGE",
+        "value": 6.4528333333333325,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:03.377Z"
+      },
+      {
+        "metricType": "READABILITY_TREND",
+        "value": 7.166666666666666,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:03.377Z"
+      },
+      {
+        "metricType": "CONSISTENCY_TREND",
+        "value": 6.5,
+        "trend": "STABLE",
+        "timestamp": "2025-06-01T08:22:03.377Z"
+      }
+    ],
+    "diagnosticHistory": [
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.303784185276284,
+          "analysisDetails": {
+            "readabilityScore": 6.0606060606060606,
+            "consistencyScore": 4,
+            "engagementScore": 5.561288507902491,
+            "characterDevelopmentScore": 8.3,
+            "plotCoherenceScore": 7.85,
+            "dialogueQualityScore": 7.3999999999999995,
+            "descriptiveQualityScore": 6.3999999999999995,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 6.6,
+            "emotionalImpactScore": 4.625
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:01:33.997Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.22237439191423,
+          "analysisDetails": {
+            "readabilityScore": 6.258064516129032,
+            "consistencyScore": 2.5,
+            "engagementScore": 5.601098096632503,
+            "characterDevelopmentScore": 8.7,
+            "plotCoherenceScore": 7.5,
+            "dialogueQualityScore": 8,
+            "descriptiveQualityScore": 6.8999999999999995,
+            "pacingScore": 6.5,
+            "thematicConsistencyScore": 5.5,
+            "emotionalImpactScore": 4.375
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:03:17.659Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.021662930637353,
+          "analysisDetails": {
+            "readabilityScore": 5.849397590361446,
+            "consistencyScore": 1,
+            "engagementScore": 5.8972441694431215,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7.85,
+            "dialogueQualityScore": 8.1,
+            "descriptiveQualityScore": 6.633333333333333,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 6.3,
+            "emotionalImpactScore": 4.5
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Low readability score detected",
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:05:15.702Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.306500000000001,
+          "analysisDetails": {
+            "readabilityScore": 6.5,
+            "consistencyScore": 6.5,
+            "engagementScore": 5,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.2,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:05:16.340Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:05:16.362Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.109226165044704,
+          "analysisDetails": {
+            "readabilityScore": 6.281818181818181,
+            "consistencyScore": 1.5,
+            "engagementScore": 5.596356251813171,
+            "characterDevelopmentScore": 9.7,
+            "plotCoherenceScore": 7.45,
+            "dialogueQualityScore": 8,
+            "descriptiveQualityScore": 6.2,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.7,
+            "emotionalImpactScore": 4.875
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:09:41.360Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.306500000000001,
+          "analysisDetails": {
+            "readabilityScore": 6.5,
+            "consistencyScore": 6.5,
+            "engagementScore": 5,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.2,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:09:42.120Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:09:42.752Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.415863955606364,
+          "analysisDetails": {
+            "readabilityScore": 6.463414634146341,
+            "consistencyScore": 3.5,
+            "engagementScore": 5.595678403229423,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.45,
+            "dialogueQualityScore": 8,
+            "descriptiveQualityScore": 7.6,
+            "pacingScore": 6.5,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.5
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:13:44.575Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.306500000000001,
+          "analysisDetails": {
+            "readabilityScore": 6.5,
+            "consistencyScore": 6.5,
+            "engagementScore": 5,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.2,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:13:45.277Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:13:45.305Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:13:45.831Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.100862702462077,
+          "analysisDetails": {
+            "readabilityScore": 6.471698113207547,
+            "consistencyScore": 2.5,
+            "engagementScore": 5.647386569872958,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.4,
+            "dialogueQualityScore": 7.7,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6.5,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:17:42.832Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.306500000000001,
+          "analysisDetails": {
+            "readabilityScore": 6.5,
+            "consistencyScore": 6.5,
+            "engagementScore": 5,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.2,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:17:44.064Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.366766317016317,
+          "analysisDetails": {
+            "readabilityScore": 6.056818181818182,
+            "consistencyScore": 4.5,
+            "engagementScore": 5.384957264957265,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7.9,
+            "dialogueQualityScore": 7.2,
+            "descriptiveQualityScore": 6.1,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 6.3,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [
+          "Consistency issues detected"
+        ],
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.306500000000001,
+          "analysisDetails": {
+            "readabilityScore": 6.5,
+            "consistencyScore": 6.5,
+            "engagementScore": 5,
+            "characterDevelopmentScore": 8.9,
+            "plotCoherenceScore": 7,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6,
+            "pacingScore": 6,
+            "thematicConsistencyScore": 5.2,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:22:02.827Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "diagnosticType": "QUALITY_ANALYSIS",
+        "results": {
+          "overallScore": 6.4528333333333325,
+          "analysisDetails": {
+            "readabilityScore": 7.166666666666666,
+            "consistencyScore": 6.5,
+            "engagementScore": 5.06,
+            "characterDevelopmentScore": 8.5,
+            "plotCoherenceScore": 7.05,
+            "dialogueQualityScore": 5,
+            "descriptiveQualityScore": 6.066666666666666,
+            "pacingScore": 7,
+            "thematicConsistencyScore": 5,
+            "emotionalImpactScore": 4.125
+          },
+          "qualityLevel": "ACCEPTABLE"
+        },
+        "issues": [],
+        "timestamp": "2025-06-01T08:22:03.378Z"
+      }
+    ],
+    "systemHealthMetrics": [
+      {
+        "healthScore": 7.452108911986828,
+        "healthFactors": {
+          "memoryEfficiency": 7.303784185276284,
+          "processingSpeed": 9.056754616519312,
+          "errorRate": 0.16962158147237158,
+          "dataIntegrity": 6.303784185276284,
+          "systemStability": 7.303784185276284
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:01:34.005Z"
+      },
+      {
+        "healthScore": 7.386984324185253,
+        "healthFactors": {
+          "memoryEfficiency": 7.263079288595257,
+          "processingSpeed": 9.537301522649411,
+          "errorRate": 0.17369207114047427,
+          "dataIntegrity": 6.263079288595257,
+          "systemStability": 7.263079288595257
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:03:17.671Z"
+      },
+      {
+        "healthScore": 7.148085902374493,
+        "healthFactors": {
+          "memoryEfficiency": 7.182607169275957,
+          "processingSpeed": 8.238937024084509,
+          "errorRate": 0.18173928307240433,
+          "dataIntegrity": 6.182607169275957,
+          "systemStability": 7.182607169275957
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:05:15.707Z"
+      },
+      {
+        "healthScore": 7.294999111462803,
+        "healthFactors": {
+          "memoryEfficiency": 7.213580376956967,
+          "processingSpeed": 8.356757648438236,
+          "errorRate": 0.1786419623043033,
+          "dataIntegrity": 6.213580376956967,
+          "systemStability": 7.213580376956967
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:05:16.344Z"
+      },
+      {
+        "healthScore": 7.311306380991038,
+        "healthFactors": {
+          "memoryEfficiency": 7.26143096823224,
+          "processingSpeed": 8.349995683107315,
+          "errorRate": 0.17385690317677602,
+          "dataIntegrity": 6.26143096823224,
+          "systemStability": 7.26143096823224
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:05:16.370Z"
+      },
+      {
+        "healthScore": 7.366283351289463,
+        "healthFactors": {
+          "memoryEfficiency": 7.293331362415755,
+          "processingSpeed": 8.959642769814213,
+          "errorRate": 0.17066686375842446,
+          "dataIntegrity": 6.293331362415755,
+          "systemStability": 7.293331362415755
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:05:16.844Z"
+      },
+      {
+        "healthScore": 7.561038787978383,
+        "healthFactors": {
+          "memoryEfficiency": 7.267030619934176,
+          "processingSpeed": 9.419993903564741,
+          "errorRate": 0.1732969380065824,
+          "dataIntegrity": 6.267030619934176,
+          "systemStability": 7.267030619934176
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:09:41.369Z"
+      },
+      {
+        "healthScore": 7.555305107427847,
+        "healthFactors": {
+          "memoryEfficiency": 7.271964292442404,
+          "processingSpeed": 9.552827977735959,
+          "errorRate": 0.17280357075575958,
+          "dataIntegrity": 6.271964292442404,
+          "systemStability": 7.271964292442404
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:09:42.127Z"
+      },
+      {
+        "healthScore": 7.519115822047598,
+        "healthFactors": {
+          "memoryEfficiency": 7.292060852541396,
+          "processingSpeed": 9.978192654724808,
+          "errorRate": 0.17079391474586042,
+          "dataIntegrity": 6.292060852541396,
+          "systemStability": 7.292060852541396
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:09:42.155Z"
+      },
+      {
+        "healthScore": 7.4448932821381755,
+        "healthFactors": {
+          "memoryEfficiency": 7.30813810062059,
+          "processingSpeed": 9.420628453858665,
+          "errorRate": 0.16918618993794104,
+          "dataIntegrity": 6.30813810062059,
+          "systemStability": 7.30813810062059
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:09:42.757Z"
+      },
+      {
+        "healthScore": 7.485796510764622,
+        "healthFactors": {
+          "memoryEfficiency": 7.319346077653597,
+          "processingSpeed": 9.684374704548976,
+          "errorRate": 0.16806539223464034,
+          "dataIntegrity": 6.319346077653597,
+          "systemStability": 7.319346077653597
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:13:44.584Z"
+      },
+      {
+        "healthScore": 7.603113849402673,
+        "healthFactors": {
+          "memoryEfficiency": 7.327758638462174,
+          "processingSpeed": 9.412550886895678,
+          "errorRate": 0.16722413615378262,
+          "dataIntegrity": 6.327758638462174,
+          "systemStability": 7.327758638462174
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:13:45.283Z"
+      },
+      {
+        "healthScore": 7.469496588092225,
+        "healthFactors": {
+          "memoryEfficiency": 7.370875678731773,
+          "processingSpeed": 8.526173692575917,
+          "errorRate": 0.16291243212682271,
+          "dataIntegrity": 6.370875678731773,
+          "systemStability": 7.370875678731773
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:13:45.310Z"
+      },
+      {
+        "healthScore": 7.575375302335462,
+        "healthFactors": {
+          "memoryEfficiency": 7.385509012065105,
+          "processingSpeed": 9.80880954656018,
+          "errorRate": 0.16144909879348948,
+          "dataIntegrity": 6.385509012065105,
+          "systemStability": 7.385509012065105
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:13:45.838Z"
+      },
+      {
+        "healthScore": 7.378112499565353,
+        "healthFactors": {
+          "memoryEfficiency": 7.35031194897798,
+          "processingSpeed": 8.548954629500432,
+          "errorRate": 0.164968805102202,
+          "dataIntegrity": 6.35031194897798,
+          "systemStability": 7.35031194897798
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:17:42.840Z"
+      },
+      {
+        "healthScore": 7.257034612478115,
+        "healthFactors": {
+          "memoryEfficiency": 7.35031194897798,
+          "processingSpeed": 8.148021417862878,
+          "errorRate": 0.164968805102202,
+          "dataIntegrity": 6.35031194897798,
+          "systemStability": 7.35031194897798
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:17:43.498Z"
+      },
+      {
+        "healthScore": 7.39560048848977,
+        "healthFactors": {
+          "memoryEfficiency": 7.37003933247351,
+          "processingSpeed": 8.41689268779923,
+          "errorRate": 0.162996066752649,
+          "dataIntegrity": 6.37003933247351,
+          "systemStability": 7.37003933247351
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:17:43.521Z"
+      },
+      {
+        "healthScore": 7.410314041613953,
+        "healthFactors": {
+          "memoryEfficiency": 7.384672665806844,
+          "processingSpeed": 8.821558453285455,
+          "errorRate": 0.16153273341931565,
+          "dataIntegrity": 6.384672665806844,
+          "systemStability": 7.384672665806844
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:17:44.071Z"
+      },
+      {
+        "healthScore": 7.391963571389288,
+        "healthFactors": {
+          "memoryEfficiency": 7.376065964175142,
+          "processingSpeed": 8.408282550476626,
+          "errorRate": 0.1623934035824858,
+          "dataIntegrity": 6.376065964175142,
+          "systemStability": 7.376065964175142
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:22:02.130Z"
+      },
+      {
+        "healthScore": 7.605194407404701,
+        "healthFactors": {
+          "memoryEfficiency": 7.361432630841809,
+          "processingSpeed": 9.579469599013308,
+          "errorRate": 0.16385673691581915,
+          "dataIntegrity": 6.361432630841809,
+          "systemStability": 7.361432630841809
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:22:02.833Z"
+      },
+      {
+        "healthScore": 7.608826661926255,
+        "healthFactors": {
+          "memoryEfficiency": 7.365129568614506,
+          "processingSpeed": 9.264960537394096,
+          "errorRate": 0.1634870431385494,
+          "dataIntegrity": 6.365129568614506,
+          "systemStability": 7.365129568614506
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:22:02.859Z"
+      },
+      {
+        "healthScore": 7.714673523355528,
+        "healthFactors": {
+          "memoryEfficiency": 7.379762901947838,
+          "processingSpeed": 9.903995523991947,
+          "errorRate": 0.16202370980521624,
+          "dataIntegrity": 6.379762901947838,
+          "systemStability": 7.379762901947838
+        },
+        "recommendations": [
+          "Investigate and fix recurring errors",
+          "Review data validation and consistency checks"
+        ],
+        "timestamp": "2025-06-01T08:22:03.385Z"
+      }
+    ]
+  },
+  "alertHistory": [
+    {
+      "timestamp": "2025-06-01T08:05:15.709Z",
+      "type": "QUALITY_DECLINE_TREND",
+      "severity": "MEDIUM",
+      "message": "Declining quality trend detected over recent chapters",
+      "resolved": false
+    }
+  ],
+  "lastAnalysisTime": "2025-06-01T08:22:03.391Z",
+  "config": {
+    "thresholds": {
+      "excellent": 8.5,
+      "good": 7,
+      "acceptable": 5.5,
+      "poor": 4,
+      "critical": 4
+    },
+    "monitoringEnabled": true,
+    "autoAlertEnabled": true,
+    "historyRetentionDays": 30,
+    "qualityAnalysisDepth": "STANDARD"
+  },
+  "savedAt": "2025-06-01T08:22:03.391Z"
+}

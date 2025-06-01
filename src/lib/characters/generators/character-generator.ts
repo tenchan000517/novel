@@ -1,10 +1,11 @@
 /**
- * @fileoverview キャラクター生成器
+ * @fileoverview キャラクター生成器 - 新記憶階層システム対応版
  * @description
- * キャラクターの動的生成を担当するコンポーネント。
+ * 統合記憶階層システムに最適化されたキャラクター生成コンポーネント。
  * テンプレートからのキャラクター生成、バックストーリー生成、
  * 関係性生成などの機能を提供します。
  */
+
 import {
     ICharacterGenerator,
     ITemplateProvider
@@ -18,28 +19,86 @@ import {
 import { logger } from '@/lib/utils/logger';
 import { GeminiClient } from '@/lib/generation/gemini-client';
 import { generateId } from '@/lib/utils/helpers';
-import { memoryManager } from '@/lib/memory/manager';
+import { MemoryManager } from '@/lib/memory/core/memory-manager';
+import { MemoryLevel, MemoryRequestType } from '@/lib/memory/core/types';
+
+/**
+ * キャラクター生成結果（内部統計用）
+ */
+interface CharacterGenerationResult {
+    success: boolean;
+    character: DynamicCharacter;
+    processingTime: number;
+    memoryIntegrationSuccess: boolean;
+    worldContextUsed: boolean;
+    relationshipsGenerated: number;
+    errors: string[];
+    metadata: {
+        templateUsed: string;
+        aiGenerationAttempts: number;
+        cacheHits: number;
+        generationQuality: number;
+    };
+}
+
+/**
+ * 世界設定データ
+ */
+interface WorldSettingsData {
+    description?: string;
+    genre?: string;
+    regions?: any[];
+    history?: any[];
+    rules?: any[];
+}
+
+/**
+ * キャラクター生成統計
+ */
+interface GenerationStatistics {
+    totalGenerations: number;
+    successfulGenerations: number;
+    failedGenerations: number;
+    averageProcessingTime: number;
+    memoryIntegrationSuccessRate: number;
+    averageRelationshipsPerCharacter: number;
+    lastGenerationTime: string;
+}
 
 /**
  * キャラクター生成クラス
- * テンプレートベースのキャラクター生成を担当
+ * 統合記憶階層システムに最適化されたテンプレートベースのキャラクター生成を担当
  */
 export class CharacterGenerator implements ICharacterGenerator {
     private geminiClient: GeminiClient;
     private readonly RETRY_COUNT = 3;
     private readonly RETRY_DELAY = 1000; // 1秒
+    
+    // 内部統計情報
+    private lastResult: CharacterGenerationResult | null = null;
+    private statistics: GenerationStatistics = {
+        totalGenerations: 0,
+        successfulGenerations: 0,
+        failedGenerations: 0,
+        averageProcessingTime: 0,
+        memoryIntegrationSuccessRate: 0,
+        averageRelationshipsPerCharacter: 0,
+        lastGenerationTime: ''
+    };
 
     /**
      * コンストラクタ
      * @param templateProvider テンプレートプロバイダー
+     * @param memoryManager 統合記憶マネージャー
      * @param geminiClient Gemini APIクライアント（オプション）
      */
     constructor(
         private templateProvider: ITemplateProvider,
+        private memoryManager: MemoryManager,
         geminiClient?: GeminiClient
     ) {
         this.geminiClient = geminiClient || new GeminiClient();
-        logger.info('CharacterGenerator: 初期化完了');
+        logger.info('CharacterGenerator: 統合記憶階層システム対応版で初期化完了');
     }
 
     /**
@@ -52,15 +111,18 @@ export class CharacterGenerator implements ICharacterGenerator {
         template: CharacterTemplate,
         params: any
     ): Promise<DynamicCharacter> {
+        const startTime = Date.now();
+        this.statistics.totalGenerations++;
+
         try {
-            logger.info('キャラクターをテンプレートから生成します', {
+            logger.info('キャラクターをテンプレートから生成します（統合記憶システム使用）', {
                 templateId: template.id,
                 integrationPoint: params.integrationPoint
             });
 
             // ベースキャラクターの生成
             const character: DynamicCharacter = {
-                id: generateId(), // プレフィックスなしでデフォルト長さのIDを使用
+                id: generateId(),
                 name: await this.generateCharacterName(template, params),
                 shortNames: [],
                 nicknames: {},
@@ -103,16 +165,64 @@ export class CharacterGenerator implements ICharacterGenerator {
                 }
             };
 
-            // キャラクター詳細の強化
-            await this.enhanceCharacterDetails(character, template, params);
+            // 統合記憶システムを使用した詳細強化
+            const worldContextUsed = await this.enhanceCharacterDetailsWithMemorySystem(character, template, params);
 
-            logger.info(`キャラクター「${character.name}」を生成しました (ID: ${character.id})`);
+            // 生成統計の記録
+            const processingTime = Date.now() - startTime;
+            this.lastResult = {
+                success: true,
+                character,
+                processingTime,
+                memoryIntegrationSuccess: worldContextUsed,
+                worldContextUsed,
+                relationshipsGenerated: character.relationships?.length ?? 0,
+                errors: [],
+                metadata: {
+                    templateUsed: template.id,
+                    aiGenerationAttempts: 1,
+                    cacheHits: 0,
+                    generationQuality: this.calculateGenerationQuality(character)
+                }
+            };
+
+            this.updateStatistics(this.lastResult);
+
+            logger.info(`キャラクター「${character.name}」を生成しました (ID: ${character.id})`, {
+                processingTime,
+                worldContextUsed,
+                relationshipsCount: character.relationships?.length ?? 0
+            });
+
             return character;
+
         } catch (error) {
+            const processingTime = Date.now() - startTime;
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            
+            this.statistics.failedGenerations++;
+            this.lastResult = {
+                success: false,
+                character: {} as DynamicCharacter,
+                processingTime,
+                memoryIntegrationSuccess: false,
+                worldContextUsed: false,
+                relationshipsGenerated: 0,
+                errors: [errorMessage],
+                metadata: {
+                    templateUsed: template.id,
+                    aiGenerationAttempts: 0,
+                    cacheHits: 0,
+                    generationQuality: 0
+                }
+            };
+
             logger.error('テンプレートからのキャラクター生成に失敗しました', {
                 templateId: template.id,
-                error: error instanceof Error ? error.message : String(error)
+                error: errorMessage,
+                processingTime
             });
+            
             throw error;
         }
     }
@@ -125,39 +235,57 @@ export class CharacterGenerator implements ICharacterGenerator {
      */
     async generateBackstory(character: DynamicCharacter, worldContext: any): Promise<string> {
         try {
-            logger.info(`キャラクター「${character.name}」のバックストーリーを生成します`);
+            logger.info(`キャラクター「${character.name}」のバックストーリーを生成します（統合記憶システム使用）`);
 
-            // 世界観情報の取得
-            const longTermMemory = await memoryManager.getLongTermMemory();
-            const worldSettings = await longTermMemory.getWorldSettings();
+            // 統一アクセスAPIを使用して世界設定を取得
+            const worldSettingsResult = await this.memoryManager.unifiedSearch(
+                'world settings context',
+                [MemoryLevel.LONG_TERM, MemoryLevel.MID_TERM]
+            );
+
+            let worldSettings: WorldSettingsData = {};
+
+            if (worldSettingsResult.success && worldSettingsResult.results.length > 0) {
+                // 結果から世界設定データを抽出
+                for (const result of worldSettingsResult.results) {
+                    if (result.type === 'knowledge' && result.data) {
+                        worldSettings = result.data;
+                        break;
+                    }
+                }
+            }
+
+            // フォールバック: worldContextまたはデフォルト値を使用
+            const worldDescription = worldSettings.description || 
+                                   (typeof worldContext === 'string' ? worldContext : 'ファンタジー世界');
 
             // プロンプト作成
             const prompt = `
-  あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。
-  以下の情報に基づいて、キャラクター「${character.name}」のバックストーリーを作成してください。
-  本文は250～300単語程度でまとめてください。
-  
-  ## 世界観
-  ${worldSettings?.description || worldContext || 'ファンタジー世界'}
-  
-  ## キャラクター情報
-  名前: ${character.name}
-  タイプ: ${character.type}
-  説明: ${character.description}
-  性格特性: ${character.personality?.traits?.join(', ') || ''}
-  価値観: ${character.personality?.values?.join(', ') || ''}
-  癖: ${character.personality?.quirks?.join(', ') || ''}
-  出身: ${character.backstory?.origin || ''}
-  
-  ## 重要な出来事
-  ${character.backstory?.significantEvents?.map(event => `- ${event}`).join('\n') || '- (重要な出来事は特になし)'}
-  
-  ## 現在の統合ポイント
-  物語内のチャプター${character.state.lastAppearance || '?'}で初登場予定
-  
-  ## 出力形式
-  [バックストーリー本文]
-  `;
+あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。
+以下の情報に基づいて、キャラクター「${character.name}」のバックストーリーを作成してください。
+本文は250～300単語程度でまとめてください。
+
+## 世界観
+${worldDescription}
+
+## キャラクター情報
+名前: ${character.name}
+タイプ: ${character.type}
+説明: ${character.description}
+性格特性: ${character.personality?.traits?.join(', ') || ''}
+価値観: ${character.personality?.values?.join(', ') || ''}
+癖: ${character.personality?.quirks?.join(', ') || ''}
+出身: ${character.backstory?.origin || ''}
+
+## 重要な出来事
+${character.backstory?.significantEvents?.map(event => `- ${event}`).join('\n') || '- (重要な出来事は特になし)'}
+
+## 現在の統合ポイント
+物語内のチャプター${character.state.lastAppearance || '?'}で初登場予定
+
+## 出力形式
+[バックストーリー本文]
+`;
 
             // リトライロジックを使用してAI生成
             const backstory = await this.retryGenerationRequest(
@@ -170,6 +298,7 @@ export class CharacterGenerator implements ICharacterGenerator {
 
             logger.info(`キャラクター「${character.name}」のバックストーリーを生成しました (${backstory.length}文字)`);
             return backstory.trim();
+
         } catch (error) {
             logger.error(`キャラクター「${character.name}」のバックストーリー生成に失敗しました`, {
                 characterId: character.id,
@@ -227,6 +356,7 @@ export class CharacterGenerator implements ICharacterGenerator {
 
             logger.info(`キャラクター「${character.name}」の関係性を${relationships.length}件生成しました`);
             return relationships;
+
         } catch (error) {
             logger.error(`キャラクター「${character.name}」の関係性生成に失敗しました`, {
                 error: error instanceof Error ? error.message : String(error)
@@ -234,6 +364,40 @@ export class CharacterGenerator implements ICharacterGenerator {
             return [];
         }
     }
+
+    /**
+     * 最後の生成結果を取得（詳細統計用）
+     */
+    getLastGenerationResult(): CharacterGenerationResult | null {
+        return this.lastResult;
+    }
+
+    /**
+     * 生成統計情報を取得
+     */
+    getGenerationStatistics(): GenerationStatistics {
+        return { ...this.statistics };
+    }
+
+    /**
+     * 統計をリセット
+     */
+    resetStatistics(): void {
+        this.statistics = {
+            totalGenerations: 0,
+            successfulGenerations: 0,
+            failedGenerations: 0,
+            averageProcessingTime: 0,
+            memoryIntegrationSuccessRate: 0,
+            averageRelationshipsPerCharacter: 0,
+            lastGenerationTime: ''
+        };
+        this.lastResult = null;
+    }
+
+    // ============================================================================
+    // Private Methods
+    // ============================================================================
 
     /**
      * キャラクター名を生成する
@@ -246,26 +410,37 @@ export class CharacterGenerator implements ICharacterGenerator {
         if (params.name) return params.name;
 
         try {
-            // 世界観情報の取得
-            const longTermMemory = await memoryManager.getLongTermMemory();
-            const worldSettings = await longTermMemory.getWorldSettings();
+            // 統一アクセスAPIを使用して世界設定を取得
+            const worldSettingsResult = await this.memoryManager.unifiedSearch(
+                'world settings naming context',
+                [MemoryLevel.LONG_TERM]
+            );
+
+            let worldDescription = 'ファンタジー世界';
+
+            if (worldSettingsResult.success && worldSettingsResult.results.length > 0) {
+                const worldData = worldSettingsResult.results.find(r => r.type === 'knowledge')?.data;
+                if (worldData && typeof worldData === 'object' && worldData.description) {
+                    worldDescription = worldData.description;
+                }
+            }
 
             // プロンプト作成
             const prompt = `
-  あなたはファンタジー小説のキャラクター名を生成する専門家です。
-  以下の情報に基づいて、一つのキャラクター名を生成してください。
-  
-  ## 世界観
-  ${worldSettings?.description || 'ファンタジー世界'}
-  
-  ## キャラクタータイプ
-  ${template.name || 'キャラクター'}
-  
-  ## 特性
-  ${template.personality?.traits?.join(', ') || ''}
-  
-  名前だけを出力してください。
-  `;
+あなたはファンタジー小説のキャラクター名を生成する専門家です。
+以下の情報に基づいて、一つのキャラクター名を生成してください。
+
+## 世界観
+${worldDescription}
+
+## キャラクタータイプ
+${template.name || 'キャラクター'}
+
+## 特性
+${template.personality?.traits?.join(', ') || ''}
+
+名前だけを出力してください。
+`;
 
             const result = await this.geminiClient.generateText(prompt, {
                 temperature: 0.7,
@@ -274,6 +449,7 @@ export class CharacterGenerator implements ICharacterGenerator {
 
             // 余分な記号やスペースを削除
             return result.trim().replace(/["""]/g, '');
+
         } catch (error) {
             logger.warn('キャラクター名生成に失敗しました', {
                 error: error instanceof Error ? error.message : String(error)
@@ -283,52 +459,101 @@ export class CharacterGenerator implements ICharacterGenerator {
     }
 
     /**
-     * キャラクター詳細を強化する
+     * 統合記憶システムを使用してキャラクター詳細を強化する
      * @private
      * @param character 強化するキャラクター
      * @param template 使用するテンプレート
      * @param params カスタマイズパラメータ
+     * @returns 世界コンテキストが使用されたかどうか
      */
-    private async enhanceCharacterDetails(
+    private async enhanceCharacterDetailsWithMemorySystem(
         character: DynamicCharacter,
         template: CharacterTemplate,
         params: any
-    ): Promise<void> {
-        // カスタムパラメータの適用
-        if (params.type) {
-            character.type = params.type;
-        } else if (template.suggestedType) {
-            character.type = template.suggestedType;
-        }
+    ): Promise<boolean> {
+        let worldContextUsed = false;
 
-        // 必須特性の確保
-        if (params.mustHave && Array.isArray(params.mustHave) && character.personality) {
-            for (const trait of params.mustHave) {
-                if (!character.personality.traits.includes(trait)) {
-                    character.personality.traits.push(trait);
+        try {
+            // カスタムパラメータの適用
+            if (params.type) {
+                character.type = params.type;
+            } else if (template.suggestedType) {
+                character.type = template.suggestedType;
+            }
+
+            // 必須特性の確保
+            if (!character.personality) {
+                character.personality = {
+                    traits: [],
+                    values: [],
+                    quirks: [],
+                    speechPatterns: []
+                };
+            }
+
+            if (params.mustHave && Array.isArray(params.mustHave)) {
+                for (const trait of params.mustHave) {
+                    if (!character.personality.traits.includes(trait)) {
+                        character.personality.traits.push(trait);
+                    }
                 }
             }
-        }
 
-        // バックストーリーの生成
-        if (params.storyContext && character.backstory) {
-            character.backstory.summary = await this.generateBackstory(character, params.storyContext);
-        }
-
-        // 短縮名の生成
-        if (character.shortNames.length === 0) {
-            character.shortNames = this.generateShortNames(character.name);
-        }
-
-        // ロールに基づく追加調整
-        if (template.roleSettings) {
-            if (template.roleSettings.preferredEmotionalState) {
-                character.state.emotionalState = template.roleSettings.preferredEmotionalState;
+            // バックストーリーの生成（統合記憶システム使用）
+            if (params.storyContext) {
+                if (!character.backstory) {
+                    character.backstory = {
+                        summary: '',
+                        significantEvents: [],
+                        origin: ''
+                    };
+                }
+                character.backstory.summary = await this.generateBackstory(character, params.storyContext);
+                worldContextUsed = true;
             }
 
-            if (template.roleSettings.initialDevelopmentStage !== undefined) {
-                character.state.developmentStage = template.roleSettings.initialDevelopmentStage;
+            // 短縮名の生成
+            if (character.shortNames.length === 0) {
+                character.shortNames = this.generateShortNames(character.name);
             }
+
+            // ロールに基づく追加調整
+            if (template.roleSettings) {
+                if (template.roleSettings.preferredEmotionalState) {
+                    character.state.emotionalState = template.roleSettings.preferredEmotionalState;
+                }
+
+                if (template.roleSettings.initialDevelopmentStage !== undefined) {
+                    character.state.developmentStage = template.roleSettings.initialDevelopmentStage;
+                }
+            }
+
+            // メタデータにタグを追加
+            if (!character.metadata) {
+                character.metadata = {
+                    createdAt: new Date(),
+                    lastUpdated: new Date(),
+                    version: 1,
+                    tags: []
+                };
+            }
+            if (!character.metadata.tags) {
+                character.metadata.tags = [];
+            }
+            character.metadata.tags.push('generated');
+
+            // 開発状況の初期化
+            if (!character.state.development) {
+                character.state.development = `${character.name}の基本的な発展状況`;
+            }
+
+            return worldContextUsed;
+
+        } catch (error) {
+            logger.warn('キャラクター詳細強化中にエラーが発生しました', {
+                error: error instanceof Error ? error.message : String(error)
+            });
+            return worldContextUsed;
         }
     }
 
@@ -372,31 +597,31 @@ export class CharacterGenerator implements ICharacterGenerator {
         try {
             // プロンプト作成
             const prompt = `
-  あなたはファンタジー小説のキャラクター関係性を設計する専門家です。
-  以下のキャラクターの情報に基づいて、最も自然で物語的に魅力的な関係性をJSON形式で出力してください。
-  
-  ## 新キャラクター
-  名前: ${character.name}
-  タイプ: ${character.type}
-  説明: ${character.description}
-  性格特性: ${character.personality?.traits?.join(', ') || ''}
-  
-  ## 既存キャラクター
-  名前: ${targetCharacter.name}
-  タイプ: ${targetCharacter.type}
-  説明: ${targetCharacter.description}
-  性格特性: ${targetCharacter.personality?.traits?.join(', ') || ''}
-  
-  次の関係タイプから最も適切なものを選んでください:
-  FRIEND, ENEMY, RIVAL, MENTOR, STUDENT, PARENT, CHILD, LOVER, PROTECTOR, PROTECTED, COLLEAGUE, NEUTRAL
-  
-  JSONフォーマットで回答してください:
-  {
-    "type": "関係タイプ",
-    "strength": 0から1の数値（関係の強さ）,
-    "description": "関係の簡潔な説明"
-  }
-  `;
+あなたはファンタジー小説のキャラクター関係性を設計する専門家です。
+以下のキャラクターの情報に基づいて、最も自然で物語的に魅力的な関係性をJSON形式で出力してください。
+
+## 新キャラクター
+名前: ${character.name}
+タイプ: ${character.type}
+説明: ${character.description}
+性格特性: ${character.personality?.traits?.join(', ') || ''}
+
+## 既存キャラクター
+名前: ${targetCharacter.name}
+タイプ: ${targetCharacter.type}
+説明: ${targetCharacter.description}
+性格特性: ${targetCharacter.personality?.traits?.join(', ') || ''}
+
+次の関係タイプから最も適切なものを選んでください:
+FRIEND, ENEMY, RIVAL, MENTOR, STUDENT, PARENT, CHILD, LOVER, PROTECTOR, PROTECTED, COLLEAGUE, NEUTRAL
+
+JSONフォーマットで回答してください:
+{
+  "type": "関係タイプ",
+  "strength": 0から1の数値（関係の強さ）,
+  "description": "関係の簡潔な説明"
+}
+`;
 
             const result = await this.geminiClient.generateText(prompt, {
                 temperature: 0.7,
@@ -420,6 +645,7 @@ export class CharacterGenerator implements ICharacterGenerator {
                 description: relationshipData.description,
                 history: []
             };
+
         } catch (error) {
             logger.warn(`キャラクター間の関係性生成に失敗しました: ${character.name} <-> ${targetCharacter.name}`, {
                 error: error instanceof Error ? error.message : String(error)
@@ -469,5 +695,77 @@ export class CharacterGenerator implements ICharacterGenerator {
 
         // すべての試行が失敗した場合
         throw lastError || new Error(`${operationName}に失敗しました`);
+    }
+
+    /**
+     * 生成品質を計算する
+     * @private
+     * @param character 生成されたキャラクター
+     * @returns 品質スコア（0-1）
+     */
+    private calculateGenerationQuality(character: DynamicCharacter): number {
+        let score = 0;
+        let maxScore = 0;
+
+        // 名前の品質
+        maxScore += 1;
+        if (character.name && character.name.length > 2) {
+            score += 1;
+        }
+
+        // 性格特性の充実度
+        maxScore += 1;
+        if (character.personality?.traits && character.personality.traits.length >= 2) {
+            score += 1;
+        }
+
+        // バックストーリーの存在
+        maxScore += 1;
+        if (character.backstory?.summary && character.backstory.summary.length > 50) {
+            score += 1;
+        }
+
+        // 関係性の数
+        maxScore += 1;
+        if (character.relationships && character.relationships.length > 0) {
+            score += 1;
+        }
+
+        // 短縮名の生成
+        maxScore += 1;
+        if (character.shortNames && character.shortNames.length > 0) {
+            score += 1;
+        }
+
+        return maxScore > 0 ? score / maxScore : 0;
+    }
+
+    /**
+     * 統計情報を更新する
+     * @private
+     * @param result 生成結果
+     */
+    private updateStatistics(result: CharacterGenerationResult): void {
+        if (result.success) {
+            this.statistics.successfulGenerations++;
+            
+            // 平均処理時間の更新
+            this.statistics.averageProcessingTime = 
+                ((this.statistics.averageProcessingTime * (this.statistics.successfulGenerations - 1)) + result.processingTime) / 
+                this.statistics.successfulGenerations;
+
+            // メモリ統合成功率の更新
+            const totalSuccessful = this.statistics.successfulGenerations;
+            const memorySuccessCount = this.statistics.memoryIntegrationSuccessRate * (totalSuccessful - 1) + 
+                                    (result.memoryIntegrationSuccess ? 1 : 0);
+            this.statistics.memoryIntegrationSuccessRate = memorySuccessCount / totalSuccessful;
+
+            // 平均関係性数の更新
+            const totalRelationships = this.statistics.averageRelationshipsPerCharacter * (totalSuccessful - 1) + 
+                                     result.relationshipsGenerated;
+            this.statistics.averageRelationshipsPerCharacter = totalRelationships / totalSuccessful;
+        }
+
+        this.statistics.lastGenerationTime = new Date().toISOString();
     }
 }

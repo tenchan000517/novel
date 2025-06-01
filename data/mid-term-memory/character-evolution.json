@@ -1,0 +1,4889 @@
+{
+  "characterDevelopmentHistory": [],
+  "characterChangeHistory": [],
+  "relationshipEvolution": [],
+  "psychologyEvolution": [],
+  "characterArcs": [
+    [
+      "char-私も一緒に手伝うわ",
+      {
+        "characterId": "char-私も一緒に手伝うわ",
+        "characterName": "私も一緒に手伝うわ",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-05-31T21:32:05.591Z",
+        "lastUpdated": "2025-05-31T21:32:05.591Z"
+      }
+    ],
+    [
+      "char-Connect",
+      {
+        "characterId": "char-Connect",
+        "characterName": "Connect",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T00:59:33.999Z",
+        "lastUpdated": "2025-06-01T00:59:33.999Z"
+      }
+    ],
+    [
+      "char-使い方が複雑すぎる",
+      {
+        "characterId": "char-使い方が複雑すぎる",
+        "characterName": "使い方が複雑すぎる",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T00:59:33.999Z",
+        "lastUpdated": "2025-06-01T00:59:33.999Z"
+      }
+    ],
+    [
+      "char-使いやすくなった",
+      {
+        "characterId": "char-使いやすくなった",
+        "characterName": "使いやすくなった",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T00:59:33.999Z",
+        "lastUpdated": "2025-06-01T00:59:33.999Z"
+      }
+    ],
+    [
+      "char-正しい",
+      {
+        "characterId": "char-正しい",
+        "characterName": "正しい",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 1,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 60,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:15:50.743Z",
+        "lastUpdated": "2025-06-01T07:15:50.743Z"
+      }
+    ],
+    [
+      "char-使いにくい",
+      {
+        "characterId": "char-使いにくい",
+        "characterName": "使いにくい",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 1,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 60,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:15:50.743Z",
+        "lastUpdated": "2025-06-01T08:13:44.575Z"
+      }
+    ],
+    [
+      "char-高すぎる",
+      {
+        "characterId": "char-高すぎる",
+        "characterName": "高すぎる",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 1,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 60,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:15:50.743Z",
+        "lastUpdated": "2025-06-01T07:15:50.743Z"
+      }
+    ],
+    [
+      "char-機能が多すぎる",
+      {
+        "characterId": "char-機能が多すぎる",
+        "characterName": "機能が多すぎる",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 1,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 60,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:15:50.743Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-山田",
+      {
+        "characterId": "char-山田",
+        "characterName": "山田",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:19:19.119Z",
+        "lastUpdated": "2025-06-01T07:19:19.119Z"
+      }
+    ],
+    [
+      "char-興味ありません",
+      {
+        "characterId": "char-興味ありません",
+        "characterName": "興味ありません",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-間に合ってます",
+      {
+        "characterId": "char-間に合ってます",
+        "characterName": "間に合ってます",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-結構です",
+      {
+        "characterId": "char-結構です",
+        "characterName": "結構です",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-問題解決",
+      {
+        "characterId": "char-問題解決",
+        "characterName": "問題解決",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-痛み",
+      {
+        "characterId": "char-痛み",
+        "characterName": "痛み",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-解決策",
+      {
+        "characterId": "char-解決策",
+        "characterName": "解決策",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 1,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 1,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 1,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:21:56.859Z",
+        "lastUpdated": "2025-06-01T07:21:56.859Z"
+      }
+    ],
+    [
+      "char-問題",
+      {
+        "characterId": "char-問題",
+        "characterName": "問題",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 2,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 2,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:25:32.329Z",
+        "lastUpdated": "2025-06-01T07:25:32.329Z"
+      }
+    ],
+    [
+      "char-解決すべきパズル",
+      {
+        "characterId": "char-解決すべきパズル",
+        "characterName": "解決すべきパズル",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 2,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 2,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:25:32.329Z",
+        "lastUpdated": "2025-06-01T07:25:32.329Z"
+      }
+    ],
+    [
+      "char-生き物",
+      {
+        "characterId": "char-生き物",
+        "characterName": "生き物",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 2,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 2,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:25:32.329Z",
+        "lastUpdated": "2025-06-01T07:25:32.329Z"
+      }
+    ],
+    [
+      "char-使い方が分かりにくい",
+      {
+        "characterId": "char-使い方が分かりにくい",
+        "characterName": "使い方が分かりにくい",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-課題解決型",
+      {
+        "characterId": "char-課題解決型",
+        "characterName": "課題解決型",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-作りたいもの",
+      {
+        "characterId": "char-作りたいもの",
+        "characterName": "作りたいもの",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-作るべきもの",
+      {
+        "characterId": "char-作るべきもの",
+        "characterName": "作るべきもの",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-これじゃダメだ",
+      {
+        "characterId": "char-これじゃダメだ",
+        "characterName": "これじゃダメだ",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-自分たちが考える課題",
+      {
+        "characterId": "char-自分たちが考える課題",
+        "characterName": "自分たちが考える課題",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-顧客が抱える課題",
+      {
+        "characterId": "char-顧客が抱える課題",
+        "characterName": "顧客が抱える課題",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.563Z",
+        "lastUpdated": "2025-06-01T07:27:04.563Z"
+      }
+    ],
+    [
+      "char-すみません",
+      {
+        "characterId": "char-すみません",
+        "characterName": "すみません",
+        "arcType": "GROWTH",
+        "phases": [],
+        "currentPhase": "BEGINNING",
+        "progressPercentage": 0,
+        "keyMilestones": [],
+        "created": "2025-06-01T07:27:04.564Z",
+        "lastUpdated": "2025-06-01T07:27:04.564Z"
+      }
+    ],
+    [
+      "char-ConnectUs",
+      {
+        "characterId": "char-ConnectUs",
+        "characterName": "ConnectUs",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 2,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "変容",
+            "chapter": 2,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:28:51.604Z",
+        "lastUpdated": "2025-06-01T07:28:51.604Z"
+      }
+    ],
+    [
+      "char-真の課題",
+      {
+        "characterId": "char-真の課題",
+        "characterName": "真の課題",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 3,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 3,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 3,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 3,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:35:11.593Z",
+        "lastUpdated": "2025-06-01T07:35:11.593Z"
+      }
+    ],
+    [
+      "char-ConnectAll",
+      {
+        "characterId": "char-ConnectAll",
+        "characterName": "ConnectAll",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 3,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "変容",
+            "chapter": 3,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:36:47.390Z",
+        "lastUpdated": "2025-06-01T07:36:47.390Z"
+      }
+    ],
+    [
+      "char-自分には必要ない",
+      {
+        "characterId": "char-自分には必要ない",
+        "characterName": "自分には必要ない",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 3,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "変容",
+            "chapter": 3,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:36:47.390Z",
+        "lastUpdated": "2025-06-01T07:36:47.390Z"
+      }
+    ],
+    [
+      "char-人員削減を行うこと",
+      {
+        "characterId": "char-人員削減を行うこと",
+        "characterName": "人員削減を行うこと",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 3,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "変容",
+            "chapter": 3,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:36:47.390Z",
+        "lastUpdated": "2025-06-01T07:36:47.390Z"
+      }
+    ],
+    [
+      "char-いらっしゃいませ",
+      {
+        "characterId": "char-いらっしゃいませ",
+        "characterName": "いらっしゃいませ",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 4,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 4,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:42:48.187Z",
+        "lastUpdated": "2025-06-01T07:42:48.187Z"
+      }
+    ],
+    [
+      "char-使いやすい",
+      {
+        "characterId": "char-使いやすい",
+        "characterName": "使いやすい",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 4,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 4,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:42:48.187Z",
+        "lastUpdated": "2025-06-01T07:42:48.187Z"
+      }
+    ],
+    [
+      "char-安心できる",
+      {
+        "characterId": "char-安心できる",
+        "characterName": "安心できる",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 4,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 4,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:42:48.187Z",
+        "lastUpdated": "2025-06-01T07:42:48.187Z"
+      }
+    ],
+    [
+      "char-繋がりを感じられる",
+      {
+        "characterId": "char-繋がりを感じられる",
+        "characterName": "繋がりを感じられる",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 4,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 4,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 4,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:42:48.187Z",
+        "lastUpdated": "2025-06-01T07:42:48.187Z"
+      }
+    ],
+    [
+      "char-顧客視点",
+      {
+        "characterId": "char-顧客視点",
+        "characterName": "顧客視点",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 5,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 5,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 5,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 60,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 5,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 5,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 5,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:46:51.514Z",
+        "lastUpdated": "2025-06-01T07:46:51.514Z"
+      }
+    ],
+    [
+      "char-欲しい",
+      {
+        "characterId": "char-欲しい",
+        "characterName": "欲しい",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 6,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 6,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 6,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 6,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 80,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:50:47.631Z",
+        "lastUpdated": "2025-06-01T08:13:44.575Z"
+      }
+    ],
+    [
+      "char-売れるもの",
+      {
+        "characterId": "char-売れるもの",
+        "characterName": "売れるもの",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 6,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 6,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 6,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 6,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 80,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:50:47.631Z",
+        "lastUpdated": "2025-06-01T07:50:47.631Z"
+      }
+    ],
+    [
+      "char-その通りだ",
+      {
+        "characterId": "char-その通りだ",
+        "characterName": "その通りだ",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "CALL_TO_ADVENTURE",
+            "chapter": 6,
+            "description": "召命のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "DEPARTURE",
+            "chapter": 6,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRIALS",
+            "chapter": 6,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 6,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 80,
+        "keyMilestones": [
+          {
+            "milestone": "召命",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "出発",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "試練",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 6,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T07:50:47.631Z",
+        "lastUpdated": "2025-06-01T07:50:47.631Z"
+      }
+    ],
+    [
+      "char-もっと便利に",
+      {
+        "characterId": "char-もっと便利に",
+        "characterName": "もっと便利に",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 8,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 8,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:03:17.659Z",
+        "lastUpdated": "2025-06-01T08:03:17.659Z"
+      }
+    ],
+    [
+      "char-使いやすく",
+      {
+        "characterId": "char-使いやすく",
+        "characterName": "使いやすく",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 8,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRIALS",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 8,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:03:17.659Z",
+        "lastUpdated": "2025-06-01T08:03:17.659Z"
+      }
+    ],
+    [
+      "char-Aという機能が欲しい",
+      {
+        "characterId": "char-Aという機能が欲しい",
+        "characterName": "Aという機能が欲しい",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 10,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 10,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:13:44.575Z",
+        "lastUpdated": "2025-06-01T08:13:44.575Z"
+      }
+    ],
+    [
+      "char-それが問題なんだ",
+      {
+        "characterId": "char-それが問題なんだ",
+        "characterName": "それが問題なんだ",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 10,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 10,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:13:44.575Z",
+        "lastUpdated": "2025-06-01T08:13:44.575Z"
+      }
+    ],
+    [
+      "char-欲しい機能",
+      {
+        "characterId": "char-欲しい機能",
+        "characterName": "欲しい機能",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "DEPARTURE",
+            "chapter": 10,
+            "description": "出発のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "DEPARTURE",
+        "progressPercentage": 20,
+        "keyMilestones": [
+          {
+            "milestone": "出発",
+            "chapter": 10,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:13:44.575Z",
+        "lastUpdated": "2025-06-01T08:13:44.575Z"
+      }
+    ],
+    [
+      "char-今からでも遅くはない",
+      {
+        "characterId": "char-今からでも遅くはない",
+        "characterName": "今からでも遅くはない",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 12,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 12,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 12,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 12,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:22:02.125Z",
+        "lastUpdated": "2025-06-01T08:22:02.125Z"
+      }
+    ],
+    [
+      "char-魔法具コンシェルジュ",
+      {
+        "characterId": "char-魔法具コンシェルジュ",
+        "characterName": "魔法具コンシェルジュ",
+        "arcType": "GROWTH",
+        "phases": [
+          {
+            "phase": "TRIALS",
+            "chapter": 12,
+            "description": "試練のフェーズ",
+            "completed": true,
+            "significance": 7
+          },
+          {
+            "phase": "TRANSFORMATION",
+            "chapter": 12,
+            "description": "変容のフェーズ",
+            "completed": true,
+            "significance": 7
+          }
+        ],
+        "currentPhase": "TRANSFORMATION",
+        "progressPercentage": 40,
+        "keyMilestones": [
+          {
+            "milestone": "試練",
+            "chapter": 12,
+            "achieved": true,
+            "impact": 7
+          },
+          {
+            "milestone": "変容",
+            "chapter": 12,
+            "achieved": true,
+            "impact": 7
+          }
+        ],
+        "created": "2025-06-01T08:22:02.125Z",
+        "lastUpdated": "2025-06-01T08:22:02.125Z"
+      }
+    ]
+  ],
+  "influenceNetworks": [
+    [
+      "char-Connect",
+      {
+        "sourceCharacterId": "char-Connect",
+        "influenceMap": [
+          [
+            "char-使い方が複雑すぎる",
+            {
+              "targetCharacterId": "char-使い方が複雑すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いやすくなった",
+            {
+              "targetCharacterId": "char-使いやすくなった",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T00:59:34.002Z"
+      }
+    ],
+    [
+      "char-使い方が複雑すぎる",
+      {
+        "sourceCharacterId": "char-使い方が複雑すぎる",
+        "influenceMap": [
+          [
+            "char-Connect",
+            {
+              "targetCharacterId": "char-Connect",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いやすくなった",
+            {
+              "targetCharacterId": "char-使いやすくなった",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T00:59:34.002Z"
+      }
+    ],
+    [
+      "char-使いやすくなった",
+      {
+        "sourceCharacterId": "char-使いやすくなった",
+        "influenceMap": [
+          [
+            "char-Connect",
+            {
+              "targetCharacterId": "char-Connect",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使い方が複雑すぎる",
+            {
+              "targetCharacterId": "char-使い方が複雑すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T00:59:34.002Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T00:59:34.002Z"
+      }
+    ],
+    [
+      "char-正しい",
+      {
+        "sourceCharacterId": "char-正しい",
+        "influenceMap": [
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-高すぎる",
+            {
+              "targetCharacterId": "char-高すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:15:50.746Z"
+      }
+    ],
+    [
+      "char-使いにくい",
+      {
+        "sourceCharacterId": "char-使いにくい",
+        "influenceMap": [
+          [
+            "char-正しい",
+            {
+              "targetCharacterId": "char-正しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-高すぎる",
+            {
+              "targetCharacterId": "char-高すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-Aという機能が欲しい",
+            {
+              "targetCharacterId": "char-Aという機能が欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-それが問題なんだ",
+            {
+              "targetCharacterId": "char-それが問題なんだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい機能",
+            {
+              "targetCharacterId": "char-欲しい機能",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:13:44.582Z"
+      }
+    ],
+    [
+      "char-高すぎる",
+      {
+        "sourceCharacterId": "char-高すぎる",
+        "influenceMap": [
+          [
+            "char-正しい",
+            {
+              "targetCharacterId": "char-正しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:15:50.746Z"
+      }
+    ],
+    [
+      "char-機能が多すぎる",
+      {
+        "sourceCharacterId": "char-機能が多すぎる",
+        "influenceMap": [
+          [
+            "char-正しい",
+            {
+              "targetCharacterId": "char-正しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-高すぎる",
+            {
+              "targetCharacterId": "char-高すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:15:50.746Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.568Z"
+      }
+    ],
+    [
+      "char-興味ありません",
+      {
+        "sourceCharacterId": "char-興味ありません",
+        "influenceMap": [
+          [
+            "char-間に合ってます",
+            {
+              "targetCharacterId": "char-間に合ってます",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-結構です",
+            {
+              "targetCharacterId": "char-結構です",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-問題解決",
+            {
+              "targetCharacterId": "char-問題解決",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-痛み",
+            {
+              "targetCharacterId": "char-痛み",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決策",
+            {
+              "targetCharacterId": "char-解決策",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-間に合ってます",
+      {
+        "sourceCharacterId": "char-間に合ってます",
+        "influenceMap": [
+          [
+            "char-興味ありません",
+            {
+              "targetCharacterId": "char-興味ありません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-結構です",
+            {
+              "targetCharacterId": "char-結構です",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-問題解決",
+            {
+              "targetCharacterId": "char-問題解決",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-痛み",
+            {
+              "targetCharacterId": "char-痛み",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決策",
+            {
+              "targetCharacterId": "char-解決策",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-結構です",
+      {
+        "sourceCharacterId": "char-結構です",
+        "influenceMap": [
+          [
+            "char-興味ありません",
+            {
+              "targetCharacterId": "char-興味ありません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-間に合ってます",
+            {
+              "targetCharacterId": "char-間に合ってます",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-問題解決",
+            {
+              "targetCharacterId": "char-問題解決",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-痛み",
+            {
+              "targetCharacterId": "char-痛み",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決策",
+            {
+              "targetCharacterId": "char-解決策",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-問題解決",
+      {
+        "sourceCharacterId": "char-問題解決",
+        "influenceMap": [
+          [
+            "char-興味ありません",
+            {
+              "targetCharacterId": "char-興味ありません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-間に合ってます",
+            {
+              "targetCharacterId": "char-間に合ってます",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-結構です",
+            {
+              "targetCharacterId": "char-結構です",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-痛み",
+            {
+              "targetCharacterId": "char-痛み",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決策",
+            {
+              "targetCharacterId": "char-解決策",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-痛み",
+      {
+        "sourceCharacterId": "char-痛み",
+        "influenceMap": [
+          [
+            "char-興味ありません",
+            {
+              "targetCharacterId": "char-興味ありません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-間に合ってます",
+            {
+              "targetCharacterId": "char-間に合ってます",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-結構です",
+            {
+              "targetCharacterId": "char-結構です",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-問題解決",
+            {
+              "targetCharacterId": "char-問題解決",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決策",
+            {
+              "targetCharacterId": "char-解決策",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-解決策",
+      {
+        "sourceCharacterId": "char-解決策",
+        "influenceMap": [
+          [
+            "char-興味ありません",
+            {
+              "targetCharacterId": "char-興味ありません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-間に合ってます",
+            {
+              "targetCharacterId": "char-間に合ってます",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-結構です",
+            {
+              "targetCharacterId": "char-結構です",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-問題解決",
+            {
+              "targetCharacterId": "char-問題解決",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-痛み",
+            {
+              "targetCharacterId": "char-痛み",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 1,
+                  "event": "第1章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:21:56.863Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:21:56.863Z"
+      }
+    ],
+    [
+      "char-問題",
+      {
+        "sourceCharacterId": "char-問題",
+        "influenceMap": [
+          [
+            "char-解決すべきパズル",
+            {
+              "targetCharacterId": "char-解決すべきパズル",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-生き物",
+            {
+              "targetCharacterId": "char-生き物",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:25:32.334Z"
+      }
+    ],
+    [
+      "char-解決すべきパズル",
+      {
+        "sourceCharacterId": "char-解決すべきパズル",
+        "influenceMap": [
+          [
+            "char-問題",
+            {
+              "targetCharacterId": "char-問題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-生き物",
+            {
+              "targetCharacterId": "char-生き物",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:25:32.334Z"
+      }
+    ],
+    [
+      "char-生き物",
+      {
+        "sourceCharacterId": "char-生き物",
+        "influenceMap": [
+          [
+            "char-問題",
+            {
+              "targetCharacterId": "char-問題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-解決すべきパズル",
+            {
+              "targetCharacterId": "char-解決すべきパズル",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:25:32.334Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:25:32.334Z"
+      }
+    ],
+    [
+      "char-使い方が分かりにくい",
+      {
+        "sourceCharacterId": "char-使い方が分かりにくい",
+        "influenceMap": [
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.568Z"
+      }
+    ],
+    [
+      "char-課題解決型",
+      {
+        "sourceCharacterId": "char-課題解決型",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.568Z"
+      }
+    ],
+    [
+      "char-作りたいもの",
+      {
+        "sourceCharacterId": "char-作りたいもの",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.568Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.569Z"
+      }
+    ],
+    [
+      "char-作るべきもの",
+      {
+        "sourceCharacterId": "char-作るべきもの",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.569Z"
+      }
+    ],
+    [
+      "char-これじゃダメだ",
+      {
+        "sourceCharacterId": "char-これじゃダメだ",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.569Z"
+      }
+    ],
+    [
+      "char-自分たちが考える課題",
+      {
+        "sourceCharacterId": "char-自分たちが考える課題",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.569Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.570Z"
+      }
+    ],
+    [
+      "char-顧客が抱える課題",
+      {
+        "sourceCharacterId": "char-顧客が抱える課題",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-すみません",
+            {
+              "targetCharacterId": "char-すみません",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.570Z"
+      }
+    ],
+    [
+      "char-すみません",
+      {
+        "sourceCharacterId": "char-すみません",
+        "influenceMap": [
+          [
+            "char-使い方が分かりにくい",
+            {
+              "targetCharacterId": "char-使い方が分かりにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-機能が多すぎる",
+            {
+              "targetCharacterId": "char-機能が多すぎる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-課題解決型",
+            {
+              "targetCharacterId": "char-課題解決型",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作りたいもの",
+            {
+              "targetCharacterId": "char-作りたいもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-作るべきもの",
+            {
+              "targetCharacterId": "char-作るべきもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-これじゃダメだ",
+            {
+              "targetCharacterId": "char-これじゃダメだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分たちが考える課題",
+            {
+              "targetCharacterId": "char-自分たちが考える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-顧客が抱える課題",
+            {
+              "targetCharacterId": "char-顧客が抱える課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 2,
+                  "event": "第2章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:27:04.570Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:27:04.570Z"
+      }
+    ],
+    [
+      "char-真の課題",
+      {
+        "sourceCharacterId": "char-真の課題",
+        "influenceMap": [
+          [
+            "char-真の課題",
+            {
+              "targetCharacterId": "char-真の課題",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:35:11.597Z"
+                },
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:35:11.597Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:35:11.597Z"
+      }
+    ],
+    [
+      "char-ConnectAll",
+      {
+        "sourceCharacterId": "char-ConnectAll",
+        "influenceMap": [
+          [
+            "char-自分には必要ない",
+            {
+              "targetCharacterId": "char-自分には必要ない",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.393Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-人員削減を行うこと",
+            {
+              "targetCharacterId": "char-人員削減を行うこと",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.394Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:36:47.394Z"
+      }
+    ],
+    [
+      "char-自分には必要ない",
+      {
+        "sourceCharacterId": "char-自分には必要ない",
+        "influenceMap": [
+          [
+            "char-ConnectAll",
+            {
+              "targetCharacterId": "char-ConnectAll",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.394Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-人員削減を行うこと",
+            {
+              "targetCharacterId": "char-人員削減を行うこと",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.394Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:36:47.394Z"
+      }
+    ],
+    [
+      "char-人員削減を行うこと",
+      {
+        "sourceCharacterId": "char-人員削減を行うこと",
+        "influenceMap": [
+          [
+            "char-ConnectAll",
+            {
+              "targetCharacterId": "char-ConnectAll",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.394Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-自分には必要ない",
+            {
+              "targetCharacterId": "char-自分には必要ない",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 3,
+                  "event": "第3章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:36:47.394Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:36:47.394Z"
+      }
+    ],
+    [
+      "char-いらっしゃいませ",
+      {
+        "sourceCharacterId": "char-いらっしゃいませ",
+        "influenceMap": [
+          [
+            "char-使いやすい",
+            {
+              "targetCharacterId": "char-使いやすい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-安心できる",
+            {
+              "targetCharacterId": "char-安心できる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-繋がりを感じられる",
+            {
+              "targetCharacterId": "char-繋がりを感じられる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:42:48.192Z"
+      }
+    ],
+    [
+      "char-使いやすい",
+      {
+        "sourceCharacterId": "char-使いやすい",
+        "influenceMap": [
+          [
+            "char-いらっしゃいませ",
+            {
+              "targetCharacterId": "char-いらっしゃいませ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-安心できる",
+            {
+              "targetCharacterId": "char-安心できる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-繋がりを感じられる",
+            {
+              "targetCharacterId": "char-繋がりを感じられる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:42:48.192Z"
+      }
+    ],
+    [
+      "char-安心できる",
+      {
+        "sourceCharacterId": "char-安心できる",
+        "influenceMap": [
+          [
+            "char-いらっしゃいませ",
+            {
+              "targetCharacterId": "char-いらっしゃいませ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いやすい",
+            {
+              "targetCharacterId": "char-使いやすい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-繋がりを感じられる",
+            {
+              "targetCharacterId": "char-繋がりを感じられる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.192Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:42:48.192Z"
+      }
+    ],
+    [
+      "char-繋がりを感じられる",
+      {
+        "sourceCharacterId": "char-繋がりを感じられる",
+        "influenceMap": [
+          [
+            "char-いらっしゃいませ",
+            {
+              "targetCharacterId": "char-いらっしゃいませ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.193Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いやすい",
+            {
+              "targetCharacterId": "char-使いやすい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.193Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-安心できる",
+            {
+              "targetCharacterId": "char-安心できる",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 4,
+                  "event": "第4章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:42:48.193Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:42:48.193Z"
+      }
+    ],
+    [
+      "char-欲しい",
+      {
+        "sourceCharacterId": "char-欲しい",
+        "influenceMap": [
+          [
+            "char-売れるもの",
+            {
+              "targetCharacterId": "char-売れるもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-その通りだ",
+            {
+              "targetCharacterId": "char-その通りだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-Aという機能が欲しい",
+            {
+              "targetCharacterId": "char-Aという機能が欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-それが問題なんだ",
+            {
+              "targetCharacterId": "char-それが問題なんだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい機能",
+            {
+              "targetCharacterId": "char-欲しい機能",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:13:44.582Z"
+      }
+    ],
+    [
+      "char-売れるもの",
+      {
+        "sourceCharacterId": "char-売れるもの",
+        "influenceMap": [
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-その通りだ",
+            {
+              "targetCharacterId": "char-その通りだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:50:47.635Z"
+      }
+    ],
+    [
+      "char-その通りだ",
+      {
+        "sourceCharacterId": "char-その通りだ",
+        "influenceMap": [
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-売れるもの",
+            {
+              "targetCharacterId": "char-売れるもの",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 6,
+                  "event": "第6章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T07:50:47.635Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T07:50:47.635Z"
+      }
+    ],
+    [
+      "char-もっと便利に",
+      {
+        "sourceCharacterId": "char-もっと便利に",
+        "influenceMap": [
+          [
+            "char-使いやすく",
+            {
+              "targetCharacterId": "char-使いやすく",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 8,
+                  "event": "第8章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:03:17.667Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:03:17.667Z"
+      }
+    ],
+    [
+      "char-使いやすく",
+      {
+        "sourceCharacterId": "char-使いやすく",
+        "influenceMap": [
+          [
+            "char-もっと便利に",
+            {
+              "targetCharacterId": "char-もっと便利に",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 8,
+                  "event": "第8章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:03:17.667Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:03:17.667Z"
+      }
+    ],
+    [
+      "char-Aという機能が欲しい",
+      {
+        "sourceCharacterId": "char-Aという機能が欲しい",
+        "influenceMap": [
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-それが問題なんだ",
+            {
+              "targetCharacterId": "char-それが問題なんだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい機能",
+            {
+              "targetCharacterId": "char-欲しい機能",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:13:44.582Z"
+      }
+    ],
+    [
+      "char-それが問題なんだ",
+      {
+        "sourceCharacterId": "char-それが問題なんだ",
+        "influenceMap": [
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-Aという機能が欲しい",
+            {
+              "targetCharacterId": "char-Aという機能が欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい機能",
+            {
+              "targetCharacterId": "char-欲しい機能",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:13:44.582Z"
+      }
+    ],
+    [
+      "char-欲しい機能",
+      {
+        "sourceCharacterId": "char-欲しい機能",
+        "influenceMap": [
+          [
+            "char-使いにくい",
+            {
+              "targetCharacterId": "char-使いにくい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-欲しい",
+            {
+              "targetCharacterId": "char-欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                },
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-Aという機能が欲しい",
+            {
+              "targetCharacterId": "char-Aという機能が欲しい",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ],
+          [
+            "char-それが問題なんだ",
+            {
+              "targetCharacterId": "char-それが問題なんだ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 10,
+                  "event": "第10章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:13:44.582Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:13:44.582Z"
+      }
+    ],
+    [
+      "char-今からでも遅くはない",
+      {
+        "sourceCharacterId": "char-今からでも遅くはない",
+        "influenceMap": [
+          [
+            "char-魔法具コンシェルジュ",
+            {
+              "targetCharacterId": "char-魔法具コンシェルジュ",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 12,
+                  "event": "第12章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:22:02.128Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:22:02.128Z"
+      }
+    ],
+    [
+      "char-魔法具コンシェルジュ",
+      {
+        "sourceCharacterId": "char-魔法具コンシェルジュ",
+        "influenceMap": [
+          [
+            "char-今からでも遅くはない",
+            {
+              "targetCharacterId": "char-今からでも遅くはない",
+              "influenceType": "NEUTRAL",
+              "influenceStrength": 0.5,
+              "influenceHistory": [
+                {
+                  "chapter": 12,
+                  "event": "第12章での相互作用",
+                  "impactLevel": 5,
+                  "timestamp": "2025-06-01T08:22:02.128Z"
+                }
+              ]
+            }
+          ]
+        ],
+        "lastUpdated": "2025-06-01T08:22:02.128Z"
+      }
+    ]
+  ],
+  "savedAt": "2025-06-01T08:22:03.385Z"
+}

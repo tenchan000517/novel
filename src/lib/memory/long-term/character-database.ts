@@ -13,6 +13,7 @@ import { logger } from '@/lib/utils/logger';
 import { storageProvider } from '@/lib/storage';
 import { Character, CharacterType, CharacterState } from '@/types/characters';
 import { characterManager } from '@/lib/characters/manager';
+import { ConsolidationGuard } from './consolidation-guard';
 
 // ============================================================================
 // 型定義：キャラクターマスターデータベース（修正版）
@@ -653,8 +654,16 @@ export class CharacterDatabase {
      * キャラクター統合処理（2箇所重複解決）
      */
     private async performCharacterConsolidation(): Promise<void> {
-        logger.info('Starting character consolidation (2-source duplicate resolution)');
-
+        const guard = ConsolidationGuard.getInstance();
+        const check = guard.canStartConsolidation('character-consolidation');
+        
+        if (!check.allowed) {
+            logger.debug('Character consolidation blocked by guard', { reason: check.reason });
+            return;
+        }
+    
+        const consolidationId = guard.startConsolidation('character-consolidation');
+    
         try {
             // CharacterManagerからキャラクター取得
             const managerCharacters = await characterManager.getAllCharacters();
@@ -665,11 +674,12 @@ export class CharacterDatabase {
             // 統合処理実行
             await this.consolidateCharacterSources(managerCharacters, storageCharacters);
 
-            logger.info(`Character consolidation completed: ${this.masterRecords.size} characters consolidated`);
+            logger.info('Character consolidation completed');
         } catch (error) {
-            logger.error('Failed to perform character consolidation', {
-                error: error instanceof Error ? error.message : String(error)
-            });
+            logger.error('Failed to perform character consolidation', { error });
+            throw error;
+        } finally {
+            guard.endConsolidation(consolidationId, 'character-consolidation');
         }
     }
 

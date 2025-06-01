@@ -1,15 +1,24 @@
 /**
- * @fileoverview 分析コーディネータ（修正版）
+ * @fileoverview 分析コーディネータ（新記憶階層システム完全対応版）
  * @description
- * 未実装メソッド呼び出しエラーを解決し、安全なフォールバック機能を追加
+ * 新しい統合記憶階層システム（MemoryManager）に完全対応した分析コーディネータ。
+ * 統一アクセスAPI、重複解決システム、キャッシュ協調システムを活用した高性能分析処理を実現。
  */
 
 import { logger } from '@/lib/utils/logger';
 import { GeminiAdapter } from '@/lib/analysis/adapters/gemini-adapter';
 import { JsonParser } from '@/lib/utils/json-parser';
 import { apiThrottler } from '@/lib/utils/api-throttle';
-import { MemoryManager } from '@/lib/memory/manager';
 import { StorageProvider } from '@/lib/storage';
+
+// 🎯 新記憶階層システムのインポート
+import { MemoryManager } from '@/lib/memory/core/memory-manager';
+import { 
+    MemoryLevel, 
+    MemoryAccessRequest, 
+    MemoryRequestType,
+    UnifiedMemoryContext 
+} from '@/lib/memory/core/types';
 
 // サービスのインポート
 import { ThemeAnalysisService } from '@/lib/analysis/services/theme/theme-analysis-service';
@@ -87,6 +96,8 @@ export interface IntegratedAnalysisResult {
         servicesUsed: string[];
         processingTime: number;
         cacheHitRate: number;
+        memorySystemUsed: boolean;
+        unifiedSearchResults: number;
     };
 }
 
@@ -99,17 +110,22 @@ export interface AnalysisCoordinatorOptions {
     enableParallelProcessing?: boolean;
     optimizeForIntegration?: boolean;
     enableDetailedLogging?: boolean;
+    useMemorySystemIntegration?: boolean;
+    memorySearchDepth?: number;
 }
 
 /**
- * @class AnalysisCoordinator（修正版）
- * @description 分析コーディネータ
+ * @class AnalysisCoordinator（新記憶階層システム完全対応版）
+ * @description 
+ * 新しい統合記憶階層システムに完全対応した分析コーディネータ。
  * 
- * 修正内容：
- * - 未実装メソッドの安全な呼び出し
- * - フォールバック機能の強化
- * - エラーハンドリングの改善
- * - 🔧 追加: MemoryManager初期化確保
+ * 🎯 主要な最適化：
+ * - 新しいMemoryManagerの統一APIを活用
+ * - unifiedSearch()による効率的なメモリアクセス
+ * - processChapter()による統合章処理
+ * - 重複解決システムとの連携
+ * - キャッシュ協調システムの活用
+ * - プライベートプロパティアクセスの完全排除
  */
 export class AnalysisCoordinator {
     // サービスインスタンス
@@ -123,15 +139,21 @@ export class AnalysisCoordinator {
     // キャッシュとメタデータ管理
     private analysisCache: Map<string, IntegratedAnalysisResult> = new Map();
     private performanceMetrics: Map<string, number> = new Map();
+    private memorySystemStats = {
+        totalSearches: 0,
+        cacheHits: 0,
+        unifiedContextRetrievals: 0,
+        processingOptimizations: 0
+    };
 
     // 設定
-    private options: AnalysisCoordinatorOptions;
+    private options: Required<AnalysisCoordinatorOptions>;
 
     /**
      * コンストラクタ
      * 
      * @param geminiAdapter AI分析アダプター
-     * @param memoryManager メモリマネージャー
+     * @param memoryManager 新しい統合記憶階層システム
      * @param storageProvider ストレージプロバイダー
      * @param options コーディネータオプション
      */
@@ -146,6 +168,8 @@ export class AnalysisCoordinator {
             enableParallelProcessing: true,
             optimizeForIntegration: true,
             enableDetailedLogging: false,
+            useMemorySystemIntegration: true,
+            memorySearchDepth: 10,
             ...options
         };
 
@@ -166,55 +190,73 @@ export class AnalysisCoordinator {
         );
 
         this.narrativeAnalysisService = new NarrativeAnalysisService({
-            geminiClient: this.geminiAdapter as any
+            geminiClient: this.geminiAdapter as any,
+            memoryManager: this.memoryManager
         });
 
         this.readerExperienceAnalyzer = new ReaderExperienceAnalyzer(
             this.geminiAdapter as any
         );
 
-        // 🔧 修正：ChapterAnalysisServiceの安全な初期化
+        // 安全なChapterAnalysisServiceの初期化
         this.chapterAnalysisService = this.createSafeChapterAnalysisService();
 
-        logger.info('AnalysisCoordinator initialized with safety enhancements', { options: this.options });
+        logger.info('AnalysisCoordinator initialized with new memory hierarchy system', { 
+            options: this.options,
+            memorySystemIntegration: this.options.useMemorySystemIntegration
+        });
     }
 
     /**
-     * 🔧 追加: MemoryManager初期化確保
+     * 🎯 新記憶階層システム初期化確保
      */
     private async ensureMemoryManagerInitialization(): Promise<void> {
         try {
-            logger.info('MemoryManager 初期化状態を確認中...');
+            logger.info('統合記憶階層システム（MemoryManager）初期化状態を確認中...');
 
-            // 初期化されていない場合は初期化実行
-            const isInitialized = await this.memoryManager.isInitialized();
-            if (!isInitialized) {
+            // 🔧 修正：新システムの適切な初期化チェック
+            // MemoryManagerの初期化状態はgetSystemStatus()で確認
+            const systemStatus = await this.memoryManager.getSystemStatus();
+            
+            if (!systemStatus.initialized) {
                 logger.info('MemoryManager を初期化します...');
                 await this.memoryManager.initialize();
-                logger.info('MemoryManager 初期化完了');
+                
+                // 初期化後の状態確認
+                const updatedStatus = await this.memoryManager.getSystemStatus();
+                if (updatedStatus.initialized) {
+                    logger.info('MemoryManager 初期化完了');
+                } else {
+                    logger.warn('MemoryManager 初期化に問題が発生しました');
+                }
             } else {
                 logger.info('MemoryManager は既に初期化済み');
             }
 
         } catch (initError) {
-            logger.warn('MemoryManager 初期化に失敗しましたが、分析を続行します', {
+            logger.warn('MemoryManager 初期化処理でエラーが発生しましたが、分析を続行します', {
                 error: initError instanceof Error ? initError.message : String(initError)
             });
         }
     }
 
     /**
-     * 🔧 追加: 安全な MemoryManager 操作
+     * 🎯 新記憶階層システムを使用した安全なメモリ操作
      */
-    private async safeMemoryManagerOperation<T>(
+    private async safeMemoryOperation<T>(
         operation: () => Promise<T>,
         fallbackValue: T,
         operationName: string
     ): Promise<T> {
+        if (!this.options.useMemorySystemIntegration) {
+            logger.debug(`${operationName}: Memory system integration disabled, using fallback`);
+            return fallbackValue;
+        }
+
         try {
-            // MemoryManager が利用可能かチェック
-            const isInitialized = await this.memoryManager.isInitialized();
-            if (!isInitialized) {
+            // システム状態確認
+            const systemStatus = await this.memoryManager.getSystemStatus();
+            if (!systemStatus.initialized) {
                 logger.warn(`${operationName}: MemoryManager not initialized, using fallback`);
                 return fallbackValue;
             }
@@ -229,18 +271,127 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：安全なChapterAnalysisServiceの作成
-     * 
-     * @private
-     * @returns 安全なChapterAnalysisService
+     * 🎯 統一検索による記憶階層アクセス
+     */
+    private async performUnifiedMemorySearch(
+        query: string, 
+        targetLayers: MemoryLevel[] = [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+    ): Promise<any> {
+        return this.safeMemoryOperation(
+            async () => {
+                logger.debug('統合検索を実行', { query, targetLayers });
+                
+                const searchResult = await this.memoryManager.unifiedSearch(query, targetLayers);
+                
+                this.memorySystemStats.totalSearches++;
+                if (searchResult.success) {
+                    this.memorySystemStats.unifiedContextRetrievals++;
+                    
+                    logger.debug('統合検索成功', {
+                        totalResults: searchResult.totalResults,
+                        processingTime: searchResult.processingTime
+                    });
+                    
+                    return {
+                        success: true,
+                        results: searchResult.results,
+                        totalResults: searchResult.totalResults,
+                        processingTime: searchResult.processingTime
+                    };
+                } else {
+                    logger.warn('統合検索は成功しましたが結果が空でした', { query });
+                    return { success: false, results: [], totalResults: 0, processingTime: 0 };
+                }
+            },
+            { success: false, results: [], totalResults: 0, processingTime: 0 },
+            'performUnifiedMemorySearch'
+        );
+    }
+
+    /**
+     * 🎯 統合記憶コンテキスト取得
+     */
+    private async getUnifiedMemoryContext(chapterNumber: number): Promise<UnifiedMemoryContext | null> {
+        return this.safeMemoryOperation(
+            async () => {
+                const searchResult = await this.memoryManager.unifiedSearch(
+                    `chapter ${chapterNumber} context`,
+                    [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                );
+
+                if (searchResult.success && searchResult.results.length > 0) {
+                    // 検索結果から統合コンテキストを構築
+                    const context: UnifiedMemoryContext = {
+                        chapterNumber,
+                        timestamp: new Date().toISOString(),
+                        shortTerm: {
+                            recentChapters: [],
+                            immediateCharacterStates: new Map(),
+                            keyPhrases: [],
+                            processingBuffers: []
+                        },
+                        midTerm: {
+                            narrativeProgression: {} as any,
+                            analysisResults: [],
+                            characterEvolution: [],
+                            systemStatistics: {} as any,
+                            qualityMetrics: {} as any
+                        },
+                        longTerm: {
+                            consolidatedSettings: {} as any,
+                            knowledgeDatabase: {} as any,
+                            systemKnowledgeBase: {} as any,
+                            completedRecords: {} as any
+                        },
+                        integration: {
+                            resolvedDuplicates: [],
+                            cacheStatistics: {} as any,
+                            accessOptimizations: []
+                        }
+                    };
+
+                    // 検索結果を適切なレイヤーに分類
+                    for (const result of searchResult.results) {
+                        switch (result.source) {
+                            case MemoryLevel.SHORT_TERM:
+                                if (result.data) {
+                                    // 短期記憶データの統合
+                                    context.shortTerm.keyPhrases.push(...(result.data.keyPhrases || []));
+                                }
+                                break;
+                            case MemoryLevel.MID_TERM:
+                                if (result.data) {
+                                    // 中期記憶データの統合
+                                    context.midTerm.analysisResults.push(result.data);
+                                }
+                                break;
+                            case MemoryLevel.LONG_TERM:
+                                if (result.data) {
+                                    // 長期記憶データの統合
+                                    Object.assign(context.longTerm.consolidatedSettings, result.data);
+                                }
+                                break;
+                        }
+                    }
+
+                    return context;
+                }
+
+                return null;
+            },
+            null,
+            'getUnifiedMemoryContext'
+        );
+    }
+
+    /**
+     * 安全なChapterAnalysisServiceの作成
      */
     private createSafeChapterAnalysisService(): ChapterAnalysisServiceInterface {
         try {
-            // 実際のChapterAnalysisServiceをインポートして初期化を試行
             const { ChapterAnalysisService } = require('@/lib/analysis/services/chapter/chapter-analysis-service');
             const instance = new ChapterAnalysisService(this.geminiAdapter);
 
-            // 必要なメソッドが存在するかチェック
             if (typeof instance.analyzeForIntegration === 'function') {
                 logger.info('ChapterAnalysisService loaded with analyzeForIntegration method');
                 return instance;
@@ -257,35 +408,23 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：ChapterAnalysisServiceプロキシの作成
-     * 
-     * @private
-     * @param baseService ベースサービス
-     * @returns プロキシサービス
+     * ChapterAnalysisServiceプロキシの作成
      */
     private createChapterAnalysisServiceProxy(baseService: any): ChapterAnalysisServiceInterface {
         return {
-            // 🎯 キーポイント：analyzeForIntegrationメソッドの実装
             analyzeForIntegration: async (content: string, chapterNumber: number, context: GenerationContext, isIntegrated: boolean = true): Promise<ChapterAnalysis> => {
-                logger.info(`Proxying analyzeForIntegration call to existing methods for chapter ${chapterNumber}`);
+                logger.info(`Proxying analyzeForIntegration call for chapter ${chapterNumber}`);
 
                 try {
-                    // 既存のanalyzeChapterメソッドがあるかチェック
                     if (typeof baseService.analyzeChapter === 'function') {
                         const result = await baseService.analyzeChapter(content, chapterNumber, context);
-                        logger.info(`Successfully proxied to analyzeChapter for chapter ${chapterNumber}`);
                         return result;
                     }
 
-                    // 他の分析メソッドがあるかチェック
                     if (typeof baseService.analyze === 'function') {
-                        const result = await baseService.analyze(content, chapterNumber, context);
-                        logger.info(`Successfully proxied to analyze for chapter ${chapterNumber}`);
-                        return result;
+                        return await baseService.analyze(content, chapterNumber, context);
                     }
 
-                    // フォールバック：基本的な章分析を実行
-                    logger.warn(`No suitable proxy method found, using fallback analysis for chapter ${chapterNumber}`);
                     return this.createBasicChapterAnalysis(content, chapterNumber, context);
                 } catch (error) {
                     logger.error(`Proxy method failed for chapter ${chapterNumber}`, {
@@ -295,7 +434,6 @@ export class AnalysisCoordinator {
                 }
             },
 
-            // 既存メソッドの委譲
             analyzeChapter: baseService.analyzeChapter?.bind(baseService),
             generateImprovementSuggestions: baseService.generateImprovementSuggestions?.bind(baseService) || this.createFallbackImprovementSuggestions.bind(this),
             clearCache: baseService.clearCache?.bind(baseService) || (() => logger.info('ChapterAnalysisService cache clear skipped (not implemented)'))
@@ -303,38 +441,23 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：フォールバックChapterAnalysisServiceの作成
-     * 
-     * @private
-     * @returns フォールバックサービス
+     * フォールバックChapterAnalysisServiceの作成
      */
     private createFallbackChapterAnalysisService(): ChapterAnalysisServiceInterface {
-        logger.info('Creating fallback ChapterAnalysisService');
-
         return {
             analyzeForIntegration: async (content: string, chapterNumber: number, context: GenerationContext, isIntegrated: boolean = true): Promise<ChapterAnalysis> => {
-                logger.info(`Using fallback analyzeForIntegration for chapter ${chapterNumber}`);
                 return this.createBasicChapterAnalysis(content, chapterNumber, context);
             },
-
             analyzeChapter: async (content: string, chapterNumber: number, context: GenerationContext): Promise<ChapterAnalysis> => {
-                logger.info(`Using fallback analyzeChapter for chapter ${chapterNumber}`);
                 return this.createBasicChapterAnalysis(content, chapterNumber, context);
             },
-
             generateImprovementSuggestions: this.createFallbackImprovementSuggestions.bind(this),
             clearCache: () => logger.info('Fallback ChapterAnalysisService cache clear (no-op)')
         };
     }
 
     /**
-     * 🔧 修正：基本的な章分析の作成
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 基本的な章分析結果
+     * 基本的な章分析の作成
      */
     private async createBasicChapterAnalysis(
         content: string,
@@ -342,15 +465,13 @@ export class AnalysisCoordinator {
         context: GenerationContext
     ): Promise<ChapterAnalysis> {
         try {
-            // CharacterAnalysisServiceを活用した基本分析
             const characterAnalysis = await this.characterAnalysisService.analyzeCharacter(content, chapterNumber, context);
 
-            // 基本的な文章統計
             const wordCount = content.length;
             const sentenceCount = (content.match(/[。！？]/g) || []).length;
             const paragraphCount = content.split('\n\n').length;
 
-            const chapterAnalysis: ChapterAnalysis = {
+            return {
                 characterAppearances: characterAnalysis.characterAppearances,
                 themeOccurrences: [],
                 foreshadowingElements: [],
@@ -378,13 +499,6 @@ export class AnalysisCoordinator {
                     averageSentenceLength: sentenceCount > 0 ? wordCount / sentenceCount : 0
                 }
             };
-
-            logger.info(`Basic chapter analysis completed for chapter ${chapterNumber}`, {
-                wordCount,
-                characterCount: characterAnalysis.characterAppearances.length
-            });
-
-            return chapterAnalysis;
         } catch (error) {
             logger.error(`Basic chapter analysis failed for chapter ${chapterNumber}`, {
                 error: error instanceof Error ? error.message : String(error)
@@ -394,13 +508,7 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：フォールバック改善提案の作成
-     * 
-     * @private
-     * @param analysis 分析結果
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 改善提案
+     * フォールバック改善提案の作成
      */
     private async createFallbackImprovementSuggestions(
         analysis: ChapterAnalysis,
@@ -409,31 +517,24 @@ export class AnalysisCoordinator {
     ): Promise<string[]> {
         const suggestions: string[] = [];
 
-        // 🔧 修正：textStatsの安全なアクセス
         const wordCount = analysis.textStats?.wordCount || 0;
 
-        // 文章量による提案
-        if (wordCount > 0) {
-            if (wordCount < 1000) {
-                suggestions.push('章の内容量を増やし、より詳細な描写を加えることを検討してください');
-            } else if (wordCount > 5000) {
-                suggestions.push('章が長すぎる可能性があります。内容を整理し、必要に応じて分割を検討してください');
-            }
+        if (wordCount < 1000) {
+            suggestions.push('章の内容量を増やし、より詳細な描写を加えることを検討してください');
+        } else if (wordCount > 5000) {
+            suggestions.push('章が長すぎる可能性があります。内容を整理し、必要に応じて分割を検討してください');
         }
 
-        // キャラクター登場による提案
         if (analysis.characterAppearances.length === 0) {
             suggestions.push('キャラクターの登場がありません。物語の進行に必要なキャラクターを登場させてください');
         } else if (analysis.characterAppearances.length > 5) {
             suggestions.push('多くのキャラクターが登場しています。焦点を絞って主要キャラクターに集中することを検討してください');
         }
 
-        // 品質メトリクスによる提案
         if (analysis.qualityMetrics.overall < 0.6) {
             suggestions.push('全体的な品質を向上させるため、文章の見直しと推敲を行ってください');
         }
 
-        // デフォルト提案
         if (suggestions.length === 0) {
             suggestions.push('章の内容をさらに発展させ、読者の興味を引く要素を追加することを検討してください');
         }
@@ -442,9 +543,7 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 包括的章分析（修正版）
-     * 
-     * 全ての分析サービスを使用して章の包括的な分析を実行します。
+     * 🎯 包括的章分析（新記憶階層システム完全対応版）
      * 
      * @param content 章の内容
      * @param chapterNumber 章番号
@@ -460,28 +559,36 @@ export class AnalysisCoordinator {
         const cacheKey = this.generateCacheKey(content, chapterNumber, context);
 
         try {
-            logger.info(`Starting comprehensive chapter analysis`, {
+            logger.info(`新記憶階層システムを使用した包括的章分析を開始`, {
                 chapterNumber,
                 contentLength: content.length,
-                parallelProcessing: this.options.enableParallelProcessing
+                parallelProcessing: this.options.enableParallelProcessing,
+                memoryIntegration: this.options.useMemorySystemIntegration
             });
 
-            // 🔧 追加: MemoryManager の明示的初期化確保
+            // 🎯 新記憶階層システムの初期化確保
             await this.ensureMemoryManagerInitialization();
 
             // キャッシュチェック
             if (this.options.enableCache && this.analysisCache.has(cacheKey)) {
-                logger.info('Using cached analysis result', { chapterNumber });
-                return this.analysisCache.get(cacheKey)!;
+                logger.info('キャッシュされた分析結果を使用', { chapterNumber });
+                const cachedResult = this.analysisCache.get(cacheKey)!;
+                this.memorySystemStats.cacheHits++;
+                return cachedResult;
             }
 
-            // 🔧 修正：分析の実行（エラーハンドリング強化）
+            // 🎯 新記憶階層システムへの章処理
+            if (this.options.useMemorySystemIntegration) {
+                await this.processChapterInMemorySystem(content, chapterNumber, context);
+            }
+
+            // 分析の実行
             const analysisResult = this.options.enableParallelProcessing
-                ? await this.executeParallelAnalysis(content, chapterNumber, context)
-                : await this.executeSequentialAnalysis(content, chapterNumber, context);
+                ? await this.executeParallelAnalysisWithMemoryIntegration(content, chapterNumber, context)
+                : await this.executeSequentialAnalysisWithMemoryIntegration(content, chapterNumber, context);
 
             // 結果の統合と品質保証
-            const integratedResult = await this.integrateAnalysisResults(
+            const integratedResult = await this.integrateAnalysisResultsWithMemoryContext(
                 analysisResult,
                 content,
                 chapterNumber,
@@ -497,49 +604,96 @@ export class AnalysisCoordinator {
                 this.analysisCache.set(cacheKey, integratedResult);
             }
 
-            logger.info(`Chapter analysis completed successfully`, {
+            logger.info(`新記憶階層システムを使用した章分析完了`, {
                 chapterNumber,
                 processingTime,
-                servicesUsed: integratedResult.analysisMetadata.servicesUsed.length
+                servicesUsed: integratedResult.analysisMetadata.servicesUsed.length,
+                unifiedSearchResults: integratedResult.analysisMetadata.unifiedSearchResults,
+                memorySystemUsed: integratedResult.analysisMetadata.memorySystemUsed
             });
 
             return integratedResult;
         } catch (error) {
-            logger.error('Comprehensive chapter analysis failed', {
+            logger.error('包括的章分析に失敗', {
                 error: error instanceof Error ? error.message : String(error),
                 chapterNumber
             });
 
-            // フォールバック分析結果を返す
             return this.createFallbackAnalysisResult(chapterNumber, context, Date.now() - startTime);
         }
     }
 
     /**
-     * 🔧 修正：並列分析の実行（エラーハンドリング強化）
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 分析結果
+     * 🎯 新記憶階層システムへの章処理
      */
-    private async executeParallelAnalysis(
+    private async processChapterInMemorySystem(
+        content: string,
+        chapterNumber: number,
+        context: GenerationContext
+    ): Promise<void> {
+        await this.safeMemoryOperation(
+            async () => {
+                const chapter: Chapter = {
+                    id: `chapter-${chapterNumber}`,
+                    chapterNumber,
+                    title: `第${chapterNumber}章`,
+                    content,
+                    previousChapterSummary: '',
+                    scenes: [],
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                    metadata: {
+                        createdAt: new Date().toISOString(),
+                        lastModified: new Date().toISOString(),
+                        status: 'analyzed',
+                        wordCount: content.length,
+                        estimatedReadingTime: Math.ceil(content.length / 1000)
+                    }
+                };
+
+                logger.info(`統合記憶階層システムに章を処理中: ${chapterNumber}`);
+                
+                const result = await this.memoryManager.processChapter(chapter);
+                
+                if (result.success) {
+                    logger.info(`章処理成功: ${chapterNumber}`, {
+                        processingTime: result.processingTime,
+                        affectedComponents: result.affectedComponents
+                    });
+                    this.memorySystemStats.processingOptimizations++;
+                } else {
+                    logger.warn(`章処理に問題が発生: ${chapterNumber}`, {
+                        errors: result.errors,
+                        warnings: result.warnings
+                    });
+                }
+
+                return result;
+            },
+            null,
+            'processChapterInMemorySystem'
+        );
+    }
+
+    /**
+     * 🎯 記憶システム統合による並列分析
+     */
+    private async executeParallelAnalysisWithMemoryIntegration(
         content: string,
         chapterNumber: number,
         context: GenerationContext
     ): Promise<any> {
         const analysisPromises = [
-            // 🎯 修正：安全なChapterAnalysisService呼び出し
+            // 章分析
             this.safelyExecuteAnalysis(
                 'ChapterAnalysis',
                 () => this.chapterAnalysisService.analyzeForIntegration!(content, chapterNumber, context, true)
             ),
 
-            // テーマ分析
+            // メモリ統合テーマ分析
             this.safelyExecuteAnalysis(
-                'ThemeAnalysis',
-                () => this.executeThemeAnalysis(content, chapterNumber, context)
+                'ThemeAnalysisWithMemory',
+                () => this.executeThemeAnalysisWithMemoryIntegration(content, chapterNumber, context)
             ),
 
             // 文体分析
@@ -554,16 +708,16 @@ export class AnalysisCoordinator {
                 () => this.characterAnalysisService.analyzeCharacter(content, chapterNumber, context)
             ),
 
-            // 物語構造分析
+            // メモリ統合物語構造分析
             this.safelyExecuteAnalysis(
-                'NarrativeAnalysis',
-                () => this.executeNarrativeAnalysis(chapterNumber, context)
+                'NarrativeAnalysisWithMemory',
+                () => this.executeNarrativeAnalysisWithMemoryIntegration(chapterNumber, context)
             ),
 
-            // 読者体験分析
+            // メモリ統合読者体験分析
             this.safelyExecuteAnalysis(
-                'ReaderExperience',
-                () => this.executeReaderExperienceAnalysis(content, chapterNumber, context)
+                'ReaderExperienceWithMemory',
+                () => this.executeReaderExperienceAnalysisWithMemoryIntegration(content, chapterNumber, context)
             )
         ];
 
@@ -579,55 +733,23 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：安全な分析実行
-     * 
-     * @private
-     * @param serviceName サービス名
-     * @param analysisFunction 分析関数
-     * @returns 分析結果またはnull
+     * 🎯 記憶システム統合による逐次分析
      */
-    private async safelyExecuteAnalysis<T>(
-        serviceName: string,
-        analysisFunction: () => Promise<T>
-    ): Promise<T | null> {
-        try {
-            logger.debug(`Starting ${serviceName} analysis`);
-            const result = await analysisFunction();
-            logger.debug(`${serviceName} analysis completed successfully`);
-            return result;
-        } catch (error) {
-            logger.warn(`${serviceName} analysis failed, using fallback`, {
-                error: error instanceof Error ? error.message : String(error)
-            });
-            return null;
-        }
-    }
-
-    /**
-     * 🔧 修正：逐次分析の実行（エラーハンドリング強化）
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 分析結果
-     */
-    private async executeSequentialAnalysis(
+    private async executeSequentialAnalysisWithMemoryIntegration(
         content: string,
         chapterNumber: number,
         context: GenerationContext
     ): Promise<any> {
         const results: any = {};
 
-        // 順序を最適化：依存関係の少ないものから実行
         results.chapterAnalysis = await this.safelyExecuteAnalysis(
             'ChapterAnalysis',
             () => this.chapterAnalysisService.analyzeForIntegration!(content, chapterNumber, context, true)
         );
 
         results.themeAnalysis = await this.safelyExecuteAnalysis(
-            'ThemeAnalysis',
-            () => this.executeThemeAnalysis(content, chapterNumber, context)
+            'ThemeAnalysisWithMemory',
+            () => this.executeThemeAnalysisWithMemoryIntegration(content, chapterNumber, context)
         );
 
         results.styleAnalysis = await this.safelyExecuteAnalysis(
@@ -641,38 +763,41 @@ export class AnalysisCoordinator {
         );
 
         results.narrativeAnalysis = await this.safelyExecuteAnalysis(
-            'NarrativeAnalysis',
-            () => this.executeNarrativeAnalysis(chapterNumber, context)
+            'NarrativeAnalysisWithMemory',
+            () => this.executeNarrativeAnalysisWithMemoryIntegration(chapterNumber, context)
         );
 
         results.readerExperience = await this.safelyExecuteAnalysis(
-            'ReaderExperience',
-            () => this.executeReaderExperienceAnalysis(content, chapterNumber, context)
+            'ReaderExperienceWithMemory',
+            () => this.executeReaderExperienceAnalysisWithMemoryIntegration(content, chapterNumber, context)
         );
 
         return results;
     }
 
     /**
-     * 🔧 修正：テーマ分析の実行
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns テーマ分析結果
+     * 🎯 記憶システム統合テーマ分析
      */
-    private async executeThemeAnalysis(
+    private async executeThemeAnalysisWithMemoryIntegration(
         content: string,
         chapterNumber: number,
         context: GenerationContext
     ): Promise<any> {
         const themes = context.theme ? [context.theme] : ['成長', '変化', '挑戦'];
 
-        // 🔧 修正: 安全な伏線処理
-        const foreshadowingProcessing = await this.safeMemoryManagerOperation(
+        // 🎯 統一検索による伏線情報取得
+        const foreshadowingSearchResult = await this.performUnifiedMemorySearch(
+            `foreshadowing chapter ${chapterNumber}`,
+            [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+        );
+
+        const foreshadowingProcessing = await this.safeMemoryOperation(
             () => this.themeAnalysisService.processForeshadowing(content, chapterNumber),
-            { resolvedForeshadowing: [], generatedCount: 0, totalActive: 0 },
+            { 
+                resolvedForeshadowing: [], 
+                generatedCount: 0, 
+                totalActive: foreshadowingSearchResult.totalResults 
+            },
             'processForeshadowing'
         );
 
@@ -680,16 +805,13 @@ export class AnalysisCoordinator {
 
         return {
             themeResonance,
-            foreshadowingProcessing
+            foreshadowingProcessing,
+            memorySearchResults: foreshadowingSearchResult
         };
     }
 
     /**
      * 文体分析の実行
-     * 
-     * @private
-     * @param content 章の内容
-     * @returns 文体分析結果
      */
     private async executeStyleAnalysis(content: string): Promise<any> {
         await this.styleAnalysisService.initialize();
@@ -706,51 +828,44 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 🔧 修正：物語構造分析の実行
-     * 
-     * @private
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 物語構造分析結果
+     * 🎯 記憶システム統合物語構造分析
      */
-    private async executeNarrativeAnalysis(
+    private async executeNarrativeAnalysisWithMemoryIntegration(
         chapterNumber: number,
         context: GenerationContext
     ): Promise<any> {
-        // 🔧 修正: 安全なシーン構造分析
-        const sceneStructure = await this.safeMemoryManagerOperation(
+        // 🎯 統一検索による過去の章構造情報取得
+        const structureSearchResult = await this.performUnifiedMemorySearch(
+            `scene structure narrative progression chapter ${Math.max(1, chapterNumber - 5)} to ${chapterNumber}`,
+            [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+        );
+
+        const sceneStructure = await this.safeMemoryOperation(
             () => this.narrativeAnalysisService.analyzeSceneStructure(10),
-            this.createFallbackSceneStructure(),
+            this.createFallbackNarrativeAnalysisResult('sceneStructure'),
             'analyzeSceneStructure'
         );
 
-        // 🔧 修正: 安全なシーン推奨生成
-        const sceneRecommendations = await this.safeMemoryManagerOperation(
+        const sceneRecommendations = await this.safeMemoryOperation(
             () => this.narrativeAnalysisService.generateSceneRecommendations(chapterNumber),
-            [],
+            this.createFallbackNarrativeAnalysisResult('sceneRecommendations'),
             'generateSceneRecommendations'
         );
 
-        // 文学的インスピレーション（MemoryManager非依存）
         const literaryInspirations = await this.narrativeAnalysisService.generateLiteraryInspirations(context, chapterNumber);
 
         return {
-            sceneStructure,
-            sceneRecommendations,
-            literaryInspirations
+            sceneStructure: sceneStructure.success ? sceneStructure.results : this.createFallbackSceneStructure(),
+            sceneRecommendations: sceneRecommendations.success ? sceneRecommendations.results : [],
+            literaryInspirations,
+            memorySearchResults: structureSearchResult
         };
     }
 
     /**
-     * 読者体験分析の実行
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 読者体験分析結果
+     * 🎯 記憶システム統合読者体験分析
      */
-    private async executeReaderExperienceAnalysis(
+    private async executeReaderExperienceAnalysisWithMemoryIntegration(
         content: string,
         chapterNumber: number,
         context: GenerationContext
@@ -760,100 +875,110 @@ export class AnalysisCoordinator {
             chapterNumber,
             title: `第${chapterNumber}章`,
             content,
+            previousChapterSummary: '',
             scenes: [],
             createdAt: new Date(),
             updatedAt: new Date(),
             metadata: {
+                createdAt: new Date().toISOString(),
+                lastModified: new Date().toISOString(),
+                status: 'analyzed',
                 wordCount: content.length,
                 estimatedReadingTime: Math.ceil(content.length / 1000)
             }
         };
 
-        // 🔧 修正: 前章データの安全な取得
-        const previousChapters = await this.safeMemoryManagerOperation(
+        // 🎯 統一検索による前章情報取得
+        const previousChapterSearchResult = await this.performUnifiedMemorySearch(
+            `chapters ${Math.max(1, chapterNumber - 3)} to ${chapterNumber - 1}`,
+            [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+        );
+
+        const previousChapters = await this.safeMemoryOperation(
             async () => {
-                // 前の3章を取得（読者体験分析に必要な範囲）
                 const chapters: Chapter[] = [];
 
-                for (let i = Math.max(1, chapterNumber - 3); i < chapterNumber; i++) {
-                    try {
-                        // MemoryManagerから章データを取得
-                        const prevChapterMemory = await this.memoryManager.getRecentChapterMemories(i, 1);
-
-                        if (prevChapterMemory.length > 0) {
-                            const memory = prevChapterMemory[0];
-
-                            // ChapterMemoryからChapter形式に変換
-                            const prevChapter: Chapter = {
-                                id: `chapter-${i}`,
-                                chapterNumber: i,
-                                title: `第${i}章`,
-                                content: memory.summary, // 要約を使用（全文は重い）
-                                scenes: [],
-                                createdAt: new Date(memory.timestamp),
-                                updatedAt: new Date(memory.timestamp),
-                                metadata: {
-                                    wordCount: memory.summary.length,
-                                    estimatedReadingTime: Math.ceil(memory.summary.length / 1000),
-                                    emotionalImpact: memory.emotional_impact,
-                                    plotSignificance: memory.plot_significance
-                                }
-                            };
-
-                            chapters.push(prevChapter);
+                // 検索結果から前章データを構築
+                if (previousChapterSearchResult.success) {
+                    for (const result of previousChapterSearchResult.results) {
+                        try {
+                            if (result.data && result.data.chapterNumber && result.data.chapterNumber < chapterNumber) {
+                                const prevChapter: Chapter = {
+                                    id: `chapter-${result.data.chapterNumber}`,
+                                    chapterNumber: result.data.chapterNumber,
+                                    title: result.data.title || `第${result.data.chapterNumber}章`,
+                                    content: result.data.content || result.data.summary || '',
+                                    previousChapterSummary: '',
+                                    scenes: result.data.scenes || [],
+                                    createdAt: new Date(result.data.timestamp || Date.now()),
+                                    updatedAt: new Date(result.data.timestamp || Date.now()),
+                                    metadata: {
+                                        createdAt: new Date(result.data.timestamp || Date.now()).toISOString(),
+                                        lastModified: new Date(result.data.timestamp || Date.now()).toISOString(),
+                                        status: 'processed',
+                                        wordCount: result.data.wordCount || 0,
+                                        estimatedReadingTime: result.data.estimatedReadingTime || 1,
+                                        emotionalImpact: result.data.emotionalImpact,
+                                        plotSignificance: result.data.plotSignificance
+                                    }
+                                };
+                                chapters.push(prevChapter);
+                            }
+                        } catch (error) {
+                            logger.warn(`Failed to process previous chapter data from search result`, { error });
                         }
-                    } catch (error) {
-                        logger.warn(`Failed to get chapter ${i} data for reader experience analysis`, {
-                            error: error instanceof Error ? error.message : String(error)
-                        });
-                        // エラーが発生した章はスキップして続行
                     }
                 }
 
+                // 章番号でソート
+                chapters.sort((a, b) => a.chapterNumber - b.chapterNumber);
+
                 return chapters;
             },
-            [], // フォールバック: 空配列
-            'getPreviousChapters'
+            [],
+            'getPreviousChaptersFromMemorySystem'
         );
 
-        logger.info(`Reader experience analysis: using ${previousChapters.length} previous chapters for context`, {
+        logger.info(`記憶システム統合読者体験分析: ${previousChapters.length}つの前章データを使用`, {
             chapterNumber,
-            previousChapterCount: previousChapters.length
+            previousChapterCount: previousChapters.length,
+            memorySearchResults: previousChapterSearchResult.totalResults
         });
 
         return this.readerExperienceAnalyzer.analyzeReaderExperience(chapter, previousChapters);
     }
 
     /**
-     * 分析結果の統合
-     * 
-     * @private
-     * @param analysisResults 個別分析結果
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 統合分析結果
+     * 🎯 記憶コンテキスト統合による分析結果統合
      */
-    private async integrateAnalysisResults(
+    private async integrateAnalysisResultsWithMemoryContext(
         analysisResults: any,
         content: string,
         chapterNumber: number,
         context: GenerationContext
     ): Promise<IntegratedAnalysisResult> {
         try {
-            // 統合改善提案の生成
-            const integratedSuggestions = await this.generateIntegratedSuggestions(
+            // 🎯 統合記憶コンテキストの取得
+            const memoryContext = await this.getUnifiedMemoryContext(chapterNumber);
+
+            // 統合改善提案の生成（記憶コンテキスト考慮）
+            const integratedSuggestions = await this.generateIntegratedSuggestionsWithMemoryContext(
                 analysisResults,
                 chapterNumber,
-                context
+                context,
+                memoryContext
             );
 
-            // 分析メタデータの構築
+            // 記憶システム使用統計の計算
+            const unifiedSearchResults = this.calculateUnifiedSearchResults(analysisResults);
+
             const analysisMetadata = {
                 analysisTimestamp: new Date().toISOString(),
                 servicesUsed: this.getUsedServices(analysisResults),
                 processingTime: 0, // 後で設定
-                cacheHitRate: this.calculateCacheHitRate()
+                cacheHitRate: this.calculateCacheHitRate(),
+                memorySystemUsed: this.options.useMemorySystemIntegration,
+                unifiedSearchResults
             };
 
             return {
@@ -876,7 +1001,7 @@ export class AnalysisCoordinator {
                 analysisMetadata
             };
         } catch (error) {
-            logger.error('Failed to integrate analysis results', {
+            logger.error('記憶コンテキスト統合による分析結果統合に失敗', {
                 error: error instanceof Error ? error.message : String(error)
             });
             throw error;
@@ -884,23 +1009,18 @@ export class AnalysisCoordinator {
     }
 
     /**
-     * 統合改善提案の生成
-     * 
-     * @private
-     * @param analysisResults 分析結果
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns 統合改善提案
+     * 🎯 記憶コンテキスト考慮の統合改善提案生成
      */
-    private async generateIntegratedSuggestions(
+    private async generateIntegratedSuggestionsWithMemoryContext(
         analysisResults: any,
         chapterNumber: number,
-        context: GenerationContext
+        context: GenerationContext,
+        memoryContext: UnifiedMemoryContext | null
     ): Promise<string[]> {
         try {
             const allSuggestions: string[] = [];
 
-            // 各分析からの改善提案を収集
+            // 従来の改善提案収集
             if (analysisResults.chapterAnalysis && this.chapterAnalysisService.generateImprovementSuggestions) {
                 const chapterSuggestions = await this.chapterAnalysisService
                     .generateImprovementSuggestions(analysisResults.chapterAnalysis, chapterNumber, context);
@@ -919,13 +1039,17 @@ export class AnalysisCoordinator {
                 allSuggestions.push(...readerSuggestions);
             }
 
+            // 🎯 記憶コンテキストに基づく追加提案
+            if (memoryContext && this.options.useMemorySystemIntegration) {
+                const memorySuggestions = this.generateMemoryContextSuggestions(memoryContext, chapterNumber);
+                allSuggestions.push(...memorySuggestions);
+            }
+
             // 重複除去と優先順位付け
             const uniqueSuggestions = [...new Set(allSuggestions)];
-
-            // 最大10個に制限し、重要度でソート
             return this.prioritizeSuggestions(uniqueSuggestions).slice(0, 10);
         } catch (error) {
-            logger.warn('Failed to generate integrated suggestions', {
+            logger.warn('記憶コンテキスト考慮の統合改善提案生成に失敗', {
                 error: error instanceof Error ? error.message : String(error)
             });
             return [
@@ -937,15 +1061,83 @@ export class AnalysisCoordinator {
     }
 
     /**
+     * 🎯 記憶コンテキストに基づく提案生成
+     */
+    private generateMemoryContextSuggestions(
+        memoryContext: UnifiedMemoryContext,
+        chapterNumber: number
+    ): string[] {
+        const suggestions: string[] = [];
+
+        try {
+            // 短期記憶から継続性の提案
+            if (memoryContext.shortTerm.keyPhrases.length > 0) {
+                suggestions.push(`前章のキーフレーズ「${memoryContext.shortTerm.keyPhrases.slice(0, 2).join('、')}」との継続性を考慮してください`);
+            }
+
+            // 中期記憶から物語進行の提案
+            if (memoryContext.midTerm.analysisResults.length > 0) {
+                suggestions.push('過去の分析結果を参考に、物語の一貫した進行を心がけてください');
+            }
+
+            // 長期記憶から設定整合性の提案
+            if (Object.keys(memoryContext.longTerm.consolidatedSettings).length > 0) {
+                suggestions.push('確立された世界設定や設定との整合性を確認してください');
+            }
+
+            // 統合データから重複や矛盾の提案
+            if (memoryContext.integration.resolvedDuplicates.length > 0) {
+                suggestions.push('以前に解決された重複や矛盾を繰り返さないよう注意してください');
+            }
+        } catch (error) {
+            logger.warn('記憶コンテキスト提案生成でエラー', { error });
+        }
+
+        return suggestions;
+    }
+
+    /**
+     * 統一検索結果数の計算
+     */
+    private calculateUnifiedSearchResults(analysisResults: any): number {
+        let totalResults = 0;
+
+        if (analysisResults.themeAnalysis?.memorySearchResults?.totalResults) {
+            totalResults += analysisResults.themeAnalysis.memorySearchResults.totalResults;
+        }
+
+        if (analysisResults.narrativeAnalysis?.memorySearchResults?.totalResults) {
+            totalResults += analysisResults.narrativeAnalysis.memorySearchResults.totalResults;
+        }
+
+        return totalResults;
+    }
+
+    /**
+     * 安全な分析実行
+     */
+    private async safelyExecuteAnalysis<T>(
+        serviceName: string,
+        analysisFunction: () => Promise<T>
+    ): Promise<T | null> {
+        try {
+            logger.debug(`${serviceName} 分析開始`);
+            const result = await analysisFunction();
+            logger.debug(`${serviceName} 分析完了`);
+            return result;
+        } catch (error) {
+            logger.warn(`${serviceName} 分析失敗、フォールバックを使用`, {
+                error: error instanceof Error ? error.message : String(error)
+            });
+            return null;
+        }
+    }
+
+    /**
      * 改善提案の優先順位付け
-     * 
-     * @private
-     * @param suggestions 改善提案
-     * @returns 優先順位付けされた改善提案
      */
     private prioritizeSuggestions(suggestions: string[]): string[] {
-        // 重要キーワードによる優先順位付け
-        const priorityKeywords = ['キャラクター', 'テーマ', '読者', '感情', '一貫性'];
+        const priorityKeywords = ['キャラクター', 'テーマ', '読者', '感情', '一貫性', '継続性', '整合性'];
 
         return suggestions.sort((a, b) => {
             const aScore = priorityKeywords.reduce((score, keyword) =>
@@ -959,10 +1151,6 @@ export class AnalysisCoordinator {
 
     /**
      * PromiseSettledResultから結果を抽出
-     * 
-     * @private
-     * @param result PromiseSettledResult
-     * @returns 抽出された値またはnull
      */
     private extractSettledResult<T>(result: PromiseSettledResult<T>): T | null {
         return result.status === 'fulfilled' ? result.value : null;
@@ -970,10 +1158,6 @@ export class AnalysisCoordinator {
 
     /**
      * 使用されたサービスの取得
-     * 
-     * @private
-     * @param analysisResults 分析結果
-     * @returns 使用されたサービスの配列
      */
     private getUsedServices(analysisResults: any): string[] {
         const services: string[] = [];
@@ -988,9 +1172,6 @@ export class AnalysisCoordinator {
 
     /**
      * キャッシュヒット率の計算
-     * 
-     * @private
-     * @returns キャッシュヒット率
      */
     private calculateCacheHitRate(): number {
         const totalRequests = this.performanceMetrics.get('totalRequests') || 0;
@@ -1000,11 +1181,6 @@ export class AnalysisCoordinator {
 
     /**
      * パフォーマンスメトリクスの記録
-     * 
-     * @private
-     * @param chapterNumber 章番号
-     * @param processingTime 処理時間
-     * @param result 分析結果
      */
     private recordPerformanceMetrics(
         chapterNumber: number,
@@ -1020,12 +1196,6 @@ export class AnalysisCoordinator {
 
     /**
      * キャッシュキーの生成
-     * 
-     * @private
-     * @param content 章の内容
-     * @param chapterNumber 章番号
-     * @param context 生成コンテキスト
-     * @returns キャッシュキー
      */
     private generateCacheKey(
         content: string,
@@ -1039,10 +1209,6 @@ export class AnalysisCoordinator {
 
     /**
      * 文字列のハッシュ化
-     * 
-     * @private
-     * @param str 文字列
-     * @returns ハッシュ値
      */
     private hashString(str: string): string {
         let hash = 0;
@@ -1067,7 +1233,18 @@ export class AnalysisCoordinator {
             this.chapterAnalysisService.clearCache();
         }
 
-        logger.info('All analysis caches cleared');
+        logger.info('全分析キャッシュをクリア');
+    }
+
+    /**
+     * 🎯 新記憶階層システム統計取得
+     */
+    getMemorySystemStatistics() {
+        return {
+            ...this.memorySystemStats,
+            integrationEnabled: this.options.useMemorySystemIntegration,
+            searchDepth: this.options.memorySearchDepth
+        };
     }
 
     // =========================================================================
@@ -1096,7 +1273,9 @@ export class AnalysisCoordinator {
                 analysisTimestamp: new Date().toISOString(),
                 servicesUsed: ['Fallback'],
                 processingTime,
-                cacheHitRate: 0
+                cacheHitRate: 0,
+                memorySystemUsed: false,
+                unifiedSearchResults: 0
             }
         };
     }
@@ -1227,6 +1406,26 @@ export class AnalysisCoordinator {
             overall: 0.7,
             coherence: 0.7,
             characterConsistency: 0.7
+        };
+    }
+
+    /**
+     * NarrativeAnalysisResult形式のフォールバック作成
+     */
+    private createFallbackNarrativeAnalysisResult(analysisType: string): any {
+        return {
+            success: true,
+            processingTime: 0,
+            analysisType,
+            results: analysisType === 'sceneStructure' 
+                ? this.createFallbackSceneStructure()
+                : analysisType === 'sceneRecommendations'
+                ? []
+                : {},
+            metadata: {
+                timestamp: new Date().toISOString(),
+                fallback: true
+            }
         };
     }
 }

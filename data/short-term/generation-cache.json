@@ -1,0 +1,3143 @@
+{
+  "promptGenerationCache": {},
+  "templateProcessingCache": {},
+  "sectionBuildingCache": {},
+  "contextGenerationCache": {},
+  "integrationProcessingCache": {},
+  "preGenerationResultsCache": {
+    "pre-gen-0-1748727105827-u8btj": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748727105827-u8btj",
+      "timestamp": "2025-05-31T21:31:45.827Z"
+    },
+    "pre-gen-0-1748727107029-nt1re": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748727107029-nt1re",
+      "timestamp": "2025-05-31T21:31:47.030Z"
+    },
+    "pre-gen-0-1748727107540-zar7m": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748727107540-zar7m",
+      "timestamp": "2025-05-31T21:31:47.540Z"
+    },
+    "pre-gen-0-1748727107554-cb5g1": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748727107554-cb5g1",
+      "timestamp": "2025-05-31T21:31:47.554Z"
+    },
+    "pre-gen-0-1748727108026-47zem": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748727108026-47zem",
+      "timestamp": "2025-05-31T21:31:48.026Z"
+    },
+    "pre-gen-1-1748727109336-gurtq": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-1-1748727109336-gurtq",
+      "timestamp": "2025-05-31T21:31:49.336Z"
+    },
+    "pre-gen-1-1748727113007-cmupw": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 1,
+      "resultId": "pre-gen-1-1748727113007-cmupw",
+      "timestamp": "2025-05-31T21:31:53.007Z"
+    },
+    "pre-gen-1-1748727125378-5re7f": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 1,
+      "resultId": "pre-gen-1-1748727125378-5re7f",
+      "timestamp": "2025-05-31T21:32:05.378Z"
+    },
+    "pre-gen-0-1748734783238-fkhiy": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748734783238-fkhiy",
+      "timestamp": "2025-05-31T23:39:43.238Z"
+    },
+    "pre-gen-0-1748734784220-q7pub": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748734784220-q7pub",
+      "timestamp": "2025-05-31T23:39:44.220Z"
+    },
+    "pre-gen-0-1748734784512-de220": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748734784512-de220",
+      "timestamp": "2025-05-31T23:39:44.512Z"
+    },
+    "pre-gen-0-1748734784521-mss9r": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 1,
+      "resultId": "pre-gen-0-1748734784521-mss9r",
+      "timestamp": "2025-05-31T23:39:44.521Z"
+    },
+    "pre-gen-0-1748734784882-zegge": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-0-1748734784882-zegge",
+      "timestamp": "2025-05-31T23:39:44.882Z"
+    },
+    "pre-gen-1-1748734785946-7d9qd": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-1-1748734785946-7d9qd",
+      "timestamp": "2025-05-31T23:39:45.946Z"
+    },
+    "pre-gen-1-1748734789372-6bjk7": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 1,
+      "resultId": "pre-gen-1-1748734789372-6bjk7",
+      "timestamp": "2025-05-31T23:39:49.372Z"
+    },
+    "pre-gen-0-1748736996377-8dg84": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748736996377-8dg84",
+      "timestamp": "2025-06-01T00:16:36.377Z"
+    },
+    "pre-gen-0-1748736998299-fypw9": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748736998299-fypw9",
+      "timestamp": "2025-06-01T00:16:38.299Z"
+    },
+    "pre-gen-0-1748736998693-fji1o": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748736998693-fji1o",
+      "timestamp": "2025-06-01T00:16:38.693Z"
+    },
+    "pre-gen-0-1748736998701-fn1tm": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748736998701-fn1tm",
+      "timestamp": "2025-06-01T00:16:38.701Z"
+    },
+    "pre-gen-0-1748736999303-7x4ai": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748736999303-7x4ai",
+      "timestamp": "2025-06-01T00:16:39.303Z"
+    },
+    "pre-gen-1-1748737000712-nvmce": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-1-1748737000712-nvmce",
+      "timestamp": "2025-06-01T00:16:40.712Z"
+    },
+    "pre-gen-0-1748737576192-bo422": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748737576192-bo422",
+      "timestamp": "2025-06-01T00:26:16.195Z"
+    },
+    "pre-gen-0-1748737577182-oomk3": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748737577182-oomk3",
+      "timestamp": "2025-06-01T00:26:17.182Z"
+    },
+    "pre-gen-0-1748737577363-imps6": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748737577363-imps6",
+      "timestamp": "2025-06-01T00:26:17.363Z"
+    },
+    "pre-gen-0-1748737577375-itp8h": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748737577375-itp8h",
+      "timestamp": "2025-06-01T00:26:17.375Z"
+    },
+    "pre-gen-0-1748737577599-kjp6w": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-0-1748737577599-kjp6w",
+      "timestamp": "2025-06-01T00:26:17.599Z"
+    },
+    "pre-gen-1-1748737578539-dvdm1": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-1-1748737578539-dvdm1",
+      "timestamp": "2025-06-01T00:26:18.539Z"
+    },
+    "pre-gen-1-1748737581830-nryz6": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-1-1748737581830-nryz6",
+      "timestamp": "2025-06-01T00:26:21.830Z"
+    },
+    "pre-gen-0-1748739422920-nzhh3": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748739422920-nzhh3",
+      "timestamp": "2025-06-01T00:57:02.922Z"
+    },
+    "pre-gen-0-1748739424646-l8dhb": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748739424646-l8dhb",
+      "timestamp": "2025-06-01T00:57:04.646Z"
+    },
+    "pre-gen-0-1748739424783-llbs1": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-0-1748739424783-llbs1",
+      "timestamp": "2025-06-01T00:57:04.783Z"
+    },
+    "pre-gen-0-1748739424795-5vo6q": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748739424795-5vo6q",
+      "timestamp": "2025-06-01T00:57:04.795Z"
+    },
+    "pre-gen-0-1748739425225-vtdui": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748739425225-vtdui",
+      "timestamp": "2025-06-01T00:57:05.225Z"
+    },
+    "pre-gen-1-1748739426328-z3d6j": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-1-1748739426328-z3d6j",
+      "timestamp": "2025-06-01T00:57:06.328Z"
+    },
+    "pre-gen-1-1748739429620-xxitb": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-1-1748739429620-xxitb",
+      "timestamp": "2025-06-01T00:57:09.620Z"
+    },
+    "pre-gen-0-1748739558187-kptwn": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748739558187-kptwn",
+      "timestamp": "2025-06-01T00:59:18.187Z"
+    },
+    "pre-gen-0-1748739559646-aj1jz": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748739559646-aj1jz",
+      "timestamp": "2025-06-01T00:59:19.646Z"
+    },
+    "pre-gen-0-1748739559812-ij90n": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748739559812-ij90n",
+      "timestamp": "2025-06-01T00:59:19.812Z"
+    },
+    "pre-gen-0-1748739559823-bfnq8": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 1,
+      "resultId": "pre-gen-0-1748739559823-bfnq8",
+      "timestamp": "2025-06-01T00:59:19.823Z"
+    },
+    "pre-gen-0-1748739560181-m3e0x": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-0-1748739560181-m3e0x",
+      "timestamp": "2025-06-01T00:59:20.181Z"
+    },
+    "pre-gen-1-1748739561174-qa219": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 13,
+      "resultId": "pre-gen-1-1748739561174-qa219",
+      "timestamp": "2025-06-01T00:59:21.174Z"
+    },
+    "pre-gen-1-1748739564737-06jkj": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-1-1748739564737-06jkj",
+      "timestamp": "2025-06-01T00:59:24.737Z"
+    },
+    "pre-gen-1-1748739573857-a30ip": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-1-1748739573857-a30ip",
+      "timestamp": "2025-06-01T00:59:33.857Z"
+    },
+    "pre-gen-0-1748762036590-6agr6": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748762036590-6agr6",
+      "timestamp": "2025-06-01T07:13:56.590Z"
+    },
+    "pre-gen-1-1748762150628-yjuzv": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 2,
+      "resultId": "pre-gen-1-1748762150628-yjuzv",
+      "timestamp": "2025-06-01T07:15:50.628Z"
+    },
+    "pre-gen-1-1748762256287-zj97o": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-1-1748762256287-zj97o",
+      "timestamp": "2025-06-01T07:17:36.287Z"
+    },
+    "pre-gen-1-1748762359037-97ij5": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-1-1748762359037-97ij5",
+      "timestamp": "2025-06-01T07:19:19.037Z"
+    },
+    "pre-gen-1-1748762516781-eagwi": {
+      "chapterNumber": 1,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-1-1748762516781-eagwi",
+      "timestamp": "2025-06-01T07:21:56.781Z"
+    },
+    "pre-gen-2-1748762732177-bmkwg": {
+      "chapterNumber": 2,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 13,
+      "resultId": "pre-gen-2-1748762732177-bmkwg",
+      "timestamp": "2025-06-01T07:25:32.177Z"
+    },
+    "pre-gen-2-1748762824459-gt0ok": {
+      "chapterNumber": 2,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-2-1748762824459-gt0ok",
+      "timestamp": "2025-06-01T07:27:04.459Z"
+    },
+    "pre-gen-2-1748762931494-uolxv": {
+      "chapterNumber": 2,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-2-1748762931494-uolxv",
+      "timestamp": "2025-06-01T07:28:51.494Z"
+    },
+    "pre-gen-2-1748763075162-crx2h": {
+      "chapterNumber": 2,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-2-1748763075162-crx2h",
+      "timestamp": "2025-06-01T07:31:15.162Z"
+    },
+    "pre-gen-0-1748763197581-78d3s": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 11,
+      "resultId": "pre-gen-0-1748763197581-78d3s",
+      "timestamp": "2025-06-01T07:33:17.581Z"
+    },
+    "pre-gen-3-1748763311448-3n1pv": {
+      "chapterNumber": 3,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-3-1748763311448-3n1pv",
+      "timestamp": "2025-06-01T07:35:11.448Z"
+    },
+    "pre-gen-3-1748763407265-1j8v1": {
+      "chapterNumber": 3,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-3-1748763407265-1j8v1",
+      "timestamp": "2025-06-01T07:36:47.265Z"
+    },
+    "pre-gen-3-1748763512014-wbhv5": {
+      "chapterNumber": 3,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-3-1748763512014-wbhv5",
+      "timestamp": "2025-06-01T07:38:32.014Z"
+    },
+    "pre-gen-0-1748763512399-znsv9": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748763512399-znsv9",
+      "timestamp": "2025-06-01T07:38:32.399Z"
+    },
+    "pre-gen-0-1748763512415-24f9h": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748763512415-24f9h",
+      "timestamp": "2025-06-01T07:38:32.415Z"
+    },
+    "pre-gen-0-1748763513094-4my6q": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748763513094-4my6q",
+      "timestamp": "2025-06-01T07:38:33.095Z"
+    },
+    "pre-gen-4-1748763768024-6se2l": {
+      "chapterNumber": 4,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 12,
+      "resultId": "pre-gen-4-1748763768024-6se2l",
+      "timestamp": "2025-06-01T07:42:48.024Z"
+    },
+    "pre-gen-0-1748763768403-osnd3": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748763768403-osnd3",
+      "timestamp": "2025-06-01T07:42:48.403Z"
+    },
+    "pre-gen-0-1748763768419-74wk5": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748763768419-74wk5",
+      "timestamp": "2025-06-01T07:42:48.419Z"
+    },
+    "pre-gen-0-1748763768936-iht8l": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748763768936-iht8l",
+      "timestamp": "2025-06-01T07:42:48.936Z"
+    },
+    "pre-gen-5-1748764011380-6s6a3": {
+      "chapterNumber": 5,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 11,
+      "resultId": "pre-gen-5-1748764011380-6s6a3",
+      "timestamp": "2025-06-01T07:46:51.380Z"
+    },
+    "pre-gen-0-1748764011795-fz3a0": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748764011795-fz3a0",
+      "timestamp": "2025-06-01T07:46:51.795Z"
+    },
+    "pre-gen-0-1748764011810-dsvte": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748764011810-dsvte",
+      "timestamp": "2025-06-01T07:46:51.810Z"
+    },
+    "pre-gen-0-1748764012504-02v04": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748764012504-02v04",
+      "timestamp": "2025-06-01T07:46:52.504Z"
+    },
+    "pre-gen-6-1748764247492-g8pts": {
+      "chapterNumber": 6,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-6-1748764247492-g8pts",
+      "timestamp": "2025-06-01T07:50:47.492Z"
+    },
+    "pre-gen-0-1748764247840-ke496": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748764247840-ke496",
+      "timestamp": "2025-06-01T07:50:47.840Z"
+    },
+    "pre-gen-0-1748764247857-3tsu3": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748764247857-3tsu3",
+      "timestamp": "2025-06-01T07:50:47.857Z"
+    },
+    "pre-gen-0-1748764248463-58wkh": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-0-1748764248463-58wkh",
+      "timestamp": "2025-06-01T07:50:48.463Z"
+    },
+    "pre-gen-0-1748764370189-nwdb6": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748764370189-nwdb6",
+      "timestamp": "2025-06-01T07:52:50.189Z"
+    },
+    "pre-gen-7-1748764566561-zrp1j": {
+      "chapterNumber": 7,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-7-1748764566561-zrp1j",
+      "timestamp": "2025-06-01T07:56:06.561Z"
+    },
+    "pre-gen-7-1748764566768-igcci": {
+      "chapterNumber": 7,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-7-1748764566768-igcci",
+      "timestamp": "2025-06-01T07:56:06.768Z"
+    },
+    "pre-gen-0-1748764567007-sck4f": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 11,
+      "resultId": "pre-gen-0-1748764567007-sck4f",
+      "timestamp": "2025-06-01T07:56:07.007Z"
+    },
+    "pre-gen-0-1748764567024-oyvst": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-0-1748764567024-oyvst",
+      "timestamp": "2025-06-01T07:56:07.024Z"
+    },
+    "pre-gen-0-1748764567525-5jvax": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748764567525-5jvax",
+      "timestamp": "2025-06-01T07:56:07.525Z"
+    },
+    "pre-gen-0-1748764567559-q33ol": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 3,
+      "resultId": "pre-gen-0-1748764567559-q33ol",
+      "timestamp": "2025-06-01T07:56:07.559Z"
+    },
+    "pre-gen-0-1748764567839-lncnf": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 10,
+      "resultId": "pre-gen-0-1748764567839-lncnf",
+      "timestamp": "2025-06-01T07:56:07.839Z"
+    },
+    "pre-gen-0-1748764567975-2ng8y": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-0-1748764567975-2ng8y",
+      "timestamp": "2025-06-01T07:56:07.975Z"
+    },
+    "pre-gen-0-1748764689200-90abd": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748764689200-90abd",
+      "timestamp": "2025-06-01T07:58:09.200Z"
+    },
+    "pre-gen-8-1748764893876-d5iki": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-8-1748764893876-d5iki",
+      "timestamp": "2025-06-01T08:01:33.877Z"
+    },
+    "pre-gen-8-1748764894037-cp3hc": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-8-1748764894037-cp3hc",
+      "timestamp": "2025-06-01T08:01:34.037Z"
+    },
+    "pre-gen-8-1748764997496-ngpo7": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-8-1748764997496-ngpo7",
+      "timestamp": "2025-06-01T08:03:17.496Z"
+    },
+    "pre-gen-8-1748764997701-1fopx": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 4,
+      "resultId": "pre-gen-8-1748764997701-1fopx",
+      "timestamp": "2025-06-01T08:03:17.701Z"
+    },
+    "pre-gen-8-1748765115597-wqu63": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-8-1748765115597-wqu63",
+      "timestamp": "2025-06-01T08:05:15.597Z"
+    },
+    "pre-gen-8-1748765115744-i01j9": {
+      "chapterNumber": 8,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-8-1748765115744-i01j9",
+      "timestamp": "2025-06-01T08:05:15.744Z"
+    },
+    "pre-gen-0-1748765115929-jbmtn": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765115929-jbmtn",
+      "timestamp": "2025-06-01T08:05:15.929Z"
+    },
+    "pre-gen-0-1748765115946-bgcmq": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765115946-bgcmq",
+      "timestamp": "2025-06-01T08:05:15.946Z"
+    },
+    "pre-gen-0-1748765116408-crten": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765116408-crten",
+      "timestamp": "2025-06-01T08:05:16.408Z"
+    },
+    "pre-gen-0-1748765116431-0k5ac": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748765116431-0k5ac",
+      "timestamp": "2025-06-01T08:05:16.431Z"
+    },
+    "pre-gen-0-1748765116733-xzv9l": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748765116733-xzv9l",
+      "timestamp": "2025-06-01T08:05:16.733Z"
+    },
+    "pre-gen-0-1748765116881-yoxcg": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748765116881-yoxcg",
+      "timestamp": "2025-06-01T08:05:16.881Z"
+    },
+    "pre-gen-9-1748765381243-t5s7e": {
+      "chapterNumber": 9,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-9-1748765381243-t5s7e",
+      "timestamp": "2025-06-01T08:09:41.243Z"
+    },
+    "pre-gen-9-1748765381405-s1rqu": {
+      "chapterNumber": 9,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-9-1748765381405-s1rqu",
+      "timestamp": "2025-06-01T08:09:41.405Z"
+    },
+    "pre-gen-0-1748765381625-vuido": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748765381625-vuido",
+      "timestamp": "2025-06-01T08:09:41.625Z"
+    },
+    "pre-gen-0-1748765381643-f1aho": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748765381643-f1aho",
+      "timestamp": "2025-06-01T08:09:41.643Z"
+    },
+    "pre-gen-0-1748765382194-7lvz7": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765382194-7lvz7",
+      "timestamp": "2025-06-01T08:09:42.194Z"
+    },
+    "pre-gen-0-1748765382242-xc0jw": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-0-1748765382242-xc0jw",
+      "timestamp": "2025-06-01T08:09:42.242Z"
+    },
+    "pre-gen-0-1748765382642-2wog0": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-0-1748765382642-2wog0",
+      "timestamp": "2025-06-01T08:09:42.642Z"
+    },
+    "pre-gen-0-1748765382828-jl787": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 18,
+      "resultId": "pre-gen-0-1748765382828-jl787",
+      "timestamp": "2025-06-01T08:09:42.828Z"
+    },
+    "pre-gen-10-1748765624332-kc6bb": {
+      "chapterNumber": 10,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-10-1748765624332-kc6bb",
+      "timestamp": "2025-06-01T08:13:44.332Z"
+    },
+    "pre-gen-10-1748765624618-gbw42": {
+      "chapterNumber": 10,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-10-1748765624618-gbw42",
+      "timestamp": "2025-06-01T08:13:44.618Z"
+    },
+    "pre-gen-0-1748765624869-wrlc8": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748765624869-wrlc8",
+      "timestamp": "2025-06-01T08:13:44.869Z"
+    },
+    "pre-gen-0-1748765624888-pozhx": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748765624888-pozhx",
+      "timestamp": "2025-06-01T08:13:44.888Z"
+    },
+    "pre-gen-0-1748765625362-01vf1": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765625362-01vf1",
+      "timestamp": "2025-06-01T08:13:45.362Z"
+    },
+    "pre-gen-0-1748765625399-um4iq": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765625399-um4iq",
+      "timestamp": "2025-06-01T08:13:45.399Z"
+    },
+    "pre-gen-0-1748765625718-yzfrc": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 5,
+      "resultId": "pre-gen-0-1748765625718-yzfrc",
+      "timestamp": "2025-06-01T08:13:45.718Z"
+    },
+    "pre-gen-0-1748765625873-2u0xh": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765625873-2u0xh",
+      "timestamp": "2025-06-01T08:13:45.873Z"
+    },
+    "pre-gen-11-1748765862712-ad835": {
+      "chapterNumber": 11,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-11-1748765862712-ad835",
+      "timestamp": "2025-06-01T08:17:42.712Z"
+    },
+    "pre-gen-11-1748765862879-i4t2b": {
+      "chapterNumber": 11,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-11-1748765862879-i4t2b",
+      "timestamp": "2025-06-01T08:17:42.879Z"
+    },
+    "pre-gen-0-1748765863092-etqkp": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748765863092-etqkp",
+      "timestamp": "2025-06-01T08:17:43.092Z"
+    },
+    "pre-gen-0-1748765863109-aw1er": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-0-1748765863109-aw1er",
+      "timestamp": "2025-06-01T08:17:43.109Z"
+    },
+    "pre-gen-0-1748765863575-hk5it": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748765863575-hk5it",
+      "timestamp": "2025-06-01T08:17:43.575Z"
+    },
+    "pre-gen-0-1748765863609-0yox2": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765863609-0yox2",
+      "timestamp": "2025-06-01T08:17:43.609Z"
+    },
+    "pre-gen-0-1748765863948-g4hop": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748765863948-g4hop",
+      "timestamp": "2025-06-01T08:17:43.948Z"
+    },
+    "pre-gen-0-1748765864105-c00qu": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748765864105-c00qu",
+      "timestamp": "2025-06-01T08:17:44.105Z"
+    },
+    "pre-gen-12-1748766122003-x6fzn": {
+      "chapterNumber": 12,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-12-1748766122003-x6fzn",
+      "timestamp": "2025-06-01T08:22:02.003Z"
+    },
+    "pre-gen-12-1748766122172-rwyzc": {
+      "chapterNumber": 12,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 10,
+      "resultId": "pre-gen-12-1748766122172-rwyzc",
+      "timestamp": "2025-06-01T08:22:02.172Z"
+    },
+    "pre-gen-0-1748766122393-czut5": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 9,
+      "resultId": "pre-gen-0-1748766122393-czut5",
+      "timestamp": "2025-06-01T08:22:02.393Z"
+    },
+    "pre-gen-0-1748766122410-fhfut": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748766122410-fhfut",
+      "timestamp": "2025-06-01T08:22:02.410Z"
+    },
+    "pre-gen-0-1748766122926-kjcb8": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748766122926-kjcb8",
+      "timestamp": "2025-06-01T08:22:02.926Z"
+    },
+    "pre-gen-0-1748766122956-mots4": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 6,
+      "resultId": "pre-gen-0-1748766122956-mots4",
+      "timestamp": "2025-06-01T08:22:02.956Z"
+    },
+    "pre-gen-0-1748766123277-v8g6y": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 8,
+      "resultId": "pre-gen-0-1748766123277-v8g6y",
+      "timestamp": "2025-06-01T08:22:03.277Z"
+    },
+    "pre-gen-0-1748766123435-8fgwl": {
+      "chapterNumber": 0,
+      "processingType": "character_analysis",
+      "analysisResults": {
+        "characterStates": [],
+        "worldContextData": {},
+        "narrativeStateInfo": {},
+        "foreshadowingElements": []
+      },
+      "recommendations": {
+        "focusCharacters": [],
+        "suggestedTones": [],
+        "narrativeDirections": [],
+        "warningFlags": []
+      },
+      "qualityMetrics": {
+        "dataCompleteness": 0.8,
+        "contextRelevance": 0.9,
+        "narrativeConsistency": 0.85,
+        "characterCoherence": 0.75
+      },
+      "processingDuration": 7,
+      "resultId": "pre-gen-0-1748766123435-8fgwl",
+      "timestamp": "2025-06-01T08:22:03.435Z"
+    }
+  },
+  "postGenerationResultsCache": {},
+  "cacheStats": {
+    "hits": 125,
+    "misses": 0,
+    "totalRequests": 125,
+    "averageResponseTime": 0,
+    "errorCount": 0
+  },
+  "lastSaved": "2025-06-01T08:22:03.435Z"
+}

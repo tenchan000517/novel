@@ -11,6 +11,7 @@ import { logger } from '@/lib/utils/logger';
 import { storageProvider } from '@/lib/storage';
 import { Foreshadowing, PersistentEventType } from '@/types/memory';
 import { Character } from '@/types/characters';
+import { ConsolidationGuard } from './consolidation-guard';
 
 // ============================================================================
 // 型定義：統合世界知識システム
@@ -329,8 +330,16 @@ export class WorldKnowledge {
      * 初期統合処理（4箇所の重複解決）
      */
     private async performInitialConsolidation(): Promise<void> {
-        logger.info('Starting initial consolidation (4-source duplicate resolution)');
-
+        const guard = ConsolidationGuard.getInstance();
+        const check = guard.canStartConsolidation('world-consolidation');
+        
+        if (!check.allowed) {
+            logger.debug('World consolidation blocked by guard', { reason: check.reason });
+            return;
+        }
+    
+        const consolidationId = guard.startConsolidation('world-consolidation');
+    
         try {
             // 4箇所の世界設定ソースを統合
             await this.consolidateWorldSettingsFromMultipleSources();
@@ -346,9 +355,10 @@ export class WorldKnowledge {
 
             logger.info('Initial consolidation completed successfully');
         } catch (error) {
-            logger.error('Failed to perform initial consolidation', {
-                error: error instanceof Error ? error.message : String(error)
-            });
+            logger.error('Failed to perform initial consolidation', { error });
+            throw error;
+        } finally {
+            guard.endConsolidation(consolidationId, 'world-consolidation');
         }
     }
 

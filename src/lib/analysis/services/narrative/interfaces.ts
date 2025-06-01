@@ -14,7 +14,7 @@ import {
   StateTransition, 
   StagnationDetectionResult, 
   EmotionalCurvePoint 
-} from '@/lib/memory/narrative/types';
+} from '@/lib/memory/long-term/types';
 import { 
   SceneStructureAnalysis, 
   SceneRecommendation, 

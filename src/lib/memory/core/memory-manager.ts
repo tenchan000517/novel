@@ -32,10 +32,13 @@ import { CacheStorage } from '../storage/cache-storage';
 import {
     MemoryLevel,
     MemoryAccessRequest,
-    MemoryAccessResponse,
+    SystemHealth,
     MemoryRequestType,
     SystemDiagnostics,
-    MemorySystemStatus
+    CacheStatisticsData,
+    MemorySystemStatus,
+    SystemOperationResult,
+    UnifiedSearchResult
 } from './types';
 
 /**
@@ -50,11 +53,17 @@ export interface MemoryManagerConfig {
         cleanupIntervalMinutes?: number;
         maxRetentionHours?: number;
     };
+    // 新機能対応の midTermConfig
     midTermConfig: {
         maxAnalysisResults: number;
         enableEvolutionTracking: boolean;
         enableProgressionAnalysis: boolean;
         qualityThreshold: number;
+
+        // 新機能（デフォルト値付き）
+        enableCrossComponentAnalysis: boolean;
+        enableRealTimeQualityMonitoring: boolean;
+        enablePerformanceOptimization: boolean;
     };
     longTermConfig: {
         enableAutoLearning: boolean;
@@ -111,36 +120,6 @@ export interface MemoryManagerConfig {
             level: number;
         };
     };
-}
-
-/**
- * システム操作結果
- */
-export interface SystemOperationResult {
-    success: boolean;
-    operationType: string;
-    processingTime: number;
-    affectedComponents: string[];
-    details: Record<string, any>;
-    warnings: string[];
-    errors: string[];
-}
-
-/**
- * 統合検索結果
- */
-export interface UnifiedSearchResult {
-    success: boolean;
-    totalResults: number;
-    processingTime: number;
-    results: Array<{
-        source: MemoryLevel;
-        type: string;
-        data: any;
-        relevance: number;
-        metadata: Record<string, any>;
-    }>;
-    suggestions: string[];
 }
 
 /**
@@ -211,8 +190,17 @@ export class MemoryManager {
      * @param config システム設定
      */
     constructor(config: MemoryManagerConfig) {
-        this.config = config;
-        logger.info('MemoryManager created with comprehensive configuration');
+        this.config = {
+            ...config,
+            midTermConfig: {
+                ...config.midTermConfig,
+                enableCrossComponentAnalysis: config.midTermConfig.enableCrossComponentAnalysis ?? true,
+                enableRealTimeQualityMonitoring: config.midTermConfig.enableRealTimeQualityMonitoring ?? true,
+                enablePerformanceOptimization: config.midTermConfig.enablePerformanceOptimization ?? true
+            }
+        };
+
+        logger.info('MemoryManager created with infinite loop protection');
     }
 
     /**
@@ -260,17 +248,13 @@ export class MemoryManager {
         }
     }
 
-    /**
-     * 章を処理し、全記憶階層に統合
-     * @param chapter 処理対象の章
-     */
     async processChapter(chapter: Chapter): Promise<SystemOperationResult> {
         const startTime = Date.now();
         const operation = 'processChapter';
 
         try {
             await this.ensureInitialized();
-            logger.info(`Processing chapter ${chapter.chapterNumber} through unified memory system`);
+            logger.info(`Processing chapter ${chapter.chapterNumber} through unified memory system with infinite loop protection`);
 
             this.operationStats.totalOperations++;
 
@@ -313,19 +297,38 @@ export class MemoryManager {
             await this.cacheCoordinator.coordinateCache(cacheKey, chapter, MemoryLevel.SHORT_TERM);
             result.affectedComponents.push('cacheCoordinator');
 
-            // 6. 長期記憶への条件付き処理
+            // 🔧 修正: 6. 長期記憶への条件付き処理（競合回避制御付き・TypeScript安全版）
             if (this.shouldProcessLongTerm(chapter)) {
-                const extractedData = await this.extractLongTermData(chapter);
-                await this.longTermMemory.processChapterCompletion(
-                    chapter.chapterNumber,
-                    chapter,
-                    extractedData
-                );
-                result.affectedComponents.push('longTermMemory');
+                logger.info(`Chapter ${chapter.chapterNumber} requires long-term processing, enabling conflict prevention`);
+                
+                // 🔧 修正: 自動統合を一時停止して競合を防止
+                if (this.longTermMemory && typeof this.longTermMemory.pauseAutoConsolidation === 'function') {
+                    this.longTermMemory.pauseAutoConsolidation();
+                }
+                
+                try {
+                    const extractedData = await this.extractLongTermData(chapter);
+                    await this.longTermMemory.processChapterCompletion(
+                        chapter.chapterNumber,
+                        chapter,
+                        extractedData
+                    );
+                    result.affectedComponents.push('longTermMemory');
+                    result.details.longTermProcessing = {
+                        triggerReason: this.getLongTermTriggerReason(chapter),
+                        conflictPrevention: 'autoConsolidationPaused'
+                    };
+                } finally {
+                    // 🔧 修正: 必ず自動統合を再開
+                    if (this.longTermMemory && typeof this.longTermMemory.resumeAutoConsolidation === 'function') {
+                        this.longTermMemory.resumeAutoConsolidation();
+                        logger.debug('Auto consolidation resumed after chapter processing');
+                    }
+                }
             }
 
             // 7. 品質チェック（有効な場合）
-            if (this.config.enableQualityAssurance) {
+            if (this.config.enableQualityAssurance && this.qualityAssurance) {
                 const qaResult = await this.qualityAssurance.performComprehensiveDiagnostic();
                 if (!qaResult.overallHealth) {
                     result.warnings.push('Quality assurance detected issues');
@@ -333,7 +336,7 @@ export class MemoryManager {
             }
 
             // 8. 自動バックアップ（有効な場合）
-            if (this.config.enableAutoBackup && chapter.chapterNumber % 5 === 0) {
+            if (this.config.enableAutoBackup && this.backupSystem && chapter.chapterNumber % 5 === 0) {
                 try {
                     await this.backupSystem.createIncrementalBackup(
                         undefined,
@@ -357,12 +360,13 @@ export class MemoryManager {
 
             this.updateAverageProcessingTime(result.processingTime);
 
-            logger.info(`Chapter ${chapter.chapterNumber} processing completed`, {
+            logger.info(`Chapter ${chapter.chapterNumber} processing completed with infinite loop protection`, {
                 success: result.success,
                 processingTime: result.processingTime,
                 affectedComponents: result.affectedComponents.length,
                 warnings: result.warnings.length,
-                errors: result.errors.length
+                errors: result.errors.length,
+                longTermProcessed: result.affectedComponents.includes('longTermMemory')
             });
 
             return result;
@@ -370,6 +374,15 @@ export class MemoryManager {
         } catch (error) {
             this.operationStats.failedOperations++;
             const processingTime = Date.now() - startTime;
+
+            // 🔧 修正: エラー時も自動統合を確実に再開
+            try {
+                if (this.longTermMemory && typeof this.longTermMemory.resumeAutoConsolidation === 'function') {
+                    this.longTermMemory.resumeAutoConsolidation();
+                }
+            } catch (resumeError) {
+                logger.error('Failed to resume auto consolidation after error', { resumeError });
+            }
 
             logger.error(`Failed to process chapter ${chapter.chapterNumber}`, {
                 error: error instanceof Error ? error.message : String(error),
@@ -387,6 +400,8 @@ export class MemoryManager {
             };
         }
     }
+
+
 
     /**
      * 統合検索の実行
@@ -498,7 +513,7 @@ export class MemoryManager {
 
         try {
             await this.ensureInitialized();
-            logger.info('Starting comprehensive system optimization...');
+            logger.info('Starting comprehensive system optimization with infinite loop protection...');
 
             this.systemState = 'OPTIMIZING';
 
@@ -512,32 +527,36 @@ export class MemoryManager {
             };
 
             // 1. アクセス最適化
-            const accessOptResult = await this.accessOptimizer.optimizeAccessPatterns();
-            if (accessOptResult.optimized) {
-                result.improvements.push({
-                    component: 'AccessOptimizer',
-                    metric: 'accessPatterns',
-                    beforeValue: 0,
-                    afterValue: accessOptResult.improvements.length,
-                    improvementPercent: 100
-                });
+            if (this.accessOptimizer) {
+                const accessOptResult = await this.accessOptimizer.optimizeAccessPatterns();
+                if (accessOptResult.optimized) {
+                    result.improvements.push({
+                        component: 'AccessOptimizer',
+                        metric: 'accessPatterns',
+                        beforeValue: 0,
+                        afterValue: accessOptResult.improvements.length,
+                        improvementPercent: 100
+                    });
+                }
             }
 
             // 2. キャッシュ最適化
-            const cacheOptResult = await this.cacheStorage.optimize();
-            if (cacheOptResult.success) {
-                result.memorySaved += cacheOptResult.totalMemoryFreed;
-                result.improvements.push({
-                    component: 'CacheStorage',
-                    metric: 'memoryUsage',
-                    beforeValue: 0,
-                    afterValue: cacheOptResult.totalMemoryFreed,
-                    improvementPercent: 50
-                });
+            if (this.cacheStorage) {
+                const cacheOptResult = await this.cacheStorage.optimize();
+                if (cacheOptResult.success) {
+                    result.memorySaved += cacheOptResult.totalMemoryFreed;
+                    result.improvements.push({
+                        component: 'CacheStorage',
+                        metric: 'memoryUsage',
+                        beforeValue: 0,
+                        afterValue: cacheOptResult.totalMemoryFreed,
+                        improvementPercent: 50
+                    });
+                }
             }
 
             // 3. データ統合最適化
-            if (this.config.integrationEnabled) {
+            if (this.config.integrationEnabled && this.dataIntegrationProcessor) {
                 const integrationOptResult = await this.dataIntegrationProcessor.optimizeIntegration();
                 if (integrationOptResult.optimized) {
                     result.improvements.push({
@@ -551,43 +570,63 @@ export class MemoryManager {
             }
 
             // 4. 永続化ストレージ最適化
-            const storageOptResult = await this.persistentStorage.optimizeStorage();
-            if (storageOptResult.success) {
-                result.memorySaved += (storageOptResult.beforeSize - storageOptResult.afterSize);
-                result.improvements.push({
-                    component: 'PersistentStorage',
-                    metric: 'storageSize',
-                    beforeValue: storageOptResult.beforeSize,
-                    afterValue: storageOptResult.afterSize,
-                    improvementPercent: ((storageOptResult.beforeSize - storageOptResult.afterSize) / storageOptResult.beforeSize) * 100
-                });
+            if (this.persistentStorage) {
+                const storageOptResult = await this.persistentStorage.optimizeStorage();
+                if (storageOptResult.success) {
+                    result.memorySaved += (storageOptResult.beforeSize - storageOptResult.afterSize);
+                    result.improvements.push({
+                        component: 'PersistentStorage',
+                        metric: 'storageSize',
+                        beforeValue: storageOptResult.beforeSize,
+                        afterValue: storageOptResult.afterSize,
+                        improvementPercent: ((storageOptResult.beforeSize - storageOptResult.afterSize) / storageOptResult.beforeSize) * 100
+                    });
+                }
             }
 
-            // 5. 長期記憶の統合処理
-            const consolidationResult = await this.longTermMemory.performConsolidation();
-            if (consolidationResult.qualityScore > 0.8) {
-                result.improvements.push({
-                    component: 'LongTermMemory',
-                    metric: 'qualityScore',
-                    beforeValue: 70,
-                    afterValue: consolidationResult.qualityScore * 100,
-                    improvementPercent: ((consolidationResult.qualityScore * 100 - 70) / 70) * 100
-                });
+            // 🔧 修正: 5. 長期記憶の統合処理（TypeScript安全・競合回避制御付き）
+            if (this.longTermMemory) {
+                // TypeScript安全版の状態チェック
+                const isConsolidationInProgress = 
+                    typeof this.longTermMemory.isConsolidationInProgress === 'function' 
+                        ? this.longTermMemory.isConsolidationInProgress() 
+                        : false;
+
+                if (isConsolidationInProgress) {
+                    logger.info('Skipping consolidation optimization: consolidation already in progress');
+                    result.recommendations.push('Long-term memory consolidation was skipped due to ongoing process');
+                } else {
+                    try {
+                        const consolidationResult = await this.longTermMemory.performConsolidation();
+                        if (consolidationResult.qualityScore > 0.8) {
+                            result.improvements.push({
+                                component: 'LongTermMemory',
+                                metric: 'qualityScore',
+                                beforeValue: 70,
+                                afterValue: consolidationResult.qualityScore * 100,
+                                improvementPercent: ((consolidationResult.qualityScore * 100 - 70) / 70) * 100
+                            });
+                        }
+                    } catch (consolidationError) {
+                        logger.warn('Consolidation during optimization failed', { consolidationError });
+                        result.recommendations.push('Long-term memory consolidation encountered issues during optimization');
+                    }
+                }
             }
 
             // 結果の集計
             result.success = result.improvements.length > 0;
-            result.totalTimeSaved = result.improvements.reduce((sum, imp) => 
+            result.totalTimeSaved = result.improvements.reduce((sum, imp) =>
                 sum + (imp.metric === 'accessTime' ? imp.beforeValue - imp.afterValue : 0), 0
             );
 
             // 推奨事項の生成
-            result.recommendations = this.generateOptimizationRecommendations(result);
+            result.recommendations.push(...this.generateOptimizationRecommendations(result));
 
             this.operationStats.lastOptimization = new Date().toISOString();
             this.systemState = 'RUNNING';
 
-            logger.info('System optimization completed', {
+            logger.info('System optimization completed with infinite loop protection', {
                 success: result.success,
                 improvements: result.improvements.length,
                 memorySaved: result.memorySaved,
@@ -624,7 +663,7 @@ export class MemoryManager {
 
             const diagnostics: SystemDiagnostics = {
                 timestamp: new Date().toISOString(),
-                systemHealth: 'HEALTHY' as const,
+                systemHealth: SystemHealth.HEALTHY, // enum値を使用
                 memoryLayers: {
                     shortTerm: await this.getLayerDiagnostics('SHORT_TERM'),
                     midTerm: await this.getLayerDiagnostics('MID_TERM'),
@@ -655,14 +694,14 @@ export class MemoryManager {
             }
 
             // システム健康状態の判定
-            const criticalIssues = diagnostics.issues.filter(issue => 
+            const criticalIssues = diagnostics.issues.filter(issue =>
                 issue.includes('CRITICAL') || issue.includes('ERROR')
             ).length;
 
             if (criticalIssues > 0) {
-                diagnostics.systemHealth = 'CRITICAL';
+                diagnostics.systemHealth = SystemHealth.CRITICAL; // enum値を使用
             } else if (diagnostics.issues.length > 5) {
-                diagnostics.systemHealth = 'DEGRADED';
+                diagnostics.systemHealth = SystemHealth.DEGRADED; // enum値を使用
             }
 
             logger.info('System diagnostics completed', {
@@ -680,7 +719,7 @@ export class MemoryManager {
 
             return {
                 timestamp: new Date().toISOString(),
-                systemHealth: 'CRITICAL',
+                systemHealth: SystemHealth.CRITICAL, // enum値を使用
                 memoryLayers: {
                     shortTerm: { healthy: false, dataIntegrity: false, storageAccessible: false, lastBackup: '', performanceScore: 0, recommendations: [] },
                     midTerm: { healthy: false, dataIntegrity: false, storageAccessible: false, lastBackup: '', performanceScore: 0, recommendations: [] },
@@ -712,6 +751,19 @@ export class MemoryManager {
         try {
             await this.ensureInitialized();
 
+            // CacheCoordinator から統計情報を取得し、適切な形式に変換
+            const cacheStats = this.cacheCoordinator.getStatistics();
+            const cacheStatisticsData: CacheStatisticsData = {
+                hitRatio: cacheStats.hitRate,
+                missRatio: cacheStats.missRate,
+                totalRequests: cacheStats.totalEntries,
+                cacheSize: typeof cacheStats.memoryUsage === 'object'
+                    ? cacheStats.memoryUsage.shortTerm + cacheStats.memoryUsage.midTerm + cacheStats.memoryUsage.longTerm
+                    : cacheStats.memoryUsage || 0,
+                lastOptimization: new Date().toISOString(),
+                evictionCount: cacheStats.evictionCount
+            };
+
             const status: MemorySystemStatus = {
                 initialized: this.initialized,
                 lastUpdateTime: new Date().toISOString(),
@@ -722,12 +774,12 @@ export class MemoryManager {
                 },
                 performanceMetrics: {
                     totalRequests: this.operationStats.totalOperations,
-                    cacheHits: 0, // 実装に応じて取得
-                    duplicatesResolved: 0, // 実装に応じて取得
+                    cacheHits: Math.floor(cacheStats.hitRate * cacheStats.totalEntries),
+                    duplicatesResolved: 0,
                     averageResponseTime: this.operationStats.averageProcessingTime,
                     lastUpdateTime: new Date().toISOString()
                 },
-                cacheStatistics: await this.cacheStorage.getStatistics()
+                cacheStatistics: cacheStatisticsData
             };
 
             return status;
@@ -753,18 +805,16 @@ export class MemoryManager {
                     lastUpdateTime: new Date().toISOString()
                 },
                 cacheStatistics: {
-                    totalEntries: 0,
-                    totalSize: 0,
-                    hitCount: 0,
-                    missCount: 0,
-                    hitRate: 0,
-                    avgAccessTime: 0,
-                    memoryUsage: 0
+                    hitRatio: 0,
+                    missRatio: 1,
+                    totalRequests: 0,
+                    cacheSize: 0,
+                    lastOptimization: new Date().toISOString(),
+                    evictionCount: 0
                 }
             };
         }
     }
-
     /**
      * 設定の更新
      */
@@ -1025,14 +1075,29 @@ export class MemoryManager {
         try {
             // 基本的な動作確認
             const testChapter: Chapter = {
+                id: 'test-chapter-0',                    // 必須: id プロパティ
                 chapterNumber: 0,
                 title: 'System Test Chapter',
                 content: 'This is a test chapter for system validation.',
-                previousChapterSummary: '',
+                createdAt: new Date(),                   // 必須: createdAt プロパティ（Date型）
+                updatedAt: new Date(),                   // 必須: updatedAt プロパティ（Date型）
+
+                // オプショナルプロパティ
+                wordCount: 47,
+                summary: 'System validation test chapter',
+
+                // 必須: metadata プロパティ
                 metadata: {
-                    createdAt: new Date().toISOString(),
-                    lastModified: new Date().toISOString(),
-                    status: 'published'
+                    qualityScore: 1.0,
+                    keywords: ['test', 'validation', 'system'],
+                    events: [],
+                    characters: [],
+                    foreshadowing: [],
+                    resolutions: [],
+                    correctionHistory: [],
+                    pov: 'システム',
+                    location: 'テスト環境',
+                    emotionalTone: 'neutral'
                 }
             };
 
@@ -1088,15 +1153,53 @@ export class MemoryManager {
     }
 
     /**
-     * 長期記憶処理の必要性判定
-     * @private
+     * 🔧 修正: 長期記憶処理の必要性判定（TypeScript安全・最適化版）
      */
     private shouldProcessLongTerm(chapter: Chapter): boolean {
-        // 章番号が5の倍数、または重要なイベントがある場合
-        return chapter.chapterNumber % 5 === 0 || 
-               chapter.content.length > 5000 ||
-               chapter.title.includes('重要') ||
-               chapter.title.includes('転機');
+        // 基本条件
+        const isMultipleOfFive = chapter.chapterNumber % 5 === 0;
+        const isLongContent = chapter.content.length > 5000;
+        const hasImportantKeywords = chapter.title.includes('重要') || chapter.title.includes('転機');
+        
+        // 🔧 修正: TypeScript安全版の詳細判定条件（undefined チェック付き）
+        const hasSignificantEvents = (chapter.metadata?.events?.length ?? 0) > 0;
+        const hasNewCharacters = (chapter.metadata?.characters?.length ?? 0) > 0;
+        const hasForeshadowing = (chapter.metadata?.foreshadowing?.length ?? 0) > 0;
+        
+        const shouldProcess = isMultipleOfFive || isLongContent || hasImportantKeywords || 
+                             hasSignificantEvents || hasNewCharacters || hasForeshadowing;
+
+        if (shouldProcess) {
+            logger.debug(`Chapter ${chapter.chapterNumber} qualifies for long-term processing`, {
+                isMultipleOfFive,
+                isLongContent,
+                hasImportantKeywords,
+                hasSignificantEvents,
+                hasNewCharacters,
+                hasForeshadowing,
+                eventsCount: chapter.metadata?.events?.length ?? 0,
+                charactersCount: chapter.metadata?.characters?.length ?? 0,
+                foreshadowingCount: chapter.metadata?.foreshadowing?.length ?? 0
+            });
+        }
+
+        return shouldProcess;
+    }
+
+    /**
+     * 🔧 修正: 長期記憶処理のトリガー理由を取得（TypeScript安全版）
+     */
+    private getLongTermTriggerReason(chapter: Chapter): string {
+        const reasons: string[] = [];
+        
+        if (chapter.chapterNumber % 5 === 0) reasons.push('multipleOfFive');
+        if (chapter.content.length > 5000) reasons.push('longContent');
+        if (chapter.title.includes('重要') || chapter.title.includes('転機')) reasons.push('importantKeywords');
+        if ((chapter.metadata?.events?.length ?? 0) > 0) reasons.push('significantEvents');
+        if ((chapter.metadata?.characters?.length ?? 0) > 0) reasons.push('newCharacters');
+        if ((chapter.metadata?.foreshadowing?.length ?? 0) > 0) reasons.push('foreshadowing');
+        
+        return reasons.join(', ') || 'unknown';
     }
 
     /**
@@ -1135,7 +1238,7 @@ export class MemoryManager {
     ): Promise<void> {
         // 実装は統合記憶コンテキストの構造に依存
         // ここでは基本的な実装例を示す
-        
+
         if (context.shortTerm) {
             result.results.push({
                 source: MemoryLevel.SHORT_TERM,
@@ -1175,10 +1278,10 @@ export class MemoryManager {
         // 簡易的な関連度計算
         const queryLower = query.toLowerCase();
         const dataString = JSON.stringify(data).toLowerCase();
-        
+
         const matches = (dataString.match(new RegExp(queryLower, 'g')) || []).length;
         const totalLength = dataString.length;
-        
+
         return Math.min(1.0, (matches * 100) / Math.max(totalLength / 1000, 1));
     }
 
@@ -1382,8 +1485,8 @@ export class MemoryManager {
      * @private
      */
     private updateAverageProcessingTime(processingTime: number): void {
-        this.operationStats.averageProcessingTime = 
-            ((this.operationStats.averageProcessingTime * (this.operationStats.totalOperations - 1)) + processingTime) / 
+        this.operationStats.averageProcessingTime =
+            ((this.operationStats.averageProcessingTime * (this.operationStats.totalOperations - 1)) + processingTime) /
             this.operationStats.totalOperations;
     }
 

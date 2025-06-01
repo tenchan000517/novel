@@ -1,0 +1,35 @@
+{
+  "chapterDataEntries": [
+    {
+      "chapterNumber": 8,
+      "timestamp": "2025-06-01T08:05:15.655Z"
+    },
+    {
+      "chapterNumber": 9,
+      "timestamp": "2025-06-01T08:09:41.307Z"
+    },
+    {
+      "chapterNumber": 10,
+      "timestamp": "2025-06-01T08:13:44.385Z"
+    },
+    {
+      "chapterNumber": 11,
+      "timestamp": "2025-06-01T08:17:42.770Z"
+    },
+    {
+      "chapterNumber": 12,
+      "timestamp": "2025-06-01T08:22:02.074Z"
+    }
+  ],
+  "cacheEntries": {
+    "worldSettingsCache": null,
+    "characterInfoCache": {},
+    "formatResultsCache": {}
+  },
+  "accessStats": {
+    "cacheHits": 0,
+    "cacheMisses": 0,
+    "totalAccesses": 0
+  },
+  "lastSaved": "2025-06-01T08:22:03.493Z"
+}

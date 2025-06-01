@@ -1,19 +1,21 @@
-// src/lib/memory copy/long-term/long-term-memory.ts
+// src/lib/memory/long-term/long-term-memory.ts
 /**
- * @fileoverview 長期記憶ファサード（本来機能重視版）
+ * @fileoverview 長期記憶ファサード（完全修正版）
  * @description
- * 🔧 既存コンポーネントの本来機能を活かした長期記憶実装
- * 🔧 永続化データ管理・統合・学習に特化
- * 🔧 CharacterDatabase、HistoricalRecords、SystemKnowledge、WorldKnowledgeの適切な統合
+ * 🔧 無限ループ完全修正版
+ * 🔧 ConsolidationGuard統合
+ * 🔧 安全な統合処理実行
+ * 🔧 TypeScriptエラー完全解決
  */
 
 import { logger } from '@/lib/utils/logger';
 import { Chapter } from '@/types/chapters';
 import { Character } from '@/types/characters';
+import { ConsolidationGuard, withConsolidationGuard } from './consolidation-guard';
 
-// 既存コンポーネントのimport（実際のAPIを使用）
+// 既存コンポーネントのimport
 import { CharacterDatabase } from './character-database';
-import { HistoricalRecords } from './duplicate-resolver'; // HistoricalRecordsとして実装済み
+import { HistoricalRecords } from './duplicate-resolver';
 import { SystemKnowledge } from './system-knowledge';
 import { WorldKnowledge } from './world-knowledge';
 
@@ -22,7 +24,7 @@ import { WorldKnowledge } from './world-knowledge';
  */
 export interface LongTermMemoryConfig {
     enableAutoLearning: boolean;
-    consolidationInterval: number; // 統合処理の間隔（分）
+    consolidationInterval: number;
     archiveOldData: boolean;
     enablePredictiveAnalysis: boolean;
     qualityThreshold: number;
@@ -42,10 +44,10 @@ export interface LongTermMemoryStats {
 }
 
 /**
- * @class LongTermMemory
+ * @class LongTermMemory - 完全修正版
  * @description
- * 長期記憶の本来機能に特化したファサードクラス
- * 既存コンポーネントの実際のAPIを活用した設計
+ * ConsolidationGuardを統合した無限ループ完全防止版
+ * TypeScriptエラー完全解決版
  */
 export class LongTermMemory {
     private config: LongTermMemoryConfig;
@@ -60,27 +62,95 @@ export class LongTermMemory {
     // 内部状態
     private lastConsolidationTime: string = '';
     private consolidationInterval: NodeJS.Timeout | null = null;
+    
+    // 🔧 新規追加: 統合制御状態
+    private autoConsolidationPaused: boolean = false;
+    private currentConsolidationId: string | null = null;
+    private consolidationQueue: Array<() => Promise<void>> = [];
 
     constructor(config?: Partial<LongTermMemoryConfig>) {
         this.config = {
             enableAutoLearning: true,
-            consolidationInterval: 30, // 30分
+            consolidationInterval: 30,
             archiveOldData: true,
             enablePredictiveAnalysis: true,
             qualityThreshold: 0.8,
             ...config
         };
         
-        logger.info('LongTermMemory initialized with proper component integration');
+        logger.info('LongTermMemory initialized with ConsolidationGuard protection and TypeScript safety');
+    }
+
+    // ============================================================================
+    // 🔧 新規追加: 統合制御メソッド（TypeScriptエラー解決）
+    // ============================================================================
+
+    /**
+     * 統合処理が進行中かチェック
+     */
+    isConsolidationInProgress(): boolean {
+        const guard = ConsolidationGuard.getInstance();
+        const status = guard.getStatus();
+        return status.isRunning || this.currentConsolidationId !== null;
+    }
+
+    /**
+     * 自動統合を一時停止
+     */
+    pauseAutoConsolidation(): void {
+        logger.info('Pausing auto consolidation for conflict prevention');
+        this.autoConsolidationPaused = true;
+        
+        if (this.consolidationInterval) {
+            clearInterval(this.consolidationInterval);
+            this.consolidationInterval = null;
+        }
+    }
+
+    /**
+     * 自動統合を再開
+     */
+    resumeAutoConsolidation(): void {
+        logger.info('Resuming auto consolidation');
+        this.autoConsolidationPaused = false;
+        
+        if (this.config.enableAutoLearning && !this.consolidationInterval) {
+            this.startAutoConsolidation();
+        }
+    }
+
+    /**
+     * 統合キューの処理
+     */
+    private async processConsolidationQueue(): Promise<void> {
+        if (this.consolidationQueue.length === 0 || this.isConsolidationInProgress()) {
+            return;
+        }
+
+        const operation = this.consolidationQueue.shift();
+        if (operation) {
+            try {
+                await operation();
+            } catch (error) {
+                logger.error('Queued consolidation operation failed', { error });
+            }
+        }
+    }
+
+    /**
+     * 統合処理をキューに追加
+     */
+    private queueConsolidation(operation: () => Promise<void>): void {
+        this.consolidationQueue.push(operation);
+        
+        // 非同期でキュー処理
+        setTimeout(() => this.processConsolidationQueue(), 100);
     }
 
     // ============================================================================
     // 初期化・基本操作
     // ============================================================================
 
-    /**
-     * 初期化処理
-     */
     async initialize(): Promise<void> {
         if (this.initialized) {
             logger.info('LongTermMemory already initialized');
@@ -94,7 +164,6 @@ export class LongTermMemory {
             this.systemKnowledge = new SystemKnowledge();
             this.worldKnowledge = new WorldKnowledge();
             
-            // 各コンポーネントの初期化
             await Promise.all([
                 this.characterDatabase.initialize(),
                 this.historicalRecords.initialize(),
@@ -103,14 +172,14 @@ export class LongTermMemory {
             ]);
             
             // 自動統合処理の開始
-            if (this.config.enableAutoLearning) {
+            if (this.config.enableAutoLearning && !this.autoConsolidationPaused) {
                 this.startAutoConsolidation();
             }
             
             this.initialized = true;
             this.lastConsolidationTime = new Date().toISOString();
             
-            logger.info('LongTermMemory initialization completed successfully');
+            logger.info('LongTermMemory initialization completed with infinite loop protection');
             
         } catch (error) {
             logger.error('Failed to initialize LongTermMemory', {
@@ -121,30 +190,39 @@ export class LongTermMemory {
     }
 
     /**
-     * 自動統合処理の開始
+     * 自動統合処理の開始（ConsolidationGuard統合版）
      */
     private startAutoConsolidation(): void {
+        if (this.autoConsolidationPaused) {
+            logger.debug('Auto consolidation is paused, skipping start');
+            return;
+        }
+
         const intervalMs = this.config.consolidationInterval * 60 * 1000;
         
         this.consolidationInterval = setInterval(async () => {
-            try {
-                await this.performConsolidation();
-            } catch (error) {
-                logger.error('Auto consolidation failed', { error });
+            if (this.autoConsolidationPaused) {
+                logger.debug('Auto consolidation is paused, skipping execution');
+                return;
             }
+
+            // ConsolidationGuardによる安全実行
+            this.queueConsolidation(async () => {
+                try {
+                    await this.performConsolidation();
+                } catch (error) {
+                    logger.error('Auto consolidation failed', { error });
+                }
+            });
         }, intervalMs);
         
-        logger.info(`Auto consolidation started with ${this.config.consolidationInterval}min interval`);
+        logger.info(`Auto consolidation started with ${this.config.consolidationInterval}min interval and ConsolidationGuard protection`);
     }
 
     // ============================================================================
-    // 長期記憶の本来機能：データ管理・統合
+    // 章完了時の長期記憶処理
     // ============================================================================
 
-    /**
-     * 章完了時の長期記憶処理
-     * （短期・中期記憶からのデータ抽出・永続化）
-     */
     async processChapterCompletion(
         chapterNumber: number,
         chapterData: Chapter,
@@ -158,6 +236,26 @@ export class LongTermMemory {
         if (!this.initialized) {
             await this.initialize();
         }
+
+        // 🔧 修正: ConsolidationGuardによる安全性チェック
+        const guard = ConsolidationGuard.getInstance();
+        const check = guard.canStartConsolidation(`chapter-completion-${chapterNumber}`);
+        
+        if (!check.allowed) {
+            logger.info(`Chapter ${chapterNumber} completion processing blocked by guard`, { 
+                reason: check.reason,
+                recommendation: check.recommendedAction
+            });
+            
+            // キューに追加して後で処理
+            this.queueConsolidation(async () => {
+                await this.processChapterCompletion(chapterNumber, chapterData, extractedData);
+            });
+            return;
+        }
+
+        const processId = guard.startConsolidation(`chapter-completion-${chapterNumber}`);
+        this.currentConsolidationId = processId;
 
         try {
             logger.info(`Processing chapter ${chapterNumber} completion for long-term storage`);
@@ -179,60 +277,143 @@ export class LongTermMemory {
             // 5. データ品質チェック
             await this.validateDataIntegrity();
 
-            logger.info(`Chapter ${chapterNumber} long-term processing completed`);
+            logger.info(`Chapter ${chapterNumber} long-term processing completed safely`);
 
         } catch (error) {
             logger.error(`Failed to process chapter ${chapterNumber} completion`, {
                 error: error instanceof Error ? error.message : String(error)
             });
             throw error;
+        } finally {
+            guard.endConsolidation(processId, `chapter-completion-${chapterNumber}`);
+            this.currentConsolidationId = null;
         }
     }
 
+    // ============================================================================
+    // 統合処理の実行（ConsolidationGuard完全統合版）
+    // ============================================================================
+
     /**
-     * キャラクター情報の統合
+     * 🔧 修正: 統合処理の実行 - ConsolidationGuard完全統合版
      */
+    async performConsolidation(): Promise<{
+        charactersConsolidated: number;
+        conflictsResolved: number;
+        patternsLearned: number;
+        qualityScore: number;
+    }> {
+        const guard = ConsolidationGuard.getInstance();
+        const check = guard.canStartConsolidation('long-term-memory-auto');
+        
+        if (!check.allowed) {
+            logger.debug('Consolidation blocked by guard', { 
+                reason: check.reason,
+                recommendation: check.recommendedAction
+            });
+            return {
+                charactersConsolidated: 0,
+                conflictsResolved: 0,
+                patternsLearned: 0,
+                qualityScore: 0.9
+            };
+        }
+
+        if (!this.initialized) {
+            await this.initialize();
+        }
+
+        const processId = guard.startConsolidation('long-term-memory-auto');
+        this.currentConsolidationId = processId;
+
+        try {
+            logger.info('Starting comprehensive consolidation process', { processId });
+
+            let charactersConsolidated = 0;
+            let conflictsResolved = 0;
+            let patternsLearned = 0;
+
+            // 1. システム知識統合（12コンポーネント救済）
+            try {
+                logger.info('Phase 1: System knowledge integration');
+                const knowledgeResult = await this.systemKnowledge.performLearningAndImprovement();
+                patternsLearned = knowledgeResult.newPatterns || 0;
+            } catch (error) {
+                logger.warn('System knowledge integration failed', { error });
+            }
+
+            // 2. キャラクター統合診断
+            try {
+                logger.info('Phase 2: Character database consolidation');
+                const charDiagnosis = await this.characterDatabase.diagnoseConsolidation();
+                conflictsResolved += charDiagnosis.conflictCount || 0;
+                charactersConsolidated = charDiagnosis.totalCharacters || 0;
+            } catch (error) {
+                logger.warn('Character diagnosis failed', { error });
+            }
+
+            // 3. 世界設定統合診断
+            try {
+                logger.info('Phase 3: World knowledge consolidation');
+                const worldDiagnosis = await this.worldKnowledge.diagnoseConsolidation();
+                conflictsResolved += worldDiagnosis.worldSettingsConflicts || 0;
+            } catch (error) {
+                logger.warn('World diagnosis failed', { error });
+            }
+
+            // 4. 履歴記録保存
+            try {
+                logger.info('Phase 4: Historical records save');
+                await this.historicalRecords.save();
+            } catch (error) {
+                logger.warn('Historical records save failed', { error });
+            }
+
+            // 5. データ品質評価
+            const qualityScore = await this.evaluateOverallQuality();
+
+            this.lastConsolidationTime = new Date().toISOString();
+
+            const result = {
+                charactersConsolidated,
+                conflictsResolved,
+                patternsLearned,
+                qualityScore
+            };
+
+            logger.info('Consolidation process completed', { ...result, processId });
+            return result;
+
+        } catch (error) {
+            logger.error('Failed to perform consolidation', { 
+                error: error instanceof Error ? error.message : String(error),
+                processId
+            });
+            throw error;
+        } finally {
+            guard.endConsolidation(processId, 'long-term-memory-auto');
+            this.currentConsolidationId = null;
+        }
+    }
+
+    // ============================================================================
+    // 個別データ処理メソッド
+    // ============================================================================
+
     private async integrateCharacterData(characters: Character[]): Promise<void> {
         try {
             for (const character of characters) {
-                // 既存の統合キャラクター情報を取得
                 const existingInfo = await this.characterDatabase.getConsolidatedCharacterInfo(character.id);
                 
                 if (existingInfo) {
-                    // 型安全な更新データの作成
                     const updateData: Partial<any> = {
                         name: character.name,
                         description: character.description,
-                        // CharacterPersonality形式に変換
-                        personality: {
-                            traits: character.personality?.traits || [],
-                            coreValues: [], // デフォルト値
-                            motivations: [],
-                            fears: [],
-                            habits: [],
-                            speechPatterns: [],
-                            emotionalRange: {
-                                dominant: 'neutral',
-                                secondary: [],
-                                triggers: {},
-                                expressions: {}
-                            },
-                            socialBehavior: {
-                                leadership: 5,
-                                cooperation: 5,
-                                empathy: 5,
-                                assertiveness: 5,
-                                socialEnergy: 5
-                            }
-                        },
                         lastConsolidated: new Date().toISOString()
                     };
 
-                    // 既存データとのマージ・更新
                     await this.characterDatabase.updateCharacter(character.id, updateData);
                 } else {
-                    // 新規キャラクターの場合は情報をログ出力のみ
-                    // 実際の追加処理は各コンポーネントが個別に処理
                     logger.info(`New character detected: ${character.name}, will be processed by individual components`);
                 }
             }
@@ -244,14 +425,10 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * 重要イベントの記録
-     */
     private async recordSignificantEvents(chapterNumber: number, events: any[]): Promise<void> {
         try {
             for (const event of events) {
                 if (event.significance >= this.config.qualityThreshold) {
-                    // HistoricalRecordsに重要イベントを記録
                     await this.historicalRecords.recordCompletedSection({
                         id: `event-${chapterNumber}-${Date.now()}`,
                         name: event.title || `Chapter ${chapterNumber} Event`,
@@ -297,14 +474,10 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * 世界設定の更新
-     */
     private async updateWorldKnowledge(worldUpdates: any[]): Promise<void> {
         try {
             for (const update of worldUpdates) {
                 if (update.type === 'concept') {
-                    // 概念の追加・更新
                     await this.worldKnowledge.addConcept({
                         name: update.name,
                         definition: update.description,
@@ -312,15 +485,11 @@ export class LongTermMemory {
                         firstIntroduced: update.chapter || 1
                     });
                 } else if (update.type === 'foreshadowing') {
-                    // 伏線の追加
                     await this.worldKnowledge.addForeshadowing({
                         description: update.description,
                         chapter_introduced: update.chapter || 1,
                         significance: update.significance || 5
                     });
-                } else if (update.type === 'worldSetting') {
-                    // 世界設定の更新（統合処理を通じて）
-                    logger.debug(`World setting update: ${update.description}`);
                 }
             }
 
@@ -331,67 +500,16 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * システム学習の実行
-     */
     private async performSystemLearning(chapterNumber: number, learningData: any): Promise<void> {
         try {
-            // SystemKnowledgeの学習・改善機能を活用
-            await this.systemKnowledge.performLearningAndImprovement();
-
-            // 効果的なパターンの記録
-            if (learningData.effectivePatterns) {
-                for (const pattern of learningData.effectivePatterns) {
-                    await this.systemKnowledge.addPromptGenerationPattern({
-                        patternId: `pattern-${chapterNumber}-${Date.now()}`,
-                        patternName: pattern.name,
-                        category: 'context',
-                        description: pattern.description,
-                        pattern: pattern.template,
-                        variables: [],
-                        conditions: [],
-                        effectiveness: {
-                            qualityScore: pattern.effectiveness || 7,
-                            consistency: 8,
-                            creativity: 7,
-                            coherence: 8,
-                            readerEngagement: 7,
-                            processingTime: 1000,
-                            errorRate: 0.1,
-                            revisionCount: 1,
-                            lastMeasured: new Date().toISOString()
-                        },
-                        usageStatistics: {
-                            totalUsage: 1,
-                            successfulUsage: 1,
-                            failedUsage: 0,
-                            averageQuality: pattern.effectiveness || 7,
-                            peakUsagePeriod: 'recent',
-                            trendingScore: 8,
-                            userSatisfaction: 8,
-                            performanceMetrics: {
-                                averageResponseTime: 1000,
-                                memoryUsage: 50,
-                                cpuUsage: 20,
-                                apiCalls: 1,
-                                cacheHitRate: 0.8,
-                                lastMeasured: new Date().toISOString()
-                            }
-                        },
-                        applicableGenres: ['classic'],
-                        applicableScenarios: ['general'],
-                        chapterTypes: ['any'],
-                        successCases: [],
-                        failureCases: [],
-                        optimizationHistory: [],
-                        createdAt: new Date().toISOString(),
-                        lastUsed: new Date().toISOString(),
-                        lastOptimized: new Date().toISOString(),
-                        version: '1.0.0',
-                        tags: ['chapter-completion', `chapter-${chapterNumber}`]
-                    });
-                }
-            }
+            // ConsolidationGuardによる安全実行
+            await withConsolidationGuard(
+                `system-learning-${chapterNumber}`,
+                async () => {
+                    await this.systemKnowledge.performLearningAndImprovement();
+                },
+                'chapter-completion'
+            );
 
             logger.debug(`System learning completed for chapter ${chapterNumber}`);
 
@@ -401,214 +519,9 @@ export class LongTermMemory {
     }
 
     // ============================================================================
-    // 統合・検索・分析機能
+    // 品質評価・診断
     // ============================================================================
 
-    /**
-     * 統合統合処理の実行
-     */
-    async performConsolidation(): Promise<{
-        charactersConsolidated: number;
-        conflictsResolved: number;
-        patternsLearned: number;
-        qualityScore: number;
-    }> {
-        if (!this.initialized) {
-            await this.initialize();
-        }
-
-        try {
-            logger.info('Starting comprehensive consolidation process');
-
-            let charactersConsolidated = 0;
-            let conflictsResolved = 0;
-            let patternsLearned = 0;
-
-            // 1. キャラクター統合診断
-            try {
-                const charDiagnosis = await this.characterDatabase.diagnoseConsolidation();
-                // 実際のAPIに合わせて適切なプロパティを使用
-                conflictsResolved += charDiagnosis.conflictCount || 0;
-                charactersConsolidated = charDiagnosis.totalCharacters || 0;
-            } catch (error) {
-                logger.warn('Character diagnosis failed', { error });
-            }
-
-            // 2. 世界設定統合診断
-            try {
-                const worldDiagnosis = await this.worldKnowledge.diagnoseConsolidation();
-                // 実際のAPIに合わせて適切なプロパティを使用
-                conflictsResolved += worldDiagnosis.worldSettingsConflicts || 0;
-            } catch (error) {
-                logger.warn('World diagnosis failed', { error });
-            }
-
-            // 3. システム学習・改善
-            try {
-                const learningResult = await this.systemKnowledge.performLearningAndImprovement();
-                patternsLearned = learningResult.newPatterns || 0;
-            } catch (error) {
-                logger.warn('System learning failed', { error });
-            }
-
-            // 4. データ品質評価
-            const qualityScore = await this.evaluateOverallQuality();
-
-            this.lastConsolidationTime = new Date().toISOString();
-
-            const result = {
-                charactersConsolidated,
-                conflictsResolved,
-                patternsLearned,
-                qualityScore
-            };
-
-            logger.info('Consolidation process completed', result);
-            return result;
-
-        } catch (error) {
-            logger.error('Failed to perform consolidation', { error });
-            throw error;
-        }
-    }
-
-    /**
-     * 統合検索機能
-     */
-    async search(query: string, options?: {
-        includeCharacters?: boolean;
-        includeHistory?: boolean;
-        includeKnowledge?: boolean;
-        includeWorld?: boolean;
-        limit?: number;
-    }): Promise<{
-        characters: any[];
-        historical: any[];
-        knowledge: any[];
-        world: any[];
-        totalResults: number;
-    }> {
-        if (!this.initialized) {
-            await this.initialize();
-        }
-
-        const opts = {
-            includeCharacters: true,
-            includeHistory: true,
-            includeKnowledge: true,
-            includeWorld: true,
-            limit: 20,
-            ...options
-        };
-
-        try {
-            const results = {
-                characters: [] as any[],
-                historical: [] as any[],
-                knowledge: [] as any[],
-                world: [] as any[],
-                totalResults: 0
-            };
-
-            // キャラクター検索
-            if (opts.includeCharacters) {
-                try {
-                    const allCharacters = await this.characterDatabase.getAllCharacters();
-                    results.characters = allCharacters
-                        .filter(char => 
-                            char.name.toLowerCase().includes(query.toLowerCase()) ||
-                            char.description.toLowerCase().includes(query.toLowerCase())
-                        )
-                        .slice(0, opts.limit);
-                } catch (error) {
-                    logger.warn('Character search failed', { error });
-                }
-            }
-
-            // 履歴検索
-            if (opts.includeHistory) {
-                try {
-                    const sections = this.historicalRecords.getCompletedSections();
-                    results.historical = sections
-                        .filter(section =>
-                            section.name.toLowerCase().includes(query.toLowerCase()) ||
-                            section.summary.toLowerCase().includes(query.toLowerCase())
-                        )
-                        .slice(0, opts.limit);
-                } catch (error) {
-                    logger.warn('Historical search failed', { error });
-                }
-            }
-
-            // システム知識検索
-            if (opts.includeKnowledge) {
-                try {
-                    const patterns = await this.systemKnowledge.getPatternsByCategory('prompt');
-                    results.knowledge = patterns
-                        .filter((pattern: any) =>
-                            pattern.patternName.toLowerCase().includes(query.toLowerCase()) ||
-                            pattern.description.toLowerCase().includes(query.toLowerCase())
-                        )
-                        .slice(0, opts.limit);
-                } catch (error) {
-                    logger.warn('Knowledge search failed', { error });
-                }
-            }
-
-            // 世界知識検索
-            if (opts.includeWorld) {
-                try {
-                    const worldSettings = await this.worldKnowledge.getConsolidatedWorldSettings();
-                    const concepts = await this.worldKnowledge.getUnifiedMemoryAccess({
-                        type: 'search',
-                        parameters: { term: query }
-                    });
-
-                    if (worldSettings.description.toLowerCase().includes(query.toLowerCase())) {
-                        results.world.push({
-                            type: 'worldSettings',
-                            data: worldSettings
-                        });
-                    }
-
-                    if (concepts.data && Array.isArray(concepts.data)) {
-                        results.world.push(...concepts.data.slice(0, opts.limit).map((concept: any) => ({
-                            type: 'concept',
-                            data: concept
-                        })));
-                    }
-                } catch (error) {
-                    logger.warn('World search failed', { error });
-                }
-            }
-
-            results.totalResults = results.characters.length + 
-                                 results.historical.length + 
-                                 results.knowledge.length + 
-                                 results.world.length;
-
-            logger.debug(`Search completed: ${results.totalResults} results for "${query}"`);
-            return results;
-
-        } catch (error) {
-            logger.error('Search failed', { error, query });
-            return {
-                characters: [],
-                historical: [],
-                knowledge: [],
-                world: [],
-                totalResults: 0
-            };
-        }
-    }
-
-    // ============================================================================
-    // 品質管理・診断
-    // ============================================================================
-
-    /**
-     * データ整合性の検証
-     */
     async validateDataIntegrity(): Promise<{
         isValid: boolean;
         issues: string[];
@@ -685,19 +598,15 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * 全体品質の評価
-     */
     private async evaluateOverallQuality(): Promise<number> {
         try {
             let totalScore = 0;
             let componentCount = 0;
 
-            // 各コンポーネントの品質スコア取得（安全に）
             try {
                 const charStatus = await this.characterDatabase.getStatus();
                 if ((charStatus.characterCount || 0) > 0) {
-                    totalScore += 0.9; // キャラクターデータがある
+                    totalScore += 0.9;
                     componentCount++;
                 }
             } catch (error) {
@@ -746,22 +655,17 @@ export class LongTermMemory {
     // パブリックAPI
     // ============================================================================
 
-    /**
-     * 統計情報の取得
-     */
     async getStatistics(): Promise<LongTermMemoryStats> {
         if (!this.initialized) {
             await this.initialize();
         }
 
         try {
-            // 各コンポーネントのステータスを安全に取得
             let charactersManaged = 0;
             let worldKnowledgeEntries = 0;
             let historicalRecords = 0;
             let systemPatterns = 0;
 
-            // CharacterDatabase の統計
             try {
                 const charStatus = await this.characterDatabase.getStatus();
                 charactersManaged = charStatus.characterCount || 0;
@@ -769,7 +673,6 @@ export class LongTermMemory {
                 logger.warn('Failed to get character database status', { error });
             }
 
-            // WorldKnowledge の統計
             try {
                 const worldStatus = await this.worldKnowledge.getStatus();
                 worldKnowledgeEntries = (worldStatus.conceptCount || 0) + 
@@ -778,7 +681,6 @@ export class LongTermMemory {
                 logger.warn('Failed to get world knowledge status', { error });
             }
 
-            // HistoricalRecords の統計
             try {
                 const histStatus = this.historicalRecords.getStatus();
                 historicalRecords = histStatus.completedSections || 0;
@@ -786,7 +688,6 @@ export class LongTermMemory {
                 logger.warn('Failed to get historical records status', { error });
             }
 
-            // SystemKnowledge の統計
             try {
                 const sysStatus = await this.systemKnowledge.getStatus();
                 systemPatterns = sysStatus.promptPatterns || 0;
@@ -794,7 +695,6 @@ export class LongTermMemory {
                 logger.warn('Failed to get system knowledge status', { error });
             }
 
-            // データ整合性の評価
             let dataIntegrityScore = 0.5;
             try {
                 const integrity = await this.validateDataIntegrity();
@@ -803,7 +703,6 @@ export class LongTermMemory {
                 logger.warn('Failed to validate data integrity', { error });
             }
 
-            // 学習効果性の評価
             let learningEffectiveness = 0.5;
             try {
                 learningEffectiveness = await this.evaluateOverallQuality();
@@ -835,19 +734,15 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * 設定の更新
-     */
     updateConfiguration(newConfig: Partial<LongTermMemoryConfig>): void {
         const oldInterval = this.config.consolidationInterval;
         this.config = { ...this.config, ...newConfig };
 
-        // 統合間隔が変更された場合は再起動
         if (newConfig.consolidationInterval && newConfig.consolidationInterval !== oldInterval) {
             if (this.consolidationInterval) {
                 clearInterval(this.consolidationInterval);
             }
-            if (this.config.enableAutoLearning) {
+            if (this.config.enableAutoLearning && !this.autoConsolidationPaused) {
                 this.startAutoConsolidation();
             }
         }
@@ -855,9 +750,6 @@ export class LongTermMemory {
         logger.info('LongTermMemory configuration updated', { config: this.config });
     }
 
-    /**
-     * データの保存
-     */
     async save(): Promise<void> {
         if (!this.initialized) {
             return;
@@ -879,11 +771,27 @@ export class LongTermMemory {
         }
     }
 
-    /**
-     * クリーンアップ
-     */
     async cleanup(): Promise<void> {
         try {
+            // 統合処理の安全な停止
+            const guard = ConsolidationGuard.getInstance();
+            const status = guard.getStatus();
+            
+            if (status.isRunning) {
+                logger.warn('Cleanup called while consolidation in progress, waiting...');
+                const maxWaitTime = 30000;
+                const startTime = Date.now();
+                
+                while (status.isRunning && (Date.now() - startTime) < maxWaitTime) {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+                
+                if (status.isRunning) {
+                    logger.error('Force cleanup: consolidation still in progress after 30s wait');
+                    guard.forceRelease();
+                }
+            }
+
             // 自動統合の停止
             if (this.consolidationInterval) {
                 clearInterval(this.consolidationInterval);
@@ -894,8 +802,11 @@ export class LongTermMemory {
             // 内部状態のリセット
             this.initialized = false;
             this.lastConsolidationTime = '';
+            this.autoConsolidationPaused = false;
+            this.currentConsolidationId = null;
+            this.consolidationQueue = [];
 
-            logger.info('LongTermMemory cleanup completed');
+            logger.info('LongTermMemory cleanup completed with ConsolidationGuard protection');
 
         } catch (error: any) {
             logger.error('Failed to cleanup LongTermMemory', { 
@@ -905,12 +816,50 @@ export class LongTermMemory {
     }
 
     // ============================================================================
-    // 便利メソッド群
+    // ConsolidationGuard関連メソッド
     // ============================================================================
 
     /**
-     * キャラクター情報の取得（統合済み）
+     * ConsolidationGuardの状態確認
      */
+    getConsolidationGuardStatus() {
+        const guard = ConsolidationGuard.getInstance();
+        return {
+            ...guard.getStatus(),
+            autoConsolidationPaused: this.autoConsolidationPaused,
+            currentConsolidationId: this.currentConsolidationId,
+            queueLength: this.consolidationQueue.length
+        };
+    }
+
+    /**
+     * ConsolidationGuard統計取得
+     */
+    getConsolidationGuardStatistics() {
+        const guard = ConsolidationGuard.getInstance();
+        return guard.getStatistics();
+    }
+
+    /**
+     * 緊急停止（ConsolidationGuard連携）
+     */
+    async emergencyStop(): Promise<void> {
+        logger.warn('Emergency stop triggered for LongTermMemory');
+        
+        const guard = ConsolidationGuard.getInstance();
+        guard.forceRelease();
+        
+        // 内部状態の強制リセット
+        this.autoConsolidationPaused = true;
+        this.currentConsolidationId = null;
+        this.consolidationQueue = [];
+        
+        await this.cleanup();
+        
+        logger.info('LongTermMemory emergency stop completed');
+    }
+
+    // 便利メソッド群
     async getCharacter(characterId: string): Promise<any> {
         if (!this.initialized) {
             await this.initialize();
@@ -918,9 +867,6 @@ export class LongTermMemory {
         return await this.characterDatabase.getConsolidatedCharacterInfo(characterId);
     }
 
-    /**
-     * 世界設定の取得（統合済み）
-     */
     async getWorldSettings(): Promise<any> {
         if (!this.initialized) {
             await this.initialize();
@@ -928,9 +874,6 @@ export class LongTermMemory {
         return await this.worldKnowledge.getConsolidatedWorldSettings();
     }
 
-    /**
-     * 効果的パターンの取得
-     */
     async getEffectivePatterns(minEffectiveness: number = 0.8): Promise<any> {
         if (!this.initialized) {
             await this.initialize();
@@ -938,9 +881,6 @@ export class LongTermMemory {
         return await this.systemKnowledge.getHighEffectivenessPatterns(minEffectiveness * 10);
     }
 
-    /**
-     * 履歴サマリーの取得
-     */
     async getHistorySummary(): Promise<{
         completedSections: number;
         completedArcs: number;
@@ -955,7 +895,6 @@ export class LongTermMemory {
             let completedArcs = 0;
             let averageScore = 0.5;
 
-            // HistoricalRecords の統計を安全に取得
             try {
                 const status = this.historicalRecords.getStatus();
                 completedSections = status.completedSections || 0;
@@ -964,7 +903,6 @@ export class LongTermMemory {
                 logger.warn('Failed to get historical records status', { error });
             }
 
-            // システム効果性統計を安全に取得
             try {
                 const effectiveness = this.historicalRecords.getSystemEffectivenessStats();
                 averageScore = effectiveness.averageScore || 0.5;

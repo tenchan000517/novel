@@ -1,0 +1,47 @@
+{
+  "id": "chapter-7",
+  "scenes": [],
+  "analysis": {
+    "characterAppearances": [],
+    "themeOccurrences": [],
+    "foreshadowingElements": [],
+    "qualityMetrics": {
+      "readability": 0.7,
+      "consistency": 0.7,
+      "engagement": 0.7,
+      "characterDepiction": 0.7,
+      "originality": 0.65,
+      "overall": 0.7,
+      "coherence": 0.7,
+      "characterConsistency": 0.7
+    },
+    "detectedIssues": []
+  },
+  "metadata": {
+    "pov": "三人称",
+    "location": "オフィス、カフェ",
+    "timeframe": "数日間",
+    "emotionalTone": "焦燥感と疑念",
+    "keywords": [],
+    "qualityScore": 100,
+    "events": [],
+    "characters": [],
+    "foreshadowing": [],
+    "resolvedForeshadowing": [],
+    "resolutions": [],
+    "correctionHistory": [],
+    "updatedAt": "2025-06-01T07:54:35.440Z",
+    "generationVersion": "5.0-unified-memory-system",
+    "generationTime": 97693,
+    "analysisMetadata": {
+      "analysisTimestamp": "2025-06-01T07:56:06.058Z",
+      "analysisProcessingTime": 0,
+      "analysisError": "操作がタイムアウトしました: Post-generation pipeline (90000ms)",
+      "memoryProcessingResult": {
+        "success": true,
+        "processingTime": 361,
+        "affectedComponents": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,1718 @@
+{
+  "statisticsData": {
+    "promptGenerationStats": [
+      {
+        "generationType": "DIALOGUE_GENERATION",
+        "successRate": 0.9941175499999997,
+        "averageTime": 1500,
+        "timestamp": "2025-06-01T08:22:02.122Z"
+      },
+      {
+        "generationType": "DESCRIPTION_GENERATION",
+        "successRate": 0.9649999999999999,
+        "averageTime": 2000,
+        "timestamp": "2025-06-01T08:03:17.657Z"
+      },
+      {
+        "generationType": "EMOTION_GENERATION",
+        "successRate": 0.9915964999999998,
+        "averageTime": 1800,
+        "timestamp": "2025-06-01T08:22:02.122Z"
+      },
+      {
+        "generationType": "NARRATIVE_GENERATION",
+        "successRate": 0.9998338353471519,
+        "averageTime": 2200,
+        "timestamp": "2025-06-01T08:22:03.376Z"
+      },
+      {
+        "generationType": "GENERAL_GENERATION",
+        "successRate": 0.9879949999999997,
+        "averageTime": 1600,
+        "timestamp": "2025-06-01T08:22:02.824Z"
+      },
+      {
+        "generationType": "ACTION_GENERATION",
+        "successRate": 0.9979823196499997,
+        "averageTime": 1200,
+        "timestamp": "2025-06-01T08:22:03.376Z"
+      }
+    ],
+    "templateUsageStats": [
+      {
+        "templateId": "INTRODUCTION_TEMPLATE",
+        "usageCount": 7,
+        "effectiveness": 0.7999999999999999,
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "templateId": "DIALOGUE_TEMPLATE",
+        "usageCount": 7,
+        "effectiveness": 0.7999999999999999,
+        "timestamp": "2025-06-01T08:22:02.123Z"
+      },
+      {
+        "templateId": "EMOTIONAL_SCENE_TEMPLATE",
+        "usageCount": 21,
+        "effectiveness": 0.7999999999999999,
+        "timestamp": "2025-06-01T08:22:03.377Z"
+      },
+      {
+        "templateId": "TRANSITION_TEMPLATE",
+        "usageCount": 3,
+        "effectiveness": 0.8999999999999999,
+        "timestamp": "2025-06-01T08:13:44.574Z"
+      }
+    ],
+    "tensionOptimizationStats": [
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.48,
+        "timestamp": "2025-06-01T08:01:33.997Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.9,
+        "improvement": 0.42,
+        "timestamp": "2025-06-01T08:01:33.997Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.54,
+        "timestamp": "2025-06-01T08:01:33.997Z"
+      },
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.54,
+        "timestamp": "2025-06-01T08:03:17.659Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.9,
+        "improvement": 0.4725,
+        "timestamp": "2025-06-01T08:03:17.659Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.6075,
+        "timestamp": "2025-06-01T08:03:17.659Z"
+      },
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.9,
+        "improvement": 0.5519999999999999,
+        "timestamp": "2025-06-01T08:05:15.702Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.9,
+        "improvement": 0.48299999999999993,
+        "timestamp": "2025-06-01T08:05:15.702Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.621,
+        "timestamp": "2025-06-01T08:05:15.702Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:05:16.340Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:05:16.362Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:05:16.362Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:05:16.840Z"
+      },
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.9,
+        "improvement": 0.48,
+        "timestamp": "2025-06-01T08:09:41.360Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.42,
+        "timestamp": "2025-06-01T08:09:41.360Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.54,
+        "timestamp": "2025-06-01T08:09:41.360Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:09:42.120Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:09:42.150Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:09:42.752Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:09:42.752Z"
+      },
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.5279999999999999,
+        "timestamp": "2025-06-01T08:13:44.575Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.9,
+        "improvement": 0.4619999999999999,
+        "timestamp": "2025-06-01T08:13:44.575Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.594,
+        "timestamp": "2025-06-01T08:13:44.575Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:13:45.277Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:13:45.305Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:13:45.305Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:13:45.831Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:13:45.831Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45499999999999996,
+        "timestamp": "2025-06-01T08:17:42.833Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.5850000000000001,
+        "timestamp": "2025-06-01T08:17:42.833Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:17:43.492Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:17:43.515Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:17:44.064Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:17:44.064Z"
+      },
+      {
+        "optimizationType": "TENSION_BUILD",
+        "successRate": 0.9,
+        "improvement": 0.52,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45499999999999996,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.5850000000000001,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:22:02.827Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:22:02.852Z"
+      },
+      {
+        "optimizationType": "TENSION_RELEASE",
+        "successRate": 0.7000000000000001,
+        "improvement": 0.35,
+        "timestamp": "2025-06-01T08:22:03.378Z"
+      },
+      {
+        "optimizationType": "PACING_ADJUSTMENT",
+        "successRate": 0.9,
+        "improvement": 0.45,
+        "timestamp": "2025-06-01T08:22:03.378Z"
+      }
+    ],
+    "componentPerformanceStats": [
+      [
+        "ChapterProcessor",
+        {
+          "componentName": "ChapterProcessor",
+          "responseTime": 8.791108976180881,
+          "successRate": 1,
+          "errorRate": 0,
+          "lastUpdate": "2025-06-01T08:22:03.385Z"
+        }
+      ]
+    ],
+    "systemIntegrationStats": [
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 5599.5,
+        "timestamp": "2025-06-01T08:01:34.000Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 7466,
+        "timestamp": "2025-06-01T08:01:34.000Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 4479.599999999999,
+        "timestamp": "2025-06-01T08:01:34.000Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 5122.5,
+        "timestamp": "2025-06-01T08:03:17.664Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 6830,
+        "timestamp": "2025-06-01T08:03:17.664Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 4098,
+        "timestamp": "2025-06-01T08:03:17.664Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 6303,
+        "timestamp": "2025-06-01T08:05:15.703Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 8404,
+        "timestamp": "2025-06-01T08:05:15.703Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 5042.4,
+        "timestamp": "2025-06-01T08:05:15.703Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 1456.5,
+        "timestamp": "2025-06-01T08:05:16.340Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 1942,
+        "timestamp": "2025-06-01T08:05:16.340Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 1165.2,
+        "timestamp": "2025-06-01T08:05:16.340Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:05:16.364Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:05:16.364Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:05:16.364Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:05:16.841Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:05:16.841Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:05:16.841Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 5170.5,
+        "timestamp": "2025-06-01T08:09:41.364Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 6894,
+        "timestamp": "2025-06-01T08:09:41.364Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 4136.4,
+        "timestamp": "2025-06-01T08:09:41.364Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 1456.5,
+        "timestamp": "2025-06-01T08:09:42.121Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 1942,
+        "timestamp": "2025-06-01T08:09:42.121Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 1165.2,
+        "timestamp": "2025-06-01T08:09:42.121Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:09:42.151Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:09:42.151Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:09:42.151Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:09:42.753Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:09:42.753Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:09:42.753Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 6688.5,
+        "timestamp": "2025-06-01T08:13:44.576Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 8918,
+        "timestamp": "2025-06-01T08:13:44.576Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 5350.8,
+        "timestamp": "2025-06-01T08:13:44.578Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 1456.5,
+        "timestamp": "2025-06-01T08:13:45.278Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 1942,
+        "timestamp": "2025-06-01T08:13:45.278Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 1165.2,
+        "timestamp": "2025-06-01T08:13:45.278Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:13:45.306Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:13:45.306Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:13:45.306Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:13:45.832Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:13:45.832Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:13:45.832Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 4132.5,
+        "timestamp": "2025-06-01T08:17:42.834Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 5510,
+        "timestamp": "2025-06-01T08:17:42.834Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3306,
+        "timestamp": "2025-06-01T08:17:42.835Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:17:43.493Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:17:43.493Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:17:43.493Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 1456.5,
+        "timestamp": "2025-06-01T08:17:43.516Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 1942,
+        "timestamp": "2025-06-01T08:17:43.516Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 1165.2,
+        "timestamp": "2025-06-01T08:17:43.516Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:17:44.065Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:17:44.065Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:17:44.065Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.81,
+        "dataVolume": 4914,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.765,
+        "dataVolume": 6552,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3931.2,
+        "timestamp": "2025-06-01T08:22:02.125Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 1456.5,
+        "timestamp": "2025-06-01T08:22:02.829Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 1942,
+        "timestamp": "2025-06-01T08:22:02.829Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 1165.2,
+        "timestamp": "2025-06-01T08:22:02.829Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:22:02.853Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:22:02.854Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:22:02.854Z"
+      },
+      {
+        "integrationType": "MEMORY_INTEGRATION",
+        "efficiency": 0.7200000000000001,
+        "dataVolume": 3757.5,
+        "timestamp": "2025-06-01T08:22:03.379Z"
+      },
+      {
+        "integrationType": "CONTEXT_PROCESSING",
+        "efficiency": 0.68,
+        "dataVolume": 5010,
+        "timestamp": "2025-06-01T08:22:03.379Z"
+      },
+      {
+        "integrationType": "DATA_SYNCHRONIZATION",
+        "efficiency": 0.6400000000000001,
+        "dataVolume": 3006,
+        "timestamp": "2025-06-01T08:22:03.379Z"
+      }
+    ]
+  },
+  "performanceSnapshots": [
+    {
+      "timestamp": "2025-05-31T21:31:47.882Z",
+      "cpuUsage": 47.888631823398214,
+      "memoryUsage": 370.24851742482724,
+      "responseTime": 1426.997822417073,
+      "throughput": 27.495683239147123,
+      "errorCount": 1,
+      "successCount": 58,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-05-31T21:31:47.902Z",
+      "cpuUsage": 43.76025115901814,
+      "memoryUsage": 376.9163841600148,
+      "responseTime": 1248.9686119638895,
+      "throughput": 22.00651470924663,
+      "errorCount": 0,
+      "successCount": 24,
+      "activeConnections": 9
+    },
+    {
+      "timestamp": "2025-05-31T21:31:48.187Z",
+      "cpuUsage": 28.948526656786996,
+      "memoryUsage": 332.3172146014913,
+      "responseTime": 726.7475570806465,
+      "throughput": 20.09462492917184,
+      "errorCount": 0,
+      "successCount": 56,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-05-31T21:31:49.621Z",
+      "cpuUsage": 48.711133128401855,
+      "memoryUsage": 331.9698479767641,
+      "responseTime": 512.3808229118445,
+      "throughput": 12.955958974435116,
+      "errorCount": 2,
+      "successCount": 60,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-05-31T21:31:53.068Z",
+      "cpuUsage": 22.01272358759198,
+      "memoryUsage": 458.27238774192904,
+      "responseTime": 1121.2194285803876,
+      "throughput": 21.462938256132382,
+      "errorCount": 1,
+      "successCount": 65,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-05-31T21:32:05.601Z",
+      "cpuUsage": 32.65040745368612,
+      "memoryUsage": 491.49532122416537,
+      "responseTime": 622.6137287699273,
+      "throughput": 28.247644937915467,
+      "errorCount": 1,
+      "successCount": 35,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-05-31T23:39:44.726Z",
+      "cpuUsage": 42.67911638224751,
+      "memoryUsage": 405.8109857493794,
+      "responseTime": 1426.4384116329436,
+      "throughput": 16.745963655491337,
+      "errorCount": 2,
+      "successCount": 25,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-05-31T23:39:44.750Z",
+      "cpuUsage": 22.828481634878095,
+      "memoryUsage": 416.9359791031114,
+      "responseTime": 872.9918985397815,
+      "throughput": 29.726889639297028,
+      "errorCount": 2,
+      "successCount": 42,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-05-31T23:39:45.062Z",
+      "cpuUsage": 41.60484562415813,
+      "memoryUsage": 384.9982137062333,
+      "responseTime": 1386.6738334433226,
+      "throughput": 26.020155579304745,
+      "errorCount": 1,
+      "successCount": 45,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-05-31T23:39:46.177Z",
+      "cpuUsage": 20.112310183430687,
+      "memoryUsage": 374.38277668341675,
+      "responseTime": 987.1963427725511,
+      "throughput": 12.11983971934421,
+      "errorCount": 1,
+      "successCount": 35,
+      "activeConnections": 9
+    },
+    {
+      "timestamp": "2025-05-31T23:39:49.403Z",
+      "cpuUsage": 37.436688692607206,
+      "memoryUsage": 404.1315785923431,
+      "responseTime": 1355.2201741503009,
+      "throughput": 14.630299554078094,
+      "errorCount": 2,
+      "successCount": 35,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T00:16:39.092Z",
+      "cpuUsage": 37.70045321104355,
+      "memoryUsage": 388.81049576912875,
+      "responseTime": 1083.2547489372578,
+      "throughput": 21.57547340581715,
+      "errorCount": 0,
+      "successCount": 58,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T00:16:39.126Z",
+      "cpuUsage": 34.517206950727655,
+      "memoryUsage": 495.01049994600845,
+      "responseTime": 1395.8476070153915,
+      "throughput": 11.217868508464166,
+      "errorCount": 2,
+      "successCount": 35,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T00:16:39.575Z",
+      "cpuUsage": 31.19689573923466,
+      "memoryUsage": 422.1867136899403,
+      "responseTime": 994.7076725230854,
+      "throughput": 14.305045212157928,
+      "errorCount": 0,
+      "successCount": 25,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T00:16:40.782Z",
+      "cpuUsage": 44.038443897962544,
+      "memoryUsage": 321.6680506084968,
+      "responseTime": 922.8067075046322,
+      "throughput": 20.102870378761757,
+      "errorCount": 2,
+      "successCount": 35,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T00:26:17.511Z",
+      "cpuUsage": 37.97194696554818,
+      "memoryUsage": 453.6426751077738,
+      "responseTime": 1221.8873376119002,
+      "throughput": 12.16321565052235,
+      "errorCount": 0,
+      "successCount": 47,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-06-01T00:26:17.535Z",
+      "cpuUsage": 34.39483957816155,
+      "memoryUsage": 434.6016022022209,
+      "responseTime": 569.1879723061099,
+      "throughput": 20.68431426996765,
+      "errorCount": 1,
+      "successCount": 50,
+      "activeConnections": 9
+    },
+    {
+      "timestamp": "2025-06-01T00:26:17.692Z",
+      "cpuUsage": 21.447252463053022,
+      "memoryUsage": 338.7332159110931,
+      "responseTime": 1026.982990627957,
+      "throughput": 28.429428009315806,
+      "errorCount": 1,
+      "successCount": 41,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T00:26:18.585Z",
+      "cpuUsage": 40.64219356591764,
+      "memoryUsage": 450.0442467880166,
+      "responseTime": 576.557205849042,
+      "throughput": 24.214347362531676,
+      "errorCount": 1,
+      "successCount": 49,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T00:26:21.853Z",
+      "cpuUsage": 24.383201912694513,
+      "memoryUsage": 418.92436324729795,
+      "responseTime": 533.3512676143741,
+      "throughput": 14.963649951104795,
+      "errorCount": 1,
+      "successCount": 57,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T00:57:05.052Z",
+      "cpuUsage": 43.472926047454095,
+      "memoryUsage": 371.52925774972067,
+      "responseTime": 604.8025531195567,
+      "throughput": 13.537348323658932,
+      "errorCount": 2,
+      "successCount": 39,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T00:57:05.080Z",
+      "cpuUsage": 42.295566025557115,
+      "memoryUsage": 467.45161992252946,
+      "responseTime": 1378.908936443586,
+      "throughput": 11.012271006029412,
+      "errorCount": 1,
+      "successCount": 46,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T00:57:05.346Z",
+      "cpuUsage": 40.93437162461481,
+      "memoryUsage": 498.1428267570919,
+      "responseTime": 1255.9164235121798,
+      "throughput": 23.267368281315303,
+      "errorCount": 0,
+      "successCount": 21,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T00:57:06.358Z",
+      "cpuUsage": 49.807662274316414,
+      "memoryUsage": 379.36673722051256,
+      "responseTime": 911.0604463898866,
+      "throughput": 26.0742920770142,
+      "errorCount": 0,
+      "successCount": 62,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T00:57:09.661Z",
+      "cpuUsage": 29.55188938415413,
+      "memoryUsage": 460.06540036547756,
+      "responseTime": 768.3927835123291,
+      "throughput": 11.162787738326823,
+      "errorCount": 2,
+      "successCount": 42,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T00:59:20.016Z",
+      "cpuUsage": 31.566394339312296,
+      "memoryUsage": 414.6868656627241,
+      "responseTime": 965.7020006706889,
+      "throughput": 17.96680569697791,
+      "errorCount": 2,
+      "successCount": 67,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T00:59:20.051Z",
+      "cpuUsage": 24.712236487091005,
+      "memoryUsage": 460.1649403367527,
+      "responseTime": 735.6382428668712,
+      "throughput": 13.389784937746235,
+      "errorCount": 0,
+      "successCount": 35,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T00:59:20.284Z",
+      "cpuUsage": 30.763070405096364,
+      "memoryUsage": 378.5382930060414,
+      "responseTime": 1421.9184906067046,
+      "throughput": 26.014426392280654,
+      "errorCount": 2,
+      "successCount": 67,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T00:59:21.219Z",
+      "cpuUsage": 49.211207318138065,
+      "memoryUsage": 317.2210774876237,
+      "responseTime": 574.1333950823832,
+      "throughput": 21.531380633073525,
+      "errorCount": 0,
+      "successCount": 55,
+      "activeConnections": 9
+    },
+    {
+      "timestamp": "2025-06-01T00:59:24.790Z",
+      "cpuUsage": 22.25243169914708,
+      "memoryUsage": 416.0413078258838,
+      "responseTime": 505.83690721792254,
+      "throughput": 11.855858585036088,
+      "errorCount": 0,
+      "successCount": 41,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T00:59:34.005Z",
+      "cpuUsage": 34.40250621002094,
+      "memoryUsage": 470.31215329044437,
+      "responseTime": 1383.8327235347276,
+      "throughput": 15.479339339056173,
+      "errorCount": 1,
+      "successCount": 67,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:15:50.749Z",
+      "cpuUsage": 29.742547927977604,
+      "memoryUsage": 331.19455546401133,
+      "responseTime": 929.1739580537314,
+      "throughput": 16.29225755786393,
+      "errorCount": 2,
+      "successCount": 41,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T07:17:36.428Z",
+      "cpuUsage": 25.392797130042165,
+      "memoryUsage": 434.9068627415737,
+      "responseTime": 992.2730907258301,
+      "throughput": 15.82135580628778,
+      "errorCount": 0,
+      "successCount": 48,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T07:18:56.434Z",
+      "cpuUsage": 38.73196140081879,
+      "memoryUsage": 473.7307337196951,
+      "responseTime": 1263.8441930537692,
+      "throughput": 23.00949986495944,
+      "errorCount": 1,
+      "successCount": 37,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T07:19:19.131Z",
+      "cpuUsage": 49.09618696318779,
+      "memoryUsage": 498.87666865228454,
+      "responseTime": 1496.9683857619711,
+      "throughput": 23.814441425695392,
+      "errorCount": 1,
+      "successCount": 31,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T07:21:56.866Z",
+      "cpuUsage": 30.907618292539386,
+      "memoryUsage": 453.66979300046046,
+      "responseTime": 703.4830663791456,
+      "throughput": 11.440393652680182,
+      "errorCount": 2,
+      "successCount": 64,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T07:23:56.439Z",
+      "cpuUsage": 21.35711514146354,
+      "memoryUsage": 376.6863203082687,
+      "responseTime": 736.1408871651449,
+      "throughput": 21.856662720417546,
+      "errorCount": 0,
+      "successCount": 52,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:25:32.339Z",
+      "cpuUsage": 25.48405002068106,
+      "memoryUsage": 300.4973830036081,
+      "responseTime": 961.2729961427749,
+      "throughput": 22.24442699973986,
+      "errorCount": 1,
+      "successCount": 48,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T07:27:04.575Z",
+      "cpuUsage": 49.573583272228646,
+      "memoryUsage": 304.4404183128653,
+      "responseTime": 1076.4229793048448,
+      "throughput": 29.835468343077657,
+      "errorCount": 1,
+      "successCount": 60,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T07:28:51.613Z",
+      "cpuUsage": 30.38922084015033,
+      "memoryUsage": 302.8675363646304,
+      "responseTime": 1205.3300065974167,
+      "throughput": 20.39597558013844,
+      "errorCount": 2,
+      "successCount": 54,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:28:56.446Z",
+      "cpuUsage": 39.16236728124481,
+      "memoryUsage": 354.0285299108838,
+      "responseTime": 1351.7716213264266,
+      "throughput": 26.49342846330012,
+      "errorCount": 0,
+      "successCount": 46,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T07:31:15.276Z",
+      "cpuUsage": 36.225786129097024,
+      "memoryUsage": 403.06265567082954,
+      "responseTime": 1247.4380390600209,
+      "throughput": 27.82827578951192,
+      "errorCount": 2,
+      "successCount": 26,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:35:11.601Z",
+      "cpuUsage": 33.04617739662025,
+      "memoryUsage": 424.04366015614687,
+      "responseTime": 743.8597455484351,
+      "throughput": 22.437682744081805,
+      "errorCount": 0,
+      "successCount": 30,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T07:36:47.397Z",
+      "cpuUsage": 39.56526788421557,
+      "memoryUsage": 315.7772726338518,
+      "responseTime": 1479.5445539169282,
+      "throughput": 27.39964530125977,
+      "errorCount": 0,
+      "successCount": 53,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:38:17.371Z",
+      "cpuUsage": 26.713603585569633,
+      "memoryUsage": 425.2518334958854,
+      "responseTime": 1439.733196767549,
+      "throughput": 14.090717775852832,
+      "errorCount": 0,
+      "successCount": 22,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T07:38:32.134Z",
+      "cpuUsage": 36.90830437889205,
+      "memoryUsage": 379.03851396339724,
+      "responseTime": 1209.437162146515,
+      "throughput": 18.042496948299416,
+      "errorCount": 1,
+      "successCount": 46,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:38:32.870Z",
+      "cpuUsage": 42.082184293729675,
+      "memoryUsage": 448.2587899704803,
+      "responseTime": 1199.9785539737763,
+      "throughput": 11.114654547427065,
+      "errorCount": 1,
+      "successCount": 31,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:38:32.910Z",
+      "cpuUsage": 27.04333927823306,
+      "memoryUsage": 479.88688075457594,
+      "responseTime": 780.3291816252888,
+      "throughput": 10.02481134448088,
+      "errorCount": 1,
+      "successCount": 30,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:38:33.243Z",
+      "cpuUsage": 22.67553610150969,
+      "memoryUsage": 488.77924993746046,
+      "responseTime": 970.1302792780507,
+      "throughput": 25.642469541639926,
+      "errorCount": 1,
+      "successCount": 34,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T07:42:48.199Z",
+      "cpuUsage": 20.63473453819314,
+      "memoryUsage": 393.19782907793825,
+      "responseTime": 563.1797874566631,
+      "throughput": 24.12838179328196,
+      "errorCount": 2,
+      "successCount": 37,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T07:42:48.799Z",
+      "cpuUsage": 42.57043565044041,
+      "memoryUsage": 452.0287713289998,
+      "responseTime": 1447.4925922982677,
+      "throughput": 27.62125925726108,
+      "errorCount": 1,
+      "successCount": 23,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T07:42:48.817Z",
+      "cpuUsage": 44.866675491702026,
+      "memoryUsage": 354.68615039350476,
+      "responseTime": 1206.556456711387,
+      "throughput": 17.324172674008974,
+      "errorCount": 0,
+      "successCount": 68,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-06-01T07:42:49.049Z",
+      "cpuUsage": 46.001835680318074,
+      "memoryUsage": 476.5652944560311,
+      "responseTime": 627.3155358918949,
+      "throughput": 20.840488153820544,
+      "errorCount": 0,
+      "successCount": 50,
+      "activeConnections": 11
+    },
+    {
+      "timestamp": "2025-06-01T07:43:17.392Z",
+      "cpuUsage": 22.66405674887467,
+      "memoryUsage": 443.0505014662642,
+      "responseTime": 1390.1658366681402,
+      "throughput": 18.62003381062713,
+      "errorCount": 1,
+      "successCount": 49,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T07:46:51.526Z",
+      "cpuUsage": 35.8631128958193,
+      "memoryUsage": 432.21137310570157,
+      "responseTime": 925.3266299993636,
+      "throughput": 13.604507470450491,
+      "errorCount": 1,
+      "successCount": 45,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T07:46:52.276Z",
+      "cpuUsage": 44.58181985438178,
+      "memoryUsage": 455.09855036324757,
+      "responseTime": 586.010933507431,
+      "throughput": 22.445302752850825,
+      "errorCount": 2,
+      "successCount": 51,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T07:46:52.304Z",
+      "cpuUsage": 38.70622911528737,
+      "memoryUsage": 467.7474865949148,
+      "responseTime": 1443.6508084256966,
+      "throughput": 27.700886183527906,
+      "errorCount": 0,
+      "successCount": 26,
+      "activeConnections": 8
+    },
+    {
+      "timestamp": "2025-06-01T07:46:52.638Z",
+      "cpuUsage": 33.125871004636856,
+      "memoryUsage": 353.14533300235354,
+      "responseTime": 1309.6642472109133,
+      "throughput": 10.899511582804102,
+      "errorCount": 2,
+      "successCount": 24,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T07:48:17.403Z",
+      "cpuUsage": 45.257000157407234,
+      "memoryUsage": 451.5904638961234,
+      "responseTime": 981.3200750944293,
+      "throughput": 14.183527349456785,
+      "errorCount": 1,
+      "successCount": 20,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T07:50:47.641Z",
+      "cpuUsage": 41.62363375418603,
+      "memoryUsage": 345.97478423010904,
+      "responseTime": 608.7794494744147,
+      "throughput": 27.598003189689152,
+      "errorCount": 2,
+      "successCount": 63,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T07:50:48.279Z",
+      "cpuUsage": 35.002626067640406,
+      "memoryUsage": 400.8542836795623,
+      "responseTime": 1101.5369412125544,
+      "throughput": 17.678447911786897,
+      "errorCount": 1,
+      "successCount": 46,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-06-01T07:50:48.310Z",
+      "cpuUsage": 35.53154731604735,
+      "memoryUsage": 314.4822815333732,
+      "responseTime": 850.8419766152393,
+      "throughput": 22.350551684472514,
+      "errorCount": 1,
+      "successCount": 52,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:50:48.571Z",
+      "cpuUsage": 34.76254460221871,
+      "memoryUsage": 331.2513954684597,
+      "responseTime": 592.8335498227437,
+      "throughput": 24.04424082515809,
+      "errorCount": 0,
+      "successCount": 55,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:56:06.735Z",
+      "cpuUsage": 49.88538397445633,
+      "memoryUsage": 470.6624697773533,
+      "responseTime": 1113.4659910953421,
+      "throughput": 28.583869139003205,
+      "errorCount": 1,
+      "successCount": 53,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T07:56:07.477Z",
+      "cpuUsage": 25.03939805474667,
+      "memoryUsage": 379.5503890988804,
+      "responseTime": 779.2590901627287,
+      "throughput": 14.031510513339246,
+      "errorCount": 0,
+      "successCount": 21,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T07:56:07.496Z",
+      "cpuUsage": 38.10991850842531,
+      "memoryUsage": 428.4747359411873,
+      "responseTime": 1395.314438167456,
+      "throughput": 21.945781350587676,
+      "errorCount": 2,
+      "successCount": 23,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-06-01T07:56:07.950Z",
+      "cpuUsage": 36.65011511766559,
+      "memoryUsage": 346.5702959164133,
+      "responseTime": 1087.1612000500218,
+      "throughput": 17.912632902311785,
+      "errorCount": 0,
+      "successCount": 24,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T08:01:34.009Z",
+      "cpuUsage": 48.08198089886488,
+      "memoryUsage": 337.7851556827312,
+      "responseTime": 801.1843650118758,
+      "throughput": 16.936760298459216,
+      "errorCount": 2,
+      "successCount": 43,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:03:08.931Z",
+      "cpuUsage": 27.488989209920966,
+      "memoryUsage": 407.5886789476819,
+      "responseTime": 1335.5526196387978,
+      "throughput": 17.60440644831279,
+      "errorCount": 0,
+      "successCount": 24,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T08:03:17.675Z",
+      "cpuUsage": 43.823552188528716,
+      "memoryUsage": 362.2886076040995,
+      "responseTime": 1171.0032444525432,
+      "throughput": 16.718239053234953,
+      "errorCount": 2,
+      "successCount": 28,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T08:05:15.710Z",
+      "cpuUsage": 46.26023484664471,
+      "memoryUsage": 427.3350092306344,
+      "responseTime": 1102.959972196555,
+      "throughput": 28.667842953741832,
+      "errorCount": 0,
+      "successCount": 51,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T08:05:16.346Z",
+      "cpuUsage": 47.52188361310624,
+      "memoryUsage": 442.17462457670524,
+      "responseTime": 1432.4352376088705,
+      "throughput": 25.453132675144467,
+      "errorCount": 1,
+      "successCount": 56,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:05:16.375Z",
+      "cpuUsage": 41.886432258387075,
+      "memoryUsage": 349.00462815675655,
+      "responseTime": 1499.2291311342206,
+      "throughput": 22.994466788387705,
+      "errorCount": 2,
+      "successCount": 25,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:05:16.847Z",
+      "cpuUsage": 24.322741433764605,
+      "memoryUsage": 353.51415000726985,
+      "responseTime": 828.7673241984542,
+      "throughput": 19.616251990777975,
+      "errorCount": 1,
+      "successCount": 32,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T08:08:08.941Z",
+      "cpuUsage": 36.685397482844174,
+      "memoryUsage": 434.58042780369624,
+      "responseTime": 854.5134630474806,
+      "throughput": 18.251217893551946,
+      "errorCount": 2,
+      "successCount": 42,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T08:09:41.372Z",
+      "cpuUsage": 23.268576827946788,
+      "memoryUsage": 333.97573956653446,
+      "responseTime": 571.6357393245859,
+      "throughput": 18.807655066171357,
+      "errorCount": 2,
+      "successCount": 63,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T08:09:42.130Z",
+      "cpuUsage": 24.658994244680663,
+      "memoryUsage": 383.14675336134826,
+      "responseTime": 565.6991440295311,
+      "throughput": 16.3797423176185,
+      "errorCount": 1,
+      "successCount": 56,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T08:09:42.162Z",
+      "cpuUsage": 39.798000103467665,
+      "memoryUsage": 461.97026110227074,
+      "responseTime": 1258.4340151143379,
+      "throughput": 21.46759181937664,
+      "errorCount": 1,
+      "successCount": 52,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:09:42.761Z",
+      "cpuUsage": 46.04108155256436,
+      "memoryUsage": 410.09237936200503,
+      "responseTime": 936.4515828927811,
+      "throughput": 27.59672882431458,
+      "errorCount": 1,
+      "successCount": 68,
+      "activeConnections": 9
+    },
+    {
+      "timestamp": "2025-06-01T08:13:08.944Z",
+      "cpuUsage": 32.05692149730761,
+      "memoryUsage": 314.0868698337291,
+      "responseTime": 729.498661190672,
+      "throughput": 23.065437227318117,
+      "errorCount": 1,
+      "successCount": 67,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T08:13:44.587Z",
+      "cpuUsage": 32.82886106361342,
+      "memoryUsage": 354.26218806148916,
+      "responseTime": 1481.587746771656,
+      "throughput": 25.76467148916042,
+      "errorCount": 2,
+      "successCount": 25,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:13:45.287Z",
+      "cpuUsage": 21.222287181346708,
+      "memoryUsage": 487.03444294279166,
+      "responseTime": 1239.8618871497342,
+      "throughput": 20.134779994601786,
+      "errorCount": 1,
+      "successCount": 61,
+      "activeConnections": 14
+    },
+    {
+      "timestamp": "2025-06-01T08:13:45.314Z",
+      "cpuUsage": 20.004983721630207,
+      "memoryUsage": 434.2438314329212,
+      "responseTime": 1182.0579791763641,
+      "throughput": 13.09591564287729,
+      "errorCount": 1,
+      "successCount": 31,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T08:13:45.843Z",
+      "cpuUsage": 46.28441571493361,
+      "memoryUsage": 375.48243587837067,
+      "responseTime": 1353.960198481856,
+      "throughput": 12.307073245928478,
+      "errorCount": 1,
+      "successCount": 63,
+      "activeConnections": 5
+    },
+    {
+      "timestamp": "2025-06-01T08:17:42.844Z",
+      "cpuUsage": 35.40302760186144,
+      "memoryUsage": 425.8912868903536,
+      "responseTime": 1226.769041433698,
+      "throughput": 12.589822356235118,
+      "errorCount": 1,
+      "successCount": 31,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T08:17:43.503Z",
+      "cpuUsage": 28.619036477221087,
+      "memoryUsage": 406.0714440424457,
+      "responseTime": 738.1955323288151,
+      "throughput": 25.033863739289348,
+      "errorCount": 1,
+      "successCount": 25,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T08:17:43.525Z",
+      "cpuUsage": 33.90816844383288,
+      "memoryUsage": 429.51074433470285,
+      "responseTime": 846.9125682748147,
+      "throughput": 28.307261684534097,
+      "errorCount": 2,
+      "successCount": 35,
+      "activeConnections": 12
+    },
+    {
+      "timestamp": "2025-06-01T08:17:44.075Z",
+      "cpuUsage": 21.52910358326202,
+      "memoryUsage": 319.39483098193796,
+      "responseTime": 824.3694635289564,
+      "throughput": 29.09073054346782,
+      "errorCount": 0,
+      "successCount": 32,
+      "activeConnections": 13
+    },
+    {
+      "timestamp": "2025-06-01T08:18:08.951Z",
+      "cpuUsage": 22.38853506888711,
+      "memoryUsage": 435.75989296924,
+      "responseTime": 752.1123854351939,
+      "throughput": 28.240487614738534,
+      "errorCount": 0,
+      "successCount": 43,
+      "activeConnections": 6
+    },
+    {
+      "timestamp": "2025-06-01T08:22:02.134Z",
+      "cpuUsage": 46.875540083447774,
+      "memoryUsage": 426.71926553928176,
+      "responseTime": 891.3700745127567,
+      "throughput": 11.869809198436275,
+      "errorCount": 1,
+      "successCount": 66,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T08:22:02.838Z",
+      "cpuUsage": 35.94758031867289,
+      "memoryUsage": 335.4044528421115,
+      "responseTime": 980.4848275490378,
+      "throughput": 16.98404326296928,
+      "errorCount": 2,
+      "successCount": 49,
+      "activeConnections": 7
+    },
+    {
+      "timestamp": "2025-06-01T08:22:02.863Z",
+      "cpuUsage": 35.31902141921435,
+      "memoryUsage": 322.5639678303796,
+      "responseTime": 621.0995322781323,
+      "throughput": 27.75766343511094,
+      "errorCount": 1,
+      "successCount": 47,
+      "activeConnections": 10
+    },
+    {
+      "timestamp": "2025-06-01T08:22:03.393Z",
+      "cpuUsage": 29.322951798507994,
+      "memoryUsage": 341.886937871124,
+      "responseTime": 1029.6229112549286,
+      "throughput": 18.131906633430845,
+      "errorCount": 0,
+      "successCount": 52,
+      "activeConnections": 8
+    }
+  ],
+  "componentUsageStats": [
+    [
+      "ChapterProcessor",
+      {
+        "componentName": "ChapterProcessor",
+        "totalCalls": 83,
+        "successfulCalls": 83,
+        "failedCalls": 0,
+        "averageResponseTime": 8.457831325301205,
+        "totalProcessingTime": 702,
+        "lastUsed": "2025-06-01T08:22:03.385Z",
+        "peakUsage": "2025-05-31T21:31:47.879Z",
+        "resourceUsage": {
+          "memoryPeakMB": 10,
+          "averageMemoryMB": 10,
+          "cpuTimeMs": 702
+        }
+      }
+    ]
+  ],
+  "optimizationEffects": [],
+  "lastSystemCheck": "2025-06-01T08:22:03.393Z",
+  "config": {
+    "enableRealTimeTracking": true,
+    "performanceMonitoringInterval": 5,
+    "statisticsRetentionDays": 90,
+    "enableComponentProfiling": true,
+    "enableOptimizationTracking": true,
+    "alertThresholds": {
+      "responseTimeMs": 5000,
+      "errorRatePercent": 5,
+      "memoryUsageMB": 1024,
+      "throughputPerMinute": 10
+    }
+  },
+  "savedAt": "2025-06-01T08:22:03.393Z"
+}

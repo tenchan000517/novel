@@ -1,0 +1,39 @@
+{
+  "chapter": {
+    "id": "foreshadowing-plan-7",
+    "chapterNumber": 7,
+    "title": "第7章伏線計画更新",
+    "content": "伏線計画の更新処理",
+    "previousChapterSummary": "",
+    "scenes": [],
+    "createdAt": "2025-06-01T07:59:30.581Z",
+    "updatedAt": "2025-06-01T07:59:30.581Z",
+    "metadata": {
+      "createdAt": "2025-06-01T07:59:30.581Z",
+      "lastModified": "2025-06-01T07:59:30.581Z",
+      "status": "foreshadowing-plan-update",
+      "planUpdateTrigger": 7
+    }
+  },
+  "content": "伏線計画の更新処理",
+  "metadata": {
+    "chapterNumber": 7,
+    "wordCount": 9,
+    "characterCount": 0,
+    "keyPhraseCount": 0,
+    "lastAnalyzed": "2025-06-01T07:59:30.646Z",
+    "analysisVersion": "1.0.0"
+  },
+  "processingState": {
+    "analysisCompleted": true,
+    "contextGenerated": false,
+    "characterStatesExtracted": true,
+    "keyPhrasesExtracted": true,
+    "lastProcessingTime": "2025-06-01T07:59:30.646Z",
+    "processingErrors": []
+  },
+  "characterState": [],
+  "keyPhrases": [],
+  "timestamp": "2025-06-01T07:59:30.646Z",
+  "contentHash": "1f7674d4"
+}

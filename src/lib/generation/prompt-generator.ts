@@ -8,13 +8,7 @@ import { logger } from '@/lib/utils/logger';
 
 // 新しい記憶階層システムのインポート
 import { MemoryManager } from '@/lib/memory/core/memory-manager';
-import { 
-  MemoryAccessRequest, 
-  MemoryAccessResponse,
-  MemoryLevel, 
-  MemoryRequestType,
-  UnifiedMemoryContext 
-} from '@/lib/memory/core/types';
+import { MemoryLevel } from '@/lib/memory/core/types';
 
 // プロンプト生成ヘルパー
 import { TemplateManager } from './prompt/template-manager';
@@ -41,24 +35,15 @@ class UnifiedMemoryService {
         return '物語の始まりです。';
       }
 
-      const request: MemoryAccessRequest = {
-        chapterNumber: chapterNumber - 1,
-        requestType: MemoryRequestType.CHAPTER_CONTEXT,
-        targetLayers: [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM],
-        filters: {
-          timeRange: { startChapter: chapterNumber - 1, endChapter: chapterNumber - 1 }
-        },
-        options: {
-          includeCache: true,
-          resolveDuplicates: true
-        }
-      };
-
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
+      // 統一検索APIを使用して前章情報を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        `第${chapterNumber - 1}章`, 
+        [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+      );
       
-      if (response.success && response.context) {
+      if (searchResult.success && searchResult.results.length > 0) {
         // 前章の終わり情報を抽出
-        const chapterData = this.extractChapterEndingFromContext(response.context);
+        const chapterData = this.extractChapterEndingFromSearchResults(searchResult.results);
         return chapterData || `前章（第${chapterNumber - 1}章）からの自然な続きとして物語を展開してください。`;
       }
 
@@ -84,21 +69,14 @@ class UnifiedMemoryService {
     endingGuidance: string;
   }> {
     try {
-      const request: MemoryAccessRequest = {
-        chapterNumber: Math.max(1, chapterNumber - 1),
-        requestType: MemoryRequestType.INTEGRATED_CONTEXT,
-        targetLayers: [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM],
-        options: {
-          includeCache: true,
-          resolveDuplicates: true,
-          deepAnalysis: true
-        }
-      };
+      // 統一検索APIを使用してシーン連続性情報を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        `第${Math.max(1, chapterNumber - 1)}章 シーン 場面`, 
+        [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+      );
 
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
-
-      if (response.success && response.context) {
-        return this.extractContinuityInfoFromContext(response.context, chapterNumber);
+      if (searchResult.success && searchResult.results.length > 0) {
+        return this.extractContinuityInfoFromSearchResults(searchResult.results, chapterNumber);
       }
 
       // フォールバック情報
@@ -127,40 +105,40 @@ class UnifiedMemoryService {
   }
 
   /**
-   * 統合記憶コンテキストから章の終わり情報を抽出
+   * 統合検索結果から章の終わり情報を抽出
    */
-  private extractChapterEndingFromContext(context: UnifiedMemoryContext): string | null {
+  private extractChapterEndingFromSearchResults(results: any[]): string | null {
     try {
-      // 短期記憶から最新の章情報を取得
-      if (context.shortTerm?.recentChapters && context.shortTerm.recentChapters.length > 0) {
-        const latestChapter = context.shortTerm.recentChapters[context.shortTerm.recentChapters.length - 1];
-        if (latestChapter?.chapter?.content) {
-          // 章の最後の部分を抽出（最後の500文字程度）
-          const content = latestChapter.chapter.content;
-          const endingPart = content.slice(-500);
-          return `前章の終わり：\n${endingPart}\n\n前章からの直接の続きとして、自然に物語を継続してください。`;
+      for (const result of results) {
+        if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+          // 短期記憶から章の内容を取得
+          if (result.data.content) {
+            const content = result.data.content;
+            const endingPart = content.slice(-500);
+            return `前章の終わり：\n${endingPart}\n\n前章からの直接の続きとして、自然に物語を継続してください。`;
+          }
+          
+          // その他の短期記憶データから終わり情報を探す
+          if (result.data.chapter && result.data.chapter.content) {
+            const content = result.data.chapter.content;
+            const endingPart = content.slice(-500);
+            return `前章の終わり：\n${endingPart}\n\n前章からの直接の続きとして、自然に物語を継続してください。`;
+          }
         }
-      }
-
-      // 中期記憶から物語進行情報を取得
-      if (context.midTerm?.narrativeProgression) {
-        const progression = context.midTerm.narrativeProgression;
-        // narrativeProgressionから関連情報を抽出（実装に依存）
-        return '前章の物語進行を踏まえ、自然に続きを展開してください。';
       }
 
       return null;
     } catch (error) {
-      logger.warn('Failed to extract chapter ending from context', { error });
+      logger.warn('Failed to extract chapter ending from search results', { error });
       return null;
     }
   }
 
   /**
-   * 統合記憶コンテキストから連続性情報を抽出
+   * 統合検索結果から連続性情報を抽出
    */
-  private extractContinuityInfoFromContext(
-    context: UnifiedMemoryContext, 
+  private extractContinuityInfoFromSearchResults(
+    results: any[], 
     chapterNumber: number
   ): {
     previousScene: string;
@@ -175,34 +153,38 @@ class UnifiedMemoryService {
       let timeElapsed = '前章からの自然な時間経過';
       let location = '前章と同じ場所、または自然な移動先';
 
-      // 短期記憶から詳細な情報を抽出
-      if (context.shortTerm?.recentChapters && context.shortTerm.recentChapters.length > 0) {
-        const latestChapter = context.shortTerm.recentChapters[context.shortTerm.recentChapters.length - 1];
-        
-        if (latestChapter?.chapter?.content) {
-          // 章の最後の場面から情報を抽出
-          const content = latestChapter.chapter.content;
-          const lastParagraphs = content.split('\n').slice(-3).join('\n');
-          previousScene = `前章の最終場面：${lastParagraphs.slice(0, 200)}...`;
-        }
+      for (const result of results) {
+        if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+          // 章の内容から最終場面を抽出
+          if (result.data.content || (result.data.chapter && result.data.chapter.content)) {
+            const content = result.data.content || result.data.chapter.content;
+            const lastParagraphs = content.split('\n').slice(-3).join('\n');
+            previousScene = `前章の最終場面：${lastParagraphs.slice(0, 200)}...`;
+          }
 
-        // キャラクター状態から位置情報を抽出
-        if (latestChapter?.characterStates && latestChapter.characterStates.size > 0) {
-          const characterList: string[] = [];
-          latestChapter.characterStates.forEach((state, characterId) => {
-            characterList.push(`${characterId}: ${state.currentLocation || '不明'}`);
-          });
-          if (characterList.length > 0) {
-            characterPositions = `キャラクター位置：${characterList.join(', ')}`;
+          // キャラクター情報があれば抽出
+          if (result.data.characters || result.data.characterStates) {
+            const characters = result.data.characters || result.data.characterStates;
+            if (Array.isArray(characters)) {
+              const characterList = characters.map((char: any) => 
+                `${char.name || char.id}: ${char.location || char.currentLocation || '不明'}`
+              );
+              if (characterList.length > 0) {
+                characterPositions = `キャラクター位置：${characterList.join(', ')}`;
+              }
+            }
           }
         }
-      }
 
-      // 中期記憶から物語進行情報を抽出
-      if (context.midTerm?.narrativeProgression) {
-        // 時間経過や場所の変化に関する情報があれば抽出
-        timeElapsed = '物語の流れに沿った自然な時間経過';
-        location = '物語の展開に適した場所';
+        // 中期記憶から時間経過や場所の情報を取得
+        if (result.source === MemoryLevel.MID_TERM && result.data) {
+          if (result.data.timeElapsed) {
+            timeElapsed = result.data.timeElapsed;
+          }
+          if (result.data.location) {
+            location = result.data.location;
+          }
+        }
       }
 
       return {
@@ -214,7 +196,7 @@ class UnifiedMemoryService {
       };
 
     } catch (error) {
-      logger.warn('Failed to extract continuity info from context', { error });
+      logger.warn('Failed to extract continuity info from search results', { error });
       return {
         previousScene: '前章の最終場面からの自然な続き',
         characterPositions: '登場キャラクターは前章での位置から継続',
@@ -495,27 +477,22 @@ export class PromptGenerator {
         return this.sectionBuilder.getChapterPurposeAndPlotPoints(context);
       }
 
-      // 統合記憶システムから物語進行情報を取得
-      const request: MemoryAccessRequest = {
-        chapterNumber: context.chapterNumber || 1,
-        requestType: MemoryRequestType.NARRATIVE_STATE,
-        targetLayers: [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM],
-        options: {
-          includeCache: true,
-          resolveDuplicates: true
-        }
-      };
+      // 統一検索システムから物語進行情報を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        '物語進行 プロット 目的', 
+        [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+      );
 
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
-
-      if (response.success && response.context?.midTerm?.narrativeProgression) {
+      if (searchResult.success && searchResult.results.length > 0) {
         // 中期記憶から物語進行に基づく目的を抽出
-        const progression = response.context.midTerm.narrativeProgression;
-        // progressionから章の目的とプロット要素を生成
-        return {
-          purpose: `物語進行に基づく第${context.chapterNumber || 1}章の展開`,
-          plotPoints: '統合記憶システムから取得したプロット要素'
-        };
+        for (const result of searchResult.results) {
+          if (result.source === MemoryLevel.MID_TERM && result.data) {
+            return {
+              purpose: `物語進行に基づく第${context.chapterNumber || 1}章の展開`,
+              plotPoints: '統合記憶システムから取得したプロット要素'
+            };
+          }
+        }
       }
 
       // フォールバック
@@ -536,11 +513,18 @@ export class PromptGenerator {
         return this.getGenreFromContext(context);
       }
 
-      // 統合記憶システムから世界設定を取得してジャンルを判定
-      const worldSettings = await this.memoryManager.duplicateResolver.getConsolidatedWorldSettings();
+      // 統一検索システムから世界設定を取得してジャンルを判定
+      const worldSearchResult = await this.memoryManager.unifiedSearch('世界設定 ジャンル', [MemoryLevel.LONG_TERM]);
       
-      if (worldSettings?.genre) {
-        return worldSettings.genre.toLowerCase();
+      if (worldSearchResult.success && worldSearchResult.results.length > 0) {
+        for (const result of worldSearchResult.results) {
+          if (result.data?.genre) {
+            return result.data.genre.toLowerCase();
+          }
+          if (result.data?.worldSettings?.genre) {
+            return result.data.worldSettings.genre.toLowerCase();
+          }
+        }
       }
 
       // 長期記憶からジャンル情報を検索
@@ -572,25 +556,24 @@ export class PromptGenerator {
         return this.identifyChapterType(context);
       }
 
-      // 統合記憶システムから物語状態を取得
-      const request: MemoryAccessRequest = {
-        chapterNumber: context.chapterNumber || 1,
-        requestType: MemoryRequestType.NARRATIVE_STATE,
-        targetLayers: [MemoryLevel.MID_TERM],
-        options: {
-          includeCache: true
-        }
-      };
+      // 統一検索システムから物語状態を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        '物語状態 章タイプ', 
+        [MemoryLevel.MID_TERM]
+      );
 
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
-
-      if (response.success && response.context?.midTerm) {
-        const midTerm = response.context.midTerm;
-        
-        // 物語進行から章タイプを判定
-        if (midTerm.narrativeProgression) {
-          // narrativeProgressionから章タイプを推定
-          return this.identifyChapterTypeFromProgression(midTerm.narrativeProgression, context);
+      if (searchResult.success && searchResult.results.length > 0) {
+        for (const result of searchResult.results) {
+          if (result.source === MemoryLevel.MID_TERM && result.data) {
+            // 物語進行から章タイプを判定
+            if (result.data.narrativeProgression) {
+              return this.identifyChapterTypeFromProgression(result.data.narrativeProgression, context);
+            }
+            // その他の中期記憶データから章タイプを推定
+            if (result.data.state || result.data.chapterType) {
+              return result.data.chapterType || result.data.state || 'STANDARD';
+            }
+          }
         }
       }
 
@@ -635,12 +618,20 @@ export class PromptGenerator {
       // 統合世界設定の取得
       let worldSettings = '';
       try {
-        const consolidatedWorldSettings = await this.memoryManager.duplicateResolver.getConsolidatedWorldSettings();
-        if (consolidatedWorldSettings) {
-          worldSettings = this.formatter.formatWorldSettings(consolidatedWorldSettings);
+        const worldSearchResult = await this.memoryManager.unifiedSearch('世界設定', [MemoryLevel.LONG_TERM]);
+        if (worldSearchResult.success && worldSearchResult.results.length > 0) {
+          for (const result of worldSearchResult.results) {
+            if (result.data?.worldSettings) {
+              worldSettings = this.formatter.formatWorldSettings(result.data.worldSettings);
+              break;
+            } else if (result.data && typeof result.data === 'object') {
+              worldSettings = this.formatter.formatWorldSettings(result.data);
+              break;
+            }
+          }
         }
       } catch (error) {
-        logger.warn('Failed to get consolidated world settings', { error });
+        logger.warn('Failed to get world settings from unified search', { error });
       }
 
       // PlotManagerからの世界設定とテーマを取得（フォールバック）
@@ -663,24 +654,17 @@ export class PromptGenerator {
       // 統合キャラクター情報の取得
       let characters = '';
       try {
-        // 短期記憶から最新のキャラクター状態を取得
-        const request: MemoryAccessRequest = {
-          chapterNumber: context.chapterNumber || 1,
-          requestType: MemoryRequestType.CHARACTER_ANALYSIS,
-          targetLayers: [MemoryLevel.SHORT_TERM, MemoryLevel.LONG_TERM],
-          options: {
-            includeCache: true,
-            resolveDuplicates: true
-          }
-        };
-
-        const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
+        // キャラクター情報を検索
+        const characterSearchResult = await this.memoryManager.unifiedSearch(
+          'キャラクター 登場人物', 
+          [MemoryLevel.SHORT_TERM, MemoryLevel.LONG_TERM]
+        );
         
-        if (response.success && response.context) {
-          characters = await this.extractCharactersFromUnifiedContext(response.context, context);
+        if (characterSearchResult.success && characterSearchResult.results.length > 0) {
+          characters = await this.extractCharactersFromSearchResults(characterSearchResult.results, context);
         }
       } catch (error) {
-        logger.warn('Failed to get characters from unified memory', { error });
+        logger.warn('Failed to get characters from unified search', { error });
       }
 
       // フォールバック：contextから直接取得
@@ -701,28 +685,50 @@ export class PromptGenerator {
   }
 
   /**
-   * 統合記憶コンテキストからキャラクター情報を抽出
+   * 統合検索結果からキャラクター情報を抽出
    */
-  private async extractCharactersFromUnifiedContext(
-    context: UnifiedMemoryContext, 
+  private async extractCharactersFromSearchResults(
+    results: any[], 
     generationContext: GenerationContext
   ): Promise<string> {
     try {
       const characterInfoList: string[] = [];
 
-      // 短期記憶からキャラクター状態を取得
-      if (context.shortTerm?.immediateCharacterStates) {
-        context.shortTerm.immediateCharacterStates.forEach((state, characterId) => {
-          const characterInfo = `${characterId}: ${state.currentLocation || '不明な場所'}にいる`;
-          characterInfoList.push(characterInfo);
-        });
-      }
+      // 検索結果からキャラクター情報を抽出
+      for (const result of results) {
+        if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+          // 短期記憶からキャラクター状態を取得
+          if (result.data.characters) {
+            const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
+            chars.forEach((char: any) => {
+              const characterInfo = `${char.name || char.id}: ${char.currentLocation || char.location || '不明な場所'}にいる`;
+              characterInfoList.push(characterInfo);
+            });
+          }
+          
+          if (result.data.characterStates) {
+            const states = result.data.characterStates;
+            if (typeof states === 'object') {
+              Object.entries(states).forEach(([characterId, state]: [string, any]) => {
+                const characterInfo = `${characterId}: ${state.currentLocation || '不明な場所'}にいる`;
+                characterInfoList.push(characterInfo);
+              });
+            }
+          }
+        }
 
-      // 長期記憶からキャラクターデータベース情報を取得
-      if (context.longTerm?.knowledgeDatabase) {
-        // knowledgeDatabaseからキャラクター情報を抽出
-        const characterData = context.longTerm.knowledgeDatabase;
-        // 実装は具体的なデータ構造に依存
+        if (result.source === MemoryLevel.LONG_TERM && result.data) {
+          // 長期記憶からキャラクターデータベース情報を取得
+          if (result.data.character || result.data.characters) {
+            const chars = result.data.characters || [result.data.character];
+            if (Array.isArray(chars)) {
+              chars.forEach((char: any) => {
+                const characterInfo = `${char.name}: ${char.description || ''}`;
+                characterInfoList.push(characterInfo);
+              });
+            }
+          }
+        }
       }
 
       // contextのキャラクター情報と統合
@@ -736,7 +742,7 @@ export class PromptGenerator {
       return characterInfoList.join('\n');
 
     } catch (error) {
-      logger.warn('Failed to extract characters from unified context', { error });
+      logger.warn('Failed to extract characters from search results', { error });
       return await this.formatter.formatCharacters(generationContext.characters || []);
     }
   }
@@ -889,26 +895,40 @@ export class PromptGenerator {
         return this.sectionBuilder.determineFocusCharacters(context);
       }
 
-      // 統合記憶システムからキャラクター情報を取得
-      const request: MemoryAccessRequest = {
-        chapterNumber: context.chapterNumber || 1,
-        requestType: MemoryRequestType.CHARACTER_ANALYSIS,
-        targetLayers: [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM],
-        options: {
-          includeCache: true
-        }
-      };
+      // 統一検索システムからキャラクター情報を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        'キャラクター 登場人物', 
+        [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+      );
 
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
-
-      if (response.success && response.context?.shortTerm?.immediateCharacterStates) {
+      if (searchResult.success && searchResult.results.length > 0) {
         const activeCharacters: string[] = [];
-        response.context.shortTerm.immediateCharacterStates.forEach((state, characterId) => {
-          activeCharacters.push(characterId);
-        });
+        
+        for (const result of searchResult.results) {
+          if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+            // キャラクター状態から活発なキャラクターを抽出
+            if (result.data.characters) {
+              const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
+              chars.forEach((char: any) => {
+                if (char.name || char.id) {
+                  activeCharacters.push(char.name || char.id);
+                }
+              });
+            }
+            
+            if (result.data.characterStates) {
+              const states = result.data.characterStates;
+              if (typeof states === 'object') {
+                Object.keys(states).forEach(characterId => {
+                  activeCharacters.push(characterId);
+                });
+              }
+            }
+          }
+        }
         
         if (activeCharacters.length > 0) {
-          return activeCharacters.slice(0, 3); // 最大3人まで
+          return [...new Set(activeCharacters)].slice(0, 3); // 重複除去して最大3人まで
         }
       }
 
@@ -993,23 +1013,21 @@ export class PromptGenerator {
         return this.replaceNarrativeStateGuidance(prompt, context, genre);
       }
 
-      // 統合記憶システムから物語状態を取得
-      const request: MemoryAccessRequest = {
-        chapterNumber: context.chapterNumber || 1,
-        requestType: MemoryRequestType.NARRATIVE_STATE,
-        targetLayers: [MemoryLevel.MID_TERM],
-        options: {
-          includeCache: true
+      // 統一検索システムから物語状態を取得
+      const searchResult = await this.memoryManager.unifiedSearch(
+        '物語状態 narrative', 
+        [MemoryLevel.MID_TERM]
+      );
+
+      if (searchResult.success && searchResult.results.length > 0) {
+        for (const result of searchResult.results) {
+          if (result.source === MemoryLevel.MID_TERM && result.data?.narrativeProgression) {
+            // 統合記憶システムから取得した物語進行に基づくガイダンス
+            const progression = result.data.narrativeProgression;
+            const guidance = this.generateGuidanceFromProgression(progression, genre);
+            return prompt.replace('{narrativeStateGuidance}', guidance);
+          }
         }
-      };
-
-      const response = await this.memoryManager.unifiedAccessAPI.processRequest(request);
-
-      if (response.success && response.context?.midTerm?.narrativeProgression) {
-        // 統合記憶システムから取得した物語進行に基づくガイダンス
-        const progression = response.context.midTerm.narrativeProgression;
-        const guidance = this.generateGuidanceFromProgression(progression, genre);
-        return prompt.replace('{narrativeStateGuidance}', guidance);
       }
 
       // contextの情報を使用（フォールバック）

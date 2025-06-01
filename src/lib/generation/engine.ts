@@ -8,6 +8,8 @@ import { logger } from '@/lib/utils/logger';
 import { GenerationError } from '@/lib/utils/error-handler';
 import { ChapterGenerator } from './engine/chapter-generator';
 import { PromptGenerator } from './prompt-generator'
+import { MemoryManager, MemoryManagerConfig } from '@/lib/memory/core/memory-manager'; // 追加
+import { setGlobalMemoryManager, initializePlotManager, getPlotManagerStatus } from '@/lib/plot';
 
 /**
  * @class NovelGenerationEngine
@@ -22,6 +24,7 @@ class NovelGenerationEngine {
   private chapterGenerator: ChapterGenerator;
   private geminiClient: GeminiClient;
   private promptGenerator: PromptGenerator;
+  private memoryManager: MemoryManager; // 追加
   // 初期化状態を追跡するためのフラグ
   private initialized: boolean = false;
   private initializationPromise: Promise<void> | null = null;
@@ -35,12 +38,86 @@ class NovelGenerationEngine {
   constructor() {
     this.geminiClient = new GeminiClient();
     this.promptGenerator = new PromptGenerator();
-    // ChapterGeneratorの初期化
-    this.chapterGenerator = new ChapterGenerator(this.geminiClient, this.promptGenerator);
-    
+
+    // MemoryManagerの完全なデフォルト設定
+    const memoryConfig: MemoryManagerConfig = {
+      shortTermConfig: {
+        maxChapters: 10,
+        cacheEnabled: true,
+        autoCleanupEnabled: false, // 🔥 無限ループ防止のため無効化
+        cleanupIntervalMinutes: 60, // 長めに設定
+        maxRetentionHours: 24
+      },
+      midTermConfig: {
+        maxAnalysisResults: 100,
+        enableEvolutionTracking: true,
+        enableProgressionAnalysis: true,
+        qualityThreshold: 0.7,
+        enableCrossComponentAnalysis: false, // 🔥 開発時は無効
+        enableRealTimeQualityMonitoring: false, // 🔥 無限ループ防止のため無効化
+        enablePerformanceOptimization: false // 🔥 開発時は無効
+      },
+      longTermConfig: {
+        enableAutoLearning: false, // 🔥 無限ループ防止のため無効化
+        consolidationInterval: 3600000, // 1時間（ミリ秒）
+        archiveOldData: false, // 開発時は無効
+        enablePredictiveAnalysis: false, // 開発時は無効
+        qualityThreshold: 0.8
+      },
+      integrationEnabled: true,
+      enableQualityAssurance: true,
+      enableAutoBackup: false, // 開発時は無効
+      enablePerformanceOptimization: true,
+      enableDataMigration: true,
+      cacheSettings: {
+        sizeLimit: 104857600, // 100MB
+        entryLimit: 1000,
+        cleanupInterval: 3600000 // 🔥 1時間（無限ループ防止のため長めに設定）
+      },
+      optimizationSettings: {
+        enablePredictiveAccess: false, // 🔥 開発時は無効
+        enableConsistencyValidation: false, // 🔥 開発時は無効
+        enablePerformanceMonitoring: false // 🔥 開発時は無効
+      },
+      qualityAssurance: {
+        enableRealTimeMonitoring: false, // 🔥 無限ループ防止のため無効化
+        enablePredictiveAnalysis: false, // 開発時は無効
+        enableAutomaticRecovery: false, // 開発時は無効
+        checkInterval: 300000, // 5分（長めに設定）
+        alertThresholds: {
+          dataIntegrity: 0.9,
+          systemStability: 0.8,
+          performance: 0.7,
+          operationalEfficiency: 0.8
+        }
+      },
+      backup: {
+        enabled: false, // 開発時は無効
+        schedule: {
+          fullBackupInterval: 86400000, // 24時間
+          incrementalInterval: 3600000, // 1時間
+          maxBackupCount: 10,
+          retentionDays: 30
+        },
+        compression: {
+          enabled: true,
+          level: 6
+        }
+      }
+    };
+
+    this.memoryManager = new MemoryManager(memoryConfig);
+
+    // ChapterGeneratorの初期化（memoryManagerを追加）
+    this.chapterGenerator = new ChapterGenerator(
+      this.geminiClient,
+      this.promptGenerator,
+      this.memoryManager
+    );
+
     // パラメータマネージャーの初期化を確認
     this.initializeParameters();
-    
+
     logger.info('NovelGenerationEngine initialized');
   }
 
@@ -117,13 +194,48 @@ class NovelGenerationEngine {
     try {
       logger.info('Starting NovelGenerationEngine initialization');
 
+      // 🔧 修正: MemoryManagerの初期化
+      logger.info('Initializing MemoryManager');
+      await this.memoryManager.initialize();
+      logger.info('MemoryManager initialization completed');
+
+      // 🔧 修正: PlotManagerの初期化を確実に実行
+      logger.info('Setting up PlotManager integration');
+
+      try {
+        // グローバルメモリマネージャーを設定
+        setGlobalMemoryManager(this.memoryManager);
+
+        // PlotManagerを初期化
+        logger.info('Initializing PlotManager with MemoryManager');
+        const plotManagerInstance = await initializePlotManager(this.memoryManager);
+        logger.info('PlotManager initialization completed successfully');
+
+        // 初期化状態を確認
+        const status = getPlotManagerStatus();
+        logger.info('PlotManager status after initialization:', status);
+
+        if (!status.isInitialized) {
+          logger.warn('PlotManager initialization may have failed, but continuing...');
+        }
+
+      } catch (plotError) {
+        logger.error('PlotManager initialization failed:', {
+          error: plotError instanceof Error ? plotError.message : String(plotError)
+        });
+
+        // PlotManagerの初期化失敗は警告レベルで処理（システム全体を停止しない）
+        logger.warn('Continuing without PlotManager integration');
+      }
+
       // ChapterGeneratorの初期化
       logger.info('Initializing ChapterGenerator');
       await this.chapterGenerator.initialize();
       logger.info('ChapterGenerator initialization completed');
 
       this.initialized = true;
-      logger.info('NovelGenerationEngine initialization completed');
+      logger.info('NovelGenerationEngine initialization completed successfully');
+
     } catch (error) {
       logger.error('Failed to initialize NovelGenerationEngine', {
         error: error instanceof Error ? error.message : String(error)
@@ -133,6 +245,80 @@ class NovelGenerationEngine {
       this.initializationPromise = null;
     }
   }
+
+  /**
+ * 🔧 追加: システム状態の診断メソッド
+ */
+  async checkSystemStatus(): Promise<{
+    apiKeyValid: boolean;
+    modelInfo: any;
+    parameters: SystemParameters;
+    plotManagerStatus?: any;  // 追加
+  }> {
+    const apiKeyValid = await this.geminiClient.validateApiKey();
+    const modelInfo = this.geminiClient.getModelInfo();
+    const parameters = parameterManager.getParameters();
+
+    // PlotManagerの状態も含める
+    const plotManagerStatus = getPlotManagerStatus();
+
+    return {
+      apiKeyValid,
+      modelInfo,
+      parameters,
+      plotManagerStatus  // 追加
+    };
+  }
+
+  /**
+  * 🔧 追加: 詳細な初期化状態確認
+  */
+  async performDetailedStatusCheck(): Promise<{
+    engineInitialized: boolean;
+    memoryManagerReady: boolean;
+    plotManagerReady: boolean;
+    chapterGeneratorReady: boolean;
+    recommendations: string[];
+  }> {
+    const recommendations: string[] = [];
+
+    // MemoryManagerの状態確認
+    let memoryManagerReady = false;
+    try {
+      const memoryStatus = await this.memoryManager.getSystemStatus();
+      memoryManagerReady = memoryStatus.initialized;
+      if (!memoryManagerReady) {
+        recommendations.push('MemoryManager requires initialization');
+      }
+    } catch (error) {
+      recommendations.push('MemoryManager status check failed');
+    }
+
+    // PlotManagerの状態確認
+    const plotStatus = getPlotManagerStatus();
+    const plotManagerReady = plotStatus.isInitialized;
+    if (!plotManagerReady) {
+      recommendations.push('PlotManager requires initialization');
+      if (!plotStatus.hasGlobalMemoryManager) {
+        recommendations.push('PlotManager missing MemoryManager dependency');
+      }
+    }
+
+    // ChapterGeneratorの状態確認（プロパティが存在する場合）
+    const chapterGeneratorReady = (this.chapterGenerator as any).initialized === true;
+    if (!chapterGeneratorReady) {
+      recommendations.push('ChapterGenerator may require initialization');
+    }
+
+    return {
+      engineInitialized: this.initialized,
+      memoryManagerReady,
+      plotManagerReady,
+      chapterGeneratorReady,
+      recommendations
+    };
+  }
+
 
   /**
    * システム状態情報を取得する
@@ -189,7 +375,7 @@ class NovelGenerationEngine {
         error: error instanceof Error ? error.message : String(error),
         stack: error instanceof Error ? error.stack : undefined
       });
-      
+
       throw new GenerationError(
         `Chapter ${chapterNumber} generation failed: ${error instanceof Error ? error.message : String(error)}`,
         'CHAPTER_GENERATION_FAILED'

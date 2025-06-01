@@ -56,7 +56,7 @@ state:
   isActive: false
   emotionalState: POSITIVE
   developmentStage: 0
-  lastAppearance: 1
+  lastAppearance: 11
   parameters:
     - id: param-marketing-knowledge
       name: マーケティング知識
@@ -1282,6 +1282,74 @@ history:
       timestamp: 2025-05-29T00:44:14.693Z
       significance: 0.5
       summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:14:20.797Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:16:43.020Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:20:57.362Z
+      significance: 0.5
+      summary: 鈴木美咲が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T07:26:09.772Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T07:30:28.087Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-06-01T07:35:50.361Z
+      significance: 0.5
+      summary: 鈴木美咲が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-06-01T07:41:30.170Z
+      significance: 0.5
+      summary: 鈴木美咲が章4に登場
+    - chapterNumber: 6
+      timestamp: 2025-06-01T07:49:32.423Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-06-01T07:52:58.332Z
+      significance: 0.5
+      summary: 鈴木美咲が章6に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:02:14.993Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:03:17.389Z
+      significance: 0.5
+      summary: '第8章に登場: 誤解の迷路'
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:04:20.428Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:05:15.509Z
+      significance: 0.5
+      summary: '第8章に登場: 焦燥と迷走'
+    - chapterNumber: 9
+      timestamp: 2025-06-01T08:08:11.352Z
+      significance: 0.5
+      summary: 鈴木美咲が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-06-01T08:09:41.150Z
+      significance: 0.5
+      summary: '第9章に登場: 誤解の連鎖'
+    - chapterNumber: 11
+      timestamp: 2025-06-01T08:16:25.360Z
+      significance: 0.5
+      summary: 鈴木美咲が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T08:17:42.607Z
+      significance: 0.5
+      summary: '第11章に登場: 誤解という名の壁'
   developmentPath:
     - stage: 0
       description: チームに参加する前段階
@@ -1501,8 +1569,8 @@ history:
 relationships: []
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-05-29T00:44:14.696Z
-  version: 647
+  lastUpdated: 2025-06-01T08:17:42.634Z
+  version: 664
   tags:
     - マーケター
     - コミュニケーター

@@ -680,7 +680,7 @@ export class DataIntegrationProcessor {
     }
 
     /**
-     * メモリレイヤーを更新
+     * メモリレイヤーを更新（アダプターパターン対応）
      */
     updateMemoryLayers(layers: {
         shortTerm: any;
@@ -688,11 +688,111 @@ export class DataIntegrationProcessor {
         longTerm: any;
     }): void {
         try {
-            this.config.memoryLayers = layers;
-            logger.debug('Memory layers updated in DataIntegrationProcessor');
+            // IMemoryLayer を MemoryLayer インターフェースに適応
+            this.config.memoryLayers = {
+                shortTerm: this.createMemoryLayerAdapter(layers.shortTerm, 'shortTerm'),
+                midTerm: this.createMemoryLayerAdapter(layers.midTerm, 'midTerm'),
+                longTerm: this.createMemoryLayerAdapter(layers.longTerm, 'longTerm')
+            };
+
+            logger.debug('Memory layers updated in DataIntegrationProcessor with adapters');
         } catch (error) {
             logger.warn('Failed to update memory layers in DataIntegrationProcessor', { error });
         }
+    }
+
+    /**
+     * IMemoryLayer を MemoryLayer インターフェースに適応するアダプター
+     */
+    private createMemoryLayerAdapter(memoryLayer: any, layerName: string): MemoryLayer {
+        return {
+            async getData(request: any): Promise<any> {
+                // IMemoryLayer の該当メソッドを呼び出し（実装に応じて調整）
+                if (memoryLayer && typeof memoryLayer.getStatus === 'function') {
+                    return await memoryLayer.getStatus();
+                }
+                return {};
+            },
+
+            async setData(key: string, data: any): Promise<void> {
+                try {
+                    // 🔧 最適化: データ構造に応じて適切なメソッドを選択
+                    if (data && data.chapter && memoryLayer && typeof memoryLayer.addChapter === 'function') {
+                        // Chapter オブジェクトがある場合は addChapter を使用
+                        await memoryLayer.addChapter(data.chapter);
+                        logger.debug(`Successfully integrated chapter via addChapter to ${layerName}`, {
+                            key,
+                            chapterNumber: data.chapter.chapterNumber
+                        });
+                        return;
+                    }
+
+                    // 直接 setData メソッドがある場合はそれを使用
+                    if (memoryLayer && typeof memoryLayer.setData === 'function') {
+                        await memoryLayer.setData(key, data);
+                        logger.debug(`Successfully integrated data via setData to ${layerName}`, { key });
+                        return;
+                    }
+
+                    // どちらもない場合は警告して継続
+                    logger.warn(`No compatible integration method for ${layerName}`, {
+                        key,
+                        hasAddChapter: memoryLayer && typeof memoryLayer.addChapter === 'function',
+                        hasSetData: memoryLayer && typeof memoryLayer.setData === 'function',
+                        dataHasChapter: data && !!data.chapter
+                    });
+
+                } catch (error) {
+                    logger.error(`Data integration failed for ${layerName}`, {
+                        key,
+                        error: error instanceof Error ? error.message : String(error)
+                    });
+                    // エラーを投げずに継続（統合失敗は致命的ではない）
+                }
+            },
+
+            async removeData(key: string): Promise<void> {
+                // cleanup などの既存メソッドを使用
+                if (memoryLayer && typeof memoryLayer.cleanup === 'function') {
+                    await memoryLayer.cleanup();
+                }
+            },
+
+            async getDataSize(): Promise<number> {
+                if (memoryLayer && typeof memoryLayer.getDataSize === 'function') {
+                    return await memoryLayer.getDataSize();
+                }
+                return 0;
+            },
+
+            async getStatus(): Promise<any> {
+                if (memoryLayer && typeof memoryLayer.getStatus === 'function') {
+                    return await memoryLayer.getStatus();
+                }
+                return { initialized: false };
+            },
+
+            async compress(): Promise<void> {
+                // 圧縮メソッドが存在する場合のみ実行
+                if (memoryLayer && typeof memoryLayer.compress === 'function') {
+                    await memoryLayer.compress();
+                }
+            },
+
+            async validate(): Promise<boolean> {
+                if (memoryLayer && typeof memoryLayer.getDiagnostics === 'function') {
+                    const diagnostics = await memoryLayer.getDiagnostics();
+                    return diagnostics.healthy;
+                }
+                return true;
+            },
+
+            async cleanup(): Promise<void> {
+                if (memoryLayer && typeof memoryLayer.cleanup === 'function') {
+                    await memoryLayer.cleanup();
+                }
+            }
+        };
     }
 
     // ============================================================================

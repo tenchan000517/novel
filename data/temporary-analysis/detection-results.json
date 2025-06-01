@@ -1,0 +1,145 @@
+{
+  "0": {
+    "chapterNumber": 0,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 17
+    },
+    "timestamp": "2025-06-01T08:22:03.450Z"
+  },
+  "1": {
+    "chapterNumber": 1,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 13
+    },
+    "timestamp": "2025-06-01T07:21:56.794Z"
+  },
+  "2": {
+    "chapterNumber": 2,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 15
+    },
+    "timestamp": "2025-06-01T07:31:15.175Z"
+  },
+  "3": {
+    "chapterNumber": 3,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 41
+    },
+    "timestamp": "2025-06-01T07:38:32.054Z"
+  },
+  "4": {
+    "chapterNumber": 4,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 45
+    },
+    "timestamp": "2025-06-01T07:42:48.068Z"
+  },
+  "5": {
+    "chapterNumber": 5,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 60
+    },
+    "timestamp": "2025-06-01T07:46:51.440Z"
+  },
+  "6": {
+    "chapterNumber": 6,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 54
+    },
+    "timestamp": "2025-06-01T07:50:47.545Z"
+  },
+  "7": {
+    "chapterNumber": 7,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 9
+    },
+    "timestamp": "2025-06-01T07:56:06.776Z"
+  },
+  "8": {
+    "chapterNumber": 8,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 8
+    },
+    "timestamp": "2025-06-01T08:05:15.751Z"
+  },
+  "9": {
+    "chapterNumber": 9,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 10
+    },
+    "timestamp": "2025-06-01T08:09:41.413Z"
+  },
+  "10": {
+    "chapterNumber": 10,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 17
+    },
+    "timestamp": "2025-06-01T08:13:44.634Z"
+  },
+  "11": {
+    "chapterNumber": 11,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 12
+    },
+    "timestamp": "2025-06-01T08:17:42.890Z"
+  },
+  "12": {
+    "chapterNumber": 12,
+    "detectionType": "CHARACTER",
+    "detectedItems": [],
+    "processingStats": {
+      "totalItems": 0,
+      "highConfidenceItems": 0,
+      "processingTime": 12
+    },
+    "timestamp": "2025-06-01T08:22:02.183Z"
+  }
+}

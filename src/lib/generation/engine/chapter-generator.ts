@@ -6,9 +6,9 @@ import { TextParser } from './text-parser';
 
 // === 🔥 新記憶階層システム統合 ===
 import { MemoryManager } from '@/lib/memory/core/memory-manager';
-import { 
-    MemoryLevel, 
-    MemoryAccessRequest, 
+import {
+    MemoryLevel,
+    MemoryAccessRequest,
     MemoryRequestType,
 } from '@/lib/memory/core/types';
 
@@ -37,7 +37,7 @@ interface EnhancedGenerationContext extends GenerationContext {
         characterStatesCount?: number;
         error?: string;
     };
-    
+
     // 統合記憶システムから取得される追加データ
     keyPhrases?: string[];
     characterStates?: Map<string, any>;
@@ -136,7 +136,7 @@ export class ChapterGenerator {
         contentAnalysisManager?: ContentAnalysisManager
     ) {
         this.geminiClient = geminiClient;
-        this.contextGenerator = new ContextGenerator();
+        this.contextGenerator = new ContextGenerator(memoryManager);
         this.promptGenerator = promptGenerator;
         this.textParser = new TextParser();
 
@@ -340,7 +340,7 @@ export class ChapterGenerator {
 
             // === 🔥 統合記憶システムによる前処理 ===
             logger.info(`Performing pre-generation memory operations for chapter ${chapterNumber}`);
-            
+
             // システム状態の確認
             const systemStatus = await this.memoryManager.getSystemStatus();
             if (!systemStatus.initialized) {
@@ -412,7 +412,7 @@ export class ChapterGenerator {
 
             // === 🔥 統合コンテキスト生成 ===
             logger.info(`Generating unified context for chapter ${chapterNumber}`);
-            
+
             const context: EnhancedGenerationContext = await withTimeout(
                 this.generateUnifiedContext(chapterNumber, enhancementOptions),
                 TIMEOUT_CONFIG.GENERATION.CONTEXT,
@@ -535,7 +535,7 @@ export class ChapterGenerator {
 
             // === 🔥 統合記憶システムによる一元処理 ===
             logger.info(`Processing chapter through unified memory system for chapter ${chapterNumber}`);
-            
+
             const memoryProcessingResult = await withTimeout(
                 this.memoryManager.processChapter(baseChapter),
                 TIMEOUT_CONFIG.GENERATION.MEMORY_PROCESSING,
@@ -557,15 +557,18 @@ export class ChapterGenerator {
             }
 
             // === プロット整合性チェック ===
-            const plotConsistency = await plotManager.checkGeneratedContentConsistency(
-                content,
-                chapterNumber
-            ).catch(error => {
+            let plotConsistency: { consistent: boolean; issues: any[] };
+            try {
+                plotConsistency = await plotManager.checkGeneratedContentConsistency(
+                    content,
+                    chapterNumber
+                );
+            } catch (error) {
                 logger.warn(`Plot consistency check failed for chapter ${chapterNumber}`, {
                     error: error instanceof Error ? error.message : String(error)
                 });
-                return { consistent: true, issues: [] };
-            });
+                plotConsistency = { consistent: true, issues: [] };
+            }
 
             // === 生成後パイプライン実行 ===
             logger.info(`Executing post-generation pipeline for chapter ${chapterNumber}`);
@@ -690,8 +693,8 @@ export class ChapterGenerator {
             );
 
             if (searchResult.success && searchResult.totalResults > 0) {
-                const chapterResult = searchResult.results.find(result => 
-                    result.type === 'chapter' && 
+                const chapterResult = searchResult.results.find(result =>
+                    result.type === 'chapter' &&
                     result.data.chapterNumber === chapterNumber
                 );
 
@@ -714,7 +717,7 @@ export class ChapterGenerator {
      * 統合記憶システムを使用したコンテキスト生成
      */
     private async generateUnifiedContext(
-        chapterNumber: number, 
+        chapterNumber: number,
         options: ExtendedGenerateChapterRequest
     ): Promise<EnhancedGenerationContext> {
         logger.debug(`Generating unified context for chapter ${chapterNumber}`);
@@ -723,13 +726,13 @@ export class ChapterGenerator {
             // 🔥 統一検索APIによる統合コンテキスト取得
             const searchQuery = `chapter context for ${chapterNumber}`;
             const targetLayers = [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM];
-            
+
             const unifiedSearchResult = await this.memoryManager.unifiedSearch(searchQuery, targetLayers);
 
             if (!unifiedSearchResult.success || unifiedSearchResult.totalResults === 0) {
                 logger.warn(`Unified search failed for chapter ${chapterNumber}, falling back to traditional context generation`);
                 const traditionalContext = await this.contextGenerator.generateContext(chapterNumber, options);
-                
+
                 // 統合システム未使用の記録
                 const fallbackContext: EnhancedGenerationContext = {
                     ...traditionalContext,
@@ -739,7 +742,7 @@ export class ChapterGenerator {
                         error: 'Unified search returned no results'
                     }
                 };
-                
+
                 return fallbackContext;
             }
 
@@ -792,7 +795,7 @@ export class ChapterGenerator {
             // 統合コンテキストを構築
             const enhancedContext: EnhancedGenerationContext = {
                 ...traditionalContext,
-                
+
                 // 🔥 統合記憶システムからの拡張データ
                 unifiedMemoryData: {
                     searchSuccess: unifiedSearchResult.success,
@@ -808,7 +811,7 @@ export class ChapterGenerator {
 
                 // 短期記憶からの最新情報（型を適合）
                 recentChapters: recentChapters,
-                
+
                 // 統合記憶システムから取得したデータを条件付きで追加
                 ...(keyPhrases.length > 0 && { keyPhrases }),
                 ...(characterStates.size > 0 && { characterStates }),
@@ -852,7 +855,7 @@ export class ChapterGenerator {
 
             // エラー時は従来の方法にフォールバック
             const fallbackContext = await this.contextGenerator.generateContext(chapterNumber, options);
-            
+
             // フォールバック使用の記録（型安全）
             const enhancedFallbackContext: EnhancedGenerationContext = {
                 ...fallbackContext,
@@ -862,7 +865,7 @@ export class ChapterGenerator {
                     error: error instanceof Error ? error.message : String(error)
                 }
             };
-            
+
             return enhancedFallbackContext;
         }
     }
@@ -988,50 +991,50 @@ ${importantSections}
             // 🔥 統合記憶システムの状態確認
             const systemStatus = await this.memoryManager.getSystemStatus();
             if (!systemStatus.initialized) {
-                return { 
-                    initialized: false, 
-                    reason: '統合記憶システムが正しく初期化されていません' 
+                return {
+                    initialized: false,
+                    reason: '統合記憶システムが正しく初期化されていません'
                 };
             }
 
             // システム診断の実行
             const diagnostics = await this.memoryManager.performSystemDiagnostics();
             if (diagnostics.systemHealth === 'CRITICAL') {
-                return { 
-                    initialized: false, 
-                    reason: `記憶システムに重大な問題があります: ${diagnostics.issues.join(', ')}` 
+                return {
+                    initialized: false,
+                    reason: `記憶システムに重大な問題があります: ${diagnostics.issues.join(', ')}`
                 };
             }
 
             const plotCheckResult = await this.checkPlotFileExistsDirect();
             if (!plotCheckResult) {
-                return { 
-                    initialized: false, 
-                    reason: 'プロットファイルが見つかりません' 
+                return {
+                    initialized: false,
+                    reason: 'プロットファイルが見つかりません'
                 };
             }
 
             const characterCheckResult = await this.checkMainCharactersExist();
             if (!characterCheckResult.exist) {
-                return { 
-                    initialized: false, 
-                    reason: `メインキャラクターが設定されていません: ${characterCheckResult.message}` 
+                return {
+                    initialized: false,
+                    reason: `メインキャラクターが設定されていません: ${characterCheckResult.message}`
                 };
             }
 
             const params = parameterManager.getParameters();
             if (!params || !params.generation) {
-                return { 
-                    initialized: false, 
-                    reason: 'システムパラメータが正しく初期化されていません' 
+                return {
+                    initialized: false,
+                    reason: 'システムパラメータが正しく初期化されていません'
                 };
             }
 
             const apiKeyValid = await this.geminiClient.validateApiKey();
             if (!apiKeyValid) {
-                return { 
-                    initialized: false, 
-                    reason: 'GeminiのAPIキーが無効です' 
+                return {
+                    initialized: false,
+                    reason: 'GeminiのAPIキーが無効です'
                 };
             }
 
@@ -1069,9 +1072,9 @@ ${importantSections}
 
             return { exist: true, message: `${mainCharacters.length}人のメインキャラクターが存在します` };
         } catch (error) {
-            return { 
-                exist: false, 
-                message: `メインキャラクターの確認中にエラー: ${error instanceof Error ? error.message : String(error)}` 
+            return {
+                exist: false,
+                message: `メインキャラクターの確認中にエラー: ${error instanceof Error ? error.message : String(error)}`
             };
         }
     }

@@ -159,21 +159,21 @@ export class DuplicateResolver {
             }
 
             // ソース3: PlotManager (動的インポート)
-            try {
-                const { plotManager } = await import('@/lib/plot');
-                const plotGenre = await plotManager.getGenre();
-                const plotSettings: WorldSettings = {
-                    description: '物語の基本設定',
-                    genre: plotGenre,
-                    regions: [],
-                    history: [],
-                    rules: []
-                };
-                sources.push({ name: 'PlotManager', data: plotSettings });
-            } catch (error) {
-                logger.warn('Failed to get settings from PlotManager', { error });
-                sources.push({ name: 'PlotManager', data: null });
-            }
+            // try {
+            //     const { plotManager } = await import('@/lib/plot');
+            //     const plotGenre = await plotManager.getGenre();
+            //     const plotSettings: WorldSettings = {
+            //         description: '物語の基本設定',
+            //         genre: plotGenre,
+            //         regions: [],
+            //         history: [],
+            //         rules: []
+            //     };
+            //     sources.push({ name: 'PlotManager', data: plotSettings });
+            // } catch (error) {
+            //     logger.warn('Failed to get settings from PlotManager', { error });
+            //     sources.push({ name: 'PlotManager', data: null });
+            // }
 
             // ソース4: EventMemory (イベントから推定される世界設定)
             try {

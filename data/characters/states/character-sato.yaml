@@ -1,7 +1,7 @@
 isActive: false
 emotionalState: NEUTRAL
 developmentStage: 0
-lastAppearance: 1
+lastAppearance: 11
 parameters:
   - id: param-technical-skill
     name: 技術力

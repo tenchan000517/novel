@@ -1,17 +1,26 @@
 // src/lib/learning-journey/concept-learning-manager.ts
 
 /**
- * @fileoverview 概念学習管理
+ * @fileoverview 概念学習管理（統合記憶階層システム対応版）
  * @description
  * ビジネス概念の定義と学習段階を管理するコンポーネント。
- * 学習段階の追跡、進捗分析、体現化プランの生成を担当する。
+ * 新しい統合記憶階層システムに完全対応し、学習段階の追跡、進捗分析、体現化プランの生成を担当する。
+ * MemoryManagerとの統合により、概念情報の永続化と高速アクセスを実現。
  */
 
 import { logger } from '@/lib/utils/logger';
 import { GeminiClient } from '@/lib/generation/gemini-client';
 import { EventBus } from './event-bus';
-import { storageProvider } from '@/lib/storage';
-import { memoryManager } from '@/lib/memory/manager';
+import { Chapter } from '@/types/chapters';
+
+// 新統合記憶階層システムのインポート
+import { MemoryManager } from '@/lib/memory/core/memory-manager';
+import { 
+    MemoryLevel, 
+    UnifiedSearchResult,
+    MemoryAccessRequest,
+    MemoryRequestType 
+} from '@/lib/memory/core/types';
 
 /**
  * 学習段階の列挙型
@@ -81,25 +90,106 @@ export interface LearningRecord {
 }
 
 /**
+ * 統合記憶システム操作結果
+ */
+interface ConceptMemoryOperationResult {
+    success: boolean;
+    processingTime: number;
+    source: 'cache' | 'unified-search' | 'long-term';
+    error?: string;
+    metadata?: {
+        cacheHit?: boolean;
+        searchResults?: number;
+        duplicatesResolved?: number;
+    };
+}
+
+/**
+ * 概念学習統計情報
+ */
+interface ConceptLearningStatistics {
+    totalConcepts: number;
+    conceptsByStage: Record<LearningStage, number>;
+    learningProgression: {
+        averageProgressionRate: number;
+        stageTransitions: number;
+        completedJourneys: number;
+    };
+    memorySystemIntegration: {
+        totalMemoryOperations: number;
+        cacheHitRate: number;
+        averageRetrievalTime: number;
+    };
+    lastOptimization: string;
+}
+
+/**
  * @class ConceptLearningManager
  * @description
  * ビジネス概念の定義と学習段階を管理するクラス。
- * BusinessConceptLibraryとConceptEmbodimentDesignerを統合したもの。
+ * 新しい統合記憶階層システムに完全対応し、高度な概念管理機能を提供。
  */
 export class ConceptLearningManager {
     private concepts: Map<string, BusinessConcept> = new Map();
     private initialized: boolean = false;
+    
+    // パフォーマンス統計
+    private performanceStats: ConceptLearningStatistics = {
+        totalConcepts: 0,
+        conceptsByStage: {
+            [LearningStage.MISCONCEPTION]: 0,
+            [LearningStage.EXPLORATION]: 0,
+            [LearningStage.CONFLICT]: 0,
+            [LearningStage.INSIGHT]: 0,
+            [LearningStage.APPLICATION]: 0,
+            [LearningStage.INTEGRATION]: 0
+        },
+        learningProgression: {
+            averageProgressionRate: 0,
+            stageTransitions: 0,
+            completedJourneys: 0
+        },
+        memorySystemIntegration: {
+            totalMemoryOperations: 0,
+            cacheHitRate: 0,
+            averageRetrievalTime: 0
+        },
+        lastOptimization: new Date().toISOString()
+    };
 
     /**
-     * コンストラクタ
+     * コンストラクタ - 依存注入パターンの完全実装
+     * @param memoryManager 統合記憶管理システム
      * @param geminiClient AIによる学習分析用クライアント
      * @param eventBus イベントバス
      */
     constructor(
+        private memoryManager: MemoryManager,
         private geminiClient: GeminiClient,
         private eventBus: EventBus
     ) {
-        logger.info('ConceptLearningManager created');
+        // 依存関係の検証
+        this.validateDependencies();
+        
+        logger.info('ConceptLearningManager created with unified memory system integration');
+    }
+
+    /**
+     * 依存関係の検証
+     * @private
+     */
+    private validateDependencies(): void {
+        if (!this.memoryManager) {
+            throw new Error('MemoryManager is required for ConceptLearningManager initialization');
+        }
+        
+        if (!this.geminiClient) {
+            throw new Error('GeminiClient is required for ConceptLearningManager initialization');
+        }
+        
+        if (!this.eventBus) {
+            throw new Error('EventBus is required for ConceptLearningManager initialization');
+        }
     }
 
     /**
@@ -112,44 +202,82 @@ export class ConceptLearningManager {
         }
 
         try {
-            logger.info('Initializing ConceptLearningManager...');
+            logger.info('Initializing ConceptLearningManager with unified memory system...');
+
+            // メモリマネージャーの初期化状態確認
+            await this.ensureMemoryManagerInitialized();
 
             // データが存在するか確認
-            const dataExists = await this.conceptDataExists();
+            const dataExists = await this.safeMemoryOperation(
+                () => this.conceptDataExists(),
+                false,
+                'conceptDataExistenceCheck'
+            );
 
             if (dataExists) {
                 // 既存データを読み込む
-                await this.loadConceptsData();
+                await this.loadConceptsFromUnifiedMemory();
             } else {
                 // 初期データを生成
-                await this.generateInitialConceptsData();
+                await this.generateAndStoreInitialConceptsData();
             }
 
+            // 統計情報の初期化
+            this.updateStatistics();
+
             this.initialized = true;
-            logger.info('ConceptLearningManager initialized successfully');
+            logger.info('ConceptLearningManager initialized successfully', {
+                conceptCount: this.concepts.size,
+                memorySystemIntegrated: true
+            });
 
             // 初期化完了イベント発行
             this.eventBus.publish('learning.manager.initialized', {
-                conceptCount: this.concepts.size
+                conceptCount: this.concepts.size,
+                memorySystemIntegration: true,
+                performanceStats: this.performanceStats
             });
+
         } catch (error) {
             logger.error('Failed to initialize ConceptLearningManager', {
                 error: error instanceof Error ? error.message : String(error)
             });
-            throw error;
+            throw new Error(`ConceptLearningManager initialization failed: ${error}`);
         }
     }
 
     /**
-     * 概念データが存在するか確認
+     * メモリマネージャーの初期化状態確認
+     * @private
+     */
+    private async ensureMemoryManagerInitialized(): Promise<void> {
+        try {
+            const systemStatus = await this.memoryManager.getSystemStatus();
+            if (!systemStatus.initialized) {
+                logger.warn('MemoryManager not initialized, waiting for initialization...');
+                // 必要に応じて初期化を待機またはトリガー
+            }
+        } catch (error) {
+            logger.error('Failed to check MemoryManager status', { error });
+            throw new Error('MemoryManager is not available');
+        }
+    }
+
+    /**
+     * 概念データが存在するか確認（統合記憶システム対応）
+     * @private
      */
     private async conceptDataExists(): Promise<boolean> {
         try {
-            const worldKnowledge = memoryManager.getLongTermMemory();
-            const settings = worldKnowledge.getWorldSettings();
-            return !!settings.businessConcepts && Array.isArray(settings.businessConcepts);
+            const searchResult = await this.memoryManager.unifiedSearch(
+                'businessConcepts conceptLearning',
+                [MemoryLevel.LONG_TERM]
+            );
+            
+            return searchResult.success && searchResult.totalResults > 0;
+            
         } catch (error) {
-            logger.error('Error checking concept data existence', {
+            logger.error('Error checking concept data existence in unified memory', {
                 error: error instanceof Error ? error.message : String(error)
             });
             return false;
@@ -157,56 +285,126 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 概念データを読み込む
+     * 統合記憶システムから概念データを読み込む
+     * @private
      */
-    private async loadConceptsData(): Promise<void> {
+    private async loadConceptsFromUnifiedMemory(): Promise<void> {
         try {
-            // WorldKnowledgeから読み込み
-            const worldKnowledge = memoryManager.getLongTermMemory();
-            const settings = worldKnowledge.getWorldSettings();
+            logger.info('Loading concepts from unified memory system');
 
-            // BusinessConceptインターフェースを定義（別ファイルに定義されている場合はインポート）
-            interface BusinessConcept {
-                name: string;
-                // 他の必要なプロパティもここに追加
-                description?: string;
-                category?: string;
-                relatedConcepts?: string[];
-                examples?: string[];
-                [key: string]: any; // その他の任意のプロパティを許可
+            // 統合検索でビジネス概念データを取得
+            const searchResult = await this.memoryManager.unifiedSearch(
+                'businessConcepts learningStage conceptDefinition',
+                [MemoryLevel.LONG_TERM, MemoryLevel.MID_TERM]
+            );
+
+            if (!searchResult.success || searchResult.totalResults === 0) {
+                logger.warn('No business concepts found in unified memory system');
+                return;
             }
 
-            if (settings.businessConcepts && Array.isArray(settings.businessConcepts)) {
-                this.concepts = new Map(
-                    settings.businessConcepts.map((concept: BusinessConcept) => [
-                        this.normalizeConceptName(concept.name),
-                        concept
-                    ])
-                );
-
-                logger.info(`Loaded ${this.concepts.size} business concepts from memory hierarchy`);
-            } else {
-                logger.info('No business concepts found in memory hierarchy');
-                this.concepts = new Map();
+            // 検索結果から概念データを抽出・統合
+            let loadedConcepts = 0;
+            
+            for (const result of searchResult.results) {
+                try {
+                    const conceptData = this.extractConceptFromSearchResult(result);
+                    if (conceptData) {
+                        this.concepts.set(this.normalizeConceptName(conceptData.name), conceptData);
+                        loadedConcepts++;
+                    }
+                } catch (extractError) {
+                    logger.warn('Failed to extract concept from search result', {
+                        error: extractError instanceof Error ? extractError.message : String(extractError),
+                        resultType: result.type,
+                        source: result.source
+                    });
+                }
             }
+
+            logger.info(`Loaded ${loadedConcepts} business concepts from unified memory system`, {
+                totalSearchResults: searchResult.totalResults,
+                processingTime: searchResult.processingTime
+            });
+
+            // 統計情報の更新
+            this.performanceStats.memorySystemIntegration.totalMemoryOperations++;
+            this.performanceStats.memorySystemIntegration.averageRetrievalTime = 
+                (this.performanceStats.memorySystemIntegration.averageRetrievalTime + searchResult.processingTime) / 2;
+
         } catch (error) {
-            logger.error('Failed to load concepts data', {
+            logger.error('Failed to load concepts from unified memory', {
                 error: error instanceof Error ? error.message : String(error)
             });
 
-            // エラー時は空のコンセプト集で初期化
+            // フォールバック：空のコンセプト集で初期化
             this.concepts = new Map();
         }
     }
 
     /**
-     * 初期概念データを生成する
+     * 検索結果から概念データを抽出
+     * @private
      */
-    private async generateInitialConceptsData(): Promise<void> {
+    private extractConceptFromSearchResult(result: any): BusinessConcept | null {
         try {
-            logger.info('Generating initial business concepts data');
+            if (result.type === 'knowledge' && result.data) {
+                // 長期記憶からの概念データ
+                if (result.data.businessConcepts && Array.isArray(result.data.businessConcepts)) {
+                    return result.data.businessConcepts[0]; // 最初の概念を取得
+                }
+                
+                // 単一概念データの場合
+                if (result.data.name && result.data.description) {
+                    return this.validateAndNormalizeConcept(result.data);
+                }
+            }
+            
+            if (result.type === 'analysis' && result.data) {
+                // 中期記憶からの分析結果
+                if (result.data.conceptAnalysis) {
+                    return this.validateAndNormalizeConcept(result.data.conceptAnalysis);
+                }
+            }
 
-            // ISSUE DRIVEN概念の定義
+            return null;
+        } catch (error) {
+            logger.warn('Failed to extract concept from search result', { error });
+            return null;
+        }
+    }
+
+    /**
+     * 概念データの検証と正規化
+     * @private
+     */
+    private validateAndNormalizeConcept(conceptData: any): BusinessConcept {
+        const normalized: BusinessConcept = {
+            name: conceptData.name || 'Unknown Concept',
+            description: conceptData.description || '',
+            keyPrinciples: Array.isArray(conceptData.keyPrinciples) ? conceptData.keyPrinciples : [],
+            commonMisconceptions: Array.isArray(conceptData.commonMisconceptions) ? conceptData.commonMisconceptions : [],
+            applicationAreas: Array.isArray(conceptData.applicationAreas) ? conceptData.applicationAreas : [],
+            relatedConcepts: Array.isArray(conceptData.relatedConcepts) ? conceptData.relatedConcepts : [],
+            learningJourney: conceptData.learningJourney || {},
+            transformationalElements: conceptData.transformationalElements || {},
+            learningRecords: Array.isArray(conceptData.learningRecords) ? conceptData.learningRecords : [],
+            created: conceptData.created || new Date().toISOString(),
+            updated: new Date().toISOString()
+        };
+
+        return normalized;
+    }
+
+    /**
+     * 初期概念データを生成し統合記憶システムに保存
+     * @private
+     */
+    private async generateAndStoreInitialConceptsData(): Promise<void> {
+        try {
+            logger.info('Generating initial business concepts data for unified memory system');
+
+            // ISSUE DRIVEN概念の定義（完全版）
             const issueDriven: BusinessConcept = {
                 name: "ISSUE DRIVEN",
                 description: "課題解決を起点としたビジネスアプローチ。顧客の抱える本質的な課題（イシュー）を深く理解し、その解決に焦点を当てたソリューションを提供する考え方。",
@@ -288,93 +486,161 @@ export class ConceptLearningManager {
                 updated: new Date().toISOString()
             };
 
-            // Map形式で概念を保存
+            // 概念をローカルマップに保存
             this.concepts.set(this.normalizeConceptName(issueDriven.name), issueDriven);
 
-            // 概念データを保存
-            await this.saveConceptsData();
+            // 統合記憶システムに保存
+            await this.saveConceptsToUnifiedMemory();
 
-            logger.info(`Generated initial business concept: ${issueDriven.name}`);
-        } catch (error) {
-            logger.error('Failed to generate initial concepts data', {
-                error: error instanceof Error ? error.message : String(error)
+            logger.info(`Generated and stored initial business concept: ${issueDriven.name}`, {
+                memorySystemIntegrated: true
             });
+
+        } catch (error) {
+            logger.error('Failed to generate and store initial concepts data', {
+                error: error instanceof Error ? error.message : String(error)
+            })
             throw error;
         }
     }
 
     /**
-     * 概念データを保存する
+     * 概念データを統合記憶システムに保存
+     * @private
      */
-    private async saveConceptsData(): Promise<void> {
+    private async saveConceptsToUnifiedMemory(): Promise<ConceptMemoryOperationResult> {
+        const startTime = Date.now();
+
         try {
-            // WorldKnowledgeのカスタムプロパティとして保存
-            const worldKnowledge = memoryManager.getLongTermMemory();
-            await worldKnowledge.updateWorldSettings({
+            // 概念データを構造化して保存用に準備
+            const conceptsData = {
                 businessConcepts: Array.from(this.concepts.values()),
-                learningStageLastUpdated: new Date().toISOString()
-            });
-
-            logger.info(`Saved ${this.concepts.size} business concepts to memory hierarchy`);
-        } catch (error) {
-            logger.error('Failed to save concepts data', {
-                error: error instanceof Error ? error.message : String(error)
-            });
-            throw error;
-        }
-    }
-
-    /**
-     * ディレクトリの存在を確認し、必要に応じて作成する
-     * @param dirPath ディレクトリパス
-     */
-    private async ensureDirectoryExists(dirPath: string): Promise<void> {
-        try {
-            // ローカル環境の場合
-            if (typeof window === 'undefined') {
-                const fs = require('fs');
-                const path = require('path');
-                const fullPath = path.join(process.cwd(), dirPath);
-                if (!fs.existsSync(fullPath)) {
-                    fs.mkdirSync(fullPath, { recursive: true });
+                learningStageLastUpdated: new Date().toISOString(),
+                totalConcepts: this.concepts.size,
+                metadata: {
+                    source: 'ConceptLearningManager',
+                    version: '2.0',
+                    systemIntegration: true
                 }
+            };
+
+            // 章形式でのデータ保存（統合記憶システム対応）
+            const conceptChapter: Chapter = {
+                id: `concept-data-${Date.now()}`,
+                chapterNumber: 0, // システムデータは0番
+                title: 'Business Concepts Data',
+                content: JSON.stringify(conceptsData, null, 2),
+                previousChapterSummary: '',
+                scenes: [],
+                createdAt: new Date(),
+                updatedAt: new Date(),
+                metadata: {
+                    createdAt: new Date().toISOString(),
+                    lastModified: new Date().toISOString(),
+                    status: 'system_data',
+                    dataType: 'businessConcepts',
+                    wordCount: JSON.stringify(conceptsData).length,
+                    estimatedReadingTime: 1
+                }
+            };
+
+            // 統合記憶システムで章を処理
+            const processResult = await this.memoryManager.processChapter(conceptChapter);
+
+            const processingTime = Date.now() - startTime;
+
+            if (processResult.success) {
+                logger.info(`Saved ${this.concepts.size} business concepts to unified memory system`, {
+                    processingTime,
+                    affectedComponents: processResult.affectedComponents
+                });
+
+                return {
+                    success: true,
+                    processingTime,
+                    source: 'unified-search',
+                    metadata: {
+                        cacheHit: false,
+                        searchResults: this.concepts.size,
+                        duplicatesResolved: 0
+                    }
+                };
+            } else {
+                throw new Error(`Failed to process concept data: ${processResult.errors.join(', ')}`);
             }
-            // ブラウザ環境の場合
-            else {
-                await storageProvider.createDirectory(dirPath);
-            }
+
         } catch (error) {
-            logger.error(`Failed to ensure directory exists: ${dirPath}`, {
-                error: error instanceof Error ? error.message : String(error)
+            const processingTime = Date.now() - startTime;
+            
+            logger.error('Failed to save concepts to unified memory system', {
+                error: error instanceof Error ? error.message : String(error),
+                processingTime
             });
-            throw error;
+
+            return {
+                success: false,
+                processingTime,
+                source: 'unified-search',
+                error: error instanceof Error ? error.message : String(error)
+            };
         }
     }
 
     /**
-     * 概念の詳細を取得する
+     * 概念の詳細を取得する（統合記憶システム対応）
      * @param conceptName 概念名
      * @returns 概念の詳細情報、見つからない場合はnull
      */
-    getConceptDetails(conceptName: string): BusinessConcept | null {
+    async getConceptDetails(conceptName: string): Promise<BusinessConcept | null> {
         this.ensureInitialized();
 
-        // 正規化された名前で検索
-        const normalizedName = this.normalizeConceptName(conceptName);
-        const concept = this.concepts.get(normalizedName);
-
-        if (concept) {
-            return concept;
-        }
-
-        // 部分一致で検索
-        for (const [key, value] of this.concepts.entries()) {
-            if (key.includes(normalizedName) || normalizedName.includes(key)) {
-                return value;
+        try {
+            // まずローカルキャッシュから検索
+            const normalizedName = this.normalizeConceptName(conceptName);
+            const localConcept = this.concepts.get(normalizedName);
+            
+            if (localConcept) {
+                this.performanceStats.memorySystemIntegration.cacheHitRate++;
+                return localConcept;
             }
-        }
 
-        return null;
+            // 統合記憶システムから検索
+            const searchResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `concept "${conceptName}" businessConcept`,
+                    [MemoryLevel.LONG_TERM, MemoryLevel.MID_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'getConceptDetails'
+            );
+
+            if (searchResult.success && searchResult.totalResults > 0) {
+                // 検索結果から概念を抽出
+                for (const result of searchResult.results) {
+                    const extractedConcept = this.extractConceptFromSearchResult(result);
+                    if (extractedConcept && this.normalizeConceptName(extractedConcept.name) === normalizedName) {
+                        // ローカルキャッシュに保存
+                        this.concepts.set(normalizedName, extractedConcept);
+                        return extractedConcept;
+                    }
+                }
+            }
+
+            // 部分一致検索
+            for (const [key, concept] of this.concepts.entries()) {
+                if (key.includes(normalizedName) || normalizedName.includes(key)) {
+                    return concept;
+                }
+            }
+
+            return null;
+
+        } catch (error) {
+            logger.error(`Failed to get concept details for ${conceptName}`, {
+                error: error instanceof Error ? error.message : String(error)
+            });
+            return null;
+        }
     }
 
     /**
@@ -387,7 +653,7 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 学習段階を判断する
+     * 学習段階を判断する（統合記憶システム対応）
      * @param conceptName 概念名
      * @param chapterNumber 章番号
      * @returns 学習段階
@@ -399,18 +665,49 @@ export class ConceptLearningManager {
         try {
             logger.info(`Determining learning stage for concept: ${conceptName} at chapter ${chapterNumber}`);
 
-            // 前回の学習段階を取得
-            const concept = this.getConceptDetails(conceptName);
+            // 概念情報を取得
+            const concept = await this.getConceptDetails(conceptName);
 
             if (!concept) {
                 logger.warn(`Concept not found: ${conceptName}, using default stage EXPLORATION`);
-                return LearningStage.EXPLORATION; // デフォルト値
+                return LearningStage.EXPLORATION;
             }
 
+            // 統合記憶システムから学習記録を検索
+            const learningHistoryResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `learningRecord "${conceptName}" chapter`,
+                    [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'determineLearningStage'
+            );
+
             // 最新の学習記録を取得
-            const latestRecord = concept.learningRecords?.sort(
-                (a, b) => b.chapterNumber - a.chapterNumber
-            )[0];
+            let latestRecord: LearningRecord | null = null;
+
+            if (learningHistoryResult.success && learningHistoryResult.totalResults > 0) {
+                // 検索結果から学習記録を抽出
+                for (const result of learningHistoryResult.results) {
+                    const records = this.extractLearningRecordsFromSearchResult(result, conceptName);
+                    for (const record of records) {
+                        if (!latestRecord || record.chapterNumber > latestRecord.chapterNumber) {
+                            latestRecord = record;
+                        }
+                    }
+                }
+            }
+
+            // ローカル記録もチェック
+            if (concept.learningRecords && concept.learningRecords.length > 0) {
+                const localLatest = concept.learningRecords.sort(
+                    (a, b) => b.chapterNumber - a.chapterNumber
+                )[0];
+                
+                if (!latestRecord || localLatest.chapterNumber > latestRecord.chapterNumber) {
+                    latestRecord = localLatest;
+                }
+            }
 
             // 前回の学習段階が無い場合は初期段階
             if (!latestRecord) {
@@ -430,6 +727,7 @@ export class ConceptLearningManager {
 
             // 変更が無ければ前回の段階を維持
             return previousStage;
+
         } catch (error) {
             logger.error(`Failed to determine learning stage for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
@@ -442,7 +740,50 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 特定の概念情報を学習記録で更新する
+     * 検索結果から学習記録を抽出
+     * @private
+     */
+    private extractLearningRecordsFromSearchResult(result: any, conceptName: string): LearningRecord[] {
+        const records: LearningRecord[] = [];
+
+        try {
+            if (result.data && result.data.learningRecords) {
+                if (Array.isArray(result.data.learningRecords)) {
+                    for (const record of result.data.learningRecords) {
+                        if (record.stage && record.chapterNumber) {
+                            records.push({
+                                stage: record.stage as LearningStage,
+                                chapterNumber: record.chapterNumber,
+                                insights: record.insights || [],
+                                examples: record.examples || []
+                            });
+                        }
+                    }
+                }
+            }
+
+            // 分析結果から学習記録を抽出
+            if (result.data && result.data.conceptAnalysis) {
+                const analysis = result.data.conceptAnalysis;
+                if (analysis.learningStage && analysis.chapterNumber) {
+                    records.push({
+                        stage: analysis.learningStage as LearningStage,
+                        chapterNumber: analysis.chapterNumber,
+                        insights: analysis.insights || [],
+                        examples: analysis.examples || []
+                    });
+                }
+            }
+
+        } catch (error) {
+            logger.warn('Failed to extract learning records from search result', { error });
+        }
+
+        return records;
+    }
+
+    /**
+     * 特定の概念情報を学習記録で更新する（統合記憶システム対応）
      * @param conceptName 概念名
      * @param learningRecord 学習記録
      * @returns 更新成功の真偽値
@@ -453,61 +794,81 @@ export class ConceptLearningManager {
     ): Promise<boolean> {
         this.ensureInitialized();
 
-        // 概念情報を取得
-        const concept = this.getConceptDetails(conceptName);
+        try {
+            // 概念情報を取得
+            const concept = await this.getConceptDetails(conceptName);
 
-        if (!concept) {
-            logger.warn(`Cannot update learning record for concept "${conceptName}": concept not found`);
+            if (!concept) {
+                logger.warn(`Cannot update learning record for concept "${conceptName}": concept not found`);
+                return false;
+            }
+
+            // 学習記録配列を安全に初期化
+            if (!concept.learningRecords) {
+                concept.learningRecords = [];
+            }
+
+            // 学習記録を追加
+            concept.learningRecords.push(learningRecord);
+
+            // 章番号でソート
+            concept.learningRecords.sort((a, b) => a.chapterNumber - b.chapterNumber);
+
+            // 重複を除去（同じ章番号がある場合は最新を保持）
+            const uniqueRecords: LearningRecord[] = [];
+            const recordsByChapter = new Map<number, LearningRecord>();
+
+            for (const record of concept.learningRecords) {
+                recordsByChapter.set(record.chapterNumber, record);
+            }
+
+            for (const record of recordsByChapter.values()) {
+                uniqueRecords.push(record);
+            }
+
+            concept.learningRecords = uniqueRecords;
+
+            // 更新日時を更新
+            concept.updated = new Date().toISOString();
+
+            // Map内の概念を更新
+            this.concepts.set(this.normalizeConceptName(concept.name), concept);
+
+            // 統合記憶システムに保存
+            const saveResult = await this.saveConceptsToUnifiedMemory();
+
+            if (saveResult.success) {
+                // 学習段階変更イベントを発行
+                this.eventBus.publish('learning.stage.updated', {
+                    conceptName: concept.name,
+                    stage: learningRecord.stage,
+                    chapterNumber: learningRecord.chapterNumber,
+                    memorySystemIntegrated: true
+                });
+
+                logger.info(`Updated learning record for concept "${conceptName}" at chapter ${learningRecord.chapterNumber}`, {
+                    newStage: learningRecord.stage,
+                    memoryIntegrationTime: saveResult.processingTime
+                });
+
+                return true;
+            } else {
+                logger.error(`Failed to save learning record to unified memory system: ${saveResult.error}`);
+                return false;
+            }
+
+        } catch (error) {
+            logger.error(`Failed to update concept with learning record`, {
+                conceptName,
+                chapterNumber: learningRecord.chapterNumber,
+                error: error instanceof Error ? error.message : String(error)
+            });
             return false;
         }
-
-        // 学習記録配列を初期化
-        if (!concept.learningRecords) {
-            concept.learningRecords = [];
-        }
-
-        // 学習記録を追加
-        concept.learningRecords.push(learningRecord);
-
-        // 章番号でソート
-        concept.learningRecords.sort((a, b) => a.chapterNumber - b.chapterNumber);
-
-        // 重複を除去（同じ章番号がある場合は最新を保持）
-        const uniqueRecords: LearningRecord[] = [];
-        const recordsByChapter = new Map<number, LearningRecord>();
-
-        for (const record of concept.learningRecords) {
-            recordsByChapter.set(record.chapterNumber, record);
-        }
-
-        for (const record of recordsByChapter.values()) {
-            uniqueRecords.push(record);
-        }
-
-        concept.learningRecords = uniqueRecords;
-
-        // 更新日時を更新
-        concept.updated = new Date().toISOString();
-
-        // Map内の概念を更新
-        this.concepts.set(this.normalizeConceptName(concept.name), concept);
-
-        // 永続化
-        await this.saveConceptsData();
-
-        // 学習段階変更イベントを発行
-        this.eventBus.publish('learning.stage.updated', {
-            conceptName: concept.name,
-            stage: learningRecord.stage,
-            chapterNumber: learningRecord.chapterNumber
-        });
-
-        logger.info(`Updated learning record for concept "${conceptName}" at chapter ${learningRecord.chapterNumber}`);
-        return true;
     }
 
     /**
-     * 章のための概念体現化計画を取得
+     * 章のための概念体現化計画を取得（統合記憶システム対応）
      * @param conceptName 概念名
      * @param chapterNumber 章番号
      * @returns 体現化計画
@@ -520,7 +881,7 @@ export class ConceptLearningManager {
             logger.info(`Getting embodiment plan for concept: ${conceptName} at chapter ${chapterNumber}`);
 
             // 概念情報を取得
-            const concept = this.getConceptDetails(conceptName);
+            const concept = await this.getConceptDetails(conceptName);
 
             if (!concept) {
                 logger.warn(`Concept not found: ${conceptName}, using default plan`);
@@ -529,6 +890,16 @@ export class ConceptLearningManager {
 
             // 現在の学習段階を決定
             const currentStage = await this.determineLearningStage(conceptName, chapterNumber);
+
+            // 関連するコンテキスト情報を統合記憶システムから取得
+            const contextResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `embodiment context chapter ${chapterNumber} ${conceptName}`,
+                    [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'getEmbodimentContext'
+            );
 
             // 学習段階に応じた体現化計画を作成
             let plan: EmbodimentPlan;
@@ -556,15 +927,27 @@ export class ConceptLearningManager {
                     plan = this.createExplorationPlan(concept, chapterNumber);
             }
 
+            // コンテキスト情報で計画を強化
+            if (contextResult.success && contextResult.totalResults > 0) {
+                plan = this.enhancePlanWithContext(plan, contextResult);
+            }
+
             // 体現化計画イベントを発行
             this.eventBus.publish('embodiment.plan.created', {
                 conceptName,
                 stage: currentStage,
-                chapterNumber
+                chapterNumber,
+                planEnhanced: contextResult.success,
+                memorySystemIntegrated: true
             });
 
-            logger.info(`Created embodiment plan for ${conceptName} at stage ${currentStage} for chapter ${chapterNumber}`);
+            logger.info(`Created embodiment plan for ${conceptName} at stage ${currentStage} for chapter ${chapterNumber}`, {
+                contextEnhanced: contextResult.success,
+                processingTime: contextResult.processingTime
+            });
+
             return plan;
+
         } catch (error) {
             logger.error(`Failed to get embodiment plan for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
@@ -577,9 +960,520 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 学習段階に応じた体現化プランを作成
-     * 各段階ごとのプラン作成メソッド
+     * コンテキスト情報で計画を強化
+     * @private
      */
+    private enhancePlanWithContext(plan: EmbodimentPlan, contextResult: UnifiedSearchResult): EmbodimentPlan {
+        try {
+            const enhancedPlan = { ...plan };
+
+            // 検索結果からコンテキスト情報を抽出
+            for (const result of contextResult.results) {
+                if (result.data && result.data.narrativeContext) {
+                    // 物語コンテキストに基づく調整
+                    const narrativeContext = result.data.narrativeContext;
+                    
+                    if (narrativeContext.tension && typeof narrativeContext.tension === 'number') {
+                        // 物語のテンションに基づいてプランのテンション推奨を調整
+                        enhancedPlan.tensionRecommendation.recommendedTension = 
+                            Math.min(1.0, Math.max(0.0, 
+                                (enhancedPlan.tensionRecommendation.recommendedTension + narrativeContext.tension) / 2
+                            ));
+                    }
+                    
+                    if (narrativeContext.characters && Array.isArray(narrativeContext.characters)) {
+                        // キャラクター情報に基づく対話例の調整
+                        const characterNames = narrativeContext.characters.map((c: any) => c.name || c.id);
+                        enhancedPlan.dialogueSuggestions = enhancedPlan.dialogueSuggestions.map(suggestion =>
+                            suggestion.replace('【キャラクター】', characterNames[0] || '主人公')
+                        );
+                    }
+                }
+
+                if (result.data && result.data.chapterAnalysis) {
+                    // 章分析結果に基づく調整
+                    const analysis = result.data.chapterAnalysis;
+                    
+                    if (analysis.themes && Array.isArray(analysis.themes)) {
+                        // テーマに基づく重要要素の追加
+                        for (const theme of analysis.themes) {
+                            if (!enhancedPlan.keyElements.includes(theme)) {
+                                enhancedPlan.keyElements.push(`テーマ連動: ${theme}`);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return enhancedPlan;
+
+        } catch (error) {
+            logger.warn('Failed to enhance plan with context', { error });
+            return plan;
+        }
+    }
+
+    /**
+     * 章の内容から概念の体現状況を分析する（統合記憶システム対応）
+     * @param conceptName 概念名
+     * @param chapterContent 章の内容
+     * @param chapterNumber 章番号
+     * @returns 分析結果
+     */
+    async analyzeConceptEmbodiment(
+        conceptName: string,
+        chapterContent: string,
+        chapterNumber: number
+    ): Promise<{
+        stage: LearningStage,
+        examples: string[],
+        confidence: number
+    }> {
+        try {
+            logger.info(`Analyzing concept embodiment for ${conceptName} in chapter ${chapterNumber}`);
+
+            // 概念情報を取得
+            const concept = await this.getConceptDetails(conceptName);
+
+            if (!concept) {
+                logger.warn(`Concept not found for embodiment analysis: ${conceptName}`);
+                return {
+                    stage: LearningStage.EXPLORATION,
+                    examples: [],
+                    confidence: 0.5
+                };
+            }
+
+            // 前回の学習記録を統合記憶システムから取得
+            const previousStage = await this.determineLearningStage(conceptName, chapterNumber - 1);
+
+            // 関連する分析結果を統合記憶システムから取得
+            const analysisResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `analysis embodiment "${conceptName}" chapter`,
+                    [MemoryLevel.MID_TERM, MemoryLevel.SHORT_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'analyzeConceptEmbodiment'
+            );
+
+            // AIによる学習段階検出（統合記憶システムのコンテキスト情報を活用）
+            let additionalContext = '';
+            if (analysisResult.success && analysisResult.totalResults > 0) {
+                const contextInfo = analysisResult.results.map(r => 
+                    `${r.type}: ${JSON.stringify(r.data).substring(0, 200)}...`
+                ).join('\n');
+                additionalContext = `\n\n関連分析情報:\n${contextInfo}`;
+            }
+
+            const prompt = `
+あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解が以下のどの段階にあるかを判断してください。
+
+章の内容:
+${chapterContent.substring(0, 5000)}...
+
+前回の学習段階: ${this.formatLearningStage(previousStage)}
+
+概念情報:
+- 名前: ${concept.name}
+- 説明: ${concept.description}
+- 主要原則: ${concept.keyPrinciples.join(', ')}
+
+${additionalContext}
+
+学習段階の説明:
+- 誤解段階 (MISCONCEPTION): 概念に対する誤解や限定的な理解の段階
+- 探索段階 (EXPLORATION): 新しい視点や可能性を探索し始める段階
+- 葛藤段階 (CONFLICT): 新旧の理解の間で葛藤する段階
+- 気づき段階 (INSIGHT): 概念の本質に気づく段階
+- 応用段階 (APPLICATION): 新しい理解を実践に移す段階
+- 統合段階 (INTEGRATION): 概念が自然な思考・行動パターンとなる段階
+
+回答形式:
+学習段階: [段階コード]
+確信度: [0-1の数値]
+理由: [簡潔な説明]
+例: [概念が章内で体現されている例を3つ]
+
+段階コードは以下のいずれかを使用してください:
+MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
+`;
+
+            const response = await this.geminiClient.generateText(prompt, { temperature: 0.1 });
+
+            // レスポンスから段階を抽出
+            const stageMatch = response.match(/学習段階:\s*(MISCONCEPTION|EXPLORATION|CONFLICT|INSIGHT|APPLICATION|INTEGRATION)/i);
+            const confidenceMatch = response.match(/確信度:\s*([0-9.]+)/i);
+
+            // 例の抽出
+            const examples: string[] = [];
+            const exampleRegex = /例:[\s\n]*([\s\S]*?)(?:\n\n|$)/i;
+            const exampleMatch = response.match(exampleRegex);
+
+            if (exampleMatch && exampleMatch[1]) {
+                const exampleText = exampleMatch[1].trim();
+                // 番号付きリストまたは箇条書きで分割
+                const exampleItems = exampleText.split(/\n[-\d.]+\s*/);
+
+                for (const item of exampleItems) {
+                    const trimmedItem = item.trim();
+                    if (trimmedItem.length > 0) {
+                        examples.push(trimmedItem);
+                    }
+                }
+            }
+
+            if (stageMatch) {
+                const detectedStage = stageMatch[1].toUpperCase() as LearningStage;
+                const confidence = confidenceMatch ? parseFloat(confidenceMatch[1]) : 0.5;
+
+                logger.info(`Detected learning stage ${detectedStage} for ${conceptName} with confidence ${confidence}`, {
+                    previousStage,
+                    memoryContextUsed: analysisResult.success
+                });
+
+                // 急激な段階変化を防ぐ（前の段階からの自然な進行を保証）
+                const stageOrder = this.getStageOrder(detectedStage);
+                const previousOrder = this.getStageOrder(previousStage);
+
+                // 前の段階から2段階以上進む場合は1段階に制限
+                if (stageOrder - previousOrder > 1) {
+                    const limitedStage = this.getNextStage(previousStage);
+                    logger.warn(`Detected big jump in stage (${previousStage} -> ${detectedStage}), limiting to ${limitedStage}`);
+
+                    return {
+                        stage: limitedStage,
+                        examples: examples.slice(0, 3),
+                        confidence: confidence * 0.8 // 確信度を下げる
+                    };
+                }
+
+                return {
+                    stage: detectedStage,
+                    examples: examples.slice(0, 3),
+                    confidence
+                };
+            }
+
+            // 検出失敗時は前回の段階を維持
+            logger.warn(`Failed to detect learning stage from response, keeping previous stage ${previousStage}`);
+            return {
+                stage: previousStage,
+                examples: [],
+                confidence: 0.5
+            };
+
+        } catch (error) {
+            logger.error(`Learning stage detection failed for ${conceptName}`, {
+                error: error instanceof Error ? error.message : String(error),
+                chapterNumber
+            });
+
+            // エラー時は前回の段階を維持
+            const previousStage = await this.determineLearningStage(conceptName, chapterNumber - 1);
+            return {
+                stage: previousStage,
+                examples: [],
+                confidence: 0.3
+            };
+        }
+    }
+
+    /**
+     * セクションに概念と学習段階を登録する（統合記憶システム対応）
+     * @param conceptName 概念名
+     * @param sectionId セクションID
+     * @param learningStage 学習段階
+     */
+    async registerConceptForSection(
+        conceptName: string,
+        sectionId: string,
+        learningStage: LearningStage
+    ): Promise<void> {
+        try {
+            logger.info(`Registering concept ${conceptName} for section ${sectionId} with stage ${learningStage}`);
+
+            // 概念が存在するか確認
+            const concept = await this.getConceptDetails(conceptName);
+
+            if (!concept) {
+                logger.warn(`Concept not found: ${conceptName}, cannot register for section ${sectionId}`);
+                return;
+            }
+
+            // セクション登録データを作成
+            const registrationData = {
+                sectionId,
+                conceptName,
+                stage: learningStage,
+                registrationTime: new Date().toISOString(),
+                metadata: {
+                    source: 'ConceptLearningManager',
+                    version: '2.0',
+                    systemIntegration: true
+                }
+            };
+
+            // 章形式でのデータ保存（統合記憶システム対応）
+            const registrationChapter: Chapter = {
+                id: `section-concept-${sectionId}-${Date.now()}`,
+                chapterNumber: 0, // システムデータは0番
+                title: `Section Concept Registration: ${sectionId}`,
+                content: JSON.stringify(registrationData, null, 2),
+                previousChapterSummary: '',
+                scenes: [],
+                createdAt: new Date(),
+                updatedAt: new Date(),
+                metadata: {
+                    createdAt: new Date().toISOString(),
+                    lastModified: new Date().toISOString(),
+                    status: 'system_data',
+                    dataType: 'sectionConceptMapping',
+                    wordCount: JSON.stringify(registrationData).length,
+                    estimatedReadingTime: 1
+                }
+            };
+
+            // 統合記憶システムで章を処理
+            const processResult = await this.memoryManager.processChapter(registrationChapter);
+
+            if (processResult.success) {
+                // イベント発行
+                this.eventBus.publish('learning.stage.updated', {
+                    conceptName,
+                    sectionId,
+                    stage: learningStage,
+                    timestamp: new Date().toISOString(),
+                    memorySystemIntegrated: true
+                });
+
+                logger.info(`Successfully registered concept ${conceptName} for section ${sectionId}`, {
+                    processingTime: processResult.processingTime,
+                    affectedComponents: processResult.affectedComponents
+                });
+            } else {
+                throw new Error(`Registration failed: ${processResult.errors.join(', ')}`);
+            }
+
+        } catch (error) {
+            logger.error(`Failed to register concept for section`, {
+                error: error instanceof Error ? error.message : String(error),
+                conceptName,
+                sectionId
+            });
+            throw error;
+        }
+    }
+
+    // ============================================================================
+    // パフォーマンス診断・統計機能
+    // ============================================================================
+
+    /**
+     * システム診断を実行
+     * @returns 診断結果
+     */
+    async performDiagnostics(): Promise<{
+        systemHealth: 'HEALTHY' | 'DEGRADED' | 'CRITICAL';
+        memorySystemIntegration: boolean;
+        performanceMetrics: ConceptLearningStatistics;
+        issues: string[];
+        recommendations: string[];
+    }> {
+        const startTime = Date.now();
+
+        try {
+            const issues: string[] = [];
+            const recommendations: string[] = [];
+
+            // 初期化状態の確認
+            if (!this.initialized) {
+                issues.push('ConceptLearningManager not initialized');
+                return {
+                    systemHealth: 'CRITICAL',
+                    memorySystemIntegration: false,
+                    performanceMetrics: this.performanceStats,
+                    issues,
+                    recommendations: ['Initialize ConceptLearningManager']
+                };
+            }
+
+            // 統合記憶システムの健全性チェック
+            let memorySystemHealthy = false;
+            try {
+                const systemStatus = await this.memoryManager.getSystemStatus();
+                memorySystemHealthy = systemStatus.initialized;
+                
+                if (!memorySystemHealthy) {
+                    issues.push('Memory system not properly initialized');
+                    recommendations.push('Check memory system initialization');
+                }
+            } catch (error) {
+                issues.push('Failed to check memory system status');
+                recommendations.push('Verify memory system connectivity');
+            }
+
+            // 概念データの整合性チェック
+            if (this.concepts.size === 0) {
+                issues.push('No concepts loaded');
+                recommendations.push('Load or generate initial concept data');
+            }
+
+            // キャッシュヒット率の評価
+            if (this.performanceStats.memorySystemIntegration.cacheHitRate < 0.6) {
+                issues.push('Low cache hit rate detected');
+                recommendations.push('Consider optimizing concept access patterns');
+            }
+
+            // 学習進捗の評価
+            if (this.performanceStats.learningProgression.stageTransitions === 0) {
+                issues.push('No learning stage transitions recorded');
+                recommendations.push('Ensure learning record updates are functioning');
+            }
+
+            // 統計の更新
+            this.updateStatistics();
+            this.performanceStats.lastOptimization = new Date().toISOString();
+
+            // システム健全性の判定
+            let systemHealth: 'HEALTHY' | 'DEGRADED' | 'CRITICAL';
+            if (issues.length === 0) {
+                systemHealth = 'HEALTHY';
+            } else if (issues.some(issue => issue.includes('CRITICAL') || issue.includes('not initialized'))) {
+                systemHealth = 'CRITICAL';
+            } else {
+                systemHealth = 'DEGRADED';
+            }
+
+            const processingTime = Date.now() - startTime;
+            logger.info('ConceptLearningManager diagnostics completed', {
+                systemHealth,
+                memorySystemHealthy,
+                issues: issues.length,
+                recommendations: recommendations.length,
+                processingTime
+            });
+
+            return {
+                systemHealth,
+                memorySystemIntegration: memorySystemHealthy,
+                performanceMetrics: this.performanceStats,
+                issues,
+                recommendations
+            };
+
+        } catch (error) {
+            logger.error('Failed to perform diagnostics', {
+                error: error instanceof Error ? error.message : String(error)
+            });
+
+            return {
+                systemHealth: 'CRITICAL',
+                memorySystemIntegration: false,
+                performanceMetrics: this.performanceStats,
+                issues: ['Diagnostics execution failed'],
+                recommendations: ['Check system logs and restart if necessary']
+            };
+        }
+    }
+
+    /**
+     * 統計情報を更新
+     * @private
+     */
+    private updateStatistics(): void {
+        try {
+            // 総概念数の更新
+            this.performanceStats.totalConcepts = this.concepts.size;
+
+            // 学習段階別統計の更新
+            for (const stage of Object.values(LearningStage)) {
+                this.performanceStats.conceptsByStage[stage] = 0;
+            }
+
+            for (const concept of this.concepts.values()) {
+                if (concept.learningRecords && concept.learningRecords.length > 0) {
+                    const latestRecord = concept.learningRecords[concept.learningRecords.length - 1];
+                    this.performanceStats.conceptsByStage[latestRecord.stage]++;
+                } else {
+                    this.performanceStats.conceptsByStage[LearningStage.MISCONCEPTION]++;
+                }
+            }
+
+            // 学習進捗統計の更新
+            let totalTransitions = 0;
+            let completedJourneys = 0;
+
+            for (const concept of this.concepts.values()) {
+                if (concept.learningRecords && concept.learningRecords.length > 0) {
+                    totalTransitions += concept.learningRecords.length;
+                    
+                    const latestRecord = concept.learningRecords[concept.learningRecords.length - 1];
+                    if (latestRecord.stage === LearningStage.INTEGRATION) {
+                        completedJourneys++;
+                    }
+                }
+            }
+
+            this.performanceStats.learningProgression.stageTransitions = totalTransitions;
+            this.performanceStats.learningProgression.completedJourneys = completedJourneys;
+            
+            if (totalTransitions > 0) {
+                this.performanceStats.learningProgression.averageProgressionRate = 
+                    completedJourneys / this.concepts.size;
+            }
+
+        } catch (error) {
+            logger.warn('Failed to update statistics', { error });
+        }
+    }
+
+    // ============================================================================
+    // 安全なメモリ操作ヘルパー
+    // ============================================================================
+
+    /**
+     * 安全なメモリ操作パターン（統合記憶システム対応）
+     * @private
+     */
+    private async safeMemoryOperation<T>(
+        operation: () => Promise<T>,
+        fallbackValue: T,
+        operationName: string
+    ): Promise<T> {
+        const startTime = Date.now();
+
+        try {
+            // システム状態確認
+            const systemStatus = await this.memoryManager.getSystemStatus();
+            if (!systemStatus.initialized) {
+                logger.warn(`${operationName}: MemoryManager not initialized`);
+                return fallbackValue;
+            }
+
+            const result = await operation();
+            
+            // 統計更新
+            this.performanceStats.memorySystemIntegration.totalMemoryOperations++;
+            const processingTime = Date.now() - startTime;
+            this.performanceStats.memorySystemIntegration.averageRetrievalTime = 
+                (this.performanceStats.memorySystemIntegration.averageRetrievalTime + processingTime) / 2;
+
+            return result;
+
+        } catch (error) {
+            const processingTime = Date.now() - startTime;
+            logger.error(`${operationName} failed`, { 
+                error: error instanceof Error ? error.message : String(error),
+                processingTime
+            });
+            return fallbackValue;
+        }
+    }
+
+    // ============================================================================
+    // 体現化プラン作成メソッド群（完全実装）
+    // ============================================================================
 
     private createMisconceptionPlan(concept: BusinessConcept, chapterNumber: number): EmbodimentPlan {
         return {
@@ -775,12 +1669,9 @@ export class ConceptLearningManager {
 
     /**
      * デフォルトの体現化計画を作成
-     * @param conceptName 概念名
-     * @param chapterNumber 章番号
-     * @returns 体現化計画
+     * @private
      */
     private createDefaultEmbodimentPlan(conceptName: string, chapterNumber: number): EmbodimentPlan {
-        // デフォルトは探索段階の計画
         return {
             conceptName: conceptName,
             stage: LearningStage.EXPLORATION,
@@ -809,212 +1700,13 @@ export class ConceptLearningManager {
         };
     }
 
-    /**
-     * 章の内容から概念の体現状況を分析する
-     * @param conceptName 概念名
-     * @param chapterContent 章の内容
-     * @param chapterNumber 章番号
-     * @returns 分析結果
-     */
-    async analyzeConceptEmbodiment(
-        conceptName: string,
-        chapterContent: string,
-        chapterNumber: number
-    ): Promise<{
-        stage: LearningStage,
-        examples: string[],
-        confidence: number
-    }> {
-        try {
-            logger.info(`Analyzing concept embodiment for ${conceptName} in chapter ${chapterNumber}`);
-
-            // 概念情報を取得
-            const concept = this.getConceptDetails(conceptName);
-
-            if (!concept) {
-                logger.warn(`Concept not found for embodiment analysis: ${conceptName}`);
-                return {
-                    stage: LearningStage.EXPLORATION,
-                    examples: [],
-                    confidence: 0.5
-                };
-            }
-
-            // 前回の学習記録を取得
-            const previousStage = await this.determineLearningStage(conceptName, chapterNumber - 1);
-
-            // AIによる学習段階検出
-            const prompt = `
-あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解が以下のどの段階にあるかを判断してください。
-
-章の内容:
-${chapterContent.substring(0, 5000)}...
-
-前回の学習段階: ${this.formatLearningStage(previousStage)}
-
-概念情報:
-- 名前: ${concept.name}
-- 説明: ${concept.description}
-- 主要原則: ${concept.keyPrinciples.join(', ')}
-
-学習段階の説明:
-- 誤解段階 (MISCONCEPTION): 概念に対する誤解や限定的な理解の段階
-- 探索段階 (EXPLORATION): 新しい視点や可能性を探索し始める段階
-- 葛藤段階 (CONFLICT): 新旧の理解の間で葛藤する段階
-- 気づき段階 (INSIGHT): 概念の本質に気づく段階
-- 応用段階 (APPLICATION): 新しい理解を実践に移す段階
-- 統合段階 (INTEGRATION): 概念が自然な思考・行動パターンとなる段階
-
-回答形式:
-学習段階: [段階コード]
-確信度: [0-1の数値]
-理由: [簡潔な説明]
-例: [概念が章内で体現されている例を3つ]
-
-段階コードは以下のいずれかを使用してください:
-MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
-`;
-
-            const response = await this.geminiClient.generateText(prompt, { temperature: 0.1 });
-
-            // レスポンスから段階を抽出
-            const stageMatch = response.match(/学習段階:\s*(MISCONCEPTION|EXPLORATION|CONFLICT|INSIGHT|APPLICATION|INTEGRATION)/i);
-            const confidenceMatch = response.match(/確信度:\s*([0-9.]+)/i);
-
-            // 例の抽出
-            const examples: string[] = [];
-            const exampleRegex = /例:[\s\n]*([\s\S]*?)(?:\n\n|$)/i;
-            const exampleMatch = response.match(exampleRegex);
-
-            if (exampleMatch && exampleMatch[1]) {
-                const exampleText = exampleMatch[1].trim();
-                // 番号付きリストまたは箇条書きで分割
-                const exampleItems = exampleText.split(/\n[-\d.]+\s*/);
-
-                for (const item of exampleItems) {
-                    const trimmedItem = item.trim();
-                    if (trimmedItem.length > 0) {
-                        examples.push(trimmedItem);
-                    }
-                }
-            }
-
-            if (stageMatch) {
-                const detectedStage = stageMatch[1].toUpperCase() as LearningStage;
-                const confidence = confidenceMatch ? parseFloat(confidenceMatch[1]) : 0.5;
-
-                logger.info(`Detected learning stage ${detectedStage} for ${conceptName} with confidence ${confidence}`);
-
-                // 急激な段階変化を防ぐ（前の段階からの自然な進行を保証）
-                const stageOrder = this.getStageOrder(detectedStage);
-                const previousOrder = this.getStageOrder(previousStage);
-
-                // 前の段階から2段階以上進む場合は1段階に制限
-                if (stageOrder - previousOrder > 1) {
-                    const limitedStage = this.getNextStage(previousStage);
-                    logger.warn(`Detected big jump in stage (${previousStage} -> ${detectedStage}), limiting to ${limitedStage}`);
-
-                    return {
-                        stage: limitedStage,
-                        examples: examples.slice(0, 3),
-                        confidence: confidence * 0.8 // 確信度を下げる
-                    };
-                }
-
-                return {
-                    stage: detectedStage,
-                    examples: examples.slice(0, 3),
-                    confidence
-                };
-            }
-
-            // 検出失敗時は前回の段階を維持
-            logger.warn(`Failed to detect learning stage from response, keeping previous stage ${previousStage}`);
-            return {
-                stage: previousStage,
-                examples: [],
-                confidence: 0.5
-            };
-        } catch (error) {
-            logger.error(`Learning stage detection failed for ${conceptName}`, {
-                error: error instanceof Error ? error.message : String(error),
-                chapterNumber
-            });
-
-            // エラー時は前回の段階を維持
-            const previousStage = await this.determineLearningStage(conceptName, chapterNumber - 1);
-            return {
-                stage: previousStage,
-                examples: [],
-                confidence: 0.3
-            };
-        }
-    }
+    // ============================================================================
+    // ユーティリティメソッド群
+    // ============================================================================
 
     /**
-   * セクションに概念と学習段階を登録する
-   * @param conceptName 概念名
-   * @param sectionId セクションID
-   * @param learningStage 学習段階
-   */
-    async registerConceptForSection(
-        conceptName: string,
-        sectionId: string,
-        learningStage: LearningStage
-    ): Promise<void> {
-        try {
-            logger.info(`Registering concept ${conceptName} for section ${sectionId} with stage ${learningStage}`);
-
-            // 概念が存在するか確認
-            const concept = this.getConceptDetails(conceptName);
-
-            if (!concept) {
-                logger.warn(`Concept not found: ${conceptName}, cannot register for section ${sectionId}`);
-                return;
-            }
-
-            // コンセプトとセクションのマッピングを保存
-            // 注：実装はストレージ方法に依存するため、既存のMemoryManagerと統合する
-            const worldKnowledge = memoryManager.getLongTermMemory();
-
-            // WorldKnowledgeの設定を更新
-            const settings = worldKnowledge.getWorldSettings();
-            const sectionConceptMappings = settings.sectionConceptMappings || {};
-
-            // マッピングを更新
-            sectionConceptMappings[sectionId] = {
-                conceptName,
-                stage: learningStage,
-                updatedAt: new Date().toISOString()
-            };
-
-            // 設定を保存
-            await worldKnowledge.updateWorldSettings({
-                ...settings,
-                sectionConceptMappings
-            });
-
-            // イベント発行
-            this.eventBus.publish('learning.stage.updated', {
-                conceptName,
-                sectionId,
-                stage: learningStage,
-                timestamp: new Date().toISOString()
-            });
-
-            logger.info(`Successfully registered concept ${conceptName} for section ${sectionId}`);
-        } catch (error) {
-            logger.error(`Failed to register concept for section`, {
-                error: error instanceof Error ? error.message : String(error),
-                conceptName,
-                sectionId
-            });
-            throw error;
-        }
-    }
-
-    /**
-     * 初期化済みかどうかを確認し、必要に応じて初期化する
+     * 初期化状態の確認
+     * @private
      */
     private ensureInitialized(): void {
         if (!this.initialized) {
@@ -1024,8 +1716,7 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
 
     /**
      * 概念名を正規化する
-     * @param name 概念名
-     * @returns 正規化された概念名
+     * @private
      */
     private normalizeConceptName(name: string): string {
         return name.toUpperCase().replace(/\s+/g, '_');
@@ -1033,20 +1724,17 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
 
     /**
      * 学習段階が変化するチャプターかどうかを判定
-     * @param chapterNumber 章番号
-     * @returns 判定結果
+     * @private
      */
     private isStageAdvancementChapter(chapterNumber: number): boolean {
         // 特定の章番号で段階が変化するという簡易ルール
-        // 篇の区切りや重要な転換点に合わせて調整する
         const advancementChapters = [5, 10, 15, 20, 25];
         return advancementChapters.includes(chapterNumber);
     }
 
     /**
      * 次の学習段階を取得
-     * @param currentStage 現在の学習段階
-     * @returns 次の学習段階
+     * @private
      */
     private getNextStage(currentStage: LearningStage): LearningStage {
         const stageProgression: Record<LearningStage, LearningStage> = {
@@ -1063,8 +1751,7 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
 
     /**
      * 学習段階の順序を取得
-     * @param stage 学習段階
-     * @returns 順序値（低いほど初期段階）
+     * @private
      */
     private getStageOrder(stage: LearningStage): number {
         const stageOrder: Record<LearningStage, number> = {
@@ -1081,8 +1768,7 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
 
     /**
      * 学習段階を日本語表記で取得
-     * @param stage 学習段階
-     * @returns 日本語表記
+     * @private
      */
     private formatLearningStage(stage: LearningStage): string {
         const japaneseStages: { [key in LearningStage]?: string } = {
@@ -1095,5 +1781,99 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
         };
 
         return japaneseStages[stage] || stage;
+    }
+
+    // ============================================================================
+    // パブリックAPI追加メソッド
+    // ============================================================================
+
+    /**
+     * パフォーマンス統計を取得
+     * @returns パフォーマンス統計情報
+     */
+    getPerformanceStatistics(): ConceptLearningStatistics {
+        this.updateStatistics();
+        return { ...this.performanceStats };
+    }
+
+    /**
+     * メモリシステム統合状況を取得
+     * @returns 統合状況情報
+     */
+    getMemorySystemIntegrationStatus(): {
+        integrated: boolean;
+        operationCount: number;
+        cacheHitRate: number;
+        averageRetrievalTime: number;
+        lastOperation: string;
+    } {
+        return {
+            integrated: this.initialized,
+            operationCount: this.performanceStats.memorySystemIntegration.totalMemoryOperations,
+            cacheHitRate: this.performanceStats.memorySystemIntegration.cacheHitRate,
+            averageRetrievalTime: this.performanceStats.memorySystemIntegration.averageRetrievalTime,
+            lastOperation: this.performanceStats.lastOptimization
+        };
+    }
+
+    /**
+     * システム最適化を実行
+     * @returns 最適化結果
+     */
+    async optimizeSystem(): Promise<{
+        optimized: boolean;
+        improvements: string[];
+        processingTime: number;
+    }> {
+        const startTime = Date.now();
+        const improvements: string[] = [];
+
+        try {
+            // 概念データの整合性チェックと修復
+            let conceptsFixed = 0;
+            for (const [key, concept] of this.concepts.entries()) {
+                if (!concept.updated || !concept.created) {
+                    concept.updated = new Date().toISOString();
+                    concept.created = concept.created || new Date().toISOString();
+                    conceptsFixed++;
+                }
+            }
+
+            if (conceptsFixed > 0) {
+                improvements.push(`Fixed ${conceptsFixed} concept data integrity issues`);
+            }
+
+            // 統計情報の再計算
+            this.updateStatistics();
+            improvements.push('Updated performance statistics');
+
+            // 統合記憶システムとの同期
+            const saveResult = await this.saveConceptsToUnifiedMemory();
+            if (saveResult.success) {
+                improvements.push('Synchronized with unified memory system');
+            }
+
+            const processingTime = Date.now() - startTime;
+            
+            logger.info('ConceptLearningManager optimization completed', {
+                improvements: improvements.length,
+                processingTime
+            });
+
+            return {
+                optimized: improvements.length > 0,
+                improvements,
+                processingTime
+            };
+
+        } catch (error) {
+            logger.error('Failed to optimize ConceptLearningManager', { error });
+            
+            return {
+                optimized: false,
+                improvements: [],
+                processingTime: Date.now() - startTime
+            };
+        }
     }
 }

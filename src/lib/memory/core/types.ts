@@ -14,6 +14,36 @@ import { CharacterState, SignificantEvent } from '@/types/memory';
 // ============================================================================
 
 /**
+ * 統合検索結果
+ */
+export interface UnifiedSearchResult {
+    success: boolean;
+    totalResults: number;
+    processingTime: number;
+    results: Array<{
+        source: MemoryLevel;
+        type: string;
+        data: any;
+        relevance: number;
+        metadata: Record<string, any>;
+    }>;
+    suggestions: string[];
+}
+
+/**
+ * システム操作結果
+ */
+export interface SystemOperationResult {
+    success: boolean;
+    operationType: string;
+    processingTime: number;
+    affectedComponents: string[];
+    details: Record<string, any>;
+    warnings: string[];
+    errors: string[];
+}
+
+/**
  * メモリ階層レベル
  */
 export enum MemoryLevel {

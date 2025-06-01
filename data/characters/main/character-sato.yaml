@@ -56,7 +56,7 @@ state:
   isActive: false
   emotionalState: NEUTRAL
   developmentStage: 0
-  lastAppearance: 1
+  lastAppearance: 11
   parameters:
     - id: param-technical-skill
       name: 技術力
@@ -1482,6 +1482,102 @@ history:
       timestamp: 2025-05-29T00:44:14.671Z
       significance: 0.5
       summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:14:20.887Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:16:42.923Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:18:34.249Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-06-01T07:20:57.306Z
+      significance: 0.5
+      summary: 佐藤健太が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T07:26:09.732Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T07:27:59.528Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T07:30:28.160Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-06-01T07:35:50.285Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-06-01T07:41:30.085Z
+      significance: 0.5
+      summary: 佐藤健太が章4に登場
+    - chapterNumber: 5
+      timestamp: 2025-06-01T07:45:33.519Z
+      significance: 0.5
+      summary: 佐藤健太が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-06-01T07:49:32.382Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-06-01T07:52:58.262Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:00:03.781Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:01:33.810Z
+      significance: 0.5
+      summary: '第8章に登場: 競争激化'
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:02:14.942Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:03:17.389Z
+      significance: 0.5
+      summary: '第8章に登場: 誤解の迷路'
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:04:20.379Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T08:05:15.509Z
+      significance: 0.5
+      summary: '第8章に登場: 焦燥と迷走'
+    - chapterNumber: 9
+      timestamp: 2025-06-01T08:08:11.297Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-06-01T08:09:41.150Z
+      significance: 0.5
+      summary: '第9章に登場: 誤解の連鎖'
+    - chapterNumber: 10
+      timestamp: 2025-06-01T08:12:24.488Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-06-01T08:13:44.278Z
+      significance: 0.5
+      summary: '第10章に登場: 誤解と混乱の狭間'
+    - chapterNumber: 11
+      timestamp: 2025-06-01T08:16:25.318Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T08:17:42.607Z
+      significance: 0.5
+      summary: '第11章に登場: 誤解という名の壁'
   developmentPath:
     - stage: 0
       description: チームに参加する前段階
@@ -1737,8 +1833,8 @@ history:
 relationships: []
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-05-29T00:44:14.674Z
-  version: 802
+  lastUpdated: 2025-06-01T08:17:42.618Z
+  version: 826
   tags:
     - エンジニア
     - 技術者

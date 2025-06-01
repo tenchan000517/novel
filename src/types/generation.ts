@@ -1172,6 +1172,12 @@ export interface GenerateChapterResponse {
         shortTermGoals: string[];
         nextExpectedEvent?: string;
     };
+    /** 統合記憶階層システム特有のメトリクス */
+    memoryProcessingMetrics?: {
+        processingTime: number;
+        totalOperationTime: number;
+        systemOptimizationApplied: boolean;
+    };
 }
 
 /**

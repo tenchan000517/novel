@@ -1,0 +1,405 @@
+{
+  "0": {
+    "chapterNumber": 0,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:22:03.433Z"
+  },
+  "1": {
+    "chapterNumber": 1,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:21:56.781Z"
+  },
+  "2": {
+    "chapterNumber": 2,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:31:15.160Z"
+  },
+  "3": {
+    "chapterNumber": 3,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:38:32.013Z"
+  },
+  "4": {
+    "chapterNumber": 4,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:42:48.023Z"
+  },
+  "5": {
+    "chapterNumber": 5,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:46:51.380Z"
+  },
+  "6": {
+    "chapterNumber": 6,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:50:47.491Z"
+  },
+  "7": {
+    "chapterNumber": 7,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T07:56:06.767Z"
+  },
+  "8": {
+    "chapterNumber": 8,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:05:15.743Z"
+  },
+  "9": {
+    "chapterNumber": 9,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:09:41.403Z"
+  },
+  "10": {
+    "chapterNumber": 10,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:13:44.617Z"
+  },
+  "11": {
+    "chapterNumber": 11,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:17:42.878Z"
+  },
+  "12": {
+    "chapterNumber": 12,
+    "emotionalDimensions": {
+      "tension": {
+        "start": 0.5,
+        "middle": 0.7,
+        "end": 0.6
+      },
+      "joy": {
+        "start": 0.3,
+        "middle": 0.4,
+        "end": 0.5
+      },
+      "sadness": {
+        "start": 0.2,
+        "middle": 0.3,
+        "end": 0.2
+      }
+    },
+    "overallTone": "neutral",
+    "emotionalImpact": 0.6,
+    "analysisMetadata": {
+      "confidence": 0.8,
+      "processingTime": 0,
+      "modelsUsed": [
+        "emotional-analyzer-v1"
+      ],
+      "rawOutput": ""
+    },
+    "timestamp": "2025-06-01T08:22:02.171Z"
+  }
+}
