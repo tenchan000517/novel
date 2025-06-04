@@ -172,7 +172,7 @@ export class UnifiedAccessAPI {
             const accessStrategy = await this._determineAccessStrategy(resolvedRequest);
 
             // 4. 階層的データアクセス
-            const accessResult = await this._executeAccessStrategy(accessStrategy);
+            const accessResult = await this._executeAccessStrategy(accessStrategy, resolvedRequest);
 
             // 5. データ統合
             const integratedContext = await this._integrateAccessResults(accessResult);
@@ -509,15 +509,15 @@ export class UnifiedAccessAPI {
     }
 
     /**
-     * アクセス戦略を実行
-     * @private
-     */
-    private async _executeAccessStrategy(strategy: AccessStrategy): Promise<LayerAccessResult[]> {
+    * アクセス戦略を実行
+    * @private
+    */
+    private async _executeAccessStrategy(strategy: AccessStrategy, request: MemoryAccessRequest): Promise<LayerAccessResult[]> {
         const results: LayerAccessResult[] = [];
 
         if (strategy.parallel) {
             // 並列アクセス
-            const promises = strategy.layers.map(layer => this._accessLayer(layer));
+            const promises = strategy.layers.map(layer => this._accessLayer(layer, request));
             const settled = await Promise.allSettled(promises);
 
             for (let i = 0; i < settled.length; i++) {
@@ -527,7 +527,7 @@ export class UnifiedAccessAPI {
                         layer: strategy.layers[i],
                         success: true,
                         data: result.value,
-                        processingTime: 0 // 実際の時間は測定が必要
+                        processingTime: 0
                     });
                     this.performanceMetrics.layerHits.set(
                         strategy.layers[i],
@@ -547,7 +547,7 @@ export class UnifiedAccessAPI {
             for (const layer of strategy.priorityOrder) {
                 try {
                     const startTime = Date.now();
-                    const data = await this._accessLayer(layer);
+                    const data = await this._accessLayer(layer, request);
                     const processingTime = Date.now() - startTime;
 
                     results.push({
@@ -579,14 +579,23 @@ export class UnifiedAccessAPI {
      * レイヤーにアクセス
      * @private
      */
-    private async _accessLayer(layer: MemoryLevel): Promise<any> {
+    private async _accessLayer(layer: MemoryLevel, request: MemoryAccessRequest): Promise<any> {
+        // request.parametersの代わりに、requestから直接プロパティを取得
+        const queryData = {
+            chapterNumber: request.chapterNumber,
+            requestType: request.requestType,
+            targetLayers: request.targetLayers,
+            filters: request.filters || {},
+            options: request.options || {}
+        };
+
         switch (layer) {
             case MemoryLevel.SHORT_TERM:
-                return await this.config.memoryLayers.shortTerm.getData({});
+                return await this.config.memoryLayers.shortTerm.getData(queryData);
             case MemoryLevel.MID_TERM:
-                return await this.config.memoryLayers.midTerm.getData({});
+                return await this.config.memoryLayers.midTerm.getData(queryData);
             case MemoryLevel.LONG_TERM:
-                return await this.config.memoryLayers.longTerm.getData({});
+                return await this.config.memoryLayers.longTerm.getData(queryData);
             default:
                 throw new Error(`Unknown memory layer: ${layer}`);
         }
@@ -604,28 +613,32 @@ export class UnifiedAccessAPI {
                 return null;
             }
 
-            // 統合ロジック（実装依存）
+            // 実際のデータを取得
+            const shortTermData = successfulResults.find(r => r.layer === MemoryLevel.SHORT_TERM)?.data;
+            const midTermData = successfulResults.find(r => r.layer === MemoryLevel.MID_TERM)?.data;
+            const longTermData = successfulResults.find(r => r.layer === MemoryLevel.LONG_TERM)?.data;
+
             const integratedContext: UnifiedMemoryContext = {
-                chapterNumber: 0, // 実際の値を設定
+                chapterNumber: 0,
                 timestamp: new Date().toISOString(),
                 shortTerm: {
-                    recentChapters: [],
-                    immediateCharacterStates: new Map(),
-                    keyPhrases: [],
-                    processingBuffers: []
+                    recentChapters: shortTermData?.chapters || shortTermData?.recentChapters || [],
+                    immediateCharacterStates: shortTermData?.characterStates || new Map(),
+                    keyPhrases: shortTermData?.keyPhrases || [],
+                    processingBuffers: shortTermData?.processingBuffers || []
                 },
                 midTerm: {
-                    narrativeProgression: {} as any,
-                    analysisResults: [] as any,
-                    characterEvolution: [] as any,
-                    systemStatistics: {} as any,
-                    qualityMetrics: {} as any
+                    narrativeProgression: midTermData?.narrativeProgression || {},
+                    analysisResults: midTermData?.analysisResults || [],
+                    characterEvolution: midTermData?.characterEvolution || [],
+                    systemStatistics: midTermData?.systemStatistics || {},
+                    qualityMetrics: midTermData?.qualityMetrics || {}
                 },
                 longTerm: {
-                    consolidatedSettings: {} as any,
-                    knowledgeDatabase: {} as any,
-                    systemKnowledgeBase: {} as any,
-                    completedRecords: {} as any
+                    consolidatedSettings: longTermData?.consolidatedSettings || {},
+                    knowledgeDatabase: longTermData?.knowledgeDatabase || {},
+                    systemKnowledgeBase: longTermData?.systemKnowledgeBase || {},
+                    completedRecords: longTermData?.completedRecords || {}
                 },
                 integration: {
                     resolvedDuplicates: [],

@@ -1,7 +1,7 @@
 isActive: false
 emotionalState: POSITIVE
 developmentStage: 0
-lastAppearance: 11
+lastAppearance: 10
 parameters:
   - id: param-marketing-knowledge
     name: マーケティング知識

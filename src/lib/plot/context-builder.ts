@@ -2,7 +2,7 @@
 import { logger } from '@/lib/utils/logger';
 import { logError } from '@/lib/utils/error-handler';
 import { PlotMode, ConcretePlotPoint, AbstractPlotGuideline, PlotContext } from './types';
-import { NarrativeStateInfo } from '@/lib/memory/narrative/types';
+import { NarrativeStateInfo } from '@/lib/memory/long-term/types';
 
 /**
  * @class PlotContextBuilder

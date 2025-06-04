@@ -1,7 +1,8 @@
 /**
- * @fileoverview 最適化コーディネータ
+ * @fileoverview 最適化コーディネータ（依存性注入対応版）
  * @description
  * 全ての最適化サービスを統合し、章の包括的な改善提案を調整するコーディネータ。
+ * CharacterDepthServiceの依存性注入パターンに対応し、適切なサービス初期化を実装。
  * テーマ強化、文体最適化、キャラクター深化、テンション最適化などの各専門サービスを
  * 統合して一貫性のある最適化提案を提供します。
  */
@@ -14,8 +15,12 @@ import { apiThrottler } from '@/lib/utils/api-throttle';
 // 最適化サービスのインポート
 import { ThemeEnhancementService } from '@/lib/analysis/enhancement/theme/theme-enhancement-service';
 import { StyleOptimizationService } from '@/lib/analysis/enhancement/style/style-optimization-service';
-import { CharacterDepthService } from '@/lib/analysis/enhancement/character/character-depth-service';
+import { CharacterDepthService, createCharacterDepthService } from '@/lib/analysis/enhancement/character/character-depth-service';
 import { TensionOptimizationService } from '@/lib/analysis/enhancement/tension/tension-optimization-service';
+
+// キャラクター管理システムのインポート
+import { CharacterManager } from '@/lib/characters/manager';
+import { MemoryManager } from '@/lib/memory/core/memory-manager';
 
 // 型定義のインポート
 import {
@@ -182,8 +187,18 @@ export interface OptimizationCoordinatorOptions {
 }
 
 /**
+ * @interface OptimizationCoordinatorDependencies
+ * @description 最適化コーディネータの依存関係
+ */
+export interface OptimizationCoordinatorDependencies {
+  characterManager: CharacterManager;
+  memoryManager: MemoryManager;
+  styleAnalysisService?: any; // IStyleAnalysisService
+}
+
+/**
  * @class OptimizationCoordinator
- * @description 最適化コーディネータ
+ * @description 最適化コーディネータ（依存性注入対応版）
  * 
  * 全ての最適化サービスを統合し、以下の責任を持ちます：
  * - 各最適化サービスの調整と統合
@@ -193,11 +208,11 @@ export interface OptimizationCoordinatorOptions {
  * - キャッシュ管理とパフォーマンス最適化
  */
 export class OptimizationCoordinator {
-  // サービスインスタンス
-  private themeEnhancementService: ThemeEnhancementService;
-  private styleOptimizationService: StyleOptimizationService;
-  private characterDepthService: CharacterDepthService;
-  private tensionOptimizationService: TensionOptimizationService;
+  // サービスインスタンス（明確な割り当てアサーション）
+  private themeEnhancementService!: ThemeEnhancementService;
+  private styleOptimizationService!: StyleOptimizationService;
+  private characterDepthService!: CharacterDepthService;
+  private tensionOptimizationService!: TensionOptimizationService;
 
   // キャッシュとメタデータ管理
   private optimizationCache: Map<string, IntegratedOptimizationResult> = new Map();
@@ -207,15 +222,15 @@ export class OptimizationCoordinator {
   private options: OptimizationCoordinatorOptions;
 
   /**
-   * コンストラクタ
+   * コンストラクタ（依存性注入対応版）
    * 
    * @param geminiAdapter AI分析アダプター
-   * @param styleAnalysisService 文体分析サービス
+   * @param dependencies 依存関係（CharacterManager、MemoryManager等）
    * @param options コーディネータオプション
    */
   constructor(
     private geminiAdapter: GeminiAdapter,
-    styleAnalysisService: any, // IStyleAnalysisService
+    private dependencies: OptimizationCoordinatorDependencies,
     options: OptimizationCoordinatorOptions = {}
   ) {
     this.options = {
@@ -229,16 +244,60 @@ export class OptimizationCoordinator {
       ...options
     };
 
-    // サービスを直接初期化
-    this.themeEnhancementService = new ThemeEnhancementService(this.geminiAdapter);
-    this.styleOptimizationService = new StyleOptimizationService(
-      this.geminiAdapter,
-      styleAnalysisService
-    );
-    this.characterDepthService = new CharacterDepthService();
-    this.tensionOptimizationService = new TensionOptimizationService();
+    // サービスを依存性注入で初期化
+    this.initializeServices();
 
-    logger.info('OptimizationCoordinator initialized', { options: this.options });
+    logger.info('OptimizationCoordinator initialized with dependency injection', {
+      options: this.options,
+      servicesInitialized: this.getServiceStatus()
+    });
+  }
+
+  /**
+   * サービスの初期化（依存性注入対応）
+   * @private
+   */
+  private initializeServices(): void {
+    try {
+      // テーマ強化サービス
+      this.themeEnhancementService = new ThemeEnhancementService(this.geminiAdapter);
+
+      // 文体最適化サービス
+      this.styleOptimizationService = new StyleOptimizationService(
+        this.geminiAdapter,
+        this.dependencies.styleAnalysisService
+      );
+
+      // キャラクター深化サービス（依存性注入対応）
+      this.characterDepthService = createCharacterDepthService(
+        this.dependencies.characterManager,
+        this.dependencies.memoryManager
+      );
+
+      // テンション最適化サービス
+      this.tensionOptimizationService = new TensionOptimizationService();
+
+      logger.debug('All optimization services initialized successfully');
+
+    } catch (error) {
+      logger.error('Failed to initialize optimization services', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      throw new Error(`Service initialization failed: ${error}`);
+    }
+  }
+
+  /**
+   * サービス状態の取得
+   * @private
+   */
+  private getServiceStatus(): Record<string, boolean> {
+    return {
+      themeEnhancement: !!this.themeEnhancementService,
+      styleOptimization: !!this.styleOptimizationService,
+      characterDepth: !!this.characterDepthService,
+      tensionOptimization: !!this.tensionOptimizationService
+    };
   }
 
   /**
@@ -272,8 +331,12 @@ export class OptimizationCoordinator {
       logger.info(`Starting comprehensive chapter optimization`, {
         chapterNumber,
         contentLength: content.length,
-        parallelProcessing: this.options.enableParallelProcessing
+        parallelProcessing: this.options.enableParallelProcessing,
+        servicesReady: this.getServiceStatus()
       });
+
+      // サービスの準備状態確認
+      this.validateServiceReadiness();
 
       // キャッシュチェック
       if (this.options.enableCache && this.optimizationCache.has(cacheKey)) {
@@ -306,18 +369,36 @@ export class OptimizationCoordinator {
       logger.info(`Chapter optimization completed`, {
         chapterNumber,
         processingTime,
-        totalRecommendations: integratedResult.optimizationMetadata.totalRecommendations
+        totalRecommendations: integratedResult.optimizationMetadata.totalRecommendations,
+        servicesUsed: integratedResult.optimizationMetadata.servicesUsed
       });
 
       return integratedResult;
+
     } catch (error) {
       logger.error('Comprehensive chapter optimization failed', {
         error: error instanceof Error ? error.message : String(error),
-        chapterNumber
+        chapterNumber,
+        servicesStatus: this.getServiceStatus()
       });
 
       // フォールバック最適化結果を返す
       return this.createFallbackOptimizationResult(chapterNumber, context, Date.now() - startTime);
+    }
+  }
+
+  /**
+   * サービス準備状態の検証
+   * @private
+   */
+  private validateServiceReadiness(): void {
+    const serviceStatus = this.getServiceStatus();
+    const failedServices = Object.entries(serviceStatus)
+      .filter(([_, ready]) => !ready)
+      .map(([service, _]) => service);
+
+    if (failedServices.length > 0) {
+      throw new Error(`Services not ready: ${failedServices.join(', ')}`);
     }
   }
 
@@ -337,37 +418,37 @@ export class OptimizationCoordinator {
       this.executeThemeOptimization(content, chapterNumber, context, analysisResults.themeAnalysis)
         .catch(error => {
           logger.warn('Theme optimization failed in parallel execution', { error });
-          return null;
+          return this.createFallbackThemeOptimization();
         }),
 
       // 文体最適化
       this.executeStyleOptimization(chapterNumber, context, analysisResults)
         .catch(error => {
           logger.warn('Style optimization failed in parallel execution', { error });
-          return null;
+          return this.createFallbackStyleOptimization();
         }),
 
       // キャラクター最適化
       this.executeCharacterOptimization(chapterNumber, context, analysisResults.characters, analysisResults.characterPsychologies)
         .catch(error => {
           logger.warn('Character optimization failed in parallel execution', { error });
-          return null;
+          return this.createFallbackCharacterOptimization();
         }),
 
       // テンション最適化
       this.executeTensionOptimization(chapterNumber, context)
         .catch(error => {
           logger.warn('Tension optimization failed in parallel execution', { error });
-          return null;
+          return this.createFallbackTensionOptimization();
         })
     ];
 
     const results = await Promise.allSettled(optimizationPromises);
     return {
-      themeOptimization: this.extractSettledResult(results[0]),
-      styleOptimization: this.extractSettledResult(results[1]),
-      characterOptimization: this.extractSettledResult(results[2]),
-      tensionOptimization: this.extractSettledResult(results[3])
+      themeOptimization: this.extractSettledResult(results[0]) || this.createFallbackThemeOptimization(),
+      styleOptimization: this.extractSettledResult(results[1]) || this.createFallbackStyleOptimization(),
+      characterOptimization: this.extractSettledResult(results[2]) || this.createFallbackCharacterOptimization(),
+      tensionOptimization: this.extractSettledResult(results[3]) || this.createFallbackTensionOptimization()
     };
   }
 
@@ -384,19 +465,42 @@ export class OptimizationCoordinator {
   ): Promise<any> {
     const results: any = {};
 
-    // 依存関係を考慮した順序で実行
-    results.themeOptimization = await this.executeThemeOptimization(
-      content, chapterNumber, context, analysisResults.themeAnalysis
-    );
-    results.styleOptimization = await this.executeStyleOptimization(
-      chapterNumber, context, analysisResults
-    );
-    results.characterOptimization = await this.executeCharacterOptimization(
-      chapterNumber, context, analysisResults.characters, analysisResults.characterPsychologies
-    );
-    results.tensionOptimization = await this.executeTensionOptimization(
-      chapterNumber, context
-    );
+    try {
+      // 依存関係を考慮した順序で実行
+      results.themeOptimization = await this.executeThemeOptimization(
+        content, chapterNumber, context, analysisResults.themeAnalysis
+      );
+    } catch (error) {
+      logger.warn('Theme optimization failed in sequential execution', { error });
+      results.themeOptimization = this.createFallbackThemeOptimization();
+    }
+
+    try {
+      results.styleOptimization = await this.executeStyleOptimization(
+        chapterNumber, context, analysisResults
+      );
+    } catch (error) {
+      logger.warn('Style optimization failed in sequential execution', { error });
+      results.styleOptimization = this.createFallbackStyleOptimization();
+    }
+
+    try {
+      results.characterOptimization = await this.executeCharacterOptimization(
+        chapterNumber, context, analysisResults.characters, analysisResults.characterPsychologies
+      );
+    } catch (error) {
+      logger.warn('Character optimization failed in sequential execution', { error });
+      results.characterOptimization = this.createFallbackCharacterOptimization();
+    }
+
+    try {
+      results.tensionOptimization = await this.executeTensionOptimization(
+        chapterNumber, context
+      );
+    } catch (error) {
+      logger.warn('Tension optimization failed in sequential execution', { error });
+      results.tensionOptimization = this.createFallbackTensionOptimization();
+    }
 
     return results;
   }
@@ -412,40 +516,45 @@ export class OptimizationCoordinator {
     context: GenerationContext,
     themeAnalysis: ThemeResonanceAnalysis
   ): Promise<any> {
-    await this.themeEnhancementService.initialize();
+    try {
+      await this.themeEnhancementService.initialize();
 
-    const themes = context.theme ? [context.theme] : Object.keys(themeAnalysis.themes || {});
-    const dominantTheme = themeAnalysis.dominantTheme || themes[0] || '成長';
+      const themes = context.theme ? [context.theme] : Object.keys(themeAnalysis.themes || {});
+      const dominantTheme = themeAnalysis.dominantTheme || themes[0] || '成長';
 
-    // themeAnalysisを適切な形式に変換（型の互換性のため）
-    const adaptedThemeAnalysis = {
-      themes: themeAnalysis.themes || {},
-      overallCoherence: themeAnalysis.overallCoherence || 7,
-      dominantTheme: dominantTheme,
-      themeTensions: {} // 空のオブジェクトで初期化
-    };
+      // themeAnalysisを適切な形式に変換（型の互換性のため）
+      const adaptedThemeAnalysis = {
+        themes: themeAnalysis.themes || {},
+        overallCoherence: themeAnalysis.overallCoherence || 7,
+        dominantTheme: dominantTheme,
+        themeTensions: {} // 空のオブジェクトで初期化
+      };
 
-    const [
-      themeEnhancements,
-      literaryInspirations,
-      symbolicElements,
-      foreshadowingOpportunities,
-      literaryTechniques
-    ] = await Promise.all([
-      this.themeEnhancementService.generateThemeEnhancements(adaptedThemeAnalysis, chapterNumber, context).catch(() => []),
-      this.themeEnhancementService.generateLiteraryInspirations(context, chapterNumber),
-      this.themeEnhancementService.suggestSymbolicElements(themes, chapterNumber, context.genre),
-      this.themeEnhancementService.detectForeshadowingOpportunities(content, chapterNumber, themes),
-      this.themeEnhancementService.suggestLiteraryTechniquesForTheme(dominantTheme, context.genre)
-    ]);
+      const [
+        themeEnhancements,
+        literaryInspirations,
+        symbolicElements,
+        foreshadowingOpportunities,
+        literaryTechniques
+      ] = await Promise.all([
+        this.themeEnhancementService.generateThemeEnhancements(adaptedThemeAnalysis, chapterNumber, context).catch(() => []),
+        this.themeEnhancementService.generateLiteraryInspirations(context, chapterNumber),
+        this.themeEnhancementService.suggestSymbolicElements(themes, chapterNumber, context.genre),
+        this.themeEnhancementService.detectForeshadowingOpportunities(content, chapterNumber, themes),
+        this.themeEnhancementService.suggestLiteraryTechniquesForTheme(dominantTheme, context.genre)
+      ]);
 
-    return {
-      themeEnhancements,
-      literaryInspirations,
-      symbolicElements,
-      foreshadowingOpportunities,
-      literaryTechniques
-    };
+      return {
+        themeEnhancements,
+        literaryInspirations,
+        symbolicElements,
+        foreshadowingOpportunities,
+        literaryTechniques
+      };
+    } catch (error) {
+      logger.error('Theme optimization execution failed', { error });
+      throw error;
+    }
   }
 
   /**
@@ -458,40 +567,45 @@ export class OptimizationCoordinator {
     context: GenerationContext,
     analysisResults: any
   ): Promise<any> {
-    const subjectPatterns: SubjectPatternOptimizationRequest = {
-      repeatedSubjects: [], // 実際の実装では分析結果から取得
-      subjectDiversityScore: 0.7
-    };
+    try {
+      const subjectPatterns: SubjectPatternOptimizationRequest = {
+        repeatedSubjects: [], // 実際の実装では分析結果から取得
+        subjectDiversityScore: 0.7
+      };
 
-    const [
-      styleGuidance,
-      expressionAlternatives,
-      subjectPatternOptimization,
-      structureRecommendations,
-      repetitionAlternatives
-    ] = await Promise.all([
-      this.styleOptimizationService.generateStyleGuidance(chapterNumber, context),
-      this.styleOptimizationService.suggestAlternativeExpressions(
-        analysisResults.expressionPatterns || {}, context
-      ),
-      this.styleOptimizationService.optimizeSubjectPatterns(subjectPatterns, context),
-      this.styleOptimizationService.generateStructureRecommendations(
-        analysisResults.styleAnalysis, context
-      ),
-      this.styleOptimizationService.generateRepetitionAlternatives([], context)
-    ]);
+      const [
+        styleGuidance,
+        expressionAlternatives,
+        subjectPatternOptimization,
+        structureRecommendations,
+        repetitionAlternatives
+      ] = await Promise.all([
+        this.styleOptimizationService.generateStyleGuidance(chapterNumber, context),
+        this.styleOptimizationService.suggestAlternativeExpressions(
+          analysisResults.expressionPatterns || {}, context
+        ),
+        this.styleOptimizationService.optimizeSubjectPatterns(subjectPatterns, context),
+        this.styleOptimizationService.generateStructureRecommendations(
+          analysisResults.styleAnalysis, context
+        ),
+        this.styleOptimizationService.generateRepetitionAlternatives([], context)
+      ]);
 
-    return {
-      styleGuidance,
-      expressionAlternatives,
-      subjectPatternOptimization,
-      structureRecommendations,
-      repetitionAlternatives
-    };
+      return {
+        styleGuidance,
+        expressionAlternatives,
+        subjectPatternOptimization,
+        structureRecommendations,
+        repetitionAlternatives
+      };
+    } catch (error) {
+      logger.error('Style optimization execution failed', { error });
+      throw error;
+    }
   }
 
   /**
-   * キャラクター最適化の実行
+   * キャラクター最適化の実行（依存性注入対応版）
    * 
    * @private
    */
@@ -501,37 +615,57 @@ export class OptimizationCoordinator {
     characters?: Character[],
     characterPsychologies?: { [id: string]: CharacterPsychology }
   ): Promise<any> {
-    if (!characters || characters.length === 0) {
-      return {
-        depthRecommendations: {},
-        focusCharacters: [],
-        characterDepthPrompts: {}
-      };
-    }
-
-    const [focusCharacters, depthRecommendations] = await Promise.all([
-      this.characterDepthService.recommendFocusCharactersForChapter(chapterNumber, 3),
-      this.characterDepthService.generateMultipleCharacterRecommendations(
-        characters, chapterNumber, this.options.maxRecommendationsPerCategory
-      )
-    ]);
-
-    // 焦点キャラクターの深化プロンプト生成
-    const characterDepthPrompts: { [characterId: string]: CharacterDepthPrompt } = {};
-    for (const characterId of focusCharacters) {
-      const prompt = await this.characterDepthService.generateDepthPromptForChapter(
-        characterId, chapterNumber
-      );
-      if (prompt) {
-        characterDepthPrompts[characterId] = prompt;
+    try {
+      if (!characters || characters.length === 0) {
+        logger.debug('No characters provided for optimization');
+        return {
+          depthRecommendations: {},
+          focusCharacters: [],
+          characterDepthPrompts: {}
+        };
       }
-    }
 
-    return {
-      depthRecommendations,
-      focusCharacters,
-      characterDepthPrompts
-    };
+      // CharacterDepthServiceを使用（依存性注入済み）
+      const [focusCharacters, depthRecommendations] = await Promise.all([
+        this.characterDepthService.recommendFocusCharactersForChapter(chapterNumber, 3),
+        this.characterDepthService.generateMultipleCharacterRecommendations(
+          characters, chapterNumber, this.options.maxRecommendationsPerCategory
+        )
+      ]);
+
+      // 焦点キャラクターの深化プロンプト生成
+      const characterDepthPrompts: { [characterId: string]: CharacterDepthPrompt } = {};
+      for (const characterId of focusCharacters) {
+        try {
+          const prompt = await this.characterDepthService.generateDepthPromptForChapter(
+            characterId, chapterNumber
+          );
+          if (prompt) {
+            characterDepthPrompts[characterId] = prompt;
+          }
+        } catch (promptError) {
+          logger.warn(`Failed to generate depth prompt for character ${characterId}`, {
+            error: promptError
+          });
+        }
+      }
+
+      logger.debug('Character optimization completed', {
+        charactersAnalyzed: characters.length,
+        focusCharactersSelected: focusCharacters.length,
+        depthPromptsGenerated: Object.keys(characterDepthPrompts).length
+      });
+
+      return {
+        depthRecommendations,
+        focusCharacters,
+        characterDepthPrompts
+      };
+
+    } catch (error) {
+      logger.error('Character optimization execution failed', { error });
+      throw error;
+    }
   }
 
   /**
@@ -543,33 +677,38 @@ export class OptimizationCoordinator {
     chapterNumber: number,
     context: GenerationContext
   ): Promise<any> {
-    await this.tensionOptimizationService.initialize();
+    try {
+      await this.tensionOptimizationService.initialize();
 
-    const totalChapters = context.totalChapters || 20;
-    const currentTension = context.tension || 0.5;
+      const totalChapters = context.totalChapters || 20;
+      const currentTension = context.tension || 0.5;
 
-    const [
-      tensionPacingRecommendation,
-      tensionOptimizationSuggestions,
-      tensionCurve,
-      climaxRecommendation
-    ] = await Promise.all([
-      this.tensionOptimizationService.getTensionPacingRecommendation(
-        chapterNumber, context.genre
-      ),
-      this.tensionOptimizationService.generateTensionOptimizationSuggestions(
-        chapterNumber, currentTension
-      ),
-      this.tensionOptimizationService.generateTensionCurve(totalChapters, context.genre),
-      this.tensionOptimizationService.recommendClimax(totalChapters, context.genre)
-    ]);
+      const [
+        tensionPacingRecommendation,
+        tensionOptimizationSuggestions,
+        tensionCurve,
+        climaxRecommendation
+      ] = await Promise.all([
+        this.tensionOptimizationService.getTensionPacingRecommendation(
+          chapterNumber, context.genre
+        ),
+        this.tensionOptimizationService.generateTensionOptimizationSuggestions(
+          chapterNumber, currentTension
+        ),
+        this.tensionOptimizationService.generateTensionCurve(totalChapters, context.genre),
+        this.tensionOptimizationService.recommendClimax(totalChapters, context.genre)
+      ]);
 
-    return {
-      tensionPacingRecommendation,
-      tensionOptimizationSuggestions,
-      tensionCurve,
-      climaxRecommendation
-    };
+      return {
+        tensionPacingRecommendation,
+        tensionOptimizationSuggestions,
+        tensionCurve,
+        climaxRecommendation
+      };
+    } catch (error) {
+      logger.error('Tension optimization execution failed', { error });
+      throw error;
+    }
   }
 
   /**
@@ -964,6 +1103,34 @@ export class OptimizationCoordinator {
     logger.info('All optimization caches cleared');
   }
 
+  /**
+   * システム診断
+   */
+  async performDiagnostics(): Promise<{
+    serviceStatus: Record<string, boolean>;
+    cacheMetrics: { size: number; hitRate: number };
+    performanceMetrics: Record<string, number>;
+    dependencies: Record<string, boolean>;
+  }> {
+    const serviceStatus = this.getServiceStatus();
+
+    const dependencyStatus = {
+      characterManager: !!this.dependencies.characterManager,
+      memoryManager: !!this.dependencies.memoryManager,
+      styleAnalysisService: !!this.dependencies.styleAnalysisService
+    };
+
+    return {
+      serviceStatus,
+      cacheMetrics: {
+        size: this.optimizationCache.size,
+        hitRate: 0 // 実装時に計算
+      },
+      performanceMetrics: Object.fromEntries(this.performanceMetrics),
+      dependencies: dependencyStatus
+    };
+  }
+
   // =========================================================================
   // フォールバックメソッド群
   // =========================================================================
@@ -1078,3 +1245,25 @@ export class OptimizationCoordinator {
     ];
   }
 }
+
+/**
+ * ファクトリー関数（依存性注入対応）
+ */
+export function createOptimizationCoordinator(
+  geminiAdapter: GeminiAdapter,
+  dependencies: OptimizationCoordinatorDependencies,
+  options?: OptimizationCoordinatorOptions
+): OptimizationCoordinator {
+  return new OptimizationCoordinator(geminiAdapter, dependencies, options);
+}
+
+/**
+ * 🔥 後方互換性のためのエクスポート（非推奨）
+ * 新しいコードでは createOptimizationCoordinator() を使用してください
+ */
+export const optimizationCoordinator = {
+  /**
+   * インスタンス作成（ファクトリー使用推奨）
+   */
+  create: createOptimizationCoordinator
+};

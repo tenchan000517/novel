@@ -1,10 +1,10 @@
-// src/lib/generation/engine/chapter-generator.ts（記憶階層システム統合版）
+// src/lib/generation/engine/chapter-generator.ts（依存注入対応版）
 import { GeminiClient } from '../gemini-client';
 import { ContextGenerator } from '../context-generator';
 import { PromptGenerator } from '../prompt-generator';
 import { TextParser } from './text-parser';
 
-// === 🔥 新記憶階層システム統合 ===
+// 新記憶階層システム統合
 import { MemoryManager } from '@/lib/memory/core/memory-manager';
 import {
     MemoryLevel,
@@ -17,7 +17,7 @@ import { Chapter } from '@/types/chapters';
 import { logger } from '@/lib/utils/logger';
 import { GenerationError } from '@/lib/utils/error-handler';
 
-// === 🔥 統合記憶システム用の型拡張 ===
+// 拡張型定義
 interface EnhancedGenerationContext extends GenerationContext {
     unifiedMemoryData?: {
         searchSuccess: boolean;
@@ -38,7 +38,6 @@ interface EnhancedGenerationContext extends GenerationContext {
         error?: string;
     };
 
-    // 統合記憶システムから取得される追加データ
     keyPhrases?: string[];
     characterStates?: Map<string, any>;
     narrativeProgression?: any;
@@ -49,17 +48,22 @@ interface EnhancedGenerationContext extends GenerationContext {
     resolvedDuplicates?: any[];
     accessOptimizations?: any[];
 }
+
 import { parameterManager } from '@/lib/parameters';
 import { plotManager } from '@/lib/plot';
 import { characterManager } from '@/lib/characters/manager';
 import { chapterStorage, storageProvider } from '@/lib/storage';
 
-// === analysisモジュール統合 ===
+// analysisモジュール統合（依存性注入対応）
 import { ContentAnalysisManager } from '@/lib/analysis/content-analysis-manager';
 import { PreGenerationPipeline } from '@/lib/analysis/pipelines/pre-generation-pipeline';
 import { PostGenerationPipeline } from '@/lib/analysis/pipelines/post-generation-pipeline';
 import { AnalysisCoordinator } from '@/lib/analysis/coordinators/analysis-coordinator';
-import { OptimizationCoordinator } from '@/lib/analysis/coordinators/optimization-coordinator';
+import {
+    OptimizationCoordinator,
+    createOptimizationCoordinator,
+    OptimizationCoordinatorDependencies
+} from '@/lib/analysis/coordinators/optimization-coordinator';
 import { GeminiAdapter } from '@/lib/analysis/adapters/gemini-adapter';
 
 // 「魂のこもった学びの物語」システムのインポート
@@ -68,24 +72,21 @@ import { LearningStage } from '@/lib/learning-journey/concept-learning-manager';
 
 import { withTimeout } from '@/lib/utils/promise-utils';
 
-// === タイムアウト設定 ===
+// プロンプト保存機能のインポート
+import { promptStorage } from '@/lib/utils/prompt-storage';
+
+// タイムアウト設定
 const TIMEOUT_CONFIG = {
-    INITIALIZATION: {
-        TOTAL: 180000,
-        MEMORY_MANAGER_INIT: 60000,
-        HEALTH_CHECK: 20000,
-        FIRST_CHAPTER_CHECK: 30000
-    },
     GENERATION: {
         CONTEXT: 240000,
         PROMPT: 60000,
         AI_GENERATION: 180000,
-        MEMORY_PROCESSING: 120000,  // 🔥 新規: 記憶処理専用タイムアウト
+        MEMORY_PROCESSING: 120000,
         TOTAL_CHAPTER: 600000
     }
 };
 
-// === 拡張型定義 ===
+// 拡張型定義
 interface ExtendedGenerateChapterRequest extends GenerateChapterRequest {
     improvementSuggestions?: string[];
     themeEnhancements?: ThemeEnhancement[];
@@ -99,35 +100,19 @@ interface ExtendedGenerateChapterRequest extends GenerateChapterRequest {
 
 /**
  * @class ChapterGenerator
- * @description 小説のチャプター生成を担当するクラス（記憶階層システム統合版）
- * 
- * @architecture
- * - 新統合記憶管理システム完全準拠
- * - MemoryManager.processChapter() を中核とした統一処理
- * - 重複処理の排除とキャッシュ協調の活用
- * - 品質保証システムとの自動連携
+ * @description 小説のチャプター生成を担当するクラス（依存注入対応版）
  */
 export class ChapterGenerator {
     private geminiClient: GeminiClient;
     private contextGenerator: ContextGenerator;
     private promptGenerator: PromptGenerator;
     private textParser: TextParser;
-
-    // === 🔥 新記憶階層システム統合 ===
     private memoryManager: MemoryManager;
-
-    // === analysisモジュール統合 ===
     private contentAnalysisManager: ContentAnalysisManager;
-
-    // 「魂のこもった学びの物語」システム
     private learningJourneySystem?: LearningJourneySystem;
 
-    // 初期化状態を追跡するためのフラグ
-    private initialized: boolean = false;
-    private initializationPromise: Promise<void> | null = null;
-
     /**
-     * コンストラクタ（記憶階層システム統合版）
+     * コンストラクタ（依存注入対応版）
      */
     constructor(
         geminiClient: GeminiClient,
@@ -136,14 +121,12 @@ export class ChapterGenerator {
         contentAnalysisManager?: ContentAnalysisManager
     ) {
         this.geminiClient = geminiClient;
-        this.contextGenerator = new ContextGenerator(memoryManager);
         this.promptGenerator = promptGenerator;
-        this.textParser = new TextParser();
-
-        // === 🔥 新記憶階層システム統合 ===
         this.memoryManager = memoryManager;
+        this.textParser = new TextParser();
+        this.contextGenerator = new ContextGenerator(memoryManager);
 
-        // === analysisモジュール統合 ===
+        // ContentAnalysisManagerの依存性注入
         if (contentAnalysisManager) {
             this.contentAnalysisManager = contentAnalysisManager;
         } else {
@@ -155,9 +138,15 @@ export class ChapterGenerator {
                     memoryManager,
                     storageProvider
                 );
-                const optimizationCoordinator = new OptimizationCoordinator(
+
+                const optimizationCoordinatorDependencies: OptimizationCoordinatorDependencies = {
+                    characterManager: characterManager.getInstance(memoryManager),
+                    memoryManager: memoryManager,
+                };
+
+                const optimizationCoordinator = createOptimizationCoordinator(
                     geminiAdapter,
-                    null
+                    optimizationCoordinatorDependencies
                 );
 
                 const preGenerationPipeline = new PreGenerationPipeline(
@@ -174,157 +163,51 @@ export class ChapterGenerator {
                     preGenerationPipeline,
                     postGenerationPipeline
                 );
+
+                logger.info('ContentAnalysisManager initialized with dependency injection');
+
             } catch (error) {
-                logger.error('Failed to initialize ContentAnalysisManager, using fallback', {
+                logger.error('Failed to initialize ContentAnalysisManager with dependency injection, using fallback', {
                     error: error instanceof Error ? error.message : String(error)
                 });
                 this.contentAnalysisManager = null as any;
             }
         }
 
-        // === ContextGenerator への依存性注入 ===
+        // ContextGeneratorへの依存性注入
         if (this.contentAnalysisManager) {
             this.contextGenerator.setContentAnalysisManager(this.contentAnalysisManager);
         }
 
-        // === LearningJourneySystemの遅延初期化 ===
-        this.learningJourneySystem = undefined;
-
-        logger.info('ChapterGenerator initialized with unified memory system integration');
-    }
-
-    /**
-     * 非同期初期化メソッド（記憶階層システム統合版）
-     */
-    async initialize(): Promise<void> {
-        if (this.initialized) {
-            return;
-        }
-
-        if (this.initializationPromise) {
-            return withTimeout(
-                this.initializationPromise,
-                TIMEOUT_CONFIG.INITIALIZATION.TOTAL + 30000,
-                'ChapterGenerator初期化の待機'
-            ).catch(error => {
-                logger.error(`初期化の待機中にタイムアウトが発生: ${error.message}`);
-                this.initializationPromise = null;
-                throw new Error('ChapterGeneratorの初期化がタイムアウトしました。再試行してください。');
-            });
-        }
-
-        this.initializationPromise = this._initialize();
-        return withTimeout(
-            this.initializationPromise,
-            TIMEOUT_CONFIG.INITIALIZATION.TOTAL,
-            'ChapterGeneratorの初期化'
-        ).catch(error => {
-            logger.error(`初期化中にタイムアウトが発生: ${error.message}`);
-            this.initializationPromise = null;
-            throw new Error('ChapterGeneratorの初期化がタイムアウトしました。再試行してください。');
-        });
-    }
-
-    /**
-     * 内部初期化実装（記憶階層システム統合版）
-     */
-    private async _initialize(): Promise<void> {
+        // LearningJourneySystemの初期化
         try {
-            logger.info('Starting ChapterGenerator initialization (memory system integrated)', {
-                timeouts: TIMEOUT_CONFIG.INITIALIZATION
-            });
-
-            // === 🔥 統合記憶管理システムの初期化 ===
-            logger.info('Initializing unified memory management system...');
-            await withTimeout(
-                this.memoryManager.initialize(),
-                TIMEOUT_CONFIG.INITIALIZATION.MEMORY_MANAGER_INIT,
-                '統合記憶管理システムの初期化'
+            this.learningJourneySystem = new LearningJourneySystem(
+                this.geminiClient,
+                this.memoryManager,
+                characterManager.getInstance(this.memoryManager)
             );
-            logger.info('✅ Unified memory management system initialized successfully');
 
-            // === ContentAnalysisManager の健全性チェック ===
-            if (this.contentAnalysisManager) {
-                try {
-                    const healthCheck = await withTimeout(
-                        this.contentAnalysisManager.healthCheck(),
-                        TIMEOUT_CONFIG.INITIALIZATION.HEALTH_CHECK,
-                        'ContentAnalysisManagerの健全性チェック'
-                    );
-
-                    if (healthCheck.status === 'unhealthy') {
-                        logger.warn('ContentAnalysisManager is unhealthy but will continue', healthCheck.details);
-                    } else {
-                        logger.info('ContentAnalysisManager health check completed', {
-                            status: healthCheck.status,
-                            services: Object.keys(healthCheck.details)
-                        });
-                    }
-                } catch (error) {
-                    logger.warn('ContentAnalysisManager health check failed, but will continue', {
-                        error: error instanceof Error ? error.message : String(error)
-                    });
-                }
-            }
-
-            // === 🔥 LearningJourneySystemの初期化（統合記憶システム初期化後） ===
-            try {
-                logger.info('Initializing LearningJourneySystem with unified memory system');
-
-                this.learningJourneySystem = new LearningJourneySystem(
-                    this.geminiClient,
-                    this.memoryManager, // 🔥 統合記憶管理システムを渡す
-                    characterManager
-                );
-
-                await withTimeout(
-                    this.learningJourneySystem.initialize('default-story'),
-                    TIMEOUT_CONFIG.INITIALIZATION.MEMORY_MANAGER_INIT,
-                    'LearningJourneySystemの初期化'
-                );
-
-                logger.info('✅ LearningJourneySystem initialized successfully with unified memory system');
-            } catch (learningError) {
-                logger.error('❌ Failed to initialize LearningJourneySystem with unified memory system', {
-                    error: learningError instanceof Error ? learningError.message : String(learningError)
-                });
+            // 非同期初期化は背景で実行
+            this.learningJourneySystem.initialize('default-story').catch(error => {
+                logger.warn('LearningJourneySystem background initialization failed', { error });
                 this.learningJourneySystem = undefined;
-            }
-
-            this.initialized = true;
-            logger.info('ChapterGenerator initialization completed (memory system integrated)', {
-                memoryManagerInitialized: true,
-                learningJourneySystemAvailable: !!this.learningJourneySystem,
-                contentAnalysisManagerAvailable: !!this.contentAnalysisManager
             });
 
         } catch (error) {
-            logger.error('Failed to initialize ChapterGenerator with memory system integration', {
-                error: error instanceof Error ? error.message : String(error),
-                stack: error instanceof Error ? error.stack : undefined
-            });
-            throw error;
-        } finally {
-            this.initializationPromise = null;
+            logger.warn('Failed to initialize LearningJourneySystem', { error });
+            this.learningJourneySystem = undefined;
         }
+
+        logger.info('ChapterGenerator ready for immediate use with unified memory system integration');
     }
 
     /**
-     * 章を生成する（記憶階層システム統合版）
+     * 章を生成する（統合記憶階層システム対応版）
      */
     async generate(
         chapterNumber: number,
         options?: ExtendedGenerateChapterRequest
     ): Promise<Chapter> {
-        if (!this.initialized) {
-            logger.info('Ensuring initialization before chapter generation');
-            await withTimeout(
-                this.initialize(),
-                TIMEOUT_CONFIG.INITIALIZATION.TOTAL,
-                '章生成前の初期化'
-            );
-        }
-
         const startTime = Date.now();
 
         logger.info(`Starting chapter ${chapterNumber} generation (unified memory system)`, {
@@ -338,9 +221,6 @@ export class ChapterGenerator {
         try {
             const params = parameterManager.getParameters();
 
-            // === 🔥 統合記憶システムによる前処理 ===
-            logger.info(`Performing pre-generation memory operations for chapter ${chapterNumber}`);
-
             // システム状態の確認
             const systemStatus = await this.memoryManager.getSystemStatus();
             if (!systemStatus.initialized) {
@@ -352,12 +232,7 @@ export class ChapterGenerator {
 
             // 第1章の生成前には初期化チェックを行う
             if (chapterNumber === 1) {
-                const initCheck = await withTimeout(
-                    this.checkInitializationForFirstChapter(),
-                    TIMEOUT_CONFIG.INITIALIZATION.FIRST_CHAPTER_CHECK,
-                    '第1章の初期化チェック'
-                );
-
+                const initCheck = await this.checkInitializationForFirstChapter();
                 if (!initCheck.initialized) {
                     throw new GenerationError(
                         `First chapter generation failed: ${initCheck.reason}`,
@@ -366,14 +241,13 @@ export class ChapterGenerator {
                 }
             }
 
-            // === 生成前パイプライン実行 ===
+            // 生成前パイプライン実行
             let enhancementOptions: ExtendedGenerateChapterRequest = { ...options };
 
             if (chapterNumber > 1 && this.contentAnalysisManager) {
                 try {
                     logger.info(`Executing pre-generation pipeline for chapter ${chapterNumber}`);
 
-                    // 🔥 統合検索による前章コンテンツ取得
                     const previousChapterContent = await this.getPreviousChapterContentViaUnifiedAccess(chapterNumber - 1);
 
                     const preparationResult = await withTimeout(
@@ -410,7 +284,7 @@ export class ChapterGenerator {
                 }
             }
 
-            // === 🔥 統合コンテキスト生成 ===
+            // 統合コンテキスト生成
             logger.info(`Generating unified context for chapter ${chapterNumber}`);
 
             const context: EnhancedGenerationContext = await withTimeout(
@@ -421,7 +295,7 @@ export class ChapterGenerator {
 
             logger.info(`Unified context generation completed for chapter ${chapterNumber}`);
 
-            // === LearningJourneySystem統合処理 ===
+            // LearningJourneySystem統合処理
             let learningJourneyPrompt: string | null = null;
             if (this.learningJourneySystem && this.learningJourneySystem.isInitialized()) {
                 try {
@@ -441,7 +315,7 @@ export class ChapterGenerator {
                 }
             }
 
-            // === プロンプト生成 ===
+            // プロンプト生成
             logger.info(`Starting prompt generation for chapter ${chapterNumber}`);
 
             const prompt = await withTimeout(
@@ -456,7 +330,27 @@ export class ChapterGenerator {
                 hasLearningJourneyPrompt: !!learningJourneyPrompt
             });
 
-            // === テキスト生成 ===
+            // 🆕 プロンプトの保存
+            try {
+                const savedPromptPath = await promptStorage.savePrompt(enhancedPrompt, context as GenerationContext, {
+                    hasLearningJourneyPrompt: !!learningJourneyPrompt,
+                    promptLength: enhancedPrompt.length,
+                    generationMethod: 'ServiceContainer統合版',
+                    memorySystemOptimized: true,
+                    enhancementOptionsUsed: Object.keys(enhancementOptions).length,
+                    preGenerationPipelineUsed: chapterNumber > 1 && !!this.contentAnalysisManager
+                });
+                logger.info(`Prompt saved successfully for chapter ${chapterNumber}`, {
+                    savedPath: savedPromptPath
+                });
+            } catch (promptSaveError) {
+                logger.warn(`Failed to save prompt for chapter ${chapterNumber}`, {
+                    error: promptSaveError instanceof Error ? promptSaveError.message : String(promptSaveError)
+                });
+                // プロンプト保存失敗は生成処理を停止させない
+            }
+
+            // テキスト生成
             logger.info(`Calling Gemini API for chapter ${chapterNumber}`);
 
             const generatedText = await withTimeout(
@@ -482,12 +376,10 @@ export class ChapterGenerator {
                 textLength: generatedText.length
             });
 
-            // === テキストパース ===
+            // テキストパース
             const { content, metadata } = this.textParser.parseGeneratedContent(generatedText, chapterNumber);
 
-            // === 🔥 統合記憶システムによる章処理 ===
-            logger.info(`Processing chapter through unified memory system for chapter ${chapterNumber}`);
-
+            // 基本章オブジェクトの作成
             const baseChapter: Chapter = {
                 id: `chapter-${chapterNumber}`,
                 title: metadata.title || `第${chapterNumber}章`,
@@ -533,7 +425,7 @@ export class ChapterGenerator {
                 }
             };
 
-            // === 🔥 統合記憶システムによる一元処理 ===
+            // 統合記憶システムによる一元処理
             logger.info(`Processing chapter through unified memory system for chapter ${chapterNumber}`);
 
             const memoryProcessingResult = await withTimeout(
@@ -556,7 +448,7 @@ export class ChapterGenerator {
                 });
             }
 
-            // === プロット整合性チェック ===
+            // プロット整合性チェック
             let plotConsistency: { consistent: boolean; issues: any[] };
             try {
                 plotConsistency = await plotManager.checkGeneratedContentConsistency(
@@ -570,7 +462,7 @@ export class ChapterGenerator {
                 plotConsistency = { consistent: true, issues: [] };
             }
 
-            // === 生成後パイプライン実行 ===
+            // 生成後パイプライン実行
             logger.info(`Executing post-generation pipeline for chapter ${chapterNumber}`);
 
             let finalChapter = baseChapter;
@@ -653,7 +545,7 @@ export class ChapterGenerator {
                 }
             }
 
-            // === キャラクター状態の更新 ===
+            // キャラクター状態の更新
             try {
                 await this.contextGenerator.processGeneratedChapter(finalChapter);
                 logger.info(`Character information processing completed for chapter ${chapterNumber}`);
@@ -679,7 +571,7 @@ export class ChapterGenerator {
     }
 
     // =========================================================================
-    // 🔥 統合記憶システム専用メソッド
+    // 統合記憶システム専用メソッド
     // =========================================================================
 
     /**
@@ -723,7 +615,7 @@ export class ChapterGenerator {
         logger.debug(`Generating unified context for chapter ${chapterNumber}`);
 
         try {
-            // 🔥 統一検索APIによる統合コンテキスト取得
+            // 統一検索APIによる統合コンテキスト取得
             const searchQuery = `chapter context for ${chapterNumber}`;
             const targetLayers = [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM];
 
@@ -733,7 +625,6 @@ export class ChapterGenerator {
                 logger.warn(`Unified search failed for chapter ${chapterNumber}, falling back to traditional context generation`);
                 const traditionalContext = await this.contextGenerator.generateContext(chapterNumber, options);
 
-                // 統合システム未使用の記録
                 const fallbackContext: EnhancedGenerationContext = {
                     ...traditionalContext,
                     integrationMetadata: {
@@ -762,7 +653,7 @@ export class ChapterGenerator {
                     title: r.data.title || `第${r.data.chapterNumber}章`,
                     summary: r.data.summary || ''
                 }))
-                .slice(0, 5); // 最新5章まで
+                .slice(0, 5);
 
             // キャラクター状態データの抽出と変換
             const characterStates = new Map<string, any>();
@@ -776,7 +667,7 @@ export class ChapterGenerator {
             const keyPhrases = shortTermResults
                 .filter(r => r.data?.keyPhrases)
                 .flatMap(r => r.data.keyPhrases)
-                .slice(0, 20); // 最大20個
+                .slice(0, 20);
 
             // 中期記憶データの抽出
             const narrativeProgression = midTermResults.find(r => r.type === 'narrative')?.data;
@@ -796,7 +687,7 @@ export class ChapterGenerator {
             const enhancedContext: EnhancedGenerationContext = {
                 ...traditionalContext,
 
-                // 🔥 統合記憶システムからの拡張データ
+                // 統合記憶システムからの拡張データ
                 unifiedMemoryData: {
                     searchSuccess: unifiedSearchResult.success,
                     totalResults: unifiedSearchResult.totalResults,
@@ -809,7 +700,7 @@ export class ChapterGenerator {
                     }
                 },
 
-                // 短期記憶からの最新情報（型を適合）
+                // 短期記憶からの最新情報
                 recentChapters: recentChapters,
 
                 // 統合記憶システムから取得したデータを条件付きで追加
@@ -837,13 +728,7 @@ export class ChapterGenerator {
                 processingTime: unifiedSearchResult.processingTime,
                 recentChaptersCount: recentChapters.length,
                 keyPhrasesCount: keyPhrases.length,
-                characterStatesCount: characterStates.size,
-                hasNarrativeProgression: !!narrativeProgression,
-                hasConsolidatedSettings: !!consolidatedSettings,
-                hasKnowledgeDatabase: !!knowledgeDatabase,
-                characterEvolutionCount: characterEvolution.length,
-                resolvedDuplicatesCount: resolvedDuplicates.length,
-                accessOptimizationsCount: accessOptimizations.length
+                characterStatesCount: characterStates.size
             });
 
             return enhancedContext;
@@ -853,10 +738,8 @@ export class ChapterGenerator {
                 error: error instanceof Error ? error.message : String(error)
             });
 
-            // エラー時は従来の方法にフォールバック
             const fallbackContext = await this.contextGenerator.generateContext(chapterNumber, options);
 
-            // フォールバック使用の記録（型安全）
             const enhancedFallbackContext: EnhancedGenerationContext = {
                 ...fallbackContext,
                 integrationMetadata: {
@@ -988,7 +871,6 @@ ${importantSections}
 
     private async checkInitializationForFirstChapter(): Promise<{ initialized: boolean, reason?: string }> {
         try {
-            // 🔥 統合記憶システムの状態確認
             const systemStatus = await this.memoryManager.getSystemStatus();
             if (!systemStatus.initialized) {
                 return {
@@ -997,7 +879,6 @@ ${importantSections}
                 };
             }
 
-            // システム診断の実行
             const diagnostics = await this.memoryManager.performSystemDiagnostics();
             if (diagnostics.systemHealth === 'CRITICAL') {
                 return {
@@ -1014,13 +895,13 @@ ${importantSections}
                 };
             }
 
-            const characterCheckResult = await this.checkMainCharactersExist();
-            if (!characterCheckResult.exist) {
-                return {
-                    initialized: false,
-                    reason: `メインキャラクターが設定されていません: ${characterCheckResult.message}`
-                };
-            }
+            // const characterCheckResult = await this.checkMainCharactersExist();
+            // if (!characterCheckResult.exist) {
+            //     return {
+            //         initialized: false,
+            //         reason: `メインキャラクターが設定されていません: ${characterCheckResult.message}`
+            //     };
+            // }
 
             const params = parameterManager.getParameters();
             if (!params || !params.generation) {
@@ -1049,9 +930,9 @@ ${importantSections}
 
     private async checkPlotFileExistsDirect(): Promise<boolean> {
         try {
-            const abstractPlotExists = await storageProvider.fileExists('data/config/story-plot/abstract-plot.yaml');
-            const concretePlotExists = await storageProvider.fileExists('data/config/story-plot/concrete-plot.yaml');
-            const mediumPlotExists = await storageProvider.fileExists('data/config/story-plot/medium-plot.yaml');
+            const abstractPlotExists = await storageProvider.fileExists('config/story-plot/abstract-plot.yaml');
+            const concretePlotExists = await storageProvider.fileExists('config/story-plot/concrete-plot.yaml');
+            const mediumPlotExists = await storageProvider.fileExists('config/story-plot/medium-plot.yaml');
 
             return abstractPlotExists || concretePlotExists || mediumPlotExists;
         } catch (error) {
@@ -1064,7 +945,7 @@ ${importantSections}
 
     private async checkMainCharactersExist(): Promise<{ exist: boolean, message: string }> {
         try {
-            const mainCharacters = await characterManager.getCharactersByType('MAIN');
+            const mainCharacters = await characterManager.getCharactersByType('MAIN', this.memoryManager);
 
             if (!mainCharacters || mainCharacters.length === 0) {
                 return { exist: false, message: 'メインキャラクターが定義されていません' };
@@ -1080,7 +961,7 @@ ${importantSections}
     }
 
     // =========================================================================
-    // パラメータ管理メソッド
+    // パラメータ管理メソッド（既存機能保持）
     // =========================================================================
 
     updateParameter(path: string, value: any): void {
@@ -1092,21 +973,21 @@ ${importantSections}
     }
 
     /**
-     * 🔥 新規追加: 統合記憶システムの状態取得
+     * 統合記憶システムの状態取得
      */
     async getMemorySystemStatus() {
         return await this.memoryManager.getSystemStatus();
     }
 
     /**
-     * 🔥 新規追加: 統合記憶システムの診断実行
+     * 統合記憶システムの診断実行
      */
     async performMemorySystemDiagnostics() {
         return await this.memoryManager.performSystemDiagnostics();
     }
 
     /**
-     * 🔥 新規追加: 統合記憶システムの最適化実行
+     * 統合記憶システムの最適化実行
      */
     async optimizeMemorySystem() {
         return await this.memoryManager.optimizeSystem();

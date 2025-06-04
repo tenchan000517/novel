@@ -13,7 +13,7 @@
       "models": {
         "default": "gemini-2.0-flash-lite",
         "summary": "gemini-2.0-flash-lite",
-        "content": "gemini-2.0-flash",
+        "content": "gemini-2.0-flash-lite",
         "analysis": "gemini-2.0-flash-lite",
         "characterization": "gemini-2.0-flash"
       },

@@ -1,29 +1,69 @@
 {
   "title": "Generated Novel - Unified Memory System",
-  "totalChapters": 10,
-  "generatedAt": "2025-06-01T08:22:02.909Z",
-  "totalWordCount": 33454,
+  "totalChapters": 4,
+  "generatedAt": "2025-06-04T00:56:59.760Z",
+  "totalWordCount": 9537,
   "averageQualityScore": 100,
   "unifiedMemorySystemMetrics": {
-    "averageMemoryProcessingTime": 227.3,
-    "totalMemoryProcessingTime": 2273,
-    "successfulMemoryProcessing": 6,
-    "totalWarnings": 2,
-    "totalErrors": 4,
+    "averageMemoryProcessingTime": 84.25,
+    "totalMemoryProcessingTime": 337,
+    "successfulMemoryProcessing": 4,
+    "totalWarnings": 0,
+    "totalErrors": 0,
     "systemOptimizationsApplied": 0
   },
   "chapters": [
     {
-      "number": 3,
-      "title": "誤算の代償",
-      "wordCount": 2980,
+      "number": 1,
+      "title": "焦りと確信",
+      "wordCount": 2409,
       "qualityScore": 100,
-      "summary": "太郎は顧客不在の戦略が裏目に出始め、焦燥感を募らせる。",
+      "summary": "太郎は、起業の初期段階で直面する課題に焦りを感じながらも、自分のビジョンを信じ、問題解決のために奔走する。",
       "scenes": 0,
-      "createdAt": "2025-06-01T07:37:43.471Z",
+      "createdAt": "2025-06-04T00:41:22.695Z",
       "unifiedMemoryProcessing": {
-        "success": false,
-        "processingTime": 169,
+        "success": true,
+        "processingTime": 65,
+        "affectedComponents": 3,
+        "systemHealth": "HEALTHY"
+      },
+      "plotConsistency": {
+        "consistent": false,
+        "issueCount": 4,
+        "majorIssues": 4
+      }
+    },
+    {
+      "number": 2,
+      "title": "壁と突破口",
+      "wordCount": 3822,
+      "qualityScore": 100,
+      "summary": "資金調達の壁に直面する健太は、投資家との面談を重ねるも成果が出ない。焦りを感じながらも、チームと協力し、問題解決のために奮闘する。",
+      "scenes": 0,
+      "createdAt": "2025-06-04T00:47:20.018Z",
+      "unifiedMemoryProcessing": {
+        "success": true,
+        "processingTime": 107,
+        "affectedComponents": 3,
+        "systemHealth": "DEGRADED"
+      },
+      "plotConsistency": {
+        "consistent": false,
+        "issueCount": 4,
+        "majorIssues": 4
+      }
+    },
+    {
+      "number": 3,
+      "title": "焦りと誤算、そして新たな一手",
+      "wordCount": 728,
+      "qualityScore": 100,
+      "summary": "新規事業の進捗が停滞し、悠斗は焦りを募らせる。チーム内での対立、資金繰りの問題、そして自身の誤解が露呈し、彼は大きな決断を迫られる。",
+      "scenes": 0,
+      "createdAt": "2025-06-04T00:51:06.554Z",
+      "unifiedMemoryProcessing": {
+        "success": true,
+        "processingTime": 76,
         "affectedComponents": 3,
         "systemHealth": "DEGRADED"
       },
@@ -35,176 +75,16 @@
     },
     {
       "number": 4,
-      "title": "顧客の声なき叫び",
-      "wordCount": 2643,
+      "title": "第4章　壁と誤算",
+      "wordCount": 2578,
       "qualityScore": 100,
-      "summary": "顧客不在のサービス開発に疑問を感じ始めた主人公が、顧客中心の視点に気づき始める。",
+      "summary": "新規顧客獲得の伸び悩みに直面し、沢村はチームと打開策を探る。マーケティング戦略の見直しを図るも、過去の成功体験に囚われた誤解が露呈し、さらなる壁にぶつかる。",
       "scenes": 0,
-      "createdAt": "2025-06-01T07:41:29.042Z",
+      "createdAt": "2025-06-04T00:56:11.061Z",
       "unifiedMemoryProcessing": {
-        "success": false,
-        "processingTime": 220,
+        "success": true,
+        "processingTime": 89,
         "affectedComponents": 3,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 5,
-      "title": "誤解という名の壁",
-      "wordCount": 2772,
-      "qualityScore": 100,
-      "summary": "新規事業の立ち上げで顧客視点の欠如に気づき、自己中心的な考え方からの脱却を目指す。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T07:45:32.410Z",
-      "unifiedMemoryProcessing": {
-        "success": false,
-        "processingTime": 225,
-        "affectedComponents": 4,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 6,
-      "title": "誤算の連鎖",
-      "wordCount": 3835,
-      "qualityScore": 100,
-      "summary": "新規顧客獲得に苦戦するチーム。表面的なニーズ対応の限界に直面し、本質的な課題探求の必要性を痛感する。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T07:49:31.605Z",
-      "unifiedMemoryProcessing": {
-        "success": false,
-        "processingTime": 197,
-        "affectedComponents": 3,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 7,
-      "title": "歪んだ効率",
-      "wordCount": 3085,
-      "qualityScore": 100,
-      "summary": "効率を重視するあまり顧客の本質を見失った主人公が、壁にぶつかり、自己の誤りに気づき始める。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T07:54:35.440Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 260,
-        "affectedComponents": 4,
-        "systemHealth": "HEALTHY"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 8,
-      "title": "焦燥と迷走",
-      "wordCount": 4202,
-      "qualityScore": 100,
-      "summary": "新規顧客獲得に苦戦するチーム。表面的なニーズ対応に終始し、本質的な課題を見失っていることに気づき始める。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T08:04:19.394Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 191,
-        "affectedComponents": 4,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 9,
-      "title": "誤解の連鎖",
-      "wordCount": 3447,
-      "qualityScore": 100,
-      "summary": "新規プロジェクトで顧客ニーズを捉えきれず、焦燥感を募らせるチーム。表面的な対応の限界に直面し、本質的な課題への探求を迫られる。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T08:08:10.250Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 210,
-        "affectedComponents": 4,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 10,
-      "title": "誤解と混乱の狭間",
-      "wordCount": 4459,
-      "qualityScore": 100,
-      "summary": "新規プロジェクトで躓き、顧客ニーズの表層しか捉えられていないことに気づいた主人公が、ISSUE DRIVENの概念を学び始める。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T08:12:23.533Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 354,
-        "affectedComponents": 5,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 11,
-      "title": "誤解という名の壁",
-      "wordCount": 2755,
-      "qualityScore": 100,
-      "summary": "新規プロジェクトの停滞。問題の本質を見誤ったチームは、焦燥感に駆られながらも、解決の糸口を探る。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T08:16:24.385Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 222,
-        "affectedComponents": 4,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 12,
-      "title": "誤算の連鎖",
-      "wordCount": 3276,
-      "qualityScore": 100,
-      "summary": "新規事業の推進において、初期の成功体験が誤った方向に進む原因となり、組織全体に混乱をもたらす。",
-      "scenes": 0,
-      "createdAt": "2025-06-01T08:20:37.404Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 225,
-        "affectedComponents": 4,
         "systemHealth": "DEGRADED"
       },
       "plotConsistency": {

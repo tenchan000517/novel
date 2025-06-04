@@ -452,7 +452,6 @@ export interface SystemDiagnostics {
         duplicateResolver: IntegrationDiagnostics;
         cacheCoordinator: IntegrationDiagnostics;
         unifiedAccessAPI: IntegrationDiagnostics;
-        dataIntegrationProcessor: IntegrationDiagnostics;
     };
     performanceMetrics: {
         totalRequests: number;

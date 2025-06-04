@@ -276,5 +276,786 @@
       "errorCount": 0,
       "systemHealth": "DEGRADED"
     }
+  },
+  {
+    "chapterNumber": 1,
+    "timestamp": "2025-06-01T10:50:53.177Z",
+    "generation": {
+      "generationTime": 105068,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 64,
+      "totalOperationTime": 105076,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 64,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 2,
+    "timestamp": "2025-06-01T10:54:52.085Z",
+    "generation": {
+      "generationTime": 118862,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 61,
+      "totalOperationTime": 118869,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 61,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 3,
+    "timestamp": "2025-06-01T10:58:47.464Z",
+    "generation": {
+      "generationTime": 115339,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 57,
+      "totalOperationTime": 115347,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 57,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 4,
+    "timestamp": "2025-06-01T11:02:35.569Z",
+    "generation": {
+      "generationTime": 108057,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 83,
+      "totalOperationTime": 108065,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 83,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 5,
+    "timestamp": "2025-06-01T11:06:33.915Z",
+    "generation": {
+      "generationTime": 118294,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 53,
+      "totalOperationTime": 118303,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 53,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator",
+        "longTermMemory"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 1,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 6,
+    "timestamp": "2025-06-01T11:10:37.499Z",
+    "generation": {
+      "generationTime": 123540,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 109,
+      "totalOperationTime": 123550,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 108,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 7,
+    "timestamp": "2025-06-01T11:16:24.696Z",
+    "generation": {
+      "generationTime": 73679,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 67,
+      "totalOperationTime": 73687,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 66,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 8,
+    "timestamp": "2025-06-01T11:20:15.489Z",
+    "generation": {
+      "generationTime": 110745,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 69,
+      "totalOperationTime": 110754,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 69,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 9,
+    "timestamp": "2025-06-01T11:24:08.021Z",
+    "generation": {
+      "generationTime": 112493,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 64,
+      "totalOperationTime": 112503,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 64,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 10,
+    "timestamp": "2025-06-01T11:28:05.903Z",
+    "generation": {
+      "generationTime": 117834,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 61,
+      "totalOperationTime": 117844,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 61,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator",
+        "longTermMemory"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 1,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 11,
+    "timestamp": "2025-06-01T11:32:04.644Z",
+    "generation": {
+      "generationTime": 118695,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 65,
+      "totalOperationTime": 118707,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 65,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 12,
+    "timestamp": "2025-06-01T11:36:03.832Z",
+    "generation": {
+      "generationTime": 119141,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "memoryProcessing": {
+      "processingTime": 69,
+      "totalOperationTime": 119150,
+      "systemOptimizationApplied": true
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 69,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "dataIntegration",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 2,
+    "timestamp": "2025-06-03T09:44:04.495Z",
+    "generation": {
+      "generationTime": 63261,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 71,
+      "success": false,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 1,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 3,
+    "timestamp": "2025-06-03T09:49:26.108Z",
+    "generation": {
+      "generationTime": 59873,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 80,
+      "success": false,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 1,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 4,
+    "timestamp": "2025-06-03T10:21:53.732Z",
+    "generation": {
+      "generationTime": 185024,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 46,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 5,
+    "timestamp": "2025-06-03T10:26:15.275Z",
+    "generation": {
+      "generationTime": 141510,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 50,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator",
+        "longTermMemory"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 6,
+    "timestamp": "2025-06-03T10:30:11.493Z",
+    "generation": {
+      "generationTime": 116189,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 52,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 7,
+    "timestamp": "2025-06-03T10:35:08.304Z",
+    "generation": {
+      "generationTime": 63416,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 53,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 9,
+    "timestamp": "2025-06-03T10:46:54.795Z",
+    "generation": {
+      "generationTime": 75966,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 43,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 10,
+    "timestamp": "2025-06-03T10:50:45.154Z",
+    "generation": {
+      "generationTime": 110318,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 47,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator",
+        "longTermMemory"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 11,
+    "timestamp": "2025-06-03T10:54:40.749Z",
+    "generation": {
+      "generationTime": 115563,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 54,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 12,
+    "timestamp": "2025-06-03T10:59:52.273Z",
+    "generation": {
+      "generationTime": 64484,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 56,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 1,
+    "timestamp": "2025-06-03T12:58:10.870Z",
+    "generation": {
+      "generationTime": 177212,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 46,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 8,
+    "timestamp": "2025-06-03T14:59:36.658Z",
+    "generation": {
+      "generationTime": 93481,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 77,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 9,
+    "timestamp": "2025-06-03T15:05:18.573Z",
+    "generation": {
+      "generationTime": 75170,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 47,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 10,
+    "timestamp": "2025-06-03T15:09:01.688Z",
+    "generation": {
+      "generationTime": 103076,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 54,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator",
+        "longTermMemory"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 1,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 11,
+    "timestamp": "2025-06-03T15:12:57.873Z",
+    "generation": {
+      "generationTime": 116147,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 88,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 12,
+    "timestamp": "2025-06-03T15:16:44.483Z",
+    "generation": {
+      "generationTime": 106570,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 61,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 1,
+    "timestamp": "2025-06-04T00:42:47.660Z",
+    "generation": {
+      "generationTime": 99668,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 65,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "HEALTHY"
+    }
+  },
+  {
+    "chapterNumber": 2,
+    "timestamp": "2025-06-04T00:47:27.347Z",
+    "generation": {
+      "generationTime": 28313,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 107,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 3,
+    "timestamp": "2025-06-04T00:51:53.799Z",
+    "generation": {
+      "generationTime": 63448,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 76,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
+  },
+  {
+    "chapterNumber": 4,
+    "timestamp": "2025-06-04T00:56:59.754Z",
+    "generation": {
+      "generationTime": 63553,
+      "qualityScore": 100,
+      "correctionCount": 0
+    },
+    "unifiedMemorySystem": {
+      "processingTime": 89,
+      "success": true,
+      "affectedComponents": [
+        "shortTermMemory",
+        "midTermMemory",
+        "cacheCoordinator"
+      ],
+      "operationType": "processChapter",
+      "warningCount": 0,
+      "errorCount": 0,
+      "systemHealth": "DEGRADED"
+    }
   }
 ]

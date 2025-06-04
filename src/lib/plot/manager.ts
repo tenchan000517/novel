@@ -1,7 +1,5 @@
-// src/lib/plot/manager.ts
-// ============================================================================
-// 新記憶階層システム完全対応 PlotManager (エラー修正版)
-// ============================================================================
+
+// src/lib/plot/manager.ts (最適化完成版 - ジャンル取得最適化)
 
 // 🔧 新記憶階層システム統合インポート
 import type { MemoryManager } from '@/lib/memory/core/memory-manager';
@@ -28,15 +26,14 @@ import { GeminiClient } from '@/lib/generation/gemini-client';
 import { logger } from '@/lib/utils/logger';
 import { logError } from '@/lib/utils/error-handler';
 import { apiThrottler } from '@/lib/utils/api-throttle';
-import { storageProvider } from '@/lib/storage';
 import { parseYaml } from '@/lib/utils/yaml-helper';
 import { withTimeout } from '@/lib/utils/promise-utils';
 
 // ============================================================================
-// 型定義のインポート (修正版)
+// 型定義のインポート
 // ============================================================================
 import { NarrativeStateInfo } from '@/lib/memory/long-term/types';
-import { Chapter } from '@/types/chapters'; // 🔧 修正: Chapter型の正しいインポート
+import { Chapter } from '@/types/chapters';
 
 // ============================================================================
 // プロット管理システム内部型
@@ -114,10 +111,14 @@ export interface PlotManagerDependencies {
 }
 
 /**
- * 🔧 修正: プロットチェッカーファクトリー関数
+ * 🔧 NEW: 最適化されたPlotManagerの依存関係
  */
-interface PlotCheckerFactory {
-    create(memoryManager: MemoryManager): any; // PlotCheckerの実際の型に置き換え可能
+export interface OptimizedPlotManagerDependencies {
+    memoryManager: MemoryManager;
+    worldSettingsManager: WorldSettingsManager;
+    geminiClient: GeminiClient;
+    serviceContainer: any; // ServiceContainerの型
+    config?: PlotManagerConfig;
 }
 
 /**
@@ -125,21 +126,25 @@ interface PlotCheckerFactory {
  * @description
  * 新記憶階層システム完全対応のプロット管理システム。
  * 統合記憶管理（MemoryManager）を活用した最適化された実装。
+ * 🔧 ジャンル取得最適化版
  */
 export class PlotManager {
     private plotStorage: PlotStorage;
-    private plotChecker: any; // 🔧 修正: 循環依存を避けるため遅延初期化
+    private plotChecker: any;
     private plotContextBuilder: PlotContextBuilder;
     private geminiClient: GeminiClient;
     private initialized: boolean = false;
     private initializationPromise: Promise<void> | null = null;
-    private worldSettingsManager: WorldSettingsManager;
     private phaseManager: StoryPhaseManager;
     private storyGenerationBridge: StoryGenerationBridge;
 
     // 🔧 新記憶階層システム統合
     private memoryManager: MemoryManager;
     private config: Required<PlotManagerConfig>;
+
+    // 🔧 NEW: 最適化されたアクセス用
+    private worldSettingsManager: WorldSettingsManager;
+    private serviceContainer: any;
 
     // 学習旅路システム（遅延初期化）
     private learningJourneySystem: LearningJourneySystem | null = null;
@@ -160,11 +165,11 @@ export class PlotManager {
     };
 
     /**
-     * プロットマネージャーのコンストラクタ
-     * @param dependencies 依存関係（MemoryManagerを含む）
+     * プロットマネージャーのコンストラクタ（最適化版）
+     * @param dependencies 依存関係（最適化版）
      */
-    constructor(dependencies: PlotManagerDependencies) {
-        // 🔧 依存注入パターンの完全実装
+    constructor(dependencies: PlotManagerDependencies | OptimizedPlotManagerDependencies) {
+        // 🔧 最適化された依存注入パターンの実装
         this.memoryManager = dependencies.memoryManager;
         this.config = {
             enableLearningJourney: true,
@@ -176,11 +181,23 @@ export class PlotManager {
             ...dependencies.config
         };
 
+        // 🔧 NEW: 最適化された依存関係の設定
+        if ('worldSettingsManager' in dependencies) {
+            this.worldSettingsManager = dependencies.worldSettingsManager;
+            this.geminiClient = dependencies.geminiClient;
+            this.serviceContainer = dependencies.serviceContainer;
+            logger.info('PlotManager created with optimized dependencies for fast genre access');
+        } else {
+            // 従来の依存注入パターン（後方互換性）
+            this.worldSettingsManager = new WorldSettingsManager();
+            this.geminiClient = new GeminiClient();
+            this.serviceContainer = null;
+            logger.info('PlotManager created with legacy dependencies');
+        }
+
         // 基本コンポーネントの初期化
         this.plotStorage = new PlotStorage();
         this.plotContextBuilder = new PlotContextBuilder();
-        this.geminiClient = new GeminiClient();
-        this.worldSettingsManager = new WorldSettingsManager();
         this.phaseManager = new StoryPhaseManager();
 
         // 🔧 修正: StoryGenerationBridgeに必要な引数を渡す
@@ -191,17 +208,12 @@ export class PlotManager {
             retryAttempts: 3
         });
 
-        logger.info('PlotManager created with new memory hierarchy system integration', {
-            memorySystemIntegration: this.config.memorySystemIntegration,
-            config: this.config
-        });
-
         // 初期化を開始
         this.initializationPromise = this.initialize();
     }
 
     /**
-     * 🔧 新記憶階層システム対応初期化
+     * 🔧 最適化された初期化
      */
     private async initialize(): Promise<void> {
         if (this.initialized) {
@@ -210,7 +222,7 @@ export class PlotManager {
         }
 
         try {
-            logger.info('Starting PlotManager initialization with memory hierarchy integration');
+            logger.info('Starting PlotManager initialization with optimized dependencies');
             this.performanceStats.totalOperations++;
 
             const startTime = Date.now();
@@ -218,18 +230,18 @@ export class PlotManager {
             // 1. 🔧 MemoryManagerの初期化状態確認
             await this.ensureMemoryManagerInitialized();
 
-            // 2. プロットストレージの初期化
+            // 2. 🔧 WorldSettingsManagerの初期化確認（ServiceContainer経由で確保済み）
+            await this.ensureWorldSettingsManagerInitialized();
+
+            // 3. プロットストレージの初期化
             await withTimeout(
                 this.plotStorage.initialize(),
                 15000,
                 'プロットストレージの初期化'
             );
 
-            // 3. 🔧 依存関係の遅延初期化
+            // 4. 🔧 依存関係の遅延初期化
             await this.initializeDependencies();
-
-            // 4. 🔧 WorldSettingsManagerの安全な初期化
-            await this.initializeWorldSettingsManager();
 
             // 5. 篇マネージャーの初期化
             await this.initializeSectionPlotManager();
@@ -248,10 +260,10 @@ export class PlotManager {
             const processingTime = Date.now() - startTime;
             this.updateAverageProcessingTime(processingTime);
 
-            logger.info('PlotManager initialization completed successfully', {
+            logger.info('PlotManager initialization completed successfully (optimized)', {
                 processingTime,
                 memorySystemIntegration: this.config.memorySystemIntegration,
-                componentsInitialized: true
+                optimizedAccess: !!this.serviceContainer
             });
 
         } catch (error) {
@@ -267,28 +279,36 @@ export class PlotManager {
     }
 
     /**
-     * 🔧 修正: 依存関係の遅延初期化
+     * 🔧 NEW: WorldSettingsManagerの初期化確認
      */
-    private async initializeDependencies(): Promise<void> {
+    private async ensureWorldSettingsManagerInitialized(): Promise<void> {
         try {
-            // PlotCheckerの初期化（循環依存を避けるため遅延）
-            const { PlotChecker } = await import('./checker');
-            this.plotChecker = new PlotChecker(
-                this.memoryManager,
-                characterManager,
-                this // 循環依存だが、初期化後なので問題なし
-            );
+            if (this.serviceContainer) {
+                // ServiceContainer経由で確実に初期化済みのWorldSettingsManagerを取得
+                const wsm = await this.serviceContainer.getService('worldSettingsManager');
+                if (wsm) {
+                    this.worldSettingsManager = wsm;
+                    logger.debug('WorldSettingsManager verified through ServiceContainer');
+                    return;
+                }
+            }
 
-            logger.debug('Dependencies initialized successfully');
+            // フォールバック: 直接初期化
+            if (!this.worldSettingsManager) {
+                this.worldSettingsManager = new WorldSettingsManager();
+            }
+
+            // 初期化されていない場合のみ初期化
+            if (!await this.worldSettingsManager.hasValidWorldSettings()) {
+                await this.worldSettingsManager.initialize();
+            }
+
+            logger.debug('WorldSettingsManager initialization verified');
 
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : String(error);
-            logger.error('Failed to initialize dependencies', { error: errorMessage });
-
-            // フォールバック: 基本的なチェッカーオブジェクト
-            this.plotChecker = {
-                checkGeneratedContentConsistency: async () => ({ consistent: true, issues: [] })
-            };
+            logger.error('WorldSettingsManager initialization check failed', { error: errorMessage });
+            throw error;
         }
     }
 
@@ -297,14 +317,12 @@ export class PlotManager {
      */
     private async ensureMemoryManagerInitialized(): Promise<void> {
         try {
-            // MemoryManagerが正しく初期化されているかチェック
             const systemStatus = await this.memoryManager.getSystemStatus();
 
             if (!systemStatus.initialized) {
                 logger.warn('MemoryManager not initialized, attempting initialization...');
                 await this.memoryManager.initialize();
 
-                // 再度確認
                 const retryStatus = await this.memoryManager.getSystemStatus();
                 if (!retryStatus.initialized) {
                     throw new Error('MemoryManager initialization failed');
@@ -318,6 +336,114 @@ export class PlotManager {
             const errorMessage = error instanceof Error ? error.message : String(error);
             logger.error('MemoryManager initialization check failed', { error: errorMessage });
             throw error;
+        }
+    }
+
+    /**
+     * 🔧 最適化されたジャンル取得（WorldSettingsManager優先）
+     */
+    async getGenre(): Promise<string> {
+        try {
+            // 🔧 STEP 1: WorldSettingsManagerから直接取得（最高優先度・最高速）
+            if (this.worldSettingsManager) {
+                try {
+                    const genre = await this.worldSettingsManager.getGenre();
+                    if (genre && genre !== 'classic') {
+                        logger.debug(`Genre obtained from WorldSettingsManager: ${genre}`);
+                        return genre;
+                    }
+                } catch (wsError) {
+                    logger.debug('WorldSettingsManager genre access failed, trying alternatives', {
+                        error: wsError instanceof Error ? wsError.message : String(wsError)
+                    });
+                }
+            }
+
+            // 🔧 STEP 2: ServiceContainer経由でのWorldSettingsManagerアクセス
+            if (this.serviceContainer) {
+                try {
+                    const wsm = await this.serviceContainer.getService('worldSettingsManager');
+                    if (wsm) {
+                        const genre = await wsm.getGenre();
+                        if (genre && genre !== 'classic') {
+                            logger.debug(`Genre obtained from ServiceContainer: ${genre}`);
+                            return genre;
+                        }
+                    }
+                } catch (scError) {
+                    logger.debug('ServiceContainer WorldSettingsManager access failed', {
+                        error: scError instanceof Error ? scError.message : String(scError)
+                    });
+                }
+            }
+
+            // 🔧 STEP 3: 記憶システムからの取得（フォールバック）
+            if (this.config.memorySystemIntegration && this.memoryManager?.getSystemStatus) {
+                try {
+                    const systemStatus = await this.memoryManager.getSystemStatus();
+                    if (systemStatus.initialized) {
+                        const searchResult = await this.memoryManager.unifiedSearch(
+                            'genre world settings',
+                            [MemoryLevel.LONG_TERM]
+                        );
+
+                        if (searchResult.success && searchResult.results.length > 0) {
+                            const genreResult = searchResult.results.find(r =>
+                                r.data?.genre || r.data?.worldSettings?.genre
+                            );
+
+                            if (genreResult) {
+                                const genre = genreResult.data?.genre || genreResult.data?.worldSettings?.genre;
+                                if (genre && typeof genre === 'string') {
+                                    this.performanceStats.memorySystemHits++;
+                                    logger.debug(`Genre obtained from memory system: ${genre}`);
+                                    return genre;
+                                }
+                            }
+                        }
+                    }
+                } catch (memoryError) {
+                    logger.debug('Memory system genre access failed', {
+                        error: memoryError instanceof Error ? memoryError.message : String(memoryError)
+                    });
+                }
+            }
+
+            // 🔧 STEP 4: 最終フォールバック
+            logger.debug('All genre sources failed, using default');
+            return 'classic';
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.warn('Failed to get genre via optimized PlotManager', { error: errorMessage });
+            return 'classic';
+        }
+    }
+
+    /**
+     * 🔧 修正: 依存関係の遅延初期化
+     */
+    private async initializeDependencies(): Promise<void> {
+        try {
+            // PlotCheckerの初期化（循環依存を避けるため遅延）
+            const { PlotChecker } = await import('./checker');
+            const characterManagerInstance = characterManager.getInstance(this.memoryManager);
+            this.plotChecker = new PlotChecker(
+                this.memoryManager,
+                characterManagerInstance,  // ✅ 実際のインスタンス
+                this
+            );
+
+            logger.debug('Dependencies initialized successfully');
+
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            logger.error('Failed to initialize dependencies', { error: errorMessage });
+
+            // フォールバック: 基本的なチェッカーオブジェクト
+            this.plotChecker = {
+                checkGeneratedContentConsistency: async () => ({ consistent: true, issues: [] })
+            };
         }
     }
 
@@ -427,10 +553,11 @@ export class PlotManager {
      */
     private prepareLearningJourneySystem(): void {
         try {
+            const characterManagerInstance = characterManager.getInstance(this.memoryManager);
             this.learningJourneySystem = new LearningJourneySystem(
                 this.geminiClient,
                 this.memoryManager,
-                characterManager
+                characterManagerInstance  // ✅ 実際のインスタンス
             );
 
             logger.info('LearningJourneySystem instance created, initialization will be deferred');
@@ -924,56 +1051,6 @@ export class PlotManager {
                 WORLD_ELEMENTS_FOCUS: "- 重要な世界設定要素",
                 THEMATIC_FOCUS: "- 物語のテーマ"
             };
-        }
-    }
-
-    /**
-     * 🔧 世界設定からジャンルを取得（新記憶階層システム対応版）
-     */
-    async getGenre(): Promise<string> {
-        try {
-            if (!this.initialized) {
-                logger.debug('PlotManager not fully initialized, returning default genre');
-                return 'classic';
-            }
-
-            await this.ensureInitialized();
-
-            // 🔧 統合検索でジャンル情報を取得
-            if (this.config.memorySystemIntegration) {
-                try {
-                    const searchResult = await this.memoryManager.unifiedSearch(
-                        'genre world settings',
-                        [MemoryLevel.LONG_TERM]
-                    );
-
-                    if (searchResult.success && searchResult.results.length > 0) {
-                        const genreResult = searchResult.results.find(r =>
-                            r.data?.genre || r.data?.worldSettings?.genre
-                        );
-
-                        if (genreResult) {
-                            const genre = genreResult.data?.genre || genreResult.data?.worldSettings?.genre;
-                            if (genre && typeof genre === 'string') {
-                                this.performanceStats.memorySystemHits++;
-                                return genre;
-                            }
-                        }
-                    }
-                } catch (memoryError) {
-                    logger.debug('記憶システムからのジャンル取得に失敗、フォールバックを使用', {
-                        error: memoryError instanceof Error ? memoryError.message : String(memoryError)
-                    });
-                }
-            }
-
-            // フォールバック: WorldSettingsManagerを使用
-            return await this.worldSettingsManager.getGenre();
-
-        } catch (error) {
-            const errorMessage = error instanceof Error ? error.message : String(error);
-            logger.warn('Failed to get genre via PlotManager', { error: errorMessage });
-            return 'classic';
         }
     }
 

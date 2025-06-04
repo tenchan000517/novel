@@ -165,11 +165,9 @@ export class CharacterAnalysisService {
         try {
             logger.info(`Analyzing character growth for chapter ${chapterNumber}`);
 
-            // CharacterManagerを使用して全キャラクターの成長を処理
-            const growthResult = await characterManager.processAllCharacterGrowth(
-                chapterNumber,
-                content
-            );
+            // ✅ 修正後：AI分析による成長要素抽出
+            const characters = context.characters || [];
+            const growthResult = await this.analyzeGrowthFromContent(content, characters, chapterNumber);
 
             // 成長イベントを分析
             const majorGrowthEvents = await this.identifyMajorGrowthEvents(content, growthResult.updatedCharacters);
@@ -204,6 +202,99 @@ export class CharacterAnalysisService {
                     majorGrowthEvents: []
                 }
             };
+        }
+    }
+
+    /**
+     * AI分析による成長要素の抽出
+     * 
+     * @private
+     * @param {string} content 章の内容
+     * @param {any[]} characters キャラクター一覧
+     * @param {number} chapterNumber 章番号
+     * @returns {Promise<{ updatedCharacters: any[] }>} 成長分析結果
+     */
+    private async analyzeGrowthFromContent(
+        content: string,
+        characters: any[],
+        chapterNumber: number
+    ): Promise<{ updatedCharacters: any[] }> {
+        try {
+            if (characters.length === 0) {
+                return { updatedCharacters: [] };
+            }
+
+            const characterNames = characters.map(c => c.name || 'Unknown').join(', ');
+
+            const prompt = `
+以下の小説の章から、各キャラクターの成長要素を詳細に分析してください：
+
+**登場キャラクター**: ${characterNames}
+**章番号**: ${chapterNumber}
+
+**章の内容**:
+${content.substring(0, 8000)}
+
+各キャラクターについて、以下の成長要素を分析してJSONで出力してください：
+- スキルや能力の向上
+- 性格の変化や成熟
+- 新しい知識や技能の習得
+- 人間関係の変化による成長
+- 価値観の変化
+
+JSON形式:
+[
+  {
+    "id": "character-id",
+    "name": "キャラクター名",
+    "growthPhase": "成長フェーズ（初期/発展/成熟など）",
+    "parameterChanges": [
+      {"name": "パラメータ名", "change": 変化量(数値)}
+    ],
+    "skillAcquisitions": [
+      {"name": "習得スキル名"}
+    ],
+    "growthDescription": "成長の詳細説明"
+  }
+]
+
+成長が見られないキャラクターは配列に含めないでください。`;
+
+            const response = await apiThrottler.throttledRequest(() =>
+                this.geminiAdapter.generateText(prompt, {
+                    temperature: 0.3,
+                    purpose: 'analysis',
+                    responseFormat: 'json'
+                })
+            );
+
+            const parsedGrowth = JsonParser.parseFromAIResponse<any[]>(response, []);
+
+            // 成長が実際にあるキャラクターのみをフィルタリング
+            const updatedCharacters = parsedGrowth.filter(char =>
+                (char.parameterChanges && char.parameterChanges.length > 0) ||
+                (char.skillAcquisitions && char.skillAcquisitions.length > 0) ||
+                (char.growthPhase && char.growthPhase !== '変化なし')
+            );
+
+            // キャラクターIDの補完（IDがない場合）
+            updatedCharacters.forEach(char => {
+                if (!char.id && char.name) {
+                    char.id = `char-${char.name.replace(/\s+/g, '-').toLowerCase()}`;
+                }
+            });
+
+            logger.debug(`Growth analysis extracted ${updatedCharacters.length} characters with growth from ${characters.length} total characters`);
+
+            return { updatedCharacters };
+
+        } catch (error) {
+            logger.error('Failed to analyze growth from content', {
+                error: error instanceof Error ? error.message : String(error),
+                chapterNumber
+            });
+
+            return { updatedCharacters: [] };
         }
     }
 

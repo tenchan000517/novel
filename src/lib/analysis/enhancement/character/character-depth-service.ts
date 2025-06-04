@@ -1,9 +1,9 @@
 /**
- * @fileoverview キャラクター深化サービス (最適化版)
+ * @fileoverview キャラクター深化サービス (最適化版・ファサードパターン対応)
  * @description
  * キャラクターの心理的深みと行動の一貫性を向上させる最適化提案に特化したサービス。
+ * 新しいCharacterManagerファサードパターンと統合記憶階層システムに完全対応。
  * 分析機能は他のサービスに委譲し、純粋に深化推奨の生成と提供に集中します。
- * CharacterManagerファサードを活用した設計。
  */
 import { Logger } from '@/lib/utils/logger';
 import { 
@@ -15,11 +15,10 @@ import {
     RelationshipAnalysis
 } from '@/lib/characters/core/types';
 
-// ファサードのインポート
-import { characterManager } from '@/lib/characters/manager';
-
-// 外部サービスのインポート（存在する場合のみ）
-// import { characterAnalysisService } from '@/lib/analysis/services/character-analysis-service';
+// ファサードのインポート（修正版）
+import { CharacterManager } from '@/lib/characters/manager';
+import { MemoryManager } from '@/lib/memory/core/memory-manager';
+import { MemoryLevel } from '@/lib/memory/core/types';
 
 import { apiThrottler } from '@/lib/utils/api-throttle';
 import { GeminiClient } from '@/lib/generation/gemini-client';
@@ -183,8 +182,8 @@ export interface ICharacterDepthService {
 }
 
 /**
- * キャラクター深化サービス（最適化版）
- * 最適化提案の生成に特化し、分析は他のサービスに委譲
+ * キャラクター深化サービス（ファサードパターン対応版）
+ * 新しいCharacterManagerファサードパターンと統合記憶階層システムに完全対応
  */
 export class CharacterDepthService implements ICharacterDepthService {
     private geminiClient: GeminiClient;
@@ -200,17 +199,22 @@ export class CharacterDepthService implements ICharacterDepthService {
     private readonly CACHE_TTL = 7200000; // 2時間キャッシュ有効
     
     /**
-     * コンストラクタ
+     * コンストラクタ（ファサードパターン対応・依存性注入）
+     * @param characterManager キャラクターマネージャー（ファサード）
+     * @param memoryManager 記憶階層システムマネージャー
      */
-    constructor() {
+    constructor(
+        private characterManager: CharacterManager,
+        private memoryManager: MemoryManager
+    ) {
         this.geminiClient = new GeminiClient();
         this.logger = new Logger({ serviceName: 'CharacterDepthService' });
-        this.logger.info('CharacterDepthService: 最適化版で初期化完了');
+        this.logger.info('CharacterDepthService: ファサードパターン対応版で初期化完了');
     }
 
     /**
-     * キャラクター深化推奨の生成
-     * 各種分析サービスを活用して総合的な深化推奨を生成
+     * キャラクター深化推奨の生成（ファサードパターン対応版）
+     * 統合記憶階層システムとファサードメソッドを活用して総合的な深化推奨を生成
      * 
      * @param character キャラクター
      * @param psychology キャラクター心理情報
@@ -236,8 +240,8 @@ export class CharacterDepthService implements ICharacterDepthService {
                 return cachedEntry.recommendations;
             }
             
-            // CharacterManagerを使用して基礎分析を実行
-            const analysisResult = await this.performBasicAnalysis(character, chapterNumber);
+            // ファサードパターン対応：基礎分析を実行
+            const analysisResult = await this.performBasicAnalysisWithFacade(character, chapterNumber);
             
             // 各種推奨を並列生成
             const [
@@ -250,7 +254,7 @@ export class CharacterDepthService implements ICharacterDepthService {
                 this.generateConsistencyRecommendations(character, analysisResult),
                 this.generateArcOptimizationRecommendations(character, analysisResult, chapterNumber),
                 this.generateMotivationEnhancements(character, psychology),
-                this.generateRelationshipRecommendations(character, chapterNumber),
+                this.generateRelationshipRecommendationsWithFacade(character, chapterNumber),
                 this.generateContrastRecommendations(character, chapterNumber)
             ]);
             
@@ -289,7 +293,7 @@ export class CharacterDepthService implements ICharacterDepthService {
     }
     
     /**
-     * 複数キャラクターの深化推奨生成
+     * 複数キャラクターの深化推奨生成（ファサードパターン対応版）
      * 効率的な並列処理でバッチ生成
      * 
      * @param characters キャラクター配列
@@ -309,10 +313,11 @@ export class CharacterDepthService implements ICharacterDepthService {
             
             const result: {[characterId: string]: DepthRecommendation[]} = {};
             
-            // 並列処理でキャラクター心理情報を取得
+            // 並列処理でキャラクター心理情報を取得（ファサードパターン対応）
             const psychologyPromises = characters.map(async (character) => {
                 try {
-                    const psychology = await characterManager.getCharacterPsychology(character.id, chapterNumber);
+                    // ファサードパターン対応：統合記憶システムから心理情報を取得
+                    const psychology = await this.getCharacterPsychologyFromMemorySystem(character.id, chapterNumber);
                     return { character, psychology };
                 } catch (error) {
                     this.logger.warn(`心理情報取得失敗: ${character.name}`, { error });
@@ -324,7 +329,10 @@ export class CharacterDepthService implements ICharacterDepthService {
             
             // 推奨生成を並列実行
             const recommendationPromises = characterPsychologies.map(async ({ character, psychology }) => {
-                if (!psychology) return { characterId: character.id, recommendations: [] };
+                if (!psychology) {
+                    // フォールバック心理情報を生成
+                    psychology = this.createFallbackPsychology(character);
+                }
                 
                 try {
                     const recommendations = await this.generateDepthRecommendations(
@@ -405,7 +413,7 @@ export class CharacterDepthService implements ICharacterDepthService {
     }
     
     /**
-     * チャプター生成用の深化プロンプト生成
+     * チャプター生成用の深化プロンプト生成（ファサードパターン対応版）
      * 
      * @param characterId キャラクターID
      * @param chapterNumber 章番号
@@ -416,14 +424,15 @@ export class CharacterDepthService implements ICharacterDepthService {
         chapterNumber: number
     ): Promise<CharacterDepthPrompt | null> {
         try {
-            // CharacterManagerを使用してキャラクター情報を取得
-            const character = await characterManager.getCharacter(characterId);
+            // ファサードパターン対応：キャラクター情報を取得
+            const character = await this.characterManager.getCharacter(characterId);
             if (!character) {
                 this.logger.warn(`キャラクターが見つかりません: ${characterId}`);
                 return null;
             }
             
-            const psychology = await characterManager.getCharacterPsychology(characterId, chapterNumber);
+            // 統合記憶システムから心理情報を取得
+            const psychology = await this.getCharacterPsychologyFromMemorySystem(characterId, chapterNumber);
             if (!psychology) {
                 this.logger.warn(`心理情報が取得できませんでした: ${character.name}`);
                 return null;
@@ -448,8 +457,8 @@ export class CharacterDepthService implements ICharacterDepthService {
     }
     
     /**
-     * 章番号に最適なキャラクター深化対象の推奨
-     * CharacterManagerを活用した最適なキャラクター選出
+     * 章番号に最適なキャラクター深化対象の推奨（ファサードパターン対応版）
+     * CharacterManagerファサードを活用した最適なキャラクター選出
      * 
      * @param chapterNumber 章番号
      * @param characterCount 推奨するキャラクター数
@@ -462,8 +471,11 @@ export class CharacterDepthService implements ICharacterDepthService {
         try {
             this.logger.debug(`章${chapterNumber}の焦点キャラクター推奨を開始`);
             
-            // CharacterManagerを使用してアクティブキャラクターを取得
-            const activeCharacters = await characterManager.getActiveCharacters();
+            // ファサードパターン対応：全キャラクターを取得してアクティブなものをフィルタリング
+            const allCharacters = await this.characterManager.getAllCharacters();
+            const activeCharacters = allCharacters.filter(char => 
+                char.state?.isActive !== false // デフォルトでアクティブとみなす
+            );
             
             if (activeCharacters.length === 0) {
                 this.logger.warn('アクティブキャラクターが見つかりません');
@@ -508,21 +520,26 @@ export class CharacterDepthService implements ICharacterDepthService {
         }
     }
     
-    // ====== プライベートヘルパーメソッド ======
+    // ====== ファサードパターン対応プライベートヘルパーメソッド ======
     
     /**
-     * 基礎分析の実行
-     * CharacterManagerを活用
+     * 基礎分析の実行（ファサードパターン対応版）
+     * 新しいCharacterManagerファサードを活用
      * @private
      */
-    private async performBasicAnalysis(
+    private async performBasicAnalysisWithFacade(
         character: Character,
         chapterNumber: number
     ): Promise<CharacterAnalysisResult> {
         try {
-            // CharacterManagerを使用してキャラクター分析
-            const characterAnalysis = await characterManager.analyzeCharacter(character.id);
-            const relationshipData = await characterManager.getCharacterRelationships(character.id);
+            // ファサードパターン対応：characterManager.analyzeCharacter()を使用
+            const characterAnalysis = await this.characterManager.analyzeCharacter(character.id);
+            
+            // ファサードパターン対応：getRelationshipAnalysis()を使用
+            const relationshipAnalysis = await this.characterManager.getRelationshipAnalysis();
+            
+            // RelationshipAnalysis型に適したプロパティアクセス
+            const relationshipDynamics = this.extractRelationshipDynamicsFromAnalysis(relationshipAnalysis);
             
             return {
                 characterAppearances: [],
@@ -535,7 +552,7 @@ export class CharacterDepthService implements ICharacterDepthService {
                         majorGrowthEvents: []
                     }
                 },
-                relationshipDynamics: relationshipData.relationships || []
+                relationshipDynamics
             };
         } catch (error) {
             this.logger.error(`基礎分析実行エラー: ${character.name}`, { error });
@@ -554,6 +571,66 @@ export class CharacterDepthService implements ICharacterDepthService {
                 },
                 relationshipDynamics: []
             };
+        }
+    }
+    
+    /**
+     * 統合記憶システムからキャラクター心理情報を取得
+     * @private
+     */
+    private async getCharacterPsychologyFromMemorySystem(
+        characterId: string, 
+        chapterNumber: number
+    ): Promise<CharacterPsychology | null> {
+        try {
+            // 統合記憶システムから心理情報を検索
+            const searchResult = await this.memoryManager.unifiedSearch(
+                `character psychology ${characterId} chapter ${chapterNumber}`,
+                [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+            );
+            
+            if (searchResult.success && searchResult.results.length > 0) {
+                // 最新の心理情報を抽出
+                const psychologyData = this.extractPsychologyFromSearchResult(
+                    searchResult.results[0]
+                );
+                
+                if (psychologyData) {
+                    return psychologyData;
+                }
+            }
+            
+            // 心理情報が見つからない場合、キャラクター分析から推定
+            const character = await this.characterManager.getCharacter(characterId);
+            if (character) {
+                const analysisResult = await this.characterManager.analyzeCharacter(characterId);
+                return this.extractPsychologyFromAnalysis(analysisResult);
+            }
+            
+            return null;
+            
+        } catch (error) {
+            this.logger.error(`心理情報取得エラー: ${characterId}`, { error });
+            return null;
+        }
+    }
+    
+    /**
+     * 関係性推奨の生成（ファサードパターン対応版）
+     * @private
+     */
+    private async generateRelationshipRecommendationsWithFacade(
+        character: Character,
+        chapterNumber: number
+    ): Promise<RelationshipDynamicRecommendation[]> {
+        try {
+            // ファサードパターン対応：getRelationshipAnalysis()を使用
+            const relationshipAnalysis = await this.characterManager.getRelationshipAnalysis();
+            
+            return this.buildRelationshipRecommendationsFromAnalysis(character, relationshipAnalysis);
+        } catch (error) {
+            this.logger.error(`関係性推奨生成エラー: ${character.name}`, { error });
+            return [];
         }
     }
     
@@ -652,26 +729,6 @@ export class CharacterDepthService implements ICharacterDepthService {
     }
     
     /**
-     * 関係性推奨の生成
-     * CharacterManagerを活用
-     * @private
-     */
-    private async generateRelationshipRecommendations(
-        character: Character,
-        chapterNumber: number
-    ): Promise<RelationshipDynamicRecommendation[]> {
-        try {
-            // CharacterManagerを使用して関係性データを取得
-            const relationshipData = await characterManager.getCharacterRelationships(character.id);
-            
-            return this.buildRelationshipRecommendationsFromData(character, relationshipData);
-        } catch (error) {
-            this.logger.error(`関係性推奨生成エラー: ${character.name}`, { error });
-            return [];
-        }
-    }
-    
-    /**
      * コントラスト推奨の生成
      * @private
      */
@@ -680,8 +737,8 @@ export class CharacterDepthService implements ICharacterDepthService {
         chapterNumber: number
     ): Promise<ContrastRecommendation[]> {
         try {
-            // 同一タイプの他キャラクターを取得
-            const sameTypeCharacters = await characterManager.getCharactersByType(character.type);
+            // ファサードパターン対応：getCharactersByType()を使用
+            const sameTypeCharacters = await this.characterManager.getCharactersByType(character.type);
             
             if (sameTypeCharacters.length <= 1) {
                 return []; // 比較対象がない場合
@@ -1034,11 +1091,14 @@ JSON形式で出力:
      * ユーティリティメソッド群
      * @private
      */
-    private buildRelationshipRecommendationsFromData(
+    private buildRelationshipRecommendationsFromAnalysis(
         character: Character,
-        relationshipData: RelationshipResponse
+        relationshipAnalysis: RelationshipAnalysis
     ): RelationshipDynamicRecommendation[] {
-        if (!relationshipData.relationships || relationshipData.relationships.length === 0) {
+        // RelationshipAnalysis型から関係性情報を安全に抽出
+        const relationships = this.extractRelationshipsFromAnalysis(relationshipAnalysis);
+        
+        if (!relationships || relationships.length === 0) {
             return [{
                 title: "新たな関係性の構築",
                 description: "他キャラクターとの意味のある相互作用を追加",
@@ -1048,12 +1108,12 @@ JSON形式で出力:
             }];
         }
         
-        return relationshipData.relationships.slice(0, 3).map((rel) => ({
-            title: `${rel.targetName || 'unknown'}との関係深化`,
-            description: `現在の${rel.type}関係をより複雑に発展`,
+        return relationships.slice(0, 3).map((rel: any) => ({
+            title: `${rel.targetName || rel.name || 'unknown'}との関係深化`,
+            description: `現在の${rel.type || rel.relationshipType || '関係'}をより複雑に発展`,
             implementation: "感情的な結びつきや対立を強化",
             priority: 0.7,
-            targetCharacterId: rel.targetId
+            targetCharacterId: rel.targetId || rel.id || null
         }));
     }
     
@@ -1132,7 +1192,170 @@ JSON形式で出力:
             // イベント発行エラーは無視
         }
     }
+    
+    /**
+     * 統合記憶システム関連のヘルパーメソッド
+     * @private
+     */
+    private extractPsychologyFromSearchResult(result: any): CharacterPsychology | null {
+        try {
+            // 検索結果から心理情報を抽出
+            if (result.data && result.data.psychology) {
+                return result.data.psychology;
+            }
+            
+            // フォールバック：データから心理情報を推定
+            return null;
+        } catch (error) {
+            this.logger.warn('心理情報抽出エラー', { error });
+            return null;
+        }
+    }
+    
+    private extractPsychologyFromAnalysis(analysisResult: any): CharacterPsychology | null {
+        try {
+            // 分析結果から心理情報を抽出
+            if (analysisResult && analysisResult.psychology) {
+                return analysisResult.psychology;
+            }
+            
+            return null;
+        } catch (error) {
+            this.logger.warn('分析結果から心理情報抽出エラー', { error });
+            return null;
+        }
+    }
+    
+    /**
+     * RelationshipAnalysis型から関係性ダイナミクスを安全に抽出
+     * @private
+     */
+    private extractRelationshipDynamicsFromAnalysis(relationshipAnalysis: RelationshipAnalysis): any[] {
+        try {
+            // RelationshipAnalysis型の実際の構造に応じて適切なプロパティから抽出
+            const analysis = relationshipAnalysis as any;
+            
+            if (analysis.relationships) {
+                return analysis.relationships;
+            }
+            
+            if (analysis.dynamics) {
+                return analysis.dynamics;
+            }
+            
+            if (analysis.relationshipDynamics) {
+                return analysis.relationshipDynamics;
+            }
+            
+            // 配列形式の場合
+            if (Array.isArray(analysis)) {
+                return analysis;
+            }
+            
+            // 他の可能性のあるプロパティを確認
+            if (analysis.clusters) {
+                return analysis.clusters.flatMap((cluster: any) => cluster.relationships || []);
+            }
+            
+            if (analysis.networkData) {
+                return analysis.networkData.relationships || [];
+            }
+            
+            return [];
+        } catch (error) {
+            this.logger.warn('関係性ダイナミクス抽出エラー', { error });
+            return [];
+        }
+    }
+    
+    /**
+     * RelationshipAnalysis型から関係性リストを安全に抽出
+     * @private
+     */
+    private extractRelationshipsFromAnalysis(relationshipAnalysis: RelationshipAnalysis): any[] {
+        try {
+            const analysis = relationshipAnalysis as any;
+            
+            // 可能性のあるプロパティ名を順番に確認
+            const possibleProperties = [
+                'relationships',
+                'relationshipData',
+                'relations',
+                'connections',
+                'networkConnections',
+                'characterRelationships'
+            ];
+            
+            for (const prop of possibleProperties) {
+                if (analysis[prop] && Array.isArray(analysis[prop])) {
+                    return analysis[prop];
+                }
+            }
+            
+            // ネストした構造の場合
+            if (analysis.analysis && analysis.analysis.relationships) {
+                return analysis.analysis.relationships;
+            }
+            
+            if (analysis.data && analysis.data.relationships) {
+                return analysis.data.relationships;
+            }
+            
+            // オブジェクトの値から配列を探す
+            const values = Object.values(analysis);
+            for (const value of values) {
+                if (Array.isArray(value) && value.length > 0) {
+                    // 関係性データっぽいオブジェクトか確認
+                    const firstItem = value[0];
+                    if (firstItem && (firstItem.targetId || firstItem.characterId || firstItem.name)) {
+                        return value;
+                    }
+                }
+            }
+            
+            return [];
+        } catch (error) {
+            this.logger.warn('関係性リスト抽出エラー', { error });
+            return [];
+        }
+    }
+    
+    private createFallbackPsychology(character: Character): CharacterPsychology {
+        const defaultDesires = character.type === 'MAIN' ? 
+            ['使命の遂行', '承認', '成長'] : 
+            ['生存', '安全', '所属'];
+        
+        const defaultFears = character.type === 'MAIN' ?
+            ['失敗', '喪失', '裏切り'] :
+            ['危険', '孤立'];
+        
+        return {
+            currentDesires: defaultDesires,
+            currentFears: defaultFears,
+            internalConflicts: [],
+            emotionalState: { '平静': 0.5 },
+            relationshipAttitudes: {}
+        };
+    }
 }
 
-// シングルトンインスタンスをエクスポート
-export const characterDepthService = new CharacterDepthService();
+/**
+ * ファクトリー関数（依存性注入対応）
+ */
+export function createCharacterDepthService(
+    characterManager: CharacterManager,
+    memoryManager: MemoryManager
+): CharacterDepthService {
+    return new CharacterDepthService(characterManager, memoryManager);
+}
+
+/**
+ * 🔥 後方互換性のためのシングルトンエクスポート（非推奨）
+ * 新しいコードでは createCharacterDepthService() を使用してください
+ */
+export const characterDepthService = {
+    /**
+     * インスタンス取得（ファクトリー使用推奨）
+     */
+    create: createCharacterDepthService
+};

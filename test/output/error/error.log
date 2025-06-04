@@ -1,94 +1,5 @@
 {
-  "timestamp": "2025-05-31T20:31:52.821Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:31:52.823Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AxiosError: Request failed with status code 500\n    at settle (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:2049:12)\n    at Unzip.handleStreamEnd (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3166:11)\n    at Unzip.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:34:36.149Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:34:36.150Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AxiosError: Request failed with status code 500\n    at settle (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:2049:12)\n    at Unzip.handleStreamEnd (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3166:11)\n    at Unzip.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:37:40.151Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:37:40.152Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AxiosError: Request failed with status code 500\n    at settle (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:2049:12)\n    at Unzip.handleStreamEnd (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3166:11)\n    at Unzip.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-05-31T20:37:40.154Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Unified memory system API is not ready after multiple retries. Aborting novel generation.",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "stage": "api_connection",
-    "category": "system_init"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:34:25.768Z",
+  "timestamp": "2025-06-03T03:04:36.596Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Retry limit exceeded",
   "stage": "chapter_generation",
@@ -100,7 +11,7 @@
   }
 }
 {
-  "timestamp": "2025-05-31T21:34:25.771Z",
+  "timestamp": "2025-06-03T03:04:36.597Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
   "stage": "chapter_generation",
@@ -114,7 +25,7 @@
   }
 }
 {
-  "timestamp": "2025-05-31T21:34:25.772Z",
+  "timestamp": "2025-06-03T03:04:36.598Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
   "stage": "chapter_generation",
@@ -122,12 +33,38 @@
   "metadata": {
     "error": "",
     "category": "network",
-    "chapterGenerationTime": 158.532,
+    "chapterGenerationTime": 140.195,
     "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-05-31T21:38:45.823Z",
+  "timestamp": "2025-06-03T03:45:24.976Z",
+  "level": "error",
+  "message": "[API_CONNECTION] Retry limit exceeded",
+  "stage": "api_connection",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-03T03:45:24.977Z",
+  "level": "error",
+  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
+  "stage": "api_connection",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "url": "http://localhost:3000/api/generation/chapter",
+    "stack": "AggregateError\n    at AxiosError.from (C:\\novel-automation-system\\node_modules\\axios\\dist\\node\\axios.cjs:863:14)\n    at RedirectableRequest.handleRequestError (C:\\novel-automation-system\\node_modules\\axios\\dist\\node\\axios.cjs:3187:25)\n    at RedirectableRequest.emit (node:events:531:35)\n    at eventHandlers.<computed> (C:\\novel-automation-system\\node_modules\\follow-redirects\\index.js:49:24)\n    at ClientRequest.emit (node:events:519:28)\n    at emitErrorEvent (node:_http_client:108:11)\n    at Socket.socketErrorListener (node:_http_client:511:5)\n    at Socket.emit (node:events:519:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at Axios.request (C:\\novel-automation-system\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel-automation-system\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel-automation-system\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel-automation-system\\test\\generate.js:636:18)",
+    "category": "network",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-03T09:18:25.312Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Retry limit exceeded",
   "stage": "chapter_generation",
@@ -139,163 +76,7 @@
   }
 }
 {
-  "timestamp": "2025-05-31T21:38:45.825Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:38:45.826Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.039,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:43:05.869Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:43:05.870Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 3",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=3",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:43:05.871Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 3",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.033,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:47:25.921Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:47:25.922Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 4",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=4",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:47:25.923Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 4",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.038,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:51:46.005Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:51:46.007Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 5",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=5",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T21:51:46.008Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 5",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.068,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:42:12.338Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:42:12.341Z",
+  "timestamp": "2025-06-03T09:18:25.313Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
   "stage": "chapter_generation",
@@ -309,7 +90,7 @@
   }
 }
 {
-  "timestamp": "2025-05-31T23:42:12.342Z",
+  "timestamp": "2025-06-03T09:18:25.313Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
   "stage": "chapter_generation",
@@ -317,12 +98,12 @@
   "metadata": {
     "error": "",
     "category": "network",
-    "chapterGenerationTime": 148.029,
+    "chapterGenerationTime": 140.07,
     "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-05-31T23:46:32.377Z",
+  "timestamp": "2025-06-03T09:23:57.211Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Retry limit exceeded",
   "stage": "chapter_generation",
@@ -334,163 +115,7 @@
   }
 }
 {
-  "timestamp": "2025-05-31T23:46:32.378Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:46:32.378Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.029,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:50:52.427Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:50:52.428Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 3",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=3",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:50:52.429Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 3",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.043,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:55:12.474Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:55:12.475Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 4",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=4",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:55:12.475Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 4",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.037,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:59:32.523Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:59:32.524Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 5",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=5",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-05-31T23:59:32.524Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 5",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.039,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:19:02.144Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:19:02.145Z",
+  "timestamp": "2025-06-03T09:23:57.212Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
   "stage": "chapter_generation",
@@ -504,7 +129,7 @@
   }
 }
 {
-  "timestamp": "2025-06-01T00:19:02.146Z",
+  "timestamp": "2025-06-03T09:23:57.212Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
   "stage": "chapter_generation",
@@ -512,218 +137,12 @@
   "metadata": {
     "error": "",
     "category": "network",
-    "chapterGenerationTime": 143.704,
+    "chapterGenerationTime": 140.224,
     "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-06-01T00:23:22.210Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:23:22.211Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:23:22.211Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.052,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:28:42.397Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:28:42.397Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=1",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:28:42.398Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 145.138,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:33:02.449Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:33:02.450Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "data": "No response data",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
-    "method": "post",
-    "category": "network",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:33:02.451Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
-  "stage": "chapter_generation",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "chapterGenerationTime": 140.04,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:50:56.009Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:50:56.011Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AxiosError: Request failed with status code 500\n    at settle (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:2049:12)\n    at Unzip.handleStreamEnd (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3166:11)\n    at Unzip.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:53:38.510Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:53:38.515Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AxiosError: Request failed with status code 500\n    at settle (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:2049:12)\n    at Unzip.handleStreamEnd (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3166:11)\n    at Unzip.emit (node:events:530:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "system_init",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:56:40.493Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Retry limit exceeded",
-  "stage": "api_connection",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "category": "network",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:56:40.495Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Failed to connect to unified memory system API",
-  "stage": "api_connection",
-  "category": "network",
-  "metadata": {
-    "error": "",
-    "url": "http://localhost:3000/api/generation/chapter",
-    "stack": "AggregateError\n    at AxiosError.from (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:863:14)\n    at RedirectableRequest.handleRequestError (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:3187:25)\n    at RedirectableRequest.emit (node:events:530:35)\n    at eventHandlers.<computed> (C:\\novel\\node_modules\\follow-redirects\\index.js:49:24)\n    at ClientRequest.emit (node:events:518:28)\n    at Socket.socketErrorListener (node:_http_client:495:9)\n    at Socket.emit (node:events:518:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (C:\\novel\\node_modules\\axios\\dist\\node\\axios.cjs:4276:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async retry (C:\\novel\\test\\generate.js:268:12)\n    at async checkApiStatus (C:\\novel\\test\\generate.js:403:22)\n    at async generateNovel (C:\\novel\\test\\generate.js:636:18)",
-    "category": "network",
-    "stage": "api_connection"
-  }
-}
-{
-  "timestamp": "2025-06-01T00:56:40.496Z",
-  "level": "error",
-  "message": "[API_CONNECTION] Unified memory system API is not ready after multiple retries. Aborting novel generation.",
-  "stage": "api_connection",
-  "category": "system_init",
-  "metadata": {
-    "stage": "api_connection",
-    "category": "system_init"
-  }
-}
-{
-  "timestamp": "2025-06-01T07:21:56.914Z",
+  "timestamp": "2025-06-03T09:39:07.149Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Retry limit exceeded",
   "stage": "chapter_generation",
@@ -735,7 +154,7 @@
   }
 }
 {
-  "timestamp": "2025-06-01T07:21:56.919Z",
+  "timestamp": "2025-06-03T09:39:07.150Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
   "stage": "chapter_generation",
@@ -743,7 +162,7 @@
   "metadata": {
     "status": 500,
     "statusText": "Internal Server Error",
-    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"ValidationSystem not initialized. Call safeInitializeValidationSystem() first.\"}}",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 1 generation failed: Chapter 1 generation failed: First chapter generation failed: メインキャラクターが設定されていません: メインキャラクターが定義されていません\"}}",
     "url": "http://localhost:3000/api/generation/chapter?chapterNumber=1",
     "method": "post",
     "category": "system_init",
@@ -751,7 +170,7 @@
   }
 }
 {
-  "timestamp": "2025-06-01T07:21:56.921Z",
+  "timestamp": "2025-06-03T09:39:07.151Z",
   "level": "error",
   "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
   "stage": "chapter_generation",
@@ -759,53 +178,24 @@
   "metadata": {
     "error": "Request failed with status code 500",
     "category": "system_init",
-    "chapterGenerationTime": 478.301,
+    "chapterGenerationTime": 140.141,
     "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-06-01T07:31:15.337Z",
+  "timestamp": "2025-06-03T09:44:04.494Z",
   "level": "error",
-  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
-  "stage": "chapter_generation",
-  "category": "system_init",
+  "message": "[MEMORY_PROCESSING] Memory processing completed with 1 errors",
+  "stage": "memory_processing",
+  "category": "memory_system",
   "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "stage": "chapter_generation"
+    "chapterNumber": 2,
+    "stage": "memory_processing",
+    "category": "memory_system"
   }
 }
 {
-  "timestamp": "2025-06-01T07:31:15.340Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
-  "stage": "chapter_generation",
-  "category": "system_init",
-  "metadata": {
-    "status": 500,
-    "statusText": "Internal Server Error",
-    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"ValidationSystem not initialized. Call safeInitializeValidationSystem() first.\"}}",
-    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
-    "method": "post",
-    "category": "system_init",
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T07:31:15.342Z",
-  "level": "error",
-  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
-  "stage": "chapter_generation",
-  "category": "system_init",
-  "metadata": {
-    "error": "Request failed with status code 500",
-    "category": "system_init",
-    "chapterGenerationTime": 438.407,
-    "stage": "chapter_generation"
-  }
-}
-{
-  "timestamp": "2025-06-01T07:38:32.887Z",
+  "timestamp": "2025-06-03T09:49:26.107Z",
   "level": "error",
   "message": "[MEMORY_PROCESSING] Memory processing completed with 1 errors",
   "stage": "memory_processing",
@@ -817,38 +207,568 @@
   }
 }
 {
-  "timestamp": "2025-06-01T07:42:48.778Z",
+  "timestamp": "2025-06-03T09:53:46.132Z",
   "level": "error",
-  "message": "[MEMORY_PROCESSING] Memory processing completed with 1 errors",
-  "stage": "memory_processing",
-  "category": "memory_system",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
   "metadata": {
-    "chapterNumber": 4,
-    "stage": "memory_processing",
-    "category": "memory_system"
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-06-01T07:46:52.237Z",
+  "timestamp": "2025-06-03T09:53:46.133Z",
   "level": "error",
-  "message": "[MEMORY_PROCESSING] Memory processing completed with 1 errors",
-  "stage": "memory_processing",
-  "category": "memory_system",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 4",
+  "stage": "chapter_generation",
+  "category": "network",
   "metadata": {
-    "chapterNumber": 5,
-    "stage": "memory_processing",
-    "category": "memory_system"
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=4",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
   }
 }
 {
-  "timestamp": "2025-06-01T07:50:48.248Z",
+  "timestamp": "2025-06-03T09:53:46.134Z",
   "level": "error",
-  "message": "[MEMORY_PROCESSING] Memory processing completed with 1 errors",
-  "stage": "memory_processing",
-  "category": "memory_system",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 4",
+  "stage": "chapter_generation",
+  "category": "network",
   "metadata": {
-    "chapterNumber": 6,
-    "stage": "memory_processing",
-    "category": "memory_system"
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.02,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T09:58:06.153Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T09:58:06.154Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 5",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=5",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T09:58:06.155Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 5",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.018,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:02:26.176Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:02:26.177Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 6",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=6",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:02:26.178Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 6",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.021,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:08:08.546Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:08:08.547Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 1 generation failed: Chapter 1 generation failed: First chapter generation failed: メインキャラクターが設定されていません: メインキャラクターが定義されていません\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=1",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:08:08.547Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 140.178,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:12:28.616Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:12:28.617Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "status": 400,
+    "statusText": "Bad Request",
+    "data": "{\"success\":false,\"error\":{\"code\":\"VALIDATION_ERROR\",\"message\":\"Chapter 2 already exists. Use forcedGeneration:true to override.\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
+    "method": "post",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:12:28.617Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "chapterGenerationTime": 140.068,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:16:48.680Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:16:48.680Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 3",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "status": 400,
+    "statusText": "Bad Request",
+    "data": "{\"success\":false,\"error\":{\"code\":\"VALIDATION_ERROR\",\"message\":\"Chapter 3 already exists. Use forcedGeneration:true to override.\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=3",
+    "method": "post",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:16:48.681Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 3",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "chapterGenerationTime": 140.061,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:41:27.816Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:41:27.817Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 8",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "status": 400,
+    "statusText": "Bad Request",
+    "data": "{\"success\":false,\"error\":{\"code\":\"VALIDATION_FAILED\",\"message\":\"Generated chapter failed validation\",\"details\":{\"qualityScore\":55,\"failedChecks\":[{\"name\":\"basic_consistency\",\"message\":\"1個の一貫性問題を検出\",\"severity\":\"MEDIUM\"}],\"potentialSolutions\":\"Try adjusting the generation parameters or use forcedGeneration:true\",\"memoryProcessingResult\":{\"success\":true,\"affectedComponents\":3}}}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=8",
+    "method": "post",
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T10:41:27.817Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 8",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "error": "Request failed with status code 400",
+    "category": "generation",
+    "chapterGenerationTime": 259.507,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T12:32:46.256Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T12:32:46.257Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=1",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T12:32:46.257Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 152.158,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:16:37.949Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:16:37.949Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 2 generation failed: Chapter 2 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:16:37.950Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 987.068,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:34:58.153Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:34:58.154Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 3",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 3 generation failed: Chapter 3 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=3",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:34:58.155Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 3",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 980.201,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:53:18.389Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:53:18.389Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 4",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 4 generation failed: Chapter 4 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=4",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T13:53:18.390Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 4",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 980.23,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:11:38.605Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:11:38.606Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 5",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 5 generation failed: Chapter 5 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=5",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:11:38.606Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 5",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 980.214,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:29:58.804Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:29:58.805Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 6",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 6 generation failed: Chapter 6 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=6",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:29:58.806Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 6",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 980.197,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:48:19.009Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:48:19.010Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 7",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "data": "{\"success\":false,\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"Chapter 7 generation failed: Chapter 7 generation failed: 操作がタイムアウトしました: AI生成 (180000ms)\"}}",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=7",
+    "method": "post",
+    "category": "system_init",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-03T14:48:19.010Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 7",
+  "stage": "chapter_generation",
+  "category": "system_init",
+  "metadata": {
+    "error": "Request failed with status code 500",
+    "category": "system_init",
+    "chapterGenerationTime": 980.203,
+    "stage": "chapter_generation"
   }
 }

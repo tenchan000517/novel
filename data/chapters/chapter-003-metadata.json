@@ -6,258 +6,265 @@
     "themeOccurrences": [],
     "foreshadowingElements": [],
     "qualityMetrics": {
-      "readability": 0.85,
+      "readability": 0.8,
       "consistency": 0.9,
-      "engagement": 0.9,
-      "characterDepiction": 0.8,
-      "originality": 0.75,
-      "overall": 0.85,
+      "engagement": 0.8,
+      "characterDepiction": 0.7,
+      "originality": 0.6,
+      "overall": 0.75,
       "coherence": 0.9,
-      "characterConsistency": 0.9
+      "characterConsistency": 0.8
     },
     "detectedIssues": [],
     "chapterAnalysis": {
       "characterAppearances": [
         {
-          "characterId": "C001",
-          "characterName": "太郎",
+          "characterId": "1",
+          "characterName": "悠斗",
           "scenes": [
-            "S001",
-            "S002",
-            "S003",
-            "S004",
-            "S005"
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
           ],
-          "dialogueCount": 25,
-          "significance": 0.95,
+          "dialogueCount": 15,
+          "significance": 1,
           "actions": [
-            "焦燥感を募らせる",
-            "反省する",
-            "顧客インタビューを行う",
-            "決意を新たにする",
-            "成功を噛み締める"
+            "事業報告",
+            "苛立ち",
+            "議論",
+            "資金調達",
+            "決断",
+            "方向転換",
+            "戦略立案"
           ],
           "emotions": [
-            "焦燥",
-            "不安",
-            "反省",
-            "決意",
-            "満足感"
+            "苛立ち",
+            "焦り",
+            "葛藤",
+            "決意"
           ]
         },
         {
-          "characterId": "C002",
-          "characterName": "花子",
+          "characterId": "2",
+          "characterName": "美咲",
           "scenes": [
-            "S001",
-            "S003"
+            "1",
+            "4"
           ],
-          "dialogueCount": 8,
+          "dialogueCount": 5,
           "significance": 0.7,
           "actions": [
-            "意見を述べる",
-            "タブレットを操作する",
-            "提案をする",
-            "頷く"
+            "話を聞く",
+            "会話",
+            "決断を促す"
           ],
           "emotions": [
-            "不安",
-            "心配"
+            "理解",
+            "共感"
           ]
         },
         {
-          "characterId": "C003",
-          "characterName": "顧客",
+          "characterId": "3",
+          "characterName": "健太",
           "scenes": [
-            "S002"
+            "2",
+            "5"
           ],
           "dialogueCount": 4,
           "significance": 0.6,
           "actions": [
-            "意見を述べる",
-            "ニーズを伝える"
+            "議論",
+            "戦略立案"
           ],
-          "emotions": []
+          "emotions": [
+            "対立",
+            "協力"
+          ]
+        },
+        {
+          "characterId": "4",
+          "characterName": "愛美",
+          "scenes": [
+            "2",
+            "5"
+          ],
+          "dialogueCount": 4,
+          "significance": 0.6,
+          "actions": [
+            "議論",
+            "戦略立案"
+          ],
+          "emotions": [
+            "対立",
+            "協力"
+          ]
+        },
+        {
+          "characterId": "5",
+          "characterName": "投資家",
+          "scenes": [
+            "3"
+          ],
+          "dialogueCount": 2,
+          "significance": 0.5,
+          "actions": [
+            "資金調達の交渉",
+            "事業計画の見直し要求"
+          ],
+          "emotions": [
+            "要求"
+          ]
         }
       ],
       "themeOccurrences": [
         {
-          "themeId": "T001",
-          "themeName": "顧客不在",
+          "themeId": "1",
+          "themeName": "誤解",
           "expressions": [
-            "顧客のことを何も理解していなかった",
-            "顧客を単なる数字として見ていた",
-            "顧客不在の戦略が、いかに危険であるか",
-            "顧客中心の戦略こそが、成功への鍵"
-          ],
-          "strength": 0.9,
-          "theme": "顧客不在",
-          "contexts": [
-            "予約数の伸び悩み",
-            "市場調査の結果を鵜呑みにした",
-            "顧客の潜在的なニーズを無視した"
-          ]
-        },
-        {
-          "themeId": "T002",
-          "themeName": "パーソナル体験",
-          "expressions": [
-            "デザインのカスタマイズ",
-            "機能の選択肢を増やす",
-            "顧客自身が、コーヒーメーカーを作る過程に参加できるような仕掛け",
-            "自分らしさを表現できるようなデザイン"
-          ],
-          "strength": 0.8,
-          "theme": "パーソナル体験",
-          "contexts": [
-            "顧客のニーズ",
-            "顧客の意見",
-            "新しいデザインの発表"
-          ]
-        },
-        {
-          "themeId": "T003",
-          "themeName": "シンプルさ",
-          "expressions": [
-            "お手入れが簡単",
-            "安全性が高い",
-            "多機能なのは嬉しいけど、使いこなせない機能も多い",
-            "機能も、もう少しシンプルでもいい"
+            "誤解",
+            "向き合う"
           ],
           "strength": 0.7,
-          "theme": "シンプルさ",
+          "theme": "誤解",
           "contexts": [
-            "顧客のニーズ",
-            "顧客の意見",
-            "新しいデザインの発表"
+            "悠斗の誤解",
+            "決断の時"
           ]
         },
         {
-          "themeId": "T004",
-          "themeName": "成功と不安",
+          "themeId": "2",
+          "themeName": "停滞",
           "expressions": [
-            "深い満足感に浸っていた",
-            "拭いきれない不安が残っていた",
-            "今回の成功は、単なる偶然ではないだろうか？",
-            "顧客の声に耳を傾け続け、常に変化に対応していく必要がある"
+            "進捗の遅れ",
+            "資金調達の難航"
           ],
-          "strength": 0.6,
-          "theme": "成功と不安",
+          "strength": 0.8,
+          "theme": "停滞",
           "contexts": [
-            "大ヒット",
-            "未来への不安"
+            "カフェでの苛立ち",
+            "資金繰りの現実"
+          ]
+        },
+        {
+          "themeId": "3",
+          "themeName": "資金調達",
+          "expressions": [
+            "資金繰りの現実",
+            "資金調達の失敗"
+          ],
+          "strength": 0.9,
+          "theme": "資金調達",
+          "contexts": [
+            "資金繰りの現実",
+            "事業計画の見直し"
+          ]
+        },
+        {
+          "themeId": "4",
+          "themeName": "チームワーク",
+          "expressions": [
+            "意見の対立",
+            "新たな戦略"
+          ],
+          "strength": 0.7,
+          "theme": "チームワーク",
+          "contexts": [
+            "会議室での衝突",
+            "再出発への準備"
+          ]
+        },
+        {
+          "themeId": "5",
+          "themeName": "方向転換",
+          "expressions": [
+            "方向転換",
+            "事業計画の見直し"
+          ],
+          "strength": 0.9,
+          "theme": "方向転換",
+          "contexts": [
+            "決断の時",
+            "再出発への準備"
           ]
         }
       ],
       "foreshadowingElements": [
         {
-          "id": "F001",
-          "description": "予約数の伸び悩み",
+          "id": "1",
+          "description": "事業の進捗の遅れと悠斗の苛立ち。これは、後の資金調達の失敗と方向転換を示唆。",
           "position": 0,
-          "text": "予約数は伸び悩み、小売店からの反応も鈍い。",
+          "text": "進捗の遅れに苛立ちを隠せない。",
           "plannedResolutionChapter": [
-            1,
-            4
-          ],
-          "relatedCharacters": [
-            "太郎"
-          ],
-          "element": "予約数の伸び悩み",
-          "chapter": 3,
-          "isResolved": false
-        },
-        {
-          "id": "F002",
-          "description": "顧客の声の重要性",
-          "position": 0,
-          "text": "SNSでの評判も、あまり良くないわ",
-          "plannedResolutionChapter": [
-            2,
-            3
-          ],
-          "relatedCharacters": [
-            "花子",
-            "太郎"
-          ],
-          "element": "顧客の声の重要性",
-          "chapter": 3,
-          "isResolved": false
-        },
-        {
-          "id": "F003",
-          "description": "顧客インタビューの示唆",
-          "position": 0,
-          "text": "顧客は、もっとパーソナルな体験を求めているのかもしれない",
-          "plannedResolutionChapter": [
-            2,
-            3
-          ],
-          "relatedCharacters": [
-            "太郎",
-            "花子"
-          ],
-          "element": "顧客インタビューの示唆",
-          "chapter": 3,
-          "isResolved": false
-        },
-        {
-          "id": "F004",
-          "description": "未来への不安",
-          "position": 0,
-          "text": "今回の成功は、単なる偶然ではないだろうか？",
-          "plannedResolutionChapter": [
-            5,
+            4,
             5
           ],
           "relatedCharacters": [
-            "太郎"
+            "悠斗",
+            "美咲"
           ],
-          "element": "未来への不安",
+          "element": "事業の進捗の遅れと悠斗の苛立ち。これは、後の資金調達の失敗と方向転換を示唆。",
+          "chapter": 3,
+          "isResolved": false
+        },
+        {
+          "id": "2",
+          "description": "チーム内の意見対立。これは、事業の方向転換が必要になる伏線。",
+          "position": 0,
+          "text": "チーム内で意見の対立が激化し、事業の方向性について激しい議論が交わされる。",
+          "plannedResolutionChapter": [
+            4,
+            5
+          ],
+          "relatedCharacters": [
+            "悠斗",
+            "健太",
+            "愛美"
+          ],
+          "element": "チーム内の意見対立。これは、事業の方向転換が必要になる伏線。",
+          "chapter": 3,
+          "isResolved": false
+        },
+        {
+          "id": "3",
+          "description": "資金調達の難航。これは、事業計画の見直しと方向転換を迫られる伏線。",
+          "position": 0,
+          "text": "資金調達の難航と、事業計画の見直しを迫られる。",
+          "plannedResolutionChapter": [
+            5,
+            13
+          ],
+          "relatedCharacters": [
+            "悠斗",
+            "投資家"
+          ],
+          "element": "資金調達の難航。これは、事業計画の見直しと方向転換を迫られる伏線。",
           "chapter": 3,
           "isResolved": false
         }
       ],
       "qualityMetrics": {
-        "readability": 0.85,
+        "readability": 0.8,
         "consistency": 0.9,
-        "engagement": 0.9,
-        "characterDepiction": 0.8,
-        "originality": 0.75,
-        "overall": 0.85,
+        "engagement": 0.8,
+        "characterDepiction": 0.7,
+        "originality": 0.6,
+        "overall": 0.75,
         "coherence": 0.9,
-        "characterConsistency": 0.9
+        "characterConsistency": 0.8
       },
       "detectedIssues": [],
       "scenes": [
         {
           "id": "scene-3-1",
-          "type": "INTRODUCTION",
-          "title": "シーン1",
-          "startPosition": 0,
-          "endPosition": 993,
-          "characters": [],
-          "location": "",
-          "summary": "第1パート"
-        },
-        {
-          "id": "scene-3-2",
           "type": "DEVELOPMENT",
-          "title": "シーン2",
-          "startPosition": 993,
-          "endPosition": 1986,
+          "title": "章の内容",
+          "startPosition": 0,
+          "endPosition": 728,
           "characters": [],
           "location": "",
-          "summary": "第2パート"
-        },
-        {
-          "id": "scene-3-3",
-          "type": "RESOLUTION",
-          "title": "シーン3",
-          "startPosition": 1986,
-          "endPosition": 2980,
-          "characters": [],
-          "location": "",
-          "summary": "第3パート"
+          "summary": "章全体"
         }
       ],
       "metadata": {
@@ -266,101 +273,114 @@
         "keywords": []
       },
       "textStats": {
-        "wordCount": 2980,
-        "sentenceCount": 81,
-        "paragraphCount": 39,
-        "averageSentenceLength": 36.8,
-        "dialoguePercentage": 25.2
+        "wordCount": 728,
+        "sentenceCount": 6,
+        "paragraphCount": 2,
+        "averageSentenceLength": 121.3,
+        "dialoguePercentage": 0
       }
     },
     "themeAnalysis": {
       "themes": {
-        "顧客中心主義": {
+        "誤解": {
           "explicitMentions": [
-            "顧客のことを本当に理解していたのだろうか？",
-            "顧客は、もっとパーソナルな体験を求めているのかもしれない",
-            "顧客の声に耳を傾け続け、常に変化に対応していく必要がある"
+            "悠斗は自身の誤解と向き合う（決断の時）"
           ],
           "implicitExpressions": [
-            "会議室のホワイトボードには、びっしりと数字とグラフが書き込まれている。それは、彼らがどれだけ綿密な計画を立ててきたかの証だった。だが、現実は計画とはかけ離れたものだった。",
-            "顧客は、感情を持った人間であり、自分だけの特別なものを求めている。",
-            "新しいコーヒーメーカーは、発売と同時に大ヒットした。"
-          ],
-          "strength": 10,
-          "expressionMethods": [
-            "内面描写",
-            "対話",
-            "行動"
-          ],
-          "relatedThemes": [
-            "失敗からの学び",
-            "パーソナル体験の重要性"
-          ]
-        },
-        "失敗からの学び": {
-          "explicitMentions": [
-            "一体、何が間違っていたんだ？",
-            "彼は、自分の誤りに気づいた。彼は、顧客不在の戦略が、いかに危険であるかを痛感した。",
-            "彼は、失敗から学び、新たな一歩を踏み出すことを決意した。"
-          ],
-          "implicitExpressions": [
-            "焦燥感を募らせていた。",
-            "顧客の声は、彼の耳には痛いほど響いた。",
-            "数週間後、太郎たちは、新たなコーヒーメーカーのデザインを発表した。"
-          ],
-          "strength": 9,
-          "expressionMethods": [
-            "内面描写",
-            "対話",
-            "行動"
-          ],
-          "relatedThemes": [
-            "顧客中心主義",
-            "自己反省"
-          ]
-        },
-        "パーソナル体験の重要性": {
-          "explicitMentions": [
-            "顧客は、もっとパーソナルな体験を求めているのかもしれない",
-            "例えば、デザインのカスタマイズとか、機能の選択肢を増やすとか。",
-            "自分らしさを表現できるようなデザインだったら、もっと愛着が湧くと思います"
-          ],
-          "implicitExpressions": [
-            "デザインのカスタマイズ機能や、お手入れのしやすい設計を採用した。",
-            "顧客自身が、コーヒーメーカーを作る過程に参加できるような仕掛けが必要なのかもしれない",
-            "顧客からは「自分だけのコーヒーメーカーを作れるのが嬉しい」といったコメントが寄せられた。"
+            "カフェでの悠斗の苛立ち（美咲との会話におけるコミュニケーションのずれ）",
+            "会議室でのチーム内の対立（意見の相違）",
+            "資金調達の難航（投資家との認識のずれ）"
           ],
           "strength": 8,
           "expressionMethods": [
-            "対話",
-            "行動",
-            "描写"
+            "内面描写（悠斗の苛立ち、決意）",
+            "対話（美咲、健太、愛美、投資家との会話）",
+            "行動（事業の方向転換）"
           ],
           "relatedThemes": [
-            "顧客中心主義",
-            "シンプルさ"
+            "方向転換",
+            "チームワーク"
           ]
         },
-        "シンプルさの追求": {
+        "停滞": {
           "explicitMentions": [
-            "機能も、もう少しシンプルでもいいかもしれません。",
-            "多機能なのは嬉しいけど、使いこなせない機能も多いので。",
-            "それよりも、お手入れが簡単だったり、安全性が高かったりする方が、嬉しいですね"
+            "事業の進捗の遅れ（カフェでの悠斗の報告）"
           ],
           "implicitExpressions": [
-            "お手入れのしやすい設計を採用した。",
-            "価格設定も、手頃な価格帯のモデルを追加した。",
-            "顧客からは「デザインも機能も、全てが完璧」といったコメントが寄せられた。"
+            "資金調達の難航",
+            "チーム内対立",
+            "事業計画の見直し"
           ],
           "strength": 7,
           "expressionMethods": [
-            "対話",
-            "行動",
-            "描写"
+            "summary（各シーンの要約）",
+            "行動（事業計画の見直し、資金調達の失敗）",
+            "対話（チーム内での議論）"
           ],
           "relatedThemes": [
-            "パーソナル体験の重要性",
-            "顧客中心主義"
+            "資金調達",
+            "チームワーク"
+          ]
+        },
+        "資金調達": {
+          "explicitMentions": [
+            "資金調達の難航（資金繰りの現実）"
+          ],
+          "implicitExpressions": [
+            "事業計画の見直し",
+            "投資家との会話",
+            "再出発への準備（新たな戦略の必要性）"
+          ],
+          "strength": 7,
+          "expressionMethods": [
+            "summary（各シーンの要約）",
+            "対話（投資家との会話）",
+            "行動（事業計画の見直し）"
+          ],
+          "relatedThemes": [
+            "停滞",
+            "方向転換"
+          ]
+        },
+        "チームワーク": {
+          "explicitMentions": [
+            "チーム内で意見の対立が激化（会議室での衝突）",
+            "再出発に向けてチームが動き出す（再出発への準備）"
+          ],
+          "implicitExpressions": [
+            "カフェでの悠斗と美咲の関係性",
+            "会議室での議論",
+            "新たな戦略の立案"
+          ],
+          "strength": 6,
+          "expressionMethods": [
+            "対話（チーム内での議論）",
+            "行動（新たな戦略の立案）",
+            "summary（各シーンの要約）"
+          ],
+          "relatedThemes": [
+            "誤解",
+            "停滞"
+          ]
+        },
+        "方向転換": {
+          "explicitMentions": [
+            "悠斗は、自身の誤解と向き合い、事業の方向性を大きく転換する決意をする（決断の時）"
+          ],
+          "implicitExpressions": [
+            "新たな戦略を練る（再出発への準備）",
+            "事業計画の見直し",
+            "資金調達の失敗からの脱却"
+          ],
+          "strength": 9,
+          "expressionMethods": [
+            "内面描写（悠斗の決意）",
+            "行動（事業の方向転換、新たな戦略の立案）",
+            "summary（各シーンの要約）"
+          ],
+          "relatedThemes": [
+            "誤解",
+            "資金調達"
           ]
         },
         "物語のテーマ": {
@@ -372,188 +392,141 @@
         }
       },
       "overallCoherence": 9,
-      "dominantTheme": "顧客中心主義",
+      "dominantTheme": "方向転換",
       "themeTensions": {
-        "顧客中心主義と失敗からの学び": 10,
-        "パーソナル体験の重要性とシンプルさの追求": 8
+        "誤解と方向転換": 8,
+        "停滞と方向転換": 9,
+        "資金調達と方向転換": 8,
+        "チームワークと方向転換": 7
       }
     },
     "foreshadowingProcessing": {
       "resolvedForeshadowing": [],
-      "generatedCount": 0,
-      "totalActive": 0
+      "generatedCount": 3,
+      "totalActive": 3
     },
     "styleAnalysis": {
-      "avgSentenceLength": 35.80246913580247,
+      "avgSentenceLength": 120.5,
       "sentenceVariety": 0.75,
       "vocabularyRichness": 0.68,
       "narrativeVoice": "三人称",
       "tenseConsistency": 1,
-      "sentimentBalance": 0.45
+      "sentimentBalance": 0.4
     },
     "expressionPatterns": {
-      "verbPhrases": [
-        {
-          "expression": "〜していた",
-          "frequency": 3
-        },
-        {
-          "expression": "〜に気づいた",
-          "frequency": 3
-        },
-        {
-          "expression": "〜と語った",
-          "frequency": 3
-        },
-        {
-          "expression": "〜を追いかけていた",
-          "frequency": 2
-        },
-        {
-          "expression": "〜に気づく",
-          "frequency": 2
-        },
-        {
-          "expression": "〜を書き出した",
-          "frequency": 2
-        },
-        {
-          "expression": "〜を求めていた",
-          "frequency": 2
-        }
-      ],
-      "adjectivalExpressions": [
-        {
-          "expression": "〜の",
-          "frequency": 20
-        }
-      ],
-      "dialoguePatterns": [
-        {
-          "expression": "〜と尋ねた",
-          "frequency": 2
-        },
-        {
-          "expression": "〜と叫んだ",
-          "frequency": 2
-        },
-        {
-          "expression": "〜と書き込んだ",
-          "frequency": 2
-        }
-      ],
-      "conjunctions": [
-        {
-          "expression": "しかし",
-          "frequency": 7
-        },
-        {
-          "expression": "そして",
-          "frequency": 6
-        },
-        {
-          "expression": "それなのに",
-          "frequency": 2
-        },
-        {
-          "expression": "しかし、",
-          "frequency": 2
-        }
-      ],
-      "sentenceStructures": [
-        {
-          "expression": "〜は〜である",
-          "frequency": 3
-        },
-        {
-          "expression": "〜は、〜した",
-          "frequency": 2
-        },
-        {
-          "expression": "〜と言うと、〜した",
-          "frequency": 2
-        }
-      ]
+      "verbPhrases": [],
+      "adjectivalExpressions": [],
+      "dialoguePatterns": [],
+      "conjunctions": [],
+      "sentenceStructures": []
     },
     "characterAnalysis": {
       "characterAppearances": [
         {
-          "characterId": "char-太郎",
-          "characterName": "太郎",
+          "characterId": "char-悠斗",
+          "characterName": "悠斗",
           "scenes": [
-            "焦燥と反省",
-            "顧客の声",
-            "新たな戦略",
-            "大成功",
-            "未来への不安"
+            "カフェでの苛立ち",
+            "会議室での衝突",
+            "資金繰りの現実",
+            "決断の時",
+            "再出発への準備"
           ],
           "dialogueCount": 25,
           "significance": 1,
           "actions": [
-            "キーボードを叩く",
-            "焦燥感を募らせる",
-            "問いを繰り返す",
-            "反論する",
-            "唇を噛み締める",
-            "呟く",
-            "眉をひそめる",
-            "決意を込めて話す",
-            "顧客インタビューを行う",
-            "メモを取る",
-            "報告する",
-            "同意する",
-            "満足感に浸る",
-            "不安を感じる",
-            "決意を新たにする"
+            "事業の現状報告",
+            "苛立ちを露わにする",
+            "チームとの議論",
+            "資金調達の交渉",
+            "事業計画の見直し",
+            "誤解と向き合う",
+            "方向転換を決意",
+            "新たな戦略を練る"
           ],
           "emotions": [
-            "焦燥感",
-            "不安",
-            "自信",
             "苛立ち",
-            "後悔",
+            "焦り",
+            "落胆",
             "決意",
-            "満足感"
+            "希望"
           ]
         },
         {
-          "characterId": "char-花子",
-          "characterName": "花子",
+          "characterId": "char-美咲",
+          "characterName": "美咲",
           "scenes": [
-            "焦燥と反省",
-            "新たな戦略"
+            "カフェでの苛立ち",
+            "決断の時"
           ],
-          "dialogueCount": 10,
-          "significance": 0.7,
+          "dialogueCount": 5,
+          "significance": 0.4,
           "actions": [
-            "不安げな表情で話す",
-            "タブレット端末を操作する",
-            "呟く",
-            "提案する",
-            "頷く"
+            "悠斗の話を聞く",
+            "悠斗を励ます",
+            "悠斗の決断を支持する"
           ],
           "emotions": [
-            "不安",
             "心配",
-            "理解"
+            "共感",
+            "応援"
           ]
         },
         {
-          "characterId": "char-顧客",
-          "characterName": "顧客",
+          "characterId": "char-健太",
+          "characterName": "健太",
           "scenes": [
-            "顧客の声"
+            "会議室での衝突",
+            "再出発への準備"
+          ],
+          "dialogueCount": 8,
+          "significance": 0.6,
+          "actions": [
+            "悠斗と議論する",
+            "事業の方向性について意見を述べる",
+            "新たな戦略を練る"
+          ],
+          "emotions": [
+            "対立",
+            "熱意",
+            "協力"
+          ]
+        },
+        {
+          "characterId": "char-愛美",
+          "characterName": "愛美",
+          "scenes": [
+            "会議室での衝突",
+            "再出発への準備"
+          ],
+          "dialogueCount": 7,
+          "significance": 0.6,
+          "actions": [
+            "悠斗と議論する",
+            "事業の方向性について意見を述べる",
+            "新たな戦略を練る"
+          ],
+          "emotions": [
+            "対立",
+            "熱意",
+            "協力"
+          ]
+        },
+        {
+          "characterId": "char-投資家",
+          "characterName": "投資家",
+          "scenes": [
+            "資金繰りの現実"
           ],
           "dialogueCount": 3,
-          "significance": 0.5,
+          "significance": 0.3,
           "actions": [
-            "意見を述べる",
-            "率直な意見を述べる",
-            "ニーズを伝える"
+            "資金調達の交渉",
+            "事業計画の見直しを要求する"
           ],
           "emotions": [
-            "不満",
-            "期待"
+            "冷静",
+            "現実的"
           ]
         }
       ],
@@ -562,9 +535,9 @@
           "currentDesires": [],
           "currentFears": [],
           "internalConflicts": [
-            "自己のプライドと現実のギャップ",
-            "顧客のニーズと自身の理解不足",
-            "成功への喜びと将来への不安"
+            "事業の停滞と自身の能力への疑問",
+            "チーム内対立とリーダーシップへの不安",
+            "資金調達の困難と将来への不安"
           ],
           "emotionalState": {},
           "relationshipAttitudes": {}
@@ -579,7 +552,32 @@
         {
           "currentDesires": [],
           "currentFears": [],
-          "internalConflicts": [],
+          "internalConflicts": [
+            "悠斗との意見の相違",
+            "事業の方向性への疑問",
+            "チーム内での役割への不満"
+          ],
+          "emotionalState": {},
+          "relationshipAttitudes": {}
+        },
+        {
+          "currentDesires": [],
+          "currentFears": [],
+          "internalConflicts": [
+            "悠斗との意見の相違",
+            "事業の方向性への疑問",
+            "チーム内での役割への不満"
+          ],
+          "emotionalState": {},
+          "relationshipAttitudes": {}
+        },
+        {
+          "currentDesires": [],
+          "currentFears": [],
+          "internalConflicts": [
+            "資金回収の可能性への不安",
+            "事業計画の実現性への疑問"
+          ],
           "emotionalState": {},
           "relationshipAttitudes": {}
         }
@@ -594,25 +592,39 @@
       },
       "relationshipDynamics": [
         {
-          "character1": "太郎",
-          "character2": "花子",
-          "relationshipType": "同僚/右腕",
+          "character1": "悠斗",
+          "character2": "美咲",
+          "relationshipType": "ビジネスパートナー",
           "strength": 0.7,
-          "development": "当初は太郎が主導権を握っていたが、花子の意見を聞き入れることで、より協力的な関係へと発展。互いに相手を信頼し、共に問題解決に取り組む姿勢が見られる。"
+          "development": "悠斗の苛立ちが美咲との関係に影を落とすが、最終的には悠斗が自身の誤解を認め、関係修復の可能性を示唆。"
         },
         {
-          "character1": "太郎",
-          "character2": "顧客",
+          "character1": "悠斗",
+          "character2": "健太",
+          "relationshipType": "同僚/対立",
+          "strength": 0.4,
+          "development": "会議での意見対立により、関係が悪化。しかし、再出発に向けて協力体制を築く可能性も示唆。"
+        },
+        {
+          "character1": "悠斗",
+          "character2": "愛美",
+          "relationshipType": "同僚/対立",
+          "strength": 0.4,
+          "development": "会議での意見対立により、関係が悪化。しかし、再出発に向けて協力体制を築く可能性も示唆。"
+        },
+        {
+          "character1": "悠斗",
+          "character2": "投資家",
           "relationshipType": "ビジネス関係",
-          "strength": 0.1,
-          "development": "当初は顧客を数字としてしか見ていなかったが、顧客インタビューを通して、顧客のニーズを理解し、関係性が深まる。顧客中心の戦略へと転換。"
+          "strength": 0.3,
+          "development": "資金調達の難航により、関係が悪化。事業計画の見直しを迫られ、関係は試練に直面。"
         },
         {
-          "character1": "花子",
-          "character2": "顧客",
-          "relationshipType": "間接的な関係",
-          "strength": 0.3,
-          "development": "花子は、顧客の声を伝える役割を担い、太郎と顧客の関係を繋ぐ役割を果たす。顧客のニーズを理解するための橋渡し役。"
+          "character1": "健太",
+          "character2": "愛美",
+          "relationshipType": "同僚",
+          "strength": 0.6,
+          "development": "会議での対立はあるものの、再出発に向けて協力体制を築く可能性を示唆。"
         }
       ]
     },
@@ -664,38 +676,37 @@
       ]
     },
     "readerExperience": {
-      "interestRetention": 8,
-      "empathy": 9,
-      "clarity": 9,
+      "interestRetention": 7,
+      "empathy": 6,
+      "clarity": 8,
       "unexpectedness": 6,
       "anticipation": 8,
-      "overallScore": 8,
+      "overallScore": 7,
       "weakPoints": [
         {
-          "point": "成功までの過程がやや駆け足に感じる。",
-          "suggestion": "顧客インタビュー後のデザイン変更や価格設定の見直しについて、もう少し詳細な描写を加え、試行錯誤の過程を描写することで、よりリアリティとカタルシスを高める。"
+          "point": "各シーンの描写が短く、感情描写が薄い可能性がある。特に、悠斗の苛立ちや決断の葛藤が十分に伝わらないと、読者は感情移入しにくい。",
+          "suggestion": "各シーンで、悠斗の心情を内面描写や会話を通して具体的に表現する。例えば、カフェでの苛立ちでは、美咲との会話の間に、悠斗の表情や仕草、思考を織り交ぜる。会議室での衝突では、それぞれのキャラクターの主張と、それに対する悠斗の感情を詳細に描写する。"
         },
         {
-          "point": "太郎の不安がやや唐突に感じられる。",
-          "suggestion": "成功後、顧客からの肯定的なフィードバックに触れながらも、市場の変動性や競合他社の動向など、具体的な不安要素を提示することで、読者の共感を深める。"
+          "point": "資金調達の失敗やチーム内対立といったイベントが、結果だけが提示され、その過程や原因が十分に描かれていない場合、読者は物語に没入しにくい。",
+          "suggestion": "資金調達の失敗に至るまでの具体的な経緯、投資家の反応、交渉の様子などを描写する。チーム内対立についても、対立の原因、それぞれのキャラクターの立場、感情を掘り下げて描写する。"
         }
       ],
       "strengths": [
-        "顧客中心の視点を明確に打ち出し、読者の共感を呼ぶ。",
-        "太郎の成長と変化を丁寧に描写し、感情移入を促す。",
-        "具体的な問題提起と解決策の提示により、物語のテーマを分かりやすく伝えている。",
-        "簡潔で分かりやすい文章で、物語の流れをスムーズに理解できる。"
+        "事業の停滞、資金繰りの問題、チーム内の対立といった、現代的なテーマを扱っており、読者の共感を呼びやすい。",
+        "主人公が自身の誤解に気づき、方向転換するという展開は、成長物語として魅力的であり、読者の期待感を高める。"
       ]
     },
     "integratedSuggestions": [
       "キャラクター間の関係性をより深く描写し、感情的な結びつきを強化してください",
+      "感情移入しやすくするためにキャラクターの脆弱性や内的葛藤をさらに掘り下げてください",
+      "各シーンで、悠斗の心情を内面描写や会話を通して具体的に表現する。例えば、カフェでの苛立ちでは、美咲との会話の間に、悠斗の表情や仕草、思考を織り交ぜる。会議室での衝突では、それぞれのキャラクターの主張と、それに対する悠斗の感情を詳細に描写する。",
+      "資金調達の失敗に至るまでの具体的な経緯、投資家の反応、交渉の様子などを描写する。チーム内対立についても、対立の原因、それぞれのキャラクターの立場、感情を掘り下げて描写する。",
       "キャラクターの成長要素を追加し、物語を通じた変化を描いてください",
-      "キャラクターの内面描写を充実させ、心理的な複雑さを表現してください",
-      "成功後、顧客からの肯定的なフィードバックに触れながらも、市場の変動性や競合他社の動向など、具体的な不安要素を提示することで、読者の共感を深める。",
-      "顧客インタビュー後のデザイン変更や価格設定の見直しについて、もう少し詳細な描写を加え、試行錯誤の過程を描写することで、よりリアリティとカタルシスを高める。"
+      "章の構造を改善し、より明確なシーン分割を行ってください"
     ],
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-01T07:38:13.689Z",
+      "analysisTimestamp": "2025-06-04T00:51:36.778Z",
       "servicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -704,7 +715,7 @@
         "NarrativeAnalysis",
         "ReaderExperience"
       ],
-      "processingTime": 29715,
+      "processingTime": 30088,
       "cacheHitRate": 0,
       "memorySystemUsed": true,
       "unifiedSearchResults": 0
@@ -716,10 +727,10 @@
     }
   },
   "metadata": {
-    "pov": "太郎",
-    "location": "オフィス",
-    "timeframe": "数日後",
-    "emotionalTone": "焦燥",
+    "pov": "悠斗",
+    "location": "渋谷のカフェ、オフィス",
+    "timeframe": "数日間",
+    "emotionalTone": "緊張と焦燥",
     "keywords": [],
     "qualityScore": 100,
     "events": [],
@@ -728,12 +739,12 @@
     "resolvedForeshadowing": [],
     "resolutions": [],
     "correctionHistory": [],
-    "updatedAt": "2025-06-01T07:37:43.471Z",
+    "updatedAt": "2025-06-04T00:51:06.554Z",
     "generationVersion": "5.0-unified-memory-system",
-    "generationTime": 15909,
+    "generationTime": 16207,
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-01T07:38:31.707Z",
-      "analysisProcessingTime": 47731,
+      "analysisTimestamp": "2025-06-04T00:51:53.536Z",
+      "analysisProcessingTime": 46846,
       "analysisServicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -744,14 +755,14 @@
       ],
       "nextChapterSuggestionsCount": 10,
       "memoryProcessingResult": {
-        "success": false,
-        "processingTime": 247,
+        "success": true,
+        "processingTime": 90,
         "affectedComponents": 3
       }
     },
     "qualityEnhancements": {
-      "readerExperienceImprovements": 3,
-      "themeEnhancements": 0,
+      "readerExperienceImprovements": 4,
+      "themeEnhancements": 2,
       "styleGuidance": true,
       "unifiedMemorySystemUsed": true,
       "learningJourneyIntegrated": true

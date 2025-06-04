@@ -1,0 +1,39 @@
+{
+  "id": "event-0-1748942496426",
+  "name": "Chapter 0 Event",
+  "startChapter": 0,
+  "endChapter": 0,
+  "type": "CUSTOM",
+  "completedAt": "2025-06-03T09:21:36.426Z",
+  "summary": "",
+  "involvedCharacters": [],
+  "keyEvents": [
+    {
+      "chapter": 0,
+      "description": "",
+      "significance": 5
+    }
+  ],
+  "achievedGoals": [],
+  "qualityMetrics": {
+    "consistency": 5,
+    "engagement": 5,
+    "pacing": 1,
+    "characterDevelopment": 1,
+    "plotProgression": 5
+  },
+  "generationStats": {
+    "totalGenerationTime": 0,
+    "revisionCount": 0,
+    "promptOptimizationCount": 0,
+    "aiRequestCount": 0
+  },
+  "learningData": {
+    "effectivePrompts": [],
+    "successfulPatterns": [
+      "default"
+    ],
+    "challenges": [],
+    "solutions": []
+  }
+}

@@ -26,6 +26,9 @@ interface MemoryLayer {
     compress(): Promise<void>;
     validate(): Promise<boolean>;
     cleanup(): Promise<void>;
+
+    addChapter?(chapter: Chapter): Promise<any>;  // オプショナル
+
 }
 
 interface DuplicateResolver {
@@ -884,8 +887,12 @@ export class DataIntegrationProcessor {
      * @private
      */
     private async _integrateToShortTerm(data: any): Promise<void> {
-        const key = `chapter-${data.chapter.chapterNumber}`;
-        await this.config.memoryLayers.shortTerm.setData(key, data);
+        if (data.chapter && this.config.memoryLayers.shortTerm.addChapter) {
+            await this.config.memoryLayers.shortTerm.addChapter(data.chapter);
+        } else {
+            const key = `chapter-${data.chapter.chapterNumber}`;
+            await this.config.memoryLayers.shortTerm.setData(key, data);
+        }
     }
 
     /**
@@ -910,8 +917,12 @@ export class DataIntegrationProcessor {
      * @private
      */
     private async _integrateToMidTerm(data: any): Promise<void> {
-        const key = `analysis-${data.chapterNumber}`;
-        await this.config.memoryLayers.midTerm.setData(key, data);
+        if (data.chapter && this.config.memoryLayers.midTerm.addChapter) {
+            await this.config.memoryLayers.midTerm.addChapter(data.chapter);
+        } else {
+            const key = `analysis-${data.chapterNumber}`;
+            await this.config.memoryLayers.midTerm.setData(key, data);
+        }
     }
 
     /**

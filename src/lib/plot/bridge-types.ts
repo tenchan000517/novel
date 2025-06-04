@@ -1,8 +1,7 @@
 // src/lib/plot/bridge-types.ts
 
-import { EmotionalCurvePoint } from '@/lib/memory/types';
 import { KeyEvent } from '@/types/memory';
-import { NarrativeStateInfo } from '@/lib/memory/narrative/types';
+import { NarrativeStateInfo, EmotionalCurvePoint } from '@/lib/memory/long-term/types';
 /**
  * @interface ChapterDirectives
  * @description 章の生成に必要な具体的な指示情報

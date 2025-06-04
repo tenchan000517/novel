@@ -10,7 +10,7 @@ import { Chapter } from '@/types/chapters';
 import { Character } from '@/types/characters';
 
 // コア統合システム
-import { DataIntegrationProcessor } from './data-integration-processor';
+// import { DataIntegrationProcessor } from './data-integration-processor';
 import { UnifiedAccessAPI } from './unified-access-api';
 import { CacheCoordinator } from '../integration/cache-coordinator';
 import { DuplicateResolver } from '../integration/duplicate-resolver';
@@ -156,7 +156,7 @@ export class MemoryManager {
     private longTermMemory!: LongTermMemory;
 
     // コア統合システム
-    private dataIntegrationProcessor!: DataIntegrationProcessor;
+    // private dataIntegrationProcessor!: DataIntegrationProcessor;
     private unifiedAccessAPI!: UnifiedAccessAPI;
     private cacheCoordinator!: CacheCoordinator;
     private duplicateResolver!: DuplicateResolver;
@@ -276,11 +276,11 @@ export class MemoryManager {
             const midTermResult = await this.midTermMemory.addChapter(chapter);
             this.updateOperationResult(result, 'midTermMemory', midTermResult);
 
-            // 3. データ統合処理の実行
-            if (this.config.integrationEnabled) {
-                const integrationResult = await this.dataIntegrationProcessor.processChapterData(chapter);
-                this.updateOperationResult(result, 'dataIntegration', integrationResult);
-            }
+            // // 3. データ統合処理の実行
+            // if (this.config.integrationEnabled) {
+            //     const integrationResult = await this.dataIntegrationProcessor.processChapterData(chapter);
+            //     this.updateOperationResult(result, 'dataIntegration', integrationResult);
+            // }
 
             // 4. 重複解決処理
             const duplicateQuery = {
@@ -300,12 +300,12 @@ export class MemoryManager {
             // 🔧 修正: 6. 長期記憶への条件付き処理（競合回避制御付き・TypeScript安全版）
             if (this.shouldProcessLongTerm(chapter)) {
                 logger.info(`Chapter ${chapter.chapterNumber} requires long-term processing, enabling conflict prevention`);
-                
+
                 // 🔧 修正: 自動統合を一時停止して競合を防止
                 if (this.longTermMemory && typeof this.longTermMemory.pauseAutoConsolidation === 'function') {
                     this.longTermMemory.pauseAutoConsolidation();
                 }
-                
+
                 try {
                     const extractedData = await this.extractLongTermData(chapter);
                     await this.longTermMemory.processChapterCompletion(
@@ -555,19 +555,19 @@ export class MemoryManager {
                 }
             }
 
-            // 3. データ統合最適化
-            if (this.config.integrationEnabled && this.dataIntegrationProcessor) {
-                const integrationOptResult = await this.dataIntegrationProcessor.optimizeIntegration();
-                if (integrationOptResult.optimized) {
-                    result.improvements.push({
-                        component: 'DataIntegrationProcessor',
-                        metric: 'integrationEfficiency',
-                        beforeValue: 70,
-                        afterValue: 85,
-                        improvementPercent: 21
-                    });
-                }
-            }
+            // // 3. データ統合最適化
+            // if (this.config.integrationEnabled && this.dataIntegrationProcessor) {
+            //     const integrationOptResult = await this.dataIntegrationProcessor.optimizeIntegration();
+            //     if (integrationOptResult.optimized) {
+            //         result.improvements.push({
+            //             component: 'DataIntegrationProcessor',
+            //             metric: 'integrationEfficiency',
+            //             beforeValue: 70,
+            //             afterValue: 85,
+            //             improvementPercent: 21
+            //         });
+            //     }
+            // }
 
             // 4. 永続化ストレージ最適化
             if (this.persistentStorage) {
@@ -587,9 +587,9 @@ export class MemoryManager {
             // 🔧 修正: 5. 長期記憶の統合処理（TypeScript安全・競合回避制御付き）
             if (this.longTermMemory) {
                 // TypeScript安全版の状態チェック
-                const isConsolidationInProgress = 
-                    typeof this.longTermMemory.isConsolidationInProgress === 'function' 
-                        ? this.longTermMemory.isConsolidationInProgress() 
+                const isConsolidationInProgress =
+                    typeof this.longTermMemory.isConsolidationInProgress === 'function'
+                        ? this.longTermMemory.isConsolidationInProgress()
                         : false;
 
                 if (isConsolidationInProgress) {
@@ -673,7 +673,6 @@ export class MemoryManager {
                     duplicateResolver: await this.duplicateResolver.getDiagnostics(),
                     cacheCoordinator: await this.cacheCoordinator.getDiagnostics(),
                     unifiedAccessAPI: await this.unifiedAccessAPI.getDiagnostics(),
-                    dataIntegrationProcessor: await this.dataIntegrationProcessor.getDiagnostics()
                 },
                 performanceMetrics: {
                     totalRequests: this.operationStats.totalOperations,
@@ -726,10 +725,9 @@ export class MemoryManager {
                     longTerm: { healthy: false, dataIntegrity: false, storageAccessible: false, lastBackup: '', performanceScore: 0, recommendations: [] }
                 },
                 integrationSystems: {
-                    duplicateResolver: { operational: false, efficiency: 0, errorRate: 1, lastOptimization: '', recommendations: [] },
-                    cacheCoordinator: { operational: false, efficiency: 0, errorRate: 1, lastOptimization: '', recommendations: [] },
-                    unifiedAccessAPI: { operational: false, efficiency: 0, errorRate: 1, lastOptimization: '', recommendations: [] },
-                    dataIntegrationProcessor: { operational: false, efficiency: 0, errorRate: 1, lastOptimization: '', recommendations: [] }
+                    duplicateResolver: await this.duplicateResolver.getDiagnostics(),
+                    cacheCoordinator: await this.cacheCoordinator.getDiagnostics(),
+                    unifiedAccessAPI: await this.unifiedAccessAPI.getDiagnostics(),
                 },
                 performanceMetrics: {
                     totalRequests: 0,
@@ -982,18 +980,18 @@ export class MemoryManager {
         this.operationStats.componentsInitialized++;
 
         // データ統合処理システム
-        if (this.config.integrationEnabled) {
-            this.dataIntegrationProcessor = new DataIntegrationProcessor({
-                memoryLayers: {
-                    shortTerm: null as any, // 後で設定
-                    midTerm: null as any,
-                    longTerm: null as any
-                },
-                duplicateResolver: this.duplicateResolver
-            });
-            await this.dataIntegrationProcessor.initialize();
-            this.operationStats.componentsInitialized++;
-        }
+        // if (this.config.integrationEnabled) {
+        //     this.dataIntegrationProcessor = new DataIntegrationProcessor({
+        //         memoryLayers: {
+        //             shortTerm: null as any, // 後で設定
+        //             midTerm: null as any,
+        //             longTerm: null as any
+        //         },
+        //         duplicateResolver: this.duplicateResolver
+        //     });
+        //     await this.dataIntegrationProcessor.initialize();
+        //     this.operationStats.componentsInitialized++;
+        // }
 
         // 品質保証システム
         if (this.config.enableQualityAssurance) {
@@ -1053,14 +1051,14 @@ export class MemoryManager {
         }
 
         // データ統合処理システムのメモリレイヤー設定
-        if (this.dataIntegrationProcessor) {
-            // 実際の実装では適切なインターフェースを実装
-            this.dataIntegrationProcessor.updateMemoryLayers({
-                shortTerm: this.shortTermMemory,
-                midTerm: this.midTermMemory,
-                longTerm: this.longTermMemory
-            });
-        }
+        // if (this.dataIntegrationProcessor) {
+        //     // 実際の実装では適切なインターフェースを実装
+        //     this.dataIntegrationProcessor.updateMemoryLayers({
+        //         shortTerm: this.shortTermMemory,
+        //         midTerm: this.midTermMemory,
+        //         longTerm: this.longTermMemory
+        //     });
+        // }
 
         logger.debug('System integration completed successfully');
     }
@@ -1160,14 +1158,14 @@ export class MemoryManager {
         const isMultipleOfFive = chapter.chapterNumber % 5 === 0;
         const isLongContent = chapter.content.length > 5000;
         const hasImportantKeywords = chapter.title.includes('重要') || chapter.title.includes('転機');
-        
+
         // 🔧 修正: TypeScript安全版の詳細判定条件（undefined チェック付き）
         const hasSignificantEvents = (chapter.metadata?.events?.length ?? 0) > 0;
         const hasNewCharacters = (chapter.metadata?.characters?.length ?? 0) > 0;
         const hasForeshadowing = (chapter.metadata?.foreshadowing?.length ?? 0) > 0;
-        
-        const shouldProcess = isMultipleOfFive || isLongContent || hasImportantKeywords || 
-                             hasSignificantEvents || hasNewCharacters || hasForeshadowing;
+
+        const shouldProcess = isMultipleOfFive || isLongContent || hasImportantKeywords ||
+            hasSignificantEvents || hasNewCharacters || hasForeshadowing;
 
         if (shouldProcess) {
             logger.debug(`Chapter ${chapter.chapterNumber} qualifies for long-term processing`, {
@@ -1191,14 +1189,14 @@ export class MemoryManager {
      */
     private getLongTermTriggerReason(chapter: Chapter): string {
         const reasons: string[] = [];
-        
+
         if (chapter.chapterNumber % 5 === 0) reasons.push('multipleOfFive');
         if (chapter.content.length > 5000) reasons.push('longContent');
         if (chapter.title.includes('重要') || chapter.title.includes('転機')) reasons.push('importantKeywords');
         if ((chapter.metadata?.events?.length ?? 0) > 0) reasons.push('significantEvents');
         if ((chapter.metadata?.characters?.length ?? 0) > 0) reasons.push('newCharacters');
         if ((chapter.metadata?.foreshadowing?.length ?? 0) > 0) reasons.push('foreshadowing');
-        
+
         return reasons.join(', ') || 'unknown';
     }
 

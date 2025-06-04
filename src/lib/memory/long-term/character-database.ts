@@ -1,605 +1,40 @@
 // src/lib/memory/long-term/character-database.ts
 /**
- * @fileoverview キャラクターマスターデータベース（2箇所重複解決・型エラー修正版）
+ * @fileoverview キャラクターマスターデータベース（同期版storageProvider統一版）
  * @description
- * 🔧 キャラクターの長期記憶・マスターデータ管理
- * 🔧 2箇所重複解決システム（CharacterManagerとの統合）
- * 🔧 フォーマット済みデータの完全保持
- * 🔧 キャラクター関係性・履歴の統合管理
- * 🔧 TypeScript型エラー修正
+ * 🔧 ストレージプロバイダーの二重初期化問題を解決
+ * 🔧 同期版storageProviderに統一してConsolidation競合を回避
+ * 🔧 非同期初期化の排除による安定性向上
  */
 
 import { logger } from '@/lib/utils/logger';
-import { storageProvider } from '@/lib/storage';
 import { Character, CharacterType, CharacterState } from '@/types/characters';
 import { characterManager } from '@/lib/characters/manager';
 import { ConsolidationGuard } from './consolidation-guard';
+import { parseYaml } from '@/lib/utils/yaml-helper';
+import { storageProvider } from '@/lib/storage'; // 🔄 同期版に統一
 
-// ============================================================================
-// 型定義：キャラクターマスターデータベース（修正版）
-// ============================================================================
-
-/**
- * キャラクターマスターレコード（2箇所統合済み）
- */
-interface CharacterMasterRecord {
-  // 基本情報（統合済み）
-  id: string;
-  name: string;
-  type: CharacterType;
-  description: string;
-  
-  // 統合メタデータ
-  masterVersion: string;
-  consolidatedFrom: ConsolidationSource[];
-  lastConsolidated: string;
-  conflictResolutions: CharacterConflictResolution[];
-  
-  // 拡張情報
-  personality: CharacterPersonality;
-  backstory: CharacterBackstory;
-  relationships: CharacterRelationship[];
-  state: ExtendedCharacterState;
-  
-  // 履歴情報
-  developmentHistory: CharacterDevelopmentRecord[];
-  appearanceHistory: CharacterAppearanceRecord[];
-  changeHistory: CharacterChangeRecord[];
-  
-  // 統計情報
-  statistics: CharacterStatistics;
-  
-  // フォーマット済みデータ
-  formattedData: FormattedCharacterData;
-  
-  // メタデータ
-  metadata: CharacterMetadata;
-}
-
-/**
- * 拡張キャラクター状態（修正版）
- * NOTE: CharacterState の skills と型競合を解決するため、
- * 基底型のプロパティを適切にオーバーライド
- */
-interface ExtendedCharacterState extends Omit<CharacterState, 'skills'> {
-  // CharacterState から継承したが型を変更するプロパティ
-  skills: SkillRecord[]; // string[] から SkillRecord[] に変更
-  
-  // 詳細状態
-  detailedEmotionalState: DetailedEmotionalState;
-  physicalCondition: PhysicalCondition;
-  mentalCondition: MentalCondition;
-  socialStatus: SocialStatus;
-  
-  // 能力・知識
-  abilities: AbilityRecord[];
-  knowledge: KnowledgeRecord[];
-  
-  // 所有・リソース
-  possessions: PossessionRecord[];
-  resources: ResourceRecord[];
-  obligations: ObligationRecord[];
-  
-  // 目標・動機
-  currentGoals: GoalRecord[];
-  motivations: MotivationRecord[];
-  conflicts: ConflictRecord[];
-}
-
-/**
- * 統合ソース情報
- */
-interface ConsolidationSource {
-  source: 'CharacterManager' | 'WorldKnowledge' | 'StorageFiles' | 'Manual';
-  sourceId: string;
-  lastUpdated: string;
-  priority: number;
-  reliability: number;
-}
-
-/**
- * キャラクター競合解決記録
- */
-interface CharacterConflictResolution {
-  conflictType: 'description' | 'type' | 'personality' | 'backstory' | 'state';
-  sourceA: string;
-  sourceB: string;
-  conflictData: any;
-  resolution: any;
-  resolutionMethod: 'auto' | 'priority' | 'merge' | 'manual';
-  resolvedAt: string;
-  resolvedBy: string;
-}
-
-/**
- * 詳細キャラクター性格
- */
-interface CharacterPersonality {
-  traits: string[];
-  coreValues: string[];
-  motivations: string[];
-  fears: string[];
-  habits: string[];
-  speechPatterns: string[];
-  emotionalRange: EmotionalRange;
-  socialBehavior: SocialBehavior;
-}
-
-/**
- * 感情範囲
- */
-interface EmotionalRange {
-  dominant: string;
-  secondary: string[];
-  triggers: Record<string, string[]>;
-  expressions: Record<string, string[]>;
-}
-
-/**
- * 社会的行動
- */
-interface SocialBehavior {
-  leadership: number; // 0-10
-  cooperation: number; // 0-10
-  empathy: number; // 0-10
-  assertiveness: number; // 0-10
-  socialEnergy: number; // 0-10
-}
-
-/**
- * キャラクター背景
- */
-interface CharacterBackstory {
-  summary: string;
-  keyEvents: BackstoryEvent[];
-  significantRelationships: SignificantRelationship[];
-  formativeExperiences: FormativeExperience[];
-  secrets: string[];
-  regrets: string[];
-  achievements: string[];
-}
-
-/**
- * 背景イベント
- */
-interface BackstoryEvent {
-  eventId: string;
-  title: string;
-  description: string;
-  ageAtEvent?: number;
-  impact: number; // 0-10
-  eventType: 'trauma' | 'achievement' | 'relationship' | 'loss' | 'discovery' | 'other';
-  relatedCharacters: string[];
-}
-
-/**
- * 重要な関係
- */
-interface SignificantRelationship {
-  relationshipId: string;
-  targetCharacterId: string;
-  targetCharacterName: string;
-  relationshipType: string;
-  description: string;
-  intensity: number; // 0-10
-  duration: string;
-  status: 'active' | 'ended' | 'complicated' | 'dormant';
-  keyMoments: string[];
-}
-
-/**
- * 形成的経験
- */
-interface FormativeExperience {
-  experienceId: string;
-  title: string;
-  description: string;
-  ageRange: string;
-  lessonsLearned: string[];
-  skillsGained: string[];
-  traitsFormed: string[];
-  impact: number; // 0-10
-}
-
-/**
- * キャラクター関係性
- */
-interface CharacterRelationship {
-  relationshipId: string;
-  targetCharacterId: string;
-  targetCharacterName: string;
-  relationshipType: string;
-  currentStatus: RelationshipStatus;
-  history: RelationshipHistoryEntry[];
-  dynamics: RelationshipDynamics;
-  metadata: RelationshipMetadata;
-}
-
-/**
- * 関係性状態
- */
-interface RelationshipStatus {
-  status: 'positive' | 'negative' | 'neutral' | 'complex';
-  intensity: number; // 0-10
-  trust: number; // 0-10
-  understanding: number; // 0-10
-  conflict: number; // 0-10
-  dependency: number; // 0-10
-  lastInteraction: string;
-}
-
-/**
- * 関係性履歴エントリ
- */
-interface RelationshipHistoryEntry {
-  entryId: string;
-  chapterNumber: number;
-  event: string;
-  impact: number;
-  statusChange: Partial<RelationshipStatus>;
-  timestamp: string;
-}
-
-/**
- * 関係性力学
- */
-interface RelationshipDynamics {
-  powerBalance: number; // -10 to 10 (negative = other has power)
-  emotionalConnection: number; // 0-10
-  commonGoals: string[];
-  conflictSources: string[];
-  interactionPatterns: string[];
-  growthPotential: number; // 0-10
-}
-
-/**
- * 関係性メタデータ
- */
-interface RelationshipMetadata {
-  established: string;
-  lastUpdated: string;
-  significance: number; // 0-10
-  narrativeRole: string;
-  tags: string[];
-}
-
-/**
- * 詳細感情状態
- */
-interface DetailedEmotionalState {
-  primary: string;
-  secondary: string[];
-  intensity: number; // 0-10
-  stability: number; // 0-10
-  triggers: string[];
-  coping: string[];
-  lastChange: string;
-  influences: EmotionalInfluence[];
-}
-
-/**
- * 感情的影響
- */
-interface EmotionalInfluence {
-  source: string;
-  type: 'character' | 'event' | 'environment' | 'internal';
-  impact: number; // -10 to 10
-  duration: 'temporary' | 'ongoing' | 'permanent';
-}
-
-/**
- * 身体的状態
- */
-interface PhysicalCondition {
-  health: number; // 0-10
-  energy: number; // 0-10
-  fitness: number; // 0-10
-  injuries: InjuryRecord[];
-  disabilities: DisabilityRecord[];
-  appearance: AppearanceRecord;
-}
-
-/**
- * 精神状態
- */
-interface MentalCondition {
-  clarity: number; // 0-10
-  focus: number; // 0-10
-  stress: number; // 0-10
-  confidence: number; // 0-10
-  mentalIssues: MentalIssueRecord[];
-  copingMechanisms: string[];
-}
-
-/**
- * 社会的地位
- */
-interface SocialStatus {
-  reputation: number; // 0-10
-  influence: number; // 0-10
-  connections: number; // 0-10
-  socialCircles: string[];
-  roles: SocialRole[];
-  responsibilities: string[];
-}
-
-/**
- * スキル記録
- */
-interface SkillRecord {
-  skillId: string;
-  name: string;
-  level: number; // 0-10
-  experience: number;
-  category: string;
-  acquiredDate: string;
-  lastUsed: string;
-  relevantSituations: string[];
-}
-
-/**
- * 能力記録
- */
-interface AbilityRecord {
-  abilityId: string;
-  name: string;
-  description: string;
-  type: 'innate' | 'learned' | 'granted' | 'magical';
-  power: number; // 0-10
-  limitations: string[];
-  cost: string;
-  cooldown?: string;
-}
-
-/**
- * 知識記録
- */
-interface KnowledgeRecord {
-  knowledgeId: string;
-  domain: string;
-  description: string;
-  depth: number; // 0-10
-  breadth: number; // 0-10
-  source: string;
-  acquiredDate: string;
-  relevance: number; // 0-10
-}
-
-/**
- * 所有物記録
- */
-interface PossessionRecord {
-  itemId: string;
-  name: string;
-  description: string;
-  value: number;
-  significance: number; // 0-10
-  condition: string;
-  location: string;
-  acquiredDate: string;
-}
-
-/**
- * リソース記録
- */
-interface ResourceRecord {
-  resourceId: string;
-  type: 'financial' | 'social' | 'informational' | 'material' | 'time';
-  name: string;
-  amount: number;
-  unit: string;
-  availability: number; // 0-10
-  renewability: 'renewable' | 'finite' | 'unknown';
-}
-
-/**
- * 義務記録
- */
-interface ObligationRecord {
-  obligationId: string;
-  type: 'legal' | 'moral' | 'social' | 'personal' | 'professional';
-  description: string;
-  priority: number; // 0-10
-  deadline?: string;
-  consequences: string[];
-  progress: number; // 0-10 (completion)
-}
-
-/**
- * 目標記録
- */
-interface GoalRecord {
-  goalId: string;
-  title: string;
-  description: string;
-  type: 'short_term' | 'medium_term' | 'long_term' | 'life_goal';
-  priority: number; // 0-10
-  progress: number; // 0-10
-  deadline?: string;
-  obstacles: string[];
-  resources: string[];
-  dependencies: string[];
-}
-
-/**
- * 動機記録
- */
-interface MotivationRecord {
-  motivationId: string;
-  type: 'survival' | 'security' | 'belonging' | 'esteem' | 'self_actualization';
-  description: string;
-  intensity: number; // 0-10
-  source: string;
-  satisfactionLevel: number; // 0-10
-  related: string[];
-}
-
-/**
- * 対立記録
- */
-interface ConflictRecord {
-  conflictId: string;
-  type: 'internal' | 'interpersonal' | 'societal' | 'ideological';
-  description: string;
-  severity: number; // 0-10
-  parties: string[];
-  stakes: string[];
-  possibleResolutions: string[];
-  progress: number; // 0-10 toward resolution
-}
-
-/**
- * キャラクター開発記録
- */
-interface CharacterDevelopmentRecord {
-  recordId: string;
-  chapterNumber: number;
-  developmentType: 'personality' | 'skill' | 'relationship' | 'goal' | 'backstory';
-  description: string;
-  significance: number; // 0-10
-  impact: string[];
-  timestamp: string;
-  relatedEvents: string[];
-}
-
-/**
- * キャラクター登場記録
- */
-interface CharacterAppearanceRecord {
-  recordId: string;
-  chapterNumber: number;
-  role: 'protagonist' | 'deuteragonist' | 'supporting' | 'minor' | 'mentioned';
-  significance: number; // 0-10
-  screenTime: number; // estimated minutes/pages
-  interactions: string[];
-  impact: string;
-  timestamp: string;
-}
-
-/**
- * キャラクター変更記録
- */
-interface CharacterChangeRecord {
-  recordId: string;
-  chapterNumber: number;
-  changeType: 'state' | 'personality' | 'relationship' | 'backstory' | 'metadata';
-  fieldChanged: string;
-  previousValue: any;
-  newValue: any;
-  reason: string;
-  source: string;
-  timestamp: string;
-  significance: number; // 0-10
-}
-
-/**
- * キャラクター統計
- */
-interface CharacterStatistics {
-  totalAppearances: number;
-  totalScreenTime: number;
-  averageSignificance: number;
-  relationshipCount: number;
-  developmentEvents: number;
-  conflictInvolvement: number;
-  lastActivity: string;
-  firstAppearance: number;
-  peakChapter: number;
-  trendingTopics: string[];
-}
-
-/**
- * フォーマット済みキャラクターデータ
- */
-interface FormattedCharacterData {
-  shortDescription: string;
-  mediumDescription: string;
-  longDescription: string;
-  personalityProfile: string;
-  relationshipSummary: string;
-  backgroundSummary: string;
-  currentStatusSummary: string;
-  developmentArc: string;
-  keyQuotes: string[];
-  characterTags: string[];
-  lastFormatted: string;
-}
-
-/**
- * キャラクターメタデータ
- */
-interface CharacterMetadata {
-  createdAt: string;
-  createdBy: string;
-  lastUpdated: string;
-  updatedBy: string;
-  version: string;
-  locked: boolean;
-  archivalStatus: 'active' | 'archived' | 'deprecated';
-  importanceScore: number; // 0-10
-  narrativeRole: string;
-  tags: string[];
-  notes: string[];
-}
-
-// インジュリー、障害、外見などの詳細型
-interface InjuryRecord {
-  injuryId: string;
-  type: string;
-  severity: number; // 0-10
-  healingRate: number; // 0-10
-  description: string;
-  acquiredDate: string;
-  expectedHealing?: string;
-}
-
-interface DisabilityRecord {
-  disabilityId: string;
-  type: string;
-  severity: number; // 0-10
-  description: string;
-  adaptations: string[];
-  impact: string[];
-}
-
-interface AppearanceRecord {
-  height: string;
-  build: string;
-  hairColor: string;
-  eyeColor: string;
-  distinctiveFeatures: string[];
-  style: string;
-  mannerisms: string[];
-}
-
-interface MentalIssueRecord {
-  issueId: string;
-  type: string;
-  severity: number; // 0-10
-  description: string;
-  triggers: string[];
-  coping: string[];
-  professional: string[];
-}
-
-interface SocialRole {
-  roleId: string;
-  title: string;
-  organization: string;
-  responsibilities: string[];
-  authority: number; // 0-10
-  visibility: number; // 0-10
-}
-
-// ============================================================================
-// キャラクターマスターデータベースクラス
-// ============================================================================
+import {
+    CharacterMasterRecord,
+    CharacterConflictResolution,
+    CharacterPersonality,
+    CharacterBackstory,
+    CharacterRelationship,
+    ExtendedCharacterState,
+    CharacterDevelopmentRecord,
+    CharacterAppearanceRecord,
+    CharacterChangeRecord,
+    CharacterStatistics,
+    FormattedCharacterData,
+    CharacterMetadata,
+    ConsolidationSource
+} from './character-database-types'
 
 /**
  * @class CharacterDatabase
  * @description
- * キャラクターマスターデータベース（2箇所重複解決システム）
- * CharacterManagerとの統合により、重複解決とフォーマット済みデータ管理を実現
+ * キャラクターマスターデータベース（同期版storageProvider統一版）
+ * 🆕 二重初期化問題を解決し、ConsolidationGuardとの競合を回避
  */
 export class CharacterDatabase {
     private masterRecords: Map<string, CharacterMasterRecord> = new Map();
@@ -607,6 +42,8 @@ export class CharacterDatabase {
     private relationshipIndex: Map<string, string[]> = new Map();
     private initialized: boolean = false;
     private lastConsolidationTime: string = '';
+    private initializationRetryCount: number = 0;
+    private readonly MAX_RETRY_COUNT = 3;
 
     /**
      * コンストラクタ
@@ -616,7 +53,7 @@ export class CharacterDatabase {
     }
 
     /**
-     * 初期化処理
+     * 初期化処理（🆕 同期版storageProvider使用）
      */
     async initialize(): Promise<void> {
         if (this.initialized) {
@@ -624,62 +61,238 @@ export class CharacterDatabase {
             return;
         }
 
+        // 🆕 同期版storageProviderを直接使用（非同期取得を削除）
+        logger.debug('Storage provider acquired for CharacterDatabase');
+
         try {
-            // ストレージからマスターレコードを読み込み
-            await this.loadMasterRecords();
-
-            // CharacterManagerとの統合処理（2箇所重複解決）
-            await this.performCharacterConsolidation();
-
-            // インデックスの構築
-            this.buildIndices();
-
+            // 🆕 リトライ機能付き初期化
+            await this.performInitializationWithRetry();
             this.initialized = true;
             this.lastConsolidationTime = new Date().toISOString();
-
             logger.info('CharacterDatabase initialization completed with 2-source consolidation');
         } catch (error) {
-            logger.error('Failed to initialize CharacterDatabase', {
-                error: error instanceof Error ? error.message : String(error)
+            logger.error('Failed to initialize CharacterDatabase after all retries', {
+                error: error instanceof Error ? error.message : String(error),
+                retryCount: this.initializationRetryCount
             });
-            this.initialized = true; // エラー時も続行
+            
+            // 🆕 部分的な初期化状態でも続行を許可
+            this.initialized = true;
+            this.lastConsolidationTime = new Date().toISOString();
+            logger.warn('CharacterDatabase initialized in degraded mode');
+        }
+    }
+
+    /**
+     * 🆕 リトライ機能付き初期化処理
+     */
+    private async performInitializationWithRetry(): Promise<void> {
+        for (let attempt = 1; attempt <= this.MAX_RETRY_COUNT; attempt++) {
+            try {
+                this.initializationRetryCount = attempt;
+                
+                // ストレージからマスターレコードを読み込み
+                await this.loadMasterRecordsWithFallback();
+
+                // CharacterManagerとの統合処理（競合回避機能付き）
+                await this.performCharacterConsolidationWithRetry();
+
+                // インデックスの構築
+                this.buildIndices();
+
+                logger.info(`CharacterDatabase initialization succeeded on attempt ${attempt}`);
+                return;
+            } catch (error) {
+                logger.warn(`CharacterDatabase initialization attempt ${attempt} failed`, { error });
+                
+                if (attempt < this.MAX_RETRY_COUNT) {
+                    // 次回試行前に少し待機
+                    await this.sleep(1000 * attempt);
+                } else {
+                    throw error;
+                }
+            }
+        }
+    }
+
+    /**
+     * 🆕 フォールバック機能付きマスターレコード読み込み（同期版使用）
+     */
+    private async loadMasterRecordsWithFallback(): Promise<void> {
+        const masterPaths = [
+            'long-term-memory/knowledge/characters/master-records.json',
+            'data/long-term-memory/knowledge/characters/master-records.json',
+            'data/characters/master-records.json'
+        ];
+
+        for (const masterPath of masterPaths) {
+            try {
+                if (await storageProvider.fileExists(masterPath)) {
+                    const content = await storageProvider.readFile(masterPath);
+                    const records = JSON.parse(content);
+
+                    if (Array.isArray(records)) {
+                        records.forEach(record => {
+                            this.masterRecords.set(record.id, record);
+                            this.nameToIdMap.set(record.name.toLowerCase(), record.id);
+                        });
+                        logger.info(`Loaded master records from ${masterPath}`);
+                        return;
+                    }
+                }
+            } catch (error) {
+                logger.debug(`Failed to load from ${masterPath}`, { error });
+            }
+        }
+
+        logger.info('No existing master records found, starting with empty database');
+    }
+
+    /**
+     * 🆕 フォールバック機能付きストレージからのキャラクター読み込み（同期版使用）
+     */
+    private async loadCharactersFromStorageWithFallback(): Promise<Character[]> {
+        const characters: Character[] = [];
+
+        const characterPaths = [
+            'data/characters/main',
+            'data/characters/sub-characters', 
+            'data/characters/mob-characters',
+            'world-knowledge/characters',
+            'characters/main',
+            'characters/sub',
+            'characters/mob'
+        ];
+
+        for (const basePath of characterPaths) {
+            try {
+                // 🔄 同期版storageProviderのメソッド使用
+                if (await storageProvider.directoryExists(basePath)) {
+                    const files = await storageProvider.listFiles(basePath);
+
+                    for (const file of files) {
+                        if (file.endsWith('.json') || file.endsWith('.yaml')) {
+                            try {
+                                const content = await storageProvider.readFile(file);
+
+                                let character;
+                                if (file.endsWith('.yaml')) {
+                                    character = parseYaml(content);
+                                } else {
+                                    character = JSON.parse(content);
+                                }
+
+                                if (character.name && character.id) {
+                                    characters.push(character);
+                                }
+                            } catch (fileError) {
+                                logger.debug(`Failed to load character file ${file}`, { fileError });
+                            }
+                        }
+                    }
+                } else {
+                    logger.debug(`Character directory does not exist: ${basePath}`);
+                }
+            } catch (pathError) {
+                logger.debug(`Path ${basePath} not accessible`, { pathError });
+            }
+        }
+
+        return characters;
+    }
+
+    /**
+     * マスターレコードの保存（🆕 同期版storageProvider使用）
+     */
+    async saveMasterRecords(): Promise<void> {
+        try {
+            const masterPath = 'data/long-term-memory/knowledge/characters/master-records.json';
+            const records = Array.from(this.masterRecords.values());
+
+            await storageProvider.writeFile(masterPath, JSON.stringify(records, null, 2));
+            logger.debug('Master records saved successfully');
+        } catch (error) {
+            logger.error('Failed to save master records', { error });
+            // セーブに失敗してもシステムは続行
         }
     }
 
     // ============================================================================
-    // 2箇所重複解決システム
+    // 🆕 ConsolidationGuard統合（改良版）
     // ============================================================================
 
     /**
-     * キャラクター統合処理（2箇所重複解決）
+     * 🆕 リトライ機能付きキャラクター統合処理（同期版対応）
      */
-    private async performCharacterConsolidation(): Promise<void> {
+    private async performCharacterConsolidationWithRetry(): Promise<void> {
         const guard = ConsolidationGuard.getInstance();
-        const check = guard.canStartConsolidation('character-consolidation');
+        const operationId = `character-consolidation-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         
-        if (!check.allowed) {
-            logger.debug('Character consolidation blocked by guard', { reason: check.reason });
-            return;
-        }
-    
-        const consolidationId = guard.startConsolidation('character-consolidation');
-    
-        try {
-            // CharacterManagerからキャラクター取得
-            const managerCharacters = await characterManager.getAllCharacters();
+        // 🆕 競合チェック（タイムアウト付き）
+        let consolidationAttempts = 0;
+        const MAX_CONSOLIDATION_ATTEMPTS = 5;
+        
+        while (consolidationAttempts < MAX_CONSOLIDATION_ATTEMPTS) {
+            const check = guard.canStartConsolidation('character-consolidation');
             
-            // ストレージファイルからキャラクター取得
-            const storageCharacters = await this.loadCharactersFromStorage();
+            if (check.allowed) {
+                const consolidationId = guard.startConsolidation('character-consolidation', operationId);
+                
+                try {
+                    await this.performActualConsolidation();
+                    logger.info('Character consolidation completed successfully');
+                    return;
+                } catch (error) {
+                    logger.error('Failed to perform character consolidation', { error });
+                    throw error;
+                } finally {
+                    guard.endConsolidation(consolidationId, 'character-consolidation');
+                }
+            } else {
+                consolidationAttempts++;
+                logger.debug(`Consolidation blocked, attempt ${consolidationAttempts}`, { 
+                    reason: check.reason 
+                });
+                
+                if (consolidationAttempts >= MAX_CONSOLIDATION_ATTEMPTS) {
+                    logger.warn('Max consolidation attempts reached, forcing consolidation');
+                    // 🆕 強制的に統合を実行（デッドロック回避）
+                    await this.performActualConsolidation();
+                    return;
+                }
+                
+                // 待機してリトライ
+                await this.sleep(500 * consolidationAttempts);
+            }
+        }
+    }
 
-            // 統合処理実行
-            await this.consolidateCharacterSources(managerCharacters, storageCharacters);
-
-            logger.info('Character consolidation completed');
+    /**
+     * 🆕 実際の統合処理（同期版storageProvider対応）
+     */
+    private async performActualConsolidation(): Promise<void> {
+        // CharacterManagerからキャラクター取得（エラーセーフ）
+        let managerCharacters: Character[] = [];
+        try {
+            managerCharacters = await characterManager.getAllCharacters();
         } catch (error) {
-            logger.error('Failed to perform character consolidation', { error });
-            throw error;
-        } finally {
-            guard.endConsolidation(consolidationId, 'character-consolidation');
+            logger.warn('Failed to get characters from CharacterManager', { error });
+        }
+
+        // ストレージファイルからキャラクター取得（エラーセーフ）
+        let storageCharacters: Character[] = [];
+        try {
+            storageCharacters = await this.loadCharactersFromStorageWithFallback();
+        } catch (error) {
+            logger.warn('Failed to get characters from storage', { error });
+        }
+
+        // 統合処理実行
+        if (managerCharacters.length > 0 || storageCharacters.length > 0) {
+            await this.consolidateCharacterSources(managerCharacters, storageCharacters);
+            logger.info(`Consolidated ${managerCharacters.length} manager + ${storageCharacters.length} storage characters`);
+        } else {
+            logger.info('No characters found for consolidation');
         }
     }
 
@@ -698,42 +311,56 @@ export class CharacterDatabase {
 
         // CharacterManagerのキャラクターをマップに追加
         managerCharacters.forEach(char => {
-            const key = this.generateConsolidationKey(char);
-            if (!consolidationMap.has(key)) {
-                consolidationMap.set(key, { conflicts: [] });
+            try {
+                const key = this.generateConsolidationKey(char);
+                if (!consolidationMap.has(key)) {
+                    consolidationMap.set(key, { conflicts: [] });
+                }
+                consolidationMap.get(key)!.manager = char;
+            } catch (error) {
+                logger.warn(`Failed to process manager character: ${char.name}`, { error });
             }
-            consolidationMap.get(key)!.manager = char;
         });
 
         // ストレージキャラクターをマップに追加
         storageCharacters.forEach(char => {
-            const key = this.generateConsolidationKey(char);
-            if (!consolidationMap.has(key)) {
-                consolidationMap.set(key, { conflicts: [] });
+            try {
+                const key = this.generateConsolidationKey(char);
+                if (!consolidationMap.has(key)) {
+                    consolidationMap.set(key, { conflicts: [] });
+                }
+                consolidationMap.get(key)!.storage = char;
+            } catch (error) {
+                logger.warn(`Failed to process storage character: ${char.name}`, { error });
             }
-            consolidationMap.get(key)!.storage = char;
         });
 
         // 各キャラクターを統合
         for (const [key, sources] of consolidationMap) {
-            const masterRecord = await this.consolidateCharacterData(sources);
-            if (masterRecord) {
-                this.masterRecords.set(masterRecord.id, masterRecord);
-                this.nameToIdMap.set(masterRecord.name.toLowerCase(), masterRecord.id);
+            try {
+                const masterRecord = await this.consolidateCharacterData(sources);
+                if (masterRecord) {
+                    this.masterRecords.set(masterRecord.id, masterRecord);
+                    this.nameToIdMap.set(masterRecord.name.toLowerCase(), masterRecord.id);
+                }
+            } catch (error) {
+                logger.warn(`Failed to consolidate character with key: ${key}`, { error });
             }
         }
     }
 
     /**
-     * 統合キーの生成
+     * 統合キーの生成（🆕 エラーセーフ）
      */
     private generateConsolidationKey(character: Character): string {
-        // 名前の正規化によるキー生成
+        if (!character || !character.name) {
+            throw new Error('Character name is required for consolidation key');
+        }
         return character.name.toLowerCase().replace(/\s+/g, '');
     }
 
     /**
-     * キャラクターデータの統合（修正版）
+     * キャラクターデータの統合（修正版・🆕 エラーハンドリング強化）
      */
     private async consolidateCharacterData(sources: {
         manager?: Character;
@@ -746,64 +373,79 @@ export class CharacterDatabase {
             return null;
         }
 
-        // 優先度: CharacterManager > Storage
-        const primary = manager || storage!;
-        const secondary = manager ? storage : undefined;
+        try {
+            // 優先度: CharacterManager > Storage
+            const primary = manager || storage!;
+            const secondary = manager ? storage : undefined;
 
-        // 基本情報の統合
-        const consolidatedData = this.mergeCharacterBasicData(primary, secondary, conflicts);
+            // 基本情報の統合
+            const consolidatedData = this.mergeCharacterBasicData(primary, secondary, conflicts);
 
-        // 必須フィールドの確認と設定
-        if (!consolidatedData.id) {
-            logger.error('Character ID is missing after consolidation', { primary: primary.name });
+            // 必須フィールドの確認と設定
+            if (!consolidatedData.id) {
+                logger.error('Character ID is missing after consolidation', { primary: primary.name });
+                return null;
+            }
+
+            // 拡張情報の生成（🆕 エラーセーフ）
+            let extendedData;
+            try {
+                extendedData = await this.generateExtendedCharacterData(consolidatedData);
+            } catch (error) {
+                logger.warn('Failed to generate extended character data, using defaults', { error });
+                extendedData = this.generateMinimalExtendedData(consolidatedData);
+            }
+
+            // フォーマット済みデータの生成
+            const formattedData = this.generateFormattedCharacterData({
+                ...consolidatedData,
+                ...extendedData
+            });
+
+            // マスターレコードの作成
+            const masterRecord: CharacterMasterRecord = {
+                // 基本情報（必須フィールド）
+                id: consolidatedData.id,
+                name: consolidatedData.name,
+                type: consolidatedData.type,
+                description: consolidatedData.description,
+
+                // 統合メタデータ
+                masterVersion: '1.0.0',
+                consolidatedFrom: this.generateConsolidationSources(manager, storage),
+                lastConsolidated: new Date().toISOString(),
+                conflictResolutions: conflicts,
+
+                // 拡張情報
+                personality: extendedData.personality,
+                backstory: extendedData.backstory,
+                relationships: extendedData.relationships,
+                state: extendedData.state,
+
+                // 履歴情報
+                developmentHistory: extendedData.developmentHistory,
+                appearanceHistory: extendedData.appearanceHistory,
+                changeHistory: extendedData.changeHistory,
+
+                // 統計情報
+                statistics: extendedData.statistics,
+
+                // フォーマット済みデータ
+                formattedData,
+
+                // メタデータ
+                metadata: this.generateCharacterMetadata(consolidatedData)
+            };
+
+            return masterRecord;
+        } catch (error) {
+            logger.error('Failed to consolidate character data', { 
+                error,
+                managerChar: manager?.name,
+                storageChar: storage?.name
+            });
             return null;
         }
-
-        // 拡張情報の生成
-        const extendedData = await this.generateExtendedCharacterData(consolidatedData);
-
-        // フォーマット済みデータの生成
-        const formattedData = this.generateFormattedCharacterData({
-            ...consolidatedData,
-            ...extendedData
-        });
-
-        // マスターレコードの作成
-        const masterRecord: CharacterMasterRecord = {
-            // 基本情報（必須フィールド）
-            id: consolidatedData.id,
-            name: consolidatedData.name,
-            type: consolidatedData.type,
-            description: consolidatedData.description,
-            
-            // 統合メタデータ
-            masterVersion: '1.0.0',
-            consolidatedFrom: this.generateConsolidationSources(manager, storage),
-            lastConsolidated: new Date().toISOString(),
-            conflictResolutions: conflicts,
-            
-            // 拡張情報
-            personality: extendedData.personality,
-            backstory: extendedData.backstory,
-            relationships: extendedData.relationships,
-            state: extendedData.state,
-            
-            // 履歴情報
-            developmentHistory: extendedData.developmentHistory,
-            appearanceHistory: extendedData.appearanceHistory,
-            changeHistory: extendedData.changeHistory,
-            
-            // 統計情報
-            statistics: extendedData.statistics,
-            
-            // フォーマット済みデータ
-            formattedData,
-            
-            // メタデータ
-            metadata: this.generateCharacterMetadata(consolidatedData)
-        };
-
-        return masterRecord;
     }
 
     /**
@@ -823,10 +465,10 @@ export class CharacterDatabase {
 
         if (secondary) {
             // 説明の競合チェック
-            if (secondary.description && 
+            if (secondary.description &&
                 secondary.description !== primary.description &&
                 secondary.description.length > primary.description.length) {
-                
+
                 conflicts.push({
                     conflictType: 'description',
                     sourceA: 'CharacterManager',
@@ -893,6 +535,143 @@ export class CharacterDatabase {
     }
 
     /**
+     * 🆕 最小限の拡張データ生成（フォールバック用）
+     */
+    private generateMinimalExtendedData(
+        basicData: { id: string; name: string; type: CharacterType; description: string }
+    ) {
+        return {
+            personality: {
+                traits: [],
+                coreValues: [],
+                motivations: [],
+                fears: [],
+                habits: [],
+                speechPatterns: [],
+                emotionalRange: {
+                    dominant: 'neutral' as const,
+                    secondary: ['curiosity'],
+                    triggers: {},
+                    expressions: {}
+                },
+                socialBehavior: {
+                    leadership: 5,
+                    cooperation: 5,
+                    empathy: 5,
+                    assertiveness: 5,
+                    socialEnergy: 5
+                }
+            },
+            backstory: {
+                summary: basicData.description || '',
+                keyEvents: [],
+                significantRelationships: [],
+                formativeExperiences: [],
+                secrets: [],
+                regrets: [],
+                achievements: []
+            },
+            relationships: [],
+            state: {
+                isActive: true,
+                relationships: [],
+                developmentStage: 0,
+                lastAppearance: 1,
+                emotionalState: 'NEUTRAL' as const,
+                summary: basicData.description,
+                significance: 5,
+                hasDialogue: false,
+                changes: [],
+                development: '初期状態',
+                isDeceased: false,
+                maritalStatus: 'unknown' as const,
+                spouseId: null,
+                parentIds: [],
+                childrenIds: [],
+                location: '',
+                lastStateChange: undefined,
+                parameters: [],
+                skill: [],
+                activeGrowthPlanId: undefined,
+                completedGrowthPlans: [],
+                growthPhaseHistory: [],
+                promotionHistory: [],
+                injuries: [],
+                health: 80,
+                transformations: [],
+                forms: [],
+                currentForm: undefined,
+                skills: [],
+                detailedEmotionalState: {
+                    primary: 'neutral',
+                    secondary: [],
+                    intensity: 5,
+                    stability: 5,
+                    triggers: [],
+                    coping: [],
+                    lastChange: new Date().toISOString(),
+                    influences: []
+                },
+                physicalCondition: {
+                    health: 8,
+                    energy: 7,
+                    fitness: 6,
+                    injuries: [],
+                    disabilities: [],
+                    appearance: {
+                        height: '',
+                        build: '',
+                        hairColor: '',
+                        eyeColor: '',
+                        distinctiveFeatures: [],
+                        style: '',
+                        mannerisms: []
+                    }
+                },
+                mentalCondition: {
+                    clarity: 7,
+                    focus: 7,
+                    stress: 3,
+                    confidence: 6,
+                    mentalIssues: [],
+                    copingMechanisms: []
+                },
+                socialStatus: {
+                    reputation: 5,
+                    influence: 3,
+                    connections: 4,
+                    socialCircles: [],
+                    roles: [],
+                    responsibilities: []
+                },
+                abilities: [],
+                knowledge: [],
+                possessions: [],
+                resources: [],
+                obligations: [],
+                currentGoals: [],
+                motivations: [],
+                conflicts: []
+            } as ExtendedCharacterState,
+            developmentHistory: [],
+            appearanceHistory: [],
+            changeHistory: [],
+            statistics: {
+                totalAppearances: 0,
+                totalScreenTime: 0,
+                averageSignificance: 5,
+                relationshipCount: 0,
+                developmentEvents: 0,
+                conflictInvolvement: 0,
+                lastActivity: new Date().toISOString(),
+                firstAppearance: 1,
+                peakChapter: 1,
+                trendingTopics: []
+            }
+        };
+    }
+
+    /**
      * 性格データの生成
      */
     private async generatePersonalityData(
@@ -900,7 +679,7 @@ export class CharacterDatabase {
     ): Promise<CharacterPersonality> {
         // 既存データから性格特性を抽出
         const traits = this.extractTraitsFromDescription(basicData.description || '');
-        
+
         return {
             traits,
             coreValues: this.inferCoreValues(traits),
@@ -948,7 +727,7 @@ export class CharacterDatabase {
         basicData: { id: string; name: string; type: CharacterType; description: string }
     ): Promise<CharacterRelationship[]> {
         const relationships: CharacterRelationship[] = [];
-        
+
         // 他のキャラクターとの関係を推定
         for (const [otherId, otherRecord] of this.masterRecords) {
             if (otherId === basicData.id) continue;
@@ -998,7 +777,7 @@ export class CharacterDatabase {
             transformations: [],
             forms: [],
             currentForm: undefined,
-            
+
             // ExtendedCharacterState 独自のプロパティ
             skills: [], // 修正: SkillRecord[] 型
             detailedEmotionalState: {
@@ -1180,85 +959,9 @@ export class CharacterDatabase {
     }
 
     // ============================================================================
-    // ストレージ管理
+    // ストレージ管理（🆕 フォールバック機能強化）
     // ============================================================================
 
-    /**
-     * ストレージからキャラクター読み込み
-     */
-    private async loadCharactersFromStorage(): Promise<Character[]> {
-        const characters: Character[] = [];
-
-        try {
-            const characterPaths = [
-                'characters/main',
-                'characters/sub-characters',
-                'characters/mob-characters',
-                'world-knowledge/characters'
-            ];
-
-            for (const basePath of characterPaths) {
-                try {
-                    const files = await storageProvider.listFiles(basePath);
-                    
-                    for (const file of files) {
-                        if (file.endsWith('.json')) {
-                            const content = await storageProvider.readFile(file);
-                            const character = JSON.parse(content);
-                            
-                            if (character.name && character.id) {
-                                characters.push(character);
-                            }
-                        }
-                    }
-                } catch (pathError) {
-                    logger.debug(`Path ${basePath} not accessible`, { pathError });
-                }
-            }
-        } catch (error) {
-            logger.error('Failed to load characters from storage', { error });
-        }
-
-        return characters;
-    }
-
-    /**
-     * マスターレコードの読み込み
-     */
-    private async loadMasterRecords(): Promise<void> {
-        try {
-            const masterPath = 'long-term-memory/knowledge/characters/master-records.json';
-            
-            if (await storageProvider.fileExists(masterPath)) {
-                const content = await storageProvider.readFile(masterPath);
-                const records = JSON.parse(content);
-
-                if (Array.isArray(records)) {
-                    records.forEach(record => {
-                        this.masterRecords.set(record.id, record);
-                        this.nameToIdMap.set(record.name.toLowerCase(), record.id);
-                    });
-                }
-            }
-        } catch (error) {
-            logger.warn('Failed to load master records', { error });
-        }
-    }
-
-    /**
-     * マスターレコードの保存
-     */
-    async saveMasterRecords(): Promise<void> {
-        try {
-            const masterPath = 'long-term-memory/knowledge/characters/master-records.json';
-            const records = Array.from(this.masterRecords.values());
-            
-            await storageProvider.writeFile(masterPath, JSON.stringify(records, null, 2));
-            logger.debug('Master records saved');
-        } catch (error) {
-            logger.error('Failed to save master records', { error });
-        }
-    }
 
     /**
      * インデックスの構築
@@ -1421,7 +1124,7 @@ export class CharacterDatabase {
 
         for (const record of this.masterRecords.values()) {
             conflictCount += record.conflictResolutions.length;
-            
+
             record.consolidatedFrom.forEach(source => {
                 if (source.source === 'CharacterManager') managerCount++;
                 if (source.source === 'StorageFiles') storageCount++;
@@ -1435,7 +1138,7 @@ export class CharacterDatabase {
         const daysSinceConsolidation = Math.floor(
             (Date.now() - new Date(this.lastConsolidationTime).getTime()) / (1000 * 60 * 60 * 24)
         );
-        
+
         if (daysSinceConsolidation > 7) {
             recommendations.push('統合処理から7日以上経過しています。再統合を検討してください');
         }
@@ -1452,6 +1155,13 @@ export class CharacterDatabase {
     // ============================================================================
     // ヘルパーメソッド
     // ============================================================================
+
+    /**
+     * 🆕 待機ユーティリティ
+     */
+    private sleep(ms: number): Promise<void> {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     /**
      * 説明から特性を抽出
@@ -1477,7 +1187,7 @@ export class CharacterDatabase {
      */
     private inferCoreValues(traits: string[]): string[] {
         const values: string[] = [];
-        
+
         if (traits.includes('優しい') || traits.includes('責任感がある')) {
             values.push('思いやり');
         }
@@ -1580,7 +1290,7 @@ export class CharacterDatabase {
      */
     private generateLongDescription(data: Partial<CharacterMasterRecord>): string {
         let description = data.description || '';
-        
+
         if (data.personality) {
             description += `\n\n性格: ${data.personality.traits.join('、')}`;
             if (data.personality.coreValues.length > 0) {
@@ -1602,11 +1312,11 @@ export class CharacterDatabase {
         if (!personality) return '不明';
 
         let profile = `特性: ${personality.traits.join('、')}`;
-        
+
         if (personality.coreValues.length > 0) {
             profile += `\n価値観: ${personality.coreValues.join('、')}`;
         }
-        
+
         if (personality.motivations.length > 0) {
             profile += `\n動機: ${personality.motivations.join('、')}`;
         }
@@ -1635,8 +1345,8 @@ export class CharacterDatabase {
         if (!state) return '状態不明';
 
         return `活動: ${state.isActive ? 'アクティブ' : '非アクティブ'}、` +
-               `感情: ${state.emotionalState}、` +
-               `場所: ${state.location || '不明'}`;
+            `感情: ${state.emotionalState}、` +
+            `場所: ${state.location || '不明'}`;
     }
 
     /**
@@ -1706,7 +1416,7 @@ export class CharacterDatabase {
     }
 
     /**
-     * 状態取得
+     * 🆕 状態取得（診断用）
      */
     async getStatus(): Promise<{
         initialized: boolean;

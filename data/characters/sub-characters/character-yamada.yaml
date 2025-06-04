@@ -55,7 +55,7 @@ state:
   isActive: true
   emotionalState: NEUTRAL
   developmentStage: 5
-  lastAppearance: 1
+  lastAppearance: 11
   parameters: []
   skills:
     - 不明なスキル (5章)
@@ -774,6 +774,14 @@ history:
       timestamp: 2025-05-29T00:44:14.651Z
       significance: 0.5
       summary: 山田哲也が章1に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:30:49.731Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:32:04.396Z
+      significance: 0.5
+      summary: '第11章に登場: 閉塞と模索'
   developmentPath: []
   interactions:
     - chapterNumber: 1
@@ -815,8 +823,8 @@ history:
 relationships: []
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-05-29T00:44:14.654Z
-  version: 172
+  lastUpdated: 2025-06-01T11:32:04.401Z
+  version: 174
   tags:
     - メンター
     - 起業経験者

@@ -1389,6 +1389,78 @@ history:
       timestamp: 2025-06-01T08:17:42.607Z
       significance: 0.5
       summary: '第11章に登場: 誤解という名の壁'
+    - chapterNumber: 2
+      timestamp: 2025-06-01T10:53:36.910Z
+      significance: 0.5
+      summary: 佐藤健太が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T10:54:51.778Z
+      significance: 0.5
+      summary: '第2章に登場: 顧客の声なき叫び'
+    - chapterNumber: 3
+      timestamp: 2025-06-01T10:57:34.367Z
+      significance: 0.5
+      summary: 佐藤健太が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-06-01T10:58:47.212Z
+      significance: 0.5
+      summary: '第3章に登場: 顧客の声なき叫び'
+    - chapterNumber: 6
+      timestamp: 2025-06-01T11:09:07.165Z
+      significance: 0.5
+      summary: 佐藤健太が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-06-01T11:10:37.142Z
+      significance: 0.5
+      summary: '第6章に登場: 誤解の始まり'
+    - chapterNumber: 7
+      timestamp: 2025-06-01T11:15:25.804Z
+      significance: 0.5
+      summary: 佐藤健太が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-06-01T11:16:24.444Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客の声、歪む真実'
+    - chapterNumber: 8
+      timestamp: 2025-06-01T11:19:03.179Z
+      significance: 0.5
+      summary: 佐藤健太が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T11:20:15.216Z
+      significance: 0.5
+      summary: '第8章に登場: 誤解の螺旋'
+    - chapterNumber: 9
+      timestamp: 2025-06-01T11:22:54.213Z
+      significance: 0.5
+      summary: 佐藤健太が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-06-01T11:24:07.788Z
+      significance: 0.5
+      summary: '第9章に登場: 誤算の連鎖'
+    - chapterNumber: 10
+      timestamp: 2025-06-01T11:26:42.798Z
+      significance: 0.5
+      summary: 佐藤健太が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-06-01T11:28:05.671Z
+      significance: 0.5
+      summary: '第10章に登場: 顧客の声なき叫び'
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:30:49.707Z
+      significance: 0.5
+      summary: 佐藤健太が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:32:04.396Z
+      significance: 0.5
+      summary: '第11章に登場: 閉塞と模索'
+    - chapterNumber: 12
+      timestamp: 2025-06-01T11:34:50.114Z
+      significance: 0.5
+      summary: 佐藤健太が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-06-01T11:36:03.541Z
+      significance: 0.5
+      summary: '第12章に登場: 誤解と混乱のIssue Driven'
   developmentPath:
     - stage: 0
       description: チームに参加する前段階
@@ -1644,8 +1716,8 @@ history:
 relationships: []
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-06-01T08:17:42.618Z
-  version: 826
+  lastUpdated: 2025-06-01T11:36:03.543Z
+  version: 844
   tags:
     - エンジニア
     - 技術者

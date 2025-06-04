@@ -1,3 +1,5 @@
+import { MemoryLevel, MemoryRequestType } from '@/lib/memory/core/types';
+
 /**
  * キャラクターモジュールの型定義
  */
@@ -522,20 +524,113 @@ export interface PromotionEvaluation {
  * キャラクタークラスター
  */
 export interface CharacterCluster {
+    // 基本プロパティ
     id: string;
     members: string[];
     dominantRelation: RelationshipType;
     cohesion: number;
+
+    // 🆕 記憶階層システム統合プロパティ
+    memorySystemValidated: boolean;     // 記憶システムでの検証済みフラグ
+    crossLevelConsistency: number;      // クロスレベル整合性スコア (0-1)
+    lastAnalyzed: string;               // 最終分析日時（ISO文字列）
+
+    // オプショナル拡張プロパティ
+    memberNames?: string[];             // メンバー名のリスト
+    clusterStrength?: number;           // クラスター結束強度 (0-1)
+    memoryLevelDistribution?: Record<MemoryLevel, number>;  // 記憶レベル分布
+    evolutionHistory?: Array<{         // クラスター変遷履歴
+        timestamp: string;
+        membershipChanges: {
+            added: string[];
+            removed: string[];
+        };
+        cohesionChange: number;
+        reason: string;
+    }>;
+
+    // 分析結果
+    analysisData?: {
+        centralityScores: Record<string, number>;   // 各メンバーの中心性スコア
+        subgroups: Array<{                          // サブグループ
+            members: string[];
+            internalCohesion: number;
+            relationToMainGroup: number;
+        }>;
+        stabilityScore: number;                     // 安定性スコア (0-1)
+        influenceRank: number;                      // 影響力ランク
+    };
+
+    // メタデータ
+    metadata?: {
+        createdAt: Date;
+        updatedAt: Date;
+        version: number;
+        analysisSource: 'AUTO' | 'MANUAL' | 'MEMORY_INTEGRATION';
+        qualityScore: number;
+    };
 }
+
+export type StabilityTrend = 'stable' | 'increasing' | 'decreasing' | 'volatile';
 
 /**
  * 関係性の対立
  */
 export interface RelationshipTension {
-    characters: string[];
+    // 基本プロパティ
+    characters: [string, string];
     type: RelationshipType;
     intensity: number;
     description: string;
+
+    // 🆕 記憶階層システム統合プロパティ
+    characterNames: [string, string];  // キャラクター名のペア
+    memorySystemValidated: boolean;    // 記憶システムでの検証済みフラグ
+    lastAnalyzed: string;              // 最終分析日時（ISO文字列）
+    stabilityTrend: 'stable' | 'increasing' | 'decreasing' | 'volatile';  // 安定性傾向
+
+    // オプショナル拡張プロパティ
+    crossLevelConsistency?: number;    // クロスレベル整合性スコア (0-1)
+    memoryLevel?: MemoryLevel;         // 主要存在記憶レベル
+    systemConfidence?: number;         // システム信頼度 (0-1)
+    relatedEvents?: Array<{           // 関連イベント履歴
+        chapterNumber: number;
+        description: string;
+        impact: number;
+        timestamp: string;
+    }>;
+
+    // メタデータ
+    metadata?: {
+        createdAt: Date;
+        updatedAt: Date;
+        version: number;
+        analysisSource: 'AUTO' | 'MANUAL' | 'MEMORY_INTEGRATION';
+    };
+}
+
+/**
+ * RelationshipNetworkAnalysis型定義
+ */
+export interface RelationshipNetworkAnalysis {
+    totalRelationships: number;
+    networkDensity: number;
+    averageConnectivity: number;
+    centralCharacters: Array<{
+        characterId: string;
+        characterName: string;
+        connectivityScore: number;
+        influenceRank: number;
+    }>;
+    isolatedCharacters: string[];
+    strongestConnections: Array<{
+        char1Id: string;
+        char2Id: string;
+        strength: number;
+        type: RelationshipType;
+    }>;
+    memorySystemValidated: boolean;
+    analysisQuality: number;
 }
 
 /**
@@ -546,6 +641,14 @@ export interface RelationshipAnalysis {
     tensions: RelationshipTension[];
     developments: any[];
     visualData: any;
+
+    // 🆕 記憶階層システム統合情報（新規追加）
+    networkAnalysis?: RelationshipNetworkAnalysis;
+    analysisTimestamp?: Date;
+    confidence?: number;
+    memorySystemValidated?: boolean;
+    systemHealthScore?: number;
+    crossMemoryLevelConsistency?: number;
 }
 
 /**
@@ -914,6 +1017,16 @@ export interface CharacterPsychology {
 
     /** 他キャラへの感情的態度 */
     relationshipAttitudes: { [characterId: string]: RelationshipAttitude };
+
+    // 🔧 記憶階層システム統合要素
+    /** 記憶システムから検出されたパターン */
+    memorySystemPatterns?: string[];
+
+    /** 記憶システム最終更新日時 */
+    lastMemorySystemUpdate?: string;
+
+    /** 記憶システムで検証済みかどうか */
+    memorySystemValidated?: boolean;
 }
 
 /**
@@ -931,6 +1044,68 @@ export interface RelationshipAttitude {
 
     /** 最近の変化の説明 */
     recentChange: string;
+
+    // 🔧 記憶階層システム統合要素
+    /** 記憶システムから得られた洞察 */
+    memorySystemInsights?: string[];
+
+    /** 記憶システムで検証済みかどうか */
+    memorySystemValidated?: boolean;
+}
+
+/**
+ * 心理分析結果（記憶階層システム統合版）
+ */
+export interface PsychologyAnalysisResult {
+    success: boolean;
+    characterId: string;
+    psychology: CharacterPsychology;
+    confidence: number;
+    processingTime: number;
+    memorySystemValidated: boolean;
+    learningDataStored: boolean;
+    qualityScore: number;
+    warnings: string[];
+    recommendations: string[];
+}
+
+/**
+ * 行動予測結果（記憶階層システム統合版）
+ */
+export interface BehaviorPredictionResult {
+    success: boolean;
+    characterId: string;
+    predictions: Record<string, string>;
+    confidence: number;
+    memoryContextUsed: boolean;
+    psychologyBased: boolean;
+    recommendations: string[];
+}
+
+/**
+ * 感情応答シミュレーション結果（記憶階層システム統合版）
+ */
+export interface EmotionalSimulationResult {
+    success: boolean;
+    characterId: string;
+    dominantEmotion: string;
+    emotionalResponses: Record<string, number>;
+    explanation: string;
+    memorySystemIntegrated: boolean;
+    confidence: number;
+}
+
+/**
+ * パフォーマンス統計（記憶階層システム統合版）
+ */
+export interface PsychologyPerformanceMetrics {
+    totalAnalyses: number;
+    successfulAnalyses: number;
+    failedAnalyses: number;
+    averageProcessingTime: number;
+    memorySystemHits: number;
+    cacheEfficiencyRate: number;
+    lastOptimization: string;
 }
 
 /**

@@ -121,14 +121,14 @@ export class PromptFormatter {
                     const detailLevel = this.calculateDetailLevel(characters.length);
 
                     // CharacterManagerを使用して高度なフォーマットを取得
-                    const formattedCharacters = await this.characterManager.formatCharactersForPrompt(
-                        characterIds,
-                        detailLevel
-                    );
+                    // const formattedCharacters = await this.characterManager.formatCharactersForPrompt(
+                    //     characterIds,
+                    //     detailLevel
+                    // );
 
-                    if (formattedCharacters && formattedCharacters.trim()) {
-                        return formattedCharacters;
-                    }
+                    // if (formattedCharacters && formattedCharacters.trim()) {
+                    //     return formattedCharacters;
+                    // }
                 }
             } catch (error) {
                 logger.warn('Error using CharacterManager for formatting', {

@@ -1172,6 +1172,38 @@ history:
       timestamp: 2025-06-01T08:17:42.607Z
       significance: 0.5
       summary: '第11章に登場: 誤解という名の壁'
+    - chapterNumber: 2
+      timestamp: 2025-06-01T10:53:36.972Z
+      significance: 0.5
+      summary: 鈴木美咲が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-06-01T10:54:51.778Z
+      significance: 0.5
+      summary: '第2章に登場: 顧客の声なき叫び'
+    - chapterNumber: 7
+      timestamp: 2025-06-01T11:15:25.773Z
+      significance: 0.5
+      summary: 鈴木美咲が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-06-01T11:16:24.444Z
+      significance: 0.5
+      summary: '第7章に登場: 顧客の声、歪む真実'
+    - chapterNumber: 8
+      timestamp: 2025-06-01T11:19:03.195Z
+      significance: 0.5
+      summary: 鈴木美咲が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-06-01T11:20:15.216Z
+      significance: 0.5
+      summary: '第8章に登場: 誤解の螺旋'
+    - chapterNumber: 10
+      timestamp: 2025-06-01T11:26:42.820Z
+      significance: 0.5
+      summary: 鈴木美咲が章10に登場
+    - chapterNumber: 10
+      timestamp: 2025-06-01T11:28:05.671Z
+      significance: 0.5
+      summary: '第10章に登場: 顧客の声なき叫び'
   developmentPath:
     - stage: 0
       description: チームに参加する前段階
@@ -1391,8 +1423,8 @@ history:
 relationships: []
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-06-01T08:17:42.634Z
-  version: 664
+  lastUpdated: 2025-06-01T11:28:05.677Z
+  version: 672
   tags:
     - マーケター
     - コミュニケーター

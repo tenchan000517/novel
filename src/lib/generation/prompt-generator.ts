@@ -1,6 +1,7 @@
+// src/lib/generation/prompt-generator.ts (最適化完成版 - ジャンル取得最適化)
+
 /**
- * @fileoverview 統合記憶階層システム対応プロンプト生成クラス
- * @description 新しい記憶階層システム (MemoryManager) に完全対応した高度なプロンプト生成システム
+ * @fileoverview 統合記憶階層システム対応プロンプト生成クラス（最適化完成版）
  */
 
 import { GenerationContext } from '@/types/generation';
@@ -24,7 +25,7 @@ import { LearningJourneySystem, LearningStage } from '@/lib/learning-journey';
  * 統合記憶システム対応メモリサービス
  */
 class UnifiedMemoryService {
-  constructor(private memoryManager: MemoryManager) {}
+  constructor(private memoryManager: MemoryManager) { }
 
   /**
    * 前章の終わり情報を取得
@@ -35,14 +36,12 @@ class UnifiedMemoryService {
         return '物語の始まりです。';
       }
 
-      // 統一検索APIを使用して前章情報を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        `第${chapterNumber - 1}章`, 
+        `第${chapterNumber - 1}章`,
         [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
       );
-      
+
       if (searchResult.success && searchResult.results.length > 0) {
-        // 前章の終わり情報を抽出
         const chapterData = this.extractChapterEndingFromSearchResults(searchResult.results);
         return chapterData || `前章（第${chapterNumber - 1}章）からの自然な続きとして物語を展開してください。`;
       }
@@ -50,9 +49,9 @@ class UnifiedMemoryService {
       return `前章の情報にアクセスできませんでした。第${chapterNumber}章を新しい展開として自由に書き始めてください。`;
 
     } catch (error) {
-      logger.warn('Failed to get previous chapter ending from unified memory', { 
-        chapterNumber, 
-        error: error instanceof Error ? error.message : String(error) 
+      logger.warn('Failed to get previous chapter ending from unified memory', {
+        chapterNumber,
+        error: error instanceof Error ? error.message : String(error)
       });
       return `前章の情報取得に失敗しました。第${chapterNumber}章を自然に展開してください。`;
     }
@@ -69,9 +68,8 @@ class UnifiedMemoryService {
     endingGuidance: string;
   }> {
     try {
-      // 統一検索APIを使用してシーン連続性情報を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        `第${Math.max(1, chapterNumber - 1)}章 シーン 場面`, 
+        `第${Math.max(1, chapterNumber - 1)}章 シーン 場面`,
         [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
       );
 
@@ -79,7 +77,6 @@ class UnifiedMemoryService {
         return this.extractContinuityInfoFromSearchResults(searchResult.results, chapterNumber);
       }
 
-      // フォールバック情報
       return {
         previousScene: chapterNumber <= 1 ? '物語の始まり' : '前章の最終場面からの自然な続き',
         characterPositions: chapterNumber <= 1 ? '登場キャラクターの初期配置' : '前章での最終位置からの自然な継続',
@@ -89,9 +86,9 @@ class UnifiedMemoryService {
       };
 
     } catch (error) {
-      logger.warn('Failed to get scene continuity info from unified memory', { 
-        chapterNumber, 
-        error: error instanceof Error ? error.message : String(error) 
+      logger.warn('Failed to get scene continuity info from unified memory', {
+        chapterNumber,
+        error: error instanceof Error ? error.message : String(error)
       });
 
       return {
@@ -111,14 +108,12 @@ class UnifiedMemoryService {
     try {
       for (const result of results) {
         if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-          // 短期記憶から章の内容を取得
           if (result.data.content) {
             const content = result.data.content;
             const endingPart = content.slice(-500);
             return `前章の終わり：\n${endingPart}\n\n前章からの直接の続きとして、自然に物語を継続してください。`;
           }
-          
-          // その他の短期記憶データから終わり情報を探す
+
           if (result.data.chapter && result.data.chapter.content) {
             const content = result.data.chapter.content;
             const endingPart = content.slice(-500);
@@ -138,7 +133,7 @@ class UnifiedMemoryService {
    * 統合検索結果から連続性情報を抽出
    */
   private extractContinuityInfoFromSearchResults(
-    results: any[], 
+    results: any[],
     chapterNumber: number
   ): {
     previousScene: string;
@@ -155,18 +150,16 @@ class UnifiedMemoryService {
 
       for (const result of results) {
         if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-          // 章の内容から最終場面を抽出
           if (result.data.content || (result.data.chapter && result.data.chapter.content)) {
             const content = result.data.content || result.data.chapter.content;
             const lastParagraphs = content.split('\n').slice(-3).join('\n');
             previousScene = `前章の最終場面：${lastParagraphs.slice(0, 200)}...`;
           }
 
-          // キャラクター情報があれば抽出
           if (result.data.characters || result.data.characterStates) {
             const characters = result.data.characters || result.data.characterStates;
             if (Array.isArray(characters)) {
-              const characterList = characters.map((char: any) => 
+              const characterList = characters.map((char: any) =>
                 `${char.name || char.id}: ${char.location || char.currentLocation || '不明'}`
               );
               if (characterList.length > 0) {
@@ -176,7 +169,6 @@ class UnifiedMemoryService {
           }
         }
 
-        // 中期記憶から時間経過や場所の情報を取得
         if (result.source === MemoryLevel.MID_TERM && result.data) {
           if (result.data.timeElapsed) {
             timeElapsed = result.data.timeElapsed;
@@ -209,44 +201,38 @@ class UnifiedMemoryService {
 }
 
 /**
- * 統合記憶階層システム対応プロンプト生成クラス
+ * 統合記憶階層システム対応プロンプト生成クラス（最適化完成版）
  */
 export class PromptGenerator {
   private templateManager: TemplateManager;
   private formatter: PromptFormatter;
   private sectionBuilder: SectionBuilder;
   private unifiedMemoryService: UnifiedMemoryService;
-  
+
   // 統合記憶システム
   private memoryManager?: MemoryManager;
-  
-  // 他の依存関係
+
+  // 🔧 最適化された依存関係
   private worldSettingsManager?: WorldSettingsManager;
   private plotManager?: PlotManager;
   private learningJourneySystem?: LearningJourneySystem;
 
-  // 初期化管理
-  private initializationPromise: Promise<void>;
-  private isInitialized: boolean = false;
-
   /**
-   * コンストラクタ
+   * コンストラクタ（最適化版）
    */
-  constructor(options?: {
-    memoryManager?: MemoryManager;
-    worldSettingsManager?: WorldSettingsManager;
-    plotManager?: PlotManager;
-    learningJourneySystem?: LearningJourneySystem;
-  }) {
-    this.memoryManager = options?.memoryManager;
-    this.worldSettingsManager = options?.worldSettingsManager;
-    this.plotManager = options?.plotManager;
-    this.learningJourneySystem = options?.learningJourneySystem;
+  constructor(
+    memoryManager: MemoryManager,
+    worldSettingsManager?: WorldSettingsManager,
+    plotManager?: PlotManager,
+    learningJourneySystem?: LearningJourneySystem
+  ) {
+    this.memoryManager = memoryManager;
+    this.worldSettingsManager = worldSettingsManager;
+    this.plotManager = plotManager;
+    this.learningJourneySystem = learningJourneySystem;
 
     // 統合メモリサービスの初期化
-    this.unifiedMemoryService = this.memoryManager 
-      ? new UnifiedMemoryService(this.memoryManager)
-      : new UnifiedMemoryService({} as MemoryManager); // フォールバック
+    this.unifiedMemoryService = new UnifiedMemoryService(this.memoryManager);
 
     // 各ヘルパークラスの初期化
     this.templateManager = new TemplateManager();
@@ -257,103 +243,70 @@ export class PromptGenerator {
       this.learningJourneySystem
     );
 
-    // 初期化プロミスを開始
-    this.initializationPromise = this.initialize();
+    // テンプレートの同期読み込み
+    this.loadTemplatesSync();
 
-    logger.info('PromptGenerator created with unified memory system', {
-      hasMemoryManager: !!this.memoryManager,
+    logger.info('PromptGenerator ready for immediate use with optimized dependencies', {
+      hasWorldSettingsManager: !!this.worldSettingsManager,
+      hasPlotManager: !!this.plotManager,
       hasLearningJourneySystem: !!this.learningJourneySystem
     });
   }
 
   /**
-   * 非同期初期化処理
+   * テンプレートの同期読み込み
    */
-  private async initialize(): Promise<void> {
-    if (this.isInitialized) {
-      return;
-    }
-
+  private loadTemplatesSync(): void {
     try {
-      logger.info('PromptGenerator initialization starting with unified memory system');
-
-      // テンプレートの読み込み
-      await this.templateManager.load();
-
-      // 記憶階層システムの初期化確認
-      if (this.memoryManager) {
-        try {
-          // MemoryManagerが初期化されているか確認
-          const status = await this.memoryManager.getSystemStatus();
-          if (status.initialized) {
-            logger.info('MemoryManager is initialized and ready');
-          } else {
-            logger.warn('MemoryManager is not fully initialized');
-          }
-        } catch (error) {
-          logger.warn('Failed to check MemoryManager status', { error });
-        }
+      if (typeof this.templateManager.loadSync === 'function') {
+        this.templateManager.loadSync();
+      } else {
+        this.templateManager.load().catch(error => {
+          logger.warn('Template loading failed, using fallback templates', { error });
+          this.setFallbackTemplatesSync();
+        });
       }
+    } catch (error) {
+      logger.warn('Failed to load templates synchronously, using fallback', { error });
+      this.setFallbackTemplatesSync();
+    }
+  }
 
-      this.isInitialized = true;
-      logger.info('PromptGenerator initialized successfully with unified memory system');
-
-    } catch (err) {
-      logger.error('Failed to initialize PromptGenerator', { error: err });
-
-      // フォールバックテンプレートを設定
-      try {
-        await this.setFallbackTemplates();
-        this.isInitialized = true;
-        logger.info('PromptGenerator initialized with fallback templates');
-      } catch (fallbackErr) {
-        logger.error('Failed to set fallback templates', { error: fallbackErr });
-        this.isInitialized = true; // 最小限の状態で初期化完了とする
+  /**
+   * フォールバックテンプレートの同期設定
+   */
+  private setFallbackTemplatesSync(): void {
+    try {
+      if (typeof this.templateManager.setFallbackTemplates === 'function') {
+        this.templateManager.setFallbackTemplates();
       }
+    } catch (error) {
+      logger.warn('Failed to set fallback templates', { error });
     }
   }
 
   /**
-   * フォールバックテンプレートを設定
-   */
-  private async setFallbackTemplates(): Promise<void> {
-    if (typeof this.templateManager.setFallbackTemplates === 'function') {
-      await this.templateManager.setFallbackTemplates();
-    } else {
-      logger.warn('TemplateManager.setFallbackTemplates is not available');
-    }
-  }
-
-  /**
-   * 初期化完了を待機
-   */
-  private async ensureInitialized(): Promise<void> {
-    if (!this.isInitialized) {
-      await this.initializationPromise;
-    }
-  }
-
-  /**
-   * 統合記憶システム対応プロンプト生成（メインエントリーポイント）
+   * 統合記憶システム対応プロンプト生成（メインエントリーポイント・最適化版）
    */
   async generate(context: GenerationContext): Promise<string> {
-    await this.ensureInitialized();
-
-    logger.debug('Generating unified memory system optimized prompt');
+    logger.debug('Generating optimized prompt with enhanced dependency resolution');
 
     try {
       // STEP 1: 学習旅程によるコンテキスト拡張
       const enrichedContext = await this.enrichContextWithLearningJourney(context);
-      const genre = await this.getGenreFromUnifiedMemory(context);
+
+      // 🔧 STEP 2: 最適化されたジャンル取得
+      const genre = await this.getGenre(context);
+
       const chapterType = await this.identifyChapterTypeWithMemory(context);
 
-      // STEP 2: 統合記憶システムから連続性情報を取得
+      // STEP 3: 統合記憶システムから連続性情報を取得
       const { previousChapterEnding, continuityInfo } = await this.getEnhancedContinuityInfoFromMemory(
         context.chapterNumber || 1
       );
       const { purpose, plotPoints } = await this.getChapterPurposeFromMemory(context);
 
-      // STEP 3: 基本テンプレートの取得と基本置換
+      // STEP 4: 基本テンプレートの取得と基本置換
       let prompt = this.getBaseTemplateWithFallback();
       prompt = this.replaceBasicPlaceholders(prompt, context, genre, {
         purpose,
@@ -362,26 +315,26 @@ export class PromptGenerator {
         ...continuityInfo
       });
 
-      // STEP 4: 統合記憶システムからのコンテンツ置換
+      // STEP 5: 統合記憶システムからのコンテンツ置換
       prompt = await this.replaceContentPlaceholdersFromMemory(prompt, context);
 
-      // STEP 5: テンション・ペーシング情報の追加
+      // STEP 6: テンション・ペーシング情報の追加
       prompt = this.addTensionAndPacingDescriptions(prompt, context);
 
-      // STEP 6: 統合記憶システム対応セクション構築
+      // STEP 7: 統合記憶システム対応セクション構築
       const sections = await this.buildSectionsWithUnifiedMemory(context, genre);
       prompt += sections.join('\n');
 
-      // STEP 7: 残りの統合処理
+      // STEP 8: 残りの統合処理
       prompt = await this.addRemainingIntegrationsWithMemory(prompt, context, genre, chapterType);
 
-      // STEP 8: 学習旅程プロンプト統合
+      // STEP 9: 学習旅程プロンプト統合
       prompt = this.integratePrompts(prompt, enrichedContext);
 
-      // STEP 9: 出力形式指示の確実な追加
+      // STEP 10: 出力形式指示の確実な追加
       prompt = this.ensureOutputFormatInstructions(prompt, context);
 
-      // STEP 10: 最終品質チェック
+      // STEP 11: 最終品質チェック
       const validation = this.validatePromptCompleteness(prompt, context);
       if (!validation.isComplete) {
         logger.warn('Generated prompt is incomplete', {
@@ -389,18 +342,117 @@ export class PromptGenerator {
           suggestions: validation.suggestions
         });
       } else {
-        logger.info('Generated prompt passed completeness validation');
+        logger.info('Generated prompt passed completeness validation (optimized)');
       }
 
       return prompt;
 
     } catch (error) {
-      logger.error('Error generating unified memory system prompt', {
+      logger.error('Error generating optimized prompt', {
         error: error instanceof Error ? error.message : String(error),
         stack: error instanceof Error ? error.stack : undefined
       });
 
       return this.generateFallbackPrompt(context);
+    }
+  }
+
+  /**
+   * 🔧 NEW: 最適化されたジャンル取得
+   */
+  private async getGenre(context: GenerationContext): Promise<string> {
+    try {
+      // 🔧 PRIORITY 1: PlotManager経由（WorldSettingsManager優先アクセス）
+      if (this.plotManager) {
+        try {
+          const genre = await this.plotManager.getGenre();
+          if (genre && genre !== 'classic') {
+            logger.debug(`Genre obtained from optimized PlotManager: ${genre}`);
+            return genre;
+          }
+        } catch (plotError) {
+          logger.debug('PlotManager genre access failed, trying alternatives', {
+            error: plotError instanceof Error ? plotError.message : String(plotError)
+          });
+        }
+      }
+
+      // 🔧 PRIORITY 2: 直接WorldSettingsManager（フォールバック）
+      if (this.worldSettingsManager) {
+        try {
+          const genre = await this.worldSettingsManager.getGenre();
+          if (genre && genre !== 'classic') {
+            logger.debug(`Genre obtained from direct WorldSettingsManager: ${genre}`);
+            return genre;
+          }
+        } catch (wsError) {
+          logger.debug('Direct WorldSettingsManager access failed', {
+            error: wsError instanceof Error ? wsError.message : String(wsError)
+          });
+        }
+      }
+
+      // 🔧 PRIORITY 3: 記憶システム（最終フォールバック）
+      if (this.memoryManager) {
+        try {
+          const genre = await this.getGenreFromUnifiedMemory(context);
+          if (genre && genre !== 'classic') {
+            logger.debug(`Genre obtained from memory system: ${genre}`);
+            return genre;
+          }
+        } catch (memoryError) {
+          logger.debug('Memory system genre access failed', {
+            error: memoryError instanceof Error ? memoryError.message : String(memoryError)
+          });
+        }
+      }
+
+      // 🔧 PRIORITY 4: コンテキストからの推定
+      return this.getGenreFromContext(context);
+
+    } catch (error) {
+      logger.warn('All genre sources failed in optimized access', { error });
+      return this.getGenreFromContext(context);
+    }
+  }
+
+  /**
+   * 🔧 従来の記憶システムからのジャンル取得（フォールバック用）
+   */
+  private async getGenreFromUnifiedMemory(context: GenerationContext): Promise<string> {
+    try {
+      if (!this.memoryManager) {
+        return this.getGenreFromContext(context);
+      }
+
+      const worldSearchResult = await this.memoryManager.unifiedSearch('世界設定 ジャンル', [MemoryLevel.LONG_TERM]);
+
+      if (worldSearchResult.success && worldSearchResult.results.length > 0) {
+        for (const result of worldSearchResult.results) {
+          if (result.data?.genre) {
+            return result.data.genre.toLowerCase();
+          }
+          if (result.data?.worldSettings?.genre) {
+            return result.data.worldSettings.genre.toLowerCase();
+          }
+        }
+      }
+
+      const searchResult = await this.memoryManager.unifiedSearch('ジャンル genre', [MemoryLevel.LONG_TERM]);
+
+      if (searchResult.success && searchResult.results.length > 0) {
+        for (const result of searchResult.results) {
+          if (result.data?.genre) {
+            return result.data.genre.toLowerCase();
+          }
+        }
+      }
+
+      return this.getGenreFromContext(context);
+
+    } catch (error) {
+      logger.warn('Failed to get genre from unified memory', { error });
+      return this.getGenreFromContext(context);
     }
   }
 
@@ -452,8 +504,8 @@ export class PromptGenerator {
     }
   } {
     return {
-      previousChapterEnding: chapterNumber <= 1 
-        ? '物語の始まりです。' 
+      previousChapterEnding: chapterNumber <= 1
+        ? '物語の始まりです。'
         : '前章の情報にアクセスできません。新しい章を自由に展開してください。',
       continuityInfo: {
         previousScene: '特になし',
@@ -477,14 +529,12 @@ export class PromptGenerator {
         return this.sectionBuilder.getChapterPurposeAndPlotPoints(context);
       }
 
-      // 統一検索システムから物語進行情報を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        '物語進行 プロット 目的', 
+        '物語進行 プロット 目的',
         [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
       );
 
       if (searchResult.success && searchResult.results.length > 0) {
-        // 中期記憶から物語進行に基づく目的を抽出
         for (const result of searchResult.results) {
           if (result.source === MemoryLevel.MID_TERM && result.data) {
             return {
@@ -495,55 +545,11 @@ export class PromptGenerator {
         }
       }
 
-      // フォールバック
       return this.sectionBuilder.getChapterPurposeAndPlotPoints(context);
 
     } catch (error) {
       logger.warn('Failed to get chapter purpose from unified memory', { error });
       return this.sectionBuilder.getChapterPurposeAndPlotPoints(context);
-    }
-  }
-
-  /**
-   * 統合記憶システムからジャンル情報を取得
-   */
-  private async getGenreFromUnifiedMemory(context: GenerationContext): Promise<string> {
-    try {
-      if (!this.memoryManager) {
-        return this.getGenreFromContext(context);
-      }
-
-      // 統一検索システムから世界設定を取得してジャンルを判定
-      const worldSearchResult = await this.memoryManager.unifiedSearch('世界設定 ジャンル', [MemoryLevel.LONG_TERM]);
-      
-      if (worldSearchResult.success && worldSearchResult.results.length > 0) {
-        for (const result of worldSearchResult.results) {
-          if (result.data?.genre) {
-            return result.data.genre.toLowerCase();
-          }
-          if (result.data?.worldSettings?.genre) {
-            return result.data.worldSettings.genre.toLowerCase();
-          }
-        }
-      }
-
-      // 長期記憶からジャンル情報を検索
-      const searchResult = await this.memoryManager.unifiedSearch('ジャンル genre', [MemoryLevel.LONG_TERM]);
-      
-      if (searchResult.success && searchResult.results.length > 0) {
-        for (const result of searchResult.results) {
-          if (result.data?.genre) {
-            return result.data.genre.toLowerCase();
-          }
-        }
-      }
-
-      // フォールバック
-      return this.getGenreFromContext(context);
-
-    } catch (error) {
-      logger.warn('Failed to get genre from unified memory', { error });
-      return this.getGenreFromContext(context);
     }
   }
 
@@ -556,20 +562,17 @@ export class PromptGenerator {
         return this.identifyChapterType(context);
       }
 
-      // 統一検索システムから物語状態を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        '物語状態 章タイプ', 
+        '物語状態 章タイプ',
         [MemoryLevel.MID_TERM]
       );
 
       if (searchResult.success && searchResult.results.length > 0) {
         for (const result of searchResult.results) {
           if (result.source === MemoryLevel.MID_TERM && result.data) {
-            // 物語進行から章タイプを判定
             if (result.data.narrativeProgression) {
               return this.identifyChapterTypeFromProgression(result.data.narrativeProgression, context);
             }
-            // その他の中期記憶データから章タイプを推定
             if (result.data.state || result.data.chapterType) {
               return result.data.chapterType || result.data.state || 'STANDARD';
             }
@@ -577,7 +580,6 @@ export class PromptGenerator {
         }
       }
 
-      // フォールバック
       return this.identifyChapterType(context);
 
     } catch (error) {
@@ -590,16 +592,12 @@ export class PromptGenerator {
    * 物語進行情報から章タイプを推定
    */
   private identifyChapterTypeFromProgression(progression: any, context: GenerationContext): string {
-    // 物語進行の分析に基づく章タイプ推定ロジック
     const chapterNumber = context.chapterNumber || 1;
-    
+
     if (chapterNumber === 1) {
       return 'OPENING';
     }
 
-    // progressionの内容に基づいて章タイプを判定
-    // 実装は物語進行データの構造に依存
-    
     return 'STANDARD';
   }
 
@@ -607,7 +605,7 @@ export class PromptGenerator {
    * 統合記憶システムからコンテンツプレースホルダーを置換
    */
   private async replaceContentPlaceholdersFromMemory(
-    prompt: string, 
+    prompt: string,
     context: GenerationContext
   ): Promise<string> {
     try {
@@ -634,7 +632,6 @@ export class PromptGenerator {
         logger.warn('Failed to get world settings from unified search', { error });
       }
 
-      // PlotManagerからの世界設定とテーマを取得（フォールバック）
       if (!worldSettings && this.plotManager) {
         try {
           const formattedWorldAndTheme = await this.plotManager.getFormattedWorldAndTheme();
@@ -646,7 +643,6 @@ export class PromptGenerator {
         }
       }
 
-      // contextからの取得（最後の手段）
       if (!worldSettings && context.worldSettings) {
         worldSettings = this.formatter.formatWorldSettings(context.worldSettings);
       }
@@ -654,12 +650,11 @@ export class PromptGenerator {
       // 統合キャラクター情報の取得
       let characters = '';
       try {
-        // キャラクター情報を検索
         const characterSearchResult = await this.memoryManager.unifiedSearch(
-          'キャラクター 登場人物', 
+          'キャラクター 登場人物',
           [MemoryLevel.SHORT_TERM, MemoryLevel.LONG_TERM]
         );
-        
+
         if (characterSearchResult.success && characterSearchResult.results.length > 0) {
           characters = await this.extractCharactersFromSearchResults(characterSearchResult.results, context);
         }
@@ -667,12 +662,10 @@ export class PromptGenerator {
         logger.warn('Failed to get characters from unified search', { error });
       }
 
-      // フォールバック：contextから直接取得
       if (!characters) {
         characters = await this.formatter.formatCharacters(context.characters || []);
       }
 
-      // プロンプトに情報を設定
       return prompt
         .replace('{worldSettings}', worldSettings || '特に指定なし')
         .replace('{characters}', characters)
@@ -688,16 +681,14 @@ export class PromptGenerator {
    * 統合検索結果からキャラクター情報を抽出
    */
   private async extractCharactersFromSearchResults(
-    results: any[], 
+    results: any[],
     generationContext: GenerationContext
   ): Promise<string> {
     try {
       const characterInfoList: string[] = [];
 
-      // 検索結果からキャラクター情報を抽出
       for (const result of results) {
         if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-          // 短期記憶からキャラクター状態を取得
           if (result.data.characters) {
             const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
             chars.forEach((char: any) => {
@@ -705,7 +696,7 @@ export class PromptGenerator {
               characterInfoList.push(characterInfo);
             });
           }
-          
+
           if (result.data.characterStates) {
             const states = result.data.characterStates;
             if (typeof states === 'object') {
@@ -718,7 +709,6 @@ export class PromptGenerator {
         }
 
         if (result.source === MemoryLevel.LONG_TERM && result.data) {
-          // 長期記憶からキャラクターデータベース情報を取得
           if (result.data.character || result.data.characters) {
             const chars = result.data.characters || [result.data.character];
             if (Array.isArray(chars)) {
@@ -731,7 +721,6 @@ export class PromptGenerator {
         }
       }
 
-      // contextのキャラクター情報と統合
       if (generationContext.characters && generationContext.characters.length > 0) {
         const formattedChars = await this.formatter.formatCharacters(generationContext.characters);
         if (formattedChars) {
@@ -755,49 +744,49 @@ export class PromptGenerator {
     genre: string
   ): Promise<string[]> {
     const sectionBuilders = [
-      { 
-        name: 'characterPsychology', 
-        fn: () => this.sectionBuilder.buildCharacterPsychologySection(context) 
+      {
+        name: 'characterPsychology',
+        fn: () => this.sectionBuilder.buildCharacterPsychologySection(context)
       },
-      { 
-        name: 'characterGrowth', 
-        fn: () => this.sectionBuilder.buildCharacterGrowthSection(context, genre) 
+      {
+        name: 'characterGrowth',
+        fn: () => this.sectionBuilder.buildCharacterGrowthSection(context, genre)
       },
-      { 
-        name: 'emotionalArc', 
-        fn: () => this.sectionBuilder.buildEmotionalArcSection(context, genre) 
+      {
+        name: 'emotionalArc',
+        fn: () => this.sectionBuilder.buildEmotionalArcSection(context, genre)
       },
-      { 
-        name: 'styleGuidance', 
-        fn: () => this.sectionBuilder.buildStyleGuidanceSection(context, genre) 
+      {
+        name: 'styleGuidance',
+        fn: () => this.sectionBuilder.buildStyleGuidanceSection(context, genre)
       },
-      { 
-        name: 'expressionAlternatives', 
-        fn: () => this.sectionBuilder.buildExpressionAlternativesSection(context, genre) 
+      {
+        name: 'expressionAlternatives',
+        fn: () => this.sectionBuilder.buildExpressionAlternativesSection(context, genre)
       },
-      { 
-        name: 'readerExperience', 
-        fn: () => this.sectionBuilder.buildReaderExperienceSection(context, genre) 
+      {
+        name: 'readerExperience',
+        fn: () => this.sectionBuilder.buildReaderExperienceSection(context, genre)
       },
-      { 
-        name: 'literaryInspiration', 
-        fn: () => this.sectionBuilder.buildLiteraryInspirationSection(context, genre) 
+      {
+        name: 'literaryInspiration',
+        fn: () => this.sectionBuilder.buildLiteraryInspirationSection(context, genre)
       },
-      { 
-        name: 'themeEnhancement', 
-        fn: () => this.sectionBuilder.buildThemeEnhancementSection(context, genre) 
+      {
+        name: 'themeEnhancement',
+        fn: () => this.sectionBuilder.buildThemeEnhancementSection(context, genre)
       },
-      { 
-        name: 'tensionGuidance', 
-        fn: () => this.sectionBuilder.buildTensionGuidanceSection(context, genre) 
+      {
+        name: 'tensionGuidance',
+        fn: () => this.sectionBuilder.buildTensionGuidanceSection(context, genre)
       },
-      { 
-        name: 'businessSpecific', 
-        fn: () => this.sectionBuilder.buildBusinessSpecificSection(genre) 
+      {
+        name: 'businessSpecific',
+        fn: () => this.sectionBuilder.buildBusinessSpecificSection(genre)
       },
-      { 
-        name: 'learningJourney', 
-        fn: () => this.sectionBuilder.buildLearningJourneySection(context, genre) 
+      {
+        name: 'learningJourney',
+        fn: () => this.sectionBuilder.buildLearningJourneySection(context, genre)
       }
     ];
 
@@ -895,18 +884,16 @@ export class PromptGenerator {
         return this.sectionBuilder.determineFocusCharacters(context);
       }
 
-      // 統一検索システムからキャラクター情報を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        'キャラクター 登場人物', 
+        'キャラクター 登場人物',
         [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
       );
 
       if (searchResult.success && searchResult.results.length > 0) {
         const activeCharacters: string[] = [];
-        
+
         for (const result of searchResult.results) {
           if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-            // キャラクター状態から活発なキャラクターを抽出
             if (result.data.characters) {
               const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
               chars.forEach((char: any) => {
@@ -915,7 +902,7 @@ export class PromptGenerator {
                 }
               });
             }
-            
+
             if (result.data.characterStates) {
               const states = result.data.characterStates;
               if (typeof states === 'object') {
@@ -926,13 +913,12 @@ export class PromptGenerator {
             }
           }
         }
-        
+
         if (activeCharacters.length > 0) {
-          return [...new Set(activeCharacters)].slice(0, 3); // 重複除去して最大3人まで
+          return [...new Set(activeCharacters)].slice(0, 3);
         }
       }
 
-      // フォールバック
       return this.sectionBuilder.determineFocusCharacters(context);
 
     } catch (error) {
@@ -947,7 +933,6 @@ export class PromptGenerator {
   private async processForeshadowingWithMemory(prompt: string, context: GenerationContext): Promise<string> {
     try {
       if (!this.memoryManager) {
-        // 既存の処理
         if (context.foreshadowing && Array.isArray(context.foreshadowing)) {
           return prompt.replace('{foreshadowing}', this.formatter.formatForeshadowing(context.foreshadowing));
         } else {
@@ -955,7 +940,6 @@ export class PromptGenerator {
         }
       }
 
-      // 統合記憶システムから伏線情報を検索
       const searchResult = await this.memoryManager.unifiedSearch('伏線 foreshadowing', [
         MemoryLevel.LONG_TERM
       ]);
@@ -964,7 +948,7 @@ export class PromptGenerator {
 
       if (searchResult.success && searchResult.results.length > 0) {
         const foreshadowingItems: string[] = [];
-        
+
         for (const result of searchResult.results) {
           if (result.data?.foreshadowing || result.data?.description) {
             foreshadowingItems.push(result.data.description || result.data.foreshadowing);
@@ -977,7 +961,6 @@ export class PromptGenerator {
         }
       }
 
-      // contextの伏線情報と統合
       if (context.foreshadowing && Array.isArray(context.foreshadowing)) {
         const contextForeshadowing = this.formatter.formatForeshadowing(context.foreshadowing);
         if (contextForeshadowing && foreshadowingText) {
@@ -991,7 +974,6 @@ export class PromptGenerator {
 
     } catch (error) {
       logger.warn('Failed to process foreshadowing with memory', { error });
-      // フォールバック処理
       if (context.foreshadowing && Array.isArray(context.foreshadowing)) {
         return prompt.replace('{foreshadowing}', this.formatter.formatForeshadowing(context.foreshadowing));
       } else {
@@ -1013,16 +995,14 @@ export class PromptGenerator {
         return this.replaceNarrativeStateGuidance(prompt, context, genre);
       }
 
-      // 統一検索システムから物語状態を取得
       const searchResult = await this.memoryManager.unifiedSearch(
-        '物語状態 narrative', 
+        '物語状態 narrative',
         [MemoryLevel.MID_TERM]
       );
 
       if (searchResult.success && searchResult.results.length > 0) {
         for (const result of searchResult.results) {
           if (result.source === MemoryLevel.MID_TERM && result.data?.narrativeProgression) {
-            // 統合記憶システムから取得した物語進行に基づくガイダンス
             const progression = result.data.narrativeProgression;
             const guidance = this.generateGuidanceFromProgression(progression, genre);
             return prompt.replace('{narrativeStateGuidance}', guidance);
@@ -1030,7 +1010,6 @@ export class PromptGenerator {
         }
       }
 
-      // contextの情報を使用（フォールバック）
       return this.replaceNarrativeStateGuidance(prompt, context, genre);
 
     } catch (error) {
@@ -1043,8 +1022,6 @@ export class PromptGenerator {
    * 物語進行情報からガイダンスを生成
    */
   private generateGuidanceFromProgression(progression: any, genre: string): string {
-    // 物語進行データの構造に基づいてガイダンスを生成
-    // 実装は具体的なデータ構造に依存
     return '統合記憶システムから取得した物語進行に基づき、適切に物語を展開してください';
   }
 
@@ -1120,21 +1097,13 @@ export class PromptGenerator {
         empatheticPoints
       };
 
-      logger.debug('Successfully enriched context with learning journey information', {
-        mainConcept,
-        learningStage,
-        hasEmbodimentPlan: !!embodimentPlan,
-        hasEmotionalArc: !!emotionalArc,
-        hasCatharticExperience: !!catharticExperience,
-        sceneRecommendationsCount: sceneRecommendations?.length || 0
-      });
+      logger.debug('Successfully enriched context with learning journey information');
 
       return enrichedContext;
 
     } catch (error) {
       logger.error('Error enriching context with learning journey', {
-        error: error instanceof Error ? error.message : String(error),
-        stack: error instanceof Error ? error.stack : undefined
+        error: error instanceof Error ? error.message : String(error)
       });
       return context;
     }
@@ -1148,7 +1117,6 @@ export class PromptGenerator {
       return (context as any).mainConcept;
     }
 
-    // PlotManagerから取得
     if (this.plotManager) {
       try {
         const formattedWorldAndTheme = await this.plotManager.getFormattedWorldAndTheme();
@@ -1162,7 +1130,6 @@ export class PromptGenerator {
       }
     }
 
-    // 統合記憶システムからテーマを取得
     if (this.memoryManager) {
       try {
         const searchResult = await this.memoryManager.unifiedSearch('テーマ theme', [MemoryLevel.LONG_TERM]);
@@ -1186,9 +1153,6 @@ export class PromptGenerator {
   // フォールバック・ユーティリティメソッド（既存互換）
   // ===================================================================
 
-  /**
-   * 既存のコンテキストからジャンル取得（フォールバック用）
-   */
   private getGenreFromContext(context: GenerationContext): string {
     if (context.genre) {
       return typeof context.genre === 'string' ? context.genre.toLowerCase() : 'classic';
@@ -1206,9 +1170,6 @@ export class PromptGenerator {
     return this.determineGenre(worldSettings + ' ' + theme);
   }
 
-  /**
-   * 物語のジャンルを推定
-   */
   private determineGenre(theme: string): string {
     const genreKeywords: Record<string, string[]> = {
       fantasy: ['魔法', 'ファンタジー', '冒険', '魔術', '竜', '異世界'],
@@ -1232,9 +1193,6 @@ export class PromptGenerator {
     return 'classic';
   }
 
-  /**
-   * 章タイプを識別（フォールバック用）
-   */
   private identifyChapterType(context: GenerationContext): string {
     if ((context as any).chapterType) {
       return (context as any).chapterType;
@@ -1270,7 +1228,6 @@ export class PromptGenerator {
       return 'BUSINESS_CHALLENGE';
     }
 
-    // 既存の非ビジネスジャンル用処理
     const narrativeState = (context as any).narrativeState;
     if (narrativeState) {
       const state = narrativeState.state;
