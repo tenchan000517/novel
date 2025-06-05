@@ -1,0 +1,3014 @@
+{
+  "executionSummary": {
+    "timestamp": "2025-06-04T11:13:24.226Z",
+    "systemsAnalyzed": "ANALYSIS_ENHANCEMENT_SYSTEM",
+    "totalComponents": 45,
+    "complexityLevel": "ANALYSIS_ENTERPRISE_LEVEL",
+    "integrationPotential": "FIVE_SYSTEM_MEGA_INTEGRATION"
+  },
+  "keyFindings": {
+    "systemScale": "45 files across 16 directories",
+    "coreCapabilities": "5 analysis domains",
+    "enhancementModules": "4 enhancement categories",
+    "integrationPoints": "5 integration vectors",
+    "aiIntegration": "Gemini-powered intelligent analysis"
+  },
+  "strategicRecommendations": {
+    "immediateActions": [
+      "ANALYZE_CURRENT_INTEGRATION_GAPS",
+      "OPTIMIZE_CROSS_SYSTEM_DATA_FLOW",
+      "ENHANCE_AI_ANALYSIS_CAPABILITIES",
+      "IMPLEMENT_HOLISTIC_OPTIMIZATION"
+    ],
+    "mediumTermGoals": [
+      "ACHIEVE_FIVE_SYSTEM_INTEGRATION",
+      "DEVELOP_EMERGENT_INTELLIGENCE",
+      "OPTIMIZE_ANALYSIS_PIPELINES",
+      "ENHANCE_USER_EXPERIENCE"
+    ],
+    "longTermVision": [
+      "CREATE_SUPERINTELLIGENT_NARRATIVE_SYSTEM",
+      "ACHIEVE_UNLIMITED_SCALING",
+      "DEVELOP_SELF_EVOLVING_CAPABILITIES",
+      "REVOLUTIONIZE_AI_STORYTELLING"
+    ]
+  },
+  "results": {
+    "systemOverview": {
+      "totalFiles": 45,
+      "totalDirectories": 16,
+      "systemComplexity": "ANALYSIS_ENTERPRISE_LEVEL",
+      "architectureType": "ANALYSIS_ENHANCEMENT_SYSTEM"
+    },
+    "coreSystem": {
+      "constants.ts": {
+        "filepath": "core\\constants.ts",
+        "componentName": "Constants",
+        "fileSize": 640,
+        "methods": [],
+        "interfaces": [],
+        "imports": [],
+        "exports": [
+          "DEFAULT_CACHE_TTL",
+          "DEFAULT_CACHE_MAX_SIZE",
+          "ANALYSIS_DEFAULT_OPTIONS",
+          "VALIDATION_THRESHOLDS"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "detect"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character",
+          "style",
+          "theme"
+        ],
+        "systemConnections": [],
+        "aiIntegration": [],
+        "optimizationFeatures": [
+          "cache"
+        ]
+      },
+      "errors.ts": {
+        "filepath": "core\\errors.ts",
+        "componentName": "Errors",
+        "fileSize": 6003,
+        "methods": [
+          "constructor",
+          "getDetails",
+          "constructor",
+          "constructor",
+          "getValidationErrorDetails",
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor"
+        ],
+        "interfaces": [],
+        "imports": [],
+        "exports": [
+          "CharacterError",
+          "NotFoundError",
+          "ValidationError",
+          "ConsistencyError",
+          "PersistenceError",
+          "ConflictError",
+          "DependencyError",
+          "InvalidOperationError",
+          "ServiceIntegrationError"
+        ],
+        "analysisCapabilities": [],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character"
+        ],
+        "systemConnections": [
+          "service"
+        ],
+        "aiIntegration": [
+          "ai"
+        ],
+        "optimizationFeatures": []
+      },
+      "interfaces.ts": {
+        "filepath": "core\\interfaces.ts",
+        "componentName": "Interfaces",
+        "fileSize": 3131,
+        "methods": [
+          "generateStyleGuidance"
+        ],
+        "interfaces": [
+          "SubjectPatternOptimizationRequest",
+          "IStyleOptimizationService",
+          "IStyleOptimizationService",
+          "ICacheStorage",
+          "ICacheStorage"
+        ],
+        "imports": [
+          "@/types/generation",
+          "./types"
+        ],
+        "exports": [
+          "SubjectPatternOptimizationRequest",
+          "IStyleOptimizationService",
+          "ICacheStorage"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "score",
+          "rate"
+        ],
+        "enhancementFeatures": [
+          "optimize"
+        ],
+        "integrationPoints": [
+          "context",
+          "style"
+        ],
+        "systemConnections": [
+          "service"
+        ],
+        "aiIntegration": [
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "cache"
+        ]
+      },
+      "types.ts": {
+        "filepath": "core\\types.ts",
+        "componentName": "Types",
+        "fileSize": 9056,
+        "methods": [],
+        "interfaces": [
+          "SubjectPatternOptimization",
+          "SubjectPatternOptimization",
+          "StructureRecommendation",
+          "StructureRecommendation",
+          "RepetitionAlternative",
+          "RepetitionAlternative",
+          "ThemeResonanceAnalysis",
+          "ThemeEnhancement",
+          "LiteraryTechnique",
+          "LiteraryInspiration",
+          "SymbolicElement",
+          "ForeshadowingOpportunity",
+          "ThemeEnhancementRequest",
+          "LiteraryTechniqueRequest",
+          "ExpressionUsage",
+          "ExpressionUsageResult",
+          "ForeshadowingElement",
+          "SymbolismAnalysis",
+          "ThemePresenceVisualization",
+          "ThemeElementResonance",
+          "ThemeConsistencyAnalysis",
+          "ThemeImageryMapping",
+          "MotifTrackingResult"
+        ],
+        "imports": [],
+        "exports": [
+          "SubjectPatternOptimization",
+          "StructureRecommendation",
+          "RepetitionAlternative",
+          "ThemeResonanceAnalysis",
+          "ThemeEnhancement",
+          "LiteraryTechnique",
+          "LiteraryInspiration",
+          "SymbolicElement",
+          "ForeshadowingOpportunity",
+          "ThemeEnhancementRequest",
+          "LiteraryTechniqueRequest",
+          "ExpressionUsage",
+          "ExpressionUsageResult",
+          "ForeshadowingElement",
+          "SymbolismAnalysis",
+          "ThemePresenceVisualization",
+          "ThemeElementResonance",
+          "ThemeConsistencyAnalysis",
+          "ThemeImageryMapping",
+          "MotifTrackingResult"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "score"
+        ],
+        "enhancementFeatures": [
+          "enhance",
+          "improve"
+        ],
+        "integrationPoints": [
+          "character",
+          "plot",
+          "context",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [],
+        "aiIntegration": [],
+        "optimizationFeatures": [
+          "optimization"
+        ]
+      },
+      "content-analysis-manager.ts": {
+        "filepath": "root\\content-analysis-manager.ts",
+        "componentName": "ContentAnalysisManager",
+        "fileSize": "UNKNOWN",
+        "methods": [
+          "STRUCTURAL_ANALYSIS_ONLY"
+        ],
+        "interfaces": [
+          "INFERRED_FROM_STRUCTURE"
+        ],
+        "imports": [
+          "SYSTEM_DEPENDENCIES"
+        ],
+        "exports": [
+          "COMPONENT_EXPORTS"
+        ],
+        "analysisCapabilities": [
+          "text_analysis",
+          "content_analysis",
+          "structural_analysis"
+        ],
+        "enhancementFeatures": [
+          "basic_enhancement"
+        ],
+        "integrationPoints": [
+          "general"
+        ],
+        "systemConnections": [
+          "system_management",
+          "component_coordination"
+        ],
+        "aiIntegration": [
+          "ai_analysis",
+          "intelligent_analysis"
+        ],
+        "optimizationFeatures": [
+          "basic_optimization"
+        ]
+      }
+    },
+    "adapters": {
+      "gemini-adapter.ts": {
+        "filepath": "adapters\\gemini-adapter.ts",
+        "componentName": "GeminiAdapter",
+        "fileSize": 15921,
+        "methods": [
+          "constructor",
+          "generateText",
+          "createCacheKey",
+          "generateContent",
+          "generateAnalysisPrompt",
+          "updateModelSettings",
+          "getTemplatePrompt",
+          "clearCache",
+          "createCacheKey",
+          "stringify",
+          "truncateContent",
+          "enhancePromptForJsonResponse",
+          "postProcessResponse",
+          "pruneCache",
+          "formatContextForPrompt",
+          "getCharacterAnalysisTemplate",
+          "getThemeAnalysisTemplate",
+          "getStructureAnalysisTemplate",
+          "getQualityAnalysisTemplate",
+          "getForeshadowingAnalysisTemplate",
+          "getGeneralAnalysisTemplate",
+          "getJsonOutputTemplate"
+        ],
+        "interfaces": [],
+        "imports": [
+          "@/lib/utils/logger",
+          "./interfaces",
+          "@/lib/generation/gemini-client",
+          "@/lib/utils/api-throttle",
+          "@/lib/utils/error-handler"
+        ],
+        "exports": [
+          "GeminiAdapter"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "rate",
+          "parse"
+        ],
+        "enhancementFeatures": [
+          "enhance"
+        ],
+        "integrationPoints": [
+          "character",
+          "context",
+          "narrative",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "service",
+          "adapter"
+        ],
+        "aiIntegration": [
+          "gemini",
+          "ai",
+          "model",
+          "prompt",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "cache",
+          "async"
+        ]
+      },
+      "interfaces.ts": {
+        "filepath": "adapters\\interfaces.ts",
+        "componentName": "Interfaces",
+        "fileSize": 1899,
+        "methods": [
+          "generateText",
+          "generateAnalysisPrompt"
+        ],
+        "interfaces": [
+          "IGeminiAdapter"
+        ],
+        "imports": [],
+        "exports": [
+          "IGeminiAdapter"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "rate"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "context"
+        ],
+        "systemConnections": [
+          "adapter"
+        ],
+        "aiIntegration": [
+          "gemini",
+          "ai",
+          "model",
+          "prompt"
+        ],
+        "optimizationFeatures": [
+          "cache"
+        ]
+      },
+      "storage-adapter.ts": {
+        "filepath": "adapters\\storage-adapter.ts",
+        "componentName": "StorageAdapter",
+        "fileSize": 23329,
+        "methods": [
+          "constructor",
+          "initialize",
+          "doesAnalysisExist",
+          "listAnalysisIds",
+          "filter",
+          "deleteAnalysisResult",
+          "getAnalysisPath",
+          "flushBuffer",
+          "cleanupOldVersions",
+          "cleanupExpiredCache",
+          "startFlushTimer",
+          "addToBuffer",
+          "removeFromBuffer",
+          "writeToStorage"
+        ],
+        "interfaces": [
+          "AnalysisMetadata",
+          "BufferedWrite"
+        ],
+        "imports": [
+          "@/lib/storage/types",
+          "@/lib/storage/index",
+          "@/lib/utils/logger"
+        ],
+        "exports": [
+          "StorageAdapter",
+          "storageAdapter"
+        ],
+        "analysisCapabilities": [
+          "analysis",
+          "parse"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character",
+          "narrative",
+          "style",
+          "theme"
+        ],
+        "systemConnections": [
+          "adapter"
+        ],
+        "aiIntegration": [
+          "ai"
+        ],
+        "optimizationFeatures": [
+          "cache",
+          "async"
+        ]
+      }
+    },
+    "coordinators": {
+      "analysis-coordinator.ts": {
+        "filepath": "coordinators\\analysis-coordinator.ts",
+        "componentName": "AnalysisCoordinator",
+        "fileSize": 53307,
+        "methods": [
+          "constructor",
+          "ensureMemoryManagerInitialization",
+          "performUnifiedMemorySearch",
+          "getUnifiedMemoryContext",
+          "createSafeChapterAnalysisService",
+          "createChapterAnalysisServiceProxy",
+          "async",
+          "createFallbackChapterAnalysisService",
+          "async",
+          "async",
+          "createBasicChapterAnalysis",
+          "createFallbackImprovementSuggestions",
+          "analyzeChapter",
+          "executeParallelAnalysisWithMemoryIntegration",
+          "processChapterInMemorySystem",
+          "executeParallelAnalysisWithMemoryIntegration",
+          "executeSequentialAnalysisWithMemoryIntegration",
+          "executeThemeAnalysisWithMemoryIntegration",
+          "executeStyleAnalysis",
+          "executeNarrativeAnalysisWithMemoryIntegration",
+          "executeReaderExperienceAnalysisWithMemoryIntegration",
+          "integrateAnalysisResultsWithMemoryContext",
+          "generateIntegratedSuggestionsWithMemoryContext",
+          "generateMemoryContextSuggestions",
+          "calculateUnifiedSearchResults",
+          "prioritizeSuggestions",
+          "getUsedServices",
+          "calculateCacheHitRate",
+          "recordPerformanceMetrics",
+          "generateCacheKey",
+          "hashString",
+          "clearCache",
+          "getMemorySystemStatistics",
+          "createFallbackAnalysisResult",
+          "createFallbackChapterAnalysis",
+          "createFallbackThemeAnalysis",
+          "createFallbackStyleAnalysis",
+          "createFallbackExpressionPatterns",
+          "createFallbackCharacterAnalysis",
+          "createFallbackSceneStructure",
+          "createFallbackLiteraryInspirations",
+          "createFallbackReaderExperience",
+          "createFallbackQualityMetrics",
+          "createFallbackNarrativeAnalysisResult",
+          "createFallbackSceneStructure"
+        ],
+        "interfaces": [
+          "ChapterAnalysisServiceInterface",
+          "ChapterAnalysisServiceInterface",
+          "IntegratedAnalysisResult",
+          "IntegratedAnalysisResult",
+          "AnalysisCoordinatorOptions",
+          "AnalysisCoordinatorOptions"
+        ],
+        "imports": [
+          "@/lib/utils/logger",
+          "@/lib/analysis/adapters/gemini-adapter",
+          "@/lib/utils/json-parser",
+          "@/lib/utils/api-throttle",
+          "@/lib/storage",
+          "@/lib/memory/core/memory-manager",
+          "@/lib/memory/core/types",
+          "@/lib/analysis/services/theme/theme-analysis-service",
+          "@/lib/analysis/services/style/style-analysis-service",
+          "@/lib/analysis/services/character/character-analysis-service",
+          "@/lib/analysis/services/narrative/narrative-analysis-service",
+          "@/lib/analysis/services/reader/reader-experience-analysis-service",
+          "@/types/generation",
+          "@/lib/analysis/services/character/character-analysis-service",
+          "@/types/chapters"
+        ],
+        "exports": [
+          "IntegratedAnalysisResult",
+          "AnalysisCoordinatorOptions",
+          "AnalysisCoordinator"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "score",
+          "rate",
+          "detect",
+          "extract",
+          "parse"
+        ],
+        "enhancementFeatures": [
+          "improve",
+          "optimize"
+        ],
+        "integrationPoints": [
+          "character",
+          "memory",
+          "plot",
+          "context",
+          "narrative",
+          "reader",
+          "style",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "manager",
+          "service",
+          "coordinator",
+          "adapter"
+        ],
+        "aiIntegration": [
+          "gemini",
+          "ai",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "performance",
+          "cache",
+          "parallel",
+          "async"
+        ]
+      },
+      "interfaces.ts": {
+        "filepath": "coordinators\\interfaces.ts",
+        "componentName": "Interfaces",
+        "fileSize": 15095,
+        "methods": [
+          "clearCache",
+          "analyzeChapter",
+          "optimizeChapter",
+          "createAnalysisCoordinator",
+          "analyzeAndOptimizeChapter",
+          "clearAllCaches",
+          "checkHealth"
+        ],
+        "interfaces": [
+          "BaseCoordinatorOptions",
+          "BaseCoordinatorOptions",
+          "BaseMetadata",
+          "BaseMetadata",
+          "CacheableCoordinator",
+          "CacheableCoordinator",
+          "AnalysisCoordinatorOptions",
+          "AnalysisCoordinatorOptions",
+          "IntegratedAnalysisResult",
+          "IntegratedAnalysisResult",
+          "AnalysisMetadata",
+          "AnalysisMetadata",
+          "SceneStructureAnalysis",
+          "SceneStructureAnalysis",
+          "SceneRecommendation",
+          "SceneRecommendation",
+          "LiteraryInspiration",
+          "LiteraryInspiration",
+          "LiteraryTechnique",
+          "LiteraryTechnique",
+          "IAnalysisCoordinator",
+          "IAnalysisCoordinator",
+          "OptimizationCoordinatorOptions",
+          "OptimizationCoordinatorOptions",
+          "PrioritizedSuggestion",
+          "PrioritizedSuggestion",
+          "ConflictResolution",
+          "ConflictResolution",
+          "ImplementationStep",
+          "ImplementationStep",
+          "SynergyOpportunity",
+          "SynergyOpportunity",
+          "IntegratedRecommendations",
+          "IntegratedRecommendations",
+          "ThemeOptimization",
+          "ThemeOptimization",
+          "StyleOptimization",
+          "StyleOptimization",
+          "CharacterOptimization",
+          "CharacterOptimization",
+          "TensionOptimization",
+          "TensionOptimization",
+          "OptimizationMetadata",
+          "OptimizationMetadata",
+          "IntegratedOptimizationResult",
+          "IntegratedOptimizationResult",
+          "OptimizationInput",
+          "OptimizationInput",
+          "IOptimizationCoordinator",
+          "IOptimizationCoordinator",
+          "ThemeEnhancement",
+          "ThemeEnhancement",
+          "SymbolicElement",
+          "SymbolicElement",
+          "ForeshadowingOpportunity",
+          "ForeshadowingOpportunity",
+          "StyleGuidance",
+          "StyleGuidance",
+          "ExpressionAlternatives",
+          "ExpressionAlternatives",
+          "SubjectPatternOptimization",
+          "SubjectPatternOptimization",
+          "StructureRecommendation",
+          "StructureRecommendation",
+          "RepetitionAlternative",
+          "RepetitionAlternative",
+          "DepthRecommendation",
+          "DepthRecommendation",
+          "CharacterDepthPrompt",
+          "CharacterDepthPrompt",
+          "TensionPacingRecommendation",
+          "TensionPacingRecommendation",
+          "TensionCurvePoint",
+          "TensionCurvePoint",
+          "CoordinatorFactory",
+          "CoordinatorFactory",
+          "IntegratedCoordinatorService",
+          "IntegratedCoordinatorService",
+          "CoordinatorHealthCheck",
+          "CoordinatorHealthCheck"
+        ],
+        "imports": [
+          "@/types/generation",
+          "@/lib/analysis/services/reader/reader-experience-analysis-service",
+          "@/lib/analysis/services/character/character-analysis-service",
+          "@/lib/characters/core/types"
+        ],
+        "exports": [
+          "BaseCoordinatorOptions",
+          "BaseMetadata",
+          "CacheableCoordinator",
+          "AnalysisCoordinatorOptions",
+          "IntegratedAnalysisResult",
+          "AnalysisMetadata",
+          "SceneStructureAnalysis",
+          "SceneRecommendation",
+          "LiteraryInspiration",
+          "LiteraryTechnique",
+          "IAnalysisCoordinator",
+          "OptimizationCoordinatorOptions",
+          "PrioritizedSuggestion",
+          "ConflictResolution",
+          "ImplementationStep",
+          "SynergyOpportunity",
+          "IntegratedRecommendations",
+          "ThemeOptimization",
+          "StyleOptimization",
+          "CharacterOptimization",
+          "TensionOptimization",
+          "OptimizationMetadata",
+          "IntegratedOptimizationResult",
+          "OptimizationInput",
+          "IOptimizationCoordinator",
+          "ThemeEnhancement",
+          "SymbolicElement",
+          "ForeshadowingOpportunity",
+          "StyleGuidance",
+          "ExpressionAlternatives",
+          "SubjectPatternOptimization",
+          "StructureRecommendation",
+          "RepetitionAlternative",
+          "DepthRecommendation",
+          "CharacterDepthPrompt",
+          "TensionPacingRecommendation",
+          "TensionCurvePoint",
+          "CoordinatorFactory",
+          "IntegratedCoordinatorService",
+          "CoordinatorHealthCheck"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "score",
+          "rate",
+          "detect"
+        ],
+        "enhancementFeatures": [
+          "enhance",
+          "optimize",
+          "refine"
+        ],
+        "integrationPoints": [
+          "character",
+          "memory",
+          "plot",
+          "context",
+          "reader",
+          "style",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "service",
+          "coordinator"
+        ],
+        "aiIntegration": [
+          "ai",
+          "prompt",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "cache",
+          "parallel"
+        ]
+      },
+      "optimization-coordinator.ts": {
+        "filepath": "coordinators\\optimization-coordinator.ts",
+        "componentName": "OptimizationCoordinator",
+        "fileSize": 40538,
+        "methods": [
+          "constructor",
+          "initializeServices",
+          "getServiceStatus",
+          "optimizeChapter",
+          "executeParallelOptimization",
+          "validateServiceReadiness",
+          "executeParallelOptimization",
+          "executeSequentialOptimization",
+          "executeThemeOptimization",
+          "executeStyleOptimization",
+          "executeCharacterOptimization",
+          "executeTensionOptimization",
+          "integrateOptimizationResults",
+          "generateIntegratedRecommendations",
+          "resolveConflicts",
+          "collectAllSuggestions",
+          "prioritizeSuggestions",
+          "resolveConflicts",
+          "detectConflict",
+          "determineImplementationOrder",
+          "detectSynergies",
+          "getUsedServices",
+          "countTotalRecommendations",
+          "countByPriority",
+          "determinePriority",
+          "generateCacheKey",
+          "hashString",
+          "recordPerformanceMetrics",
+          "clearCache",
+          "performDiagnostics",
+          "createFallbackOptimizationResult",
+          "createFallbackThemeOptimization",
+          "createFallbackStyleOptimization",
+          "createFallbackCharacterOptimization",
+          "createFallbackTensionOptimization",
+          "createFallbackPrioritizedSuggestions",
+          "createFallbackImplementationOrder",
+          "createOptimizationCoordinator"
+        ],
+        "interfaces": [
+          "IntegratedOptimizationResult",
+          "IntegratedOptimizationResult",
+          "PrioritizedSuggestion",
+          "PrioritizedSuggestion",
+          "ConflictResolution",
+          "ConflictResolution",
+          "ImplementationStep",
+          "ImplementationStep",
+          "SynergyOpportunity",
+          "SynergyOpportunity",
+          "OptimizationCoordinatorOptions",
+          "OptimizationCoordinatorOptions",
+          "OptimizationCoordinatorDependencies",
+          "OptimizationCoordinatorDependencies"
+        ],
+        "imports": [
+          "@/lib/utils/logger",
+          "@/lib/analysis/adapters/gemini-adapter",
+          "@/lib/utils/json-parser",
+          "@/lib/utils/api-throttle",
+          "@/lib/analysis/enhancement/theme/theme-enhancement-service",
+          "@/lib/analysis/enhancement/style/style-optimization-service",
+          "@/lib/analysis/enhancement/character/character-depth-service",
+          "@/lib/analysis/enhancement/tension/tension-optimization-service",
+          "@/lib/characters/manager",
+          "@/lib/memory/core/memory-manager",
+          "@/types/generation",
+          "@/lib/analysis/core/types",
+          "@/lib/analysis/enhancement/tension/interfaces",
+          "@/lib/analysis/enhancement/character/interfaces",
+          "@/lib/analysis/core/interfaces",
+          "@/lib/characters/core/types"
+        ],
+        "exports": [
+          "IntegratedOptimizationResult",
+          "PrioritizedSuggestion",
+          "ConflictResolution",
+          "ImplementationStep",
+          "SynergyOpportunity",
+          "OptimizationCoordinatorOptions",
+          "OptimizationCoordinatorDependencies",
+          "OptimizationCoordinator",
+          "createOptimizationCoordinator",
+          "optimizationCoordinator"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "score",
+          "rate",
+          "detect",
+          "extract",
+          "parse"
+        ],
+        "enhancementFeatures": [
+          "enhance",
+          "optimize",
+          "refine"
+        ],
+        "integrationPoints": [
+          "character",
+          "memory",
+          "plot",
+          "context",
+          "style",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "manager",
+          "service",
+          "coordinator",
+          "adapter"
+        ],
+        "aiIntegration": [
+          "gemini",
+          "ai",
+          "prompt",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "performance",
+          "cache",
+          "parallel",
+          "async"
+        ]
+      }
+    },
+    "enhancementModules": {
+      "character": {
+        "character-depth-service.ts": {
+          "filepath": "enhancement\\character\\character-depth-service.ts",
+          "componentName": "CharacterDepthService",
+          "fileSize": 43989,
+          "methods": [
+            "generateDepthRecommendations",
+            "suggestGenreBasedTraits",
+            "constructor",
+            "generateDepthRecommendations",
+            "generateMultipleCharacterRecommendations",
+            "suggestGenreBasedTraits",
+            "generateDepthPromptForChapter",
+            "recommendFocusCharactersForChapter",
+            "performBasicAnalysisWithFacade",
+            "getCharacterPsychologyFromMemorySystem",
+            "generateRelationshipRecommendationsWithFacade",
+            "generateConsistencyRecommendations",
+            "generateArcOptimizationRecommendations",
+            "generateMotivationEnhancements",
+            "generateContrastRecommendations",
+            "prioritizeRecommendations",
+            "calculateDepthPriority",
+            "formatConsistencyRecommendations",
+            "formatArcRecommendations",
+            "formatMotivationRecommendations",
+            "formatRelationshipRecommendations",
+            "formatContrastRecommendations",
+            "buildGenreAnalysisPrompt",
+            "buildArcOptimizationPrompt",
+            "buildMotivationEnhancementPrompt",
+            "buildContrastRecommendationsPrompt",
+            "parseGenreRecommendationsResponse",
+            "parseArcRecommendationsResponse",
+            "parseMotivationEnhancementsResponse",
+            "parseContrastRecommendationsResponse",
+            "generateFallbackRecommendations",
+            "generateFallbackArcRecommendations",
+            "generateFallbackMotivationEnhancements",
+            "buildRelationshipRecommendationsFromAnalysis",
+            "buildCharacterDepthPrompt",
+            "generatePsychologicalInsight",
+            "cacheRecommendations",
+            "publishRecommendationEvent",
+            "extractPsychologyFromSearchResult",
+            "extractPsychologyFromAnalysis",
+            "extractRelationshipDynamicsFromAnalysis",
+            "extractRelationshipsFromAnalysis",
+            "createFallbackPsychology",
+            "createCharacterDepthService"
+          ],
+          "interfaces": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "CharacterAnalysisResult",
+            "ICharacterDepthService"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/characters/core/types",
+            "@/lib/characters/manager",
+            "@/lib/memory/core/memory-manager",
+            "@/lib/memory/core/types",
+            "@/lib/utils/api-throttle",
+            "@/lib/generation/gemini-client",
+            "@/lib/utils/json-parser",
+            "@/lib/characters/core/constants"
+          ],
+          "exports": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "ICharacterDepthService",
+            "CharacterDepthService",
+            "createCharacterDepthService",
+            "characterDepthService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "extract",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "character",
+            "memory",
+            "context"
+          ],
+          "systemConnections": [
+            "manager",
+            "service"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimization",
+            "cache",
+            "async"
+          ]
+        },
+        "character-depth-service copy.ts": {
+          "filepath": "enhancement\\character\\character-depth-service copy.ts",
+          "componentName": "CharacterDepthService copy",
+          "fileSize": 36208,
+          "methods": [
+            "generateDepthRecommendations",
+            "suggestGenreBasedTraits",
+            "constructor",
+            "generateDepthRecommendations",
+            "generateMultipleCharacterRecommendations",
+            "suggestGenreBasedTraits",
+            "generateDepthPromptForChapter",
+            "recommendFocusCharactersForChapter",
+            "performBasicAnalysis",
+            "generateConsistencyRecommendations",
+            "generateArcOptimizationRecommendations",
+            "generateMotivationEnhancements",
+            "generateRelationshipRecommendations",
+            "generateContrastRecommendations",
+            "prioritizeRecommendations",
+            "calculateDepthPriority",
+            "formatConsistencyRecommendations",
+            "formatArcRecommendations",
+            "formatMotivationRecommendations",
+            "formatRelationshipRecommendations",
+            "formatContrastRecommendations",
+            "buildGenreAnalysisPrompt",
+            "buildArcOptimizationPrompt",
+            "buildMotivationEnhancementPrompt",
+            "buildContrastRecommendationsPrompt",
+            "parseGenreRecommendationsResponse",
+            "parseArcRecommendationsResponse",
+            "parseMotivationEnhancementsResponse",
+            "parseContrastRecommendationsResponse",
+            "generateFallbackRecommendations",
+            "generateFallbackArcRecommendations",
+            "generateFallbackMotivationEnhancements",
+            "buildRelationshipRecommendationsFromData",
+            "buildCharacterDepthPrompt",
+            "generatePsychologicalInsight",
+            "cacheRecommendations",
+            "publishRecommendationEvent"
+          ],
+          "interfaces": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "CharacterAnalysisResult",
+            "ICharacterDepthService"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/characters/core/types",
+            "@/lib/characters/manager",
+            "@/lib/analysis/services/character-analysis-service",
+            "@/lib/utils/api-throttle",
+            "@/lib/generation/gemini-client",
+            "@/lib/utils/json-parser",
+            "@/lib/characters/core/constants"
+          ],
+          "exports": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "ICharacterDepthService",
+            "CharacterDepthService",
+            "characterDepthService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "character",
+            "context"
+          ],
+          "systemConnections": [
+            "manager",
+            "service"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimization",
+            "cache",
+            "async"
+          ]
+        },
+        "interfaces.ts": {
+          "filepath": "enhancement\\character\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 6083,
+          "methods": [
+            "generateDepthRecommendations"
+          ],
+          "interfaces": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "ConsistencyAnalysis",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "ICharacterDepthService"
+          ],
+          "imports": [
+            "@/lib/characters/core/types"
+          ],
+          "exports": [
+            "DepthRecommendation",
+            "CharacterArcRecommendation",
+            "ConsistencyAnalysis",
+            "MotivationEnhancement",
+            "RelationshipDynamicRecommendation",
+            "ContrastRecommendation",
+            "CharacterDepthPrompt",
+            "ICharacterDepthService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate"
+          ],
+          "enhancementFeatures": [
+            "enhance",
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "ai",
+            "prompt"
+          ],
+          "optimizationFeatures": [
+            "optimize"
+          ]
+        }
+      },
+      "style": {
+        "interfaces.ts": {
+          "filepath": "enhancement\\style\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 5186,
+          "methods": [
+            "generateStyleGuidance"
+          ],
+          "interfaces": [
+            "SubjectPatternOptimizationRequest",
+            "IStyleOptimizationService",
+            "IStyleOptimizationService",
+            "StyleOptimizationContext",
+            "StyleOptimizationOptions",
+            "StyleOptimizationResult",
+            "BulkOptimizationRequest",
+            "IStyleOptimizationServiceExtended"
+          ],
+          "imports": [
+            "@/types/generation",
+            "@/lib/analysis/core/types"
+          ],
+          "exports": [
+            "SubjectPatternOptimizationRequest",
+            "IStyleOptimizationService",
+            "StyleOptimizationContext",
+            "StyleOptimizationOptions",
+            "StyleOptimizationResult",
+            "BulkOptimizationRequest",
+            "IStyleOptimizationServiceExtended"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "score",
+            "rate"
+          ],
+          "enhancementFeatures": [
+            "enhance",
+            "optimize"
+          ],
+          "integrationPoints": [
+            "context",
+            "style",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "ai",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "optimization",
+            "cache"
+          ]
+        },
+        "style-optimization-service.ts": {
+          "filepath": "enhancement\\style\\style-optimization-service.ts",
+          "componentName": "StyleOptimizationService",
+          "fileSize": 36933,
+          "methods": [
+            "constructor",
+            "ensureInitialized",
+            "initialize",
+            "getPreviousChapterContent",
+            "generateStyleGuidance",
+            "generateStyleGuidanceWithAI",
+            "generateBasicStyleGuidance",
+            "createFallbackStyleGuidance",
+            "validateStyleGuidance",
+            "suggestAlternativeExpressions",
+            "generateAlternativesWithAI",
+            "validateAlternatives",
+            "createFallbackAlternatives",
+            "optimizeSubjectPatterns",
+            "generateSubjectOptimizationWithAI",
+            "createFallbackSubjectOptimization",
+            "generateStructureRecommendations",
+            "generateStructureRecommendationsWithAI",
+            "validateStructureRecommendation",
+            "createFallbackStructureRecommendations",
+            "generateRepetitionAlternatives",
+            "generateRepetitionAlternativesWithAI",
+            "validateRepetitionAlternative",
+            "createFallbackRepetitionAlternatives",
+            "map",
+            "hashObject"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/analysis/adapters/gemini-adapter",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "@/lib/storage",
+            "@/types/generation",
+            "@/lib/analysis/core/interfaces",
+            "@/lib/analysis/core/types",
+            "@/lib/analysis/utils/cache-storage",
+            "@/lib/analysis/services/style/interfaces"
+          ],
+          "exports": [
+            "StyleOptimizationService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "optimize"
+          ],
+          "integrationPoints": [
+            "context",
+            "narrative",
+            "style",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "optimization",
+            "cache",
+            "async"
+          ]
+        }
+      },
+      "tension": {
+        "interfaces.ts": {
+          "filepath": "enhancement\\tension\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 2590,
+          "methods": [
+            "initialize"
+          ],
+          "interfaces": [
+            "TensionRecommendation",
+            "PacingRecommendation",
+            "TensionPacingRecommendation",
+            "StoryEvent",
+            "TensionCurvePoint",
+            "NarrativeArcInfo",
+            "ITensionOptimizationService"
+          ],
+          "imports": [],
+          "exports": [
+            "TensionRecommendation",
+            "PacingRecommendation",
+            "TensionPacingRecommendation",
+            "StoryEvent",
+            "TensionCurvePoint",
+            "NarrativeArcInfo",
+            "ITensionOptimizationService"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "rate"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "narrative",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "ai"
+          ],
+          "optimizationFeatures": [
+            "optimization"
+          ]
+        },
+        "tension-optimization-service.ts": {
+          "filepath": "enhancement\\tension\\tension-optimization-service.ts",
+          "componentName": "TensionOptimizationService",
+          "fileSize": 57583,
+          "methods": [
+            "initialize",
+            "getTensionPacingRecommendation",
+            "info",
+            "calculateOptimalTension",
+            "adjustForStructuralPoints",
+            "adjustBasedOnRecentPattern",
+            "applyGenreSpecificAdjustments",
+            "adjustTensionForEvents",
+            "generatePacingRecommendation",
+            "generateTensionOptimizationSuggestions",
+            "generateSpecificSuggestions",
+            "getDefaultSuggestions",
+            "generateTensionCurve",
+            "recommendClimax",
+            "adjustTensionForChapter",
+            "getAdvancedTensionAdjustment",
+            "getRecentTensions",
+            "updateRecentTensionsCache",
+            "addRandomVariation",
+            "isPrime",
+            "isFibonacci",
+            "shouldUseAdvancedAnalysis",
+            "calculateNarrativePosition"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/utils/api-throttle",
+            "../../adapters/gemini-adapter",
+            "../../adapters/interfaces",
+            "./interfaces"
+          ],
+          "exports": [
+            "TensionOptimizationService"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "rate",
+            "parse"
+          ],
+          "enhancementFeatures": [],
+          "integrationPoints": [
+            "character",
+            "narrative",
+            "tension"
+          ],
+          "systemConnections": [
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt"
+          ],
+          "optimizationFeatures": [
+            "optimization",
+            "cache",
+            "async"
+          ]
+        }
+      },
+      "theme": {
+        "interfaces.ts": {
+          "filepath": "enhancement\\theme\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 1954,
+          "methods": [],
+          "interfaces": [
+            "IThemeEnhancementService",
+            "IThemeEnhancementService"
+          ],
+          "imports": [
+            "../../core/types"
+          ],
+          "exports": [
+            "IThemeEnhancementService"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "rate",
+            "detect"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "context",
+            "theme"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [],
+          "optimizationFeatures": []
+        },
+        "theme-enhancement-service.ts": {
+          "filepath": "enhancement\\theme\\theme-enhancement-service.ts",
+          "componentName": "ThemeEnhancementService",
+          "fileSize": 48435,
+          "methods": [
+            "constructor",
+            "initialize",
+            "generateThemeEnhancements",
+            "generateLiteraryInspirations",
+            "suggestSymbolicElements",
+            "detectForeshadowingOpportunities",
+            "suggestLiteraryTechniquesForTheme",
+            "generateThemeEnhancementsWithAI",
+            "generateLiteraryInspirationsWithAI",
+            "generateSymbolicElementsWithAI",
+            "detectForeshadowingWithAI",
+            "substring",
+            "generateTechniquesForThemeWithAI",
+            "validateThemeEnhancement",
+            "validateLiteraryInspirations",
+            "validateTechnique",
+            "validateSymbolicElement",
+            "validateForeshadowingOpportunity",
+            "validateLiteraryTechnique",
+            "createFallbackThemeEnhancements",
+            "createFallbackLiteraryInspirations",
+            "createFallbackSymbolicElements",
+            "getDefaultTechniquesForTheme",
+            "initializeLiteraryTechniques",
+            "loadLiteraryTechniques",
+            "saveLiteraryTechniques",
+            "addTechniquesToDatabase",
+            "findTechniquesForTheme",
+            "filterTechniquesByGenre",
+            "getPhaseStrategy",
+            "getGenreStrategy",
+            "determineStoryPhase",
+            "hashContent",
+            "hashObject"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/analysis/adapters/gemini-adapter",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "@/lib/storage",
+            "@/lib/analysis/core/interfaces",
+            "@/lib/analysis/enhancement/theme/interfaces",
+            "@/lib/analysis/core/types",
+            "@/lib/analysis/utils/cache-storage"
+          ],
+          "exports": [
+            "ThemeEnhancementService",
+            "themeEnhancementService"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "rate",
+            "detect",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "character",
+            "plot",
+            "context",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt"
+          ],
+          "optimizationFeatures": [
+            "cache",
+            "async"
+          ]
+        }
+      }
+    },
+    "analysisServices": {
+      "chapter": {
+        "chapter-analysis-service.ts": {
+          "filepath": "services\\chapter\\chapter-analysis-service.ts",
+          "componentName": "ChapterAnalysisService",
+          "fileSize": 41676,
+          "methods": [
+            "constructor",
+            "analyzeChapter",
+            "getQualityMetrics",
+            "getScenes",
+            "getCharacterAppearances",
+            "extractKeywords",
+            "generateQualityMetricsImprovements",
+            "generateImprovementSuggestions",
+            "analyzeForIntegration",
+            "performOptimizedAnalysis",
+            "extractBasicScenes",
+            "clearCache",
+            "parseChapterContent",
+            "createFallbackParsedContent",
+            "performBaseAnalysis",
+            "extractScenes",
+            "analyzeTextStatistics",
+            "countWords",
+            "createBaseAnalysisPrompt",
+            "createSceneExtractionPrompt",
+            "formatCharacterAppearances",
+            "formatThemeOccurrences",
+            "formatForeshadowingElements",
+            "formatQualityMetrics",
+            "createFallbackAnalysis",
+            "createFallbackCharacterAppearances",
+            "createFallbackThemeOccurrences",
+            "createFallbackForeshadowingElements",
+            "createFallbackQualityMetrics"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/analysis/adapters/gemini-adapter",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "@/lib/utils/yaml-helper",
+            "@/lib/analysis/services/chapter/interfaces",
+            "@/types/generation",
+            "@/lib/analysis/utils/analysis-formatter"
+          ],
+          "exports": [
+            "ChapterAnalysisService",
+            "chapterAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate",
+            "detect",
+            "extract",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "enhance",
+            "improve",
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character",
+            "context",
+            "theme"
+          ],
+          "systemConnections": [
+            "service",
+            "coordinator",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "cache",
+            "async"
+          ]
+        },
+        "interfaces.ts": {
+          "filepath": "services\\chapter\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 2538,
+          "methods": [
+            "analyzeChapter",
+            "getQualityMetrics",
+            "getScenes",
+            "getCharacterAppearances",
+            "extractKeywords"
+          ],
+          "interfaces": [
+            "IChapterAnalysisService",
+            "IChapterAnalysisService"
+          ],
+          "imports": [
+            "@/types/generation",
+            "@/lib/analysis/services/chapter/chapter-analysis-service"
+          ],
+          "exports": [
+            "IChapterAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "extract"
+          ],
+          "enhancementFeatures": [],
+          "integrationPoints": [
+            "character",
+            "context",
+            "theme"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "generation"
+          ],
+          "optimizationFeatures": []
+        }
+      },
+      "character": {
+        "character-analysis-service.ts": {
+          "filepath": "services\\character\\character-analysis-service.ts",
+          "componentName": "CharacterAnalysisService",
+          "fileSize": 23412,
+          "methods": [
+            "constructor",
+            "analyzeCharacter",
+            "analyzeCharacterGrowth",
+            "analyzeGrowthFromContent",
+            "forEach",
+            "analyzeCharacterAppearances",
+            "analyzeCharacterPsychologies",
+            "analyzeRelationshipDynamics",
+            "identifyMajorGrowthEvents",
+            "generateCharacterImprovements",
+            "clearCache",
+            "formatCharacterAppearances",
+            "formatCharacterPsychologies",
+            "formatRelationshipDynamics",
+            "createFallbackCharacterAppearances",
+            "createFallbackCharacterAnalysis"
+          ],
+          "interfaces": [
+            "CharacterGrowthAnalysis",
+            "CharacterGrowthAnalysis",
+            "CharacterAnalysisResult",
+            "CharacterAnalysisResult"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/lib/analysis/adapters/gemini-adapter",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "@/lib/characters/manager",
+            "@/types/generation",
+            "@/types/characters"
+          ],
+          "exports": [
+            "CharacterGrowthAnalysis",
+            "CharacterAnalysisResult",
+            "CharacterAnalysisService",
+            "characterAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate",
+            "identify",
+            "extract",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "improve"
+          ],
+          "integrationPoints": [
+            "character",
+            "context"
+          ],
+          "systemConnections": [
+            "manager",
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "cache",
+            "async"
+          ]
+        },
+        "interfaces.ts": {
+          "filepath": "services\\character\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 3391,
+          "methods": [
+            "analyzeCharacter",
+            "getCharacterPsychology",
+            "getMultipleCharacterPsychology",
+            "getCharacterRelationships",
+            "getRelationshipAnalysis",
+            "detectCharactersInContent",
+            "predictCharacterAction",
+            "validateCharacter",
+            "extractCharacterDialogs",
+            "detectCharacterMentions",
+            "analyzeCharacterAppearancesInChapter"
+          ],
+          "interfaces": [
+            "ICharacterAnalysisService"
+          ],
+          "imports": [
+            "@/lib/characters/core/types",
+            "@/types/generation",
+            "@/types/chapters",
+            "@/lib/analysis/services/character/character-analysis-service"
+          ],
+          "exports": [
+            "ICharacterAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "detect",
+            "extract"
+          ],
+          "enhancementFeatures": [],
+          "integrationPoints": [
+            "character"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "generation"
+          ],
+          "optimizationFeatures": []
+        }
+      },
+      "narrative": {
+        "interfaces.ts": {
+          "filepath": "services\\narrative\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 4860,
+          "methods": [
+            "analyzeSceneStructure",
+            "createNarrativeAnalysisService",
+            "analyzeSceneStructure",
+            "generateLiteraryInspirations",
+            "analyzeNarrativeElement"
+          ],
+          "interfaces": [
+            "GenerationContext",
+            "GenerationContext",
+            "NarrativeAnalysisOptions",
+            "NarrativeAnalysisOptions",
+            "INarrativeAnalysisService",
+            "INarrativeAnalysisService",
+            "INarrativeAnalysisServiceFactory",
+            "INarrativeAnalysisServiceFactory",
+            "ISceneStructureOptimizer",
+            "ISceneStructureOptimizer",
+            "ILiteraryComparisonSystem",
+            "ILiteraryComparisonSystem"
+          ],
+          "imports": [
+            "@/types/chapters",
+            "@/lib/memory/long-term/types",
+            "@/types/generation",
+            "@/lib/generation/gemini-client"
+          ],
+          "exports": [
+            "GenerationContext",
+            "NarrativeAnalysisOptions",
+            "INarrativeAnalysisService",
+            "INarrativeAnalysisServiceFactory",
+            "ISceneStructureOptimizer",
+            "ILiteraryComparisonSystem"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate",
+            "detect"
+          ],
+          "enhancementFeatures": [
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character",
+            "memory",
+            "plot",
+            "context",
+            "narrative",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize"
+          ]
+        },
+        "literary-comparison-system.ts": {
+          "filepath": "services\\narrative\\literary-comparison-system.ts",
+          "componentName": "LiteraryComparisonSystem",
+          "fileSize": 13323,
+          "methods": [
+            "collectAvailableContexts",
+            "getStage",
+            "getGenre",
+            "addJudgmentAxis",
+            "constructor",
+            "generateLiteraryInspirations",
+            "loadGuidelines",
+            "selectGuidelinesWithAI",
+            "join",
+            "buildSelectionPrompt",
+            "parseSelectionResponse",
+            "adjustSelectionCount",
+            "randomSelection",
+            "convertToInspiration",
+            "determineGenre",
+            "createDefaultInspiration",
+            "createDefaultGuidelinesData",
+            "addJudgmentAxis"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/generation/gemini-client",
+            "@/lib/utils/logger",
+            "@/lib/utils/api-throttle",
+            "@/lib/utils/json-parser",
+            "@/lib/analysis/adapters/storage-adapter",
+            "@/lib/plot/world-settings-manager",
+            "@/types/literary",
+            "@/types/generation"
+          ],
+          "exports": [
+            "LiteraryComparisonSystem"
+          ],
+          "analysisCapabilities": [
+            "analysis",
+            "rate",
+            "extract",
+            "parse"
+          ],
+          "enhancementFeatures": [],
+          "integrationPoints": [
+            "character",
+            "plot",
+            "context"
+          ],
+          "systemConnections": [
+            "manager",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "cache",
+            "async"
+          ]
+        },
+        "narrative-analysis-service.ts": {
+          "filepath": "services\\narrative\\narrative-analysis-service.ts",
+          "componentName": "NarrativeAnalysisService",
+          "fileSize": 35115,
+          "methods": [
+            "constructor",
+            "initialize",
+            "analyzeSceneStructure",
+            "generateSceneRecommendations",
+            "generateLiteraryInspirations",
+            "getCurrentTensionLevel",
+            "setGenre",
+            "getRecentChaptersFromMemory",
+            "constructSafeChapter",
+            "Date",
+            "getComprehensiveContext",
+            "getConsolidatedWorldSettings",
+            "getRelevantCharacters",
+            "performSceneStructureAnalysis",
+            "integrateAnalysisResults",
+            "updatePerformanceStats",
+            "calculateAnalysisAccuracy",
+            "createFallbackAnalysisResult",
+            "createFallbackSceneStructureAnalysis",
+            "createFallbackSceneRecommendations",
+            "createGenreSpecificFallback",
+            "ensureInitialized",
+            "getDefaultTensionByGenre",
+            "getTensionHistoryFromMemory",
+            "buildEnhancedContext",
+            "notifyGenreChange",
+            "getPerformanceStatistics",
+            "performDiagnostics",
+            "updateConfiguration"
+          ],
+          "interfaces": [
+            "NarrativeAnalysisOptions",
+            "NarrativeAnalysisOptions",
+            "PerformanceMetrics",
+            "PerformanceMetrics",
+            "UnifiedSearchResult",
+            "UnifiedSearchResult",
+            "NarrativeAnalysisResult",
+            "NarrativeAnalysisResult"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "@/types/chapters",
+            "@/lib/generation/gemini-client",
+            "@/lib/memory/core/memory-manager",
+            "@/lib/memory/core/types",
+            "@/types/generation",
+            "./scene-structure-optimizer",
+            "./literary-comparison-system"
+          ],
+          "exports": [
+            "NarrativeAnalysisOptions",
+            "NarrativeAnalysisResult",
+            "NarrativeAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate"
+          ],
+          "enhancementFeatures": [
+            "enhance",
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character",
+            "memory",
+            "plot",
+            "context",
+            "narrative",
+            "tension"
+          ],
+          "systemConnections": [
+            "manager",
+            "service"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "optimization",
+            "performance",
+            "efficiency",
+            "cache",
+            "async"
+          ]
+        },
+        "scene-structure-optimizer.ts": {
+          "filepath": "services\\narrative\\scene-structure-optimizer.ts",
+          "componentName": "SceneStructureOptimizer",
+          "fileSize": 13503,
+          "methods": [
+            "constructor",
+            "analyzeSceneStructure",
+            "generateSceneRecommendations",
+            "calculateSceneLength",
+            "calculateTypeDistribution",
+            "forEach",
+            "calculateLengthDistribution",
+            "calculatePaceVariation",
+            "calculatePOVsDistribution",
+            "forEach",
+            "analyzeTransitionTypes",
+            "identifyUnderrepresentedTypes",
+            "formatSceneType",
+            "generateRecommendedSceneStructure",
+            "formatAIResponse"
+          ],
+          "interfaces": [],
+          "imports": [
+            "@/lib/generation/gemini-client",
+            "@/lib/utils/logger",
+            "@/types/chapters",
+            "@/types/generation",
+            "@/lib/parameters"
+          ],
+          "exports": [
+            "SceneStructureOptimizer"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate",
+            "identify"
+          ],
+          "enhancementFeatures": [
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character"
+          ],
+          "systemConnections": [
+            "manager"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "async"
+          ]
+        }
+      },
+      "reader": {
+        "interfaces.ts": {
+          "filepath": "services\\reader\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 3219,
+          "methods": [],
+          "interfaces": [
+            "Chapter",
+            "Scene",
+            "ReaderExperienceAnalysis",
+            "AnalyzeReaderExperienceRequest",
+            "AnalyzeReaderExperienceResponse",
+            "GenerateImprovementsRequest",
+            "GenerateImprovementsResponse",
+            "GenerateSceneImprovementsRequest",
+            "GenerateSceneImprovementsResponse",
+            "GetGenreExpectationsRequest",
+            "GetGenreExpectationsResponse",
+            "AnalyzeForReaderTypeRequest",
+            "AnalyzeForReaderTypeResponse",
+            "ExtractScenesRequest",
+            "ExtractScenesResponse",
+            "ErrorResponse",
+            "NovelAISystemAPI"
+          ],
+          "imports": [],
+          "exports": [
+            "Chapter",
+            "Scene",
+            "ReaderExperienceAnalysis",
+            "AnalyzeReaderExperienceRequest",
+            "AnalyzeReaderExperienceResponse",
+            "GenerateImprovementsRequest",
+            "GenerateImprovementsResponse",
+            "GenerateSceneImprovementsRequest",
+            "GenerateSceneImprovementsResponse",
+            "GetGenreExpectationsRequest",
+            "GetGenreExpectationsResponse",
+            "AnalyzeForReaderTypeRequest",
+            "AnalyzeForReaderTypeResponse",
+            "ExtractScenesRequest",
+            "ExtractScenesResponse",
+            "ErrorResponse",
+            "NovelAISystemAPI"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "detect",
+            "extract"
+          ],
+          "enhancementFeatures": [
+            "improve"
+          ],
+          "integrationPoints": [
+            "character",
+            "reader"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "ai"
+          ],
+          "optimizationFeatures": []
+        },
+        "reader-experience-analysis-service.ts": {
+          "filepath": "services\\reader\\reader-experience-analysis-service.ts",
+          "componentName": "ReaderExperienceAnalysisService",
+          "fileSize": 16308,
+          "methods": [
+            "constructor",
+            "analyzeReaderExperience",
+            "generateExperienceImprovements",
+            "forEach",
+            "getGenreSpecificReaderExpectations",
+            "generateSceneImprovements",
+            "normalizeScore",
+            "calculateOverallScore",
+            "createDefaultAnalysis",
+            "getInterestSuggestion",
+            "getEmpathySuggestion",
+            "getClaritySuggestion",
+            "getUnexpectednessSuggestion",
+            "getAnticipationSuggestion",
+            "analyzeForSpecificReaderType"
+          ],
+          "interfaces": [
+            "Scene",
+            "ReaderExperienceAnalysis"
+          ],
+          "imports": [
+            "@/lib/generation/gemini-client",
+            "@/lib/utils/logger",
+            "@/lib/utils/api-throttle",
+            "@/types/chapters",
+            "@/lib/utils/json-parser"
+          ],
+          "exports": [
+            "Scene",
+            "ReaderExperienceAnalysis",
+            "ReaderExperienceAnalyzer"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "improve"
+          ],
+          "integrationPoints": [
+            "character",
+            "reader"
+          ],
+          "systemConnections": [],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "async"
+          ]
+        }
+      },
+      "style": {
+        "interfaces.ts": {
+          "filepath": "services\\style\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 1943,
+          "methods": [],
+          "interfaces": [
+            "SubjectPatternAnalysis",
+            "RepeatedSubjectPattern",
+            "IStyleAnalysisService",
+            "IStyleAnalysisService"
+          ],
+          "imports": [
+            "@/types/generation",
+            "@/lib/analysis/core/types"
+          ],
+          "exports": [
+            "SubjectPatternAnalysis",
+            "RepeatedSubjectPattern",
+            "IStyleAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate"
+          ],
+          "enhancementFeatures": [
+            "improve"
+          ],
+          "integrationPoints": [
+            "style"
+          ],
+          "systemConnections": [
+            "service"
+          ],
+          "aiIntegration": [
+            "generation"
+          ],
+          "optimizationFeatures": []
+        },
+        "style-analysis-service.ts": {
+          "filepath": "services\\style\\style-analysis-service.ts",
+          "componentName": "StyleAnalysisService",
+          "fileSize": 31128,
+          "methods": [
+            "constructor",
+            "initialize",
+            "analyzeStyle",
+            "analyzeExpressionPatterns",
+            "analyzeSubjectPatterns",
+            "analyzeExpressions",
+            "extractExpressionsRuleBased",
+            "extractExpressionsWithAI",
+            "extractExpressionContext",
+            "categorizeExpression",
+            "calculateExpressionDiversityScore",
+            "ensureInitialized",
+            "hashContent",
+            "analyzeBasicTextStatistics",
+            "analyzeStyleWithAI",
+            "extractPatternsWithAI",
+            "extractSentences",
+            "extractSubjects",
+            "detectRepeatedSubjects",
+            "calculateSubjectDiversityScore",
+            "generateSubjectDiversitySuggestions",
+            "extractBasicPatterns",
+            "processPatterns"
+          ],
+          "interfaces": [
+            "SubjectPatternAnalysis",
+            "RepeatedSubjectPattern",
+            "ExpressionUsage",
+            "ExpressionUsageResult"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "../../adapters/gemini-adapter",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "@/lib/storage",
+            "../../adapters/storage-adapter",
+            "@/lib/analysis/core/types",
+            "@/types/generation",
+            "./interfaces",
+            "@/lib/analysis/core/interfaces",
+            "@/lib/analysis/utils/cache-storage"
+          ],
+          "exports": [
+            "StyleAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "detect",
+            "extract",
+            "parse",
+            "categorize"
+          ],
+          "enhancementFeatures": [],
+          "integrationPoints": [
+            "context",
+            "narrative",
+            "style"
+          ],
+          "systemConnections": [
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "cache",
+            "async"
+          ]
+        }
+      },
+      "theme": {
+        "interfaces.ts": {
+          "filepath": "services\\theme\\interfaces.ts",
+          "componentName": "Interfaces",
+          "fileSize": 4531,
+          "methods": [
+            "analyzeThemeResonance",
+            "detectResolvedForeshadowing",
+            "createThemeAnalysisService"
+          ],
+          "interfaces": [
+            "IThemeAnalysisService",
+            "IThemeAnalysisService",
+            "IThemeAnalysisServiceFactory",
+            "IMemoryManager"
+          ],
+          "imports": [
+            "../../core/types"
+          ],
+          "exports": [
+            "IThemeAnalysisService",
+            "IThemeAnalysisServiceFactory",
+            "IMemoryManager"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "rate",
+            "detect"
+          ],
+          "enhancementFeatures": [
+            "enhance"
+          ],
+          "integrationPoints": [
+            "character",
+            "memory",
+            "context",
+            "narrative",
+            "theme"
+          ],
+          "systemConnections": [
+            "manager",
+            "service"
+          ],
+          "aiIntegration": [],
+          "optimizationFeatures": []
+        },
+        "theme-analysis-service.ts": {
+          "filepath": "services\\theme\\theme-analysis-service.ts",
+          "componentName": "ThemeAnalysisService",
+          "fileSize": 79252,
+          "methods": [
+            "constructor",
+            "validateDependencies",
+            "analyzeThemeResonance",
+            "processForeshadowing",
+            "getLastForeshadowingResult",
+            "detectResolvedForeshadowing",
+            "generateNewForeshadowing",
+            "visualizeThemePresence",
+            "analyzeSymbolismAndImagery",
+            "analyzeThemeConsistency",
+            "performDiagnostics",
+            "performUnifiedMemorySearch",
+            "mergeThemeData",
+            "mergeForeshadowingData",
+            "mergeNarrativeData",
+            "mergeSymbolismData",
+            "saveAnalysisToMemorySystem",
+            "buildThemeAnalysisPrompt",
+            "buildForeshadowingResolutionPrompt",
+            "buildForeshadowingGenerationPrompt",
+            "buildSymbolismAnalysisPrompt",
+            "generateCacheKey",
+            "join",
+            "createFallbackAnalysis",
+            "validateAndEnhanceAnalysis",
+            "forEach",
+            "recordSuccess",
+            "recordFailure",
+            "segmentContent",
+            "analyzeSegmentThemePresence",
+            "createFallbackVisualization",
+            "getRelatedKeywords",
+            "extractChapterNumberFromContent",
+            "parseInt",
+            "validateGeneratedForeshadowing",
+            "validateSymbolismAnalysis",
+            "validateConsistencyAnalysis",
+            "updateResolvedForeshadowingInMemorySystem",
+            "saveNewForeshadowingToMemorySystem",
+            "updateForeshadowingPlanInMemorySystem",
+            "saveConsistencyAnalysisToMemorySystem",
+            "buildChapterSummaryPrompt",
+            "buildConsistencyAnalysisPrompt",
+            "saveThemeEnhancements",
+            "extractAndStoreSignificantEvents",
+            "analyzeThemeElementResonance",
+            "createImageryMapping",
+            "trackMotif",
+            "buildMotifAnalysisPrompt",
+            "analyzeMotifDevelopmentPattern",
+            "saveMotifTrackingResultToMemorySystem",
+            "optimizeSystem",
+            "optimizeCaches",
+            "optimizeMemorySystemIntegration",
+            "optimizePerformanceMetrics",
+            "updateConfiguration",
+            "getPerformanceStatistics",
+            "getSystemStatus",
+            "cleanup"
+          ],
+          "interfaces": [
+            "OperationResult",
+            "SafeMemoryOperationResult",
+            "PerformanceMetrics"
+          ],
+          "imports": [
+            "@/lib/utils/logger",
+            "../../adapters/gemini-adapter",
+            "@/lib/memory/core/memory-manager",
+            "@/lib/utils/json-parser",
+            "@/lib/utils/api-throttle",
+            "./interfaces",
+            "@/lib/utils/error-handler",
+            "@/lib/parameters",
+            "@/lib/storage",
+            "@/types/chapters",
+            "../../core/types",
+            "@/lib/memory/core/types"
+          ],
+          "exports": [
+            "ThemeAnalysisService"
+          ],
+          "analysisCapabilities": [
+            "analyze",
+            "analysis",
+            "score",
+            "rate",
+            "detect",
+            "extract",
+            "parse"
+          ],
+          "enhancementFeatures": [
+            "enhance",
+            "improve",
+            "optimize"
+          ],
+          "integrationPoints": [
+            "character",
+            "memory",
+            "plot",
+            "context",
+            "narrative",
+            "theme",
+            "tension"
+          ],
+          "systemConnections": [
+            "manager",
+            "service",
+            "adapter"
+          ],
+          "aiIntegration": [
+            "gemini",
+            "ai",
+            "llm",
+            "prompt",
+            "generation"
+          ],
+          "optimizationFeatures": [
+            "optimize",
+            "optimization",
+            "performance",
+            "efficiency",
+            "cache",
+            "async"
+          ]
+        }
+      }
+    },
+    "pipelines": {
+      "post-generation-pipeline.ts": {
+        "filepath": "pipelines\\post-generation-pipeline.ts",
+        "componentName": "PostGenerationPipeline",
+        "fileSize": 18043,
+        "methods": [
+          "constructor",
+          "execute",
+          "executeComprehensiveAnalysis",
+          "extractQualityMetrics",
+          "generateNextChapterOptimizations",
+          "integrateNextChapterSuggestions",
+          "generateQualityBasedSuggestions",
+          "extractCategoryBasedSuggestions",
+          "createFallbackResult",
+          "createFallbackAnalysis",
+          "createDefaultQualityMetrics",
+          "createDefaultThemeAnalysis",
+          "createDefaultStyleAnalysis",
+          "createDefaultExpressionPatterns",
+          "createFallbackSuggestions",
+          "healthCheck"
+        ],
+        "interfaces": [
+          "ChapterProcessingResult"
+        ],
+        "imports": [
+          "@/lib/utils/logger",
+          "@/types/generation",
+          "@/types/chapters",
+          "@/lib/analysis/coordinators/analysis-coordinator",
+          "@/lib/analysis/coordinators/optimization-coordinator"
+        ],
+        "exports": [
+          "ChapterProcessingResult",
+          "PostGenerationPipeline"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "score",
+          "rate",
+          "detect",
+          "extract"
+        ],
+        "enhancementFeatures": [
+          "enhance",
+          "optimize"
+        ],
+        "integrationPoints": [
+          "character",
+          "plot",
+          "context",
+          "reader",
+          "style",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "service",
+          "coordinator",
+          "pipeline"
+        ],
+        "aiIntegration": [
+          "ai",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "cache",
+          "async"
+        ]
+      },
+      "pre-generation-pipeline.ts": {
+        "filepath": "pipelines\\pre-generation-pipeline.ts",
+        "componentName": "PreGenerationPipeline",
+        "fileSize": 13496,
+        "methods": [
+          "constructor",
+          "execute",
+          "executeAnalysis",
+          "executeOptimization",
+          "integrateResults",
+          "createBasicEnhancements",
+          "healthCheck"
+        ],
+        "interfaces": [
+          "GenerationEnhancements"
+        ],
+        "imports": [
+          "@/lib/utils/logger",
+          "@/types/generation",
+          "@/lib/analysis/coordinators/analysis-coordinator",
+          "@/lib/analysis/coordinators/optimization-coordinator",
+          "@/lib/analysis/core/types"
+        ],
+        "exports": [
+          "GenerationEnhancements",
+          "PreGenerationPipeline"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "rate"
+        ],
+        "enhancementFeatures": [
+          "enhance",
+          "improve",
+          "optimize"
+        ],
+        "integrationPoints": [
+          "character",
+          "plot",
+          "context",
+          "style",
+          "theme",
+          "tension"
+        ],
+        "systemConnections": [
+          "service",
+          "coordinator",
+          "pipeline"
+        ],
+        "aiIntegration": [
+          "ai",
+          "prompt",
+          "generation"
+        ],
+        "optimizationFeatures": [
+          "optimize",
+          "optimization",
+          "async"
+        ]
+      }
+    },
+    "utilities": {
+      "analysis-formatter.ts": {
+        "filepath": "utils\\analysis-formatter.ts",
+        "componentName": "AnalysisFormatter",
+        "fileSize": 7429,
+        "methods": [
+          "formatCharacterAppearances",
+          "formatThemeOccurrences",
+          "formatForeshadowingElements",
+          "formatQualityMetrics",
+          "createFallbackCharacterAppearances",
+          "createFallbackThemeOccurrences",
+          "createFallbackForeshadowingElements",
+          "createFallbackQualityMetrics",
+          "countWords"
+        ],
+        "interfaces": [],
+        "imports": [
+          "@/types/generation",
+          "@/lib/utils/logger"
+        ],
+        "exports": [
+          "AnalysisFormatter"
+        ],
+        "analysisCapabilities": [
+          "analysis"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character",
+          "context",
+          "theme"
+        ],
+        "systemConnections": [],
+        "aiIntegration": [
+          "ai",
+          "generation"
+        ],
+        "optimizationFeatures": []
+      },
+      "arc-ttils.ts": {
+        "filepath": "utils\\arc-ttils.ts",
+        "componentName": "ArcTtils",
+        "fileSize": 15184,
+        "methods": [
+          "analyzeArcAlignment",
+          "determineCurrentPhase",
+          "suggestNextPhase",
+          "analyzeCharacterArc",
+          "generateSuggestedEvents",
+          "suggestStageDevelopment",
+          "suggestArcType",
+          "hasTraitsOfType"
+        ],
+        "interfaces": [
+          "ArcAnalysisResult",
+          "ArcStageMapping"
+        ],
+        "imports": [],
+        "exports": [
+          "ArcAnalysisResult",
+          "ArcUtils"
+        ],
+        "analysisCapabilities": [
+          "analyze",
+          "analysis",
+          "rate"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character",
+          "theme"
+        ],
+        "systemConnections": [],
+        "aiIntegration": [
+          "ai"
+        ],
+        "optimizationFeatures": []
+      },
+      "cache-storage.ts": {
+        "filepath": "utils\\cache-storage.ts",
+        "componentName": "CacheStorage",
+        "fileSize": 3826,
+        "methods": [
+          "constructor",
+          "delete",
+          "clear",
+          "deleteByPrefix",
+          "removeExpired",
+          "size",
+          "pruneCache"
+        ],
+        "interfaces": [
+          "CacheEntry"
+        ],
+        "imports": [
+          "@/lib/utils/logger",
+          "@/lib/analysis/core/interfaces",
+          "@/lib/analysis/core/constants"
+        ],
+        "exports": [
+          "CacheStorage"
+        ],
+        "analysisCapabilities": [
+          "analysis"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [],
+        "systemConnections": [],
+        "aiIntegration": [],
+        "optimizationFeatures": [
+          "cache"
+        ]
+      },
+      "serialization-utils.ts": {
+        "filepath": "utils\\serialization-utils.ts",
+        "componentName": "SerializationUtils",
+        "fileSize": 15354,
+        "methods": [
+          "serializeCharacter",
+          "deserializeCharacter",
+          "serializeDiff",
+          "deserializeDiff",
+          "generateCharacterPatch",
+          "generatePatches",
+          "applyCharacterPatch",
+          "createLightweightCharacter",
+          "toFormattedJSON",
+          "processDateObjects",
+          "convertDates",
+          "serializeChanges",
+          "deserializeChanges",
+          "detectCharacterChanges",
+          "detectChanges",
+          "applyChangesToCharacter",
+          "filterChangesByImportance"
+        ],
+        "interfaces": [],
+        "imports": [
+          "@/types/characters",
+          "@/lib/utils/logger",
+          "@/lib/utils/yaml-helper"
+        ],
+        "exports": [
+          "serializeCharacter",
+          "deserializeCharacter",
+          "serializeDiff",
+          "deserializeDiff",
+          "generateCharacterPatch",
+          "applyCharacterPatch",
+          "createLightweightCharacter",
+          "toFormattedJSON",
+          "serializeChanges",
+          "deserializeChanges",
+          "detectCharacterChanges",
+          "applyChangesToCharacter",
+          "filterChangesByImportance"
+        ],
+        "analysisCapabilities": [
+          "rate",
+          "detect",
+          "parse"
+        ],
+        "enhancementFeatures": [],
+        "integrationPoints": [
+          "character"
+        ],
+        "systemConnections": [
+          "service"
+        ],
+        "aiIntegration": [
+          "ai"
+        ],
+        "optimizationFeatures": []
+      }
+    },
+    "integrationPoints": {
+      "characterSystemIntegration": {
+        "integrationLevel": "DEEP_CHARACTER_ANALYSIS_INTEGRATION",
+        "analysisEnhancement": "CHARACTER_ANALYSIS_ENHANCEMENT",
+        "depthAnalysis": "CHARACTER_DEPTH_ANALYSIS",
+        "developmentTracking": "CHARACTER_DEVELOPMENT_TRACKING"
+      },
+      "learningJourneyIntegration": {
+        "integrationLevel": "LEARNING_ANALYSIS_INTEGRATION",
+        "progressAnalysis": "LEARNING_PROGRESS_ANALYSIS",
+        "contentOptimization": "LEARNING_CONTENT_OPTIMIZATION",
+        "adaptiveAnalysis": "ADAPTIVE_LEARNING_ANALYSIS"
+      },
+      "memorySystemIntegration": {
+        "integrationLevel": "MEMORY_ANALYSIS_INTEGRATION",
+        "analysisStorage": "ANALYSIS_RESULT_STORAGE",
+        "historicalAnalysis": "HISTORICAL_ANALYSIS_TRACKING",
+        "cacheOptimization": "ANALYSIS_CACHE_OPTIMIZATION"
+      },
+      "plotSystemIntegration": {
+        "integrationLevel": "PLOT_ANALYSIS_INTEGRATION",
+        "narrativeAnalysis": "NARRATIVE_STRUCTURE_ANALYSIS",
+        "storyOptimization": "STORY_OPTIMIZATION",
+        "coherenceAnalysis": "PLOT_COHERENCE_ANALYSIS"
+      },
+      "crossSystemSynergy": {
+        "analysisCoordination": "MULTI_SYSTEM_ANALYSIS_COORDINATION",
+        "holisticAnalysis": "HOLISTIC_CONTENT_ANALYSIS",
+        "intelligentOptimization": "INTELLIGENT_SYSTEM_OPTIMIZATION"
+      }
+    },
+    "analysisCapabilities": {
+      "contentAnalysis": {
+        "textAnalysis": "ADVANCED_TEXT_ANALYSIS",
+        "structuralAnalysis": "STRUCTURAL_CONTENT_ANALYSIS",
+        "semanticAnalysis": "SEMANTIC_CONTENT_ANALYSIS",
+        "qualityAssessment": "CONTENT_QUALITY_ASSESSMENT"
+      },
+      "characterAnalysis": {
+        "personalityAnalysis": "DEEP_PERSONALITY_ANALYSIS",
+        "developmentTracking": "CHARACTER_DEVELOPMENT_TRACKING",
+        "relationshipAnalysis": "CHARACTER_RELATIONSHIP_ANALYSIS",
+        "depthAssessment": "CHARACTER_DEPTH_ASSESSMENT"
+      },
+      "narrativeAnalysis": {
+        "plotAnalysis": "PLOT_STRUCTURE_ANALYSIS",
+        "paceAnalysis": "NARRATIVE_PACE_ANALYSIS",
+        "themeAnalysis": "THEMATIC_ANALYSIS",
+        "coherenceAnalysis": "NARRATIVE_COHERENCE_ANALYSIS"
+      },
+      "readerExperienceAnalysis": {
+        "engagementAnalysis": "READER_ENGAGEMENT_ANALYSIS",
+        "emotionalImpactAnalysis": "EMOTIONAL_IMPACT_ANALYSIS",
+        "readabilityAnalysis": "CONTENT_READABILITY_ANALYSIS",
+        "satisfactionPrediction": "READER_SATISFACTION_PREDICTION"
+      },
+      "styleAnalysis": {
+        "writingStyleAnalysis": "WRITING_STYLE_ANALYSIS",
+        "toneAnalysis": "NARRATIVE_TONE_ANALYSIS",
+        "voiceAnalysis": "NARRATIVE_VOICE_ANALYSIS",
+        "consistencyAnalysis": "STYLE_CONSISTENCY_ANALYSIS"
+      }
+    },
+    "enhancementCapabilities": {
+      "contentEnhancement": {
+        "qualityImprovement": "CONTENT_QUALITY_ENHANCEMENT",
+        "depthEnhancement": "CONTENT_DEPTH_ENHANCEMENT",
+        "clarityImprovement": "CONTENT_CLARITY_ENHANCEMENT",
+        "engagementOptimization": "READER_ENGAGEMENT_OPTIMIZATION"
+      },
+      "characterEnhancement": {
+        "personalityDeepening": "CHARACTER_PERSONALITY_DEEPENING",
+        "developmentOptimization": "CHARACTER_DEVELOPMENT_OPTIMIZATION",
+        "relationshipEnhancement": "CHARACTER_RELATIONSHIP_ENHANCEMENT",
+        "authenticityImprovement": "CHARACTER_AUTHENTICITY_ENHANCEMENT"
+      },
+      "narrativeEnhancement": {
+        "plotOptimization": "PLOT_STRUCTURE_OPTIMIZATION",
+        "paceOptimization": "NARRATIVE_PACE_OPTIMIZATION",
+        "tensionOptimization": "NARRATIVE_TENSION_OPTIMIZATION",
+        "themeStrengthening": "THEMATIC_STRENGTHENING"
+      },
+      "styleEnhancement": {
+        "writingImprovement": "WRITING_STYLE_IMPROVEMENT",
+        "voiceStrengthening": "NARRATIVE_VOICE_STRENGTHENING",
+        "toneOptimization": "NARRATIVE_TONE_OPTIMIZATION",
+        "flowOptimization": "NARRATIVE_FLOW_OPTIMIZATION"
+      },
+      "holisticEnhancement": {
+        "overallQualityBoost": "OVERALL_CONTENT_QUALITY_BOOST",
+        "readerExperienceOptimization": "READER_EXPERIENCE_OPTIMIZATION",
+        "narrativeCoherenceEnhancement": "NARRATIVE_COHERENCE_ENHANCEMENT",
+        "artisticValueImprovement": "ARTISTIC_VALUE_IMPROVEMENT"
+      }
+    },
+    "systemArchitecture": {
+      "analysisLayer": {
+        "layerType": "COMPREHENSIVE_ANALYSIS_LAYER",
+        "components": [
+          "chapter",
+          "character",
+          "narrative",
+          "reader",
+          "style",
+          "theme"
+        ],
+        "capabilities": "MULTI_DIMENSIONAL_ANALYSIS",
+        "aiIntegration": "GEMINI_POWERED_ANALYSIS"
+      },
+      "enhancementLayer": {
+        "layerType": "INTELLIGENT_ENHANCEMENT_LAYER",
+        "components": [
+          "character",
+          "style",
+          "tension",
+          "theme"
+        ],
+        "capabilities": "MULTI_ASPECT_ENHANCEMENT",
+        "optimizationLevel": "ADVANCED_OPTIMIZATION"
+      },
+      "coordinationLayer": {
+        "layerType": "ANALYSIS_COORDINATION_LAYER",
+        "components": [
+          "analysis-coordinator.ts",
+          "interfaces.ts",
+          "optimization-coordinator.ts"
+        ],
+        "capabilities": "WORKFLOW_COORDINATION",
+        "integrationLevel": "SYSTEM_WIDE_COORDINATION"
+      },
+      "pipelineLayer": {
+        "layerType": "PROCESSING_PIPELINE_LAYER",
+        "components": [
+          "post-generation-pipeline.ts",
+          "pre-generation-pipeline.ts"
+        ],
+        "capabilities": "PRE_POST_GENERATION_PROCESSING",
+        "flowControl": "INTELLIGENT_FLOW_MANAGEMENT"
+      },
+      "adaptationLayer": {
+        "layerType": "SYSTEM_ADAPTATION_LAYER",
+        "components": [
+          "gemini-adapter.ts",
+          "interfaces.ts",
+          "storage-adapter.ts"
+        ],
+        "capabilities": "EXTERNAL_SYSTEM_INTEGRATION",
+        "flexibility": "HIGH_ADAPTABILITY"
+      },
+      "unifiedArchitecture": {
+        "architectureType": "ANALYSIS_ENHANCEMENT_UNIFIED_SYSTEM",
+        "integrationDepth": "DEEP_SYSTEM_INTEGRATION",
+        "aiEnhancement": "AI_POWERED_ANALYSIS_ENHANCEMENT",
+        "scalability": "ENTERPRISE_SCALABLE"
+      }
+    },
+    "holisticAnalysis": {
+      "systemImpact": {
+        "contentQualityImpact": "DRAMATIC_QUALITY_IMPROVEMENT",
+        "characterDepthImpact": "SIGNIFICANT_CHARACTER_ENHANCEMENT",
+        "narrativeCoherenceImpact": "SUBSTANTIAL_COHERENCE_IMPROVEMENT",
+        "readerExperienceImpact": "MAJOR_EXPERIENCE_ENHANCEMENT"
+      },
+      "fiveSystemIntegration": {
+        "integrationLevel": "FIVE_SYSTEM_DEEP_INTEGRATION",
+        "synergyEffect": "MULTIPLICATIVE_SYNERGY",
+        "emergentCapabilities": "EMERGENT_INTELLIGENCE_ENHANCEMENT",
+        "holisticOptimization": "HOLISTIC_SYSTEM_OPTIMIZATION"
+      },
+      "aiPoweredEnhancement": {
+        "aiIntegrationLevel": "DEEP_AI_INTEGRATION",
+        "intelligentAnalysis": "AI_ENHANCED_ANALYSIS",
+        "adaptiveOptimization": "AI_ADAPTIVE_OPTIMIZATION",
+        "emergentIntelligence": "AI_EMERGENT_INTELLIGENCE"
+      },
+      "systemEvolution": {
+        "evolutionPotential": "UNLIMITED_EVOLUTION_POTENTIAL",
+        "learningCapability": "CONTINUOUS_LEARNING_IMPROVEMENT",
+        "adaptiveGrowth": "ADAPTIVE_SYSTEM_GROWTH",
+        "futureVision": "NEXT_GENERATION_ANALYSIS_SYSTEM"
+      },
+      "megaSystemPotential": {
+        "totalSystemMethods": "ESTIMATED_2000+_METHODS",
+        "systemComplexity": "ULTRA_ENTERPRISE_COMPLEXITY",
+        "capabilityMultiplier": "EXPONENTIAL_CAPABILITY_MULTIPLICATION",
+        "ultimateVision": "SUPERINTELLIGENT_NARRATIVE_SYSTEM"
+      }
+    }
+  }
+}

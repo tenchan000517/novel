@@ -6513,3 +6513,1540 @@
     "stage": "chapter_generation"
   }
 }
+{
+  "timestamp": "2025-06-04T01:01:19.785Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 5",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:01:19.785Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:03:19.786Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 6",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "6/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:03:19.787Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 6",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:05:39.803Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 6",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:05:39.804Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:07:39.805Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 7",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "7/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:07:39.806Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 7",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:09:59.821Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 7",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:09:59.822Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:11:59.823Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 8",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "8/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:11:59.823Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 8",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:14:19.836Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 8",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:14:19.836Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:16:19.838Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 9",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "9/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:16:19.839Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 9",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:18:39.852Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 9",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:18:39.852Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:20:39.853Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 10",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "10/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:20:39.854Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 10",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:22:59.867Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 10",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:22:59.867Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:24:59.869Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 11",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "11/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:24:59.869Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 11",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:27:19.881Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 11",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:27:19.882Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:29:19.883Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 12 (final chapter)",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "12/12",
+    "previousChapters": 4,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:29:19.884Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Applying final chapter settings",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "tension": 0.9,
+    "pacing": 0.8,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:29:19.885Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 12",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {
+        "tension": 0.9,
+        "pacing": 0.8
+      },
+      "notes": "This is the final chapter. Please ensure the story reaches a satisfying conclusion."
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.897Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 12",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.898Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Enhanced novel summary saved with unified memory system metrics",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "path": "C:\\novel-automation-system\\test\\output\\novel_summary.json",
+    "totalChapters": 4,
+    "averageQualityScore": "100.000",
+    "successfulMemoryProcessing": 4,
+    "totalWarnings": 0,
+    "totalErrors": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.899Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Novel generation completed successfully with unified memory system",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "totalChapters": 4,
+    "totalWordCount": 9537,
+    "averageQualityScore": 100,
+    "totalGenerationTime": "50.6 minutes",
+    "successfulMemoryProcessing": 4,
+    "totalMemoryWarnings": 0,
+    "totalMemoryErrors": 0,
+    "systemOptimizationsApplied": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:35.849Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:35.852Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:35.852Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:35.853Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.775Z",
+  "level": "info",
+  "message": "[SYSTEM_STATUS] Unified memory system API status check successful",
+  "stage": "system_status",
+  "category": "unknown",
+  "metadata": {
+    "apiKeyValid": true,
+    "latestChapter": 0,
+    "totalChapters": 0,
+    "parametersInitialized": true,
+    "currentPreset": "default",
+    "availablePresets": 3,
+    "stage": "system_status"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.777Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "initialized": true,
+    "systemHealth": "HEALTHY",
+    "lastUpdateTime": "2025-06-04T03:39:42.422Z",
+    "shortTermDataCount": 398,
+    "midTermDataCount": 4402,
+    "longTermDataCount": 3,
+    "cacheHitRatio": 0,
+    "unifiedSearchWorking": false,
+    "issueCount": 1,
+    "recommendationCount": 9,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.779Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Integration systems status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "duplicateResolverOperational": true,
+    "cacheCoordinatorOperational": true,
+    "unifiedAccessAPIOperational": true,
+    "dataIntegrationProcessorOperational": false,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.780Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "1/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.782Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:42:27.703Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:42:27.703Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:44:27.703Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "2/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:44:27.704Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:46:47.720Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:46:47.720Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:48:47.721Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "3/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:48:47.723Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:51:07.740Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Continuing with next chapter despite failure on chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:51:07.740Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:35.176Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:35.179Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:35.181Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:35.182Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.125Z",
+  "level": "info",
+  "message": "[SYSTEM_STATUS] Unified memory system API status check successful",
+  "stage": "system_status",
+  "category": "unknown",
+  "metadata": {
+    "apiKeyValid": true,
+    "latestChapter": 0,
+    "totalChapters": 0,
+    "parametersInitialized": true,
+    "currentPreset": "default",
+    "availablePresets": 3,
+    "stage": "system_status"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.127Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "initialized": true,
+    "systemHealth": "HEALTHY",
+    "lastUpdateTime": "2025-06-04T04:50:41.618Z",
+    "shortTermDataCount": 434,
+    "midTermDataCount": 4583,
+    "longTermDataCount": 3,
+    "cacheHitRatio": 0,
+    "unifiedSearchWorking": false,
+    "issueCount": 1,
+    "recommendationCount": 9,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.131Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Integration systems status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "duplicateResolverOperational": true,
+    "cacheCoordinatorOperational": true,
+    "unifiedAccessAPIOperational": true,
+    "dataIntegrationProcessorOperational": false,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.133Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "1/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.136Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:52:26.911Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Unified memory system successfully generated chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "渋谷の喧騒と、小さな違和感",
+    "qualityScore": 100,
+    "generationTime": "103.543 seconds",
+    "memoryProcessingTime": "unknown",
+    "totalOperationTime": "unknown",
+    "systemOptimizationApplied": false,
+    "contentLength": 1792,
+    "plotConsistency": {
+      "consistent": false,
+      "issueCount": 4,
+      "majorIssues": 4
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:52:26.913Z",
+  "level": "info",
+  "message": "[MEMORY_PROCESSING] Unified memory system processing completed for chapter 1",
+  "stage": "memory_processing",
+  "category": "unknown",
+  "metadata": {
+    "processingSuccess": true,
+    "affectedComponents": 3,
+    "operationType": "processChapter",
+    "warningCount": 0,
+    "errorCount": 0,
+    "systemHealth": "DEGRADED",
+    "stage": "memory_processing"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:52:26.932Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Successfully completed chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "渋谷の喧騒と、小さな違和感",
+    "wordCount": 1792,
+    "generationTime": "103.8 seconds",
+    "qualityScore": 100,
+    "memoryProcessingSuccess": true,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:52:26.936Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Enhanced novel summary saved with unified memory system metrics",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "path": "C:\\novel-automation-system\\test\\output\\novel_summary.json",
+    "totalChapters": 1,
+    "averageQualityScore": "100.000",
+    "successfulMemoryProcessing": 1,
+    "totalWarnings": 0,
+    "totalErrors": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:52:26.938Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:54:26.941Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "2/12",
+    "previousChapters": 1,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:54:26.943Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:24.735Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:24.738Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:24.740Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:24.741Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.106Z",
+  "level": "info",
+  "message": "[SYSTEM_STATUS] Unified memory system API status check successful",
+  "stage": "system_status",
+  "category": "unknown",
+  "metadata": {
+    "apiKeyValid": true,
+    "latestChapter": 0,
+    "totalChapters": 0,
+    "parametersInitialized": true,
+    "currentPreset": "default",
+    "availablePresets": 3,
+    "stage": "system_status"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.108Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "initialized": true,
+    "systemHealth": "HEALTHY",
+    "lastUpdateTime": "2025-06-04T04:56:30.341Z",
+    "shortTermDataCount": 473,
+    "midTermDataCount": 4791,
+    "longTermDataCount": 3,
+    "cacheHitRatio": 0,
+    "unifiedSearchWorking": false,
+    "issueCount": 1,
+    "recommendationCount": 9,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.111Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Integration systems status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "duplicateResolverOperational": true,
+    "cacheCoordinatorOperational": true,
+    "unifiedAccessAPIOperational": true,
+    "dataIntegrationProcessorOperational": false,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.112Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "1/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.114Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:04.243Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:04.246Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:04.246Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:04.247Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.330Z",
+  "level": "info",
+  "message": "[SYSTEM_STATUS] Unified memory system API status check successful",
+  "stage": "system_status",
+  "category": "unknown",
+  "metadata": {
+    "apiKeyValid": true,
+    "latestChapter": 0,
+    "totalChapters": 0,
+    "parametersInitialized": true,
+    "currentPreset": "default",
+    "availablePresets": 3,
+    "stage": "system_status"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.331Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "initialized": true,
+    "systemHealth": "HEALTHY",
+    "lastUpdateTime": "2025-06-04T05:02:09.997Z",
+    "shortTermDataCount": 505,
+    "midTermDataCount": 4966,
+    "longTermDataCount": 5,
+    "cacheHitRatio": 0,
+    "unifiedSearchWorking": false,
+    "issueCount": 1,
+    "recommendationCount": 9,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.332Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Integration systems status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "duplicateResolverOperational": true,
+    "cacheCoordinatorOperational": true,
+    "unifiedAccessAPIOperational": true,
+    "dataIntegrationProcessorOperational": false,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.333Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "1/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.334Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:06.155Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:06.159Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:06.160Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:06.160Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.224Z",
+  "level": "info",
+  "message": "[SYSTEM_STATUS] Unified memory system API status check successful",
+  "stage": "system_status",
+  "category": "unknown",
+  "metadata": {
+    "apiKeyValid": true,
+    "latestChapter": 0,
+    "totalChapters": 0,
+    "parametersInitialized": true,
+    "currentPreset": "default",
+    "availablePresets": 3,
+    "stage": "system_status"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.226Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "initialized": true,
+    "systemHealth": "HEALTHY",
+    "lastUpdateTime": "2025-06-04T07:05:13.044Z",
+    "shortTermDataCount": 537,
+    "midTermDataCount": 5143,
+    "longTermDataCount": 5,
+    "cacheHitRatio": 0,
+    "unifiedSearchWorking": false,
+    "issueCount": 1,
+    "recommendationCount": 9,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.229Z",
+  "level": "info",
+  "message": "[MEMORY_INITIALIZATION] Integration systems status",
+  "stage": "memory_initialization",
+  "category": "unknown",
+  "metadata": {
+    "duplicateResolverOperational": true,
+    "cacheCoordinatorOperational": true,
+    "unifiedAccessAPIOperational": true,
+    "dataIntegrationProcessorOperational": false,
+    "stage": "memory_initialization"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.230Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "1/12",
+    "previousChapters": 0,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.231Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.482Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Unified memory system successfully generated chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "焦りと期待の狭間で",
+    "qualityScore": 100,
+    "generationTime": "105.204 seconds",
+    "memoryProcessingTime": "unknown",
+    "totalOperationTime": "unknown",
+    "systemOptimizationApplied": false,
+    "contentLength": 2384,
+    "plotConsistency": {
+      "consistent": false,
+      "issueCount": 4,
+      "majorIssues": 4
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.483Z",
+  "level": "info",
+  "message": "[MEMORY_PROCESSING] Unified memory system processing completed for chapter 1",
+  "stage": "memory_processing",
+  "category": "unknown",
+  "metadata": {
+    "processingSuccess": true,
+    "affectedComponents": 3,
+    "operationType": "processChapter",
+    "warningCount": 0,
+    "errorCount": 0,
+    "systemHealth": "HEALTHY",
+    "stage": "memory_processing"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.489Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Successfully completed chapter 1",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "焦りと期待の狭間で",
+    "wordCount": 2384,
+    "generationTime": "105.3 seconds",
+    "qualityScore": 100,
+    "memoryProcessingSuccess": true,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.491Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Enhanced novel summary saved with unified memory system metrics",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "path": "C:\\novel-automation-system\\test\\output\\novel_summary.json",
+    "totalChapters": 1,
+    "averageQualityScore": "100.000",
+    "successfulMemoryProcessing": 1,
+    "totalWarnings": 0,
+    "totalErrors": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.492Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:08:59.494Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "2/12",
+    "previousChapters": 1,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:08:59.495Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.805Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Unified memory system successfully generated chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "焦りと模索",
+    "qualityScore": 100,
+    "generationTime": "116.266 seconds",
+    "memoryProcessingTime": "unknown",
+    "totalOperationTime": "unknown",
+    "systemOptimizationApplied": false,
+    "contentLength": 2207,
+    "plotConsistency": {
+      "consistent": false,
+      "issueCount": 4,
+      "majorIssues": 4
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.806Z",
+  "level": "info",
+  "message": "[MEMORY_PROCESSING] Unified memory system processing completed for chapter 2",
+  "stage": "memory_processing",
+  "category": "unknown",
+  "metadata": {
+    "processingSuccess": true,
+    "affectedComponents": 3,
+    "operationType": "processChapter",
+    "warningCount": 0,
+    "errorCount": 0,
+    "systemHealth": "DEGRADED",
+    "stage": "memory_processing"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.809Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Successfully completed chapter 2",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "焦りと模索",
+    "wordCount": 2207,
+    "generationTime": "116.3 seconds",
+    "qualityScore": 100,
+    "memoryProcessingSuccess": true,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.811Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Enhanced novel summary saved with unified memory system metrics",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "path": "C:\\novel-automation-system\\test\\output\\novel_summary.json",
+    "totalChapters": 2,
+    "averageQualityScore": "100.000",
+    "successfulMemoryProcessing": 2,
+    "totalWarnings": 0,
+    "totalErrors": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.812Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:12:55.813Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "3/12",
+    "previousChapters": 2,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:12:55.814Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.852Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Unified memory system successfully generated chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "壁と突破口",
+    "qualityScore": 100,
+    "generationTime": "108.996 seconds",
+    "memoryProcessingTime": "unknown",
+    "totalOperationTime": "unknown",
+    "systemOptimizationApplied": false,
+    "contentLength": 3527,
+    "plotConsistency": {
+      "consistent": false,
+      "issueCount": 4,
+      "majorIssues": 4
+    },
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.853Z",
+  "level": "info",
+  "message": "[MEMORY_PROCESSING] Unified memory system processing completed for chapter 3",
+  "stage": "memory_processing",
+  "category": "unknown",
+  "metadata": {
+    "processingSuccess": true,
+    "affectedComponents": 3,
+    "operationType": "processChapter",
+    "warningCount": 0,
+    "errorCount": 0,
+    "systemHealth": "DEGRADED",
+    "stage": "memory_processing"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.857Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Successfully completed chapter 3",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "title": "壁と突破口",
+    "wordCount": 3527,
+    "generationTime": "109.0 seconds",
+    "qualityScore": 100,
+    "memoryProcessingSuccess": true,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.859Z",
+  "level": "info",
+  "message": "[PROGRESS_TRACKING] Enhanced novel summary saved with unified memory system metrics",
+  "stage": "progress_tracking",
+  "category": "unknown",
+  "metadata": {
+    "path": "C:\\novel-automation-system\\test\\output\\novel_summary.json",
+    "totalChapters": 3,
+    "averageQualityScore": "100.000",
+    "successfulMemoryProcessing": 3,
+    "totalWarnings": 0,
+    "totalErrors": 0,
+    "stage": "progress_tracking"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.860Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Waiting 120 seconds before generating next chapter",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:16:44.863Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Starting generation of chapter 4",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "progress": "4/12",
+    "previousChapters": 3,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:16:44.864Z",
+  "level": "info",
+  "message": "[CHAPTER_GENERATION] Calling unified memory system API to generate chapter 4",
+  "stage": "chapter_generation",
+  "category": "unknown",
+  "metadata": {
+    "requestData": {
+      "targetLength": 8000,
+      "forcedGeneration": false,
+      "overrides": {}
+    },
+    "stage": "chapter_generation"
+  }
+}

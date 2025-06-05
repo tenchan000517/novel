@@ -1766,3 +1766,541 @@
     "stage": "chapter_generation"
   }
 }
+{
+  "timestamp": "2025-06-04T00:59:59.778Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:03:19.790Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:03:39.793Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:04:19.797Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:07:39.809Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:07:59.812Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:08:39.815Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:11:59.826Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:12:19.828Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:12:59.832Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:16:19.841Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:16:39.844Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:17:19.846Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:20:39.856Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:20:59.859Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:21:39.862Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:24:59.872Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:25:19.874Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:25:59.876Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:29:19.888Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:29:39.891Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:30:19.893Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:39:43.778Z",
+  "level": "warn",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system has 1 issues",
+  "stage": "memory_initialization",
+  "category": "memory_system",
+  "metadata": {
+    "issues": [
+      "Performance Issues Detected"
+    ],
+    "stage": "memory_initialization",
+    "category": "memory_system"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:40:07.688Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: read ECONNRESET",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:40:27.692Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:41:07.697Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:44:27.708Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:44:47.711Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:45:27.714Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:48:47.727Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:49:07.731Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:49:47.735Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:50:43.129Z",
+  "level": "warn",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system has 1 issues",
+  "stage": "memory_initialization",
+  "category": "memory_system",
+  "metadata": {
+    "issues": [
+      "Performance Issues Detected"
+    ],
+    "stage": "memory_initialization",
+    "category": "memory_system"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:54:26.949Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:54:46.953Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:55:26.958Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: ",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "retriesLeft": 0,
+    "delayMs": 80000,
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:56:31.109Z",
+  "level": "warn",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system has 1 issues",
+  "stage": "memory_initialization",
+  "category": "memory_system",
+  "metadata": {
+    "issues": [
+      "Performance Issues Detected"
+    ],
+    "stage": "memory_initialization",
+    "category": "memory_system"
+  }
+}
+{
+  "timestamp": "2025-06-04T04:57:05.659Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: read ECONNRESET",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:11.332Z",
+  "level": "warn",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system has 1 issues",
+  "stage": "memory_initialization",
+  "category": "memory_system",
+  "metadata": {
+    "issues": [
+      "Performance Issues Detected"
+    ],
+    "stage": "memory_initialization",
+    "category": "memory_system"
+  }
+}
+{
+  "timestamp": "2025-06-04T05:02:33.794Z",
+  "level": "warn",
+  "message": "[CHAPTER_GENERATION] Retrying after error: read ECONNRESET",
+  "stage": "chapter_generation",
+  "category": "generation",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "generation",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:05:14.227Z",
+  "level": "warn",
+  "message": "[MEMORY_INITIALIZATION] Unified memory system has 1 issues",
+  "stage": "memory_initialization",
+  "category": "memory_system",
+  "metadata": {
+    "issues": [
+      "Performance Issues Detected"
+    ],
+    "stage": "memory_initialization",
+    "category": "memory_system"
+  }
+}

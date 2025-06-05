@@ -6,9 +6,9 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 303
+      "processingTime": 9
     },
-    "timestamp": "2025-06-04T00:56:59.553Z"
+    "timestamp": "2025-06-04T07:14:45.091Z"
   },
   "1": {
     "chapterNumber": 1,
@@ -17,9 +17,9 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 6
+      "processingTime": 8
     },
-    "timestamp": "2025-06-04T00:42:47.454Z"
+    "timestamp": "2025-06-04T07:06:59.279Z"
   },
   "2": {
     "chapterNumber": 2,
@@ -28,9 +28,9 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 14
+      "processingTime": 8
     },
-    "timestamp": "2025-06-04T00:47:27.093Z"
+    "timestamp": "2025-06-04T07:10:55.601Z"
   },
   "3": {
     "chapterNumber": 3,
@@ -39,9 +39,9 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 12
+      "processingTime": 11
     },
-    "timestamp": "2025-06-04T00:51:53.637Z"
+    "timestamp": "2025-06-04T07:14:44.526Z"
   },
   "4": {
     "chapterNumber": 4,
@@ -50,9 +50,9 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 9
+      "processingTime": 6
     },
-    "timestamp": "2025-06-04T00:56:59.082Z"
+    "timestamp": "2025-06-04T07:18:35.111Z"
   },
   "5": {
     "chapterNumber": 5,
@@ -149,8 +149,8 @@
     "processingStats": {
       "totalItems": 0,
       "highConfidenceItems": 0,
-      "processingTime": 35
+      "processingTime": 11
     },
-    "timestamp": "2025-06-03T23:22:28.254Z"
+    "timestamp": "2025-06-04T05:02:09.431Z"
   }
 }

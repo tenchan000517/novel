@@ -6,8 +6,8 @@
     "arcEndChapter": -1,
     "arcCompleted": false,
     "totalArcs": 3,
-    "narrativePhase": "INTRODUCTION",
-    "lastUpdated": "2025-06-04T00:56:59.859Z"
+    "narrativePhase": "RISING_ACTION",
+    "lastUpdated": "2025-06-04T07:18:35.146Z"
   },
   "turningPoints": [
     [
@@ -772,6 +772,196 @@
           "relatedCharacters": [],
           "impact": "MEDIUM",
           "timestamp": "2025-06-04T00:42:47.469Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749008398488",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:58.488Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749008398626",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:58.626Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749012657184",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:57.184Z"
+        },
+        {
+          "id": "tp-1-REVELATION-1749012657184",
+          "chapter": 1,
+          "description": "REVELATIONを示すターニングポイント",
+          "significance": 8,
+          "type": "REVELATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:57.184Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749012657305",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:57.305Z"
+        },
+        {
+          "id": "tp-1-REVELATION-1749012657305",
+          "chapter": 1,
+          "description": "REVELATIONを示すターニングポイント",
+          "significance": 8,
+          "type": "REVELATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:57.305Z"
+        },
+        {
+          "id": "tp-1-RESOLUTION-1749012680518",
+          "chapter": 1,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:51:20.518Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749012746539",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:26.539Z"
+        },
+        {
+          "id": "tp-1-REVELATION-1749012746539",
+          "chapter": 1,
+          "description": "REVELATIONを示すターニングポイント",
+          "significance": 8,
+          "type": "REVELATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:52:26.539Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749012746644",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:26.644Z"
+        },
+        {
+          "id": "tp-1-REVELATION-1749012746644",
+          "chapter": 1,
+          "description": "REVELATIONを示すターニングポイント",
+          "significance": 8,
+          "type": "REVELATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:52:26.644Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749013006771",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:46.771Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749013006897",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:46.897Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749013347645",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:27.645Z"
+        },
+        {
+          "id": "tp-1-RESOLUTION-1749013347645",
+          "chapter": 1,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:27.645Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749013347767",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:27.767Z"
+        },
+        {
+          "id": "tp-1-RESOLUTION-1749013347767",
+          "chapter": 1,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:27.767Z"
+        },
+        {
+          "id": "tp-1-CHARACTER_DEVELOPMENT-1749020819302",
+          "chapter": 1,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.302Z"
+        },
+        {
+          "id": "tp-1-RESOLUTION-1749020819302",
+          "chapter": 1,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.302Z"
         }
       ]
     ],
@@ -5007,6 +5197,1006 @@
           "relatedCharacters": [],
           "impact": "MEDIUM",
           "timestamp": "2025-06-04T00:56:59.838Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008382799",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.799Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008382822",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.822Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008382822",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.822Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008382910",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.910Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008382944",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.944Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008382944",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:42.944Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008383366",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.366Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008383366",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.366Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008383450",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.450Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008383451",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.451Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008384774",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.774Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008384811",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.811Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008384811",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.811Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008384871",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.871Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008384871",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.871Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008384892",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.892Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008385039",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:45.039Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008385039",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:45.039Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749008385150",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:45.150Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749008385151",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:45.151Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642167",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.167Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642203",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.203Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012642203",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.203Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642236",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.236Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012642236",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.236Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642281",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.281Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642783",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.783Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012642783",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.783Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012642808",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.808Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012642808",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.808Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644000",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.000Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644032",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.032Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012644032",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.032Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644117",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.117Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644150",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.150Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012644150",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.150Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644293",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.293Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012644293",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.293Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012644366",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.366Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012644366",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:44.366Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012746919",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:26.919Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012746979",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:26.979Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012746979",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:26.979Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012747091",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:27.091Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012747091",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:52:27.091Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988177",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.177Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012988177",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.177Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988198",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.198Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988222",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.222Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012988222",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.222Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988314",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.314Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988757",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.757Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012988757",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.757Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012988808",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.808Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012988808",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.808Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012989890",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.890Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012989890",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.890Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012989930",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.930Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012989955",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.955Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012989955",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.955Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012990022",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:30.022Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012990170",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:30.170Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012990170",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:30.170Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749012990231",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:30.231Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749012990231",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:30.231Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328207",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.207Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013328207",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.207Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328225",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.225Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328284",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.284Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013328284",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.284Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328303",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.303Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328640",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.640Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013328640",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.640Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013328692",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.692Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013328692",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.692Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330022",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.022Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013330022",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.022Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330045",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.045Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330133",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.133Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013330134",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.134Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330165",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.165Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330314",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.314Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013330314",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.314Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749013330378",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.378Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749013330378",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:10.378Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749020819494",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.494Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749020819494",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.494Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749020819531",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.531Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749020819608",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.608Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749020819608",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:06:59.608Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021055816",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.816Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749021055816",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.816Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021055860",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.860Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021055994",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.994Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749021055995",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.995Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021284866",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:44.866Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749021284866",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:44.866Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021284918",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:44.918Z"
+        },
+        {
+          "id": "tp-0-CHARACTER_DEVELOPMENT-1749021285111",
+          "chapter": 0,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:45.111Z"
+        },
+        {
+          "id": "tp-0-RESOLUTION-1749021285111",
+          "chapter": 0,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:45.111Z"
         }
       ]
     ],
@@ -5122,6 +6312,16 @@
           "relatedCharacters": [],
           "impact": "MEDIUM",
           "timestamp": "2025-06-04T00:47:27.127Z"
+        },
+        {
+          "id": "tp-2-RESOLUTION-1749021055618",
+          "chapter": 2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:10:55.618Z"
         }
       ]
     ],
@@ -5247,6 +6447,36 @@
           "relatedCharacters": [],
           "impact": "HIGH",
           "timestamp": "2025-06-04T00:51:53.659Z"
+        },
+        {
+          "id": "tp-3-CHARACTER_DEVELOPMENT-1749021284555",
+          "chapter": 3,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:44.555Z"
+        },
+        {
+          "id": "tp-3-CONFLICT_ESCALATION-1749021284556",
+          "chapter": 3,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T07:14:44.556Z"
+        },
+        {
+          "id": "tp-3-RESOLUTION-1749021284556",
+          "chapter": 3,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:14:44.556Z"
         }
       ]
     ],
@@ -5442,6 +6672,36 @@
           "relatedCharacters": [],
           "impact": "HIGH",
           "timestamp": "2025-06-04T00:56:59.106Z"
+        },
+        {
+          "id": "tp-4-CHARACTER_DEVELOPMENT-1749021515129",
+          "chapter": 4,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:18:35.129Z"
+        },
+        {
+          "id": "tp-4-CONFLICT_ESCALATION-1749021515129",
+          "chapter": 4,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T07:18:35.129Z"
+        },
+        {
+          "id": "tp-4-RESOLUTION-1749021515129",
+          "chapter": 4,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T07:18:35.129Z"
         }
       ]
     ],
@@ -16067,6 +17327,1806 @@
           "relatedCharacters": [],
           "impact": "MEDIUM",
           "timestamp": "2025-06-03T23:22:28.696Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383147",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.147Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383148",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.148Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383148",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.148Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383174",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.174Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383174",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.174Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383174",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.174Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383202",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.202Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383202",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.202Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383202",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.202Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383544",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.544Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383544",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.544Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383544",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.544Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383570",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.570Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383570",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.570Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383571",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.571Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383616",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.616Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383617",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.617Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008383617",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.617Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383800",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.800Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383800",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.800Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383823",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.823Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383823",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.823Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008383940",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:43.940Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008383940",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:43.940Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749008384069",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.069Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384069",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.069Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384069",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.069Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384070",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.070Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749008384096",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.096Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384096",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.096Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384096",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.096Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384096",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.096Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749008384234",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.234Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384234",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.234Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384234",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.234Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384234",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.234Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384434",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.434Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384434",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.434Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384434",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.434Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384472",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.472Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384472",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.472Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384472",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.472Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749008384643",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.643Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749008384643",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T03:39:44.643Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749008384643",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T03:39:44.643Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642518",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.518Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642518",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.518Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642518",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.518Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642547",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.547Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642548",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.548Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642548",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.548Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642580",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.580Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642580",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.580Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642580",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.580Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642915",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.915Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642915",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.915Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642915",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.915Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642944",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.944Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642944",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.944Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642944",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.944Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012642991",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.991Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012642991",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:42.991Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012642991",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:42.991Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643157",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.157Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643157",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.157Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643180",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.180Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643181",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.181Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643223",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.223Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643223",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.223Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012643422",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.422Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643423",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.423Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643423",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.423Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643423",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.423Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012643446",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.446Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643446",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.446Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643447",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.447Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643447",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.447Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012643502",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.502Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643502",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.502Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643502",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.502Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643502",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.502Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643680",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.680Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643680",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.680Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643680",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.680Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643731",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.731Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643731",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.731Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643732",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.732Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012643784",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.784Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012643784",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:50:43.784Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012643784",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:50:43.784Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988459",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.459Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988460",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.460Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988460",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.460Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988497",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.497Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988497",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.497Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988497",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.497Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988566",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.566Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988566",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.566Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988566",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.566Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988902",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.902Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988902",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.902Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988903",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.903Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988939",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.939Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988939",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.939Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988939",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.939Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012988994",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.994Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012988994",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:28.994Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012988994",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:28.994Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989115",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.115Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989115",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.115Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989139",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.139Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989139",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.139Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989235",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.235Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989235",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.235Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012989342",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.342Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989342",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.342Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989342",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.342Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989342",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.342Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012989365",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.365Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989365",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.365Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989365",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.365Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989366",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.366Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749012989474",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.474Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989474",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.474Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989474",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.474Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989474",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.474Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989599",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.599Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989599",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.599Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989599",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.599Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989635",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.635Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989635",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.635Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989635",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.635Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749012989808",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.808Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749012989808",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T04:56:29.808Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749012989808",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T04:56:29.808Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328387",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.387Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328388",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.388Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328388",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.388Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328410",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.410Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328410",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.410Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328410",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.410Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328467",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.467Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328467",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.467Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328467",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.467Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328757",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.757Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328757",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.757Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328757",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.757Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328788",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.788Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328788",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.788Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328788",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.788Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328832",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.832Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328833",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.833Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013328833",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.833Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013328967",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:08.967Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013328967",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:08.967Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329002",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.002Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329003",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.003Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329031",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.031Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329031",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.031Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749013329171",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.171Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329171",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.171Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329171",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.171Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329171",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.171Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749013329230",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.230Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329230",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.230Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329230",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.230Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329230",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.230Z"
+        },
+        {
+          "id": "tp--2-PLOT_TWIST-1749013329276",
+          "chapter": -2,
+          "description": "PLOT_TWISTを示すターニングポイント",
+          "significance": 7,
+          "type": "PLOT_TWIST",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.276Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329276",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.276Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329276",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.276Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329276",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.276Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329568",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.568Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329569",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.569Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329569",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.569Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329770",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.770Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329770",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.770Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329770",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.770Z"
+        },
+        {
+          "id": "tp--2-CHARACTER_DEVELOPMENT-1749013329853",
+          "chapter": -2,
+          "description": "CHARACTER_DEVELOPMENTを示すターニングポイント",
+          "significance": 6,
+          "type": "CHARACTER_DEVELOPMENT",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.853Z"
+        },
+        {
+          "id": "tp--2-CONFLICT_ESCALATION-1749013329854",
+          "chapter": -2,
+          "description": "CONFLICT_ESCALATIONを示すターニングポイント",
+          "significance": 7,
+          "type": "CONFLICT_ESCALATION",
+          "relatedCharacters": [],
+          "impact": "HIGH",
+          "timestamp": "2025-06-04T05:02:09.854Z"
+        },
+        {
+          "id": "tp--2-RESOLUTION-1749013329854",
+          "chapter": -2,
+          "description": "RESOLUTIONを示すターニングポイント",
+          "significance": 6,
+          "type": "RESOLUTION",
+          "relatedCharacters": [],
+          "impact": "MEDIUM",
+          "timestamp": "2025-06-04T05:02:09.854Z"
         }
       ]
     ]
@@ -16315,11 +19375,11 @@
         "keyEvents": [],
         "characterArcs": [],
         "created": "2025-06-01T11:36:03.808Z",
-        "lastUpdated": "2025-06-04T00:56:59.837Z"
+        "lastUpdated": "2025-06-04T07:18:35.129Z"
       }
     ]
   ],
   "narrativeAnalysisResults": [],
   "tensionHistory": [],
-  "savedAt": "2025-06-04T00:56:59.859Z"
+  "savedAt": "2025-06-04T07:18:35.146Z"
 }

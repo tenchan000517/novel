@@ -1,0 +1,1591 @@
+{
+  "executionSummary": {
+    "timestamp": "2025-06-04T11:42:51.005Z",
+    "systemsAnalyzed": "INFRASTRUCTURE_FOUNDATION_SYSTEMS",
+    "criticalFinding": "INFRASTRUCTURE_INTEGRATION_GAPS_DISCOVERED",
+    "systemHealth": "REQUIRES_IMMEDIATE_ATTENTION",
+    "transformationPotential": "REVOLUTIONARY_IMPROVEMENT_POTENTIAL",
+    "urgency": "HIGH_PRIORITY_INFRASTRUCTURE_FIXES_REQUIRED"
+  },
+  "criticalFindings": {
+    "infrastructureGaps": "SIGNIFICANT_INFRASTRUCTURE_INTEGRATION_GAPS",
+    "systemInconsistency": "INCONSISTENT_INFRASTRUCTURE_USAGE",
+    "performanceImpact": "PERFORMANCE_DEGRADATION_FROM_GAPS",
+    "reliabilityRisks": "RELIABILITY_RISKS_FROM_INCONSISTENCY",
+    "scalabilityLimitations": "SCALABILITY_LIMITED_BY_INFRASTRUCTURE"
+  },
+  "immediateThreats": {
+    "systemStability": "SYSTEM_STABILITY_AT_RISK",
+    "dataIntegrity": "DATA_INTEGRITY_CONCERNS",
+    "performanceDegradation": "PERFORMANCE_DEGRADATION_RISK",
+    "maintenanceComplexity": "MAINTENANCE_COMPLEXITY_ESCALATION"
+  },
+  "transformationOpportunity": {
+    "infrastructureFix": "INFRASTRUCTURE_FIX_TRANSFORMS_SYSTEM",
+    "performanceGains": "MASSIVE_PERFORMANCE_GAINS_POSSIBLE",
+    "reliabilityImprovement": "DRAMATIC_RELIABILITY_IMPROVEMENT",
+    "evolutionaryLeap": "EVOLUTIONARY_LEAP_THROUGH_INFRASTRUCTURE"
+  },
+  "strategicRecommendations": {
+    "immediateActions": [
+      "AUDIT_ALL_SYSTEMS_FOR_INFRASTRUCTURE_USAGE",
+      "IMPLEMENT_CONSISTENT_STORAGE_INTEGRATION",
+      "FIX_INITIALIZATION_ORDER_PROBLEMS",
+      "ADD_COMPREHENSIVE_ERROR_HANDLING"
+    ],
+    "criticalPriorities": [
+      "STORAGE_SYSTEM_INTEGRATION_ACROSS_ALL_8_SYSTEMS",
+      "CENTRALIZED_LOGGING_IMPLEMENTATION",
+      "API_THROTTLING_FOR_ALL_AI_INTERACTIONS",
+      "LIFECYCLE_MANAGEMENT_SYSTEM_IMPLEMENTATION"
+    ],
+    "transformationalGoals": [
+      "ACHIEVE_INFRASTRUCTURE_EXCELLENCE",
+      "IMPLEMENT_SYSTEM_WIDE_CONSISTENCY",
+      "OPTIMIZE_PERFORMANCE_THROUGH_INFRASTRUCTURE",
+      "CREATE_SCALABLE_INFRASTRUCTURE_FOUNDATION"
+    ]
+  },
+  "results": {
+    "systemOverview": {
+      "totalFiles": 0,
+      "totalDirectories": 0,
+      "systemComplexity": "INFRASTRUCTURE_FOUNDATION_LEVEL",
+      "architectureType": "FOUNDATION_INFRASTRUCTURE_SYSTEMS"
+    },
+    "storageSystem": {
+      "chapter-storage.ts": {
+        "filepath": "storage\\chapter-storage.ts",
+        "componentName": "ChapterStorage",
+        "fileSize": 14540,
+        "fileType": "CHAPTER_STORAGE_HANDLER",
+        "methods": [
+          "constructor",
+          "getChapterFilePath",
+          "getMetadataFilePath",
+          "saveChapter",
+          "getChapter",
+          "Date",
+          "listAllChapters",
+          "Date",
+          "getLatestChapterNumber",
+          "chapterExists",
+          "deleteChapter"
+        ],
+        "interfaces": [],
+        "imports": [
+          "./types",
+          "@/types/chapters",
+          "@/lib/utils/logger",
+          "./index",
+          "js-yaml",
+          "path"
+        ],
+        "exports": [
+          "ChapterStorageService"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "save",
+          "load",
+          "delete",
+          "exists"
+        ],
+        "utilityOperations": [
+          "parse",
+          "format"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "start",
+          "create"
+        ],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "enhanced-storage.ts": {
+        "filepath": "storage\\enhanced-storage.ts",
+        "componentName": "EnhancedStorage",
+        "fileSize": 37456,
+        "fileType": "ENHANCED_STORAGE_CAPABILITIES",
+        "methods": [
+          "constructor",
+          "prepareBackupDirectory",
+          "cleanupOldBackups",
+          "getFullPath",
+          "ensureDirectoryExists",
+          "createBackupIfNeeded",
+          "readFile",
+          "writeFile",
+          "listFiles",
+          "listDirectories",
+          "fileExists",
+          "directoryExists",
+          "createDirectory",
+          "deleteFile",
+          "getFileMetadata",
+          "moveFile",
+          "copyFile"
+        ],
+        "interfaces": [],
+        "imports": [
+          "fs/promises",
+          "path",
+          "fs",
+          "./types",
+          "../utils/logger",
+          "@/lib/utils/error-handler"
+        ],
+        "exports": [
+          "EnhancedLocalStorageProvider"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "delete",
+          "exists"
+        ],
+        "utilityOperations": [
+          "handle"
+        ],
+        "errorHandling": [
+          "error",
+          "exception",
+          "try",
+          "catch",
+          "throw",
+          "handle",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [
+          "check",
+          "ensure"
+        ],
+        "criticalOperations": [
+          "required"
+        ]
+      },
+      "github-storage.ts": {
+        "filepath": "storage\\github-storage.ts",
+        "componentName": "GithubStorage",
+        "fileSize": 23336,
+        "fileType": "GITHUB_INTEGRATION_STORAGE",
+        "methods": [
+          "constructor",
+          "getFullPath",
+          "readFile",
+          "writeFile",
+          "listFiles",
+          "fileExists",
+          "directoryExists",
+          "createDirectory",
+          "deleteFile"
+        ],
+        "interfaces": [],
+        "imports": [
+          "@octokit/rest",
+          "./types",
+          "../utils/logger",
+          "@/lib/utils/error-handler",
+          "./github-storage"
+        ],
+        "exports": [
+          "GitHubStorageProvider"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "delete",
+          "exists"
+        ],
+        "utilityOperations": [
+          "format",
+          "handle"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "handle"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [
+          "performance"
+        ],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [
+          "auth"
+        ],
+        "dataValidation": [
+          "check"
+        ],
+        "criticalOperations": [
+          "required"
+        ]
+      },
+      "index.ts": {
+        "filepath": "storage\\index.ts",
+        "componentName": "Index",
+        "fileSize": 10188,
+        "fileType": "STORAGE_SYSTEM_EXPORTS",
+        "methods": [
+          "createStorageProvider",
+          "loadUserData",
+          "backupAndUpdateUserData"
+        ],
+        "interfaces": [],
+        "imports": [
+          "./types",
+          "./github-storage",
+          "./local-storage",
+          "./enhanced-storage",
+          "../utils/logger",
+          "./chapter-storage",
+          "@/lib/storage",
+          "@/lib/storage",
+          "@/lib/storage",
+          "@/lib/storage"
+        ],
+        "exports": [
+          "createStorageProvider",
+          "storageProvider",
+          "chapterStorage"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "save",
+          "load",
+          "exists"
+        ],
+        "utilityOperations": [
+          "parse",
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "info",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": [
+          "required"
+        ]
+      },
+      "index copy.ts": {
+        "filepath": "storage\\index copy.ts",
+        "componentName": "Index copy",
+        "fileSize": 10188,
+        "fileType": "STORAGE_SYSTEM_BACKUP",
+        "methods": [
+          "createStorageProvider",
+          "loadUserData",
+          "backupAndUpdateUserData"
+        ],
+        "interfaces": [],
+        "imports": [
+          "./types",
+          "./github-storage",
+          "./local-storage",
+          "./enhanced-storage",
+          "../utils/logger",
+          "./chapter-storage",
+          "@/lib/storage",
+          "@/lib/storage",
+          "@/lib/storage",
+          "@/lib/storage"
+        ],
+        "exports": [
+          "createStorageProvider",
+          "storageProvider",
+          "chapterStorage"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "save",
+          "load",
+          "exists"
+        ],
+        "utilityOperations": [
+          "parse",
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "info",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": [
+          "required"
+        ]
+      },
+      "local-storage.ts": {
+        "filepath": "storage\\local-storage.ts",
+        "componentName": "LocalStorage",
+        "fileSize": 19267,
+        "fileType": "LOCAL_FILE_STORAGE",
+        "methods": [
+          "constructor",
+          "getFullPath",
+          "ensureDirectoryExists",
+          "readFile",
+          "writeFile",
+          "listFiles",
+          "fileExists",
+          "directoryExists",
+          "createDirectory",
+          "deleteFile"
+        ],
+        "interfaces": [],
+        "imports": [
+          "fs/promises",
+          "path",
+          "./types",
+          "../utils/logger",
+          "@/lib/utils/error-handler",
+          "./local-storage"
+        ],
+        "exports": [
+          "LocalStorageProvider"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "delete",
+          "exists"
+        ],
+        "utilityOperations": [
+          "handle"
+        ],
+        "errorHandling": [
+          "error",
+          "exception",
+          "try",
+          "catch",
+          "throw",
+          "handle"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "start",
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [
+          "check",
+          "ensure"
+        ],
+        "criticalOperations": []
+      },
+      "storage-initializer.ts": {
+        "filepath": "storage\\storage-initializer.ts",
+        "componentName": "StorageInitializer",
+        "fileSize": 12608,
+        "fileType": "STORAGE_INITIALIZATION_SYSTEM",
+        "methods": [
+          "constructor",
+          "initializeStorage",
+          "createDirectoryStructure",
+          "createDefaultFiles",
+          "verifyInitialization",
+          "repairStorage",
+          "diagnoseStorage",
+          "initializeStorageWithAutoRepair"
+        ],
+        "interfaces": [],
+        "imports": [
+          "./types",
+          "../utils/logger"
+        ],
+        "exports": [
+          "StorageInitializer"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "exists"
+        ],
+        "utilityOperations": [
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [
+          "cache"
+        ],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "initialize",
+          "init",
+          "start",
+          "create"
+        ],
+        "configurationHandling": [
+          "config",
+          "setting"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [
+          "verify"
+        ],
+        "criticalOperations": [
+          "critical",
+          "required"
+        ]
+      },
+      "types.ts": {
+        "filepath": "storage\\types.ts",
+        "componentName": "Types",
+        "fileSize": 12703,
+        "fileType": "STORAGE_TYPE_DEFINITIONS",
+        "methods": [
+          "readFile",
+          "writeFile",
+          "listFiles",
+          "fileExists",
+          "directoryExists",
+          "createDirectory",
+          "deleteFile"
+        ],
+        "interfaces": [
+          "FileMetadata",
+          "StorageProvider",
+          "GitHubStorageOptions",
+          "LocalStorageOptions"
+        ],
+        "imports": [],
+        "exports": [
+          "FileMetadata",
+          "StorageProvider",
+          "GitHubStorageOptions",
+          "LocalStorageOptions"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "delete",
+          "exists"
+        ],
+        "utilityOperations": [
+          "format"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error"
+        ],
+        "throttlingUsage": [
+          "wait"
+        ],
+        "asyncOperations": [
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [
+          "optimize"
+        ],
+        "systemDependencies": [
+          "require"
+        ],
+        "initializationMethods": [
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": [
+          "required"
+        ]
+      },
+      "systemCapabilities": {
+        "storageTypes": "MULTI_STORAGE_TYPE_SUPPORT",
+        "initializationControl": "CENTRALIZED_STORAGE_INITIALIZATION",
+        "dataIntegrity": "STORAGE_DATA_INTEGRITY_MANAGEMENT",
+        "performanceOptimization": "STORAGE_PERFORMANCE_OPTIMIZATION"
+      }
+    },
+    "utilitySystem": {
+      "api-throttle.ts": {
+        "filepath": "utils\\api-throttle.ts",
+        "componentName": "ApiThrottle",
+        "fileSize": 9320,
+        "fileType": "API_RATE_LIMITING_AND_THROTTLING",
+        "methods": [
+          "constructor",
+          "getInstance",
+          "updateLimits",
+          "resetRequestWindow",
+          "startQueueProcessing",
+          "processNextRequest",
+          "isRateLimitError",
+          "handleRateLimitError",
+          "getStats",
+          "getQueueStatus",
+          "forceProcessQueue"
+        ],
+        "interfaces": [
+          "QueuedRequest"
+        ],
+        "imports": [
+          "../utils/logger"
+        ],
+        "exports": [
+          "APIThrottler",
+          "apiThrottler"
+        ],
+        "storageOperations": [
+          "load"
+        ],
+        "utilityOperations": [
+          "process",
+          "handle"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "handle",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "throttle",
+          "rate",
+          "limit",
+          "queue",
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "start"
+        ],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "error-handler.ts": {
+        "filepath": "utils\\error-handler.ts",
+        "componentName": "ErrorHandler",
+        "fileSize": 5635,
+        "fileType": "CENTRALIZED_ERROR_HANDLING",
+        "methods": [
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor",
+          "constructor",
+          "logError",
+          "formatErrorResponse",
+          "async",
+          "logWarn",
+          "constructor",
+          "getErrorMessage"
+        ],
+        "interfaces": [],
+        "imports": [
+          "./logger"
+        ],
+        "exports": [
+          "AppError",
+          "ValidationError",
+          "NotFoundError",
+          "ForbiddenError",
+          "ExternalServiceError",
+          "RateLimitError",
+          "logError",
+          "formatErrorResponse",
+          "withErrorHandling",
+          "logWarn",
+          "GenerationError",
+          "getErrorMessage"
+        ],
+        "storageOperations": [
+          "read"
+        ],
+        "utilityOperations": [
+          "format",
+          "process",
+          "handle"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "handle"
+        ],
+        "loggingUsage": [
+          "log",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "rate",
+          "limit",
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "file-logger.ts": {
+        "filepath": "utils\\file-logger.ts",
+        "componentName": "FileLogger",
+        "fileSize": 0,
+        "fileType": "FILE_BASED_LOGGING_SYSTEM",
+        "methods": [],
+        "interfaces": [],
+        "imports": [],
+        "exports": [],
+        "storageOperations": [],
+        "utilityOperations": [],
+        "errorHandling": [],
+        "loggingUsage": [],
+        "throttlingUsage": [],
+        "asyncOperations": [],
+        "performanceOptimizations": [],
+        "systemDependencies": [],
+        "initializationMethods": [],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "helpers.ts": {
+        "filepath": "utils\\helpers.ts",
+        "componentName": "Helpers",
+        "fileSize": 6509,
+        "fileType": "GENERAL_UTILITY_HELPERS",
+        "methods": [
+          "sleep",
+          "stringifyYaml",
+          "generateId",
+          "generateId",
+          "getTime",
+          "truncateText",
+          "summarizeText",
+          "truncateByWords"
+        ],
+        "interfaces": [],
+        "imports": [
+          "crypto"
+        ],
+        "exports": [
+          "sleep",
+          "deepClone",
+          "deepClone",
+          "parseYaml",
+          "stringifyYaml",
+          "generateId",
+          "generateId",
+          "formatDate",
+          "sortByDate",
+          "chunkArray",
+          "truncateText",
+          "summarizeText",
+          "removeNullish",
+          "groupBy",
+          "objectDiff",
+          "truncateByWords"
+        ],
+        "storageOperations": [
+          "load"
+        ],
+        "utilityOperations": [
+          "parse",
+          "format"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw"
+        ],
+        "loggingUsage": [
+          "error"
+        ],
+        "throttlingUsage": [
+          "rate",
+          "limit",
+          "delay",
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "require",
+          "import"
+        ],
+        "initializationMethods": [
+          "start"
+        ],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "id-generator.ts": {
+        "filepath": "utils\\id-generator.ts",
+        "componentName": "IdGenerator",
+        "fileSize": 2141,
+        "fileType": "UNIQUE_ID_GENERATION",
+        "methods": [
+          "generateId",
+          "generateTypedId",
+          "generateSessionId",
+          "generateDocumentId",
+          "generateEditorId",
+          "generateRevisionId",
+          "generateConflictId",
+          "generateChapterId",
+          "generateSceneId",
+          "generateCharacterId",
+          "generateMemoryId",
+          "generatePlotEventId",
+          "generateUuidLike"
+        ],
+        "interfaces": [],
+        "imports": [],
+        "exports": [
+          "generateId",
+          "generateTypedId",
+          "generateSessionId",
+          "generateDocumentId",
+          "generateEditorId",
+          "generateRevisionId",
+          "generateConflictId",
+          "generateChapterId",
+          "generateSceneId",
+          "generateCharacterId",
+          "generateMemoryId",
+          "generatePlotEventId",
+          "generateUuidLike"
+        ],
+        "storageOperations": [],
+        "utilityOperations": [],
+        "errorHandling": [],
+        "loggingUsage": [],
+        "throttlingUsage": [
+          "rate"
+        ],
+        "asyncOperations": [],
+        "performanceOptimizations": [],
+        "systemDependencies": [],
+        "initializationMethods": [],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "json-parser.ts": {
+        "filepath": "utils\\json-parser.ts",
+        "componentName": "JsonParser",
+        "fileSize": 2680,
+        "fileType": "SAFE_JSON_PARSING",
+        "methods": [
+          "stripMarkdown"
+        ],
+        "interfaces": [],
+        "imports": [
+          "@/lib/utils/logger"
+        ],
+        "exports": [
+          "JsonParser"
+        ],
+        "storageOperations": [],
+        "utilityOperations": [
+          "parse"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch"
+        ],
+        "loggingUsage": [
+          "log",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [],
+        "asyncOperations": [
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "start"
+        ],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "logger.ts": {
+        "filepath": "utils\\logger.ts",
+        "componentName": "Logger",
+        "fileSize": 4356,
+        "fileType": "CENTRALIZED_LOGGING_SYSTEM",
+        "methods": [
+          "constructor",
+          "shouldLog",
+          "createLogEntry",
+          "output",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "updateOptions"
+        ],
+        "interfaces": [
+          "LogEntry",
+          "LoggerOptions"
+        ],
+        "imports": [],
+        "exports": [
+          "LogEntry",
+          "LoggerOptions",
+          "Logger",
+          "logger"
+        ],
+        "storageOperations": [],
+        "utilityOperations": [
+          "format",
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [],
+        "asyncOperations": [],
+        "performanceOptimizations": [],
+        "systemDependencies": [],
+        "initializationMethods": [
+          "create"
+        ],
+        "configurationHandling": [
+          "option"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "promise-utils.ts": {
+        "filepath": "utils\\promise-utils.ts",
+        "componentName": "PromiseUtils",
+        "fileSize": 586,
+        "fileType": "PROMISE_UTILITY_FUNCTIONS",
+        "methods": [],
+        "interfaces": [],
+        "imports": [],
+        "exports": [
+          "withTimeout"
+        ],
+        "storageOperations": [],
+        "utilityOperations": [],
+        "errorHandling": [
+          "error"
+        ],
+        "loggingUsage": [
+          "error"
+        ],
+        "throttlingUsage": [],
+        "asyncOperations": [
+          "promise"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [],
+        "initializationMethods": [],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "prompt-storage.ts": {
+        "filepath": "utils\\prompt-storage.ts",
+        "componentName": "PromptStorage",
+        "fileSize": 10690,
+        "fileType": "PROMPT_SPECIFIC_STORAGE",
+        "methods": [
+          "constructor",
+          "ensurePromptsDirectory",
+          "savePrompt",
+          "buildMarkdownContent",
+          "buildFrontMatter",
+          "buildPromptSection",
+          "buildContextSection",
+          "buildMetadataSection",
+          "listSavedPrompts",
+          "loadPrompt"
+        ],
+        "interfaces": [
+          "PromptMetadata"
+        ],
+        "imports": [
+          "fs",
+          "path",
+          "@/types/generation",
+          "@/lib/utils/logger"
+        ],
+        "exports": [
+          "PromptStorage",
+          "promptStorage"
+        ],
+        "storageOperations": [
+          "read",
+          "write",
+          "save",
+          "load"
+        ],
+        "utilityOperations": [
+          "parse",
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "throw",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "info",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "rate",
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "start"
+        ],
+        "configurationHandling": [
+          "setting"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [
+          "ensure"
+        ],
+        "criticalOperations": []
+      },
+      "request-queue.ts": {
+        "filepath": "utils\\request-queue.ts",
+        "componentName": "RequestQueue",
+        "fileSize": 7950,
+        "fileType": "REQUEST_QUEUE_MANAGEMENT",
+        "methods": [
+          "constructor",
+          "getInstance",
+          "scheduleBatchProcessing",
+          "processBatch",
+          "processQueue",
+          "sortQueueByPriority",
+          "shouldRetryError",
+          "configureBatching",
+          "pause",
+          "resume",
+          "clear",
+          "getStats"
+        ],
+        "interfaces": [
+          "QueuedRequest"
+        ],
+        "imports": [
+          "./api-throttle",
+          "../utils/logger"
+        ],
+        "exports": [
+          "QueuedRequest",
+          "RequestQueue",
+          "requestQueue"
+        ],
+        "storageOperations": [],
+        "utilityOperations": [
+          "process"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch"
+        ],
+        "loggingUsage": [
+          "log",
+          "debug",
+          "info",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [
+          "throttle",
+          "rate",
+          "limit",
+          "queue",
+          "wait"
+        ],
+        "asyncOperations": [
+          "async",
+          "await",
+          "promise",
+          "catch"
+        ],
+        "performanceOptimizations": [
+          "batch"
+        ],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [
+          "configure"
+        ],
+        "configurationHandling": [
+          "config",
+          "configure"
+        ],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "yaml-helper.ts": {
+        "filepath": "utils\\yaml-helper.ts",
+        "componentName": "YamlHelper",
+        "fileSize": 3480,
+        "fileType": "YAML_PROCESSING_UTILITIES",
+        "methods": [
+          "parseYaml",
+          "stringifyYaml",
+          "getNestedYamlProperty"
+        ],
+        "interfaces": [],
+        "imports": [
+          "js-yaml",
+          "./logger"
+        ],
+        "exports": [
+          "parseYaml",
+          "stringifyYaml",
+          "mergeYamlArrays",
+          "getNestedYamlProperty"
+        ],
+        "storageOperations": [
+          "load"
+        ],
+        "utilityOperations": [
+          "parse"
+        ],
+        "errorHandling": [
+          "error",
+          "try",
+          "catch",
+          "fail"
+        ],
+        "loggingUsage": [
+          "log",
+          "warn",
+          "error",
+          "logger"
+        ],
+        "throttlingUsage": [],
+        "asyncOperations": [
+          "catch"
+        ],
+        "performanceOptimizations": [],
+        "systemDependencies": [
+          "import"
+        ],
+        "initializationMethods": [],
+        "configurationHandling": [],
+        "securityFeatures": [],
+        "dataValidation": [],
+        "criticalOperations": []
+      },
+      "systemCapabilities": {
+        "errorHandling": "COMPREHENSIVE_ERROR_HANDLING",
+        "logging": "ADVANCED_LOGGING_SYSTEM",
+        "apiManagement": "API_THROTTLING_AND_QUEUE_MANAGEMENT",
+        "dataProcessing": "SAFE_DATA_PROCESSING_UTILITIES"
+      }
+    },
+    "integrationDiagnostics": {
+      "storageIntegrationStatus": {
+        "characterSystemIntegration": "ANALYSIS_PENDING",
+        "memorySystemIntegration": "MEDIUM_INTEGRATION",
+        "plotSystemIntegration": "LOW_INTEGRATION",
+        "analysisSystemIntegration": "NO_INTEGRATION",
+        "generationSystemIntegration": "LOW_INTEGRATION",
+        "overallIntegrationHealth": "REQUIRES_DETAILED_ANALYSIS",
+        "charactersSystemIntegration": "NO_INTEGRATION",
+        "learning-journeySystemIntegration": "NO_INTEGRATION"
+      },
+      "utilityIntegrationStatus": {
+        "loggingIntegration": "ANALYSIS_PENDING",
+        "errorHandlingIntegration": "ANALYSIS_PENDING",
+        "throttlingIntegration": "ANALYSIS_PENDING",
+        "promiseUtilsIntegration": "ANALYSIS_PENDING",
+        "overallUtilityHealth": "REQUIRES_DETAILED_ANALYSIS"
+      },
+      "crossSystemIntegration": {
+        "storageUtilityIntegration": "CROSS_INTEGRATION_ANALYSIS",
+        "infrastructureCoherence": "COHERENCE_ANALYSIS",
+        "systemWideConsistency": "CONSISTENCY_ANALYSIS",
+        "architecturalAlignment": "ALIGNMENT_ANALYSIS"
+      },
+      "integrationProblems": {
+        "missingStorageIntegration": "SYSTEMS_NOT_USING_STORAGE",
+        "inconsistentLogging": "INCONSISTENT_LOGGING_USAGE",
+        "missingErrorHandling": "MISSING_CENTRALIZED_ERROR_HANDLING",
+        "noThrottling": "API_CALLS_WITHOUT_THROTTLING",
+        "initializationProblems": "INCORRECT_INITIALIZATION_ORDER"
+      }
+    },
+    "usageAnalysis": {
+      "storageUsagePatterns": {
+        "utilizationRate": "CALCULATED_FROM_SYSTEM_ANALYSIS",
+        "consistencyLevel": "USAGE_CONSISTENCY_ANALYSIS",
+        "integrationDepth": "INTEGRATION_DEPTH_MEASUREMENT",
+        "performanceImpact": "PERFORMANCE_IMPACT_ANALYSIS"
+      },
+      "utilityUsagePatterns": {
+        "loggingConsistency": "LOGGING_USAGE_CONSISTENCY",
+        "errorHandlingCoverage": "ERROR_HANDLING_COVERAGE",
+        "throttlingAdoption": "API_THROTTLING_ADOPTION_RATE",
+        "promiseUtilsUsage": "PROMISE_UTILITIES_USAGE"
+      },
+      "integrationGaps": {
+        "identifiedGaps": "INTEGRATION_GAPS_IDENTIFIED",
+        "severityLevels": "GAP_SEVERITY_CLASSIFICATION",
+        "impactAssessment": "SYSTEM_IMPACT_ASSESSMENT",
+        "urgencyPrioritization": "FIX_URGENCY_PRIORITIZATION"
+      }
+    },
+    "architecturalProblems": {
+      "infrastructureProblems": {
+        "storageInconsistency": {
+          "problem": "INCONSISTENT_STORAGE_USAGE_ACROSS_SYSTEMS",
+          "severity": "HIGH",
+          "impact": "DATA_INTEGRITY_AND_PERFORMANCE_ISSUES",
+          "affectedSystems": "MULTIPLE_CORE_SYSTEMS"
+        },
+        "utilityFragmentation": {
+          "problem": "FRAGMENTED_UTILITY_USAGE",
+          "severity": "MEDIUM_HIGH",
+          "impact": "MAINTAINABILITY_AND_CONSISTENCY_ISSUES",
+          "affectedSystems": "ALL_SYSTEMS"
+        },
+        "initializationProblems": {
+          "problem": "INCORRECT_INITIALIZATION_ORDER",
+          "severity": "HIGH",
+          "impact": "SYSTEM_STARTUP_AND_RELIABILITY_ISSUES",
+          "affectedSystems": "SYSTEM_WIDE"
+        },
+        "missingThrottling": {
+          "problem": "API_CALLS_WITHOUT_PROPER_THROTTLING",
+          "severity": "MEDIUM_HIGH",
+          "impact": "API_RATE_LIMITING_AND_PERFORMANCE_ISSUES",
+          "affectedSystems": "AI_INTEGRATION_SYSTEMS"
+        }
+      },
+      "systemIntegrityIssues": {
+        "dataFlowInconsistency": "INCONSISTENT_DATA_FLOW_PATTERNS",
+        "errorHandlingGaps": "MISSING_CENTRALIZED_ERROR_HANDLING",
+        "loggingInconsistency": "INCONSISTENT_LOGGING_IMPLEMENTATION",
+        "performanceBottlenecks": "PERFORMANCE_OPTIMIZATION_GAPS"
+      },
+      "architecturalDebt": {
+        "technicalDebt": "ACCUMULATED_TECHNICAL_DEBT",
+        "maintenanceComplexity": "INCREASED_MAINTENANCE_COMPLEXITY",
+        "scalabilityLimitations": "SCALABILITY_LIMITATIONS",
+        "reliabilityRisks": "SYSTEM_RELIABILITY_RISKS"
+      }
+    },
+    "systemHealthCheck": {
+      "infrastructureHealth": {
+        "storageSystemHealth": "STORAGE_SYSTEM_HEALTH_ASSESSMENT",
+        "utilitySystemHealth": "UTILITY_SYSTEM_HEALTH_ASSESSMENT",
+        "integrationHealth": "CROSS_SYSTEM_INTEGRATION_HEALTH",
+        "overallInfrastructureHealth": "OVERALL_INFRASTRUCTURE_HEALTH"
+      },
+      "criticalIssues": {
+        "immediateAttentionRequired": [
+          "STORAGE_INTEGRATION_GAPS",
+          "MISSING_ERROR_HANDLING",
+          "INITIALIZATION_ORDER_PROBLEMS",
+          "API_THROTTLING_GAPS"
+        ],
+        "performanceIssues": [
+          "INEFFICIENT_STORAGE_USAGE",
+          "MISSING_CACHING_STRATEGIES",
+          "UNOPTIMIZED_API_CALLS",
+          "MEMORY_USAGE_INEFFICIENCIES"
+        ],
+        "reliabilityRisks": [
+          "INCONSISTENT_ERROR_HANDLING",
+          "MISSING_LOGGING_COVERAGE",
+          "DATA_INTEGRITY_RISKS",
+          "SYSTEM_STARTUP_FAILURES"
+        ]
+      },
+      "healthMetrics": {
+        "systemStability": "STABILITY_MEASUREMENT",
+        "performanceLevel": "PERFORMANCE_LEVEL_ASSESSMENT",
+        "maintainabilityScore": "MAINTAINABILITY_SCORE",
+        "reliabilityIndex": "RELIABILITY_INDEX"
+      }
+    },
+    "recommendedFixes": {
+      "immediateActions": {
+        "storageIntegrationFix": {
+          "action": "IMPLEMENT_CONSISTENT_STORAGE_USAGE",
+          "priority": "HIGH",
+          "estimatedEffort": "MEDIUM",
+          "expectedImpact": "SIGNIFICANT_IMPROVEMENT",
+          "implementation": [
+            "AUDIT_ALL_SYSTEMS_FOR_STORAGE_USAGE",
+            "IMPLEMENT_CENTRALIZED_STORAGE_PATTERN",
+            "UPDATE_ALL_SYSTEMS_TO_USE_STORAGE_INFRASTRUCTURE",
+            "ADD_STORAGE_INITIALIZATION_TO_SYSTEM_STARTUP"
+          ]
+        },
+        "utilityIntegrationFix": {
+          "action": "IMPLEMENT_CONSISTENT_UTILITY_USAGE",
+          "priority": "HIGH",
+          "estimatedEffort": "MEDIUM",
+          "expectedImpact": "SIGNIFICANT_IMPROVEMENT",
+          "implementation": [
+            "ADD_CENTRALIZED_LOGGING_TO_ALL_SYSTEMS",
+            "IMPLEMENT_CONSISTENT_ERROR_HANDLING",
+            "ADD_API_THROTTLING_TO_ALL_AI_CALLS",
+            "STANDARDIZE_PROMISE_HANDLING"
+          ]
+        },
+        "initializationFix": {
+          "action": "FIX_INITIALIZATION_ORDER",
+          "priority": "CRITICAL",
+          "estimatedEffort": "HIGH",
+          "expectedImpact": "SYSTEM_STABILITY_IMPROVEMENT",
+          "implementation": [
+            "AUDIT_CURRENT_INITIALIZATION_FLOW",
+            "DESIGN_PROPER_DEPENDENCY_ORDER",
+            "IMPLEMENT_LIFECYCLE_MANAGEMENT",
+            "ADD_INITIALIZATION_VALIDATION"
+          ]
+        }
+      },
+      "mediumTermGoals": {
+        "infrastructureRedesign": "REDESIGN_INFRASTRUCTURE_ARCHITECTURE",
+        "performanceOptimization": "IMPLEMENT_PERFORMANCE_OPTIMIZATIONS",
+        "reliabilityEnhancement": "ENHANCE_SYSTEM_RELIABILITY",
+        "maintainabilityImprovement": "IMPROVE_SYSTEM_MAINTAINABILITY"
+      },
+      "longTermVision": {
+        "infrastructureExcellence": "ACHIEVE_INFRASTRUCTURE_EXCELLENCE",
+        "systemOptimization": "OPTIMIZE_ENTIRE_SYSTEM_ARCHITECTURE",
+        "scalabilityEnhancement": "ENHANCE_SYSTEM_SCALABILITY",
+        "futureProofing": "FUTURE_PROOF_INFRASTRUCTURE"
+      }
+    },
+    "holisticInfrastructureAnalysis": {
+      "infrastructureRole": {
+        "foundationImportance": "CRITICAL_FOUNDATION_FOR_ALL_SYSTEMS",
+        "systemIntegrationCritical": "INFRASTRUCTURE_IS_SYSTEM_INTEGRATION_BACKBONE",
+        "performanceImpact": "DIRECT_IMPACT_ON_SYSTEM_PERFORMANCE",
+        "reliabilityFoundation": "FOUNDATION_FOR_SYSTEM_RELIABILITY"
+      },
+      "currentState": {
+        "infrastructureMaturity": "PARTIAL_IMPLEMENTATION",
+        "integrationLevel": "INCONSISTENT_INTEGRATION",
+        "utilizationRate": "UNDERUTILIZED_INFRASTRUCTURE",
+        "systemHealth": "REQUIRES_SIGNIFICANT_IMPROVEMENT"
+      },
+      "potentialImpact": {
+        "properIntegrationImpact": "DRAMATIC_SYSTEM_IMPROVEMENT_POTENTIAL",
+        "performanceGains": "SIGNIFICANT_PERFORMANCE_GAINS_POSSIBLE",
+        "reliabilityImprovement": "MAJOR_RELIABILITY_IMPROVEMENT_POTENTIAL",
+        "maintenanceReduction": "SUBSTANTIAL_MAINTENANCE_REDUCTION"
+      },
+      "strategicImportance": {
+        "systemSuccessDependency": "SYSTEM_SUCCESS_DEPENDS_ON_INFRASTRUCTURE",
+        "scalabilityRequirement": "SCALABILITY_REQUIRES_SOLID_INFRASTRUCTURE",
+        "futureEvolution": "FUTURE_EVOLUTION_DEPENDS_ON_INFRASTRUCTURE",
+        "competitiveAdvantage": "PROPER_INFRASTRUCTURE_IS_COMPETITIVE_ADVANTAGE"
+      },
+      "transformationPotential": {
+        "systemTransformation": "INFRASTRUCTURE_FIX_TRANSFORMS_ENTIRE_SYSTEM",
+        "performanceRevolution": "PERFORMANCE_REVOLUTION_THROUGH_INFRASTRUCTURE",
+        "reliabilityTransformation": "RELIABILITY_TRANSFORMATION_POTENTIAL",
+        "evolutionaryLeap": "EVOLUTIONARY_LEAP_THROUGH_INFRASTRUCTURE_EXCELLENCE"
+      }
+    }
+  }
+}

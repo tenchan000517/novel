@@ -20,6 +20,9 @@ import { SectionBuilder } from './prompt/section-builder';
 import { WorldSettingsManager } from '@/lib/plot/world-settings-manager';
 import { PlotManager } from '@/lib/plot/manager';
 import { LearningJourneySystem, LearningStage } from '@/lib/learning-journey';
+import { CharacterManager } from '@/lib/characters/manager';
+
+import { Character } from '@/lib/characters/core/types';
 
 /**
  * 統合記憶システム対応メモリサービス
@@ -216,6 +219,7 @@ export class PromptGenerator {
   private worldSettingsManager?: WorldSettingsManager;
   private plotManager?: PlotManager;
   private learningJourneySystem?: LearningJourneySystem;
+  private characterManager?: CharacterManager; // 🔥 追加
 
   /**
    * コンストラクタ（最適化版）
@@ -224,12 +228,14 @@ export class PromptGenerator {
     memoryManager: MemoryManager,
     worldSettingsManager?: WorldSettingsManager,
     plotManager?: PlotManager,
-    learningJourneySystem?: LearningJourneySystem
+    learningJourneySystem?: LearningJourneySystem,
+    characterManager?: CharacterManager  // 🔥 追加
   ) {
     this.memoryManager = memoryManager;
     this.worldSettingsManager = worldSettingsManager;
     this.plotManager = plotManager;
     this.learningJourneySystem = learningJourneySystem;
+    this.characterManager = characterManager;  // 🔥 追加
 
     // 統合メモリサービスの初期化
     this.unifiedMemoryService = new UnifiedMemoryService(this.memoryManager);
@@ -249,7 +255,8 @@ export class PromptGenerator {
     logger.info('PromptGenerator ready for immediate use with optimized dependencies', {
       hasWorldSettingsManager: !!this.worldSettingsManager,
       hasPlotManager: !!this.plotManager,
-      hasLearningJourneySystem: !!this.learningJourneySystem
+      hasLearningJourneySystem: !!this.learningJourneySystem,
+      hasCharacterManager: !!this.characterManager  // 🔥 追加
     });
   }
 
@@ -647,23 +654,66 @@ export class PromptGenerator {
         worldSettings = this.formatter.formatWorldSettings(context.worldSettings);
       }
 
-      // 統合キャラクター情報の取得
+      // 🔧 FIXED: CharacterManager優先のキャラクター情報取得
       let characters = '';
-      try {
-        const characterSearchResult = await this.memoryManager.unifiedSearch(
-          'キャラクター 登場人物',
-          [MemoryLevel.SHORT_TERM, MemoryLevel.LONG_TERM]
-        );
 
-        if (characterSearchResult.success && characterSearchResult.results.length > 0) {
-          characters = await this.extractCharactersFromSearchResults(characterSearchResult.results, context);
+      // PRIORITY 1: CharacterManagerから基本キャラクター定義を取得
+      if (this.characterManager) {
+        try {
+          const allCharacters = await this.characterManager.getAllCharacters();
+          if (allCharacters.length > 0) {
+            const characterDescriptions = allCharacters.map(char =>
+              `${char.name}: ${char.description}`
+            );
+            characters = characterDescriptions.join('\n');
+
+            logger.debug(`Retrieved ${allCharacters.length} characters from CharacterManager`, {
+              characterNames: allCharacters.map(c => c.name)
+            });
+          }
+        } catch (characterError) {
+          logger.warn('Failed to get characters from CharacterManager', {
+            error: characterError instanceof Error ? characterError.message : String(characterError)
+          });
         }
-      } catch (error) {
-        logger.warn('Failed to get characters from unified search', { error });
       }
 
+      // PRIORITY 2: MemoryManagerから動的状態情報で補完
+      if (this.memoryManager) {
+        try {
+          const characterSearchResult = await this.memoryManager.unifiedSearch(
+            'キャラクター 登場人物',
+            [MemoryLevel.SHORT_TERM, MemoryLevel.LONG_TERM]
+          );
+
+          if (characterSearchResult.success && characterSearchResult.results.length > 0) {
+            const memoryCharacterInfo = await this.extractCharactersFromSearchResults(
+              characterSearchResult.results,
+              context
+            );
+
+            if (memoryCharacterInfo && characters) {
+              // CharacterManagerの情報にMemoryManagerの状態情報を追加
+              characters += '\n\n【現在の状態】\n' + memoryCharacterInfo;
+            } else if (memoryCharacterInfo && !characters) {
+              // CharacterManagerが空の場合はMemoryManagerの情報を使用
+              characters = memoryCharacterInfo;
+            }
+          }
+        } catch (error) {
+          logger.warn('Failed to get characters from unified search', { error });
+        }
+      }
+
+      // PRIORITY 3: コンテキストからのフォールバック
+      if (!characters && context.characters && context.characters.length > 0) {
+        characters = await this.formatter.formatCharacters(context.characters);
+      }
+
+      // PRIORITY 4: 最終フォールバック
       if (!characters) {
-        characters = await this.formatter.formatCharacters(context.characters || []);
+        characters = '基本的なキャラクター設定を使用してください';
+        logger.warn('No character information available from any source');
       }
 
       return prompt
@@ -677,64 +727,7 @@ export class PromptGenerator {
     }
   }
 
-  /**
-   * 統合検索結果からキャラクター情報を抽出
-   */
-  private async extractCharactersFromSearchResults(
-    results: any[],
-    generationContext: GenerationContext
-  ): Promise<string> {
-    try {
-      const characterInfoList: string[] = [];
-
-      for (const result of results) {
-        if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-          if (result.data.characters) {
-            const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
-            chars.forEach((char: any) => {
-              const characterInfo = `${char.name || char.id}: ${char.currentLocation || char.location || '不明な場所'}にいる`;
-              characterInfoList.push(characterInfo);
-            });
-          }
-
-          if (result.data.characterStates) {
-            const states = result.data.characterStates;
-            if (typeof states === 'object') {
-              Object.entries(states).forEach(([characterId, state]: [string, any]) => {
-                const characterInfo = `${characterId}: ${state.currentLocation || '不明な場所'}にいる`;
-                characterInfoList.push(characterInfo);
-              });
-            }
-          }
-        }
-
-        if (result.source === MemoryLevel.LONG_TERM && result.data) {
-          if (result.data.character || result.data.characters) {
-            const chars = result.data.characters || [result.data.character];
-            if (Array.isArray(chars)) {
-              chars.forEach((char: any) => {
-                const characterInfo = `${char.name}: ${char.description || ''}`;
-                characterInfoList.push(characterInfo);
-              });
-            }
-          }
-        }
-      }
-
-      if (generationContext.characters && generationContext.characters.length > 0) {
-        const formattedChars = await this.formatter.formatCharacters(generationContext.characters);
-        if (formattedChars) {
-          characterInfoList.push(formattedChars);
-        }
-      }
-
-      return characterInfoList.join('\n');
-
-    } catch (error) {
-      logger.warn('Failed to extract characters from search results', { error });
-      return await this.formatter.formatCharacters(generationContext.characters || []);
-    }
-  }
+  
 
   /**
    * 統合記憶システム対応セクション構築
@@ -876,54 +869,406 @@ export class PromptGenerator {
   }
 
   /**
-   * 統合記憶システムを活用した重点キャラクターの決定
-   */
+  * 🔧 FIXED: 統合記憶システムを活用した重点キャラクターの決定（強化版）
+  * CharacterManager（静的定義）+ MemoryManager（動的重要度）の連携
+  */
   private async determineFocusCharactersWithMemory(context: GenerationContext): Promise<string[]> {
     try {
-      if (!this.memoryManager) {
-        return this.sectionBuilder.determineFocusCharacters(context);
+      // 🔧 STEP 1: CharacterManagerから基本キャラクター一覧を取得
+      let baseCharacters: Character[] = [];
+
+      if (this.characterManager) {
+        try {
+          // CharacterManagerとMemoryManagerの連携情報を取得
+          const characterContext = await this.characterManager.getCharactersWithMemoryContext();
+          baseCharacters = characterContext.characters;
+
+          logger.debug(`Retrieved ${baseCharacters.length} characters from CharacterManager`, {
+            characterNames: baseCharacters.map(c => c.name),
+            characterTypes: baseCharacters.map(c => c.type)
+          });
+        } catch (characterError) {
+          logger.warn('Failed to get characters from CharacterManager', {
+            error: characterError instanceof Error ? characterError.message : String(characterError)
+          });
+        }
       }
 
-      const searchResult = await this.memoryManager.unifiedSearch(
-        'キャラクター 登場人物',
-        [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
-      );
+      // 🔧 STEP 2: MemoryManagerから動的重要度情報を取得
+      const characterImportanceMap = new Map<string, number>();
 
-      if (searchResult.success && searchResult.results.length > 0) {
-        const activeCharacters: string[] = [];
+      if (this.memoryManager) {
+        try {
+          const searchResult = await this.memoryManager.unifiedSearch(
+            'キャラクター 登場人物 importance',
+            [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+          );
 
-        for (const result of searchResult.results) {
-          if (result.source === MemoryLevel.SHORT_TERM && result.data) {
-            if (result.data.characters) {
-              const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
-              chars.forEach((char: any) => {
-                if (char.name || char.id) {
-                  activeCharacters.push(char.name || char.id);
-                }
-              });
-            }
-
-            if (result.data.characterStates) {
-              const states = result.data.characterStates;
-              if (typeof states === 'object') {
-                Object.keys(states).forEach(characterId => {
-                  activeCharacters.push(characterId);
+          if (searchResult.success && searchResult.results.length > 0) {
+            for (const result of searchResult.results) {
+              // 短期記憶から最近の活動度を取得
+              if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+                const recentActivity = this.extractRecentCharacterActivity(result.data);
+                recentActivity.forEach((importance, characterName) => {
+                  const currentImportance = characterImportanceMap.get(characterName) || 0;
+                  characterImportanceMap.set(characterName, currentImportance + importance * 2); // 短期記憶は重要度2倍
                 });
               }
+
+              // 中期記憶から継続的重要度を取得
+              if (result.source === MemoryLevel.MID_TERM && result.data) {
+                const continuousImportance = this.extractContinuousCharacterImportance(result.data);
+                continuousImportance.forEach((importance, characterName) => {
+                  const currentImportance = characterImportanceMap.get(characterName) || 0;
+                  characterImportanceMap.set(characterName, currentImportance + importance);
+                });
+              }
+            }
+
+            logger.debug('Character importance extracted from memory', {
+              importanceMap: Object.fromEntries(characterImportanceMap)
+            });
+          }
+        } catch (memoryError) {
+          logger.warn('Failed to get character importance from MemoryManager', {
+            error: memoryError instanceof Error ? memoryError.message : String(memoryError)
+          });
+        }
+      }
+
+      // 🔧 STEP 3: 重要度算出（静的重要度 × 動的重要度 × 登場頻度）
+      const characterScores: Array<{ name: string; score: number; character: Character }> = baseCharacters.map(character => {
+        // 静的重要度（キャラクタータイプベース）
+        const staticImportance = this.getStaticCharacterImportance(character);
+
+        // 動的重要度（MemoryManagerから取得）
+        const dynamicImportance = characterImportanceMap.get(character.name) || 0;
+
+        // 登場頻度（履歴から算出）
+        const appearanceFrequency = this.calculateAppearanceFrequency(character, context);
+
+        // 最終スコア計算
+        const finalScore = staticImportance + dynamicImportance + appearanceFrequency;
+
+        logger.debug(`Character score calculated: ${character.name}`, {
+          static: staticImportance,
+          dynamic: dynamicImportance,
+          frequency: appearanceFrequency,
+          final: finalScore
+        });
+
+        return {
+          name: character.name,
+          score: finalScore,
+          character
+        };
+      });
+
+      // 🔧 STEP 4: スコア順でソートし、上位3名を選定
+      const focusCharacters = characterScores
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+        .map(item => item.name);
+
+      if (focusCharacters.length > 0) {
+        logger.info(`Focus characters determined through integrated analysis`, {
+          focusCharacters,
+          scores: characterScores.slice(0, 3).map(item => ({
+            name: item.name,
+            score: item.score
+          }))
+        });
+        return focusCharacters;
+      }
+
+      // 🔧 STEP 5: フォールバック処理
+      return this.getFallbackFocusCharacters(baseCharacters, context);
+
+    } catch (error) {
+      logger.error('Failed to determine focus characters with memory integration', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      return this.sectionBuilder.determineFocusCharacters(context);
+    }
+  }
+
+  /**
+   * 🔧 NEW: 短期記憶からキャラクターの最近の活動度を抽出
+   */
+  private extractRecentCharacterActivity(data: any): Map<string, number> {
+    const activityMap = new Map<string, number>();
+
+    try {
+      // 最近の章でのキャラクター状態
+      if (data.characters) {
+        const chars = Array.isArray(data.characters) ? data.characters : [data.characters];
+        chars.forEach((char: any) => {
+          if (char.name || char.id) {
+            const characterName = char.name || char.id;
+            let activity = 0;
+
+            // 現在の場所情報があれば活動中
+            if (char.currentLocation || char.location) {
+              activity += 1.0;
+            }
+
+            // 感情状態の変化があれば重要
+            if (char.emotionalState && char.emotionalState !== 'NEUTRAL') {
+              activity += 0.5;
+            }
+
+            // 最近の行動があれば重要
+            if (char.recentActions || char.lastAction) {
+              activity += 0.8;
+            }
+
+            activityMap.set(characterName, activity);
+          }
+        });
+      }
+
+      // キャラクター状態の変化
+      if (data.characterStates) {
+        const states = data.characterStates;
+        if (typeof states === 'object') {
+          Object.entries(states).forEach(([characterId, state]: [string, any]) => {
+            let activity = activityMap.get(characterId) || 0;
+
+            // 状態変化があれば重要
+            if (state.hasChanged || state.recentChange) {
+              activity += 1.2;
+            }
+
+            // 重要なイベントに関与していれば重要
+            if (state.involvedInEvent) {
+              activity += 1.5;
+            }
+
+            activityMap.set(characterId, activity);
+          });
+        }
+      }
+
+    } catch (error) {
+      logger.warn('Failed to extract recent character activity', { error });
+    }
+
+    return activityMap;
+  }
+
+  /**
+   * 🔧 NEW: 中期記憶からキャラクターの継続的重要度を抽出
+   */
+  private extractContinuousCharacterImportance(data: any): Map<string, number> {
+    const importanceMap = new Map<string, number>();
+
+    try {
+      // 物語進行でのキャラクター重要度
+      if (data.narrativeProgression && data.narrativeProgression.characterImportance) {
+        const charImportance = data.narrativeProgression.characterImportance;
+        if (typeof charImportance === 'object') {
+          Object.entries(charImportance).forEach(([characterName, importance]: [string, any]) => {
+            if (typeof importance === 'number') {
+              importanceMap.set(characterName, importance);
+            }
+          });
+        }
+      }
+
+      // プロット上での役割
+      if (data.plotRoles) {
+        Object.entries(data.plotRoles).forEach(([characterName, role]: [string, any]) => {
+          let importance = 0;
+
+          if (role === 'protagonist' || role === 'main') {
+            importance = 2.0;
+          } else if (role === 'deuteragonist' || role === 'supporting') {
+            importance = 1.5;
+          } else if (role === 'catalyst' || role === 'key') {
+            importance = 1.2;
+          } else {
+            importance = 0.5;
+          }
+
+          importanceMap.set(characterName, importance);
+        });
+      }
+
+    } catch (error) {
+      logger.warn('Failed to extract continuous character importance', { error });
+    }
+
+    return importanceMap;
+  }
+
+  /**
+   * 🔧 NEW: 静的キャラクター重要度を取得
+   */
+  private getStaticCharacterImportance(character: Character): number {
+    let importance = 0;
+
+    // タイプベースの基本重要度
+    switch (character.type) {
+      case 'MAIN':
+        importance = 3.0;
+        break;
+      case 'SUB':
+        importance = 2.0;
+        break;
+      case 'MOB':
+        importance = 0.5;
+        break;
+      default:
+        importance = 1.0;
+    }
+
+    // アクティブ状態での重要度補正
+    if (character.state?.isActive === false) {
+      importance *= 0.5;
+    }
+
+    // 最近の登場での重要度補正
+    if (character.state?.lastAppearance) {
+      const recentThreshold = 5; // 5章以内
+      const currentChapter = 10; // TODO: コンテキストから取得
+      if (currentChapter - character.state.lastAppearance <= recentThreshold) {
+        importance *= 1.3;
+      }
+    }
+
+    return importance;
+  }
+
+  /**
+   * 🔧 NEW: 登場頻度を算出
+   */
+  private calculateAppearanceFrequency(character: Character, context: GenerationContext): number {
+    if (!character.history?.appearances || character.history.appearances.length === 0) {
+      return 0;
+    }
+
+    const recentAppearances = character.history.appearances.slice(-5); // 最近5回の登場
+    const significanceSum = recentAppearances.reduce((sum, app) => sum + (app.significance || 0.5), 0);
+
+    return significanceSum / 5; // 平均重要度
+  }
+
+  /**
+   * 🔧 NEW: フォールバックフォーカスキャラクター取得
+   */
+  private getFallbackFocusCharacters(characters: Character[], context: GenerationContext): string[] {
+    try {
+      // MAINタイプを優先
+      const mainCharacters = characters.filter(c => c.type === 'MAIN');
+      if (mainCharacters.length > 0) {
+        return mainCharacters.slice(0, 3).map(c => c.name);
+      }
+
+      // SUBタイプで補完
+      const subCharacters = characters.filter(c => c.type === 'SUB');
+      if (subCharacters.length > 0) {
+        return subCharacters.slice(0, 3).map(c => c.name);
+      }
+
+      // 全キャラクターから
+      if (characters.length > 0) {
+        return characters.slice(0, 3).map(c => c.name);
+      }
+
+      // 最終フォールバック
+      return this.sectionBuilder.determineFocusCharacters(context);
+
+    } catch (error) {
+      logger.warn('Fallback focus character determination failed', { error });
+      return ['主人公', 'メインキャラクター']; // ハードコードフォールバック
+    }
+  }
+
+  /**
+   * 🔧 ENHANCED: 統合検索結果からキャラクター情報を抽出（強化版）
+   * PromptGeneratorの既存メソッドを置き換え
+   */
+  private async extractCharactersFromSearchResults(
+    results: any[],
+    generationContext: GenerationContext
+  ): Promise<string> {
+    try {
+      const characterInfoList: string[] = [];
+
+      // 🔧 STEP 1: CharacterManagerから基本キャラクター情報を取得
+      if (this.characterManager) {
+        try {
+          const allCharacters = await this.characterManager.getAllCharacters();
+          allCharacters.forEach(character => {
+            const characterInfo = `${character.name}: ${character.description}`;
+            characterInfoList.push(characterInfo);
+          });
+
+          logger.debug(`Added ${allCharacters.length} characters from CharacterManager`);
+        } catch (characterError) {
+          logger.warn('Failed to get characters from CharacterManager for extraction', {
+            error: characterError instanceof Error ? characterError.message : String(characterError)
+          });
+        }
+      }
+
+      // 🔧 STEP 2: MemoryManagerから動的状態情報を抽出
+      for (const result of results) {
+        if (result.source === MemoryLevel.SHORT_TERM && result.data) {
+          if (result.data.characters) {
+            const chars = Array.isArray(result.data.characters) ? result.data.characters : [result.data.characters];
+            chars.forEach((char: any) => {
+              const characterInfo = `${char.name || char.id}: ${char.currentLocation || char.location || '不明な場所'}にいる`;
+              characterInfoList.push(characterInfo);
+            });
+          }
+
+          if (result.data.characterStates) {
+            const states = result.data.characterStates;
+            if (typeof states === 'object') {
+              Object.entries(states).forEach(([characterId, state]: [string, any]) => {
+                const characterInfo = `${characterId}: ${state.currentLocation || '不明な場所'}にいる`;
+                characterInfoList.push(characterInfo);
+              });
             }
           }
         }
 
-        if (activeCharacters.length > 0) {
-          return [...new Set(activeCharacters)].slice(0, 3);
+        if (result.source === MemoryLevel.LONG_TERM && result.data) {
+          if (result.data.character || result.data.characters) {
+            const chars = result.data.characters || [result.data.character];
+            if (Array.isArray(chars)) {
+              chars.forEach((char: any) => {
+                const characterInfo = `${char.name}: ${char.description || ''}`;
+                characterInfoList.push(characterInfo);
+              });
+            }
+          }
         }
       }
 
-      return this.sectionBuilder.determineFocusCharacters(context);
+      // 🔧 STEP 3: コンテキストからの追加情報
+      if (generationContext.characters && generationContext.characters.length > 0) {
+        const formattedChars = await this.formatter.formatCharacters(generationContext.characters);
+        if (formattedChars) {
+          characterInfoList.push(formattedChars);
+        }
+      }
+
+      // 🔧 STEP 4: 重複除去と最終フォーマット
+      const uniqueCharacterInfo = Array.from(new Set(characterInfoList));
+
+      logger.debug(`Extracted character information`, {
+        totalSources: results.length,
+        extractedCharacters: uniqueCharacterInfo.length,
+        hasCharacterManager: !!this.characterManager
+      });
+
+      return uniqueCharacterInfo.join('\n');
 
     } catch (error) {
-      logger.warn('Failed to determine focus characters with memory', { error });
-      return this.sectionBuilder.determineFocusCharacters(context);
+      logger.error('Failed to extract characters from search results with CharacterManager integration', { error });
+      return await this.formatter.formatCharacters(generationContext.characters || []);
     }
   }
 

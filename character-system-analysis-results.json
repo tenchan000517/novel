@@ -1,0 +1,976 @@
+{
+  "componentAnalysis": {
+    "CharacterService": {
+      "filepath": "src/lib/characters/services/character-service.ts",
+      "componentName": "CharacterService",
+      "methods": [
+        "ensureInitialized",
+        "loadCharactersFromFiles",
+        "loadCharacterFile",
+        "normalizeCharacterData",
+        "buildTypeIndex",
+        "createFallbackCharacters",
+        "getAllActiveCharacters",
+        "getCharacter",
+        "getCharactersByType",
+        "createCharacter",
+        "updateCharacterState",
+        "updateCharacter",
+        "recordAppearance",
+        "recordInteraction",
+        "processCharacterDevelopment",
+        "validateCharacter",
+        "initializeCharacterState",
+        "initializeHistory",
+        "validateNewCharacterData",
+        "validateCharacterUpdates",
+        "validateCharacterStructure",
+        "mergeCharacterUpdates",
+        "createCharacterService"
+      ],
+      "interfaces": [],
+      "imports": [
+        "../core/interfaces",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/lib/utils/logger",
+        "@/lib/utils/helpers",
+        "../core/errors",
+        "fs/promises",
+        "path",
+        "js-yaml"
+      ],
+      "fileSize": 25103,
+      "lastModified": "2025-06-04T04:50:02.830Z"
+    },
+    "DetectionService": {
+      "filepath": "src/lib/characters/services/detection-service.ts",
+      "componentName": "DetectionService",
+      "methods": [
+        "initializeDetectionSpecificSystems",
+        "restoreLearningDataSafely",
+        "detectCharactersInContent",
+        "extractCharacterDialog",
+        "detectInteractions",
+        "learnFromDetectionFeedback",
+        "getAllCharactersFromMemorySystemSafely",
+        "performOptimizedCharacterDetection",
+        "getDetectionHistoryFromMemorySystemSafely",
+        "saveDetectionResultToMemorySystemSafely",
+        "getDialogPatternsFromMemorySystemSafely",
+        "saveLearningDataToMemorySystemSafely",
+        "detectCharacterMentions",
+        "verifyCharacterAppearance",
+        "extractMentionContext",
+        "verifyMentionContext",
+        "getCharacterFromMemorySystem",
+        "saveMentionDataToMemorySystem",
+        "saveAppearanceVerificationToMemorySystem",
+        "getRelationshipHistoryFromMemorySystemSafely",
+        "saveDialogExtractionLearningSafely",
+        "saveInteractionAnalysisToMemorySystemSafely",
+        "convertMentionToChapter",
+        "convertVerificationToChapter",
+        "calculateContentHash",
+        "detectCharacterInParagraph",
+        "verifyCharacterNameContext",
+        "detectPronouns",
+        "cleanDialogText",
+        "extractDialogContext",
+        "analyzeEmotionalTone",
+        "filterHighQualityDialogs",
+        "getCachedDetectionResult",
+        "setCachedDetectionResult",
+        "calculateAccuracy",
+        "calculateDetectionConfidence",
+        "convertToCharacter",
+        "convertDetectionToChapter",
+        "convertToDialogPattern",
+        "getDefaultDialogPatterns",
+        "convertLearningDataToChapter",
+        "updateAverageConfidence",
+        "calculateAccuracyImprovement",
+        "updateDetectionPatternsFromLearning",
+        "findCharactersInParagraph",
+        "analyzeDetailedInteraction",
+        "getDetectionStatistics",
+        "performDiagnostics",
+        "generateRecommendations",
+        "isReady"
+      ],
+      "interfaces": [
+        "ExtractedDialog",
+        "ExtractedDialog",
+        "DialogPattern",
+        "DialogPattern",
+        "DetailedInteraction",
+        "DetailedInteraction",
+        "CharacterDetectionResult",
+        "CharacterDetectionResult",
+        "LearningResult",
+        "LearningResult",
+        "DetectionStats",
+        "DetectionStats"
+      ],
+      "imports": [
+        "@/lib/utils/logger",
+        "../core/types",
+        "../core/interfaces",
+        "../core/errors",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ],
+      "fileSize": 43464,
+      "lastModified": "2025-06-02T22:40:15.676Z"
+    },
+    "EvolutionService": {
+      "filepath": "src/lib/characters/services/evolution-service.ts",
+      "componentName": "EvolutionService",
+      "methods": [
+        "initializeEvolutionSpecificSystems",
+        "checkMemoryManagerStatusSafely",
+        "initializeMemorySystemIntegrationSync",
+        "migrateExistingDataToMemorySystemSafely",
+        "processCharacterDevelopment",
+        "createAdvancedGrowthPlan",
+        "predictNextMilestone",
+        "evaluateDevelopmentStage",
+        "startDevelopmentSession",
+        "getEvolutionContextFromMemorySystemSafely",
+        "getCharacterFromMemorySystemSafely",
+        "analyzeDevelopmentImpactWithSystemOptimizationSafely",
+        "evaluateDevelopmentQualityWithSystemDiagnosticsSafely",
+        "optimizeDevelopmentWithUnifiedSearchSafely",
+        "saveDevelopmentToMemorySystemSafely",
+        "createFallbackDevelopment",
+        "createFallbackEvolutionContext",
+        "createFallbackGrowthPlan",
+        "performCrossLevelAnalysisSafely",
+        "getCharacterQualityBaselineSafely",
+        "generateSystemRecommendationsSafely",
+        "calculateCrossLevelConsistencySafely",
+        "extractPersonalityChanges",
+        "extractRelationshipChanges",
+        "extractSkillChanges",
+        "calculateEmotionalGrowth",
+        "calculateNarrativeSignificance",
+        "extractOptimizationHints",
+        "applyOptimizationHints",
+        "calculateTraditionalDevelopmentScore",
+        "performBasicQualityAssessment",
+        "performTraditionalDevelopmentAnalysis",
+        "convertDevelopmentToChapter",
+        "generateDevelopmentContent",
+        "extractGrowthPlanFromSearchResult",
+        "extractCharacterFromSearchResult",
+        "identifySupportingMemoryLevels",
+        "analyzeGrowthHistoryFromMemorySystemSafely",
+        "generateOptimizedGrowthPathWithSystemOptimizationSafely",
+        "evaluateGrowthPlanQualityWithSystemDiagnosticsSafely",
+        "calculateOptimalParameterTargetsSafely",
+        "selectOptimalSkillsSafely",
+        "saveGrowthPlanToMemorySystemSafely",
+        "analyzeProgressPatternsAcrossMemoryLevelsSafely",
+        "optimizeMilestonePredictionWithSystemOptimizationSafely",
+        "evaluatePredictionReliabilitySafely",
+        "calculateDataIntegritySafely",
+        "generateDevelopmentPath",
+        "getActiveGrowthPlan",
+        "applyGrowthPlan",
+        "createEmptyGrowthResult",
+        "isReady"
+      ],
+      "interfaces": [
+        "MemoryIntegratedDevelopment",
+        "MemoryIntegratedDevelopment",
+        "IntegratedGrowthPlan",
+        "IntegratedGrowthPlan",
+        "DevelopmentSession",
+        "DevelopmentSession",
+        "EvolutionContext",
+        "EvolutionContext",
+        "SystemOptimizedMilestone",
+        "SystemOptimizedMilestone"
+      ],
+      "imports": [
+        "@/lib/utils/logger",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types",
+        "@/types/chapters",
+        "../core/interfaces",
+        "../core/errors",
+        "@/lib/utils/helpers"
+      ],
+      "fileSize": 40685,
+      "lastModified": "2025-06-02T22:33:15.131Z"
+    },
+    "PsychologyService": {
+      "filepath": "src/lib/characters/services/psychology-service.ts",
+      "componentName": "PsychologyService",
+      "methods": [
+        "initializeBasicSystems",
+        "performLazyInitializationIfNeeded",
+        "validateAndMigrateExistingPsychologyData",
+        "analyzeCharacterPsychology",
+        "analyzeRelationshipPsychology",
+        "predictBehaviors",
+        "simulateEmotionalResponse",
+        "getCharacterFromMemorySystem",
+        "getExistingPsychologyFromMemorySystem",
+        "getPsychologyAnalysisContextFromMemorySystem",
+        "performMemoryIntegratedPsychologyAnalysis",
+        "performMemoryIntegratedRelationshipAnalysis",
+        "performMemoryIntegratedBehaviorPrediction",
+        "performMemoryIntegratedEmotionalSimulation",
+        "getMemoryIntegratedCachedPsychology",
+        "setMemoryIntegratedCachedPsychology",
+        "updateAverageProcessingTime",
+        "createFallbackPsychology",
+        "createFallbackBehaviorPredictions",
+        "storePsychologyAnalysisInMemorySystem",
+        "storeRelationshipAnalysisInMemorySystem",
+        "storeBehaviorPredictionLearningData",
+        "storeEmotionalSimulationInMemorySystem",
+        "getRelationshipHistoryFromMemorySystem",
+        "getMultipleCharacterPsychologyFromMemorySystem",
+        "getBehaviorHistoryFromMemorySystem",
+        "getBehaviorPatternsFromMemorySystem",
+        "getCharacterInteractionsFromMemorySystem",
+        "getEmotionalHistoryFromMemorySystem",
+        "convertSearchResultToCharacter",
+        "extractPsychologyFromSearchResult",
+        "validatePsychologyData",
+        "migratePsychologyData",
+        "performDiagnostics"
+      ],
+      "interfaces": [
+        "PsychologyAnalysisResult",
+        "BehaviorPredictionResult",
+        "RelationshipPsychologyResult",
+        "EmotionalSimulationResult",
+        "PsychologyPerformanceMetrics"
+      ],
+      "imports": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/types",
+        "../core/errors",
+        "@/lib/utils/api-throttle",
+        "@/lib/generation/gemini-client",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ],
+      "fileSize": 32074,
+      "lastModified": "2025-06-02T22:44:15.719Z"
+    },
+    "RelationshipService": {
+      "filepath": "src/lib/characters/services/relationship-service.ts",
+      "componentName": "RelationshipService",
+      "methods": [
+        "initializeBasicSystems",
+        "performLazyInitializationIfNeeded",
+        "validateAndMigrateExistingRelationships",
+        "updateRelationship",
+        "analyzeRelationshipDynamics",
+        "detectRelationshipClusters",
+        "detectTensions",
+        "trackRelationshipEvolution",
+        "getConnectedCharacters",
+        "getCharacterRelationships",
+        "autoRepairRelationshipInconsistencies",
+        "getCharacterFromMemorySystem",
+        "getRelationshipFromMemorySystem",
+        "saveRelationshipToMemorySystem",
+        "updateBidirectionalRelationship",
+        "getAllRelationshipsFromMemorySystem",
+        "getAllCharactersFromMemorySystem",
+        "convertRelationshipToChapter",
+        "extractRelationshipFromSearchResult",
+        "Date",
+        "extractCharacterFromSearchResult",
+        "getReverseRelationshipType",
+        "validateRelationshipInput",
+        "calculateAverageProcessingTime",
+        "updateRelationshipCache",
+        "validateRelationshipData",
+        "migrateRelationshipData",
+        "detectAdvancedRelationshipClusters",
+        "analyzeAdvancedTensionDynamics",
+        "predictRelationshipEvolution",
+        "performNetworkAnalysis",
+        "calculateAnalysisConfidence",
+        "getRelationshipSystemHealth",
+        "validateCrossLevelConsistency",
+        "generateVisualizationData",
+        "storeAnalysisResultsInMemorySystem",
+        "getRelationshipHistoryFromMemorySystem",
+        "analyzeEvolutionPatternsWithMemorySystem",
+        "predictRelationshipFutureWithMemorySystem",
+        "getRelationshipMemoryInsights",
+        "performCrossLevelRelationshipAnalysis",
+        "calculateRelationshipSystemValidation",
+        "extractSignificantEvents",
+        "calculateStabilityScore",
+        "detectRelationshipInconsistenciesWithMemorySystem",
+        "repairInconsistencyWithMemorySystem",
+        "verifyRepairResultsWithMemorySystem",
+        "storeRepairReportInMemorySystem",
+        "performDiagnostics",
+        "generatePerformanceRecommendations"
+      ],
+      "interfaces": [
+        "PerformanceStats",
+        "RelationshipEvolutionReport",
+        "RelationshipInconsistency",
+        "RepairAction",
+        "RepairReport",
+        "RelationshipNetworkAnalysis"
+      ],
+      "imports": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/errors",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ],
+      "fileSize": 43494,
+      "lastModified": "2025-06-02T22:46:47.647Z"
+    },
+    "ParameterService": {
+      "filepath": "src/lib/characters/services/parameter-service.ts",
+      "componentName": "ParameterService",
+      "methods": [
+        "initializeMemorySystemIntegration",
+        "loadParameterDefinitions",
+        "manageDynamicParameters",
+        "initializeCharacterParameters",
+        "getCharacterParameters",
+        "setParameterValue",
+        "modifyParameter",
+        "getParametersByCategory",
+        "getParametersFromMemorySystem",
+        "calculateDynamicAdjustmentsWithMemorySystem",
+        "recordParameterChangesInMemorySystem",
+        "calculateParameterSystemConfidence",
+        "validateParameterCrossLevelConsistency",
+        "saveCharacterParametersToMemorySystem",
+        "recordParameterInitializationInMemorySystem",
+        "storeParameterDefinitionsInMemorySystem",
+        "getRelevantParametersForFactor",
+        "calculateParameterAdjustmentForFactor",
+        "calculateHistoricalAdjustment",
+        "calculateTraditionalDynamicAdjustments",
+        "applyDynamicAdjustments",
+        "convertParameterChangesToChapter",
+        "convertParametersToChapter",
+        "convertParameterInitializationToChapter",
+        "convertParameterDefinitionsToChapter",
+        "map",
+        "extractParametersFromSearchResults",
+        "extractParameterDefinitionsFromResults",
+        "createDefaultParameterDefinitions",
+        "updatePerformanceMetrics",
+        "getAllParameterDefinitions",
+        "getParameterById",
+        "getSystemStatus",
+        "createParameterService"
+      ],
+      "interfaces": [
+        "ParameterAdjustment",
+        "ParameterAdjustment",
+        "ContextFactor",
+        "ContextFactor",
+        "DynamicParameterUpdate",
+        "DynamicParameterUpdate",
+        "ParameterSystemStatus",
+        "ParameterSystemStatus"
+      ],
+      "imports": [
+        "../core/interfaces",
+        "../core/types",
+        "@/lib/utils/logger",
+        "../core/errors",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types",
+        "@/types/chapters"
+      ],
+      "fileSize": 45836,
+      "lastModified": "2025-06-02T11:25:41.409Z"
+    },
+    "SkillService": {
+      "filepath": "src/lib/characters/services/skill-service.ts",
+      "componentName": "SkillService",
+      "methods": [
+        "initializeBasicSystems",
+        "performLazyInitializationIfNeeded",
+        "initializeSkillDefinitionsIfNeeded",
+        "getCharacterSkills",
+        "acquireSkill",
+        "acquireSkillDetailed",
+        "updateSkillLevel",
+        "increaseProficiency",
+        "increaseProficiencyDetailed",
+        "checkSkillRequirements",
+        "checkSkillRequirementsDetailed",
+        "extractSkillsFromSearchResults",
+        "generateFallbackSkills",
+        "getSkillDefinition",
+        "getCharacterInfo",
+        "getCharacterParameters",
+        "getSkillData",
+        "applySkillParameterEffects",
+        "applyLevelUpParameterEffects",
+        "createBasicSkillDefinitions",
+        "createSkillAcquisitionChapter",
+        "createSkillLevelUpChapter",
+        "createProficiencyUpdateChapter",
+        "createSkillDefinitionChapter",
+        "join",
+        "join",
+        "join",
+        "generateBasicSkillDefinition",
+        "convertSkillIdToName",
+        "generateBasicParameters",
+        "updatePerformanceStats",
+        "performDiagnostics"
+      ],
+      "interfaces": [
+        "SkillAcquisitionResult",
+        "ProficiencyIncreaseResult",
+        "SkillRequirementCheck"
+      ],
+      "imports": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/types",
+        "../core/errors",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ],
+      "fileSize": 52289,
+      "lastModified": "2025-06-02T22:49:58.166Z"
+    }
+  },
+  "dataTypeMapping": {
+    "interfaces": [
+      "PersonalityTraits",
+      "Appearance",
+      "Backstory",
+      "Relationship",
+      "CharacterAppearance",
+      "Interaction",
+      "DevelopmentMilestone",
+      "CharacterHistory",
+      "CharacterState",
+      "CharacterChangeInfo",
+      "PromotionRecord",
+      "CharacterMetadata",
+      "Skill",
+      "GrowthPlan",
+      "GrowthPhase",
+      "CharacterParameter",
+      "MentalGrowthState",
+      "Character",
+      "RelationshipResponse",
+      "ImmutableCharacterData",
+      "MutableCharacterData",
+      "CharacterData",
+      "CharacterMetrics",
+      "PromotionEvaluation",
+      "CharacterCluster",
+      "RelationshipTension",
+      "RelationshipNetworkAnalysis",
+      "RelationshipAnalysis",
+      "DevelopmentImpact",
+      "CharacterDevelopment",
+      "DevelopmentPath",
+      "GrowthResult",
+      "ChapterEvent",
+      "TimingFactor",
+      "TimingAnalysis",
+      "TimingRecommendation",
+      "StoryContext",
+      "TransformationArc",
+      "GrowthEvent",
+      "Milestone",
+      "ChangeClassification",
+      "CharacterChange",
+      "CharacterDiff",
+      "PlotContext",
+      "CharacterTemplate",
+      "DynamicCharacter",
+      "NarrativeState",
+      "NarrativeContext",
+      "CharacterRecommendation",
+      "ChapterCharacterRecommendations",
+      "CharacterPsychology",
+      "RelationshipAttitude",
+      "PsychologyAnalysisResult",
+      "BehaviorPredictionResult",
+      "EmotionalSimulationResult",
+      "PsychologyPerformanceMetrics",
+      "ChapterEmotionAnalysis",
+      "EmotionalProgression",
+      "EmotionalArcDesign",
+      "ValidationResult",
+      "EventSubscription",
+      "EventData",
+      "CharacterCreatedEventData",
+      "CharacterUpdatedEventData",
+      "RelationshipUpdatedEventData",
+      "ParameterChangedEventData",
+      "SkillAcquiredEventData",
+      "CharacterIndexItem"
+    ],
+    "types": [
+      "CharacterType",
+      "CharacterRole",
+      "EmotionalState",
+      "RelationshipType",
+      "ParameterCategory",
+      "StabilityTrend",
+      "DevelopmentPathPhase",
+      "ArcType",
+      "ChangeType",
+      "ChangeScope"
+    ],
+    "enums": [],
+    "characterRelatedInterfaces": [
+      "Relationship",
+      "CharacterAppearance",
+      "CharacterHistory",
+      "CharacterState",
+      "CharacterChangeInfo",
+      "CharacterMetadata",
+      "Skill",
+      "CharacterParameter",
+      "Character",
+      "RelationshipResponse",
+      "ImmutableCharacterData",
+      "MutableCharacterData",
+      "CharacterData",
+      "CharacterMetrics",
+      "CharacterCluster",
+      "RelationshipTension",
+      "RelationshipNetworkAnalysis",
+      "RelationshipAnalysis",
+      "CharacterDevelopment",
+      "CharacterChange",
+      "CharacterDiff",
+      "CharacterTemplate",
+      "DynamicCharacter",
+      "CharacterRecommendation",
+      "ChapterCharacterRecommendations",
+      "CharacterPsychology",
+      "RelationshipAttitude",
+      "CharacterCreatedEventData",
+      "CharacterUpdatedEventData",
+      "RelationshipUpdatedEventData",
+      "ParameterChangedEventData",
+      "SkillAcquiredEventData",
+      "CharacterIndexItem"
+    ],
+    "filePath": "src/lib/characters/core/types.ts",
+    "totalTypes": 78
+  },
+  "storageStrategy": {
+    "STATIC_CONFIG": {
+      "description": "静的設定データ（不変）",
+      "location": "config/characters/",
+      "data": [
+        "id",
+        "name",
+        "description",
+        "type",
+        "personality.traits",
+        "personality.goals",
+        "personality.fears"
+      ],
+      "updateFrequency": "SYSTEM_UPDATE_ONLY"
+    },
+    "DYNAMIC_STATE": {
+      "description": "動的状態データ（変化）",
+      "location": "memory-system/",
+      "data": [
+        "emotionalState",
+        "skills",
+        "parameters",
+        "growthPhase",
+        "relationships",
+        "recentAppearances",
+        "state"
+      ],
+      "updateFrequency": "RUNTIME"
+    },
+    "CONTEXTUAL": {
+      "description": "コンテキストデータ（一時）",
+      "location": "context-manager/",
+      "data": [
+        "roleInScene",
+        "sceneSpecificState",
+        "currentMotivations",
+        "temporaryRelationships"
+      ],
+      "updateFrequency": "PER_SCENE"
+    }
+  },
+  "implementationStatus": {
+    "character-service": {
+      "filepath": "src\\lib\\characters\\services\\character-service.ts",
+      "totalMethods": 23,
+      "implementedMethods": 120,
+      "completeness": 522,
+      "hasTests": false,
+      "dependencies": [
+        "../core/interfaces",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/lib/utils/logger",
+        "@/lib/utils/helpers",
+        "../core/errors",
+        "fs/promises",
+        "path",
+        "js-yaml"
+      ]
+    },
+    "detection-service": {
+      "filepath": "src\\lib\\characters\\services\\detection-service.ts",
+      "totalMethods": 50,
+      "implementedMethods": 150,
+      "completeness": 300,
+      "hasTests": true,
+      "dependencies": [
+        "@/lib/utils/logger",
+        "../core/types",
+        "../core/interfaces",
+        "../core/errors",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ]
+    },
+    "evolution-service": {
+      "filepath": "src\\lib\\characters\\services\\evolution-service.ts",
+      "totalMethods": 52,
+      "implementedMethods": 142,
+      "completeness": 273,
+      "hasTests": false,
+      "dependencies": [
+        "@/lib/utils/logger",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types",
+        "@/types/chapters",
+        "../core/interfaces",
+        "../core/errors",
+        "@/lib/utils/helpers"
+      ]
+    },
+    "parameter-service": {
+      "filepath": "src\\lib\\characters\\services\\parameter-service.ts",
+      "totalMethods": 34,
+      "implementedMethods": 139,
+      "completeness": 409,
+      "hasTests": false,
+      "dependencies": [
+        "../core/interfaces",
+        "../core/types",
+        "@/lib/utils/logger",
+        "../core/errors",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types",
+        "@/types/chapters"
+      ]
+    },
+    "psychology-service": {
+      "filepath": "src\\lib\\characters\\services\\psychology-service.ts",
+      "totalMethods": 34,
+      "implementedMethods": 114,
+      "completeness": 335,
+      "hasTests": false,
+      "dependencies": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/types",
+        "../core/errors",
+        "@/lib/utils/api-throttle",
+        "@/lib/generation/gemini-client",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ]
+    },
+    "relationship-service": {
+      "filepath": "src\\lib\\characters\\services\\relationship-service.ts",
+      "totalMethods": 50,
+      "implementedMethods": 151,
+      "completeness": 302,
+      "hasTests": false,
+      "dependencies": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/errors",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ]
+    },
+    "skill-service": {
+      "filepath": "src\\lib\\characters\\services\\skill-service.ts",
+      "totalMethods": 32,
+      "implementedMethods": 228,
+      "completeness": 713,
+      "hasTests": false,
+      "dependencies": [
+        "@/lib/utils/logger",
+        "../core/interfaces",
+        "../core/types",
+        "../core/errors",
+        "../events/character-event-bus",
+        "../core/constants",
+        "@/types/chapters",
+        "@/lib/memory/core/memory-manager",
+        "@/lib/memory/core/types"
+      ]
+    }
+  },
+  "dependencies": {
+    "creation": {
+      "steps": [
+        "CharacterData validation",
+        "CharacterService.createCharacter()",
+        "Storage persistence",
+        "Cache update",
+        "Relationship initialization"
+      ],
+      "dataRequired": [
+        "name",
+        "type",
+        "description",
+        "basicPersonality"
+      ],
+      "storageLocation": "STATIC_CONFIG + DYNAMIC_STATE"
+    },
+    "retrieval": {
+      "steps": [
+        "Character basic data retrieval",
+        "Dynamic state loading from memory",
+        "Context data integration",
+        "Relationship data loading",
+        "Skills/Parameters loading",
+        "Details object construction"
+      ],
+      "dataRequired": [
+        "characterId"
+      ],
+      "storageLocation": "ALL_LAYERS"
+    },
+    "update": {
+      "steps": [
+        "Update validation",
+        "Determine update category (static/dynamic)",
+        "Route to appropriate storage",
+        "Cache invalidation",
+        "Relationship updates",
+        "Change tracking"
+      ],
+      "dataRequired": [
+        "characterId",
+        "updates"
+      ],
+      "storageLocation": "DYNAMIC_STATE (primary)"
+    },
+    "analysis": {
+      "steps": [
+        "Character data aggregation",
+        "Psychology analysis",
+        "Relationship analysis",
+        "Skill/Parameter analysis",
+        "Growth analysis",
+        "Results integration"
+      ],
+      "dataRequired": [
+        "characterId",
+        "analysisContext"
+      ],
+      "storageLocation": "ALL_LAYERS (read-only)"
+    }
+  },
+  "promptRequirements": {
+    "basicInfo": {
+      "fields": [
+        "name",
+        "age",
+        "description",
+        "type"
+      ],
+      "priority": "HIGH",
+      "source": "STATIC_CONFIG"
+    },
+    "currentState": {
+      "fields": [
+        "emotionalState",
+        "motivations",
+        "currentGoals"
+      ],
+      "priority": "HIGH",
+      "source": "DYNAMIC_STATE"
+    },
+    "relationships": {
+      "fields": [
+        "relationships",
+        "relationshipAnalysis"
+      ],
+      "priority": "MEDIUM",
+      "source": "DYNAMIC_STATE"
+    },
+    "abilities": {
+      "fields": [
+        "skills",
+        "parameters",
+        "growthPhase"
+      ],
+      "priority": "MEDIUM",
+      "source": "DYNAMIC_STATE"
+    },
+    "context": {
+      "fields": [
+        "roleInScene",
+        "sceneSpecificState"
+      ],
+      "priority": "HIGH",
+      "source": "CONTEXTUAL"
+    },
+    "history": {
+      "fields": [
+        "recentAppearances",
+        "significantChanges"
+      ],
+      "priority": "LOW",
+      "source": "DYNAMIC_STATE"
+    }
+  },
+  "configFiles": {
+    "totalYamlFiles": 5,
+    "totalJsonFiles": 0,
+    "foundPaths": [
+      {
+        "path": "data/characters/main",
+        "yamlFiles": [
+          "character-sato.yaml",
+          "character-suzuki.yaml",
+          "character-takahashi.yaml"
+        ],
+        "jsonFiles": []
+      },
+      {
+        "path": "data/characters/sub",
+        "yamlFiles": [
+          "character-nakamura.yaml",
+          "character-yamada.yaml"
+        ],
+        "jsonFiles": []
+      },
+      {
+        "path": "data/characters",
+        "yamlFiles": [],
+        "jsonFiles": []
+      }
+    ]
+  },
+  "recommendations": {
+    "architecture": [
+      {
+        "priority": "HIGH",
+        "category": "SYSTEM_POTENTIAL_UTILIZATION",
+        "issue": "275メソッドの高度なキャラクターシステムが十分活用されていない",
+        "solution": "CharacterManagerの全機能を活かしたプロンプト生成システム構築"
+      },
+      {
+        "priority": "HIGH",
+        "category": "GROWTH_PLAN_INTEGRATION",
+        "issue": "詳細な成長計画システムがプロンプト生成に統合されていない",
+        "solution": "EvolutionServiceと成長計画データの完全統合によるキャラクター進化システム"
+      },
+      {
+        "priority": "HIGH",
+        "category": "DATA_ARCHITECTURE_CLARIFICATION",
+        "issue": "78型定義による包括的データ管理の設計方針が不明確",
+        "solution": "静的設定・動的状態・コンテキスト・成長計画の4層アーキテクチャ明確化"
+      }
+    ],
+    "dataStorage": [
+      {
+        "priority": "HIGH",
+        "category": "CONFIG_FILE_OPTIMIZATION",
+        "issue": "設定ファイル構造の最適化（STATIC/DYNAMIC分離）",
+        "solution": "main/subディレクトリの設定ファイルから動的データを記憶階層に移行"
+      },
+      {
+        "priority": "HIGH",
+        "category": "GROWTH_PLAN_UTILIZATION",
+        "issue": "高度な成長計画システムが記憶階層と連携していない",
+        "solution": "data/growth-plansとEvolutionServiceの完全統合による動的キャラクター進化"
+      },
+      {
+        "priority": "MEDIUM",
+        "category": "MEMORY_SYSTEM_INTEGRATION",
+        "issue": "記憶階層システムとの連携強化",
+        "solution": "7つの専門サービスの記憶階層活用度向上"
+      }
+    ],
+    "performance": [
+      {
+        "priority": "MEDIUM",
+        "category": "SERVICE_OPTIMIZATION",
+        "issue": "AI分析・予測機能（PsychologyService等）の最適化",
+        "solution": "キャッシュ戦略とバッチ処理による性能向上"
+      },
+      {
+        "priority": "MEDIUM",
+        "category": "GROWTH_PLAN_PERFORMANCE",
+        "issue": "成長計画の動的評価・予測処理の最適化",
+        "solution": "フェーズ別キャッシュと予測結果の効率的管理"
+      }
+    ],
+    "integration": [
+      {
+        "priority": "HIGH",
+        "category": "PROMPT_DATA_INTEGRATION",
+        "issue": "プロンプト生成時の包括的キャラクター情報統合",
+        "solution": "CharacterWithDetails形式の完全活用とテンプレート最適化"
+      },
+      {
+        "priority": "HIGH",
+        "category": "DYNAMIC_CHARACTER_EVOLUTION",
+        "issue": "キャラクター成長・関係性変化のプロンプトへの反映",
+        "solution": "EvolutionService・RelationshipServiceの結果をリアルタイム統合"
+      },
+      {
+        "priority": "HIGH",
+        "category": "GROWTH_PLAN_PROMPT_INTEGRATION",
+        "issue": "フェーズ別成長計画がプロンプト生成に反映されていない",
+        "solution": "現在フェーズ・次回予測・パラメータ変化をプロンプトに動的統合"
+      }
+    ]
+  },
+  "growthPlanSystem": {
+    "path": "data/growth-plans",
+    "jsonFiles": [
+      "growth-plan-sato.json",
+      "growth-plan-suzuki.json",
+      "growth-plan-takahashi.json"
+    ],
+    "yamlFiles": [],
+    "totalFiles": 3
+  }
+}

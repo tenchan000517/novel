@@ -772,3 +772,432 @@
     "stage": "chapter_generation"
   }
 }
+{
+  "timestamp": "2025-06-04T01:01:19.782Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:01:19.783Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 5",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=5",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:01:19.784Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 5",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.019,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:05:39.801Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:05:39.801Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 6",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=6",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:05:39.802Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 6",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.016,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:09:59.818Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:09:59.819Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 7",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=7",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:09:59.820Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 7",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.015,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:14:19.834Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:14:19.835Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 8",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=8",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:14:19.836Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 8",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.013,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:18:39.849Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:18:39.850Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 9",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=9",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:18:39.851Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 9",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.014,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:22:59.864Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:22:59.865Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 10",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=10",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:22:59.866Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 10",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.013,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:27:19.879Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:27:19.880Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 11",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=11",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:27:19.880Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 11",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.012,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.895Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.896Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 12",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=12",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T01:31:39.897Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 12",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.013,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:42:27.700Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:42:27.701Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 1",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=1",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:42:27.702Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 1",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 163.922,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:46:47.718Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:46:47.719Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 2",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=2",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:46:47.719Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 2",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.016,
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:51:07.738Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Retry limit exceeded",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:51:07.739Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] API error while generating chapter 3",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "data": "No response data",
+    "url": "http://localhost:3000/api/generation/chapter?chapterNumber=3",
+    "method": "post",
+    "category": "network",
+    "stage": "chapter_generation"
+  }
+}
+{
+  "timestamp": "2025-06-04T03:51:07.739Z",
+  "level": "error",
+  "message": "[CHAPTER_GENERATION] Failed to generate chapter 3",
+  "stage": "chapter_generation",
+  "category": "network",
+  "metadata": {
+    "error": "",
+    "category": "network",
+    "chapterGenerationTime": 140.019,
+    "stage": "chapter_generation"
+  }
+}

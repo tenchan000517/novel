@@ -306,3 +306,47 @@
     "stage": "file_saving"
   }
 }
+{
+  "timestamp": "2025-06-04T04:52:26.929Z",
+  "level": "debug",
+  "message": "[FILE_SAVING] System metrics saved",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "chapterNumber": 1,
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:06:59.487Z",
+  "level": "debug",
+  "message": "[FILE_SAVING] System metrics saved",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "chapterNumber": 1,
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:10:55.808Z",
+  "level": "debug",
+  "message": "[FILE_SAVING] System metrics saved",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "chapterNumber": 2,
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-04T07:14:44.856Z",
+  "level": "debug",
+  "message": "[FILE_SAVING] System metrics saved",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "chapterNumber": 3,
+    "stage": "file_saving"
+  }
+}

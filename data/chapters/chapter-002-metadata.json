@@ -10,86 +10,108 @@
       "consistency": 0.9,
       "engagement": 0.85,
       "characterDepiction": 0.8,
-      "originality": 0.75,
+      "originality": 0.7,
       "overall": 0.82,
       "coherence": 0.9,
-      "characterConsistency": 0.95
+      "characterConsistency": 0.9
     },
     "detectedIssues": [],
     "chapterAnalysis": {
       "characterAppearances": [
         {
           "characterId": "C001",
-          "characterName": "鈴木大輝",
+          "characterName": "高橋誠",
           "scenes": [
             "S001",
             "S002",
             "S003",
             "S004"
           ],
-          "dialogueCount": 25,
-          "significance": 1,
+          "dialogueCount": 10,
+          "significance": 0.9,
           "actions": [
-            "エスプレッソを飲む",
-            "MacBook Proの画面を睨む",
-            "反省する",
-            "ミーティングをセッティングする",
-            "自分の仮説を説明する",
-            "方向性を決める",
-            "資料を修正する",
-            "プレゼンをする",
-            "夜空を見上げる"
+            "悩む",
+            "弱音を吐く",
+            "提案する",
+            "電話をかける",
+            "助言を求める",
+            "再認識する",
+            "準備をする"
           ],
           "emotions": [
-            "落胆",
+            "不安",
+            "疑心暗鬼",
             "焦り",
-            "決意",
-            "高揚感",
             "希望"
           ]
         },
         {
           "characterId": "C002",
-          "characterName": "田中",
+          "characterName": "鈴木美咲",
           "scenes": [
-            "S002"
+            "S001",
+            "S004"
           ],
-          "dialogueCount": 3,
+          "dialogueCount": 4,
           "significance": 0.7,
           "actions": [
-            "考え込む"
+            "励ます",
+            "提案する",
+            "戦略を提案する"
           ],
           "emotions": [
-            "思慮深さ"
+            "明るい",
+            "穏やか"
           ]
         },
         {
           "characterId": "C003",
-          "characterName": "佐藤",
+          "characterName": "佐藤健太",
           "scenes": [
-            "S002"
+            "S002",
+            "S004"
           ],
           "dialogueCount": 3,
-          "significance": 0.7,
+          "significance": 0.6,
           "actions": [
-            "頷く"
+            "分析する",
+            "提案する",
+            "強調する"
           ],
           "emotions": [
-            "共感"
+            "冷静"
           ]
         },
         {
           "characterId": "C004",
-          "characterName": "山田",
+          "characterName": "山田哲也",
           "scenes": [
-            "S002"
+            "S003"
           ],
-          "dialogueCount": 2,
-          "significance": 0.7,
-          "actions": [],
+          "dialogueCount": 4,
+          "significance": 0.8,
+          "actions": [
+            "助言する",
+            "笑う"
+          ],
           "emotions": [
-            "同意"
+            "穏やか",
+            "頼れる"
           ]
+        },
+        {
+          "characterId": "C005",
+          "characterName": "中村大輔",
+          "scenes": [
+            "S001"
+          ],
+          "dialogueCount": 0,
+          "significance": 0.2,
+          "actions": [
+            "プレゼンテーションを行う",
+            "資金調達を行う"
+          ],
+          "emotions": []
         }
       ],
       "themeOccurrences": [
@@ -97,143 +119,115 @@
           "themeId": "T001",
           "themeName": "資金調達の苦悩",
           "expressions": [
-            "資金調達",
-            "プレゼン",
-            "芳しくなかった",
-            "目標金額には、まだ程遠い",
-            "資金繰りは常に綱渡り状態",
-            "厳しい状況が続いている",
-            "時間がない"
+            "資金調達が難航",
+            "資金調達がうまくいかない",
+            "資金だけが全てじゃない",
+            "どうすればいいのか、分からなくて…"
           ],
-          "strength": 0.9,
+          "strength": 0.8,
           "theme": "資金調達の苦悩",
           "contexts": [
-            "資金調達の失敗",
-            "資金繰りの苦労",
-            "競合他社の台頭"
+            "高橋の悩み",
+            "山田の助言",
+            "チームの士気低下"
           ]
         },
         {
           "themeId": "T002",
-          "themeName": "顧客視点の重要性",
+          "themeName": "顧客理解の重要性",
           "expressions": [
-            "顧客が求めているのは",
-            "結果",
-            "顧客のニーズ",
-            "顧客の成功事例",
-            "中小企業",
-            "顧客の課題解決に貢献できること"
+            "顧客のニーズをしっかり理解する",
+            "顧客の声を聞く",
+            "顧客の課題を解決する",
+            "顧客と向き合う",
+            "顧客インタビューの重要性",
+            "顧客のニーズに合わせたサービスを提供する"
           ],
           "strength": 0.9,
-          "theme": "顧客視点の重要性",
+          "theme": "顧客理解の重要性",
           "contexts": [
-            "技術的な優位性からの脱却",
-            "顧客の成功事例の重視",
-            "中小企業へのターゲット変更"
+            "鈴木の助言",
+            "山田の助言",
+            "チームの戦略"
           ]
         },
         {
           "themeId": "T003",
-          "themeName": "戦略の転換",
+          "themeName": "差別化",
           "expressions": [
-            "アピールポイントが間違っていた",
-            "方向性を変えよう",
-            "ターゲットを変えよう",
-            "資料を修正",
-            "新たなプレゼンテーション",
-            "新たな活路を見出し始めていた"
+            "もっと差別化を図る必要がある",
+            "技術力だけでなく、顧客のニーズに合わせたサービスを提供する"
           ],
-          "strength": 0.8,
-          "theme": "戦略の転換",
+          "strength": 0.6,
+          "theme": "差別化",
           "contexts": [
-            "プレゼンの反省",
-            "チームとの議論",
-            "中小企業へのアプローチ",
-            "成功事例の活用"
+            "佐藤の分析",
+            "チームの戦略"
           ]
         },
         {
           "themeId": "T004",
-          "themeName": "成長と挑戦",
+          "themeName": "メンターの助言",
           "expressions": [
-            "イノベーション・ゲート",
-            "革新的な技術",
-            "ビジョン",
-            "成長意欲の高い中小企業",
-            "星は、いつもより明るく輝いていた",
-            "再び歩き出した"
+            "山田哲也",
+            "顧客インタビューの重要性を説いた",
+            "顧客の課題を解決するという、起業の原点に立ち返るべきだ"
           ],
           "strength": 0.7,
-          "theme": "成長と挑戦",
+          "theme": "メンターの助言",
           "contexts": [
-            "スタートアップの挑戦",
-            "中小企業の成長支援",
-            "未来への希望"
+            "高橋の相談",
+            "山田の助言"
+          ]
+        },
+        {
+          "themeId": "T005",
+          "themeName": "起業の原点",
+          "expressions": [
+            "自分たちのビジネスが、本当に顧客の役に立つかどうか",
+            "顧客の課題を解決できるなら、必ず道は開ける",
+            "顧客の課題を解決するという、起業の原点に立ち返るべきだ"
+          ],
+          "strength": 0.7,
+          "theme": "起業の原点",
+          "contexts": [
+            "山田の助言",
+            "高橋の再認識"
           ]
         }
       ],
       "foreshadowingElements": [
         {
           "id": "F001",
-          "description": "資金調達の失敗と、そこから得られる教訓",
+          "description": "競合他社の技術力と資金力",
           "position": 0,
-          "text": "前回の資金調達プレゼンは、芳しくなかった。",
+          "text": "競合他社の技術力は高い。彼らは、資金力も豊富だから、すぐに追いつかれる可能性もある。",
           "plannedResolutionChapter": [
-            1,
-            1
+            2,
+            10
           ],
           "relatedCharacters": [
-            "鈴木大輝"
+            "佐藤健太"
           ],
-          "element": "資金調達の失敗と、そこから得られる教訓",
+          "element": "競合他社の技術力と資金力",
           "chapter": 2,
           "isResolved": false
         },
         {
           "id": "F002",
-          "description": "技術的な優位性への偏重と、顧客ニーズへの誤解",
+          "description": "顧客インタビューの準備",
           "position": 0,
-          "text": "もしかしたら、僕らのアピールポイントが間違っていたのかもしれない",
-          "plannedResolutionChapter": [
-            1,
-            1
-          ],
-          "relatedCharacters": [
-            "鈴木大輝"
-          ],
-          "element": "技術的な優位性への偏重と、顧客ニーズへの誤解",
-          "chapter": 2,
-          "isResolved": false
-        },
-        {
-          "id": "F003",
-          "description": "中小企業へのターゲット変更と、その可能性",
-          "position": 0,
-          "text": "これからは、成長意欲の高い中小企業に焦点を当てる。",
-          "plannedResolutionChapter": [
-            1,
-            1
-          ],
-          "relatedCharacters": [
-            "鈴木大輝"
-          ],
-          "element": "中小企業へのターゲット変更と、その可能性",
-          "chapter": 2,
-          "isResolved": false
-        },
-        {
-          "id": "F004",
-          "description": "新たなプレゼンでの手応えと、資金調達の行方",
-          "position": 0,
-          "text": "結果は、まだ出ていない。資金調達が成功するかどうかは、まだ分からない。",
+          "text": "顧客インタビューの準備を始めた。",
           "plannedResolutionChapter": [
             2,
-            3
+            5
           ],
           "relatedCharacters": [
-            "鈴木大輝"
+            "高橋誠",
+            "鈴木美咲",
+            "佐藤健太"
           ],
-          "element": "新たなプレゼンでの手応えと、資金調達の行方",
+          "element": "顧客インタビューの準備",
           "chapter": 2,
           "isResolved": false
         }
@@ -243,10 +237,10 @@
         "consistency": 0.9,
         "engagement": 0.85,
         "characterDepiction": 0.8,
-        "originality": 0.75,
+        "originality": 0.7,
         "overall": 0.82,
         "coherence": 0.9,
-        "characterConsistency": 0.95
+        "characterConsistency": 0.9
       },
       "detectedIssues": [],
       "scenes": [
@@ -255,7 +249,7 @@
           "type": "INTRODUCTION",
           "title": "シーン1",
           "startPosition": 0,
-          "endPosition": 1274,
+          "endPosition": 735,
           "characters": [],
           "location": "",
           "summary": "第1パート"
@@ -264,8 +258,8 @@
           "id": "scene-2-2",
           "type": "DEVELOPMENT",
           "title": "シーン2",
-          "startPosition": 1274,
-          "endPosition": 2548,
+          "startPosition": 735,
+          "endPosition": 1471,
           "characters": [],
           "location": "",
           "summary": "第2パート"
@@ -274,8 +268,8 @@
           "id": "scene-2-3",
           "type": "RESOLUTION",
           "title": "シーン3",
-          "startPosition": 2548,
-          "endPosition": 3822,
+          "startPosition": 1471,
+          "endPosition": 2207,
           "characters": [],
           "location": "",
           "summary": "第3パート"
@@ -287,25 +281,25 @@
         "keywords": []
       },
       "textStats": {
-        "wordCount": 3822,
-        "sentenceCount": 114,
-        "paragraphCount": 71,
-        "averageSentenceLength": 33.5,
-        "dialoguePercentage": 30.4
+        "wordCount": 2207,
+        "sentenceCount": 56,
+        "paragraphCount": 27,
+        "averageSentenceLength": 39.4,
+        "dialoguePercentage": 26.5
       }
     },
     "themeAnalysis": {
       "themes": {
-        "顧客中心主義": {
+        "資金調達の苦悩と起業の原点回帰": {
           "explicitMentions": [
-            "顧客が本当に求めているのは、人材獲得という「結果」であること。",
-            "顧客の成功事例を前面に出していく。",
-            "顧客が求める「結果」を明確に提示し、彼らの課題解決に貢献できることを強調する必要がある。"
+            "資金調達は難航し、チームの士気も下降気味だ。",
+            "資金調達がうまくいかないんです。どうすればいいのか、分からなくて…",
+            "資金調達は、あくまで手段だ。一番大切なのは、君たちのビジネスが、本当に顧客の役に立つかどうかだ。"
           ],
           "implicitExpressions": [
-            "技術的な優位性ばかりを強調しすぎていたのではないか。",
-            "顧客のニーズを深く理解しようと努力してきたつもりだった。しかし、もしかしたら、それは表面的な理解に過ぎなかったのかもしれない。",
-            "中小企業に焦点を当てる。彼らは、新しい技術やサービスに対して、柔軟性があるはずだ"
+            "カフェの窓から見えるスクランブル交差点は、人々の流れが絶えず、まるで彼の心の内を表しているかのようだった。",
+            "高橋は、資金調達にばかり気を取られ、顧客の声を聞くことを疎かにしていたのかもしれない。",
+            "彼は、資金調達という目の前の問題に囚われ、最も重要なことを見失っていたのだ。"
           ],
           "strength": 9,
           "expressionMethods": [
@@ -314,52 +308,74 @@
             "行動"
           ],
           "relatedThemes": [
-            "自己認識",
-            "戦略の転換"
+            "顧客理解",
+            "差別化"
           ]
         },
-        "自己認識と成長": {
+        "顧客理解の重要性": {
           "explicitMentions": [
-            "もしかしたら、僕らのアピールポイントが間違っていたのかもしれない",
-            "彼は、自らの「誤解」に気づき始めていた。",
-            "彼は、自分の「誤解」に気づき、戦略を修正することで、新たな活路を見出し始めていたのだ。"
+            "顧客のニーズをしっかり理解することが、一番大事なんじゃないかしら",
+            "僕たちは、もっと顧客のニーズに合わせたサービスを提供する必要がある。そのためには、もっと顧客の声を聞くべきだ",
+            "顧客の課題を解決できるなら、必ず道は開ける"
           ],
           "implicitExpressions": [
-            "鈴木は、目の前のエスプレッソを一口すすり、深く息を吐いた。",
-            "あのプレゼン、どこか間違っていたんだろうか",
-            "彼は、心の中で呟いた。「時間がない」"
+            "美咲の言葉は、高橋の心に響いた。",
+            "顧客の声を聞くことで、自分たちのビジネスモデルの弱点が見えてくる。そして、改善点も見つかるはずだ。",
+            "まずは、顧客と向き合うことから始めよう"
           ],
-          "strength": 8,
+          "strength": 10,
           "expressionMethods": [
+            "対話",
             "内面描写",
-            "行動",
-            "対話"
+            "行動"
           ],
           "relatedThemes": [
-            "顧客中心主義",
-            "失敗からの学び"
+            "資金調達の苦悩と起業の原点回帰",
+            "差別化"
           ]
         },
-        "資金調達と起業家の挑戦": {
+        "差別化と技術力": {
           "explicitMentions": [
-            "前回の資金調達プレゼンは、芳しくなかった。",
-            "資金繰りは常に綱渡り状態で、競合他社の台頭も目覚ましい。",
-            "資金調達の期限は迫っている。"
+            "僕たちは、もっと差別化を図る必要がある",
+            "競合他社の技術力は高い。彼らは、資金力も豊富だから、すぐに追いつかれる可能性もある。",
+            "顧客のニーズを把握するために、アンケート調査やフォーカスグループも実施しましょう"
           ],
           "implicitExpressions": [
-            "渋谷の喧騒が、カフェの窓から薄らと差し込む陽光に溶け合っていた。",
-            "目標金額には、まだ程遠い。",
-            "星は、いつもより明るく輝いていた。"
+            "健太の言葉は、高橋の不安をさらに煽った。",
+            "高橋は、二人の言葉に、希望を見出した。",
+            "焦りや不安は、まだ完全に消えたわけではない。"
           ],
           "strength": 7,
           "expressionMethods": [
-            "行動",
+            "対話",
             "内面描写",
-            "状況描写"
+            "行動"
           ],
           "relatedThemes": [
-            "顧客中心主義",
-            "自己認識と成長"
+            "顧客理解",
+            "資金調達の苦悩と起業の原点回帰"
+          ]
+        },
+        "メンターの役割": {
+          "explicitMentions": [
+            "その日の夜、高橋は、メンターの山田哲也に電話をかけた。",
+            "山田は、以前から高橋の相談に乗ってくれていた、頼れる存在だ。",
+            "山田は、高橋に、顧客インタビューの重要性を説いた。"
+          ],
+          "implicitExpressions": [
+            "山田は、電話の向こうで、少し笑ったように聞こえた。",
+            "山田の言葉は、高橋の心に響いた。",
+            "高橋は、二人の言葉に、希望を見出した。"
+          ],
+          "strength": 8,
+          "expressionMethods": [
+            "対話",
+            "内面描写",
+            "行動"
+          ],
+          "relatedThemes": [
+            "資金調達の苦悩と起業の原点回帰",
+            "顧客理解"
           ]
         },
         "物語のテーマ": {
@@ -371,11 +387,10 @@
         }
       },
       "overallCoherence": 9,
-      "dominantTheme": "顧客中心主義",
+      "dominantTheme": "顧客理解の重要性",
       "themeTensions": {
-        "顧客中心主義と自己認識と成長": 8,
-        "自己認識と成長と資金調達と起業家の挑戦": 7,
-        "顧客中心主義と資金調達と起業家の挑戦": 6
+        "資金調達の苦悩と起業の原点回帰と顧客理解の重要性": 8,
+        "差別化と技術力と顧客理解の重要性": 7
       }
     },
     "foreshadowingProcessing": {
@@ -384,75 +399,63 @@
       "totalActive": 3
     },
     "styleAnalysis": {
-      "avgSentenceLength": 32.53508771929825,
+      "avgSentenceLength": 38.42857142857143,
       "sentenceVariety": 0.75,
       "vocabularyRichness": 0.68,
       "narrativeVoice": "三人称",
       "tenseConsistency": 1,
-      "sentimentBalance": 0.4
+      "sentimentBalance": 0.45
     },
     "expressionPatterns": {
       "verbPhrases": [
         {
-          "expression": "〜した",
-          "frequency": 18
+          "expression": "〜は、〜した",
+          "frequency": 10
         },
         {
-          "expression": "〜していた",
-          "frequency": 2
+          "expression": "〜と答えた",
+          "frequency": 4
+        },
+        {
+          "expression": "高橋は、〜を見た",
+          "frequency": 3
         },
         {
           "expression": "〜と尋ねた",
+          "frequency": 3
+        },
+        {
+          "expression": "〜は、〜言った",
           "frequency": 2
         },
         {
-          "expression": "〜に気づいた",
-          "frequency": 2
-        },
-        {
-          "expression": "〜に耳を傾け始めた",
-          "frequency": 2
-        },
-        {
-          "expression": "〜を信じていた",
-          "frequency": 2
-        },
-        {
-          "expression": "〜を追い求めていた",
-          "frequency": 2
-        },
-        {
-          "expression": "分かりました",
+          "expression": "〜を思い出した",
           "frequency": 2
         }
       ],
       "adjectivalExpressions": [
         {
-          "expression": "冷静な",
-          "frequency": 4
+          "expression": "〜の",
+          "frequency": 10
         },
         {
-          "expression": "〜のような",
-          "frequency": 4
+          "expression": "少し",
+          "frequency": 6
+        },
+        {
+          "expression": "現実的な",
+          "frequency": 2
         }
       ],
       "dialoguePatterns": [
         {
-          "expression": "〜と",
-          "frequency": 10
-        },
-        {
-          "expression": "〜？",
-          "frequency": 4
+          "expression": "「〜」",
+          "frequency": 16
         }
       ],
       "conjunctions": [
         {
           "expression": "しかし",
-          "frequency": 4
-        },
-        {
-          "expression": "しかし、",
           "frequency": 3
         },
         {
@@ -463,6 +466,10 @@
       "sentenceStructures": [
         {
           "expression": "〜は〜である",
+          "frequency": 3
+        },
+        {
+          "expression": "〜が〜、〜",
           "frequency": 2
         }
       ]
@@ -470,81 +477,84 @@
     "characterAnalysis": {
       "characterAppearances": [
         {
-          "characterId": "char-鈴木大輝",
-          "characterName": "鈴木大輝",
+          "characterId": "char-高橋誠",
+          "characterName": "高橋誠",
           "scenes": [
-            "資金調達の壁",
-            "チームとの対話",
-            "新たな戦略",
-            "希望の光"
+            "資金調達の苦悩",
+            "技術的な課題と顧客の声",
+            "メンターからのアドバイス",
+            "再始動"
           ],
-          "dialogueCount": 15,
+          "dialogueCount": 10,
           "significance": 1,
           "actions": [
-            "エスプレッソを飲む",
-            "MacBook Proの画面を睨む",
-            "プレゼンの反省をする",
-            "チームミーティングをセッティングする",
-            "自分の仮説を説明する",
-            "方向性を変えることを提案する",
-            "資金調達資料を修正する",
-            "投資家との面談に臨む",
-            "夜空を見上げる"
+            "カフェでコーヒーを飲む",
+            "資金調達の難航を嘆く",
+            "鈴木美咲の言葉に耳を傾ける",
+            "佐藤健太と戦略を話し合う",
+            "山田哲也に電話で相談する",
+            "顧客インタビューの準備を始める"
           ],
           "emotions": [
-            "落胆",
-            "反省",
-            "焦燥感",
-            "高揚感",
+            "不安",
+            "疑心暗鬼",
+            "焦り",
             "希望"
           ]
         },
         {
-          "characterId": "char-田中",
-          "characterName": "田中",
+          "characterId": "char-鈴木美咲",
+          "characterName": "鈴木美咲",
           "scenes": [
-            "チームとの対話"
+            "資金調達の苦悩",
+            "再始動"
           ],
-          "dialogueCount": 2,
-          "significance": 0.6,
+          "dialogueCount": 3,
+          "significance": 0.7,
           "actions": [
-            "ミーティングに参加する",
-            "技術的な優位性と差別化のバランスについて言及する"
+            "高橋誠に話しかける",
+            "顧客理解の重要性を指摘する",
+            "顧客インタビューの戦略を提案する"
           ],
           "emotions": [
-            "思慮深さ"
-          ]
-        },
-        {
-          "characterId": "char-佐藤",
-          "characterName": "佐藤",
-          "scenes": [
-            "チームとの対話"
-          ],
-          "dialogueCount": 2,
-          "significance": 0.6,
-          "actions": [
-            "ミーティングに参加する",
-            "顧客が求めるものを理解していることを示す"
-          ],
-          "emotions": [
+            "明るい",
             "共感"
           ]
         },
         {
-          "characterId": "char-山田",
-          "characterName": "山田",
+          "characterId": "char-佐藤健太",
+          "characterName": "佐藤健太",
           "scenes": [
-            "チームとの対話"
+            "技術的な課題と顧客の声",
+            "再始動"
           ],
-          "dialogueCount": 2,
+          "dialogueCount": 3,
           "significance": 0.6,
           "actions": [
-            "ミーティングに参加する",
-            "営業経験から顧客のニーズを語る"
+            "競合他社の技術力を分析する",
+            "顧客のニーズに合わせたサービス提供の必要性を指摘する",
+            "アンケート調査やフォーカスグループの実施を提案する"
           ],
           "emotions": [
-            "共感"
+            "冷静"
+          ]
+        },
+        {
+          "characterId": "char-山田哲也",
+          "characterName": "山田哲也",
+          "scenes": [
+            "メンターからのアドバイス"
+          ],
+          "dialogueCount": 3,
+          "significance": 0.8,
+          "actions": [
+            "高橋誠の相談に乗る",
+            "顧客インタビューの重要性を説く",
+            "起業の原点を語る"
+          ],
+          "emotions": [
+            "穏やか",
+            "励まし"
           ]
         }
       ],
@@ -553,10 +563,10 @@
           "currentDesires": [],
           "currentFears": [],
           "internalConflicts": [
-            "技術的な革新性と顧客ニーズのバランス",
-            "資金調達のプレッシャーと時間的制約",
-            "自身の誤解と現実とのギャップ",
-            "競合他社との競争"
+            "資金調達の困難さ",
+            "ビジネスモデルへの疑念",
+            "競合他社との差別化の難しさ",
+            "顧客の声を聞くことの疎かさ"
           ],
           "emotionalState": {},
           "relationshipAttitudes": {}
@@ -564,28 +574,21 @@
         {
           "currentDesires": [],
           "currentFears": [],
-          "internalConflicts": [
-            "技術的な優位性と顧客ニーズのバランス",
-            "技術的な差別化と顧客へのアピール"
-          ],
+          "internalConflicts": [],
           "emotionalState": {},
           "relationshipAttitudes": {}
         },
         {
           "currentDesires": [],
           "currentFears": [],
-          "internalConflicts": [
-            "技術的な話と顧客ニーズのギャップ"
-          ],
+          "internalConflicts": [],
           "emotionalState": {},
           "relationshipAttitudes": {}
         },
         {
           "currentDesires": [],
           "currentFears": [],
-          "internalConflicts": [
-            "技術的な話と顧客ニーズのギャップ"
-          ],
+          "internalConflicts": [],
           "emotionalState": {},
           "relationshipAttitudes": {}
         }
@@ -600,39 +603,32 @@
       },
       "relationshipDynamics": [
         {
-          "character1": "鈴木大輝",
-          "character2": "田中",
-          "relationshipType": "同僚",
+          "character1": "高橋誠",
+          "character2": "鈴木美咲",
+          "relationshipType": "友情",
           "strength": 0.7,
-          "development": "CTOとして、鈴木の戦略変更に対して技術的な側面からの意見を述べ、協力体制を築いている。関係性は、困難な状況を乗り越えるために強まっている。"
+          "development": "資金調達の苦悩を打ち明け、美咲の顧客理解の重要性の指摘により、高橋は新たな視点を得る。関係性が深まる。"
         },
         {
-          "character1": "鈴木大輝",
-          "character2": "佐藤",
+          "character1": "高橋誠",
+          "character2": "佐藤健太",
           "relationshipType": "同僚",
-          "strength": 0.7,
-          "development": "マーケティング担当として、鈴木の戦略変更に同意し、顧客の成功事例収集という新たな役割を担う。関係性は、共通の目標達成に向けて協力し合うことで強まっている。"
+          "strength": 0.6,
+          "development": "技術的な課題を共有し、顧客理解の重要性で意見が一致。協力関係が強まる。"
         },
         {
-          "character1": "鈴木大輝",
-          "character2": "山田",
+          "character1": "高橋誠",
+          "character2": "山田哲也",
+          "relationshipType": "師弟",
+          "strength": 0.9,
+          "development": "資金調達の悩みを相談し、メンターからのアドバイスで起業の原点に立ち返る。師弟関係がより強固になる。"
+        },
+        {
+          "character1": "鈴木美咲",
+          "character2": "佐藤健太",
           "relationshipType": "同僚",
-          "strength": 0.7,
-          "development": "営業担当として、鈴木の戦略変更に同意し、中小企業向けの営業戦略を練り直すという新たな役割を担う。関係性は、共通の目標達成に向けて協力し合うことで強まっている。"
-        },
-        {
-          "character1": "鈴木大輝",
-          "character2": "投資家",
-          "relationshipType": "ビジネス関係",
-          "strength": 0.3,
-          "development": "資金調達プレゼンを通して、最初は冷淡だった関係性が、戦略変更後のプレゼンで改善の兆しを見せる。鈴木のビジョンへの共感と熱意が、関係性を徐々に強めている。"
-        },
-        {
-          "character1": "鈴木大輝",
-          "character2": "顧客",
-          "relationshipType": "ビジネス関係",
-          "strength": 0.4,
-          "development": "顧客のニーズを深く理解しようと試み、顧客の成功事例を重視する戦略へと転換することで、関係性をより強固にしようとしている。"
+          "strength": 0.6,
+          "development": "顧客インタビューの準備を協力して開始する。協力関係が強まる。"
         }
       ]
     },
@@ -684,37 +680,36 @@
       ]
     },
     "readerExperience": {
-      "interestRetention": 8,
-      "empathy": 7,
+      "interestRetention": 7,
+      "empathy": 8,
       "clarity": 9,
-      "unexpectedness": 6,
+      "unexpectedness": 5,
       "anticipation": 8,
-      "overallScore": 8,
+      "overallScore": 7,
       "weakPoints": [
         {
-          "point": "資金調達の失敗と、そこからの反省、戦略変更という流れが、やや説明的で単調に感じられる部分がある。",
-          "suggestion": "鈴木の葛藤や、チームメンバーとの議論を、もっと具体的に描写し、感情的な深みを加える。例えば、資金繰りの苦しさや、競合他社の台頭に対する焦りを、具体的なエピソードを通して表現する。また、チームメンバーの個性や、それぞれの役割における葛藤を描くことで、物語に奥行きを持たせる。"
+          "point": "高橋の悩みがやや繰り返し描写されている。資金調達の難航や不安が何度も語られ、単調に感じられる可能性がある。",
+          "suggestion": "高橋の感情表現を多様化し、具体的な問題点や解決策への焦点を当てることで、読者の飽きを防ぐ。例えば、資金調達の具体的な失敗例や、顧客インタビューの準備段階での困難などを描写する。"
         },
         {
-          "point": "顧客の成功事例の具体性が薄い。抽象的な表現に留まっている。",
-          "suggestion": "成功事例を、具体的な数字や顧客の声と共に提示する。例えば、「A社の売上が30%向上した」「B社の採用コストが半分になった」といった具体的な成果を示すことで、読者の興味を引きつけ、サービスの有効性をより強く印象づける。"
+          "point": "展開がやや予測可能。メンターからのアドバイスや、チームの再始動が、ある程度予想できる流れで進む。",
+          "suggestion": "顧客インタビューの準備段階で、予期せぬ問題が発生する、または、顧客の反応が予想と異なるなど、小さなサプライズを盛り込むことで、展開に深みを持たせる。"
         }
       ],
       "strengths": [
-        "主人公の鈴木の心情描写が丁寧で、読者が共感しやすい。",
-        "起業家が直面する課題（資金調達、競合、顧客ニーズ）をリアルに描き出している。",
-        "戦略の転換という、物語の展開に変化があり、読者の興味を惹きつける。",
-        "顧客視点への転換というテーマが、現代のビジネスシーンに通じる普遍性を持っている。"
+        "登場人物のキャラクター描写が丁寧で、読者は高橋や美咲、健太に感情移入しやすい。",
+        "起業における普遍的なテーマ（資金調達、顧客理解、チームワーク）を扱っており、多くの読者が共感できる。",
+        "物語の構成が明確で、問題提起、解決への道筋、そして再始動という流れが分かりやすい。"
       ]
     },
     "integratedSuggestions": [
-      "キャラクター間の関係性をより深く描写し、感情的な結びつきを強化してください",
+      "高橋の感情表現を多様化し、具体的な問題点や解決策への焦点を当てることで、読者の飽きを防ぐ。例えば、資金調達の具体的な失敗例や、顧客インタビューの準備段階での困難などを描写する。",
       "キャラクターの成長要素を追加し、物語を通じた変化を描いてください",
-      "鈴木の葛藤や、チームメンバーとの議論を、もっと具体的に描写し、感情的な深みを加える。例えば、資金繰りの苦しさや、競合他社の台頭に対する焦りを、具体的なエピソードを通して表現する。また、チームメンバーの個性や、それぞれの役割における葛藤を描くことで、物語に奥行きを持たせる。",
-      "成功事例を、具体的な数字や顧客の声と共に提示する。例えば、「A社の売上が30%向上した」「B社の採用コストが半分になった」といった具体的な成果を示すことで、読者の興味を引きつけ、サービスの有効性をより強く印象づける。"
+      "キャラクターの内面描写を充実させ、心理的な複雑さを表現してください",
+      "顧客インタビューの準備段階で、予期せぬ問題が発生する、または、顧客の反応が予想と異なるなど、小さなサプライズを盛り込むことで、展開に深みを持たせる。"
     ],
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-04T00:47:20.559Z",
+      "analysisTimestamp": "2025-06-04T07:10:18.870Z",
       "servicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -723,7 +718,7 @@
         "NarrativeAnalysis",
         "ReaderExperience"
       ],
-      "processingTime": 354,
+      "processingTime": 30621,
       "cacheHitRate": 0,
       "memorySystemUsed": true,
       "unifiedSearchResults": 0
@@ -735,10 +730,10 @@
     }
   },
   "metadata": {
-    "pov": "沢村 健太",
-    "location": "渋谷のカフェ、株式会社ネクスト・イノベーションオフィス",
-    "timeframe": "数日後",
-    "emotionalTone": "緊張と期待",
+    "pov": "高橋誠",
+    "location": "渋谷のカフェ、大学の研究室",
+    "timeframe": "2020年秋",
+    "emotionalTone": "焦燥と期待",
     "keywords": [],
     "qualityScore": 100,
     "events": [],
@@ -747,12 +742,12 @@
     "resolvedForeshadowing": [],
     "resolutions": [],
     "correctionHistory": [],
-    "updatedAt": "2025-06-04T00:47:20.018Z",
+    "updatedAt": "2025-06-04T07:09:48.147Z",
     "generationVersion": "5.0-unified-memory-system",
-    "generationTime": 20990,
+    "generationTime": 48619,
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-04T00:47:26.970Z",
-      "analysisProcessingTime": 6764,
+      "analysisTimestamp": "2025-06-04T07:10:55.484Z",
+      "analysisProcessingTime": 67234,
       "analysisServicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -764,7 +759,7 @@
       "nextChapterSuggestionsCount": 10,
       "memoryProcessingResult": {
         "success": true,
-        "processingTime": 136,
+        "processingTime": 76,
         "affectedComponents": 3
       }
     },

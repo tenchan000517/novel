@@ -1,4 +1,4 @@
-// src/lib/lifecycle/service-container.ts (最適化完成版)
+// src/lib/lifecycle/service-container.ts (CharacterManager独立初期化対応)
 
 import { logger } from '../utils/logger';
 
@@ -8,7 +8,7 @@ export enum ServiceLifecycle {
 }
 
 /**
- * 依存注入コンテナ（最適化完成版）
+ * 依存注入コンテナ（CharacterManager独立初期化対応）
  */
 export class ServiceContainer {
   private services = new Map<string, { factory: () => any | Promise<any>, lifecycle: ServiceLifecycle, instance?: any }>();
@@ -75,6 +75,22 @@ export class ServiceContainer {
       logger.info('WorldSettingsManager initialized early for optimized genre access');
       return manager;
     }, ServiceLifecycle.SINGLETON);
+
+    // 🚀 NEW: ストレージ構造の自動初期化・修復
+    try {
+      logger.info('Initializing storage directory structure...');
+      const { storageProvider } = await import('@/lib/storage');
+      const { initializeStorageWithAutoRepair } = await import('@/lib/storage/storage-initializer');
+
+      await initializeStorageWithAutoRepair(storageProvider);
+      logger.info('Storage structure initialization completed successfully');
+    } catch (error) {
+      logger.error('Storage structure initialization failed', {
+        error: error instanceof Error ? error.message : String(error)
+      });
+      // 初期化失敗でもシステム起動は継続（後続処理で個別対応）
+      logger.warn('Continuing with system initialization despite storage structure issues');
+    }
   }
 
   /**
@@ -195,22 +211,19 @@ export class ServiceContainer {
   }
 
   /**
-   * ファサード初期化（Stage 5）- PlotManager最適化追加
+   * ファサード初期化（Stage 5）- CharacterManager独立初期化対応
    */
   async initializeFacades(): Promise<void> {
     logger.info('Initializing facade services');
 
-    // CharacterManagerの登録
+    // 🔧 FIXED: CharacterManagerの独立初期化（MemoryManager依存削除）
     this.register('characterManager', async () => {
       const { createCharacterManager } = await import('@/lib/characters/manager');
 
-      const memoryManager = await this.resolve<any>('memoryManager');
-      await this.loadCharacterData(memoryManager);
-
-      return createCharacterManager(memoryManager);
+      // 🔥 MemoryManager依存を削除し、独立して初期化
+      logger.info('Creating CharacterManager with independent initialization');
+      return createCharacterManager(); // 引数なしで呼び出し
     }, ServiceLifecycle.SINGLETON);
-
-    // ServiceContainer内のplotManager登録部分を以下に置き換えてください
 
     this.register('plotManager', async () => {
       const { createPlotManager } = await import('@/lib/plot/manager');
@@ -252,15 +265,16 @@ export class ServiceContainer {
       // 型安全な依存関係解決
       const memoryManager = await this.resolve<any>('memoryManager');
       const geminiClient = await this.resolve<any>('geminiClient');
-      const characterManager = await this.resolve<any>('characterManager');
+      const characterManager = await this.resolve<any>('characterManager');  // 🔥 追加
       const plotManager = await this.resolve<any>('plotManager');
 
-      // 依存関係を注入してインスタンス作成
+      // 🔥 CharacterManagerを含む完全な依存関係注入
       const promptGenerator = new PromptGenerator(
         memoryManager,
         undefined, // worldSettingsManager: PlotManager経由でアクセス
         plotManager,
-        undefined  // learningJourneySystem: PlotManager経由でアクセス
+        undefined, // learningJourneySystem: PlotManager経由でアクセス
+        characterManager  // 🔥 追加
       );
 
       const chapterGenerator = new ChapterGenerator(geminiClient, promptGenerator, memoryManager);
@@ -285,107 +299,14 @@ export class ServiceContainer {
   }
 
   /**
-   * キャラクターデータ読み込み処理
+   * 🔥 REMOVED: loadCharacterData処理を削除
+   * CharacterServiceが独立してYAMLファイルから読み込むため不要
    */
-  private async loadCharacterData(memoryManager: any): Promise<void> {
-    try {
-      const storageProvider = await this.resolve<any>('storageProvider');
-
-      const characterFiles = [
-        'config/characters/main-characters.yaml',
-        'config/characters/sub-characters.yaml',
-        'config/characters/background-characters.yaml'
-      ];
-
-      let loadedCount = 0;
-
-      for (const file of characterFiles) {
-        try {
-          const exists = await storageProvider.fileExists(file);
-          if (exists) {
-            const data = await storageProvider.readFile(file);
-
-            if (typeof memoryManager.storeCharacterData === 'function') {
-              await memoryManager.storeCharacterData(data);
-            } else {
-              await memoryManager.storeData({
-                type: 'character_definition',
-                source: file,
-                data: data,
-                timestamp: new Date().toISOString()
-              });
-            }
-
-            loadedCount++;
-            logger.debug(`Loaded character data from: ${file}`);
-          } else {
-            logger.warn(`Character file not found: ${file}`);
-          }
-        } catch (fileError) {
-          logger.warn(`Failed to load character file: ${file}`, {
-            error: fileError instanceof Error ? fileError.message : String(fileError)
-          });
-        }
-      }
-
-      if (loadedCount > 0) {
-        logger.info(`Character data loaded successfully from ${loadedCount} files`);
-      } else {
-        logger.warn('No character data files found or loaded');
-        await this.createFallbackCharacters(memoryManager);
-      }
-
-    } catch (error) {
-      logger.error('Failed to load character data', {
-        error: error instanceof Error ? error.message : String(error)
-      });
-
-      try {
-        await this.createFallbackCharacters(memoryManager);
-        logger.info('Fallback characters created successfully');
-      } catch (fallbackError) {
-        logger.error('Failed to create fallback characters', {
-          error: fallbackError instanceof Error ? fallbackError.message : String(fallbackError)
-        });
-        throw error;
-      }
-    }
-  }
 
   /**
-   * フォールバックキャラクター作成
+   * 🔥 REMOVED: createFallbackCharacters処理を削除
+   * CharacterServiceが独立してフォールバック処理を行うため不要
    */
-  private async createFallbackCharacters(memoryManager: any): Promise<void> {
-    const fallbackCharacters = [
-      {
-        id: 'main-001',
-        name: '主人公',
-        type: 'MAIN',
-        description: 'システム生成されたフォールバック主人公',
-        isActive: true,
-        personality: {
-          traits: ['勇敢', '決断力がある'],
-          goals: ['物語の完結'],
-          values: ['正義', '友情']
-        }
-      }
-    ];
-
-    for (const character of fallbackCharacters) {
-      try {
-        await memoryManager.storeData({
-          type: 'character',
-          id: character.id,
-          data: character,
-          timestamp: new Date().toISOString()
-        });
-
-        logger.info(`Created fallback character: ${character.name}`);
-      } catch (error) {
-        logger.error(`Failed to create fallback character: ${character.name}`, { error });
-      }
-    }
-  }
 
   /**
    * 登録されているサービス一覧を取得

@@ -23,6 +23,13 @@ import { Chapter } from '@/types/chapters';
 import { MemoryManager } from '@/lib/memory/core/memory-manager';
 import { MemoryLevel } from '@/lib/memory/core/types';
 
+import {
+    RelationshipMemoryData,
+    RelationshipHierarchicalData,
+    IMemoryHierarchyIntegration,
+    IntegrationResult
+} from './memory-hierarchy-types';
+
 /**
  * パフォーマンス統計の型定義
  */
@@ -152,7 +159,7 @@ export class RelationshipService implements IRelationshipService {
     constructor(private memoryManager: MemoryManager) {
         // 基本システムの即座初期化
         this.initializeBasicSystems();
-        
+
         this.logger.info('RelationshipService ready for immediate use with complete MemoryManager integration');
     }
 
@@ -242,6 +249,187 @@ export class RelationshipService implements IRelationshipService {
     // ============================================================================
     // 🔧 主要機能（記憶階層システム完全統合版・即座使用可能）
     // ============================================================================
+
+    /**
+     * 関係性サービス固有データを記憶階層用形式で取得
+     * @returns 記憶階層用関係性データ
+     */
+    async getDataForMemoryHierarchy(): Promise<RelationshipMemoryData> {
+        const startTime = Date.now();
+
+        try {
+            this.logger.info('Preparing relationship data for memory hierarchy');
+
+            // 全関係性データとキャッシュデータを収集
+            const allRelationships = await this.getAllRelationshipsFromMemorySystem();
+            const allCharacters = await this.getAllCharactersFromMemorySystem();
+            const cachedRelationships = Array.from(this.relationshipCache.entries())
+                .map(([key, value]) => ({ cacheKey: key, ...value }));
+
+            // システム品質評価
+            let systemQualityScore = 0.8;
+            try {
+                if (this.memoryManager) {
+                    const systemStatus = await this.memoryManager.getSystemStatus();
+                    systemQualityScore = systemStatus.initialized ? 0.9 : 0.7;
+                }
+            } catch (error) {
+                this.logger.debug('System status check failed for relationships', { error });
+            }
+
+            // ネットワーク分析の実行
+            const networkAnalysis = await this.performNetworkAnalysis(allRelationships, allCharacters);
+
+            // 記憶階層分類の実行
+            const hierarchicalClassification = await this.classifyRelationshipDataForHierarchy(
+                allRelationships,
+                cachedRelationships,
+                networkAnalysis
+            );
+
+            // 関係性記憶データの構築
+            const relationshipMemoryData: RelationshipMemoryData = {
+                serviceType: 'relationship',
+                timestamp: new Date(),
+                confidence: systemQualityScore,
+                dataVersion: '1.0.0',
+                metadata: {
+                    source: 'RelationshipService',
+                    validUntil: new Date(Date.now() + 6 * 60 * 60 * 1000), // 6時間
+                    processingTime: Date.now() - startTime,
+                    qualityScore: systemQualityScore
+                },
+                networkData: {
+                    totalRelationships: allRelationships.length,
+                    activeConnections: await this.getActiveConnectionsData(allRelationships),
+                    networkMetrics: {
+                        density: networkAnalysis.networkDensity,
+                        clustering: networkAnalysis.averageConnectivity,
+                        centralCharacters: networkAnalysis.centralCharacters.map(c => c.characterId)
+                    },
+                    clusterData: await this.getClusterDataFromNetworkAnalysis(networkAnalysis)
+                },
+                hierarchicalClassification
+            };
+
+            this.logger.info('Relationship data prepared for memory hierarchy', {
+                dataSize: JSON.stringify(relationshipMemoryData).length,
+                processingTime: Date.now() - startTime,
+                qualityScore: systemQualityScore,
+                totalRelationships: allRelationships.length,
+                networkDensity: networkAnalysis.networkDensity
+            });
+
+            return relationshipMemoryData;
+
+        } catch (error) {
+            this.logger.error('Failed to prepare relationship data for memory hierarchy', { error });
+
+            // フォールバック：最小限のデータを返す
+            return this.createFallbackRelationshipMemoryData();
+        }
+    }
+
+    /**
+     * 指定記憶階層との統合処理
+     * @param layer 記憶階層レベル
+     */
+    async integrateWithMemoryLayer(layer: MemoryLevel): Promise<void> {
+        const startTime = Date.now();
+
+        try {
+            this.logger.info(`Integrating relationship data with ${layer} layer`);
+
+            if (!this.memoryManager) {
+                this.logger.warn('MemoryManager not available, skipping relationship integration');
+                return;
+            }
+
+            // 階層に応じた関係性データ統合戦略
+            switch (layer) {
+                case MemoryLevel.SHORT_TERM:
+                    await this.integrateShortTermRelationshipData();
+                    break;
+
+                case MemoryLevel.MID_TERM:
+                    await this.integrateMidTermRelationshipData();
+                    break;
+
+                case MemoryLevel.LONG_TERM:
+                    await this.integrateLongTermRelationshipData();
+                    break;
+
+                default:
+                    this.logger.warn(`Unknown memory layer for relationship integration: ${layer}`);
+                    return;
+            }
+
+            this.logger.info(`Relationship data integration completed for ${layer}`, {
+                processingTime: Date.now() - startTime
+            });
+
+        } catch (error) {
+            this.logger.error(`Failed to integrate relationship data with ${layer} layer`, { error });
+            throw error;
+        }
+    }
+
+    /**
+     * 階層別関係性データ取得（キャラクター固有またはネットワーク全体）
+     * @param characterId キャラクターID（省略時はネットワーク全体）
+     * @returns 階層別関係性データ
+     */
+    async getHierarchicalData(characterId?: string): Promise<RelationshipHierarchicalData> {
+        const startTime = Date.now();
+
+        try {
+            if (characterId) {
+                this.logger.info(`Getting hierarchical relationship data for character: ${characterId}`);
+
+                // キャラクター固有の関係性データ
+                const hierarchicalData: RelationshipHierarchicalData = {
+                    characterId,
+                    shortTerm: await this.getShortTermRelationshipData(characterId),
+                    midTerm: await this.getMidTermRelationshipData(characterId),
+                    longTerm: await this.getLongTermRelationshipData(characterId)
+                };
+
+                this.logger.info(`Character-specific hierarchical relationship data retrieved: ${characterId}`, {
+                    processingTime: Date.now() - startTime,
+                    recentInteractions: hierarchicalData.shortTerm.recentInteractions?.length || 0,
+                    evolutionPatterns: hierarchicalData.midTerm.relationshipEvolution?.length || 0,
+                    fundamentalRelationships: hierarchicalData.longTerm.fundamentalRelationships?.length || 0
+                });
+
+                return hierarchicalData;
+            } else {
+                this.logger.info('Getting hierarchical relationship data for entire network');
+
+                // ネットワーク全体の関係性データ
+                const hierarchicalData: RelationshipHierarchicalData = {
+                    characterId: undefined,
+                    shortTerm: await this.getShortTermNetworkData(),
+                    midTerm: await this.getMidTermNetworkData(),
+                    longTerm: await this.getLongTermNetworkData()
+                };
+
+                this.logger.info('Network-wide hierarchical relationship data retrieved', {
+                    processingTime: Date.now() - startTime,
+                    recentInteractions: hierarchicalData.shortTerm.recentInteractions?.length || 0,
+                    networkShifts: hierarchicalData.midTerm.networkShifts?.length || 0,
+                    coreClusters: hierarchicalData.longTerm.permanentNetworkStructure?.coreClusters?.length || 0
+                });
+
+                return hierarchicalData;
+            }
+
+        } catch (error) {
+            this.logger.error(`Failed to get hierarchical relationship data`, { error, characterId });
+
+            // フォールバック：空の階層データを返す
+            return this.createFallbackRelationshipHierarchicalData(characterId);
+        }
+    }
 
     /**
      * 関係性更新（記憶階層システム統合版・即座使用可能）
@@ -677,6 +865,260 @@ export class RelationshipService implements IRelationshipService {
     // ============================================================================
 
     /**
+     * 関係性データの記憶階層分類
+     * @private
+     */
+    private async classifyRelationshipDataForHierarchy(
+        allRelationships: any[],
+        cachedRelationships: any[],
+        networkAnalysis: any
+    ): Promise<any> {
+        try {
+            const now = Date.now();
+            const shortTermThreshold = 15 * 60 * 1000; // 15分
+            const midTermThreshold = 2 * 60 * 60 * 1000; // 2時間
+
+            return {
+                shortTerm: {
+                    data: cachedRelationships.filter(item =>
+                        now - item.timestamp < shortTermThreshold
+                    ),
+                    priority: 10,
+                    expiryTime: new Date(now + shortTermThreshold),
+                    accessCount: this.performanceStats.memorySystemHits
+                },
+                midTerm: {
+                    data: allRelationships.filter(rel =>
+                        rel.lastInteraction &&
+                        now - new Date(rel.lastInteraction).getTime() < midTermThreshold
+                    ),
+                    patterns: await this.identifyRelationshipPatterns(),
+                    stability: 0.7,
+                    evolutionRate: 0.35
+                },
+                longTerm: {
+                    data: allRelationships.filter(rel =>
+                        rel.strength > 0.7 || // 強い関係性
+                        (rel.history && rel.history.length > 5) // 長い履歴
+                    ),
+                    permanence: 0.9,
+                    fundamentalScore: 0.85,
+                    historicalSignificance: networkAnalysis.analysisQuality || 0.8
+                }
+            };
+        } catch (error) {
+            this.logger.warn('Relationship data classification failed', { error });
+            return { shortTerm: { data: [] }, midTerm: { data: [] }, longTerm: { data: [] } };
+        }
+    }
+
+    /**
+     * 短期記憶関係性データ統合処理
+     * @private
+     */
+    private async integrateShortTermRelationshipData(): Promise<void> {
+        try {
+            // 最近のインタラクションとリアルタイム関係性変化を短期記憶に保存
+            const recentInteractions = await this.getRecentInteractionsFromCache();
+            const activeConflicts = await this.detectActiveConflicts();
+
+            // インタラクションデータをチャプター形式に変換
+            for (const interaction of recentInteractions) {
+                const interactionChapter = this.convertInteractionToChapter(interaction);
+                await this.memoryManager.processChapter(interactionChapter);
+            }
+
+            // アクティブ対立をチャプター形式に変換
+            for (const conflict of activeConflicts) {
+                const conflictChapter = this.convertConflictToChapter(conflict);
+                await this.memoryManager.processChapter(conflictChapter);
+            }
+
+            this.logger.debug('Short-term relationship data integration completed', {
+                interactionsProcessed: recentInteractions.length,
+                conflictsProcessed: activeConflicts.length
+            });
+
+        } catch (error) {
+            this.logger.warn('Short-term relationship integration failed', { error });
+        }
+    }
+
+    /**
+     * 中期記憶関係性データ統合処理
+     * @private
+     */
+    private async integrateMidTermRelationshipData(): Promise<void> {
+        try {
+            // 関係性進化パターンとネットワーク変化を中期記憶に保存
+            const evolutionPatterns = await this.identifyRelationshipEvolutionPatterns();
+            const networkShifts = await this.identifyNetworkShifts();
+
+            // 進化パターンをチャプター形式に変換
+            const evolutionChapter = this.convertEvolutionPatternsToChapter(evolutionPatterns);
+            await this.memoryManager.processChapter(evolutionChapter);
+
+            // ネットワーク変化をチャプター形式に変換
+            const networkChapter = this.convertNetworkShiftsToChapter(networkShifts);
+            await this.memoryManager.processChapter(networkChapter);
+
+            this.logger.debug('Mid-term relationship data integration completed', {
+                evolutionPatternsCount: evolutionPatterns.length,
+                networkShiftsCount: networkShifts.length
+            });
+
+        } catch (error) {
+            this.logger.warn('Mid-term relationship integration failed', { error });
+        }
+    }
+
+    /**
+     * 長期記憶関係性データ統合処理
+     * @private
+     */
+    private async integrateLongTermRelationshipData(): Promise<void> {
+        try {
+            // 基本的な関係性アーキタイプとネットワーク構造を長期記憶に保存
+            const fundamentalRelationships = await this.identifyFundamentalRelationships();
+            const permanentNetworkStructure = await this.identifyPermanentNetworkStructure();
+
+            // 基本関係性をチャプター形式に変換
+            const fundamentalChapter = this.convertFundamentalRelationshipsToChapter(fundamentalRelationships);
+            await this.memoryManager.processChapter(fundamentalChapter);
+
+            // 永続的ネットワーク構造をチャプター形式に変換
+            const structureChapter = this.convertNetworkStructureToChapter(permanentNetworkStructure);
+            await this.memoryManager.processChapter(structureChapter);
+
+            this.logger.debug('Long-term relationship data integration completed', {
+                fundamentalRelationshipsCount: fundamentalRelationships.length,
+                networkStructuresCount: permanentNetworkStructure.length
+            });
+
+        } catch (error) {
+            this.logger.warn('Long-term relationship integration failed', { error });
+        }
+    }
+
+    /**
+     * 短期関係性データ取得（キャラクター固有）
+     * @private
+     */
+    private async getShortTermRelationshipData(characterId: string): Promise<any> {
+        try {
+            return {
+                recentInteractions: await this.getRecentInteractionsForCharacter(characterId),
+                activeConflicts: await this.getActiveConflictsForCharacter(characterId),
+                temporaryAlliances: await this.getTemporaryAlliancesForCharacter(characterId),
+                emergingRelationships: await this.getEmergingRelationshipsForCharacter(characterId)
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get short-term relationship data', { error });
+            return { recentInteractions: [], activeConflicts: [], temporaryAlliances: [], emergingRelationships: [] };
+        }
+    }
+
+    /**
+     * 中期関係性データ取得（キャラクター固有）
+     * @private
+     */
+    private async getMidTermRelationshipData(characterId: string): Promise<any> {
+        try {
+            return {
+                relationshipEvolution: await this.getRelationshipEvolutionForCharacter(characterId),
+                networkShifts: await this.getNetworkShiftsForCharacter(characterId),
+                conflictPatterns: await this.getConflictPatternsForCharacter(characterId),
+                alliancePatterns: await this.getAlliancePatternsForCharacter(characterId)
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get mid-term relationship data', { error });
+            return { relationshipEvolution: [], networkShifts: [], conflictPatterns: [], alliancePatterns: [] };
+        }
+    }
+
+    /**
+     * 長期関係性データ取得（キャラクター固有）
+     * @private
+     */
+    private async getLongTermRelationshipData(characterId: string): Promise<any> {
+        try {
+            return {
+                fundamentalRelationships: await this.getFundamentalRelationshipsForCharacter(characterId),
+                characterRoles: await this.getCharacterRolesForCharacter(characterId),
+                permanentNetworkStructure: await this.getPermanentNetworkStructureForCharacter(characterId),
+                historicalMilestones: await this.getHistoricalMilestonesForCharacter(characterId)
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get long-term relationship data', { error });
+            return {
+                fundamentalRelationships: [],
+                characterRoles: {},
+                permanentNetworkStructure: { coreClusters: [], structuralPatterns: [], networkEvolutionTrend: '' },
+                historicalMilestones: []
+            };
+        }
+    }
+
+    /**
+     * 短期ネットワークデータ取得（全体）
+     * @private
+     */
+    private async getShortTermNetworkData(): Promise<any> {
+        try {
+            return {
+                recentInteractions: await this.getAllRecentInteractions(),
+                activeConflicts: await this.getAllActiveConflicts(),
+                temporaryAlliances: await this.getAllTemporaryAlliances(),
+                emergingRelationships: await this.getAllEmergingRelationships()
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get short-term network data', { error });
+            return { recentInteractions: [], activeConflicts: [], temporaryAlliances: [], emergingRelationships: [] };
+        }
+    }
+
+    /**
+     * 中期ネットワークデータ取得（全体）
+     * @private
+     */
+    private async getMidTermNetworkData(): Promise<any> {
+        try {
+            return {
+                relationshipEvolution: await this.getAllRelationshipEvolution(),
+                networkShifts: await this.getAllNetworkShifts(),
+                conflictPatterns: await this.getAllConflictPatterns(),
+                alliancePatterns: await this.getAllAlliancePatterns()
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get mid-term network data', { error });
+            return { relationshipEvolution: [], networkShifts: [], conflictPatterns: [], alliancePatterns: [] };
+        }
+    }
+
+    /**
+     * 長期ネットワークデータ取得（全体）
+     * @private
+     */
+    private async getLongTermNetworkData(): Promise<any> {
+        try {
+            return {
+                fundamentalRelationships: await this.getAllFundamentalRelationships(),
+                characterRoles: await this.getAllCharacterRoles(),
+                permanentNetworkStructure: await this.getAllPermanentNetworkStructure(),
+                historicalMilestones: await this.getAllHistoricalMilestones()
+            };
+        } catch (error) {
+            this.logger.warn('Failed to get long-term network data', { error });
+            return {
+                fundamentalRelationships: [],
+                characterRoles: {},
+                permanentNetworkStructure: { coreClusters: [], structuralPatterns: [], networkEvolutionTrend: '' },
+                historicalMilestones: []
+            };
+        }
+    }
+
+    /**
      * 統合記憶システムからキャラクター取得
      * @private
      */
@@ -751,6 +1193,57 @@ export class RelationshipService implements IRelationshipService {
     // ============================================================================
     // 🔧 その他のプライベートメソッド（実装省略・スタブ）
     // ============================================================================
+
+    /**
+     * フォールバック関係性記憶データ作成
+     * @private
+     */
+    private createFallbackRelationshipMemoryData(): RelationshipMemoryData {
+        return {
+            serviceType: 'relationship',
+            timestamp: new Date(),
+            confidence: 0.5,
+            dataVersion: '1.0.0',
+            metadata: {
+                source: 'RelationshipService_Fallback',
+                processingTime: 0,
+                qualityScore: 0.5
+            },
+            networkData: {
+                totalRelationships: 0,
+                activeConnections: [],
+                networkMetrics: {
+                    density: 0,
+                    clustering: 0,
+                    centralCharacters: []
+                },
+                clusterData: []
+            },
+            hierarchicalClassification: {
+                shortTerm: { data: [], priority: 1, expiryTime: new Date(), accessCount: 0 },
+                midTerm: { data: [], patterns: [], stability: 0.5, evolutionRate: 0 },
+                longTerm: { data: [], permanence: 0.5, fundamentalScore: 0.5, historicalSignificance: 0.5 }
+            }
+        };
+    }
+
+    /**
+     * フォールバック関係性階層データ作成
+     * @private
+     */
+    private createFallbackRelationshipHierarchicalData(characterId?: string): RelationshipHierarchicalData {
+        return {
+            characterId,
+            shortTerm: { recentInteractions: [], activeConflicts: [], temporaryAlliances: [], emergingRelationships: [] },
+            midTerm: { relationshipEvolution: [], networkShifts: [], conflictPatterns: [], alliancePatterns: [] },
+            longTerm: {
+                fundamentalRelationships: [],
+                characterRoles: {},
+                permanentNetworkStructure: { coreClusters: [], structuralPatterns: [], networkEvolutionTrend: '' },
+                historicalMilestones: []
+            }
+        };
+    }
 
     private async saveRelationshipToMemorySystem(char1Id: string, char2Id: string, relationship: Relationship): Promise<void> {
         try {
@@ -1057,7 +1550,7 @@ export class RelationshipService implements IRelationshipService {
     private async getRelationshipSystemHealth(): Promise<number> { return 0.95; }
     private async validateCrossLevelConsistency(): Promise<number> { return 0.9; }
     private generateVisualizationData(characters: Character[], relationships: Relationship[], clusters: CharacterCluster[]): any { return {}; }
-    private async storeAnalysisResultsInMemorySystem(analysis: RelationshipAnalysis): Promise<void> {}
+    private async storeAnalysisResultsInMemorySystem(analysis: RelationshipAnalysis): Promise<void> { }
     private async getRelationshipHistoryFromMemorySystem(char1Id: string, char2Id: string, timeframe: number): Promise<any[]> { return []; }
     private async analyzeEvolutionPatternsWithMemorySystem(history: any[]): Promise<any[]> { return []; }
     private async predictRelationshipFutureWithMemorySystem(char1Id: string, char2Id: string, patterns: any[]): Promise<any[]> { return []; }
@@ -1085,7 +1578,56 @@ export class RelationshipService implements IRelationshipService {
             healthImprovement: 0.1
         };
     }
-    private async storeRepairReportInMemorySystem(report: RepairReport): Promise<void> {}
+    private async storeRepairReportInMemorySystem(report: RepairReport): Promise<void> { }
+
+    // スタブメソッド（実装省略）
+    private async getActiveConnectionsData(relationships: any[]): Promise<any[]> { return []; }
+    private async getClusterDataFromNetworkAnalysis(analysis: any): Promise<any[]> { return []; }
+    private async identifyRelationshipPatterns(): Promise<any[]> { return []; }
+    private async getRecentInteractionsFromCache(): Promise<any[]> { return []; }
+    private async detectActiveConflicts(): Promise<any[]> { return []; }
+    private async identifyRelationshipEvolutionPatterns(): Promise<any[]> { return []; }
+    private async identifyNetworkShifts(): Promise<any[]> { return []; }
+    private async identifyFundamentalRelationships(): Promise<any[]> { return []; }
+    private async identifyPermanentNetworkStructure(): Promise<any[]> { return []; }
+    private convertInteractionToChapter(interaction: any): any { return {}; }
+    private convertConflictToChapter(conflict: any): any { return {}; }
+    private convertEvolutionPatternsToChapter(patterns: any[]): any { return {}; }
+    private convertNetworkShiftsToChapter(shifts: any[]): any { return {}; }
+    private convertFundamentalRelationshipsToChapter(relationships: any[]): any { return {}; }
+    private convertNetworkStructureToChapter(structure: any[]): any { return {}; }
+
+    // キャラクター固有データ取得メソッド（スタブ）
+    private async getRecentInteractionsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getActiveConflictsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getTemporaryAlliancesForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getEmergingRelationshipsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getRelationshipEvolutionForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getNetworkShiftsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getConflictPatternsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getAlliancePatternsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getFundamentalRelationshipsForCharacter(characterId: string): Promise<any[]> { return []; }
+    private async getCharacterRolesForCharacter(characterId: string): Promise<any> { return {}; }
+    private async getPermanentNetworkStructureForCharacter(characterId: string): Promise<any> {
+        return { coreClusters: [], structuralPatterns: [], networkEvolutionTrend: '' };
+    }
+    private async getHistoricalMilestonesForCharacter(characterId: string): Promise<any[]> { return []; }
+
+    // ネットワーク全体データ取得メソッド（スタブ）
+    private async getAllRecentInteractions(): Promise<any[]> { return []; }
+    private async getAllActiveConflicts(): Promise<any[]> { return []; }
+    private async getAllTemporaryAlliances(): Promise<any[]> { return []; }
+    private async getAllEmergingRelationships(): Promise<any[]> { return []; }
+    private async getAllRelationshipEvolution(): Promise<any[]> { return []; }
+    private async getAllNetworkShifts(): Promise<any[]> { return []; }
+    private async getAllConflictPatterns(): Promise<any[]> { return []; }
+    private async getAllAlliancePatterns(): Promise<any[]> { return []; }
+    private async getAllFundamentalRelationships(): Promise<any[]> { return []; }
+    private async getAllCharacterRoles(): Promise<any> { return {}; }
+    private async getAllPermanentNetworkStructure(): Promise<any> {
+        return { coreClusters: [], structuralPatterns: [], networkEvolutionTrend: '' };
+    }
+    private async getAllHistoricalMilestones(): Promise<any[]> { return []; }
 
     /**
      * パフォーマンス診断の実行

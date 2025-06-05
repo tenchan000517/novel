@@ -1,0 +1,3408 @@
+{
+  "summary": {
+    "timestamp": "2025-06-04T13:30:55.896Z",
+    "totalCalls": 218,
+    "uniqueFiles": 32,
+    "duplicateGroups": 80,
+    "promptSimilarGroups": 62
+  },
+  "calls": [
+    {
+      "file": "src\\app\\api\\generation\\chapter\\route.ts",
+      "line": 233,
+      "method": "generateChapter",
+      "promptType": "章生成",
+      "promptText": "[ServiceContainer統合API] Starting chapter ${chapterNumber} generation with ServiceContainer",
+      "promptLength": 90,
+      "expectedOutput": "Date",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 51,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 104,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Date",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 154,
+      "method": "generateContent",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 166,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 104,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Date",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\gemini-adapter.ts",
+      "line": 166,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\interfaces.ts",
+      "line": 21,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\adapters\\interfaces.ts",
+      "line": 40,
+      "method": "generateContent",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 390,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "バッチ生成完了: ${Object.keys(result).length}人のキャラクター処理済み",
+      "promptLength": 50,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 689,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return [];\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * アーク最適化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateArcOptimizationRecommendations(\r\n        character: Char...",
+      "promptLength": 940,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 716,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackArcRecommendations(character);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * 動機強化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateMotivation...",
+      "promptLength": 924,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 750,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackMotivationEnhancements(psychology);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * コントラスト推奨の生成\r\n     * @private\r\n     */\r\n    private async generateCon...",
+      "promptLength": 1227,
+      "expectedOutput": "DepthRecommendation",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 390,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "バッチ生成完了: ${Object.keys(result).length}人のキャラクター処理済み",
+      "promptLength": 50,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 689,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return [];\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * アーク最適化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateArcOptimizationRecommendations(\r\n        character: Char...",
+      "promptLength": 940,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 716,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackArcRecommendations(character);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * 動機強化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateMotivation...",
+      "promptLength": 924,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 750,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackMotivationEnhancements(psychology);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * コントラスト推奨の生成\r\n     * @private\r\n     */\r\n    private async generateCon...",
+      "promptLength": 1227,
+      "expectedOutput": "DepthRecommendation",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 390,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "バッチ生成完了: ${Object.keys(result).length}人のキャラクター処理済み",
+      "promptLength": 50,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 689,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return [];\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * アーク最適化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateArcOptimizationRecommendations(\r\n        character: Char...",
+      "promptLength": 940,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 716,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackArcRecommendations(character);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * 動機強化推奨の生成\r\n     * @private\r\n     */\r\n    private async generateMotivation...",
+      "promptLength": 924,
+      "expectedOutput": "Character",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+      "line": 750,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", { error });\r\n            return this.generateFallbackMotivationEnhancements(psychology);\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * コントラスト推奨の生成\r\n     * @private\r\n     */\r\n    private async generateCon...",
+      "promptLength": 1227,
+      "expectedOutput": "DepthRecommendation",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 259,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ": ''}\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n- テンション値: ${tension}\r\n- 章番号: ${chapterNumber}\r\n\r\n## 必要なガイダンス\r\n以下のカテゴリ別に、実用的かつ具体的なガイダンスを提供してください：\r\n1. general: 全般的な文体ガイダンス\r\n2. sentenceStructure: 文構...",
+      "promptLength": 726,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 529,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "あなは表現の多様化を専門とするエディターです。以下に示す繰り返し使用されている表現パターンに対して、多様な代替表現を提案してください。\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n\r\n## 現在のパターン\r\n${JSON.stringify(topPatterns, null, 2)}\r\n\r\n## 指示\r\n各表現に対して2〜3の多様な代替案を提供し...",
+      "promptLength": 345,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 719,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは日本語文章の構造に詳しい編集者です。以下の主語パターン分析結果をもとに、文章の改善提案を行ってください。\r\n\r\n## 主語パターン分析\r\n- 主語多様性スコア: ${subjectPatterns.subjectDiversityScore}（0〜1、高いほど多様）\r\n- 繰り返されている主語:\r\n${subjectPatterns.repeatedSubjects.map(s =>",
+      "promptLength": 197,
+      "expectedOutput": "SubjectPatternOptimization",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 901,
+      "method": "generateText",
+      "promptType": "分析",
+      "promptText": "あなたは小説の文構造の専門家です。以下の文体分析結果とコンテキスト情報に基づいて、文構造の改善提案を行ってください。\r\n\r\n## 文体分析結果\r\n${analysisStr}\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n- テンション値: ${tension}\r\n\r\n## 指示\r\n文構造の改善に焦点を当てた具体的な提案を5つ生成してください。各提案...",
+      "promptLength": 353,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 1148,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "あなは表現の多様化を専門とするエディターです。以下の繰り返し使用されている表現に対して、代替表現を提案してください。\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n\r\n## 繰り返し表現\r\n${limitedRepetitions.map((rep, idx) =>",
+      "promptLength": 157,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 259,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ": ''}\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n- テンション値: ${tension}\r\n- 章番号: ${chapterNumber}\r\n\r\n## 必要なガイダンス\r\n以下のカテゴリ別に、実用的かつ具体的なガイダンスを提供してください：\r\n1. general: 全般的な文体ガイダンス\r\n2. sentenceStructure: 文構...",
+      "promptLength": 726,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 529,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 719,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは日本語文章の構造に詳しい編集者です。以下の主語パターン分析結果をもとに、文章の改善提案を行ってください。\r\n\r\n## 主語パターン分析\r\n- 主語多様性スコア: ${subjectPatterns.subjectDiversityScore}（0〜1、高いほど多様）\r\n- 繰り返されている主語:\r\n${subjectPatterns.repeatedSubjects.map(s =>",
+      "promptLength": 197,
+      "expectedOutput": "SubjectPatternOptimization",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 901,
+      "method": "generateText",
+      "promptType": "分析",
+      "promptText": "あなたは小説の文構造の専門家です。以下の文体分析結果とコンテキスト情報に基づいて、文構造の改善提案を行ってください。\r\n\r\n## 文体分析結果\r\n${analysisStr}\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n- テンション値: ${tension}\r\n\r\n## 指示\r\n文構造の改善に焦点を当てた具体的な提案を5つ生成してください。各提案...",
+      "promptLength": 353,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+      "line": 1148,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "あなは表現の多様化を専門とするエディターです。以下の繰り返し使用されている表現に対して、代替表現を提案してください。\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme}\r\n\r\n## 繰り返し表現\r\n${limitedRepetitions.map((rep, idx) =>",
+      "promptLength": 157,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts",
+      "line": 1186,
+      "method": "generateContent",
+      "promptType": "章生成",
+      "promptText": "あなたは物語テンションとペーシングの専門家です。以下の情報に基づいて、具体的なテンション最適化の提案を3つ生成してください。\r\n\r\n章番号: ${chapterNumber}\r\n現在のテンション値: ${currentTension} (0～1の範囲)\r\n推奨テンション値: ${recommendation.tension.recommendedTension} (0～1の範囲)\r\n推奨理由: $...",
+      "promptLength": 431,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts",
+      "line": 1580,
+      "method": "generateContent",
+      "promptType": "章生成",
+      "promptText": "あなは物語のテンション設計に関する専門家です。次の章のテンション値に対する調整を提案してください。\r\n\r\n章番号: ${chapterNumber}\r\nジャンル: ${genre}\r\n基本テンション値: ${baseTension}\r\n\r\n物語テンションの調整において考慮すべき点:\r\n1. ジャンル「${genre}」の特性\r\n2. 物語のリズムとバリエーション\r\n3. 読者の期待と心理的効果\r\n...",
+      "promptLength": 325,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts",
+      "line": 1186,
+      "method": "generateContent",
+      "promptType": "章生成",
+      "promptText": "あなたは物語テンションとペーシングの専門家です。以下の情報に基づいて、具体的なテンション最適化の提案を3つ生成してください。\r\n\r\n章番号: ${chapterNumber}\r\n現在のテンション値: ${currentTension} (0～1の範囲)\r\n推奨テンション値: ${recommendation.tension.recommendedTension} (0～1の範囲)\r\n推奨理由: $...",
+      "promptLength": 431,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts",
+      "line": 1580,
+      "method": "generateContent",
+      "promptType": "章生成",
+      "promptText": "あなは物語のテンション設計に関する専門家です。次の章のテンション値に対する調整を提案してください。\r\n\r\n章番号: ${chapterNumber}\r\nジャンル: ${genre}\r\n基本テンション値: ${baseTension}\r\n\r\n物語テンションの調整において考慮すべき点:\r\n1. ジャンル「${genre}」の特性\r\n2. 物語のリズムとバリエーション\r\n3. 読者の期待と心理的効果\r\n...",
+      "promptLength": 325,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 450,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ").join('\\n')}\r\n\r\n## コンテキスト情報\r\n- 章番号: ${request.chapterNumber}\r\n- ストーリーフェーズ: ${request.storyPhase}\r\n- ジャンル: ${request.genre}\r\n\r\n## 指示\r\nこのストーリーフェーズ（${request.storyPhase}）とジャンルに適した方法で、各テーマをより効果的に表現・強化するた...",
+      "promptLength": 716,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 551,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 633,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは文学的象徴と隠喩の専門家です。以下のテーマに対して、物語で使用できる効果的な象徴要素を提案してください。\r\n\r\n## テーマ\r\n${themes.join(",
+      "promptLength": 82,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 717,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語の伏線と構造の専門家です。以下のテキストを分析し、将来の伏線展開のために活用できる機会を特定してください。\r\n\r\n## テキスト（章${chapterNumber}）\r\n${truncatedContent}\r\n\r\n## 主要テーマ\r\n${themes.join(",
+      "promptLength": 138,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 801,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "あなたは文学的技法の専門家です。以下のテーマに対して、効果的に表現するための文学的技法を提案してください。\r\n\r\n## テーマ\r\n${theme}\r\n\r\n## ジャンル\r\n${genre ||",
+      "promptLength": 96,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 450,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ").join('\\n')}\r\n\r\n## コンテキスト情報\r\n- 章番号: ${request.chapterNumber}\r\n- ストーリーフェーズ: ${request.storyPhase}\r\n- ジャンル: ${request.genre}\r\n\r\n## 指示\r\nこのストーリーフェーズ（${request.storyPhase}）とジャンルに適した方法で、各テーマをより効果的に表現・強化するた...",
+      "promptLength": 716,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 551,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 633,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは文学的象徴と隠喩の専門家です。以下のテーマに対して、物語で使用できる効果的な象徴要素を提案してください。\r\n\r\n## テーマ\r\n${themes.join(",
+      "promptLength": 82,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 717,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語の伏線と構造の専門家です。以下のテキストを分析し、将来の伏線展開のために活用できる機会を特定してください。\r\n\r\n## テキスト（章${chapterNumber}）\r\n${truncatedContent}\r\n\r\n## 主要テーマ\r\n${themes.join(",
+      "promptLength": 138,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+      "line": 801,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "あなたは文学的技法の専門家です。以下のテーマに対して、効果的に表現するための文学的技法を提案してください。\r\n\r\n## テーマ\r\n${theme}\r\n\r\n## ジャンル\r\n${genre ||",
+      "promptLength": 96,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 182,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Using cached quality metrics for chapter ${chapterNumber}",
+      "promptLength": 57,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 290,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Using cached character appearances for chapter ${chapterNumber}",
+      "promptLength": 63,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 354,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\r\n        error: error instanceof Error ? error.message : String(error)\r\n      });\r\n      return this.createFallbackCharacterAppearances(context);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * 章のキーワードを抽出\r\n   * \r\n   *...",
+      "promptLength": 404,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 791,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\r\n    return {\r\n      parsedContent: content,\r\n      metadata: {\r\n        title:",
+      "promptLength": 82,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 881,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\r\n\r\n      // シーン抽出のプロンプト\r\n      const scenePrompt = this.createSceneExtractionPrompt(content);\r\n\r\n      // フォールバック用の単一シーン（デフォルト値として使用）\r\n      const fallbackScene: Scene[] = [{\r\n        id:",
+      "promptLength": 190,
+      "expectedOutput": "Scene",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 182,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Using cached quality metrics for chapter ${chapterNumber}",
+      "promptLength": 57,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 290,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Using cached character appearances for chapter ${chapterNumber}",
+      "promptLength": 63,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 354,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\r\n        error: error instanceof Error ? error.message : String(error)\r\n      });\r\n      return this.createFallbackCharacterAppearances(context);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * 章のキーワードを抽出\r\n   * \r\n   *...",
+      "promptLength": 404,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 791,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\r\n    return {\r\n      parsedContent: content,\r\n      metadata: {\r\n        title:",
+      "promptLength": 82,
+      "expectedOutput": "character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+      "line": 881,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\r\n\r\n      // シーン抽出のプロンプト\r\n      const scenePrompt = this.createSceneExtractionPrompt(content);\r\n\r\n      // フォールバック用の単一シーン（デフォルト値として使用）\r\n      const fallbackScene: Scene[] = [{\r\n        id:",
+      "promptLength": 190,
+      "expectedOutput": "Scene",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 264,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、各キャラクターの成長要素を詳細に分析してください：\r\n\r\n**登場キャラクター**: ${characterNames}\r\n**章番号**: ${chapterNumber}\r\n\r\n**章の内容**:\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターについて、以下の成長要素を分析してJSONで出力してください：\r\n- スキルや能力の向上\r\n- ...",
+      "promptLength": 268,
+      "expectedOutput": "Character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 342,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章に登場するキャラクターとその活動を詳細に分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターについて以下の情報を含めてJSONで出力してください：\r\n- characterName: キャラクター名\r\n- dialogueCount: 対話の回数（概算）\r\n- significance: この章での重要度（0〜1の値）\r\n- ac...",
+      "promptLength": 288,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 401,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、登場キャラクターの心理状態を詳細に分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターの心理状態について以下の情報を含めてJSONで出力してください：\r\n- characterName: キャラクター名\r\n- emotionalState: 感情状態\r\n- motivations: 動機（配列形式）\r\n- conflicts...",
+      "promptLength": 295,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 464,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、キャラクター間の関係性とその変化を分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\nキャラクター間の関係について以下の情報を含めてJSONで出力してください：\r\n- character1: 1人目のキャラクター名\r\n- character2: 2人目のキャラクター名\r\n- relationshipType: 関係の種類（友情、恋愛、対立...",
+      "promptLength": 278,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 511,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章で、キャラクター「${characterNames}」に起きた重要な成長イベントを特定してください：\r\n\r\n${content.substring(0, 6000)}\r\n\r\n重要な成長イベント（技能習得、性格変化、価値観変化、重要な決断など）を配列形式で出力してください：\r\n\r\n[",
+      "promptLength": 148,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 264,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、各キャラクターの成長要素を詳細に分析してください：\r\n\r\n**登場キャラクター**: ${characterNames}\r\n**章番号**: ${chapterNumber}\r\n\r\n**章の内容**:\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターについて、以下の成長要素を分析してJSONで出力してください：\r\n- スキルや能力の向上\r\n- ...",
+      "promptLength": 268,
+      "expectedOutput": "Character",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 342,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章に登場するキャラクターとその活動を詳細に分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターについて以下の情報を含めてJSONで出力してください：\r\n- characterName: キャラクター名\r\n- dialogueCount: 対話の回数（概算）\r\n- significance: この章での重要度（0〜1の値）\r\n- ac...",
+      "promptLength": 288,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 401,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、登場キャラクターの心理状態を詳細に分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\n各キャラクターの心理状態について以下の情報を含めてJSONで出力してください：\r\n- characterName: キャラクター名\r\n- emotionalState: 感情状態\r\n- motivations: 動機（配列形式）\r\n- conflicts...",
+      "promptLength": 295,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 464,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章から、キャラクター間の関係性とその変化を分析してください：\r\n\r\n${content.substring(0, 8000)}\r\n\r\nキャラクター間の関係について以下の情報を含めてJSONで出力してください：\r\n- character1: 1人目のキャラクター名\r\n- character2: 2人目のキャラクター名\r\n- relationshipType: 関係の種類（友情、恋愛、対立...",
+      "promptLength": 278,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+      "line": 511,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章で、キャラクター「${characterNames}」に起きた重要な成長イベントを特定してください：\r\n\r\n${content.substring(0, 6000)}\r\n\r\n重要な成長イベント（技能習得、性格変化、価値観変化、重要な決断など）を配列形式で出力してください：\r\n\r\n[",
+      "promptLength": 148,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts",
+      "line": 218,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "LiteraryGuideline",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts",
+      "line": 218,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "LiteraryGuideline",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts",
+      "line": 218,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "LiteraryGuideline",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts",
+      "line": 452,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次のシーン構造分析に基づいて、第${chapterNumber}章に最適なシーン構成を3-4シーンで提案してください。\r\n\r\nシーンタイプ分布:\r\n${Object.entries(analysis.typeDistribution).map(([type, count]) =>",
+      "promptLength": 140,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts",
+      "line": 452,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次のシーン構造分析に基づいて、第${chapterNumber}章に最適なシーン構成を3-4シーンで提案してください。\r\n\r\nシーンタイプ分布:\r\n${Object.entries(analysis.typeDistribution).map(([type, count]) =>",
+      "promptLength": 140,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts",
+      "line": 452,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次のシーン構造分析に基づいて、第${chapterNumber}章に最適なシーン構成を3-4シーンで提案してください。\r\n\r\nシーンタイプ分布:\r\n${Object.entries(analysis.typeDistribution).map(([type, count]) =>",
+      "promptLength": 140,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts",
+      "line": 111,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章を「読者の視点」から分析してください。\r\n\r\n前章：${recentContent.substring(0, 3000)}\r\n\r\n現章：${chapter.content.substring(0, 6000)}\r\n\r\n以下を評価（1-10）：\r\n1. 興味維持：読者の注意をどの程度引きつけ続けるか\r\n2. 感情移入：キャラクターへの共感度\r\n3. 理解度：物語の流れや出来事の理解しや...",
+      "promptLength": 351,
+      "expectedOutput": "ReaderExperienceAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts",
+      "line": 111,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章を「読者の視点」から分析してください。\r\n\r\n前章：${recentContent.substring(0, 3000)}\r\n\r\n現章：${chapter.content.substring(0, 6000)}\r\n\r\n以下を評価（1-10）：\r\n1. 興味維持：読者の注意をどの程度引きつけ続けるか\r\n2. 感情移入：キャラクターへの共感度\r\n3. 理解度：物語の流れや出来事の理解しや...",
+      "promptLength": 351,
+      "expectedOutput": "ReaderExperienceAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts",
+      "line": 111,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の小説の章を「読者の視点」から分析してください。\r\n\r\n前章：${recentContent.substring(0, 3000)}\r\n\r\n現章：${chapter.content.substring(0, 6000)}\r\n\r\n以下を評価（1-10）：\r\n1. 興味維持：読者の注意をどの程度引きつけ続けるか\r\n2. 感情移入：キャラクターへの共感度\r\n3. 理解度：物語の流れや出来事の理解しや...",
+      "promptLength": 351,
+      "expectedOutput": "ReaderExperienceAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 539,
+      "method": "generateContent",
+      "promptType": "ストーリー生成",
+      "promptText": "以下の物語テキストから、特徴的な表現や繰り返し使用されているフレーズを抽出してください。\r\n以下のような表現に注目してください：\r\n1. 比喩表現や独特の形容\r\n2. 特徴的な文末表現や修飾表現\r\n3. 作者の個性が表れる表現パターン\r\n4. 繰り返し使用されている言い回し\r\n\r\n物語テキスト:\r\n${truncatedContent}\r\n\r\n特徴的な表現のみをリストで出力してください。各表現は5...",
+      "promptLength": 284,
+      "expectedOutput": "AI",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 787,
+      "method": "generateContent",
+      "promptType": "分析",
+      "promptText": "以下の小説テキストの文体を分析し、以下の特性を評価してください：\r\n\r\n1. 平均文長（文字数）\r\n2. 文のバリエーション（0-1の値、高いほど多様）\r\n3. 語彙の豊かさ（0-1の値、高いほど豊か）\r\n4. 語りの視点（一人称・三人称など）\r\n5. 時制の一貫性（0-1の値、高いほど一貫）\r\n6. 感情のバランス（ポジティブ・ネガティブのバランス、0-1で0は完全にネガティブ、1は完全にポジテ...",
+      "promptLength": 261,
+      "expectedOutput": "Partial",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 863,
+      "method": "generateContent",
+      "promptType": "会話生成",
+      "promptText": "以下の小説テキストから、繰り返し使用されている表現パターンを抽出してください。\r\n表現パターンを以下のカテゴリに分類してください：\r\n\r\n1. 動詞フレーズ（例：「歩き出した」「考え始めた」）\r\n2. 形容表現（例：「空のような目」「雪のように白い」）\r\n3. 会話表現（例：「〜と尋ねた」「〜と叫んだ」）\r\n4. 接続語（例：「しかし」「それゆえに」）\r\n5. 文構造パターン（例：「〜は〜である」...",
+      "promptLength": 295,
+      "expectedOutput": "ExpressionPatterns",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 539,
+      "method": "generateContent",
+      "promptType": "ストーリー生成",
+      "promptText": "以下の物語テキストから、特徴的な表現や繰り返し使用されているフレーズを抽出してください。\r\n以下のような表現に注目してください：\r\n1. 比喩表現や独特の形容\r\n2. 特徴的な文末表現や修飾表現\r\n3. 作者の個性が表れる表現パターン\r\n4. 繰り返し使用されている言い回し\r\n\r\n物語テキスト:\r\n${truncatedContent}\r\n\r\n特徴的な表現のみをリストで出力してください。各表現は5...",
+      "promptLength": 284,
+      "expectedOutput": "AI",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 787,
+      "method": "generateContent",
+      "promptType": "分析",
+      "promptText": "以下の小説テキストの文体を分析し、以下の特性を評価してください：\r\n\r\n1. 平均文長（文字数）\r\n2. 文のバリエーション（0-1の値、高いほど多様）\r\n3. 語彙の豊かさ（0-1の値、高いほど豊か）\r\n4. 語りの視点（一人称・三人称など）\r\n5. 時制の一貫性（0-1の値、高いほど一貫）\r\n6. 感情のバランス（ポジティブ・ネガティブのバランス、0-1で0は完全にネガティブ、1は完全にポジテ...",
+      "promptLength": 261,
+      "expectedOutput": "Partial",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\style\\style-analysis-service.ts",
+      "line": 863,
+      "method": "generateContent",
+      "promptType": "会話生成",
+      "promptText": "以下の小説テキストから、繰り返し使用されている表現パターンを抽出してください。\r\n表現パターンを以下のカテゴリに分類してください：\r\n\r\n1. 動詞フレーズ（例：「歩き出した」「考え始めた」）\r\n2. 形容表現（例：「空のような目」「雪のように白い」）\r\n3. 会話表現（例：「〜と尋ねた」「〜と叫んだ」）\r\n4. 接続語（例：「しかし」「それゆえに」）\r\n5. 文構造パターン（例：「〜は〜である」...",
+      "promptLength": 295,
+      "expectedOutput": "ExpressionPatterns",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 167,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "chapter",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 395,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "),\n          { foreshadowing: [] },\n          'getUnresolvedForeshadowing'\n        );\n        unresolvedForeshadowing = memoryResult.data.foreshadowing || [];\n      }\n\n      if (unresolvedForeshadowin...",
+      "promptLength": 1018,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 461,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "),\n        { \n          state: 'unknown', \n          location: 'unknown', \n          characters: [], \n          themes: [], \n          plotPoints: [] \n        },\n        'getNarrativeContext'\n      );...",
+      "promptLength": 334,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 602,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "SymbolismAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 688,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n        chaptersCount: contents.length\n      });\n\n      if (contents.length < 2) {\n        throw new Error('一貫性分析には少なくとも2つの章が必要です');\n      }\n\n      // 統合記憶システムからテーマ履歴を取得\n      const themeHistory =...",
+      "promptLength": 279,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 710,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n            error: error instanceof Error ? error.message : String(error)\n          });\n          return { chapterIndex: index, summary:",
+      "promptLength": 140,
+      "expectedOutput": "ThemeConsistencyAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 1811,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の章から、物語上重要かつ将来の章でも覚えておくべきイベントを抽出してください。\n特に：\n- キャラクター間の重要な対話、対立、約束\n- 警告やルール違反とその結果\n- 場所に関連する特別な出来事\n- キャラクターが受けた重要な教訓\n- 初めて起きた出来事やキャラクターの重要な決断\n\n章の内容:\n${content.substring(0, 5000)}...\n\nJSON形式で返却してください。...",
+      "promptLength": 435,
+      "expectedOutput": "Chapter",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 1897,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "テーマと物語要素の関連性分析\n\nテーマ: ${theme}\n物語要素: ${elementType}\n文脈: ${context}\n\n以下の項目について分析してください：\n1. このテーマとこの物語要素の関連性（0-10のスケール）\n2. この物語要素を通じてテーマをより強く表現するための具体的な提案（3つ）\n3. この組み合わせから得られる象徴的な意味や可能性\n\nJSONフォーマットで結果を返し...",
+      "promptLength": 208,
+      "expectedOutput": "ThemeElementResonance",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2064,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "以下の小説で使用されている主要な象徴とモチーフに基づいて、イメージの活用と発展に関する提案を行ってください。\n\n主要な象徴: ${topSymbols}\n繰り返されるモチーフ: ${topMotifs}\n\nこれらの象徴とモチーフをより効果的に活用するための提案を3つ示してください。\n各提案は具体的かつ実行可能なものにしてください。\n\n提案を配列形式で出力してください:\n[",
+      "promptLength": 187,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2139,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n        chaptersCount: contents.length\n      });\n\n      if (contents.length === 0) {\n        throw new Error('モチーフ追跡には少なくとも1つの章が必要です');\n      }\n\n      // 統合記憶システムからモチーフ関連情報を取得\n      const motifCon...",
+      "promptLength": 285,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2336,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "章 ${chapterIndex + 1}: 出現回数=${analysis.occurrenceCount}, 重要度=${analysis.significance}, 使用方法=${analysis.usage}",
+      "promptLength": 109,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 167,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "chapter",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 395,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "),\n          { foreshadowing: [] },\n          'getUnresolvedForeshadowing'\n        );\n        unresolvedForeshadowing = memoryResult.data.foreshadowing || [];\n      }\n\n      if (unresolvedForeshadowin...",
+      "promptLength": 1018,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 461,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "),\n        { \n          state: 'unknown', \n          location: 'unknown', \n          characters: [], \n          themes: [], \n          plotPoints: [] \n        },\n        'getNarrativeContext'\n      );...",
+      "promptLength": 334,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 602,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "SymbolismAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 688,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n        chaptersCount: contents.length\n      });\n\n      if (contents.length < 2) {\n        throw new Error('一貫性分析には少なくとも2つの章が必要です');\n      }\n\n      // 統合記憶システムからテーマ履歴を取得\n      const themeHistory =...",
+      "promptLength": 279,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 710,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n            error: error instanceof Error ? error.message : String(error)\n          });\n          return { chapterIndex: index, summary:",
+      "promptLength": 140,
+      "expectedOutput": "ThemeConsistencyAnalysis",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 1811,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の章から、物語上重要かつ将来の章でも覚えておくべきイベントを抽出してください。\n特に：\n- キャラクター間の重要な対話、対立、約束\n- 警告やルール違反とその結果\n- 場所に関連する特別な出来事\n- キャラクターが受けた重要な教訓\n- 初めて起きた出来事やキャラクターの重要な決断\n\n章の内容:\n${content.substring(0, 5000)}...\n\nJSON形式で返却してください。...",
+      "promptLength": 435,
+      "expectedOutput": "Chapter",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 1897,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "テーマと物語要素の関連性分析\n\nテーマ: ${theme}\n物語要素: ${elementType}\n文脈: ${context}\n\n以下の項目について分析してください：\n1. このテーマとこの物語要素の関連性（0-10のスケール）\n2. この物語要素を通じてテーマをより強く表現するための具体的な提案（3つ）\n3. この組み合わせから得られる象徴的な意味や可能性\n\nJSONフォーマットで結果を返し...",
+      "promptLength": 208,
+      "expectedOutput": "ThemeElementResonance",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2064,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "以下の小説で使用されている主要な象徴とモチーフに基づいて、イメージの活用と発展に関する提案を行ってください。\n\n主要な象徴: ${topSymbols}\n繰り返されるモチーフ: ${topMotifs}\n\nこれらの象徴とモチーフをより効果的に活用するための提案を3つ示してください。\n各提案は具体的かつ実行可能なものにしてください。\n\n提案を配列形式で出力してください:\n[",
+      "promptLength": 187,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2139,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": ", {\n        chaptersCount: contents.length\n      });\n\n      if (contents.length === 0) {\n        throw new Error('モチーフ追跡には少なくとも1つの章が必要です');\n      }\n\n      // 統合記憶システムからモチーフ関連情報を取得\n      const motifCon...",
+      "promptLength": 285,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+      "line": 2336,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "章 ${chapterIndex + 1}: 出現回数=${analysis.occurrenceCount}, 重要度=${analysis.significance}, 使用方法=${analysis.usage}",
+      "promptLength": 109,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 234,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの一貫性と行動の妥当性を評価する専門家です。\r\n以下のキャラクター情報と提案された行動が、キャラクターの性格や過去の行動と一貫しているかを分析してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n性格特性: ${character....",
+      "promptLength": 226,
+      "expectedOutput": "ValidationResult",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 316,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの行動の一貫性を評価する専門家です。\r\n以下のキャラクターの過去の行動パターンと提案された新しい行動の一貫性を評価してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n\r\n## 過去の行動パターン\r\n${this.formatCha...",
+      "promptLength": 382,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 234,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの一貫性と行動の妥当性を評価する専門家です。\r\n以下のキャラクター情報と提案された行動が、キャラクターの性格や過去の行動と一貫しているかを分析してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n性格特性: ${character....",
+      "promptLength": 226,
+      "expectedOutput": "ValidationResult",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 316,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの行動の一貫性を評価する専門家です。\r\n以下のキャラクターの過去の行動パターンと提案された新しい行動の一貫性を評価してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n\r\n## 過去の行動パターン\r\n${this.formatCha...",
+      "promptLength": 382,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 234,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの一貫性と行動の妥当性を評価する専門家です。\r\n以下のキャラクター情報と提案された行動が、キャラクターの性格や過去の行動と一貫しているかを分析してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n性格特性: ${character....",
+      "promptLength": 226,
+      "expectedOutput": "ValidationResult",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\analyzers\\character-analyzer.ts",
+      "line": 316,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはキャラクターの行動の一貫性を評価する専門家です。\r\n以下のキャラクターの過去の行動パターンと提案された新しい行動の一貫性を評価してください。\r\n\r\n## キャラクター情報\r\n名前: ${character.name}\r\nタイプ: ${character.type}\r\n説明: ${character.description}\r\n\r\n## 過去の行動パターン\r\n${this.formatCha...",
+      "promptLength": 382,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 292,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。\n以下の情報に基づいて、キャラクター「${character.name}」のバックストーリーを作成してください。\n本文は250～300単語程度でまとめてください。\n\n## 世界観\n${worldDescription}\n\n## キャラクター情報\n名前: ${character.name}\nタイプ: ${character.typ...",
+      "promptLength": 276,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 445,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター名を生成する専門家です。\n以下の情報に基づいて、一つのキャラクター名を生成してください。\n\n## 世界観\n${worldDescription}\n\n## キャラクタータイプ\n${template.name ||",
+      "promptLength": 124,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 626,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター関係性を設計する専門家です。\n以下のキャラクターの情報に基づいて、最も自然で物語的に魅力的な関係性をJSON形式で出力してください。\n\n## 新キャラクター\n名前: ${character.name}\nタイプ: ${character.type}\n説明: ${character.description}\n性格特性: ${character.personalit...",
+      "promptLength": 216,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 292,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。\n以下の情報に基づいて、キャラクター「${character.name}」のバックストーリーを作成してください。\n本文は250～300単語程度でまとめてください。\n\n## 世界観\n${worldDescription}\n\n## キャラクター情報\n名前: ${character.name}\nタイプ: ${character.typ...",
+      "promptLength": 276,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 445,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター名を生成する専門家です。\n以下の情報に基づいて、一つのキャラクター名を生成してください。\n\n## 世界観\n${worldDescription}\n\n## キャラクタータイプ\n${template.name ||",
+      "promptLength": 124,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 626,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター関係性を設計する専門家です。\n以下のキャラクターの情報に基づいて、最も自然で物語的に魅力的な関係性をJSON形式で出力してください。\n\n## 新キャラクター\n名前: ${character.name}\nタイプ: ${character.type}\n説明: ${character.description}\n性格特性: ${character.personalit...",
+      "promptLength": 216,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 292,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。\n以下の情報に基づいて、キャラクター「${character.name}」のバックストーリーを作成してください。\n本文は250～300単語程度でまとめてください。\n\n## 世界観\n${worldDescription}\n\n## キャラクター情報\n名前: ${character.name}\nタイプ: ${character.typ...",
+      "promptLength": 276,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 445,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター名を生成する専門家です。\n以下の情報に基づいて、一つのキャラクター名を生成してください。\n\n## 世界観\n${worldDescription}\n\n## キャラクタータイプ\n${template.name ||",
+      "promptLength": 124,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\generators\\character-generator.ts",
+      "line": 626,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "あなたはファンタジー小説のキャラクター関係性を設計する専門家です。\n以下のキャラクターの情報に基づいて、最も自然で物語的に魅力的な関係性をJSON形式で出力してください。\n\n## 新キャラクター\n名前: ${character.name}\nタイプ: ${character.type}\n説明: ${character.description}\n性格特性: ${character.personalit...",
+      "promptLength": 216,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\utils\\character-utils.ts",
+      "line": 159,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下のキャラクターのバックストーリーから、そのキャラクターの主要な性格特性を5つ抽出してください。\r\n各特性は単語または短いフレーズ（最大3単語）で表現してください。\r\n\r\nバックストーリー:\r\n${backstory}\r\n\r\n出力形式:\r\n- 特性1\r\n- 特性2\r\n- 特性3\r\n- 特性4\r\n- 特性5",
+      "promptLength": 154,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\utils\\character-utils.ts",
+      "line": 159,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下のキャラクターのバックストーリーから、そのキャラクターの主要な性格特性を5つ抽出してください。\r\n各特性は単語または短いフレーズ（最大3単語）で表現してください。\r\n\r\nバックストーリー:\r\n${backstory}\r\n\r\n出力形式:\r\n- 特性1\r\n- 特性2\r\n- 特性3\r\n- 特性4\r\n- 特性5",
+      "promptLength": 154,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\characters\\utils\\character-utils.ts",
+      "line": 159,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下のキャラクターのバックストーリーから、そのキャラクターの主要な性格特性を5つ抽出してください。\r\n各特性は単語または短いフレーズ（最大3単語）で表現してください。\r\n\r\nバックストーリー:\r\n${backstory}\r\n\r\n出力形式:\r\n- 特性1\r\n- 特性2\r\n- 特性3\r\n- 特性4\r\n- 特性5",
+      "promptLength": 154,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\auto-generator.ts",
+      "line": 183,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "number",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\auto-generator.ts",
+      "line": 183,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "number",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\auto-generator.ts",
+      "line": 183,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "number",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 379,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "AI generated ${parsedForeshadowings.length} foreshadowings",
+      "promptLength": 58,
+      "expectedOutput": "ConsolidatedContext",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 1006,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の未解決の伏線候補から、現在のチャプター内容に基づいて解決可能または解決すべき伏線を最大${maxCount}個選んでください。\n\n【未解決伏線候補】\n${candidateInfo}\n\n【現在のチャプター内容】\n${chapterContent.substring(0, 4000)}\n\n各候補について以下を評価してください：\n- このチャプターで解決する適切性\n- チャプター内容との関連性\n...",
+      "promptLength": 379,
+      "expectedOutput": "Foreshadowing",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 379,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "AI generated ${parsedForeshadowings.length} foreshadowings",
+      "promptLength": 58,
+      "expectedOutput": "ConsolidatedContext",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 1006,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の未解決の伏線候補から、現在のチャプター内容に基づいて解決可能または解決すべき伏線を最大${maxCount}個選んでください。\n\n【未解決伏線候補】\n${candidateInfo}\n\n【現在のチャプター内容】\n${chapterContent.substring(0, 4000)}\n\n各候補について以下を評価してください：\n- このチャプターで解決する適切性\n- チャプター内容との関連性\n...",
+      "promptLength": 379,
+      "expectedOutput": "Foreshadowing",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 379,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "AI generated ${parsedForeshadowings.length} foreshadowings",
+      "promptLength": 58,
+      "expectedOutput": "ConsolidatedContext",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\engine.ts",
+      "line": 1006,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の未解決の伏線候補から、現在のチャプター内容に基づいて解決可能または解決すべき伏線を最大${maxCount}個選んでください。\n\n【未解決伏線候補】\n${candidateInfo}\n\n【現在のチャプター内容】\n${chapterContent.substring(0, 4000)}\n\n各候補について以下を評価してください：\n- このチャプターで解決する適切性\n- チャプター内容との関連性\n...",
+      "promptLength": 379,
+      "expectedOutput": "Foreshadowing",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\manager.ts",
+      "line": 435,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の伏線について、現在のチャプター内容での解決可能性を評価してください。\n\n【伏線情報】\n- 説明: ${foreshadowing.description}\n- 導入チャプター: ${foreshadowing.chapter_introduced}\n- 想定解決: ${foreshadowing.potential_resolution ||",
+      "promptLength": 175,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\manager.ts",
+      "line": 435,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の伏線について、現在のチャプター内容での解決可能性を評価してください。\n\n【伏線情報】\n- 説明: ${foreshadowing.description}\n- 導入チャプター: ${foreshadowing.chapter_introduced}\n- 想定解決: ${foreshadowing.potential_resolution ||",
+      "promptLength": 175,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\manager.ts",
+      "line": 435,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の伏線について、現在のチャプター内容での解決可能性を評価してください。\n\n【伏線情報】\n- 説明: ${foreshadowing.description}\n- 導入チャプター: ${foreshadowing.chapter_introduced}\n- 想定解決: ${foreshadowing.potential_resolution ||",
+      "promptLength": 175,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\resolution-advisor.ts",
+      "line": 408,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\resolution-advisor.ts",
+      "line": 408,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\foreshadowing\\resolution-advisor.ts",
+      "line": 408,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine\\chapter-generator.ts",
+      "line": 357,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Prompt saved successfully for chapter ${chapterNumber}",
+      "promptLength": 54,
+      "expectedOutput": "chapter",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\engine\\chapter-generator.ts",
+      "line": 357,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Prompt saved successfully for chapter ${chapterNumber}",
+      "promptLength": 54,
+      "expectedOutput": "chapter",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\engine\\chapter-generator.ts",
+      "line": 914,
+      "method": "validateApiKey",
+      "promptType": "汎用",
+      "promptText": "記憶システムに重大な問題があります: ${diagnostics.issues.join(', ')}",
+      "promptLength": 51,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine\\chapter-generator.ts",
+      "line": 357,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "Prompt saved successfully for chapter ${chapterNumber}",
+      "promptLength": 54,
+      "expectedOutput": "chapter",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 184,
+      "method": "generateChapter",
+      "promptType": "章生成",
+      "promptText": "Failed to generate chapter ${chapterNumber} in NovelGenerationEngine",
+      "promptLength": 68,
+      "expectedOutput": "GenerateChapterRequest",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 261,
+      "method": "generateChapter",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "GenerateChapterRequest",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 263,
+      "method": "generateChapter",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "GenerateChapterRequest",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 72,
+      "method": "setModelMap",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 92,
+      "method": "setModelMap",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "{\n    apiKeyValid: boolean;\n    modelInfo: any;\n    parameters: SystemParameters;\n  }",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 107,
+      "method": "validateApiKey",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "{\n    apiKeyValid: boolean;\n    modelInfo: any;\n    parameters: SystemParameters;\n  }",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 108,
+      "method": "getModelInfo",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "{\n    apiKeyValid: boolean;\n    modelInfo: any;\n    parameters: SystemParameters;\n  }",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 127,
+      "method": "validateApiKey",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "{\n    apiKeyValid: boolean;\n    modelInfo: any;\n    parameters: SystemParameters;\n    plotManagerStatus?: any;\n  }",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\engine.ts",
+      "line": 128,
+      "method": "getModelInfo",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "SystemParameters",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 195,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 198,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 248,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "INFO",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 407,
+      "method": "generateContent",
+      "promptType": "汎用",
+      "promptText": ", {\r\n            timestamp: new Date().toISOString(),\r\n            promptLength: prompt.length,\r\n            modelName\r\n        });\r\n\r\n        // モデルの取得\r\n        logger.debug(",
+      "promptLength": 175,
+      "expectedOutput": "Date",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 493,
+      "method": "generateContent",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 716,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Story",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 746,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "story",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 726,
+      "method": "generateStory",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Story",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 140,
+      "method": "setModelMap",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Record",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 195,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 198,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 467,
+      "method": "validateApiKey",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "DEBUG",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 517,
+      "method": "getModelInfo",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Record",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 195,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 198,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 407,
+      "method": "generateContent",
+      "promptType": "汎用",
+      "promptText": ", {\r\n            timestamp: new Date().toISOString(),\r\n            promptLength: prompt.length,\r\n            modelName\r\n        });\r\n\r\n        // モデルの取得\r\n        logger.debug(",
+      "promptLength": 175,
+      "expectedOutput": "Date",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 493,
+      "method": "generateContent",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 716,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "Story",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\generation\\gemini-client.ts",
+      "line": 746,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "story",
+      "outputType": "novel"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\concept-learning-manager.ts",
+      "line": 1102,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解が以下のどの段階にあるかを判断してください。\n\n章の内容:\n${chapterContent.substring(0, 5000)}...\n\n前回の学習段階: ${this.formatLearningStage(previousStage)}\n\n概念情報:\n- 名前: ${concept.name...",
+      "promptLength": 268,
+      "expectedOutput": "MISCONCEPTION",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\concept-learning-manager.ts",
+      "line": 1102,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解が以下のどの段階にあるかを判断してください。\n\n章の内容:\n${chapterContent.substring(0, 5000)}...\n\n前回の学習段階: ${this.formatLearningStage(previousStage)}\n\n概念情報:\n- 名前: ${concept.name...",
+      "promptLength": 268,
+      "expectedOutput": "MISCONCEPTION",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\concept-learning-manager.ts",
+      "line": 1102,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解が以下のどの段階にあるかを判断してください。\n\n章の内容:\n${chapterContent.substring(0, 5000)}...\n\n前回の学習段階: ${this.formatLearningStage(previousStage)}\n\n概念情報:\n- 名前: ${concept.name...",
+      "promptLength": 268,
+      "expectedOutput": "MISCONCEPTION",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\emotional-learning-integrator.ts",
+      "line": 1030,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "${operationName} failed (attempt ${retries}/${maxRetries})",
+      "promptLength": 58,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\emotional-learning-integrator.ts",
+      "line": 1030,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "${operationName} failed (attempt ${retries}/${maxRetries})",
+      "promptLength": 58,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\emotional-learning-integrator.ts",
+      "line": 1030,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "${operationName} failed (attempt ${retries}/${maxRetries})",
+      "promptLength": 58,
+      "expectedOutput": "string",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\index.ts",
+      "line": 1225,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の章内容を200〜300文字程度で簡潔に要約してください。\nストーリーの流れ、主要な出来事、キャラクターの変化、学びのポイントを含めてください。\n\n章内容:\n${truncatedContent}\n\n要約:",
+      "promptLength": 105,
+      "expectedOutput": "boolean",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\index.ts",
+      "line": 1225,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の章内容を200〜300文字程度で簡潔に要約してください。\nストーリーの流れ、主要な出来事、キャラクターの変化、学びのポイントを含めてください。\n\n章内容:\n${truncatedContent}\n\n要約:",
+      "promptLength": 105,
+      "expectedOutput": "boolean",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\learning-journey\\index.ts",
+      "line": 1225,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "以下の章内容を200〜300文字程度で簡潔に要約してください。\nストーリーの流れ、主要な出来事、キャラクターの変化、学びのポイントを含めてください。\n\n章内容:\n${truncatedContent}\n\n要約:",
+      "promptLength": 105,
+      "expectedOutput": "boolean",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\memory\\text-analyzer-service.ts",
+      "line": 335,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下の物語テキストから、登場する各キャラクターの状態を分析してください。\r\n指定されたキャラクターごとに以下を分析してください:\r\n1. 感情状態（喜び、悲しみ、怒り、恐怖、驚き、平静など）\r\n2. 発展や変化（成長、決意、気づき、変化など）\r\n3. 他のキャラクターとの関係性（可能であれば）\r\n\r\nキャラクター: ${characterNames.join(",
+      "promptLength": 181,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\memory\\text-analyzer-service.ts",
+      "line": 335,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下の物語テキストから、登場する各キャラクターの状態を分析してください。\r\n指定されたキャラクターごとに以下を分析してください:\r\n1. 感情状態（喜び、悲しみ、怒り、恐怖、驚き、平静など）\r\n2. 発展や変化（成長、決意、気づき、変化など）\r\n3. 他のキャラクターとの関係性（可能であれば）\r\n\r\nキャラクター: ${characterNames.join(",
+      "promptLength": 181,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\memory\\text-analyzer-service.ts",
+      "line": 335,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": "以下の物語テキストから、登場する各キャラクターの状態を分析してください。\r\n指定されたキャラクターごとに以下を分析してください:\r\n1. 感情状態（喜び、悲しみ、怒り、恐怖、驚き、平静など）\r\n2. 発展や変化（成長、決意、気づき、変化など）\r\n3. 他のキャラクターとの関係性（可能であれば）\r\n\r\nキャラクター: ${characterNames.join(",
+      "promptLength": 181,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\checker.ts",
+      "line": 768,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次の小説の章と、前章の内容を分析し、継続性と整合性をチェックしてください。\n\n【前章の内容（第${chapterNumber - 1}章）】\n${truncatedPrevious}\n\n【現在の章の内容（第${chapterNumber}章）】\n${truncatedCurrent}\n\n以下の点を特に確認してください：\n1. 前章の最後の状況と現在の章の冒頭が自然につながっているか\n2. 前章で始...",
+      "promptLength": 294,
+      "expectedOutput": "Array",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\checker.ts",
+      "line": 768,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次の小説の章と、前章の内容を分析し、継続性と整合性をチェックしてください。\n\n【前章の内容（第${chapterNumber - 1}章）】\n${truncatedPrevious}\n\n【現在の章の内容（第${chapterNumber}章）】\n${truncatedCurrent}\n\n以下の点を特に確認してください：\n1. 前章の最後の状況と現在の章の冒頭が自然につながっているか\n2. 前章で始...",
+      "promptLength": 294,
+      "expectedOutput": "Array",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\checker.ts",
+      "line": 768,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "次の小説の章と、前章の内容を分析し、継続性と整合性をチェックしてください。\n\n【前章の内容（第${chapterNumber - 1}章）】\n${truncatedPrevious}\n\n【現在の章の内容（第${chapterNumber}章）】\n${truncatedCurrent}\n\n以下の点を特に確認してください：\n1. 前章の最後の状況と現在の章の冒頭が自然につながっているか\n2. 前章で始...",
+      "promptLength": 294,
+      "expectedOutput": "Array",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\index.ts",
+      "line": 397,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\index.ts",
+      "line": 397,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\index.ts",
+      "line": 397,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "不明",
+      "outputType": "unknown"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 632,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\n                return fallbackValue;\n            }\n\n            return await operation();\n        } catch (error) {\n            logger.error(",
+      "promptLength": 145,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 671,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 717,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 773,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "Successfully generated ${suggestions.length} improvement suggestions for section ${section.structure.title}",
+      "promptLength": 107,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 632,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\n                return fallbackValue;\n            }\n\n            return await operation();\n        } catch (error) {\n            logger.error(",
+      "promptLength": 145,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 671,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 717,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 773,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "Successfully generated ${suggestions.length} improvement suggestions for section ${section.structure.title}",
+      "promptLength": 107,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 632,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": ");\n                return fallbackValue;\n            }\n\n            return await operation();\n        } catch (error) {\n            logger.error(",
+      "promptLength": 145,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 671,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 717,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-analyzer.ts",
+      "line": 773,
+      "method": "generateText",
+      "promptType": "生成",
+      "promptText": "Successfully generated ${suggestions.length} improvement suggestions for section ${section.structure.title}",
+      "promptLength": 107,
+      "expectedOutput": "String",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 165,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」の重要シーンを3-5つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhase}\r\n...",
+      "promptLength": 550,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 264,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」のターニングポイントを2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhas...",
+      "promptLength": 532,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 349,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${section.structure.title}」の物語スレッド（プロットライン）を2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${theme}\r\n- 主要概念: ${learning.mainConcept}\r\n- 学習段階: ${learning.primaryLearningStage}\r\n...",
+      "promptLength": 411,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 442,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${structure.title}」の伏線を2-4つ設計してください。\r\n${hasNextSection ?",
+      "promptLength": 92,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 685,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "TensionPoint",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 853,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ").join('\\n')}\r\n\r\nキャラクター設計には以下の要素を含めてください:\r\n1. キャラクターの役割: 各キャラクターの学習における役割と物語機能\r\n2. 関係性の発展: 2-3組のキャラクター間の関係性の変化\r\n3. 個別キャラクターの変容: 各キャラクターの内的変化と成長\r\n\r\n結果はJSON形式で、次のフォーマットで出力してください:\r\n{\r\n  \"characterRoles\":...",
+      "promptLength": 742,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 1005,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "- ${scene.description} (位置: ${scene.relativePosition})",
+      "promptLength": 54,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 165,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」の重要シーンを3-5つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhase}\r\n...",
+      "promptLength": 550,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 264,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」のターニングポイントを2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhas...",
+      "promptLength": 532,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 349,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${section.structure.title}」の物語スレッド（プロットライン）を2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${theme}\r\n- 主要概念: ${learning.mainConcept}\r\n- 学習段階: ${learning.primaryLearningStage}\r\n...",
+      "promptLength": 411,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 442,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${structure.title}」の伏線を2-4つ設計してください。\r\n${hasNextSection ?",
+      "promptLength": 92,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 685,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "TensionPoint",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 853,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ").join('\\n')}\r\n\r\nキャラクター設計には以下の要素を含めてください:\r\n1. キャラクターの役割: 各キャラクターの学習における役割と物語機能\r\n2. 関係性の発展: 2-3組のキャラクター間の関係性の変化\r\n3. 個別キャラクターの変容: 各キャラクターの内的変化と成長\r\n\r\n結果はJSON形式で、次のフォーマットで出力してください:\r\n{\r\n  \"characterRoles\":...",
+      "promptLength": 742,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 1005,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "- ${scene.description} (位置: ${scene.relativePosition})",
+      "promptLength": 54,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 165,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」の重要シーンを3-5つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhase}\r\n...",
+      "promptLength": 550,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 264,
+      "method": "generateText",
+      "promptType": "章生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなるセクション「${section.structure.title}」のターニングポイントを2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${section.structure.theme}\r\n- 物語フェーズ: ${section.structure.narrativePhas...",
+      "promptLength": 532,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 349,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${section.structure.title}」の物語スレッド（プロットライン）を2-3つ設計してください。\r\n\r\n【セクション情報】\r\n- テーマ: ${theme}\r\n- 主要概念: ${learning.mainConcept}\r\n- 学習段階: ${learning.primaryLearningStage}\r\n...",
+      "promptLength": 411,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 442,
+      "method": "generateText",
+      "promptType": "ストーリー生成",
+      "promptText": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${structure.title}」の伏線を2-4つ設計してください。\r\n${hasNextSection ?",
+      "promptLength": 92,
+      "expectedOutput": "SectionPlot",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 685,
+      "method": "generateText",
+      "promptType": "unknown",
+      "promptText": "不明",
+      "promptLength": 0,
+      "expectedOutput": "TensionPoint",
+      "outputType": "type"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 853,
+      "method": "generateText",
+      "promptType": "キャラクター生成",
+      "promptText": ").join('\\n')}\r\n\r\nキャラクター設計には以下の要素を含めてください:\r\n1. キャラクターの役割: 各キャラクターの学習における役割と物語機能\r\n2. 関係性の発展: 2-3組のキャラクター間の関係性の変化\r\n3. 個別キャラクターの変容: 各キャラクターの内的変化と成長\r\n\r\n結果はJSON形式で、次のフォーマットで出力してください:\r\n{\r\n  \"characterRoles\":...",
+      "promptLength": 742,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    },
+    {
+      "file": "src\\lib\\plot\\section\\section-designer.ts",
+      "line": 1005,
+      "method": "generateText",
+      "promptType": "汎用",
+      "promptText": "- ${scene.description} (位置: ${scene.relativePosition})",
+      "promptLength": 54,
+      "expectedOutput": "JSON",
+      "outputType": "json"
+    }
+  ],
+  "duplicates": {
+    "exact": [
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\foreshadowing\\manager.ts:435",
+          "src\\lib\\foreshadowing\\manager.ts:435",
+          "src\\lib\\foreshadowing\\manager.ts:435"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\adapters\\gemini-adapter.ts:104",
+          "src\\lib\\analysis\\adapters\\gemini-adapter.ts:104"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\adapters\\gemini-adapter.ts:166",
+          "src\\lib\\analysis\\adapters\\gemini-adapter.ts:166"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:259",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:259"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:529",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:529"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:719",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:719"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:901",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:901"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:1148",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:1148"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1186",
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1186"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1580",
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1580"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:450",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:450"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:551",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:551"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:633",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:633"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:717",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:717"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:801",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:801"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:182",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:182"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:290",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:290"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:354",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:354"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:791",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:791"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:881",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:881"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:264",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:264"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:342",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:342"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:401",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:401"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:464",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:464"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:511",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:511"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts:218",
+          "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts:218",
+          "src\\lib\\analysis\\services\\narrative\\literary-comparison-system.ts:218"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452",
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452",
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111",
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111",
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:539",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:539"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:787",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:787"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:863",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:863"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:167",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:167"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:395",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:395"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:461",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:461"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:602",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:602"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:688",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:688"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:710",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:710"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1811",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1811"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1897",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1897"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2064",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2064"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2139",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2139"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2336",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2336"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:292",
+          "src\\lib\\characters\\generators\\character-generator.ts:292",
+          "src\\lib\\characters\\generators\\character-generator.ts:292"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:445",
+          "src\\lib\\characters\\generators\\character-generator.ts:445",
+          "src\\lib\\characters\\generators\\character-generator.ts:445"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:626",
+          "src\\lib\\characters\\generators\\character-generator.ts:626",
+          "src\\lib\\characters\\generators\\character-generator.ts:626"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\characters\\utils\\character-utils.ts:159",
+          "src\\lib\\characters\\utils\\character-utils.ts:159",
+          "src\\lib\\characters\\utils\\character-utils.ts:159"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\foreshadowing\\auto-generator.ts:183",
+          "src\\lib\\foreshadowing\\auto-generator.ts:183",
+          "src\\lib\\foreshadowing\\auto-generator.ts:183"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\foreshadowing\\engine.ts:379",
+          "src\\lib\\foreshadowing\\engine.ts:379",
+          "src\\lib\\foreshadowing\\engine.ts:379"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\foreshadowing\\engine.ts:1006",
+          "src\\lib\\foreshadowing\\engine.ts:1006",
+          "src\\lib\\foreshadowing\\engine.ts:1006"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\foreshadowing\\resolution-advisor.ts:408",
+          "src\\lib\\foreshadowing\\resolution-advisor.ts:408",
+          "src\\lib\\foreshadowing\\resolution-advisor.ts:408"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357",
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357",
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:195",
+          "src\\lib\\generation\\gemini-client.ts:195",
+          "src\\lib\\generation\\gemini-client.ts:195"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:198",
+          "src\\lib\\generation\\gemini-client.ts:198",
+          "src\\lib\\generation\\gemini-client.ts:198"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:407",
+          "src\\lib\\generation\\gemini-client.ts:407"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:493",
+          "src\\lib\\generation\\gemini-client.ts:493"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:716",
+          "src\\lib\\generation\\gemini-client.ts:716"
+        ]
+      },
+      {
+        "count": 2,
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:746",
+          "src\\lib\\generation\\gemini-client.ts:746"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102",
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102",
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030",
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030",
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\learning-journey\\index.ts:1225",
+          "src\\lib\\learning-journey\\index.ts:1225",
+          "src\\lib\\learning-journey\\index.ts:1225"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\memory\\text-analyzer-service.ts:335",
+          "src\\lib\\memory\\text-analyzer-service.ts:335",
+          "src\\lib\\memory\\text-analyzer-service.ts:335"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\checker.ts:768",
+          "src\\lib\\plot\\checker.ts:768",
+          "src\\lib\\plot\\checker.ts:768"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\index.ts:397",
+          "src\\lib\\plot\\section\\index.ts:397",
+          "src\\lib\\plot\\section\\index.ts:397"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:632",
+          "src\\lib\\plot\\section\\section-analyzer.ts:632",
+          "src\\lib\\plot\\section\\section-analyzer.ts:632"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:671",
+          "src\\lib\\plot\\section\\section-analyzer.ts:671",
+          "src\\lib\\plot\\section\\section-analyzer.ts:671"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:717",
+          "src\\lib\\plot\\section\\section-analyzer.ts:717",
+          "src\\lib\\plot\\section\\section-analyzer.ts:717"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:773",
+          "src\\lib\\plot\\section\\section-analyzer.ts:773",
+          "src\\lib\\plot\\section\\section-analyzer.ts:773"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:165",
+          "src\\lib\\plot\\section\\section-designer.ts:165",
+          "src\\lib\\plot\\section\\section-designer.ts:165"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:264",
+          "src\\lib\\plot\\section\\section-designer.ts:264",
+          "src\\lib\\plot\\section\\section-designer.ts:264"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:349",
+          "src\\lib\\plot\\section\\section-designer.ts:349",
+          "src\\lib\\plot\\section\\section-designer.ts:349"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:442",
+          "src\\lib\\plot\\section\\section-designer.ts:442",
+          "src\\lib\\plot\\section\\section-designer.ts:442"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:685",
+          "src\\lib\\plot\\section\\section-designer.ts:685",
+          "src\\lib\\plot\\section\\section-designer.ts:685"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:853",
+          "src\\lib\\plot\\section\\section-designer.ts:853",
+          "src\\lib\\plot\\section\\section-designer.ts:853"
+        ]
+      },
+      {
+        "count": 3,
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:1005",
+          "src\\lib\\plot\\section\\section-designer.ts:1005",
+          "src\\lib\\plot\\section\\section-designer.ts:1005"
+        ]
+      }
+    ],
+    "promptSimilar": [
+      {
+        "count": 3,
+        "promptPreview": "バッチ生成完了: ${Object.keys(result).length}人のキャラクター処理済み...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:390"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": ", { error });\r\n            return [];\r\n        }\r\n...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:689"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": ", { error });\r\n            return this.generateFal...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:716"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": ", { error });\r\n            return this.generateFal...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750",
+          "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts:750"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ": ''}\r\n\r\n## 作品情報\r\n- ジャンル: ${genre}\r\n- テーマ: ${theme...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:259",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:259"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは日本語文章の構造に詳しい編集者です。以下の主語パターン分析結果をもとに、文章の改善提案を行っ...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:719",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:719"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは小説の文構造の専門家です。以下の文体分析結果とコンテキスト情報に基づいて、文構造の改善提案を...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:901",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:901"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなは表現の多様化を専門とするエディターです。以下の繰り返し使用されている表現に対して、代替表現を提...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:1148",
+          "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts:1148"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは物語テンションとペーシングの専門家です。以下の情報に基づいて、具体的なテンション最適化の提案...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1186",
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1186"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなは物語のテンション設計に関する専門家です。次の章のテンション値に対する調整を提案してください。\r...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1580",
+          "src\\lib\\analysis\\enhancement\\tension\\tension-optimization-service.ts:1580"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ").join('\\n')}\r\n\r\n## コンテキスト情報\r\n- 章番号: ${request.cha...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:450",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:450"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは文学的象徴と隠喩の専門家です。以下のテーマに対して、物語で使用できる効果的な象徴要素を提案し...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:633",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:633"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは物語の伏線と構造の専門家です。以下のテキストを分析し、将来の伏線展開のために活用できる機会を...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:717",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:717"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "あなたは文学的技法の専門家です。以下のテーマに対して、効果的に表現するための文学的技法を提案してくだ...",
+        "locations": [
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:801",
+          "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts:801"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "Using cached quality metrics for chapter ${chapter...",
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:182",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:182"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "Using cached character appearances for chapter ${c...",
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:290",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:290"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ", {\r\n        error: error instanceof Error ? error...",
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:354",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:354"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ");\r\n    return {\r\n      parsedContent: content,\r\n ...",
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:791",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:791"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ");\r\n\r\n      // シーン抽出のプロンプト\r\n      const scenePromp...",
+        "locations": [
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:881",
+          "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts:881"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説の章から、各キャラクターの成長要素を詳細に分析してください：\r\n\r\n**登場キャラクター*...",
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:264",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:264"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説の章に登場するキャラクターとその活動を詳細に分析してください：\r\n\r\n${content....",
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:342",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:342"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説の章から、登場キャラクターの心理状態を詳細に分析してください：\r\n\r\n${content....",
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:401",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:401"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説の章から、キャラクター間の関係性とその変化を分析してください：\r\n\r\n${content....",
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:464",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:464"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説の章で、キャラクター「${characterNames}」に起きた重要な成長イベントを特定...",
+        "locations": [
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:511",
+          "src\\lib\\analysis\\services\\character\\character-analysis-service.ts:511"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "次のシーン構造分析に基づいて、第${chapterNumber}章に最適なシーン構成を3-4シーンで...",
+        "locations": [
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452",
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452",
+          "src\\lib\\analysis\\services\\narrative\\scene-structure-optimizer.ts:452"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下の小説の章を「読者の視点」から分析してください。\r\n\r\n前章：${recentContent.s...",
+        "locations": [
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111",
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111",
+          "src\\lib\\analysis\\services\\reader\\reader-experience-analysis-service.ts:111"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の物語テキストから、特徴的な表現や繰り返し使用されているフレーズを抽出してください。\r\n以下のよ...",
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:539",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:539"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説テキストの文体を分析し、以下の特性を評価してください：\r\n\r\n1. 平均文長（文字数）\r\n...",
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:787",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:787"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説テキストから、繰り返し使用されている表現パターンを抽出してください。\r\n表現パターンを以下...",
+        "locations": [
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:863",
+          "src\\lib\\analysis\\services\\style\\style-analysis-service.ts:863"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "),\n          { foreshadowing: [] },\n          'get...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:395",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:395"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "),\n        { \n          state: 'unknown', \n       ...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:461",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:461"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ", {\n        chaptersCount: contents.length\n      }...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:688",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:688"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ", {\n            error: error instanceof Error ? er...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:710",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:710"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の章から、物語上重要かつ将来の章でも覚えておくべきイベントを抽出してください。\n特に：\n- キャ...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1811",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1811"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "テーマと物語要素の関連性分析\n\nテーマ: ${theme}\n物語要素: ${elementType}...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1897",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:1897"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "以下の小説で使用されている主要な象徴とモチーフに基づいて、イメージの活用と発展に関する提案を行ってく...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2064",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2064"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ", {\n        chaptersCount: contents.length\n      }...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2139",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2139"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": "章 ${chapterIndex + 1}: 出現回数=${analysis.occurrenceC...",
+        "locations": [
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2336",
+          "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts:2336"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたはキャラクターの一貫性と行動の妥当性を評価する専門家です。\r\n以下のキャラクター情報と提案され...",
+        "locations": [
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:234"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたはキャラクターの行動の一貫性を評価する専門家です。\r\n以下のキャラクターの過去の行動パターンと...",
+        "locations": [
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316",
+          "src\\lib\\characters\\analyzers\\character-analyzer.ts:316"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたはファンタジー小説のキャラクターの背景設定を作成する専門家です。\n以下の情報に基づいて、キャラ...",
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:292",
+          "src\\lib\\characters\\generators\\character-generator.ts:292",
+          "src\\lib\\characters\\generators\\character-generator.ts:292"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたはファンタジー小説のキャラクター名を生成する専門家です。\n以下の情報に基づいて、一つのキャラク...",
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:445",
+          "src\\lib\\characters\\generators\\character-generator.ts:445",
+          "src\\lib\\characters\\generators\\character-generator.ts:445"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたはファンタジー小説のキャラクター関係性を設計する専門家です。\n以下のキャラクターの情報に基づい...",
+        "locations": [
+          "src\\lib\\characters\\generators\\character-generator.ts:626",
+          "src\\lib\\characters\\generators\\character-generator.ts:626",
+          "src\\lib\\characters\\generators\\character-generator.ts:626"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下のキャラクターのバックストーリーから、そのキャラクターの主要な性格特性を5つ抽出してください。\r...",
+        "locations": [
+          "src\\lib\\characters\\utils\\character-utils.ts:159",
+          "src\\lib\\characters\\utils\\character-utils.ts:159",
+          "src\\lib\\characters\\utils\\character-utils.ts:159"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "AI generated ${parsedForeshadowings.length} foresh...",
+        "locations": [
+          "src\\lib\\foreshadowing\\engine.ts:379",
+          "src\\lib\\foreshadowing\\engine.ts:379",
+          "src\\lib\\foreshadowing\\engine.ts:379"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下の未解決の伏線候補から、現在のチャプター内容に基づいて解決可能または解決すべき伏線を最大${ma...",
+        "locations": [
+          "src\\lib\\foreshadowing\\engine.ts:1006",
+          "src\\lib\\foreshadowing\\engine.ts:1006",
+          "src\\lib\\foreshadowing\\engine.ts:1006"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下の伏線について、現在のチャプター内容での解決可能性を評価してください。\n\n【伏線情報】\n- 説明...",
+        "locations": [
+          "src\\lib\\foreshadowing\\manager.ts:435",
+          "src\\lib\\foreshadowing\\manager.ts:435",
+          "src\\lib\\foreshadowing\\manager.ts:435"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "Prompt saved successfully for chapter ${chapterNum...",
+        "locations": [
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357",
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357",
+          "src\\lib\\generation\\engine\\chapter-generator.ts:357"
+        ]
+      },
+      {
+        "count": 2,
+        "promptPreview": ", {\r\n            timestamp: new Date().toISOString...",
+        "locations": [
+          "src\\lib\\generation\\gemini-client.ts:407",
+          "src\\lib\\generation\\gemini-client.ts:407"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたは学習段階検出の専門家です。与えられた章の内容から、概念「${conceptName}」の理解...",
+        "locations": [
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102",
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102",
+          "src\\lib\\learning-journey\\concept-learning-manager.ts:1102"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "${operationName} failed (attempt ${retries}/${maxR...",
+        "locations": [
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030",
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030",
+          "src\\lib\\learning-journey\\emotional-learning-integrator.ts:1030"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下の章内容を200〜300文字程度で簡潔に要約してください。\nストーリーの流れ、主要な出来事、キャ...",
+        "locations": [
+          "src\\lib\\learning-journey\\index.ts:1225",
+          "src\\lib\\learning-journey\\index.ts:1225",
+          "src\\lib\\learning-journey\\index.ts:1225"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "以下の物語テキストから、登場する各キャラクターの状態を分析してください。\r\n指定されたキャラクターご...",
+        "locations": [
+          "src\\lib\\memory\\text-analyzer-service.ts:335",
+          "src\\lib\\memory\\text-analyzer-service.ts:335",
+          "src\\lib\\memory\\text-analyzer-service.ts:335"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "次の小説の章と、前章の内容を分析し、継続性と整合性をチェックしてください。\n\n【前章の内容（第${c...",
+        "locations": [
+          "src\\lib\\plot\\checker.ts:768",
+          "src\\lib\\plot\\checker.ts:768",
+          "src\\lib\\plot\\checker.ts:768"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": ");\n                return fallbackValue;\n         ...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:632",
+          "src\\lib\\plot\\section\\section-analyzer.ts:632",
+          "src\\lib\\plot\\section\\section-analyzer.ts:632"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "Successfully generated ${suggestions.length} impro...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-analyzer.ts:773",
+          "src\\lib\\plot\\section\\section-analyzer.ts:773",
+          "src\\lib\\plot\\section\\section-analyzer.ts:773"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなる...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:165",
+          "src\\lib\\plot\\section\\section-designer.ts:165",
+          "src\\lib\\plot\\section\\section-designer.ts:165"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、${chapterCount}章からなる...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:264",
+          "src\\lib\\plot\\section\\section-designer.ts:264",
+          "src\\lib\\plot\\section\\section-designer.ts:264"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${section.stru...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:349",
+          "src\\lib\\plot\\section\\section-designer.ts:349",
+          "src\\lib\\plot\\section\\section-designer.ts:349"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "あなたは物語構造設計の専門家です。\r\n以下の情報に基づいて、セクション「${structure.ti...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:442",
+          "src\\lib\\plot\\section\\section-designer.ts:442",
+          "src\\lib\\plot\\section\\section-designer.ts:442"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": ").join('\\n')}\r\n\r\nキャラクター設計には以下の要素を含めてください:\r\n1. キャラク...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:853",
+          "src\\lib\\plot\\section\\section-designer.ts:853",
+          "src\\lib\\plot\\section\\section-designer.ts:853"
+        ]
+      },
+      {
+        "count": 3,
+        "promptPreview": "- ${scene.description} (位置: ${scene.relativePositi...",
+        "locations": [
+          "src\\lib\\plot\\section\\section-designer.ts:1005",
+          "src\\lib\\plot\\section\\section-designer.ts:1005",
+          "src\\lib\\plot\\section\\section-designer.ts:1005"
+        ]
+      }
+    ]
+  },
+  "statistics": {
+    "topMethods": [
+      [
+        "generateText",
+        187
+      ],
+      [
+        "generateContent",
+        16
+      ],
+      [
+        "generateChapter",
+        4
+      ],
+      [
+        "validateApiKey",
+        4
+      ],
+      [
+        "setModelMap",
+        3
+      ]
+    ],
+    "topPromptTypes": [
+      [
+        "章生成",
+        78
+      ],
+      [
+        "unknown",
+        61
+      ],
+      [
+        "キャラクター生成",
+        32
+      ],
+      [
+        "汎用",
+        23
+      ],
+      [
+        "ストーリー生成",
+        12
+      ]
+    ],
+    "busyFiles": [
+      [
+        "src\\lib\\analysis\\services\\theme\\theme-analysis-service.ts",
+        22
+      ],
+      [
+        "src\\lib\\plot\\section\\section-designer.ts",
+        21
+      ],
+      [
+        "src\\lib\\generation\\gemini-client.ts",
+        19
+      ],
+      [
+        "src\\lib\\analysis\\enhancement\\character\\character-depth-service.ts",
+        12
+      ],
+      [
+        "src\\lib\\plot\\section\\section-analyzer.ts",
+        12
+      ],
+      [
+        "src\\lib\\analysis\\enhancement\\style\\style-optimization-service.ts",
+        10
+      ],
+      [
+        "src\\lib\\analysis\\enhancement\\theme\\theme-enhancement-service.ts",
+        10
+      ],
+      [
+        "src\\lib\\analysis\\services\\chapter\\chapter-analysis-service.ts",
+        10
+      ],
+      [
+        "src\\lib\\analysis\\services\\character\\character-analysis-service.ts",
+        10
+      ],
+      [
+        "src\\lib\\characters\\generators\\character-generator.ts",
+        9
+      ]
+    ]
+  }
+}

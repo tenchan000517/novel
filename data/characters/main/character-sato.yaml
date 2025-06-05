@@ -38,8 +38,7 @@ appearance:
     - 寝ぐせがついていることが多い
   clothingStyle: カジュアルでシンプルな服装。黒やネイビーのTシャツとジーンズが定番。
 backstory:
-  summary: >-
-    中学時代からプログラミングに興味を持ち、独学で様々な言語を習得。大学ではコンピュータサイエンスを専攻しながら、複数のプログラミングコンテストで入賞。大手IT企業からの内定も得たが、自分の技術を活かせる小さなチームでの仕事に魅力を感じている。
+  summary: 中学時代からプログラミングに興味を持ち、独学で様々な言語を習得。大学ではコンピュータサイエンスを専攻しながら、複数のプログラミングコンテストで入賞。大手IT企業からの内定も得たが、自分の技術を活かせる小さなチームでの仕事に魅力を感じている。
   significantEvents:
     - 中学3年生の時に初めて自作アプリをリリース
     - 高校時代に全国規模のプログラミングコンテストで3位入賞
@@ -48,199 +47,9 @@ backstory:
   origin: 関東の地方都市
   trauma:
     - 中学時代のいじめ経験（技術に没頭するきっかけになった）
-  detailedHistory: >-
-    両親は共働きの一般家庭。父親はSE、母親は事務職。父の影響でPCに触れる機会が多く、中学生の頃から独学でプログラミングを始める。技術系の話題で盛り上がる友人が少なく、オンラインコミュニティに居場所を見つける。高校時代にはすでに小規模な受託開発を請け負うほどのスキルを持ち、大学ではさらに技術を磨く。最新の技術トレンドに敏感で、特にA技術には早期から取り組み、深い知識を持つ。
+  detailedHistory: 両親は共働きの一般家庭。父親はSE、母親は事務職。父の影響でPCに触れる機会が多く、中学生の頃から独学でプログラミングを始める。技術系の話題で盛り上がる友人が少なく、オンラインコミュニティに居場所を見つける。高校時代にはすでに小規模な受託開発を請け負うほどのスキルを持ち、大学ではさらに技術を磨く。最新の技術トレンドに敏感で、特にA技術には早期から取り組み、深い知識を持つ。
   motivations: 革新的な技術で社会に価値を提供すること。技術的な挑戦を通じて自分の限界を試したい。
   secrets: 実は社会性に不安を持っており、技術に逃げているところがある
-state:
-  isActive: false
-  emotionalState: NEUTRAL
-  developmentStage: 0
-  lastAppearance: 12
-  parameters:
-    - id: param-technical-skill
-      name: 技術力
-      description: 専門的な技術やスキルを習得し、活用する能力
-      category: TECHNICAL
-      tags:
-        - 技術
-        - 専門
-        - スキル
-      value: 100
-      growth: 0
-    - id: param-teamwork
-      name: チームワーク
-      description: チームの一員として協力し、貢献する能力
-      category: SOCIAL
-      tags:
-        - 協力
-        - 貢献
-        - 調和
-      value: 81
-      growth: 0
-    - id: param-business-understanding
-      name: ビジネス理解
-      description: ビジネスの仕組みや目的、戦略を理解する能力
-      category: BUSINESS
-      tags:
-        - 理解
-        - ビジネス
-        - 目的
-      value: 0
-      growth: 0
-    - id: param-communication
-      name: コミュニケーション能力
-      description: 自分の考えを効果的に伝え、他者の意見を理解する力
-      category: SOCIAL
-      tags:
-        - 対話
-        - 表現
-        - 理解
-      value: 0
-      growth: 0
-    - id: param-leadership
-      name: リーダーシップ
-      description: チームを導き、方向性を示し、メンバーの能力を引き出す力
-      category: SOCIAL
-      tags:
-        - リーダー
-        - 組織
-        - チーム
-      value: 0
-      growth: 0
-    - id: param-strategic-thinking
-      name: 戦略的思考
-      description: 長期的視点で全体像を捉え、計画を立てる能力
-      category: MENTAL
-      tags:
-        - 戦略
-        - 計画
-        - 思考
-      value: 0
-      growth: 0
-    - id: param-technical-vision
-      name: 技術的ビジョン
-      description: 技術の将来性や可能性を見通す能力
-      category: TECHNICAL
-      tags:
-        - 将来
-        - 技術
-        - 展望
-      value: 36
-      growth: 0
-    - id: param-resource-management
-      name: リソース管理
-      description: 人材、時間、予算などのリソースを効果的に配分・管理する能力
-      category: MANAGEMENT
-      tags:
-        - 管理
-        - 配分
-        - 効率
-      value: 0
-      growth: 0
-  skills:
-    - 不明なスキル (6章)
-    - 不明なスキル (1章)
-    - 不明なスキル (3章)
-    - 不明なスキル (8章)
-    - 不明なスキル (9章)
-    - 不明なスキル (5章)
-    - 不明なスキル (2章)
-    - 不明なスキル (4章)
-    - 不明なスキル (7章)
-    - 不明なスキル (11章)
-  activeGrowthPlanId: growth-plan-sato
-  lastStateChange:
-    type: TRANSFORMATION
-    chapterNumber: 5
-    description: 山田哲也が誠たちを裏切り、敵対する存在へと変貌する。温和な笑顔は消え、冷酷で底知れない闇を宿した表情となる。
-  location: 健太のアパート
-  isDeceased: true
-  skill:
-    - skillId: skill-a-technology-development
-      level: 1
-      proficiency: 0
-      acquired: 2025-05-19T07:39:11.598Z
-    - skillId: skill-prototype-creation
-      level: 1
-      proficiency: 0
-      acquired: 2025-05-19T07:39:11.674Z
-  injuries:
-    - id: injury-1747223536195-1gi1d
-      description: 高橋が佐藤を庇い、銃で撃たれる。
-      severity: MODERATE
-      chapter: 4
-      isHealed: false
-      timestamp: 2025-05-14T11:52:16.195Z
-    - id: injury-1747310023312-g1lco
-      description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
-      severity: MODERATE
-      chapter: 4
-      isHealed: false
-      timestamp: 2025-05-15T11:53:43.312Z
-    - id: injury-1747312329042-88s1f
-      description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
-      severity: MODERATE
-      chapter: 8
-      isHealed: false
-      timestamp: 2025-05-15T12:32:09.042Z
-  health: 55
-  transformations:
-    - type: UNKNOWN
-      description: ロボットが破壊される。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-14T13:00:43.216Z
-    - type: UNKNOWN
-      description: 高橋が、これまでの「正しい答え」を求める姿勢から、自ら問いを立て、答えを探し続けることの重要性に気づく。
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-15T08:04:45.253Z
-    - type: UNKNOWN
-      description: チーム内で技術的な実現可能性とマーケティング戦略の優先順位を巡り、意見の対立が生まれたことで、チームの関係性に変化が生じた。
-      chapter: 6
-      isPermanent: true
-      timestamp: 2025-05-15T08:30:48.228Z
-    - type: UNKNOWN
-      description: チームが発表の失敗を機に、結束を強め、新たな目標に向かって進み始めた。
-      chapter: 9
-      isPermanent: true
-      timestamp: 2025-05-15T08:53:02.434Z
-    - type: UNKNOWN
-      description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-15T10:20:06.805Z
-    - type: UNKNOWN
-      description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-15T11:53:43.332Z
-    - type: UNKNOWN
-      description: 美咲がネクストライフの社員であることが判明。
-      chapter: 5
-      isPermanent: true
-      timestamp: 2025-05-15T12:14:23.926Z
-    - type: UNKNOWN
-      description: 佐藤の技術力が向上。
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-18T11:32:12.504Z
-    - type: UNKNOWN
-      description: 健太が、技術至上主義という強固なパラダイムから脱却し、自己疑問と不安を抱き始める。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-19T00:39:27.529Z
-    - type: UNKNOWN
-      description: 健太が技術者としての思考から抜け出し、顧客の視点に立って製品を使うことで、顧客の気持ちを理解し始める。
-      chapter: 2
-      isPermanent: true
-      timestamp: 2025-05-19T00:43:37.603Z
-  promotionHistory:
-    - chapter: 4
-      title: Unknown Position
-      description: ネクストライフから、自社のプロジェクトへの協力を提案される。
-      timestamp: 2025-05-15T11:50:45.133Z
 history:
   appearances:
     - chapterNumber: 6
@@ -1009,7 +818,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T03:14:24.440Z
       significance: 0.5
-      summary: '第3章に登場: 顧客視点の迷宮'
+      summary: "第3章に登場: 顧客視点の迷宮"
     - chapterNumber: 3
       timestamp: 2025-05-28T03:14:30.580Z
       significance: 0.5
@@ -1017,7 +826,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T03:15:17.719Z
       significance: 0.5
-      summary: '第3章に登場: 問いの再定義'
+      summary: "第3章に登場: 問いの再定義"
     - chapterNumber: 4
       timestamp: 2025-05-28T03:18:10.574Z
       significance: 0.5
@@ -1025,7 +834,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T03:21:01.508Z
       significance: 0.5
-      summary: '第4章に登場: 育成プロジェクト、問いの迷宮'
+      summary: "第4章に登場: 育成プロジェクト、問いの迷宮"
     - chapterNumber: 5
       timestamp: 2025-05-28T03:23:48.835Z
       significance: 0.5
@@ -1033,7 +842,7 @@ history:
     - chapterNumber: 5
       timestamp: 2025-05-28T03:27:00.636Z
       significance: 0.5
-      summary: '第5章に登場: 問いの迷路、顧客という羅針盤'
+      summary: "第5章に登場: 問いの迷路、顧客という羅針盤"
     - chapterNumber: 6
       timestamp: 2025-05-28T03:29:44.814Z
       significance: 0.5
@@ -1041,7 +850,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T03:33:13.754Z
       significance: 0.5
-      summary: '第6章に登場: チーム結成、そして最初の火種'
+      summary: "第6章に登場: チーム結成、そして最初の火種"
     - chapterNumber: 7
       timestamp: 2025-05-28T03:36:00.469Z
       significance: 0.5
@@ -1049,7 +858,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-05-28T03:39:09.287Z
       significance: 0.5
-      summary: '第7章に登場: 問いの質'
+      summary: "第7章に登場: 問いの質"
     - chapterNumber: 7
       timestamp: 2025-05-28T03:41:13.368Z
       significance: 0.5
@@ -1061,7 +870,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-05-28T03:46:53.803Z
       significance: 0.5
-      summary: '第8章に登場: 顧客視点への転換'
+      summary: "第8章に登場: 顧客視点への転換"
     - chapterNumber: 8
       timestamp: 2025-05-28T03:47:00.564Z
       significance: 0.5
@@ -1069,7 +878,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-05-28T03:47:46.353Z
       significance: 0.5
-      summary: '第8章に登場: 問いの再定義'
+      summary: "第8章に登場: 問いの再定義"
     - chapterNumber: 9
       timestamp: 2025-05-28T03:50:44.504Z
       significance: 0.5
@@ -1077,7 +886,7 @@ history:
     - chapterNumber: 9
       timestamp: 2025-05-28T03:53:47.993Z
       significance: 0.5
-      summary: '第9章に登場: 顧客理解への第一歩'
+      summary: "第9章に登場: 顧客理解への第一歩"
     - chapterNumber: 1
       timestamp: 2025-05-28T04:01:29.147Z
       significance: 0.5
@@ -1085,7 +894,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T04:05:23.155Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 2
       timestamp: 2025-05-28T04:08:08.710Z
       significance: 0.5
@@ -1093,7 +902,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T04:11:02.788Z
       significance: 0.5
-      summary: '第2章に登場: 問いの始まり'
+      summary: "第2章に登場: 問いの始まり"
     - chapterNumber: 3
       timestamp: 2025-05-28T04:13:41.002Z
       significance: 0.5
@@ -1101,7 +910,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T04:16:17.225Z
       significance: 0.5
-      summary: '第3章に登場: 問いの再定義'
+      summary: "第3章に登場: 問いの再定義"
     - chapterNumber: 4
       timestamp: 2025-05-28T04:18:39.832Z
       significance: 0.5
@@ -1109,7 +918,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T04:21:38.015Z
       significance: 0.5
-      summary: '第4章に登場: 顧客視点という難題'
+      summary: "第4章に登場: 顧客視点という難題"
     - chapterNumber: 6
       timestamp: 2025-05-28T04:30:06.873Z
       significance: 0.5
@@ -1117,7 +926,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T04:33:13.314Z
       significance: 0.5
-      summary: '第6章に登場: 顧客視点という名の迷宮'
+      summary: "第6章に登場: 顧客視点という名の迷宮"
     - chapterNumber: 7
       timestamp: 2025-05-28T04:35:41.736Z
       significance: 0.5
@@ -1125,7 +934,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-05-28T04:38:40.880Z
       significance: 0.5
-      summary: '第7章に登場: 顧客視点の迷宮'
+      summary: "第7章に登場: 顧客視点の迷宮"
     - chapterNumber: 8
       timestamp: 2025-05-28T04:41:27.137Z
       significance: 0.5
@@ -1133,7 +942,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-05-28T04:44:43.922Z
       significance: 0.5
-      summary: '第8章に登場: 顧客視点の迷宮、深まる疑念'
+      summary: "第8章に登場: 顧客視点の迷宮、深まる疑念"
     - chapterNumber: 8
       timestamp: 2025-05-28T04:46:45.800Z
       significance: 0.5
@@ -1149,7 +958,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T04:59:25.910Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 2
       timestamp: 2025-05-28T05:02:25.296Z
       significance: 0.5
@@ -1157,7 +966,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T05:05:18.456Z
       significance: 0.5
-      summary: '第2章に登場: 問いの始まり'
+      summary: "第2章に登場: 問いの始まり"
     - chapterNumber: 2
       timestamp: 2025-05-28T05:07:19.825Z
       significance: 0.5
@@ -1173,7 +982,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T05:12:51.656Z
       significance: 0.5
-      summary: '第3章に登場: 問いの再定義'
+      summary: "第3章に登場: 問いの再定義"
     - chapterNumber: 3
       timestamp: 2025-05-28T05:14:48.354Z
       significance: 0.5
@@ -1181,7 +990,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T05:18:13.901Z
       significance: 0.5
-      summary: '第3章に登場: 「問い」の再定義'
+      summary: "第3章に登場: 「問い」の再定義"
     - chapterNumber: 3
       timestamp: 2025-05-28T05:21:39.994Z
       significance: 0.5
@@ -1193,7 +1002,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T05:27:04.182Z
       significance: 0.5
-      summary: '第4章に登場: 胎動するチーム、動き出す現実'
+      summary: "第4章に登場: 胎動するチーム、動き出す現実"
     - chapterNumber: 4
       timestamp: 2025-05-28T05:27:23.878Z
       significance: 0.5
@@ -1201,7 +1010,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T05:28:12.841Z
       significance: 0.5
-      summary: '第4章に登場: 始まりの予感と現実の壁'
+      summary: "第4章に登場: 始まりの予感と現実の壁"
     - chapterNumber: 5
       timestamp: 2025-05-28T05:31:16.498Z
       significance: 0.5
@@ -1209,7 +1018,7 @@ history:
     - chapterNumber: 5
       timestamp: 2025-05-28T05:34:23.758Z
       significance: 0.5
-      summary: '第5章に登場: 再構築の夜明け'
+      summary: "第5章に登場: 再構築の夜明け"
     - chapterNumber: 5
       timestamp: 2025-05-28T05:36:25.404Z
       significance: 0.5
@@ -1225,7 +1034,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T05:42:18.521Z
       significance: 0.5
-      summary: '第6章に登場: チーム始動、それぞれの視点'
+      summary: "第6章に登場: チーム始動、それぞれの視点"
     - chapterNumber: 6
       timestamp: 2025-05-28T05:43:55.752Z
       significance: 0.5
@@ -1233,7 +1042,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T05:47:36.408Z
       significance: 0.5
-      summary: '第6章に登場: 顧客視点の落とし穴'
+      summary: "第6章に登場: 顧客視点の落とし穴"
     - chapterNumber: 6
       timestamp: 2025-05-28T05:50:46.591Z
       significance: 0.5
@@ -1249,7 +1058,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T06:40:12.480Z
       significance: 0.5
-      summary: '第3章に登場: 問いの迷路'
+      summary: "第3章に登場: 問いの迷路"
     - chapterNumber: 4
       timestamp: 2025-05-28T06:43:13.716Z
       significance: 0.5
@@ -1257,7 +1066,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T06:45:59.090Z
       significance: 0.5
-      summary: '第4章に登場: 顧客の声、理想との乖離'
+      summary: "第4章に登場: 顧客の声、理想との乖離"
     - chapterNumber: 4
       timestamp: 2025-05-28T06:48:00.826Z
       significance: 0.5
@@ -1269,7 +1078,7 @@ history:
     - chapterNumber: 5
       timestamp: 2025-05-28T06:53:45.911Z
       significance: 0.5
-      summary: '第5章に登場: プロジェクト始動、理想と現実の交差点'
+      summary: "第5章に登場: プロジェクト始動、理想と現実の交差点"
     - chapterNumber: 1
       timestamp: 2025-05-28T06:55:19.949Z
       significance: 0.5
@@ -1277,7 +1086,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T06:59:29.068Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 1
       timestamp: 2025-05-28T07:00:16.228Z
       significance: 0.5
@@ -1285,7 +1094,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T07:04:37.723Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 1
       timestamp: 2025-05-28T07:06:39.799Z
       significance: 0.5
@@ -1297,7 +1106,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T07:12:33.358Z
       significance: 0.5
-      summary: '第2章に登場: 顧客視点の迷宮'
+      summary: "第2章に登場: 顧客視点の迷宮"
     - chapterNumber: 2
       timestamp: 2025-05-28T07:14:34.087Z
       significance: 0.5
@@ -1309,7 +1118,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T07:20:13.100Z
       significance: 0.5
-      summary: '第3章に登場: 顧客視点の再燃'
+      summary: "第3章に登場: 顧客視点の再燃"
     - chapterNumber: 4
       timestamp: 2025-05-28T07:23:08.100Z
       significance: 0.5
@@ -1317,7 +1126,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T07:26:47.572Z
       significance: 0.5
-      summary: '第4章に登場: 資金調達の壁'
+      summary: "第4章に登場: 資金調達の壁"
     - chapterNumber: 5
       timestamp: 2025-05-28T07:29:28.785Z
       significance: 0.5
@@ -1325,7 +1134,7 @@ history:
     - chapterNumber: 5
       timestamp: 2025-05-28T07:32:45.847Z
       significance: 0.5
-      summary: '第5章に登場: 顧客視点という羅針盤'
+      summary: "第5章に登場: 顧客視点という羅針盤"
     - chapterNumber: 6
       timestamp: 2025-05-28T07:35:41.193Z
       significance: 0.5
@@ -1333,7 +1142,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T07:39:06.426Z
       significance: 0.5
-      summary: '第6章に登場: 顧客視点の再検証'
+      summary: "第6章に登場: 顧客視点の再検証"
     - chapterNumber: 7
       timestamp: 2025-05-28T07:42:00.120Z
       significance: 0.5
@@ -1341,7 +1150,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-05-28T07:45:01.086Z
       significance: 0.5
-      summary: '第7章に登場: 問いの質'
+      summary: "第7章に登場: 問いの質"
     - chapterNumber: 8
       timestamp: 2025-05-28T07:47:57.922Z
       significance: 0.5
@@ -1349,7 +1158,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-05-28T07:51:11.040Z
       significance: 0.5
-      summary: '第8章に登場: 問いの深淵、顧客視点の迷宮'
+      summary: "第8章に登場: 問いの深淵、顧客視点の迷宮"
     - chapterNumber: 9
       timestamp: 2025-05-28T07:53:50.057Z
       significance: 0.5
@@ -1357,7 +1166,7 @@ history:
     - chapterNumber: 9
       timestamp: 2025-05-28T07:57:16.735Z
       significance: 0.5
-      summary: '第9章に登場: 厳しい現実、揺らぐ理想'
+      summary: "第9章に登場: 厳しい現実、揺らぐ理想"
     - chapterNumber: 10
       timestamp: 2025-05-28T08:00:08.785Z
       significance: 0.5
@@ -1365,7 +1174,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-05-28T08:03:44.852Z
       significance: 0.5
-      summary: '第10章に登場: 顧客視点という羅針盤'
+      summary: "第10章に登場: 顧客視点という羅針盤"
     - chapterNumber: 11
       timestamp: 2025-05-28T08:06:18.966Z
       significance: 0.5
@@ -1373,7 +1182,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-05-28T08:09:49.430Z
       significance: 0.5
-      summary: '第11章に登場: 顧客の声、理想との乖離'
+      summary: "第11章に登場: 顧客の声、理想との乖離"
     - chapterNumber: 12
       timestamp: 2025-05-28T08:12:39.106Z
       significance: 0.5
@@ -1381,7 +1190,7 @@ history:
     - chapterNumber: 12
       timestamp: 2025-05-28T08:16:18.071Z
       significance: 0.5
-      summary: '第12章に登場: 顧客視点の迷宮'
+      summary: "第12章に登場: 顧客視点の迷宮"
     - chapterNumber: 2
       timestamp: 2025-05-28T14:42:17.860Z
       significance: 0.5
@@ -1389,7 +1198,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T14:43:47.869Z
       significance: 0.5
-      summary: '第2章に登場: 問いの再定義'
+      summary: "第2章に登場: 問いの再定義"
     - chapterNumber: 3
       timestamp: 2025-05-28T14:46:40.099Z
       significance: 0.5
@@ -1397,7 +1206,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T14:48:10.109Z
       significance: 0.5
-      summary: '第3章に登場: 顧客視点の迷宮'
+      summary: "第3章に登場: 顧客視点の迷宮"
     - chapterNumber: 4
       timestamp: 2025-05-28T14:51:09.507Z
       significance: 0.5
@@ -1405,7 +1214,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T14:52:39.509Z
       significance: 0.5
-      summary: '第4章に登場: 顧客視点の迷宮'
+      summary: "第4章に登場: 顧客視点の迷宮"
     - chapterNumber: 5
       timestamp: 2025-05-28T14:55:36.324Z
       significance: 0.5
@@ -1413,7 +1222,7 @@ history:
     - chapterNumber: 5
       timestamp: 2025-05-28T14:57:06.347Z
       significance: 0.5
-      summary: '第5章に登場: 顧客視点という迷宮'
+      summary: "第5章に登場: 顧客視点という迷宮"
     - chapterNumber: 6
       timestamp: 2025-05-28T14:59:46.474Z
       significance: 0.5
@@ -1421,7 +1230,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-05-28T15:01:16.484Z
       significance: 0.5
-      summary: '第6章に登場: 顧客視点の深淵'
+      summary: "第6章に登場: 顧客視点の深淵"
     - chapterNumber: 7
       timestamp: 2025-05-28T15:04:08.290Z
       significance: 0.5
@@ -1429,7 +1238,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-05-28T15:05:38.308Z
       significance: 0.5
-      summary: '第7章に登場: 顧客視点の深淵'
+      summary: "第7章に登場: 顧客視点の深淵"
     - chapterNumber: 8
       timestamp: 2025-05-28T15:09:08.847Z
       significance: 0.5
@@ -1437,7 +1246,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-05-28T15:10:38.846Z
       significance: 0.5
-      summary: '第8章に登場: 交錯する視点、見え始めた輪郭'
+      summary: "第8章に登場: 交錯する視点、見え始めた輪郭"
     - chapterNumber: 9
       timestamp: 2025-05-28T15:13:42.633Z
       significance: 0.5
@@ -1445,7 +1254,7 @@ history:
     - chapterNumber: 9
       timestamp: 2025-05-28T15:16:06.919Z
       significance: 0.5
-      summary: '第9章に登場: 問いの再定義とライバルの影'
+      summary: "第9章に登場: 問いの再定義とライバルの影"
     - chapterNumber: 10
       timestamp: 2025-05-28T15:19:12.759Z
       significance: 0.5
@@ -1453,7 +1262,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-05-28T15:21:39.594Z
       significance: 0.5
-      summary: '第10章に登場: 審査員の言葉'
+      summary: "第10章に登場: 審査員の言葉"
     - chapterNumber: 10
       timestamp: 2025-05-28T15:22:41.268Z
       significance: 0.5
@@ -1461,7 +1270,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-05-28T15:23:47.299Z
       significance: 0.5
-      summary: '第10章に登場: 審査員の言葉'
+      summary: "第10章に登場: 審査員の言葉"
     - chapterNumber: 11
       timestamp: 2025-05-28T15:26:52.920Z
       significance: 0.5
@@ -1469,7 +1278,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-05-28T15:29:27.785Z
       significance: 0.5
-      summary: '第11章に登場: 顧客の迷宮'
+      summary: "第11章に登場: 顧客の迷宮"
     - chapterNumber: 12
       timestamp: 2025-05-28T15:32:12.148Z
       significance: 0.5
@@ -1477,7 +1286,7 @@ history:
     - chapterNumber: 12
       timestamp: 2025-05-28T15:35:43.255Z
       significance: 0.5
-      summary: '第12章に登場: 顧客視点という難題'
+      summary: "第12章に登場: 顧客視点という難題"
     - chapterNumber: 1
       timestamp: 2025-05-29T00:44:14.671Z
       significance: 0.5
@@ -1537,7 +1346,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-06-01T08:01:33.810Z
       significance: 0.5
-      summary: '第8章に登場: 競争激化'
+      summary: "第8章に登場: 競争激化"
     - chapterNumber: 8
       timestamp: 2025-06-01T08:02:14.942Z
       significance: 0.5
@@ -1545,7 +1354,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-06-01T08:03:17.389Z
       significance: 0.5
-      summary: '第8章に登場: 誤解の迷路'
+      summary: "第8章に登場: 誤解の迷路"
     - chapterNumber: 8
       timestamp: 2025-06-01T08:04:20.379Z
       significance: 0.5
@@ -1553,7 +1362,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-06-01T08:05:15.509Z
       significance: 0.5
-      summary: '第8章に登場: 焦燥と迷走'
+      summary: "第8章に登場: 焦燥と迷走"
     - chapterNumber: 9
       timestamp: 2025-06-01T08:08:11.297Z
       significance: 0.5
@@ -1561,7 +1370,7 @@ history:
     - chapterNumber: 9
       timestamp: 2025-06-01T08:09:41.150Z
       significance: 0.5
-      summary: '第9章に登場: 誤解の連鎖'
+      summary: "第9章に登場: 誤解の連鎖"
     - chapterNumber: 10
       timestamp: 2025-06-01T08:12:24.488Z
       significance: 0.5
@@ -1569,7 +1378,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-06-01T08:13:44.278Z
       significance: 0.5
-      summary: '第10章に登場: 誤解と混乱の狭間'
+      summary: "第10章に登場: 誤解と混乱の狭間"
     - chapterNumber: 11
       timestamp: 2025-06-01T08:16:25.318Z
       significance: 0.5
@@ -1577,7 +1386,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-06-01T08:17:42.607Z
       significance: 0.5
-      summary: '第11章に登場: 誤解という名の壁'
+      summary: "第11章に登場: 誤解という名の壁"
     - chapterNumber: 2
       timestamp: 2025-06-01T10:53:36.910Z
       significance: 0.5
@@ -1585,7 +1394,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-06-01T10:54:51.778Z
       significance: 0.5
-      summary: '第2章に登場: 顧客の声なき叫び'
+      summary: "第2章に登場: 顧客の声なき叫び"
     - chapterNumber: 3
       timestamp: 2025-06-01T10:57:34.367Z
       significance: 0.5
@@ -1593,7 +1402,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-06-01T10:58:47.212Z
       significance: 0.5
-      summary: '第3章に登場: 顧客の声なき叫び'
+      summary: "第3章に登場: 顧客の声なき叫び"
     - chapterNumber: 6
       timestamp: 2025-06-01T11:09:07.165Z
       significance: 0.5
@@ -1601,7 +1410,7 @@ history:
     - chapterNumber: 6
       timestamp: 2025-06-01T11:10:37.142Z
       significance: 0.5
-      summary: '第6章に登場: 誤解の始まり'
+      summary: "第6章に登場: 誤解の始まり"
     - chapterNumber: 7
       timestamp: 2025-06-01T11:15:25.804Z
       significance: 0.5
@@ -1609,7 +1418,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-06-01T11:16:24.444Z
       significance: 0.5
-      summary: '第7章に登場: 顧客の声、歪む真実'
+      summary: "第7章に登場: 顧客の声、歪む真実"
     - chapterNumber: 8
       timestamp: 2025-06-01T11:19:03.179Z
       significance: 0.5
@@ -1617,7 +1426,7 @@ history:
     - chapterNumber: 8
       timestamp: 2025-06-01T11:20:15.216Z
       significance: 0.5
-      summary: '第8章に登場: 誤解の螺旋'
+      summary: "第8章に登場: 誤解の螺旋"
     - chapterNumber: 9
       timestamp: 2025-06-01T11:22:54.213Z
       significance: 0.5
@@ -1625,7 +1434,7 @@ history:
     - chapterNumber: 9
       timestamp: 2025-06-01T11:24:07.788Z
       significance: 0.5
-      summary: '第9章に登場: 誤算の連鎖'
+      summary: "第9章に登場: 誤算の連鎖"
     - chapterNumber: 10
       timestamp: 2025-06-01T11:26:42.798Z
       significance: 0.5
@@ -1633,7 +1442,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-06-01T11:28:05.671Z
       significance: 0.5
-      summary: '第10章に登場: 顧客の声なき叫び'
+      summary: "第10章に登場: 顧客の声なき叫び"
     - chapterNumber: 11
       timestamp: 2025-06-01T11:30:49.707Z
       significance: 0.5
@@ -1641,7 +1450,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-06-01T11:32:04.396Z
       significance: 0.5
-      summary: '第11章に登場: 閉塞と模索'
+      summary: "第11章に登場: 閉塞と模索"
     - chapterNumber: 12
       timestamp: 2025-06-01T11:34:50.114Z
       significance: 0.5
@@ -1649,7 +1458,7 @@ history:
     - chapterNumber: 12
       timestamp: 2025-06-01T11:36:03.541Z
       significance: 0.5
-      summary: '第12章に登場: 誤解と混乱のIssue Driven'
+      summary: "第12章に登場: 誤解と混乱のIssue Driven"
   developmentPath:
     - stage: 0
       description: チームに参加する前段階

@@ -1,0 +1,829 @@
+id: character-yamada
+name: 山田哲也
+shortNames:
+  - 山田さん
+  - 山田メンター
+type: SUB
+description: 起業家育成プロジェクトのメンター。複数のスタートアップ経験を持つ実務家。厳しくも温かい指導で主人公たちを導く。
+personality:
+  traits:
+    - 洞察力がある
+    - 実践的
+    - 忍耐強い
+    - 直言する
+    - 温かみがある
+  speechPatterns:
+    - 質問で考えさせる話し方
+    - 「本質は〜だ」と核心を突く
+    - 時に比喩を用いて説明する
+  quirks:
+    - 人の話を聞くときに目を細める
+    - 重要なポイントでペンを持ち上げる
+    - 考えをまとめるときに少し沈黙する
+  values:
+    - 本質を見極めること
+    - 継続的な学びと成長
+    - 実践を通じた経験
+    - 若い世代の可能性を信じる
+appearance:
+  age: 42
+  gender: 男性
+  height: 180
+  bodyType: 筋肉質で引き締まった体型
+  hairColor: 黒（少しだけ白髪混じり）
+  eyeColor: 黒
+  distinguishingFeatures:
+    - 知性を感じさせる表情
+    - 穏やかだが鋭い眼差し
+    - 常に整った身だしなみ
+  clothingStyle: ビジネスカジュアル。ジャケットとチノパンが多い。
+backstory:
+  summary: 元起業家で複数のスタートアップを経験。成功と失敗の両方を経験し、現在は若手起業家の育成に力を入れている。大手企業での勤務経験もあり、幅広い視点を持つ。
+  significantEvents:
+    - 20代後半に最初のスタートアップを設立するも失敗
+    - 30代前半に2度目の起業で小規模ながら成功
+    - 30代後半に投資家側の立場も経験
+    - 40代になり若手起業家の育成に情熱を注ぐようになる
+  origin: 大阪
+  trauma:
+    - 最初の起業での派手な失敗（多くの教訓を得る契機に）
+  detailedHistory: 関西の名門大学を卒業後、大手企業に就職。しかし組織の硬直性に疑問を持ち、20代後半で退職して起業。最初のスタートアップは資金調達後に行き詰まり失敗。その経験から学び、30代前半に2度目の起業では小規模ながらも成功を収める。その後、エンジェル投資家としての活動も開始。40代になってからは、自身の経験を活かして若手起業家の育成に注力。特に「問いの質」を重視するアプローチで知られる。
+  motivations: 若い世代が自分の失敗を繰り返さないよう導きたい。日本のスタートアップエコシステムを強化したい。
+  secrets: 実は現在も小規模ながら新たなビジネスを密かに立ち上げている
+history:
+  appearances:
+    - chapterNumber: 3
+      context: 起業家育成プロジェクトの説明会で主人公と出会う場面で初登場
+      significance: 0.7
+    - chapterNumber: 1
+      timestamp: 2025-05-13T05:17:08.960Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:22:36.394Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:25:14.930Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:28:20.427Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-13T05:31:59.780Z
+      significance: 0.5
+      summary: |-
+        山田哲也は、なぜ、自分の父親が関わっていた団体について、何も言わなかったのだろうか？　そして、なぜ、脅迫状が送られてきたのだろうか？
+
+        誠は、いてもたってもいられなくなり、佐藤に電話をかけた
+      emotionalImpact: 0.6000000000000001
+    - chapterNumber: 3
+      timestamp: 2025-05-13T05:36:10.082Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 4
+      timestamp: 2025-05-13T05:42:47.956Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-13T05:47:27.457Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:52:53.734Z
+      significance: 0.3
+      summary: 山田哲也は「山田さん……？」と発言
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:56:02.747Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.16000000000000003
+    - chapterNumber: 5
+      timestamp: 2025-05-13T05:59:24.692Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:07:57.225Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 6
+      timestamp: 2025-05-13T06:12:39.301Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 7
+      timestamp: 2025-05-13T06:21:48.484Z
+      significance: 0.5
+      summary: 山田哲也は、父親の死後、A技術を相続しました」警察官は、続けた
+      emotionalImpact: 0.6000000000000001
+    - chapterNumber: 8
+      timestamp: 2025-05-13T06:31:32.898Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-13T06:37:17.690Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 10
+      timestamp: 2025-05-13T06:42:37.445Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-13T06:49:10.228Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 12
+      timestamp: 2025-05-13T06:54:23.246Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:10:48.948Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-13T07:13:30.799Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-13T07:52:48.525Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:03:45.327Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:06:52.921Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-13T08:13:35.945Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-13T08:21:33.517Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 2
+      timestamp: 2025-05-13T08:26:18.142Z
+      significance: 0.5
+      summary: 山田哲也が章2に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-13T08:31:11.314Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 4
+      timestamp: 2025-05-13T08:36:01.535Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.08000000000000002
+    - chapterNumber: 5
+      timestamp: 2025-05-13T08:43:08.359Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-13T10:49:08.913Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.38
+    - chapterNumber: 8
+      timestamp: 2025-05-13T12:07:52.983Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-13T12:48:18.139Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-14T11:13:05.965Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:01:42.323Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-14T12:11:07.432Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-14T12:17:28.815Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 11
+      timestamp: 2025-05-14T14:29:27.065Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 1
+      timestamp: 2025-05-14T14:53:00.604Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 2
+      timestamp: 2025-05-14T15:01:08.210Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 1
+      timestamp: 2025-05-15T07:45:47.630Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 3
+      timestamp: 2025-05-15T08:04:45.158Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 9
+      timestamp: 2025-05-15T08:53:02.369Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 11
+      timestamp: 2025-05-15T11:06:22.519Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.04000000000000001
+    - chapterNumber: 12
+      timestamp: 2025-05-15T11:10:59.998Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 2
+      timestamp: 2025-05-15T11:40:02.290Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:50:45.021Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:53:43.190Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 4
+      timestamp: 2025-05-15T11:56:49.472Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:02:32.373Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:06:00.947Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:09:41.754Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 5
+      timestamp: 2025-05-15T12:14:23.802Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 6
+      timestamp: 2025-05-15T12:19:29.668Z
+      significance: 0.5
+      summary: 山田哲也が章6に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 9
+      timestamp: 2025-05-15T12:38:02.258Z
+      significance: 0.5
+      summary: 山田哲也が章9に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 11
+      timestamp: 2025-05-15T12:50:56.809Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+      emotionalImpact: 0.5
+    - chapterNumber: 3
+      timestamp: 2025-05-18T11:32:12.351Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 1
+      timestamp: 2025-05-18T19:25:17.141Z
+      significance: 0.5
+      summary: 山田哲也は、ことあるごとに口にする言葉だ
+      emotionalImpact: 0.44
+    - chapterNumber: 2
+      timestamp: 2025-05-18T21:55:58.147Z
+      significance: 0.3
+      summary: 山田哲也が登場
+      emotionalImpact: 0.33999999999999997
+    - chapterNumber: 3
+      timestamp: 2025-05-18T22:00:00.640Z
+      significance: 0.5
+      summary: 山田哲也はすでに席に着いており、向かいには、精悍な顔つきをした、いかにもやり手そうな男が座っていた
+      emotionalImpact: 0.44
+    - chapterNumber: 9
+      timestamp: 2025-05-19T07:40:10.055Z
+      significance: 0.3
+      summary: 山田哲也は、高橋に声をかけた
+      emotionalImpact: 0.1
+    - chapterNumber: 1
+      timestamp: 2025-05-26T23:55:03.660Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T00:12:05.929Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T00:17:13.435Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T01:38:47.773Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T02:48:54.177Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T03:11:24.441Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:30:45.598Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T03:37:39.814Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-27T03:39:32.952Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-27T03:47:57.186Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-27T04:10:16.242Z
+      significance: 0.5
+      summary: 山田哲也が章9に登場
+    - chapterNumber: 10
+      timestamp: 2025-05-27T04:16:12.379Z
+      significance: 0.5
+      summary: 山田哲也が章10に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-27T04:21:52.810Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T15:00:24.621Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-27T23:05:40.233Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-27T23:12:28.715Z
+      significance: 0.5
+      summary: 山田哲也が章2に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-27T23:18:13.623Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T02:56:47.996Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:50:44.631Z
+      significance: 0.5
+      summary: 山田哲也が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T03:53:47.993Z
+      significance: 0.5
+      summary: "第9章に登場: 顧客理解への第一歩"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T03:59:40.243Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:01:29.135Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:05:23.155Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:08:08.765Z
+      significance: 0.5
+      summary: 山田哲也が章2に登場
+    - chapterNumber: 2
+      timestamp: 2025-05-28T04:11:02.788Z
+      significance: 0.5
+      summary: "第2章に登場: 問いの始まり"
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:13:41.039Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T04:16:17.225Z
+      significance: 0.5
+      summary: "第3章に登場: 問いの再定義"
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:18:39.862Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T04:21:38.015Z
+      significance: 0.5
+      summary: "第4章に登場: 顧客視点という難題"
+    - chapterNumber: 5
+      timestamp: 2025-05-28T04:24:25.927Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T04:27:39.291Z
+      significance: 0.5
+      summary: "第5章に登場: 問いの迷宮"
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:30:06.851Z
+      significance: 0.5
+      summary: 山田哲也が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T04:33:13.314Z
+      significance: 0.5
+      summary: "第6章に登場: 顧客視点という名の迷宮"
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:35:41.725Z
+      significance: 0.5
+      summary: 山田哲也が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T04:38:40.880Z
+      significance: 0.5
+      summary: "第7章に登場: 顧客視点の迷宮"
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:41:27.123Z
+      significance: 0.5
+      summary: 山田哲也が章8に登場
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:44:43.922Z
+      significance: 0.5
+      summary: "第8章に登場: 顧客視点の迷宮、深まる疑念"
+    - chapterNumber: 8
+      timestamp: 2025-05-28T04:46:45.781Z
+      significance: 0.5
+      summary: 山田哲也が章8に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T04:49:00.236Z
+      significance: 0.5
+      summary: 山田哲也が章9に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:52:06.303Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:55:26.057Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T04:59:25.910Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:09:28.698Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:12:51.656Z
+      significance: 0.5
+      summary: "第3章に登場: 問いの再定義"
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:14:48.339Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:18:13.901Z
+      significance: 0.5
+      summary: "第3章に登場: 「問い」の再定義"
+    - chapterNumber: 3
+      timestamp: 2025-05-28T05:21:39.976Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:31:16.523Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:34:23.758Z
+      significance: 0.5
+      summary: "第5章に登場: 再構築の夜明け"
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:36:25.444Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:38:38.721Z
+      significance: 0.5
+      summary: 山田哲也が章6に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T05:41:45.363Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T05:42:18.521Z
+      significance: 0.5
+      summary: "第6章に登場: チーム始動、それぞれの視点"
+    - chapterNumber: 7
+      timestamp: 2025-05-28T05:52:57.416Z
+      significance: 0.5
+      summary: 山田哲也が章7に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T05:55:15.913Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T05:59:26.084Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:22:19.389Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:26:22.797Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 5
+      timestamp: 2025-05-28T06:50:15.909Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T06:53:45.911Z
+      significance: 0.5
+      summary: "第5章に登場: プロジェクト始動、理想と現実の交差点"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:55:19.936Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T06:59:29.068Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:00:16.190Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:04:37.723Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T07:06:39.769Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:16:48.030Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T07:20:13.100Z
+      significance: 0.5
+      summary: "第3章に登場: 顧客視点の再燃"
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:23:08.088Z
+      significance: 0.5
+      summary: 山田哲也が章4に登場
+    - chapterNumber: 4
+      timestamp: 2025-05-28T07:26:47.572Z
+      significance: 0.5
+      summary: "第4章に登場: 資金調達の壁"
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:29:28.763Z
+      significance: 0.5
+      summary: 山田哲也が章5に登場
+    - chapterNumber: 5
+      timestamp: 2025-05-28T07:32:45.847Z
+      significance: 0.5
+      summary: "第5章に登場: 顧客視点という羅針盤"
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:35:41.222Z
+      significance: 0.5
+      summary: 山田哲也が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T07:39:06.426Z
+      significance: 0.5
+      summary: "第6章に登場: 顧客視点の再検証"
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:42:00.106Z
+      significance: 0.5
+      summary: 山田哲也が章7に登場
+    - chapterNumber: 7
+      timestamp: 2025-05-28T07:45:01.086Z
+      significance: 0.5
+      summary: "第7章に登場: 問いの質"
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:53:50.093Z
+      significance: 0.5
+      summary: 山田哲也が章9に登場
+    - chapterNumber: 9
+      timestamp: 2025-05-28T07:57:16.735Z
+      significance: 0.5
+      summary: "第9章に登場: 厳しい現実、揺らぐ理想"
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:06:18.979Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T08:09:49.430Z
+      significance: 0.5
+      summary: "第11章に登場: 顧客の声、理想との乖離"
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:12:39.119Z
+      significance: 0.5
+      summary: 山田哲也が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T08:16:18.071Z
+      significance: 0.5
+      summary: "第12章に登場: 顧客視点の迷宮"
+    - chapterNumber: 1
+      timestamp: 2025-05-28T14:36:02.107Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-28T14:38:58.619Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:46:40.136Z
+      significance: 0.5
+      summary: 山田哲也が章3に登場
+    - chapterNumber: 3
+      timestamp: 2025-05-28T14:48:10.109Z
+      significance: 0.5
+      summary: "第3章に登場: 顧客視点の迷宮"
+    - chapterNumber: 6
+      timestamp: 2025-05-28T14:59:46.489Z
+      significance: 0.5
+      summary: 山田哲也が章6に登場
+    - chapterNumber: 6
+      timestamp: 2025-05-28T15:01:16.484Z
+      significance: 0.5
+      summary: "第6章に登場: 顧客視点の深淵"
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:26:52.949Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-05-28T15:29:27.785Z
+      significance: 0.5
+      summary: "第11章に登場: 顧客の迷宮"
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:32:12.165Z
+      significance: 0.5
+      summary: 山田哲也が章12に登場
+    - chapterNumber: 12
+      timestamp: 2025-05-28T15:35:43.255Z
+      significance: 0.5
+      summary: "第12章に登場: 顧客視点という難題"
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:18:54.758Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:22:30.105Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:33:55.872Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:37:42.565Z
+      significance: 0.5
+      summary: "第1章に登場: 問いの始まり"
+    - chapterNumber: 1
+      timestamp: 2025-05-29T00:44:14.651Z
+      significance: 0.5
+      summary: 山田哲也が章1に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:30:49.731Z
+      significance: 0.5
+      summary: 山田哲也が章11に登場
+    - chapterNumber: 11
+      timestamp: 2025-06-01T11:32:04.396Z
+      significance: 0.5
+      summary: "第11章に登場: 閉塞と模索"
+  developmentPath: []
+  interactions:
+    - chapterNumber: 1
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:05:23.244Z
+    - chapterNumber: 1
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T04:05:23.254Z
+    - chapterNumber: 3
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第3章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T05:18:13.918Z
+    - chapterNumber: 1
+      targetCharacterId: character-sato
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:59:29.150Z
+    - chapterNumber: 1
+      targetCharacterId: character-suzuki
+      type: general_interaction
+      description: 第1章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T06:59:29.161Z
+    - chapterNumber: 11
+      targetCharacterId: character-takahashi
+      type: general_interaction
+      description: 第11章での相互作用
+      impact: 0.3
+      timestamp: 2025-05-28T08:09:49.512Z
+relationships: []
+metadata:
+  createdAt: 2024-04-01T00:00:00.000Z
+  lastUpdated: 2025-06-01T11:32:04.401Z
+  version: 174
+  tags:
+    - メンター
+    - 起業経験者
+    - アドバイザー
+    - 教育者
+psychology:
+  currentDesires:
+    - 若手起業家たちの成功
+    - プロジェクトの成功
+    - 自身の経験と知識の伝達
+    - 起業家精神の育成
+    - 社会への貢献
+  currentFears:
+    - 指導する若手起業家の失敗
+    - プロジェクトの失敗
+    - 自身の指導不足
+    - 若手起業家たちの成長の停滞
+    - 過去の失敗の再現
+  internalConflicts:
+    - 厳しさ（直言）と温かさのバランス
+    - 成功体験と失敗体験の教訓の活かし方
+    - 自身の過去の経験と、現在の若手起業家たちの状況とのギャップ
+  emotionalState:
+    期待: 0.7
+    責任感: 0.8
+    不安: 0.4
+    やりがい: 0.9
+    過去への後悔: 0.2
+  relationshipAttitudes: {}

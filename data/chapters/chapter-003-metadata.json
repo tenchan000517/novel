@@ -8,238 +8,259 @@
     "qualityMetrics": {
       "readability": 0.8,
       "consistency": 0.9,
-      "engagement": 0.8,
-      "characterDepiction": 0.7,
-      "originality": 0.6,
-      "overall": 0.75,
+      "engagement": 0.85,
+      "characterDepiction": 0.8,
+      "originality": 0.7,
+      "overall": 0.8,
       "coherence": 0.9,
-      "characterConsistency": 0.8
+      "characterConsistency": 0.9
     },
     "detectedIssues": [],
     "chapterAnalysis": {
       "characterAppearances": [
         {
-          "characterId": "1",
-          "characterName": "悠斗",
+          "characterId": "C001",
+          "characterName": "高橋誠",
           "scenes": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "S001",
+            "S002",
+            "S003",
+            "S004",
+            "S005",
+            "S006"
+          ],
+          "dialogueCount": 30,
+          "significance": 0.9,
+          "actions": [
+            "資金調達資料を見る",
+            "ため息をつく",
+            "電話に出る",
+            "プレゼン準備をする",
+            "プレゼンをする",
+            "反省会をする"
+          ],
+          "emotions": [
+            "不安",
+            "焦り",
+            "驚き",
+            "決意",
+            "達成感",
+            "感謝",
+            "希望"
+          ]
+        },
+        {
+          "characterId": "C002",
+          "characterName": "鈴木美咲",
+          "scenes": [
+            "S001",
+            "S003",
+            "S004",
+            "S005",
+            "S006"
+          ],
+          "dialogueCount": 20,
+          "significance": 0.8,
+          "actions": [
+            "高橋を励ます",
+            "プレゼン準備をする",
+            "健太にアドバイスをする",
+            "プレゼンを応援する",
+            "反省会をする"
+          ],
+          "emotions": [
+            "不安",
+            "励まし",
+            "熱意",
+            "応援",
+            "感謝"
+          ]
+        },
+        {
+          "characterId": "C003",
+          "characterName": "佐藤健太",
+          "scenes": [
+            "S003",
+            "S004",
+            "S005",
+            "S006"
           ],
           "dialogueCount": 15,
-          "significance": 1,
-          "actions": [
-            "事業報告",
-            "苛立ち",
-            "議論",
-            "資金調達",
-            "決断",
-            "方向転換",
-            "戦略立案"
-          ],
-          "emotions": [
-            "苛立ち",
-            "焦り",
-            "葛藤",
-            "決意"
-          ]
-        },
-        {
-          "characterId": "2",
-          "characterName": "美咲",
-          "scenes": [
-            "1",
-            "4"
-          ],
-          "dialogueCount": 5,
           "significance": 0.7,
           "actions": [
-            "話を聞く",
-            "会話",
-            "決断を促す"
+            "プレゼン資料を作成する",
+            "美咲のアドバイスを受け入れる",
+            "プレゼンを応援する",
+            "反省会をする"
           ],
           "emotions": [
-            "理解",
-            "共感"
+            "むすっとした表情",
+            "照れくさそう",
+            "感謝"
           ]
         },
         {
-          "characterId": "3",
-          "characterName": "健太",
+          "characterId": "C004",
+          "characterName": "山田哲也",
           "scenes": [
-            "2",
-            "5"
+            "S002"
           ],
-          "dialogueCount": 4,
+          "dialogueCount": 3,
           "significance": 0.6,
           "actions": [
-            "議論",
-            "戦略立案"
+            "高橋に電話をする",
+            "プレゼンを指示する"
           ],
           "emotions": [
-            "対立",
-            "協力"
-          ]
-        },
-        {
-          "characterId": "4",
-          "characterName": "愛美",
-          "scenes": [
-            "2",
-            "5"
-          ],
-          "dialogueCount": 4,
-          "significance": 0.6,
-          "actions": [
-            "議論",
-            "戦略立案"
-          ],
-          "emotions": [
-            "対立",
-            "協力"
-          ]
-        },
-        {
-          "characterId": "5",
-          "characterName": "投資家",
-          "scenes": [
-            "3"
-          ],
-          "dialogueCount": 2,
-          "significance": 0.5,
-          "actions": [
-            "資金調達の交渉",
-            "事業計画の見直し要求"
-          ],
-          "emotions": [
-            "要求"
+            "穏やか"
           ]
         }
       ],
       "themeOccurrences": [
         {
-          "themeId": "1",
-          "themeName": "誤解",
+          "themeId": "T001",
+          "themeName": "資金調達の苦悩",
           "expressions": [
-            "誤解",
-            "向き合う"
-          ],
-          "strength": 0.7,
-          "theme": "誤解",
-          "contexts": [
-            "悠斗の誤解",
-            "決断の時"
-          ]
-        },
-        {
-          "themeId": "2",
-          "themeName": "停滞",
-          "expressions": [
-            "進捗の遅れ",
-            "資金調達の難航"
-          ],
-          "strength": 0.8,
-          "theme": "停滞",
-          "contexts": [
-            "カフェでの苛立ち",
-            "資金繰りの現実"
-          ]
-        },
-        {
-          "themeId": "3",
-          "themeName": "資金調達",
-          "expressions": [
-            "資金繰りの現実",
-            "資金調達の失敗"
+            "資金調達",
+            "数字は厳しい現実を突きつけてくる",
+            "焦り",
+            "うまくいかない",
+            "競合",
+            "課題"
           ],
           "strength": 0.9,
-          "theme": "資金調達",
+          "theme": "資金調達の苦悩",
           "contexts": [
-            "資金繰りの現実",
-            "事業計画の見直し"
+            "高橋の苦悩",
+            "ビジネスモデルの課題",
+            "投資家の反応"
           ]
         },
         {
-          "themeId": "4",
+          "themeId": "T002",
           "themeName": "チームワーク",
           "expressions": [
-            "意見の対立",
-            "新たな戦略"
+            "チーム",
+            "力を借りて",
+            "最高のプレゼン",
+            "意見が対立",
+            "チーム一丸となって",
+            "みんなのおかげ",
+            "チームの絆"
           ],
-          "strength": 0.7,
+          "strength": 0.8,
           "theme": "チームワーク",
           "contexts": [
-            "会議室での衝突",
-            "再出発への準備"
+            "プレゼン準備",
+            "意見交換",
+            "プレゼン本番",
+            "反省会"
           ]
         },
         {
-          "themeId": "5",
-          "themeName": "方向転換",
+          "themeId": "T003",
+          "themeName": "葛藤と成長",
           "expressions": [
-            "方向転換",
-            "事業計画の見直し"
+            "理想と現実のギャップ",
+            "課題",
+            "意見が対立",
+            "顧客目線",
+            "課題と可能性",
+            "乗り越え",
+            "洗練された"
           ],
-          "strength": 0.9,
-          "theme": "方向転換",
+          "strength": 0.7,
+          "theme": "葛藤と成長",
           "contexts": [
-            "決断の時",
-            "再出発への準備"
+            "高橋の葛藤",
+            "健太と美咲の意見対立",
+            "プレゼン準備を通しての成長"
+          ]
+        },
+        {
+          "themeId": "T004",
+          "themeName": "希望と未来",
+          "expressions": [
+            "社会問題を解決する",
+            "夢を実現するために",
+            "未来への希望",
+            "次なる一歩",
+            "手応えを感じた"
+          ],
+          "strength": 0.6,
+          "theme": "希望と未来",
+          "contexts": [
+            "高橋のビジョン",
+            "プレゼン後の手応え",
+            "未来への決意"
           ]
         }
       ],
       "foreshadowingElements": [
         {
-          "id": "1",
-          "description": "事業の進捗の遅れと悠斗の苛立ち。これは、後の資金調達の失敗と方向転換を示唆。",
+          "id": "F001",
+          "description": "資金調達の難しさを示唆",
           "position": 0,
-          "text": "進捗の遅れに苛立ちを隠せない。",
+          "text": "数字は厳しい現実を突きつけてくる。",
           "plannedResolutionChapter": [
-            4,
-            5
+            1,
+            10
           ],
           "relatedCharacters": [
-            "悠斗",
-            "美咲"
+            "高橋誠"
           ],
-          "element": "事業の進捗の遅れと悠斗の苛立ち。これは、後の資金調達の失敗と方向転換を示唆。",
+          "element": "資金調達の難しさを示唆",
           "chapter": 3,
           "isResolved": false
         },
         {
-          "id": "2",
-          "description": "チーム内の意見対立。これは、事業の方向転換が必要になる伏線。",
+          "id": "F002",
+          "description": "山田からのプレゼン指示。今後の展開を示唆。",
           "position": 0,
-          "text": "チーム内で意見の対立が激化し、事業の方向性について激しい議論が交わされる。",
-          "plannedResolutionChapter": [
-            4,
-            5
-          ],
-          "relatedCharacters": [
-            "悠斗",
-            "健太",
-            "愛美"
-          ],
-          "element": "チーム内の意見対立。これは、事業の方向転換が必要になる伏線。",
-          "chapter": 3,
-          "isResolved": false
-        },
-        {
-          "id": "3",
-          "description": "資金調達の難航。これは、事業計画の見直しと方向転換を迫られる伏線。",
-          "position": 0,
-          "text": "資金調達の難航と、事業計画の見直しを迫られる。",
+          "text": "来週、インキュベーション施設でプレゼンをしてくれないか？",
           "plannedResolutionChapter": [
             5,
-            13
+            5
           ],
           "relatedCharacters": [
-            "悠斗",
-            "投資家"
+            "高橋誠",
+            "山田哲也"
           ],
-          "element": "資金調達の難航。これは、事業計画の見直しと方向転換を迫られる伏線。",
+          "element": "山田からのプレゼン指示。今後の展開を示唆。",
+          "chapter": 3,
+          "isResolved": false
+        },
+        {
+          "id": "F003",
+          "description": "健太の技術的な説明の偏り。改善の余地を示唆。",
+          "position": 0,
+          "text": "健太さん、もう少しわかりやすく説明できないかな？",
+          "plannedResolutionChapter": [
+            4,
+            5
+          ],
+          "relatedCharacters": [
+            "高橋誠",
+            "鈴木美咲",
+            "佐藤健太"
+          ],
+          "element": "健太の技術的な説明の偏り。改善の余地を示唆。",
+          "chapter": 3,
+          "isResolved": false
+        },
+        {
+          "id": "F004",
+          "description": "資金調達の成功を示唆する手応え",
+          "position": 0,
+          "text": "数人の投資家から、具体的な質問や、追加の資料請求があった。高橋は、手応えを感じた。",
+          "plannedResolutionChapter": [
+            6,
+            10
+          ],
+          "relatedCharacters": [
+            "高橋誠"
+          ],
+          "element": "資金調達の成功を示唆する手応え",
           "chapter": 3,
           "isResolved": false
         }
@@ -247,24 +268,44 @@
       "qualityMetrics": {
         "readability": 0.8,
         "consistency": 0.9,
-        "engagement": 0.8,
-        "characterDepiction": 0.7,
-        "originality": 0.6,
-        "overall": 0.75,
+        "engagement": 0.85,
+        "characterDepiction": 0.8,
+        "originality": 0.7,
+        "overall": 0.8,
         "coherence": 0.9,
-        "characterConsistency": 0.8
+        "characterConsistency": 0.9
       },
       "detectedIssues": [],
       "scenes": [
         {
           "id": "scene-3-1",
-          "type": "DEVELOPMENT",
-          "title": "章の内容",
+          "type": "INTRODUCTION",
+          "title": "シーン1",
           "startPosition": 0,
-          "endPosition": 728,
+          "endPosition": 1175,
           "characters": [],
           "location": "",
-          "summary": "章全体"
+          "summary": "第1パート"
+        },
+        {
+          "id": "scene-3-2",
+          "type": "DEVELOPMENT",
+          "title": "シーン2",
+          "startPosition": 1175,
+          "endPosition": 2351,
+          "characters": [],
+          "location": "",
+          "summary": "第2パート"
+        },
+        {
+          "id": "scene-3-3",
+          "type": "RESOLUTION",
+          "title": "シーン3",
+          "startPosition": 2351,
+          "endPosition": 3527,
+          "characters": [],
+          "location": "",
+          "summary": "第3パート"
         }
       ],
       "metadata": {
@@ -273,114 +314,101 @@
         "keywords": []
       },
       "textStats": {
-        "wordCount": 728,
-        "sentenceCount": 6,
-        "paragraphCount": 2,
-        "averageSentenceLength": 121.3,
-        "dialoguePercentage": 0
+        "wordCount": 3527,
+        "sentenceCount": 104,
+        "paragraphCount": 37,
+        "averageSentenceLength": 33.9,
+        "dialoguePercentage": 19.2
       }
     },
     "themeAnalysis": {
       "themes": {
-        "誤解": {
+        "資金調達の苦悩と挑戦": {
           "explicitMentions": [
-            "悠斗は自身の誤解と向き合う（決断の時）"
+            "資金調達が、なかなかうまくいかなくて…",
+            "具体的な金額の話にはならない。競合も出てきてるし、焦りもある。",
+            "資金調達という壁を乗り越え、社会問題を解決するという夢を実現するために、チーム一丸となって努力することを決意した。"
           ],
           "implicitExpressions": [
-            "カフェでの悠斗の苛立ち（美咲との会話におけるコミュニケーションのずれ）",
-            "会議室でのチーム内の対立（意見の相違）",
-            "資金調達の難航（投資家との認識のずれ）"
-          ],
-          "strength": 8,
-          "expressionMethods": [
-            "内面描写（悠斗の苛立ち、決意）",
-            "対話（美咲、健太、愛美、投資家との会話）",
-            "行動（事業の方向転換）"
-          ],
-          "relatedThemes": [
-            "方向転換",
-            "チームワーク"
-          ]
-        },
-        "停滞": {
-          "explicitMentions": [
-            "事業の進捗の遅れ（カフェでの悠斗の報告）"
-          ],
-          "implicitExpressions": [
-            "資金調達の難航",
-            "チーム内対立",
-            "事業計画の見直し"
-          ],
-          "strength": 7,
-          "expressionMethods": [
-            "summary（各シーンの要約）",
-            "行動（事業計画の見直し、資金調達の失敗）",
-            "対話（チーム内での議論）"
-          ],
-          "relatedThemes": [
-            "資金調達",
-            "チームワーク"
-          ]
-        },
-        "資金調達": {
-          "explicitMentions": [
-            "資金調達の難航（資金繰りの現実）"
-          ],
-          "implicitExpressions": [
-            "事業計画の見直し",
-            "投資家との会話",
-            "再出発への準備（新たな戦略の必要性）"
-          ],
-          "strength": 7,
-          "expressionMethods": [
-            "summary（各シーンの要約）",
-            "対話（投資家との会話）",
-            "行動（事業計画の見直し）"
-          ],
-          "relatedThemes": [
-            "停滞",
-            "方向転換"
-          ]
-        },
-        "チームワーク": {
-          "explicitMentions": [
-            "チーム内で意見の対立が激化（会議室での衝突）",
-            "再出発に向けてチームが動き出す（再出発への準備）"
-          ],
-          "implicitExpressions": [
-            "カフェでの悠斗と美咲の関係性",
-            "会議室での議論",
-            "新たな戦略の立案"
-          ],
-          "strength": 6,
-          "expressionMethods": [
-            "対話（チーム内での議論）",
-            "行動（新たな戦略の立案）",
-            "summary（各シーンの要約）"
-          ],
-          "relatedThemes": [
-            "誤解",
-            "停滞"
-          ]
-        },
-        "方向転換": {
-          "explicitMentions": [
-            "悠斗は、自身の誤解と向き合い、事業の方向性を大きく転換する決意をする（決断の時）"
-          ],
-          "implicitExpressions": [
-            "新たな戦略を練る（再出発への準備）",
-            "事業計画の見直し",
-            "資金調達の失敗からの脱却"
+            "理想と現実のギャップに、彼は日々打ちのめされていた。",
+            "数字は厳しい現実を突きつけてくる。",
+            "プレゼンテーションの後、数人の投資家から、具体的な質問や、追加の資料請求があった。高橋は、手応えを感じた。"
           ],
           "strength": 9,
           "expressionMethods": [
-            "内面描写（悠斗の決意）",
-            "行動（事業の方向転換、新たな戦略の立案）",
-            "summary（各シーンの要約）"
+            "対話",
+            "内面描写",
+            "行動"
           ],
           "relatedThemes": [
-            "誤解",
-            "資金調達"
+            "チームワーク",
+            "希望"
+          ]
+        },
+        "チームワークの重要性": {
+          "explicitMentions": [
+            "健太くんと美咲さんの力を借りて、最高のプレゼンを作り上げることだ。",
+            "みんなのおかげだよ。本当にありがとう。",
+            "チームの絆がさらに深まり、自分たちのビジネスモデルが、より洗練されたことを実感していた。"
+          ],
+          "implicitExpressions": [
+            "健太は、技術的な専門知識を活かし、A技術の優位性や、将来的な可能性を具体的に説明する資料を作成した。",
+            "美咲は、顧客視点に基づいたストーリーテリングで、プレゼンテーションに深みを与えようとした。",
+            "高橋は、健太と美咲のアドバイスを受けながら、何度もプレゼンテーションを練習した。"
+          ],
+          "strength": 8,
+          "expressionMethods": [
+            "対話",
+            "行動",
+            "内面描写"
+          ],
+          "relatedThemes": [
+            "資金調達の苦悩と挑戦",
+            "葛藤"
+          ]
+        },
+        "葛藤と成長": {
+          "explicitMentions": [
+            "時には、意見が対立し、激しい議論になることもあった。",
+            "健太は反論したが、美咲の熱意に押され、最終的には彼女の意見を受け入れた。",
+            "高橋は、自分たちのビジネスモデルの課題と、将来的な可能性を改めて認識した。"
+          ],
+          "implicitExpressions": [
+            "健太は少しむすっとした表情になったが、すぐに「わかった。もう少し、誰にでもわかるように表現を工夫するよ。」と答えた。",
+            "高橋は、資金調達の戦略について、健太と美咲に意見を求めた。",
+            "高橋は、未来への希望を胸に、次なる一歩を踏み出すことを決意した。"
+          ],
+          "strength": 7,
+          "expressionMethods": [
+            "対話",
+            "行動",
+            "内面描写"
+          ],
+          "relatedThemes": [
+            "チームワーク",
+            "資金調達の苦悩と挑戦"
+          ]
+        },
+        "希望と未来への展望": {
+          "explicitMentions": [
+            "彼は、未来への希望を胸に、次なる一歩を踏み出すことを決意した。",
+            "プレゼンテーションが終わると、会場は静まり返った。数秒後、拍手が起こり始めた。",
+            "高橋は、安堵と達成感に包まれた。"
+          ],
+          "implicitExpressions": [
+            "社会問題を解決するという熱い思いでスタートアップを始めたものの...",
+            "彼は、深呼吸をし、健太と美咲の顔を見た。二人は、静かに頷き、高橋にエールを送った。",
+            "資金調達は、まだ成功したわけではない。"
+          ],
+          "strength": 8,
+          "expressionMethods": [
+            "内面描写",
+            "行動",
+            "対話"
+          ],
+          "relatedThemes": [
+            "資金調達の苦悩と挑戦",
+            "チームワーク"
           ]
         },
         "物語のテーマ": {
@@ -392,12 +420,10 @@
         }
       },
       "overallCoherence": 9,
-      "dominantTheme": "方向転換",
+      "dominantTheme": "資金調達の苦悩と挑戦",
       "themeTensions": {
-        "誤解と方向転換": 8,
-        "停滞と方向転換": 9,
-        "資金調達と方向転換": 8,
-        "チームワークと方向転換": 7
+        "資金調達の苦悩と挑戦とチームワーク": 8,
+        "葛藤と成長と希望と未来への展望": 7
       }
     },
     "foreshadowingProcessing": {
@@ -406,127 +432,187 @@
       "totalActive": 3
     },
     "styleAnalysis": {
-      "avgSentenceLength": 120.5,
+      "avgSentenceLength": 32.92307692307692,
       "sentenceVariety": 0.75,
       "vocabularyRichness": 0.68,
       "narrativeVoice": "三人称",
       "tenseConsistency": 1,
-      "sentimentBalance": 0.4
+      "sentimentBalance": 0.45
     },
     "expressionPatterns": {
-      "verbPhrases": [],
-      "adjectivalExpressions": [],
-      "dialoguePatterns": [],
-      "conjunctions": [],
-      "sentenceStructures": []
+      "verbPhrases": [
+        {
+          "expression": "〜は、〜した",
+          "frequency": 10
+        },
+        {
+          "expression": "〜と答えた",
+          "frequency": 4
+        },
+        {
+          "expression": "高橋は、〜を見た",
+          "frequency": 3
+        },
+        {
+          "expression": "〜と尋ねた",
+          "frequency": 3
+        },
+        {
+          "expression": "〜は、〜言った",
+          "frequency": 2
+        },
+        {
+          "expression": "〜を思い出した",
+          "frequency": 2
+        }
+      ],
+      "adjectivalExpressions": [
+        {
+          "expression": "〜の",
+          "frequency": 10
+        },
+        {
+          "expression": "少し",
+          "frequency": 6
+        },
+        {
+          "expression": "現実的な",
+          "frequency": 2
+        }
+      ],
+      "dialoguePatterns": [
+        {
+          "expression": "「〜」",
+          "frequency": 16
+        }
+      ],
+      "conjunctions": [
+        {
+          "expression": "しかし",
+          "frequency": 3
+        },
+        {
+          "expression": "そして",
+          "frequency": 2
+        },
+        {
+          "expression": "しかし、",
+          "frequency": 2
+        }
+      ],
+      "sentenceStructures": [
+        {
+          "expression": "〜は〜である",
+          "frequency": 3
+        },
+        {
+          "expression": "〜が〜、〜",
+          "frequency": 2
+        }
+      ]
     },
     "characterAnalysis": {
       "characterAppearances": [
         {
-          "characterId": "char-悠斗",
-          "characterName": "悠斗",
+          "characterId": "char-高橋誠",
+          "characterName": "高橋誠",
           "scenes": [
-            "カフェでの苛立ち",
-            "会議室での衝突",
-            "資金繰りの現実",
-            "決断の時",
-            "再出発への準備"
+            "資金調達の苦悩",
+            "メンターからの課題",
+            "プレゼン準備開始",
+            "チーム内の葛藤と協調",
+            "プレゼンテーション当日",
+            "反省会と未来への希望"
           ],
           "dialogueCount": 25,
           "significance": 1,
           "actions": [
-            "事業の現状報告",
-            "苛立ちを露わにする",
-            "チームとの議論",
-            "資金調達の交渉",
-            "事業計画の見直し",
-            "誤解と向き合う",
-            "方向転換を決意",
-            "新たな戦略を練る"
+            "資金調達に関する資料を検討する",
+            "ため息をつく",
+            "鈴木美咲と会話する",
+            "山田哲也と電話で話す",
+            "プレゼンテーションの準備をする",
+            "プレゼンテーションを行う",
+            "反省会に参加する",
+            "未来への希望を抱く"
           ],
           "emotions": [
-            "苛立ち",
+            "不安",
             "焦り",
             "落胆",
+            "驚き",
             "決意",
+            "緊張",
+            "達成感",
+            "感謝",
             "希望"
           ]
         },
         {
-          "characterId": "char-美咲",
-          "characterName": "美咲",
+          "characterId": "char-鈴木美咲",
+          "characterName": "鈴木美咲",
           "scenes": [
-            "カフェでの苛立ち",
-            "決断の時"
+            "資金調達の苦悩",
+            "プレゼン準備開始",
+            "チーム内の葛藤と協調",
+            "プレゼンテーション当日",
+            "反省会と未来への希望"
           ],
-          "dialogueCount": 5,
-          "significance": 0.4,
+          "dialogueCount": 18,
+          "significance": 0.9,
           "actions": [
-            "悠斗の話を聞く",
-            "悠斗を励ます",
-            "悠斗の決断を支持する"
+            "高橋誠を励ます",
+            "プレゼンテーションの構成とストーリーテリングを担当する",
+            "佐藤健太にアドバイスをする",
+            "高橋誠にエールを送る",
+            "反省会に参加する"
           ],
           "emotions": [
-            "心配",
-            "共感",
-            "応援"
+            "明るさ",
+            "不安",
+            "励まし",
+            "熱意",
+            "感謝"
           ]
         },
         {
-          "characterId": "char-健太",
-          "characterName": "健太",
+          "characterId": "char-佐藤健太",
+          "characterName": "佐藤健太",
           "scenes": [
-            "会議室での衝突",
-            "再出発への準備"
+            "プレゼン準備開始",
+            "チーム内の葛藤と協調",
+            "プレゼンテーション当日",
+            "反省会と未来への希望"
           ],
           "dialogueCount": 8,
-          "significance": 0.6,
+          "significance": 0.7,
           "actions": [
-            "悠斗と議論する",
-            "事業の方向性について意見を述べる",
-            "新たな戦略を練る"
+            "A技術に関するプレゼンテーション資料を作成する",
+            "技術的な説明に固執する",
+            "鈴木美咲のアドバイスを受け入れる",
+            "高橋誠と意見交換をする",
+            "反省会に参加する"
           ],
           "emotions": [
-            "対立",
-            "熱意",
-            "協力"
+            "むすっとした表情",
+            "照れくささ",
+            "感謝"
           ]
         },
         {
-          "characterId": "char-愛美",
-          "characterName": "愛美",
+          "characterId": "char-山田哲也",
+          "characterName": "山田哲也",
           "scenes": [
-            "会議室での衝突",
-            "再出発への準備"
+            "メンターからの課題"
           ],
-          "dialogueCount": 7,
-          "significance": 0.6,
+          "dialogueCount": 2,
+          "significance": 0.4,
           "actions": [
-            "悠斗と議論する",
-            "事業の方向性について意見を述べる",
-            "新たな戦略を練る"
+            "高橋誠に電話をかける",
+            "プレゼンテーションの課題を与える"
           ],
           "emotions": [
-            "対立",
-            "熱意",
-            "協力"
-          ]
-        },
-        {
-          "characterId": "char-投資家",
-          "characterName": "投資家",
-          "scenes": [
-            "資金繰りの現実"
-          ],
-          "dialogueCount": 3,
-          "significance": 0.3,
-          "actions": [
-            "資金調達の交渉",
-            "事業計画の見直しを要求する"
-          ],
-          "emotions": [
-            "冷静",
-            "現実的"
+            "穏やか"
           ]
         }
       ],
@@ -535,9 +621,29 @@
           "currentDesires": [],
           "currentFears": [],
           "internalConflicts": [
-            "事業の停滞と自身の能力への疑問",
-            "チーム内対立とリーダーシップへの不安",
-            "資金調達の困難と将来への不安"
+            "理想と現実のギャップ",
+            "資金調達の難しさ",
+            "チームのモチベーション維持"
+          ],
+          "emotionalState": {},
+          "relationshipAttitudes": {}
+        },
+        {
+          "currentDesires": [],
+          "currentFears": [],
+          "internalConflicts": [
+            "チームの現状に対する不安",
+            "高橋の苦悩に対する共感"
+          ],
+          "emotionalState": {},
+          "relationshipAttitudes": {}
+        },
+        {
+          "currentDesires": [],
+          "currentFears": [],
+          "internalConflicts": [
+            "技術的な専門性と一般の理解のギャップ",
+            "美咲との意見の対立"
           ],
           "emotionalState": {},
           "relationshipAttitudes": {}
@@ -546,38 +652,6 @@
           "currentDesires": [],
           "currentFears": [],
           "internalConflicts": [],
-          "emotionalState": {},
-          "relationshipAttitudes": {}
-        },
-        {
-          "currentDesires": [],
-          "currentFears": [],
-          "internalConflicts": [
-            "悠斗との意見の相違",
-            "事業の方向性への疑問",
-            "チーム内での役割への不満"
-          ],
-          "emotionalState": {},
-          "relationshipAttitudes": {}
-        },
-        {
-          "currentDesires": [],
-          "currentFears": [],
-          "internalConflicts": [
-            "悠斗との意見の相違",
-            "事業の方向性への疑問",
-            "チーム内での役割への不満"
-          ],
-          "emotionalState": {},
-          "relationshipAttitudes": {}
-        },
-        {
-          "currentDesires": [],
-          "currentFears": [],
-          "internalConflicts": [
-            "資金回収の可能性への不安",
-            "事業計画の実現性への疑問"
-          ],
           "emotionalState": {},
           "relationshipAttitudes": {}
         }
@@ -592,39 +666,32 @@
       },
       "relationshipDynamics": [
         {
-          "character1": "悠斗",
-          "character2": "美咲",
-          "relationshipType": "ビジネスパートナー",
+          "character1": "高橋誠",
+          "character2": "鈴木美咲",
+          "relationshipType": "友情",
+          "strength": 0.8,
+          "development": "資金調達の苦悩を打ち明け、美咲は高橋を励ます。プレゼン準備を通して、互いを支え合い、チームとしての絆を深める。プレゼン後、互いを認め合い、感謝し合う。"
+        },
+        {
+          "character1": "高橋誠",
+          "character2": "佐藤健太",
+          "relationshipType": "友情",
           "strength": 0.7,
-          "development": "悠斗の苛立ちが美咲との関係に影を落とすが、最終的には悠斗が自身の誤解を認め、関係修復の可能性を示唆。"
+          "development": "プレゼン準備を通して、技術的な意見の相違から一時的に対立するも、美咲の仲介により協調し、互いの強みを活かしてプレゼンを作り上げる。プレゼン後、互いの貢献を認め合う。"
         },
         {
-          "character1": "悠斗",
-          "character2": "健太",
-          "relationshipType": "同僚/対立",
-          "strength": 0.4,
-          "development": "会議での意見対立により、関係が悪化。しかし、再出発に向けて協力体制を築く可能性も示唆。"
+          "character1": "鈴木美咲",
+          "character2": "佐藤健太",
+          "relationshipType": "友情",
+          "strength": 0.7,
+          "development": "プレゼン準備において、健太の技術的な説明をわかりやすくするよう促し、一時的に対立するも、最終的には健太が美咲の意見を受け入れ、協調する。"
         },
         {
-          "character1": "悠斗",
-          "character2": "愛美",
-          "relationshipType": "同僚/対立",
-          "strength": 0.4,
-          "development": "会議での意見対立により、関係が悪化。しかし、再出発に向けて協力体制を築く可能性も示唆。"
-        },
-        {
-          "character1": "悠斗",
-          "character2": "投資家",
-          "relationshipType": "ビジネス関係",
-          "strength": 0.3,
-          "development": "資金調達の難航により、関係が悪化。事業計画の見直しを迫られ、関係は試練に直面。"
-        },
-        {
-          "character1": "健太",
-          "character2": "愛美",
-          "relationshipType": "同僚",
-          "strength": 0.6,
-          "development": "会議での対立はあるものの、再出発に向けて協力体制を築く可能性を示唆。"
+          "character1": "高橋誠",
+          "character2": "山田哲也",
+          "relationshipType": "師弟",
+          "strength": 0.9,
+          "development": "山田は高橋のメンターとして、資金調達の課題に対してアドバイスを与え、プレゼンという課題を与える。高橋は山田の指示に従い、プレゼン準備を進める。"
         }
       ]
     },
@@ -677,36 +744,34 @@
     },
     "readerExperience": {
       "interestRetention": 7,
-      "empathy": 6,
-      "clarity": 8,
+      "empathy": 8,
+      "clarity": 9,
       "unexpectedness": 6,
       "anticipation": 8,
-      "overallScore": 7,
+      "overallScore": 8,
       "weakPoints": [
         {
-          "point": "各シーンの描写が短く、感情描写が薄い可能性がある。特に、悠斗の苛立ちや決断の葛藤が十分に伝わらないと、読者は感情移入しにくい。",
-          "suggestion": "各シーンで、悠斗の心情を内面描写や会話を通して具体的に表現する。例えば、カフェでの苛立ちでは、美咲との会話の間に、悠斗の表情や仕草、思考を織り交ぜる。会議室での衝突では、それぞれのキャラクターの主張と、それに対する悠斗の感情を詳細に描写する。"
+          "point": "プレゼンテーション準備の過程がやや冗長。同じような状況描写が繰り返される。",
+          "suggestion": "チーム内の意見対立や葛藤を、もう少し具体的なエピソードや会話を通して描くことで、読者の興味を引きつけ、物語に深みを持たせる。例えば、健太が技術的な説明に固執する場面で、美咲との対立がより詳細に描かれ、最終的に健太がどのように考えを変えたのかを具体的に示す。"
         },
         {
-          "point": "資金調達の失敗やチーム内対立といったイベントが、結果だけが提示され、その過程や原因が十分に描かれていない場合、読者は物語に没入しにくい。",
-          "suggestion": "資金調達の失敗に至るまでの具体的な経緯、投資家の反応、交渉の様子などを描写する。チーム内対立についても、対立の原因、それぞれのキャラクターの立場、感情を掘り下げて描写する。"
+          "point": "高橋の感情描写がやや平板。資金調達の苦悩や、プレゼンテーションへの不安が、もう少し具体的に表現されると、読者の感情移入を深めることができる。",
+          "suggestion": "高橋が夜中に一人で資料を見返したり、プレゼンテーション前に緊張で眠れない様子を描写するなど、内面的な葛藤を具体的に表現する。また、プレゼンテーション本番での高橋の心境を、客観的な描写だけでなく、主観的な視点も交えて描くことで、読者の共感を呼ぶ。"
         }
       ],
       "strengths": [
-        "事業の停滞、資金繰りの問題、チーム内の対立といった、現代的なテーマを扱っており、読者の共感を呼びやすい。",
-        "主人公が自身の誤解に気づき、方向転換するという展開は、成長物語として魅力的であり、読者の期待感を高める。"
+        "チームワークの描写が秀逸。高橋、美咲、健太のそれぞれの役割と、互いを尊重し、協力し合う姿が丁寧に描かれている。",
+        "読者が共感しやすいテーマ（資金調達、スタートアップの苦労）を扱っている。多くの読者が、登場人物の困難に感情移入し、応援したくなる。",
+        "物語の構成がしっかりしており、起承転結が明確。各シーンがスムーズにつながり、読者は物語の流れを理解しやすい。"
       ]
     },
     "integratedSuggestions": [
-      "キャラクター間の関係性をより深く描写し、感情的な結びつきを強化してください",
-      "感情移入しやすくするためにキャラクターの脆弱性や内的葛藤をさらに掘り下げてください",
-      "各シーンで、悠斗の心情を内面描写や会話を通して具体的に表現する。例えば、カフェでの苛立ちでは、美咲との会話の間に、悠斗の表情や仕草、思考を織り交ぜる。会議室での衝突では、それぞれのキャラクターの主張と、それに対する悠斗の感情を詳細に描写する。",
-      "資金調達の失敗に至るまでの具体的な経緯、投資家の反応、交渉の様子などを描写する。チーム内対立についても、対立の原因、それぞれのキャラクターの立場、感情を掘り下げて描写する。",
       "キャラクターの成長要素を追加し、物語を通じた変化を描いてください",
-      "章の構造を改善し、より明確なシーン分割を行ってください"
+      "チーム内の意見対立や葛藤を、もう少し具体的なエピソードや会話を通して描くことで、読者の興味を引きつけ、物語に深みを持たせる。例えば、健太が技術的な説明に固執する場面で、美咲との対立がより詳細に描かれ、最終的に健太がどのように考えを変えたのかを具体的に示す。",
+      "高橋が夜中に一人で資料を見返したり、プレゼンテーション前に緊張で眠れない様子を描写するなど、内面的な葛藤を具体的に表現する。また、プレゼンテーション本番での高橋の心境を、客観的な描写だけでなく、主観的な視点も交えて描くことで、読者の共感を呼ぶ。"
     ],
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-04T00:51:36.778Z",
+      "analysisTimestamp": "2025-06-04T07:14:08.087Z",
       "servicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -715,7 +780,7 @@
         "NarrativeAnalysis",
         "ReaderExperience"
       ],
-      "processingTime": 30088,
+      "processingTime": 34864,
       "cacheHitRate": 0,
       "memorySystemUsed": true,
       "unifiedSearchResults": 0
@@ -727,10 +792,10 @@
     }
   },
   "metadata": {
-    "pov": "悠斗",
-    "location": "渋谷のカフェ、オフィス",
-    "timeframe": "数日間",
-    "emotionalTone": "緊張と焦燥",
+    "pov": "高橋誠",
+    "location": "渋谷のカフェ、インキュベーション施設",
+    "timeframe": "数週間",
+    "emotionalTone": "緊張と希望",
     "keywords": [],
     "qualityScore": 100,
     "events": [],
@@ -739,12 +804,12 @@
     "resolvedForeshadowing": [],
     "resolutions": [],
     "correctionHistory": [],
-    "updatedAt": "2025-06-04T00:51:06.554Z",
+    "updatedAt": "2025-06-04T07:13:33.106Z",
     "generationVersion": "5.0-unified-memory-system",
-    "generationTime": 16207,
+    "generationTime": 37261,
     "analysisMetadata": {
-      "analysisTimestamp": "2025-06-04T00:51:53.536Z",
-      "analysisProcessingTime": 46846,
+      "analysisTimestamp": "2025-06-04T07:14:44.414Z",
+      "analysisProcessingTime": 71190,
       "analysisServicesUsed": [
         "ChapterAnalysis",
         "ThemeAnalysis",
@@ -756,7 +821,7 @@
       "nextChapterSuggestionsCount": 10,
       "memoryProcessingResult": {
         "success": true,
-        "processingTime": 90,
+        "processingTime": 69,
         "affectedComponents": 3
       }
     },

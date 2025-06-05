@@ -1,13 +1,13 @@
 {
   "title": "Generated Novel - Unified Memory System",
-  "totalChapters": 4,
-  "generatedAt": "2025-06-04T00:56:59.760Z",
-  "totalWordCount": 9537,
+  "totalChapters": 3,
+  "generatedAt": "2025-06-04T07:14:44.858Z",
+  "totalWordCount": 8118,
   "averageQualityScore": 100,
   "unifiedMemorySystemMetrics": {
-    "averageMemoryProcessingTime": 84.25,
-    "totalMemoryProcessingTime": 337,
-    "successfulMemoryProcessing": 4,
+    "averageMemoryProcessingTime": 97,
+    "totalMemoryProcessingTime": 291,
+    "successfulMemoryProcessing": 3,
     "totalWarnings": 0,
     "totalErrors": 0,
     "systemOptimizationsApplied": 0
@@ -15,15 +15,15 @@
   "chapters": [
     {
       "number": 1,
-      "title": "焦りと確信",
-      "wordCount": 2409,
+      "title": "焦りと期待の狭間で",
+      "wordCount": 2384,
       "qualityScore": 100,
-      "summary": "太郎は、起業の初期段階で直面する課題に焦りを感じながらも、自分のビジョンを信じ、問題解決のために奔走する。",
+      "summary": "高橋はチームに加わった健太と美咲との最初のミーティングで、ビジネスプランの進捗と直面する課題について話し合う。資金調達のプレッシャーと、理想と現実のギャップに葛藤する。",
       "scenes": 0,
-      "createdAt": "2025-06-04T00:41:22.695Z",
+      "createdAt": "2025-06-04T07:05:30.689Z",
       "unifiedMemoryProcessing": {
         "success": true,
-        "processingTime": 65,
+        "processingTime": 90,
         "affectedComponents": 3,
         "systemHealth": "HEALTHY"
       },
@@ -35,15 +35,15 @@
     },
     {
       "number": 2,
-      "title": "壁と突破口",
-      "wordCount": 3822,
+      "title": "焦りと模索",
+      "wordCount": 2207,
       "qualityScore": 100,
-      "summary": "資金調達の壁に直面する健太は、投資家との面談を重ねるも成果が出ない。焦りを感じながらも、チームと協力し、問題解決のために奮闘する。",
+      "summary": "資金調達の壁に直面し、高橋はチームのビジョンと現実とのギャップに苦悩する。メンターの山田からの助言を受け、顧客理解の重要性に気づき始める。",
       "scenes": 0,
-      "createdAt": "2025-06-04T00:47:20.018Z",
+      "createdAt": "2025-06-04T07:09:48.147Z",
       "unifiedMemoryProcessing": {
         "success": true,
-        "processingTime": 107,
+        "processingTime": 83,
         "affectedComponents": 3,
         "systemHealth": "DEGRADED"
       },
@@ -55,35 +55,15 @@
     },
     {
       "number": 3,
-      "title": "焦りと誤算、そして新たな一手",
-      "wordCount": 728,
+      "title": "壁と突破口",
+      "wordCount": 3527,
       "qualityScore": 100,
-      "summary": "新規事業の進捗が停滞し、悠斗は焦りを募らせる。チーム内での対立、資金繰りの問題、そして自身の誤解が露呈し、彼は大きな決断を迫られる。",
+      "summary": "資金調達の壁に直面し、高橋は苦悩する。チームは新たな問題に直面し、それぞれの課題と向き合いながら、未来への突破口を探る。",
       "scenes": 0,
-      "createdAt": "2025-06-04T00:51:06.554Z",
+      "createdAt": "2025-06-04T07:13:33.106Z",
       "unifiedMemoryProcessing": {
         "success": true,
-        "processingTime": 76,
-        "affectedComponents": 3,
-        "systemHealth": "DEGRADED"
-      },
-      "plotConsistency": {
-        "consistent": false,
-        "issueCount": 4,
-        "majorIssues": 4
-      }
-    },
-    {
-      "number": 4,
-      "title": "第4章　壁と誤算",
-      "wordCount": 2578,
-      "qualityScore": 100,
-      "summary": "新規顧客獲得の伸び悩みに直面し、沢村はチームと打開策を探る。マーケティング戦略の見直しを図るも、過去の成功体験に囚われた誤解が露呈し、さらなる壁にぶつかる。",
-      "scenes": 0,
-      "createdAt": "2025-06-04T00:56:11.061Z",
-      "unifiedMemoryProcessing": {
-        "success": true,
-        "processingTime": 89,
+        "processingTime": 118,
         "affectedComponents": 3,
         "systemHealth": "DEGRADED"
       },

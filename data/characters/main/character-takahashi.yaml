@@ -38,8 +38,7 @@ appearance:
     - 清潔感のある身だしなみ
   clothingStyle: シンプルで機能的な服装。大事な場面ではスーツも着こなす。
 backstory:
-  summary: >-
-    両親に恵まれた家庭環境で育ち、小さい頃から真面目で責任感の強い性格だった。大学では部活動の主将を務め、全国大会出場や国体選手にも選ばれた経験を持つ。新卒離職率の高さなど社会問題に問題意識を持ち、起業して解決したいという思いを抱いている。
+  summary: 両親に恵まれた家庭環境で育ち、小さい頃から真面目で責任感の強い性格だった。大学では部活動の主将を務め、全国大会出場や国体選手にも選ばれた経験を持つ。新卒離職率の高さなど社会問題に問題意識を持ち、起業して解決したいという思いを抱いている。
   significantEvents:
     - 高校時代、部活の主将として全国大会に出場
     - 大学2年次に国体選手に選出される
@@ -48,443 +47,9 @@ backstory:
   origin: 東京郊外の住宅街
   trauma:
     - 特になし（恵まれた環境で育った）
-  detailedHistory: >-
-    両親は共働きの一般家庭。父親は中小企業の営業マン、母親は小学校教師。幼い頃から責任感を育てられ、何事にも一生懸命取り組む姿勢が身についた。学業も優秀だが、特に部活動（陸上競技）に打ち込み、リーダーシップを発揮。大学では経営学を専攻しながら、部活動の主将としてチームをまとめ上げた。社会問題への意識が高く、特に若者のキャリア問題に関心を持つようになる。
+  detailedHistory: 両親は共働きの一般家庭。父親は中小企業の営業マン、母親は小学校教師。幼い頃から責任感を育てられ、何事にも一生懸命取り組む姿勢が身についた。学業も優秀だが、特に部活動（陸上競技）に打ち込み、リーダーシップを発揮。大学では経営学を専攻しながら、部活動の主将としてチームをまとめ上げた。社会問題への意識が高く、特に若者のキャリア問題に関心を持つようになる。
   motivations: 社会課題を解決する企業を作り、世の中をより良くしたいという想い。自身も経営者として成功したいという願望。
   secrets: 実は内心では自信がなく、うまくいかないのではないかという不安を抱えている
-state:
-  isActive: false
-  emotionalState: DETERMINED
-  developmentStage: 0
-  lastAppearance: 1
-  parameters:
-    - id: param-leadership
-      name: リーダーシップ
-      description: チームを導き、方向性を示し、メンバーの能力を引き出す力
-      category: SOCIAL
-      tags:
-        - リーダー
-        - 組織
-        - チーム
-      value: 86
-      growth: 0
-    - id: param-business-knowledge
-      name: ビジネス知識
-      description: 経営、マーケティング、財務など、ビジネスに関する知識
-      category: MENTAL
-      tags:
-        - 知識
-        - 経営
-        - ビジネス
-      value: 100
-      growth: 0
-    - id: param-resilience
-      name: 回復力
-      description: 挫折や失敗から立ち直り、前進し続ける力
-      category: PERSONAL
-      tags:
-        - 精神力
-        - 忍耐
-        - 克服
-      value: 100
-      growth: 0
-    - id: param-communication
-      name: コミュニケーション能力
-      description: 自分の考えを効果的に伝え、他者の意見を理解する力
-      category: SOCIAL
-      tags:
-        - 対話
-        - 表現
-        - 理解
-      value: 0
-      growth: 0
-    - id: param-empathy
-      name: 共感力
-      description: 他者の感情や立場を理解し、寄り添う能力
-      category: SOCIAL
-      tags:
-        - 理解
-        - 感情
-        - 人間関係
-      value: 0
-      growth: 0
-    - id: param-customer-understanding
-      name: 顧客理解
-      description: 顧客のニーズや行動、動機を深く理解する能力
-      category: BUSINESS
-      tags:
-        - 顧客
-        - ニーズ
-        - 洞察
-      value: 0
-      growth: 0
-    - id: param-adaptability
-      name: 適応力
-      description: 変化する状況や新しい情報に柔軟に対応する能力
-      category: PERSONAL
-      tags:
-        - 柔軟
-        - 変化
-        - 対応
-      value: 0
-      growth: 0
-    - id: param-humility
-      name: 謙虚さ
-      description: 自分の限界を認め、学び続ける姿勢
-      category: PERSONAL
-      tags:
-        - 謙虚
-        - 学習
-        - 自己認識
-      value: 0
-      growth: 0
-    - id: param-strategic-thinking
-      name: 戦略的思考
-      description: 長期的視点で全体像を捉え、計画を立てる能力
-      category: MENTAL
-      tags:
-        - 戦略
-        - 計画
-        - 思考
-      value: 16
-      growth: 0
-    - id: param-decision-making
-      name: 意思決定力
-      description: 情報を分析し、適切な判断を下す能力
-      category: MENTAL
-      tags:
-        - 判断
-        - 決断
-        - 分析
-      value: 0
-      growth: 0
-    - id: param-financial-acumen
-      name: 財務感覚
-      description: 財務状況を理解し、適切な経済的判断を下す能力
-      category: BUSINESS
-      tags:
-        - 財務
-        - 経済
-        - 資金
-      value: 0
-      growth: 0
-    - id: param-vision
-      name: ビジョン力
-      description: 将来の可能性を描き、目標を設定する能力
-      category: MENTAL
-      tags:
-        - 将来
-        - 目標
-        - イメージ
-      value: 0
-      growth: 0
-  skills:
-    - 不明なスキル (4章)
-    - 不明なスキル (7章)
-    - 不明なスキル (2章)
-    - 不明なスキル (1章)
-    - 不明なスキル (3章)
-    - 不明なスキル (5章)
-    - 不明なスキル (6章)
-    - 不明なスキル (8章)
-    - 不明なスキル (12章)
-    - 不明なスキル (9章)
-    - 不明なスキル (11章)
-  activeGrowthPlanId: growth-plan-takahashi
-  location: 地元
-  lastStateChange:
-    type: CLIMAX
-    chapterNumber: 5
-    description: 高橋が非通知の電話を受け、新たな謎に直面する。
-  isDeceased: true
-  skill:
-    - skillId: skill-business-planning
-      level: 1
-      proficiency: 0
-      acquired: 2025-05-19T06:00:16.714Z
-  transformations:
-    - type: UNKNOWN
-      description: 高橋誠が記憶を失い、無力な状態から物語を開始する。これは、彼のアイデンティティと人格に重大な変化をもたらす。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-14T11:17:48.504Z
-    - type: UNKNOWN
-      description: 高橋誠が記憶喪失の状態になる。名前を含む過去の記憶を失っている。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-14T11:22:59.914Z
-    - type: UNKNOWN
-      description: 高橋誠がプロジェクトの真相を暴き、関係者を告発することを決意する。
-      chapter: 2
-      isPermanent: true
-      timestamp: 2025-05-14T11:31:56.919Z
-    - type: UNKNOWN
-      description: ビジネスコンテストでの惨敗後、誠が自信を失うが、山田哲也の言葉に触発され、起業家育成プロジェクトに参加し、再び起業を目指す決意をする。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-14T12:01:42.401Z
-    - type: UNKNOWN
-      description: ビジネスコンテストでの酷評と見知らぬ場所での状況により、高橋誠の精神状態が変化し、生き残るという強い決意を抱くようになった。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-14T12:29:08.702Z
-    - type: UNKNOWN
-      description: 誠が過去の記憶を取り戻す過程で、迷いを捨て、強い決意を宿す。
-      chapter: 2
-      isPermanent: true
-      timestamp: 2025-05-14T12:36:31.396Z
-    - type: UNKNOWN
-      description: ロボットが破壊される。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-14T13:00:43.211Z
-    - type: UNKNOWN
-      description: 誠が過去の記憶を取り戻し、自分がロボットを作った研究者である高橋誠であることを思い出す。同時に、ロボットを止める決意を固める。
-      chapter: 8
-      isPermanent: true
-      timestamp: 2025-05-14T14:03:59.087Z
-    - type: UNKNOWN
-      description: 誠が過去の研究者としての記憶を取り戻し、自分が何をすべきかを理解する。
-      chapter: 11
-      isPermanent: true
-      timestamp: 2025-05-14T14:29:27.236Z
-    - type: UNKNOWN
-      description: 高橋がプロダクトアウト思考からマーケットイン思考への転換を決意。
-      chapter: 11
-      isPermanent: true
-      timestamp: 2025-05-15T09:09:03.509Z
-    - type: UNKNOWN
-      description: 高橋が当初のビジョンと現実とのギャップに直面し、葛藤した。
-      chapter: 12
-      isPermanent: true
-      timestamp: 2025-05-15T09:14:01.289Z
-    - type: UNKNOWN
-      description: 高橋は、マーケットイン思考への転換を決意する。
-      chapter: 12
-      isPermanent: true
-      timestamp: 2025-05-15T09:18:07.419Z
-    - type: UNKNOWN
-      description: 高橋誠が、新卒離職問題への強い問題意識を持ち続け、大手企業への就職ではなく、問題解決に貢献したいという揺るぎない信念を持つ。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-15T10:10:32.231Z
-    - type: UNKNOWN
-      description: 高橋は自分の弱点を佐藤と鈴木に打ち明け、チーム一丸となって課題に取り組むことを決意する。
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-15T10:20:06.797Z
-    - type: UNKNOWN
-      description: 高橋は顧客インタビューを通して、自分の未熟さを痛感し、自己成長への意識を高める。
-      chapter: 5
-      isPermanent: true
-      timestamp: 2025-05-15T10:30:26.224Z
-    - type: UNKNOWN
-      description: チーム内で意見の相違が生じ始める。
-      chapter: 6
-      isPermanent: true
-      timestamp: 2025-05-15T10:39:39.626Z
-    - type: UNKNOWN
-      description: 高橋は、審査員の厳しい評価と顧客インタビューの結果から、プロダクトイン思考の限界を痛感し、思考を変化させる。
-      chapter: 11
-      isPermanent: true
-      timestamp: 2025-05-15T11:06:22.560Z
-    - type: UNKNOWN
-      description: チームは、顧客インタビューの結果と山田メンターからのアドバイスを踏まえ、新たなサービス構想を模索し始める。
-      chapter: 11
-      isPermanent: true
-      timestamp: 2025-05-15T11:06:22.579Z
-    - type: UNKNOWN
-      description: 高橋はプロダクトイン思考からの脱却を意識し始める。
-      chapter: 12
-      isPermanent: true
-      timestamp: 2025-05-15T11:11:00.041Z
-    - type: UNKNOWN
-      description: 美咲がネクストライフのスパイとなり、高橋たちを裏切った。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-15T11:53:43.328Z
-    - type: UNKNOWN
-      description: 中村が、高橋のプランを否定し、ビジネスの才能がないと断言する。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-15T11:56:49.561Z
-    - type: UNKNOWN
-      description: 美咲が、山田からプロジェクトに参加させないと言われ、高橋との関係に変化が生じる可能性がある。
-      chapter: 5
-      isPermanent: true
-      timestamp: 2025-05-15T12:02:32.564Z
-    - type: UNKNOWN
-      description: 高橋は、中村に対する怒りと、計画を阻止するという決意を新たにする。
-      chapter: 5
-      isPermanent: true
-      timestamp: 2025-05-15T12:06:01.133Z
-    - type: UNKNOWN
-      description: 美咲がネクストライフの社員であることが判明。
-      chapter: 5
-      isPermanent: true
-      timestamp: 2025-05-15T12:14:23.919Z
-    - type: UNKNOWN
-      description: 高橋が中村との面会を通して、ビジネスの厳しさを知り、理想と現実のギャップを意識するようになる。
-      chapter: 6
-      isPermanent: true
-      timestamp: 2025-05-15T12:19:35.167Z
-    - type: UNKNOWN
-      description: 高橋は裏切りと復讐を誓い、中村の悪事を暴くために立ち上がる。
-      chapter: 7
-      isPermanent: true
-      timestamp: 2025-05-15T12:24:22.140Z
-    - type: UNKNOWN
-      description: 高橋が、美咲を救い出すために、復讐の炎を燃やす。
-      chapter: 8
-      isPermanent: true
-      timestamp: 2025-05-15T12:29:05.491Z
-    - type: UNKNOWN
-      description: 高橋のビジネス理解が向上。
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-18T11:32:12.468Z
-    - type: UNKNOWN
-      description: 高橋誠が、自己中心的な考え方から、顧客中心的な考え方への変革が始まった。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-18T21:52:12.060Z
-    - type: UNKNOWN
-      description: 高橋誠が自己中心的な考え方から、顧客中心的な考え方への変革が始まる。
-      chapter: 2
-      isPermanent: true
-      timestamp: 2025-05-18T21:55:58.907Z
-    - type: UNKNOWN
-      description: 高橋誠が自己中心的な考え方から顧客中心的な考え方へと変革を遂げる
-      chapter: 3
-      isPermanent: true
-      timestamp: 2025-05-18T22:00:01.818Z
-    - type: UNKNOWN
-      description: 高橋誠が自分の歪んだ羅針盤に気づき始める。
-      chapter: 1
-      isPermanent: true
-      timestamp: 2025-05-19T01:10:32.079Z
-    - type: UNKNOWN
-      description: 高橋誠が自己中心的な考えから顧客中心の視点へと変化し始める。
-      chapter: 4
-      isPermanent: true
-      timestamp: 2025-05-19T06:06:58.185Z
-  injuries:
-    - id: injury-1747221779885-qsu4g
-      description: 高橋誠が頭部に激しい痛みを感じ、倒れ込む。記憶喪失の原因となった可能性。
-      severity: MODERATE
-      chapter: 1
-      isHealed: false
-      timestamp: 2025-05-14T11:22:59.885Z
-    - id: injury-1747222316856-rw3we
-      description: 高橋誠が頭部に激しい痛みを受け、記憶喪失になる。
-      severity: MODERATE
-      chapter: 2
-      isHealed: false
-      timestamp: 2025-05-14T11:31:56.856Z
-    - id: injury-1747222667679-ao8i6
-      description: 高橋誠が記憶を消される。
-      severity: MODERATE
-      chapter: 2
-      isHealed: false
-      timestamp: 2025-05-14T11:37:47.679Z
-    - id: injury-1747223536192-tpt4r
-      description: 高橋が佐藤を庇い、銃で撃たれる。
-      severity: MODERATE
-      chapter: 4
-      isHealed: false
-      timestamp: 2025-05-14T11:52:16.192Z
-    - id: injury-1747225748659-ybz3i
-      description: 高橋誠が頭を強く打ち、記憶喪失に近い状態になっている。
-      severity: MODERATE
-      chapter: 1
-      isHealed: false
-      timestamp: 2025-05-14T12:29:08.659Z
-    - id: injury-1747227260735-xgi8e
-      description: 誠がロボットの攻撃を受け、腕の一部が掠り、衝撃で体が痺れる。
-      severity: MODERATE
-      chapter: 3
-      isHealed: false
-      timestamp: 2025-05-14T12:54:20.735Z
-    - id: injury-1747228901647-zj6o2
-      description: 誠がロボットに攻撃され、壁に叩きつけられて意識を失う。
-      severity: MODERATE
-      chapter: 6
-      isHealed: false
-      timestamp: 2025-05-14T13:21:41.647Z
-    - id: injury-1747229569975-s37l6
-      description: 誠がオブジェクトを使用したことによる反動で、激しい疲労と痺れを感じる。
-      severity: MODERATE
-      chapter: 6
-      isHealed: false
-      timestamp: 2025-05-14T13:32:49.975Z
-    - id: injury-1747231102874-27hq2
-      description: 誠がロボットの攻撃をかわす際に衝撃を受け、痺れている体に更なる痛みが走る。
-      severity: MODERATE
-      chapter: 8
-      isHealed: false
-      timestamp: 2025-05-14T13:58:22.874Z
-    - id: injury-1747231439057-jte24
-      description: 誠がロボットの腕に掠られ、全身の神経を焼き尽くすような激痛を受ける。
-      severity: MODERATE
-      chapter: 8
-      isHealed: false
-      timestamp: 2025-05-14T14:03:59.058Z
-    - id: injury-1747232967173-4zwf2
-      description: 誠がロボットに握り潰されそうになり、激しい痛みに襲われる。
-      severity: MODERATE
-      chapter: 11
-      isHealed: false
-      timestamp: 2025-05-14T14:29:27.173Z
-    - id: injury-1747233274747-xhbf2
-      description: 誠が異形のロボットとの戦闘で肩を負傷した。
-      severity: MODERATE
-      chapter: 11
-      isHealed: false
-      timestamp: 2025-05-14T14:34:34.747Z
-    - id: injury-1747310023304-j7m4f
-      description: 高橋、美咲、健太の理想がネクストライフによって傷つけられた。
-      severity: MODERATE
-      chapter: 4
-      isHealed: false
-      timestamp: 2025-05-15T11:53:43.304Z
-    - id: injury-1747311862121-twubs
-      description: 中村は手段を選ばないため、高橋が危険な目に遭う可能性がある。
-      severity: MODERATE
-      chapter: 7
-      isHealed: false
-      timestamp: 2025-05-15T12:24:22.121Z
-    - id: injury-1747312329039-crdkz
-      description: ネクストライフの追手が倉庫に現れ、高橋、健太、美咲が追われる状況になる。
-      severity: MODERATE
-      chapter: 8
-      isHealed: false
-      timestamp: 2025-05-15T12:32:09.039Z
-  health: 10
-  promotionHistory:
-    - chapter: 4
-      title: Unknown Position
-      description: ネクストライフから、自社のプロジェクトへの協力を提案される。
-      timestamp: 2025-05-15T11:50:45.125Z
-    - chapter: 4
-      title: Unknown Position
-      description: 高橋がネクストライフの社長から、一緒に新卒離職問題に取り組むように誘われる。
-      timestamp: 2025-05-15T11:56:49.550Z
-    - chapter: 5
-      title: Unknown Position
-      description: 高橋がネクストライフのプロジェクトリーダーに任命される。
-      timestamp: 2025-05-15T12:02:32.533Z
-    - chapter: 5
-      title: Unknown Position
-      description: 高橋たちのプランへの協力をネクストライフが見送る。
-      timestamp: 2025-05-15T12:06:01.105Z
-    - chapter: 2
-      title: Unknown Position
-      description: 高橋誠が、山田哲也からビジネスプランに興味を持つ人物との面会を打診される。
-      timestamp: 2025-05-18T21:55:58.973Z
-    - chapter: 3
-      title: Unknown Position
-      description: 高橋誠が昇進
-      timestamp: 2025-05-18T22:00:01.404Z
 history:
   appearances:
     - chapterNumber: 1
@@ -1039,7 +604,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T04:05:23.155Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 2
       timestamp: 2025-05-28T04:08:08.746Z
       significance: 0.5
@@ -1047,7 +612,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T04:11:02.788Z
       significance: 0.5
-      summary: '第2章に登場: 問いの始まり'
+      summary: "第2章に登場: 問いの始まり"
     - chapterNumber: 7
       timestamp: 2025-05-28T04:35:41.750Z
       significance: 0.5
@@ -1055,7 +620,7 @@ history:
     - chapterNumber: 7
       timestamp: 2025-05-28T04:38:40.880Z
       significance: 0.5
-      summary: '第7章に登場: 顧客視点の迷宮'
+      summary: "第7章に登場: 顧客視点の迷宮"
     - chapterNumber: 1
       timestamp: 2025-05-28T04:52:06.257Z
       significance: 0.5
@@ -1067,7 +632,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T04:59:25.910Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 4
       timestamp: 2025-05-28T05:27:23.862Z
       significance: 0.5
@@ -1075,7 +640,7 @@ history:
     - chapterNumber: 4
       timestamp: 2025-05-28T05:28:12.841Z
       significance: 0.5
-      summary: '第4章に登場: 始まりの予感と現実の壁'
+      summary: "第4章に登場: 始まりの予感と現実の壁"
     - chapterNumber: 1
       timestamp: 2025-05-28T05:55:15.888Z
       significance: 0.5
@@ -1083,7 +648,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T05:59:26.084Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 1
       timestamp: 2025-05-28T06:22:19.366Z
       significance: 0.5
@@ -1091,7 +656,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T06:26:22.797Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 2
       timestamp: 2025-05-28T06:29:22.767Z
       significance: 0.5
@@ -1099,7 +664,7 @@ history:
     - chapterNumber: 2
       timestamp: 2025-05-28T06:32:33.958Z
       significance: 0.5
-      summary: '第2章に登場: 問いの再定義'
+      summary: "第2章に登場: 問いの再定義"
     - chapterNumber: 2
       timestamp: 2025-05-28T06:34:35.824Z
       significance: 0.5
@@ -1111,7 +676,7 @@ history:
     - chapterNumber: 3
       timestamp: 2025-05-28T06:40:12.480Z
       significance: 0.5
-      summary: '第3章に登場: 問いの迷路'
+      summary: "第3章に登場: 問いの迷路"
     - chapterNumber: 1
       timestamp: 2025-05-28T06:55:19.913Z
       significance: 0.5
@@ -1119,7 +684,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T06:59:29.068Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 10
       timestamp: 2025-05-28T08:00:08.802Z
       significance: 0.5
@@ -1127,7 +692,7 @@ history:
     - chapterNumber: 10
       timestamp: 2025-05-28T08:03:44.852Z
       significance: 0.5
-      summary: '第10章に登場: 顧客視点という羅針盤'
+      summary: "第10章に登場: 顧客視点という羅針盤"
     - chapterNumber: 11
       timestamp: 2025-05-28T08:06:18.991Z
       significance: 0.5
@@ -1135,7 +700,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-05-28T08:09:49.430Z
       significance: 0.5
-      summary: '第11章に登場: 顧客の声、理想との乖離'
+      summary: "第11章に登場: 顧客の声、理想との乖離"
     - chapterNumber: 1
       timestamp: 2025-05-28T14:36:02.073Z
       significance: 0.5
@@ -1143,7 +708,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-28T14:38:58.619Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 11
       timestamp: 2025-05-28T15:26:52.889Z
       significance: 0.5
@@ -1151,7 +716,7 @@ history:
     - chapterNumber: 11
       timestamp: 2025-05-28T15:29:27.785Z
       significance: 0.5
-      summary: '第11章に登場: 顧客の迷宮'
+      summary: "第11章に登場: 顧客の迷宮"
     - chapterNumber: 12
       timestamp: 2025-05-28T15:32:12.118Z
       significance: 0.5
@@ -1159,7 +724,7 @@ history:
     - chapterNumber: 12
       timestamp: 2025-05-28T15:35:43.255Z
       significance: 0.5
-      summary: '第12章に登場: 顧客視点という難題'
+      summary: "第12章に登場: 顧客視点という難題"
     - chapterNumber: 1
       timestamp: 2025-05-29T00:18:54.732Z
       significance: 0.5
@@ -1167,7 +732,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-29T00:22:30.105Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 1
       timestamp: 2025-05-29T00:33:55.842Z
       significance: 0.5
@@ -1175,7 +740,7 @@ history:
     - chapterNumber: 1
       timestamp: 2025-05-29T00:37:42.565Z
       significance: 0.5
-      summary: '第1章に登場: 問いの始まり'
+      summary: "第1章に登場: 問いの始まり"
     - chapterNumber: 1
       timestamp: 2025-05-29T00:44:14.615Z
       significance: 0.5
