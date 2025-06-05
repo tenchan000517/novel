@@ -1,45 +1,32 @@
-name: Claude Code Action
+name: Claude Assistant
 
 on:
-  issues:
-    types: [opened, edited]
   issue_comment:
     types: [created]
-  pull_request:
-    types: [opened, edited, synchronize]
   pull_request_review_comment:
     types: [created]
+  issues:
+    types: [opened, assigned]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  claude:
+  claude-response:
     runs-on: ubuntu-latest
-    name: Claude Code Assistant
-    
     steps:
-      - name: Claude Code Action
-        uses: grll/claude-code-action@beta
+      - uses: anthropics/claude-code-action@beta
         with:
-          # OAuth configuration for Claude Code
-          claude_oauth_refresh_token: ${{ secrets.CLAUDE_OAUTH_REFRESH_TOKEN }}
-          
-          # Repository access
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Optional: Customize the behavior
-          max_tokens: 4096
-          model: claude-3-5-sonnet-20241022
-          
-          # Optional: Enable specific features
-          enable_file_operations: true
-          enable_pr_comments: true
-          enable_issue_comments: true
-          
-          # Optional: Working directory (if different from repo root)
-          working_directory: "."
-          
-          # Optional: File patterns to include/exclude
-          include_patterns: "**/*.{ts,tsx,js,jsx,md,json,yaml,yml}"
-          exclude_patterns: "node_modules/**,dist/**,build/**,.next/**"
+          # Optional: add custom trigger phrase (default: @claude)
+          # trigger_phrase: "/claude"
+          # Optional: add assignee trigger for issues
+          # assignee_trigger: "claude"
+          # Optional: add custom environment variables (YAML format)
+          # claude_env: |
+          #   NODE_ENV: test
+          #   DEBUG: true
+          #   API_URL: https://api.example.com
 
 permissions:
   contents: read
