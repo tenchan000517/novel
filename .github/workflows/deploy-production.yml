@@ -38,7 +38,7 @@ jobs:
         continue-on-error: true
         
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: .next/
@@ -56,7 +56,7 @@ jobs:
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: .next/
@@ -80,7 +80,7 @@ jobs:
           echo "{\"version\":\"${{ env.RELEASE_VERSION }}\",\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\",\"deploymentId\":\"${{ env.DEPLOYMENT_ID }}\",\"commit\":\"${{ github.sha }}\"}" > deployment-record.json
       
       - name: Upload deployment record
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-record
           path: deployment-record.json
@@ -91,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download deployment record
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-record
       

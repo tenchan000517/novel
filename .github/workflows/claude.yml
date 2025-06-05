@@ -1,4 +1,4 @@
-name: Claude Assistant
+name: Claude PR Assistant
 
 on:
   issue_comment:
@@ -11,25 +11,27 @@ on:
     types: [submitted]
 
 jobs:
-  claude-response:
+  claude-code-action:
+    if: |
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
+      (github.event_name == 'issues' && contains(github.event.issue.body, '@claude'))
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
     steps:
-      - uses: anthropics/claude-code-action@beta
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Optional: add custom trigger phrase (default: @claude)
-          # trigger_phrase: "/claude"
-          # Optional: add assignee trigger for issues
-          # assignee_trigger: "claude"
-          # Optional: add custom environment variables (YAML format)
-          # claude_env: |
-          #   NODE_ENV: test
-          #   DEBUG: true
-          #   API_URL: https://api.example.com
+          fetch-depth: 1
 
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
-  checks: write
+      - name: Run Claude PR Action
+        uses: grll/claude-code-action@beta
+        with:
+          use_oauth: true
+          claude_oauth_refresh_token: ${{ secrets.CLAUDE_OAUTH_REFRESH_TOKEN }}
+          timeout_minutes: "60"
