@@ -17,7 +17,7 @@ jobs:
     
     steps:
       - name: Claude Code Action
-        uses: anthropics/claude-code-action@v1
+        uses: grll/claude-code-action@beta
         with:
           # OAuth configuration for Claude Code
           claude_oauth_refresh_token: ${{ secrets.CLAUDE_OAUTH_REFRESH_TOKEN }}
