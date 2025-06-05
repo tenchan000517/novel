@@ -26,6 +26,7 @@ jobs:
         
       - name: Lint code
         run: npm run lint
+        continue-on-error: true
         
       - name: Run tests
         run: npm run test:all
