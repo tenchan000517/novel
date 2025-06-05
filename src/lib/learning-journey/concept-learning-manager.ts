@@ -22,6 +22,8 @@ import {
     MemoryRequestType 
 } from '@/lib/memory/core/types';
 
+
+
 /**
  * 学習段階の列挙型
  */
@@ -868,7 +870,7 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 章のための概念体現化計画を取得（キャラクターシステム連携強化版）
+     * 章のための概念体現化計画を取得（統合記憶システム対応）
      * @param conceptName 概念名
      * @param chapterNumber 章番号
      * @returns 体現化計画
@@ -878,7 +880,7 @@ export class ConceptLearningManager {
         chapterNumber: number
     ): Promise<EmbodimentPlan> {
         try {
-            logger.info(`Getting embodiment plan for concept: ${conceptName} at chapter ${chapterNumber} with character integration`);
+            logger.info(`Getting embodiment plan for concept: ${conceptName} at chapter ${chapterNumber}`);
 
             // 概念情報を取得
             const concept = await this.getConceptDetails(conceptName);
@@ -890,16 +892,6 @@ export class ConceptLearningManager {
 
             // 現在の学習段階を決定
             const currentStage = await this.determineLearningStage(conceptName, chapterNumber);
-
-            // キャラクター情報を統合記憶システムから取得
-            const characterDataResult = await this.safeMemoryOperation(
-                () => this.memoryManager.unifiedSearch(
-                    `character development growth chapter ${chapterNumber} psychology`,
-                    [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
-                ),
-                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
-                'getCharacterEmbodimentContext'
-            );
 
             // 関連するコンテキスト情報を統合記憶システムから取得
             const contextResult = await this.safeMemoryOperation(
@@ -937,42 +929,22 @@ export class ConceptLearningManager {
                     plan = this.createExplorationPlan(concept, chapterNumber);
             }
 
-            // キャラクター情報で計画を強化
-            if (characterDataResult.success && characterDataResult.totalResults > 0) {
-                plan = await this.enhancePlanWithCharacterIntegration(plan, characterDataResult, currentStage);
-            }
-
             // コンテキスト情報で計画を強化
             if (contextResult.success && contextResult.totalResults > 0) {
                 plan = this.enhancePlanWithContext(plan, contextResult);
             }
 
-            // 概念学習とキャラクター発達の同期機能
-            const synchronizationResult = await this.synchronizeConceptWithCharacterDevelopment(
-                conceptName, currentStage, chapterNumber, characterDataResult
-            );
-
-            // 同期結果を計画に反映
-            if (synchronizationResult.successful) {
-                plan.keyElements.push(...synchronizationResult.enhancedElements);
-                plan.dialogueSuggestions.push(...synchronizationResult.characterSpecificDialogue);
-            }
-
-            // 体現化計画イベントを発行（キャラクター統合情報付き）
+            // 体現化計画イベントを発行
             this.eventBus.publish('embodiment.plan.created', {
                 conceptName,
                 stage: currentStage,
                 chapterNumber,
                 planEnhanced: contextResult.success,
-                characterIntegrated: characterDataResult.success,
-                synchronizationSuccessful: synchronizationResult.successful,
                 memorySystemIntegrated: true
             });
 
             logger.info(`Created embodiment plan for ${conceptName} at stage ${currentStage} for chapter ${chapterNumber}`, {
                 contextEnhanced: contextResult.success,
-                characterIntegrated: characterDataResult.success,
-                synchronizationScore: synchronizationResult.synchronizationScore,
                 processingTime: contextResult.processingTime
             });
 
@@ -986,469 +958,6 @@ export class ConceptLearningManager {
 
             // エラー時はデフォルト計画を返す
             return this.createDefaultEmbodimentPlan(conceptName, chapterNumber);
-        }
-    }
-
-    /**
-     * キャラクター統合による計画強化
-     * @private
-     */
-    private async enhancePlanWithCharacterIntegration(
-        plan: EmbodimentPlan,
-        characterDataResult: any,
-        currentStage: LearningStage
-    ): Promise<EmbodimentPlan> {
-        try {
-            const enhancedPlan = { ...plan };
-            const characterInsights = this.extractCharacterInsights(characterDataResult);
-
-            // キャラクター特化の表現方法を追加
-            if (characterInsights.mainCharacter) {
-                const characterSpecificMethods = this.getCharacterSpecificExpressionMethods(
-                    characterInsights.mainCharacter, currentStage
-                );
-                enhancedPlan.expressionMethods.push(...characterSpecificMethods);
-            }
-
-            // キャラクター発達に基づく重要要素を追加
-            if (characterInsights.developmentStage) {
-                const developmentElements = this.getCharacterDevelopmentElements(
-                    characterInsights.developmentStage, currentStage
-                );
-                enhancedPlan.keyElements.push(...developmentElements);
-            }
-
-            // キャラクター心理に基づく対話例を生成
-            if (characterInsights.psychologyData) {
-                const psychologyBasedDialogue = this.generatePsychologyBasedDialogue(
-                    characterInsights.psychologyData, currentStage
-                );
-                enhancedPlan.dialogueSuggestions.push(...psychologyBasedDialogue);
-            }
-
-            // キャラクター関係性による緊張度調整
-            if (characterInsights.relationships) {
-                const relationshipTension = this.calculateRelationshipTension(characterInsights.relationships);
-                enhancedPlan.tensionRecommendation.recommendedTension = Math.min(1.0, 
-                    (enhancedPlan.tensionRecommendation.recommendedTension + relationshipTension) / 2
-                );
-                enhancedPlan.tensionRecommendation.reason += ` キャラクター関係性の緊張度(${relationshipTension.toFixed(2)})を考慮して調整。`;
-            }
-
-            return enhancedPlan;
-
-        } catch (error) {
-            logger.warn('Failed to enhance plan with character integration', { error });
-            return plan;
-        }
-    }
-
-    /**
-     * 概念学習とキャラクター発達の同期機能
-     * @private
-     */
-    private async synchronizeConceptWithCharacterDevelopment(
-        conceptName: string,
-        learningStage: LearningStage,
-        chapterNumber: number,
-        characterDataResult: any
-    ): Promise<{
-        successful: boolean;
-        synchronizationScore: number;
-        enhancedElements: string[];
-        characterSpecificDialogue: string[];
-        developmentAlignment: number;
-    }> {
-        try {
-            const characterInsights = this.extractCharacterInsights(characterDataResult);
-            
-            // 同期スコアの計算
-            let synchronizationScore = 0.5; // ベースライン
-            const enhancedElements: string[] = [];
-            const characterSpecificDialogue: string[] = [];
-
-            // キャラクター発達段階と学習段階の整合性
-            if (characterInsights.developmentStage !== undefined) {
-                const developmentAlignment = this.calculateDevelopmentAlignment(
-                    characterInsights.developmentStage, learningStage
-                );
-                synchronizationScore += developmentAlignment * 0.3;
-
-                if (developmentAlignment > 0.7) {
-                    enhancedElements.push('キャラクター発達と学習段階の高い整合性を活用');
-                    characterSpecificDialogue.push('成長への自信と意欲を表現する対話');
-                }
-            }
-
-            // キャラクター心理と概念理解の同期
-            if (characterInsights.psychologyData) {
-                const psychologyAlignment = this.calculatePsychologyAlignment(
-                    characterInsights.psychologyData, conceptName, learningStage
-                );
-                synchronizationScore += psychologyAlignment * 0.4;
-
-                if (psychologyAlignment > 0.6) {
-                    enhancedElements.push('キャラクター心理状態と概念理解の自然な融合');
-                    characterSpecificDialogue.push('内的変化を反映した概念への言及');
-                }
-            }
-
-            // 関係性変化による学習促進
-            if (characterInsights.relationships) {
-                const relationshipLearningBoost = this.calculateRelationshipLearningBoost(
-                    characterInsights.relationships, learningStage
-                );
-                synchronizationScore += relationshipLearningBoost * 0.3;
-
-                if (relationshipLearningBoost > 0.5) {
-                    enhancedElements.push('キャラクター関係性の変化を学習触媒として活用');
-                    characterSpecificDialogue.push('他者との関係性変化を通じた学習への言及');
-                }
-            }
-
-            // 同期に成功した場合の最終調整
-            const successful = synchronizationScore > 0.6;
-            if (successful) {
-                // 概念特化の同期要素を追加
-                if (conceptName === 'ISSUE DRIVEN') {
-                    enhancedElements.push('課題解決への取り組みとキャラクター成長の統合');
-                    characterSpecificDialogue.push('顧客視点の理解とキャラクターの人間的成長の結びつけ');
-                }
-            }
-
-            return {
-                successful,
-                synchronizationScore: Math.min(1.0, synchronizationScore),
-                enhancedElements: enhancedElements.slice(0, 3),
-                characterSpecificDialogue: characterSpecificDialogue.slice(0, 2),
-                developmentAlignment: synchronizationScore
-            };
-
-        } catch (error) {
-            logger.error('Failed to synchronize concept with character development', { error });
-            return {
-                successful: false,
-                synchronizationScore: 0.3,
-                enhancedElements: ['基本的な学習要素'],
-                characterSpecificDialogue: ['一般的な学習対話'],
-                developmentAlignment: 0.3
-            };
-        }
-    }
-
-    /**
-     * キャラクター洞察の抽出
-     * @private
-     */
-    private extractCharacterInsights(characterDataResult: any): any {
-        const insights: any = {
-            mainCharacter: null,
-            developmentStage: null,
-            psychologyData: null,
-            relationships: null
-        };
-
-        try {
-            if (characterDataResult.success && characterDataResult.results) {
-                for (const result of characterDataResult.results) {
-                    // キャラクター基本情報
-                    if (result.data && result.data.character) {
-                        insights.mainCharacter = result.data.character;
-                        insights.developmentStage = result.data.character.state?.developmentStage;
-                    }
-
-                    // 心理データ
-                    if (result.data && result.data.psychology) {
-                        insights.psychologyData = result.data.psychology;
-                    }
-
-                    // 関係性データ
-                    if (result.data && result.data.relationships) {
-                        insights.relationships = result.data.relationships;
-                    }
-
-                    // 分析結果からの抽出
-                    if (result.data && result.data.characterAnalysis) {
-                        const analysis = result.data.characterAnalysis;
-                        insights.developmentStage = analysis.developmentStage || insights.developmentStage;
-                        insights.psychologyData = analysis.psychology || insights.psychologyData;
-                    }
-                }
-            }
-        } catch (error) {
-            logger.warn('Failed to extract character insights', { error });
-        }
-
-        return insights;
-    }
-
-    /**
-     * キャラクター特化の表現方法を取得
-     * @private
-     */
-    private getCharacterSpecificExpressionMethods(character: any, stage: LearningStage): string[] {
-        const methods = [];
-
-        try {
-            // キャラクタータイプに基づく表現方法
-            if (character.type === 'MAIN') {
-                methods.push('主人公の内面の深い変化を通じた概念理解の表現');
-                methods.push('主人公の行動変化として概念の体現を描写');
-            }
-
-            // 性格特性に基づく表現方法
-            if (character.personality && character.personality.traits) {
-                if (character.personality.traits.includes('慎重')) {
-                    methods.push('慎重さを活かした段階的な理解の深化を表現');
-                }
-                if (character.personality.traits.includes('積極的')) {
-                    methods.push('積極性を通じた能動的な学習姿勢の描写');
-                }
-            }
-
-            // 学習段階特化の表現
-            if (stage === LearningStage.CONFLICT) {
-                methods.push('キャラクターの価値観の揺らぎとして概念への向き合いを表現');
-            } else if (stage === LearningStage.INSIGHT) {
-                methods.push('キャラクターの瞬間的な表情変化として洞察の瞬間を表現');
-            }
-
-        } catch (error) {
-            logger.warn('Failed to get character specific expression methods', { error });
-        }
-
-        return methods.slice(0, 2);
-    }
-
-    /**
-     * キャラクター発達要素を取得
-     * @private
-     */
-    private getCharacterDevelopmentElements(developmentStage: number, learningStage: LearningStage): string[] {
-        const elements = [];
-
-        try {
-            // 発達段階に基づく要素
-            if (developmentStage < 3) {
-                elements.push('キャラクターの基礎的な成長段階を学習基盤として活用');
-            } else if (developmentStage < 6) {
-                elements.push('キャラクターの中級発達段階と概念理解の相互促進');
-            } else {
-                elements.push('キャラクターの高度な発達と概念統合の自然な融合');
-            }
-
-            // 学習段階との組み合わせ
-            if (learningStage === LearningStage.APPLICATION && developmentStage >= 4) {
-                elements.push('発達したキャラクターによる概念の実践的適用');
-            }
-
-        } catch (error) {
-            logger.warn('Failed to get character development elements', { error });
-        }
-
-        return elements.slice(0, 2);
-    }
-
-    /**
-     * 心理ベースの対話生成
-     * @private
-     */
-    private generatePsychologyBasedDialogue(psychologyData: any, stage: LearningStage): string[] {
-        const dialogue = [];
-
-        try {
-            // 現在の感情状態を反映
-            if (psychologyData.emotionalState) {
-                const dominantEmotion = this.getDominantEmotion(psychologyData.emotionalState);
-                
-                switch (stage) {
-                    case LearningStage.EXPLORATION:
-                        if (dominantEmotion === 'curious') {
-                            dialogue.push('これまで見えなかった可能性が見えてきた気がする…');
-                        }
-                        break;
-                    case LearningStage.INSIGHT:
-                        if (dominantEmotion === 'surprised') {
-                            dialogue.push('まさか…こんな風に考えることができるなんて');
-                        }
-                        break;
-                }
-            }
-
-            // 内的葛藤を反映
-            if (psychologyData.internalConflicts && psychologyData.internalConflicts.length > 0) {
-                if (stage === LearningStage.CONFLICT) {
-                    dialogue.push('何が正しいのか、自分でもわからなくなってきた');
-                }
-            }
-
-        } catch (error) {
-            logger.warn('Failed to generate psychology based dialogue', { error });
-        }
-
-        return dialogue.slice(0, 2);
-    }
-
-    /**
-     * 発達整合度の計算
-     * @private
-     */
-    private calculateDevelopmentAlignment(developmentStage: number, learningStage: LearningStage): number {
-        try {
-            const stageOrder = this.getStageOrder(learningStage);
-            const expectedDevelopmentStage = stageOrder * 1.5; // 大まかな対応関係
-            
-            const difference = Math.abs(developmentStage - expectedDevelopmentStage);
-            return Math.max(0, 1 - (difference / 5)); // 5段階差で完全不一致
-        } catch (error) {
-            return 0.5;
-        }
-    }
-
-    /**
-     * 心理整合度の計算
-     * @private
-     */
-    private calculatePsychologyAlignment(psychologyData: any, conceptName: string, learningStage: LearningStage): number {
-        try {
-            let alignment = 0.5;
-
-            // 感情状態の適合性
-            if (psychologyData.emotionalState) {
-                const emotionAlignment = this.getEmotionLearningAlignment(psychologyData.emotionalState, learningStage);
-                alignment += emotionAlignment * 0.4;
-            }
-
-            // 内的葛藤の有無
-            if (psychologyData.internalConflicts && learningStage === LearningStage.CONFLICT) {
-                alignment += 0.3; // 葛藤段階では内的葛藤が有利
-            }
-
-            // 概念特化の調整
-            if (conceptName === 'ISSUE DRIVEN' && psychologyData.currentDesires) {
-                const hasGrowthDesire = psychologyData.currentDesires.some((desire: string) => 
-                    desire.includes('成長') || desire.includes('理解') || desire.includes('解決')
-                );
-                if (hasGrowthDesire) {
-                    alignment += 0.2;
-                }
-            }
-
-            return Math.min(1.0, alignment);
-        } catch (error) {
-            return 0.5;
-        }
-    }
-
-    /**
-     * 関係性学習促進度の計算
-     * @private
-     */
-    private calculateRelationshipLearningBoost(relationships: any, learningStage: LearningStage): number {
-        try {
-            let boost = 0;
-
-            if (Array.isArray(relationships)) {
-                // メンター関係の存在
-                const hasMentor = relationships.some((rel: any) => rel.type === 'MENTOR');
-                if (hasMentor && (learningStage === LearningStage.EXPLORATION || learningStage === LearningStage.INSIGHT)) {
-                    boost += 0.4;
-                }
-
-                // 対立関係の存在
-                const hasConflict = relationships.some((rel: any) => rel.type === 'RIVAL' || rel.type === 'ENEMY');
-                if (hasConflict && learningStage === LearningStage.CONFLICT) {
-                    boost += 0.3;
-                }
-
-                // 協力関係の存在
-                const hasAlly = relationships.some((rel: any) => rel.type === 'ALLY' || rel.type === 'FRIEND');
-                if (hasAlly && learningStage === LearningStage.APPLICATION) {
-                    boost += 0.3;
-                }
-            }
-
-            return Math.min(1.0, boost);
-        } catch (error) {
-            return 0.2;
-        }
-    }
-
-    /**
-     * 関係性緊張度の計算
-     * @private
-     */
-    private calculateRelationshipTension(relationships: any): number {
-        try {
-            if (!Array.isArray(relationships)) {
-                return 0.5;
-            }
-
-            let totalTension = 0;
-            let count = 0;
-
-            for (const rel of relationships) {
-                if (rel.type === 'ENEMY' || rel.type === 'RIVAL') {
-                    totalTension += 0.8;
-                } else if (rel.type === 'FRIEND' || rel.type === 'ALLY') {
-                    totalTension += 0.3;
-                } else {
-                    totalTension += 0.5;
-                }
-                count++;
-            }
-
-            return count > 0 ? totalTension / count : 0.5;
-        } catch (error) {
-            return 0.5;
-        }
-    }
-
-    /**
-     * 支配的感情の取得
-     * @private
-     */
-    private getDominantEmotion(emotionalState: any): string {
-        try {
-            if (typeof emotionalState === 'object') {
-                let maxIntensity = 0;
-                let dominantEmotion = 'neutral';
-
-                for (const [emotion, intensity] of Object.entries(emotionalState)) {
-                    if (typeof intensity === 'number' && intensity > maxIntensity) {
-                        maxIntensity = intensity;
-                        dominantEmotion = emotion;
-                    }
-                }
-
-                return dominantEmotion;
-            }
-            return 'neutral';
-        } catch (error) {
-            return 'neutral';
-        }
-    }
-
-    /**
-     * 感情と学習の整合度取得
-     * @private
-     */
-    private getEmotionLearningAlignment(emotionalState: any, learningStage: LearningStage): number {
-        try {
-            const dominantEmotion = this.getDominantEmotion(emotionalState);
-            
-            const alignmentMap: Record<LearningStage, Record<string, number>> = {
-                [LearningStage.MISCONCEPTION]: { 'confident': 0.8, 'confused': 0.3 },
-                [LearningStage.EXPLORATION]: { 'curious': 0.9, 'excited': 0.7 },
-                [LearningStage.CONFLICT]: { 'anxious': 0.8, 'frustrated': 0.7 },
-                [LearningStage.INSIGHT]: { 'surprised': 0.9, 'enlightened': 0.8 },
-                [LearningStage.APPLICATION]: { 'determined': 0.8, 'confident': 0.7 },
-                [LearningStage.INTEGRATION]: { 'satisfied': 0.8, 'peaceful': 0.7 }
-            };
-
-            return alignmentMap[learningStage]?.[dominantEmotion] || 0.5;
-        } catch (error) {
-            return 0.5;
         }
     }
 
