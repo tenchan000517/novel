@@ -657,7 +657,7 @@ export class StoryTransformationDesigner {
   }
 
   /**
-   * 学習段階に適したシーン推奨を生成する
+   * 学習段階に適したシーン推奨を生成する（プロット統合強化版）
    * @param conceptName 概念名
    * @param stage 学習段階
    * @param chapterNumber 章番号
@@ -670,7 +670,7 @@ export class StoryTransformationDesigner {
   ): Promise<SceneRecommendation[]> {
     try {
       this.ensureInitialized();
-      logger.info(`Generating scene recommendations for concept ${conceptName} at stage ${stage}`);
+      logger.info(`Generating scene recommendations for concept ${conceptName} at stage ${stage} with plot integration`);
       
       // 章が属する篇を取得
       const section = this.getSectionByChapter(chapterNumber);
@@ -689,7 +689,10 @@ export class StoryTransformationDesigner {
       // 統合記憶システムから関連データを取得
       const contextData = await this.getEnhancedContextData(conceptName, chapterNumber);
       
-      // シーン推奨を生成
+      // プロット統合データを取得
+      const plotIntegration = await this.getPlotIntegrationData(conceptName, stage, chapterNumber);
+      
+      // シーン推奨を生成（プロット統合強化版）
       const sceneRecommendations: SceneRecommendation[] = [
         {
           type: 'LEARNING_SPECIFIC',
@@ -718,6 +721,31 @@ export class StoryTransformationDesigner {
         }
       ];
 
+      // プロット統合による追加推奨事項
+      if (plotIntegration.success) {
+        sceneRecommendations.push({
+          type: 'PLOT_INTEGRATION',
+          description: `プロット${plotIntegration.currentPhase}フェーズに適した展開を含めてください: ${plotIntegration.recommendations.join('、 ')}`,
+          reason: `学習進行とプロット展開の同期を強化するため`
+        });
+
+        if (plotIntegration.characterDevelopmentSync.length > 0) {
+          sceneRecommendations.push({
+            type: 'CHARACTER_DEVELOPMENT_SYNC',
+            description: `キャラクター発達との同期: ${plotIntegration.characterDevelopmentSync.join('、 ')}`,
+            reason: `キャラクター成長と学習段階の一体化を図るため`
+          });
+        }
+
+        if (plotIntegration.tensionAlignment !== null) {
+          sceneRecommendations.push({
+            type: 'TENSION_ALIGNMENT',
+            description: `プロット緊張度${plotIntegration.tensionAlignment}に合わせた感情的盛り上がりを設計してください`,
+            reason: `プロット展開と学習体験の感情的統合を実現するため`
+          });
+        }
+      }
+
       // 統合記憶システムからの追加推奨事項
       if (contextData.success && contextData.recommendations.length > 0) {
         sceneRecommendations.push({
@@ -727,13 +755,16 @@ export class StoryTransformationDesigner {
         });
       }
       
-      // イベント発行
+      // イベント発行（プロット統合情報付き）
       this.eventBus.publish('scene.recommendations.generated', {
         conceptName,
         stage,
         chapterNumber,
         recommendationsCount: sceneRecommendations.length,
-        memoryEnhanced: contextData.success
+        memoryEnhanced: contextData.success,
+        plotIntegrated: plotIntegration.success,
+        plotPhase: plotIntegration.currentPhase,
+        integrationScore: plotIntegration.integrationScore
       });
 
       this.updatePerformanceStats('success', 'generateSceneRecommendations');
@@ -750,6 +781,171 @@ export class StoryTransformationDesigner {
       // エラー時はデフォルト推奨を返す
       return this.getDefaultSceneRecommendations(stage);
     }
+  }
+
+  /**
+   * プロット統合データを取得（P3-2統合強化版）
+   * @private
+   */
+  private async getPlotIntegrationData(
+    conceptName: string,
+    stage: LearningStage,
+    chapterNumber: number
+  ): Promise<{
+    success: boolean;
+    currentPhase: string;
+    recommendations: string[];
+    characterDevelopmentSync: string[];
+    tensionAlignment: number | null;
+    integrationScore: number;
+  }> {
+    const result = {
+      success: false,
+      currentPhase: 'unknown',
+      recommendations: [] as string[],
+      characterDevelopmentSync: [] as string[],
+      tensionAlignment: null as number | null,
+      integrationScore: 0.3
+    };
+
+    if (!this.config.useMemorySystemIntegration) {
+      return result;
+    }
+
+    try {
+      // プロット情報の検索
+      const plotSearch = await this.safeMemoryOperation(
+        () => this.memoryManager.unifiedSearch(
+          `plot context phase chapter ${chapterNumber} ${stage}`,
+          [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+        ),
+        { success: false, totalResults: 0, results: [], suggestions: [], processingTime: 0 },
+        'getPlotIntegrationData_plot'
+      );
+
+      // キャラクター発達情報の検索
+      const characterSearch = await this.safeMemoryOperation(
+        () => this.memoryManager.unifiedSearch(
+          `character development stage ${stage} chapter ${chapterNumber}`,
+          [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM]
+        ),
+        { success: false, totalResults: 0, results: [], suggestions: [], processingTime: 0 },
+        'getPlotIntegrationData_character'
+      );
+
+      if (plotSearch.success && plotSearch.results.length > 0) {
+        result.success = true;
+        
+        // プロット情報の抽出
+        for (const searchResult of plotSearch.results) {
+          if (searchResult.data?.plotContext) {
+            const plotContext = searchResult.data.plotContext;
+            result.currentPhase = plotContext.phase || plotContext.currentPhase || 'development';
+            result.tensionAlignment = plotContext.tensionLevel || null;
+          }
+
+          if (searchResult.data?.plotStrategy) {
+            const strategy = searchResult.data.plotStrategy;
+            result.currentPhase = strategy.globalStrategy?.currentPhase || result.currentPhase;
+          }
+        }
+
+        // 学習段階に応じたプロット推奨事項の生成
+        result.recommendations = this.generatePlotRecommendations(stage, result.currentPhase);
+        result.integrationScore = Math.min(1.0, 0.6 + (plotSearch.totalResults * 0.1));
+      }
+
+      if (characterSearch.success && characterSearch.results.length > 0) {
+        // キャラクター発達同期要素の抽出
+        for (const searchResult of characterSearch.results) {
+          if (searchResult.data?.character?.state?.developmentStage) {
+            const devStage = searchResult.data.character.state.developmentStage;
+            result.characterDevelopmentSync.push(
+              `発達段階${devStage}に対応した学習機会の提供`
+            );
+          }
+
+          if (searchResult.data?.character?.psychology) {
+            const psychology = searchResult.data.character.psychology;
+            if (psychology.currentDesires?.length > 0) {
+              result.characterDevelopmentSync.push(
+                `キャラクターの欲求${psychology.currentDesires[0]}と学習段階の同期`
+              );
+            }
+          }
+        }
+
+        if (result.characterDevelopmentSync.length > 0) {
+          result.integrationScore = Math.min(1.0, result.integrationScore + 0.2);
+        }
+      }
+
+      // 概念特化の統合推奨事項
+      if (conceptName === 'ISSUE DRIVEN') {
+        result.recommendations.push('課題解決プロセスとプロット展開の同期強化');
+        result.characterDevelopmentSync.push('顧客視点変化とキャラクター感情発達の統合表現');
+      }
+
+      return result;
+
+    } catch (error) {
+      logger.warn('Failed to get plot integration data', { error });
+      return result;
+    }
+  }
+
+  /**
+   * 学習段階に応じたプロット推奨事項を生成
+   * @private
+   */
+  private generatePlotRecommendations(stage: LearningStage, currentPhase: string): string[] {
+    const recommendations: string[] = [];
+
+    // 学習段階に基づく推奨事項
+    switch (stage) {
+      case LearningStage.MISCONCEPTION:
+        recommendations.push('既存アプローチの限界を露呈する状況設定');
+        recommendations.push('問題の複雑さを段階的に明らかにする展開');
+        break;
+      case LearningStage.EXPLORATION:
+        recommendations.push('新しい情報源や視点との出会いの演出');
+        recommendations.push('多様な選択肢や可能性の提示');
+        break;
+      case LearningStage.CONFLICT:
+        recommendations.push('価値観の対立を軸とした展開');
+        recommendations.push('内的・外的対立の相互強化');
+        break;
+      case LearningStage.INSIGHT:
+        recommendations.push('洞察を促す決定的な出来事の設計');
+        recommendations.push('ブレイクスルーを支援する状況創出');
+        break;
+      case LearningStage.APPLICATION:
+        recommendations.push('新しい理解の実践機会の提供');
+        recommendations.push('段階的な成功と挫折の体験設計');
+        break;
+      case LearningStage.INTEGRATION:
+        recommendations.push('統合された理解の自然な発揮場面');
+        recommendations.push('次の学習段階への準備となる展開');
+        break;
+    }
+
+    // プロットフェーズに基づく追加推奨事項
+    switch (currentPhase) {
+      case 'introduction':
+        recommendations.push('学習基盤構築に適した導入的展開');
+        break;
+      case 'rising_action':
+        recommendations.push('学習進行と緊張感上昇の同期');
+        break;
+      case 'climax':
+        recommendations.push('学習の気づきとプロットクライマックスの統合');
+        break;
+      case 'resolution':
+        recommendations.push('学習統合と物語解決の調和');
+        break;
+    }
+
+    return recommendations;
   }
 
   /**

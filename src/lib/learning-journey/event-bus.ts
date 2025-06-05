@@ -10,7 +10,7 @@
 import { logger } from '@/lib/utils/logger';
 
 /**
- * イベントタイプの列挙型
+ * イベントタイプの列挙型（P3-2統合強化版）
  * 使用可能なイベントタイプを定義する
  */
 export type EventType =
@@ -23,20 +23,30 @@ export type EventType =
   // 学習関連イベント
   | 'learning.stage.updated'
   | 'embodiment.plan.created'
+  | 'learning.plot.integrated'           // P3-2: 学習とプロットの統合
+  | 'learning.character.synced'          // P3-2: 学習とキャラクター同期
   
   // 篇・章関連イベント
   | 'section.created'
   | 'section.updated'
-  | 'section.deleted'  // 追加
+  | 'section.deleted'
   | 'chapter.structure.designed'
   | 'scene.recommendations.generated'
+  | 'plot.integration.enhanced'          // P3-2: プロット統合強化
   
-  // 感情・変容関連イベント
+  // 感情・変容関連イベント（P3-2強化）
   | 'emotional.arc.designed'
   | 'empathetic.points.generated'
   | 'cathartic.experience.designed'
   | 'emotion.learning.synchronized'
   | 'chapter.emotion.analyzed'
+  | 'emotional.plot.aligned'             // P3-2: 感情とプロットの整合
+  | 'transformation.character.synced'    // P3-2: 変容とキャラクター同期
+  
+  // 統合システムイベント（P3-2新規）
+  | 'triple.integration.completed'       // 感情×プロット×キャラクター統合
+  | 'integration.quality.scored'         // 統合品質スコア
+  | 'cross.system.optimized'            // クロスシステム最適化
   
   // 生成関連イベント
   | 'prompt.generated'
@@ -251,6 +261,238 @@ export class EventBus {
    */
   isInitialized(): boolean {
     return this.initialized;
+  }
+
+  /**
+   * 統合システム用のイベント発行（P3-2専用）
+   * @param integrationData 統合データ
+   */
+  async publishIntegrationEvent(integrationData: {
+    type: 'learning_plot' | 'emotion_character' | 'triple_integration';
+    conceptName: string;
+    stage?: string;
+    chapterNumber?: number;
+    integrationScore?: number;
+    recommendations?: string[];
+    plotPhase?: string;
+    characterData?: any;
+    emotionalData?: any;
+  }): Promise<void> {
+    try {
+      // 統合タイプに応じたイベントの発行
+      switch (integrationData.type) {
+        case 'learning_plot':
+          await this.publish('learning.plot.integrated', {
+            conceptName: integrationData.conceptName,
+            stage: integrationData.stage,
+            chapterNumber: integrationData.chapterNumber,
+            plotPhase: integrationData.plotPhase,
+            integrationScore: integrationData.integrationScore,
+            recommendations: integrationData.recommendations || [],
+            timestamp: new Date().toISOString()
+          });
+          
+          await this.publish('plot.integration.enhanced', {
+            conceptName: integrationData.conceptName,
+            enhancementLevel: integrationData.integrationScore || 0.5,
+            plotPhase: integrationData.plotPhase,
+            learningStage: integrationData.stage
+          });
+          break;
+
+        case 'emotion_character':
+          await this.publish('emotional.plot.aligned', {
+            conceptName: integrationData.conceptName,
+            stage: integrationData.stage,
+            chapterNumber: integrationData.chapterNumber,
+            emotionalData: integrationData.emotionalData,
+            characterData: integrationData.characterData,
+            alignmentScore: integrationData.integrationScore
+          });
+          
+          await this.publish('transformation.character.synced', {
+            conceptName: integrationData.conceptName,
+            characterTransformation: integrationData.characterData,
+            emotionalTransformation: integrationData.emotionalData,
+            syncQuality: integrationData.integrationScore
+          });
+          break;
+
+        case 'triple_integration':
+          await this.publish('triple.integration.completed', {
+            conceptName: integrationData.conceptName,
+            stage: integrationData.stage,
+            chapterNumber: integrationData.chapterNumber,
+            integrationScore: integrationData.integrationScore,
+            plotPhase: integrationData.plotPhase,
+            characterData: integrationData.characterData,
+            emotionalData: integrationData.emotionalData,
+            recommendations: integrationData.recommendations || [],
+            timestamp: new Date().toISOString()
+          });
+          
+          // 品質スコア発行
+          await this.publish('integration.quality.scored', {
+            conceptName: integrationData.conceptName,
+            qualityScore: integrationData.integrationScore,
+            integrationType: 'triple',
+            components: ['learning', 'plot', 'character', 'emotion']
+          });
+          break;
+      }
+
+      logger.debug(`Published integration event for type: ${integrationData.type}`);
+
+    } catch (error) {
+      logger.error(`Failed to publish integration event for type: ${integrationData.type}`, {
+        error: error instanceof Error ? error.message : String(error),
+        integrationData
+      });
+    }
+  }
+
+  /**
+   * クロスシステム最適化イベントの発行（P3-2専用）
+   * @param optimizationData 最適化データ
+   */
+  async publishOptimizationEvent(optimizationData: {
+    systems: string[];
+    optimizationType: 'performance' | 'integration' | 'quality';
+    improvementScore: number;
+    recommendations: string[];
+    processingTime?: number;
+  }): Promise<void> {
+    try {
+      await this.publish('cross.system.optimized', {
+        systems: optimizationData.systems,
+        optimizationType: optimizationData.optimizationType,
+        improvementScore: optimizationData.improvementScore,
+        recommendations: optimizationData.recommendations,
+        processingTime: optimizationData.processingTime,
+        timestamp: new Date().toISOString()
+      });
+
+      logger.debug(`Published optimization event for systems: ${optimizationData.systems.join(', ')}`);
+
+    } catch (error) {
+      logger.error(`Failed to publish optimization event`, {
+        error: error instanceof Error ? error.message : String(error),
+        optimizationData
+      });
+    }
+  }
+
+  /**
+   * 統合品質の監視と自動イベント発行（P3-2専用）
+   * @param qualityData 品質データ
+   */
+  async monitorIntegrationQuality(qualityData: {
+    conceptName: string;
+    currentScore: number;
+    targetScore: number;
+    components: Array<{
+      name: string;
+      score: number;
+      status: 'healthy' | 'degraded' | 'critical';
+    }>;
+  }): Promise<void> {
+    try {
+      // 品質スコアの評価
+      const qualityStatus = qualityData.currentScore >= qualityData.targetScore ? 'healthy' :
+                          qualityData.currentScore >= qualityData.targetScore * 0.7 ? 'degraded' : 'critical';
+
+      // 品質監視イベントの発行
+      await this.publish('integration.quality.scored', {
+        conceptName: qualityData.conceptName,
+        qualityScore: qualityData.currentScore,
+        targetScore: qualityData.targetScore,
+        qualityStatus,
+        components: qualityData.components,
+        needsAttention: qualityStatus !== 'healthy',
+        timestamp: new Date().toISOString()
+      });
+
+      // 品質が低下している場合は最適化推奨
+      if (qualityStatus === 'critical') {
+        const criticalComponents = qualityData.components
+          .filter(comp => comp.status === 'critical')
+          .map(comp => comp.name);
+
+        await this.publishOptimizationEvent({
+          systems: criticalComponents,
+          optimizationType: 'quality',
+          improvementScore: qualityData.targetScore - qualityData.currentScore,
+          recommendations: [
+            `重要コンポーネント ${criticalComponents.join(', ')} の改善が必要`,
+            '統合品質の向上のための緊急対応を推奨'
+          ]
+        });
+      }
+
+      logger.debug(`Monitored integration quality for concept: ${qualityData.conceptName}, status: ${qualityStatus}`);
+
+    } catch (error) {
+      logger.error(`Failed to monitor integration quality`, {
+        error: error instanceof Error ? error.message : String(error),
+        qualityData
+      });
+    }
+  }
+
+  /**
+   * 統合関連イベントのフィルタリング取得（P3-2専用）
+   * @param filter フィルタ条件
+   * @returns フィルタリングされたイベントログ
+   */
+  getIntegrationEventLog(filter?: {
+    eventTypes?: EventType[];
+    conceptName?: string;
+    timeRange?: { start: string; end: string };
+    limit?: number;
+  }): Array<{eventType: EventType, timestamp: string, payload: any}> {
+    let filteredLog = [...this.eventLog];
+
+    // 統合関連イベントタイプでフィルタリング
+    const integrationEventTypes: EventType[] = [
+      'learning.plot.integrated',
+      'learning.character.synced',
+      'emotional.plot.aligned',
+      'transformation.character.synced',
+      'triple.integration.completed',
+      'integration.quality.scored',
+      'cross.system.optimized',
+      'plot.integration.enhanced'
+    ];
+
+    if (filter?.eventTypes) {
+      filteredLog = filteredLog.filter(log => filter.eventTypes!.includes(log.eventType));
+    } else {
+      filteredLog = filteredLog.filter(log => integrationEventTypes.includes(log.eventType));
+    }
+
+    // 概念名でフィルタリング
+    if (filter?.conceptName) {
+      filteredLog = filteredLog.filter(log => 
+        log.payload?.conceptName === filter.conceptName
+      );
+    }
+
+    // 時間範囲でフィルタリング
+    if (filter?.timeRange) {
+      const startTime = new Date(filter.timeRange.start);
+      const endTime = new Date(filter.timeRange.end);
+      filteredLog = filteredLog.filter(log => {
+        const logTime = new Date(log.timestamp);
+        return logTime >= startTime && logTime <= endTime;
+      });
+    }
+
+    // 制限数の適用
+    if (filter?.limit) {
+      filteredLog = filteredLog.slice(-filter.limit);
+    }
+
+    return filteredLog;
   }
 }
 

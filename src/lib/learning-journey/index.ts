@@ -730,7 +730,12 @@ export class LearningJourneySystem {
             // 9. 関連記憶の取得
             const relevantMemories = await this.getRelevantMemoriesWithFallback(chapterNumber);
 
-            // 10. プロンプト生成オプションの組み立て
+            // 10. プロット連携情報の統合
+            const plotIntegration = await this.integratePlotWithLearning(
+                section, conceptName, learningStage, chapterNumber
+            );
+
+            // 11. プロンプト生成オプションの組み立て（プロット連携強化版）
             const chapterOptions = {
                 chapterNumber,
                 suggestedTitle: section ? 
@@ -744,7 +749,17 @@ export class LearningJourneySystem {
                 previousChapterSummary,
                 relevantMemories,
                 mainCharacters: context.mainCharacters,
-                targetLength: { min: 3000, max: 6000 }
+                targetLength: { min: 3000, max: 6000 },
+                
+                // プロット連携強化情報
+                plotIntegration: plotIntegration,
+                plotEnhancement: section?.plotEnhancement,
+                learningPlotAlignment: section?.learningPlotAlignment,
+                
+                // 統合効果の活用
+                integratedGuidance: this.generateIntegratedGuidance(
+                    plotIntegration, learningStage, conceptName
+                )
             };
 
             // 11. プロンプトの生成
@@ -889,6 +904,332 @@ export class LearningJourneySystem {
         }
     }
 
+    /**
+     * プロットと学習の統合処理
+     * @private
+     */
+    private async integratePlotWithLearning(
+        section: any,
+        conceptName: string,
+        learningStage: LearningStage,
+        chapterNumber: number
+    ): Promise<any> {
+        try {
+            logger.info(`Integrating plot with learning for chapter ${chapterNumber}, stage ${learningStage}`);
+
+            // プロット情報の収集
+            const plotDataResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `plot integration learningStage ${learningStage} concept "${conceptName}"`,
+                    [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'integratePlotWithLearning'
+            );
+
+            // 基本統合情報
+            const baseIntegration = {
+                learningToPlotInfluence: {
+                    currentStage: learningStage,
+                    progressRate: this.calculateStageProgressRate(learningStage, chapterNumber),
+                    suggestedPlotDirection: this.getSuggestedPlotDirection(learningStage),
+                    plotConstraints: this.getPlotConstraints(learningStage)
+                },
+                plotToLearningInfluence: {
+                    currentPhase: section?.plotEnhancement?.currentPhase || 'unknown',
+                    tensionLevel: section?.learningPlotAlignment?.tensionOptimization || 0.5,
+                    learningCatalysts: this.getLearningCatalysts(learningStage),
+                    stageAdvancementTriggers: this.getStageAdvancementTriggers(learningStage)
+                },
+                integrationScore: this.calculateIntegrationScore(section, learningStage),
+                optimizationRecommendations: []
+            };
+
+            // プロットデータが利用可能な場合の強化
+            if (plotDataResult.success && plotDataResult.totalResults > 0) {
+                baseIntegration.optimizationRecommendations = this.extractOptimizationRecommendations(
+                    plotDataResult, learningStage, conceptName
+                );
+                baseIntegration.integrationScore = Math.min(1.0, baseIntegration.integrationScore + 0.2);
+            }
+
+            return baseIntegration;
+
+        } catch (error) {
+            logger.error('Failed to integrate plot with learning', {
+                error: error instanceof Error ? error.message : String(error),
+                chapterNumber,
+                learningStage
+            });
+
+            // エラー時のフォールバック統合情報
+            return {
+                learningToPlotInfluence: {
+                    currentStage: learningStage,
+                    progressRate: 0.5,
+                    suggestedPlotDirection: ['学習進行に沿った展開'],
+                    plotConstraints: ['学習阻害要素の回避']
+                },
+                plotToLearningInfluence: {
+                    currentPhase: 'recovery',
+                    tensionLevel: 0.5,
+                    learningCatalysts: ['基本的な学習機会'],
+                    stageAdvancementTriggers: ['章の進行']
+                },
+                integrationScore: 0.3,
+                optimizationRecommendations: ['エラー回復後の再統合']
+            };
+        }
+    }
+
+    /**
+     * 統合ガイダンスの生成
+     * @private
+     */
+    private generateIntegratedGuidance(
+        plotIntegration: any,
+        learningStage: LearningStage,
+        conceptName: string
+    ): string[] {
+        const guidance = [];
+
+        // 学習段階に基づくガイダンス
+        switch (learningStage) {
+            case LearningStage.MISCONCEPTION:
+                guidance.push('プロット展開で概念の限界や問題点を自然に露呈させる');
+                guidance.push('キャラクターの誤解が引き起こす状況を通じて学習機会を創出');
+                break;
+            case LearningStage.EXPLORATION:
+                guidance.push('プロットの転換点で新しい視点や情報との出会いを演出');
+                guidance.push('探索段階の不確実性をプロットの緊張感と調和させる');
+                break;
+            case LearningStage.CONFLICT:
+                guidance.push('内的葛藤とプロットの外的対立を相互強化させる');
+                guidance.push('価値観の衝突をストーリーの主要な対立軸として活用');
+                break;
+            case LearningStage.INSIGHT:
+                guidance.push('プロットのクライマックスと学習の気づきの瞬間を同期させる');
+                guidance.push('洞察の瞬間がストーリー展開の転換点となるよう設計');
+                break;
+            case LearningStage.APPLICATION:
+                guidance.push('新しい理解の実践機会をプロット展開に自然に組み込む');
+                guidance.push('試行錯誤のプロセスをストーリーの成長アークと連動させる');
+                break;
+            case LearningStage.INTEGRATION:
+                guidance.push('統合された理解がストーリーの解決に直接貢献するよう構成');
+                guidance.push('次の学習ステージへの橋渡しをプロットの新展開で示唆');
+                break;
+        }
+
+        // プロット統合情報に基づくガイダンス
+        if (plotIntegration) {
+            if (plotIntegration.integrationScore > 0.7) {
+                guidance.push('プロットと学習の高い統合度を活かした相乗効果を最大化');
+            }
+
+            if (plotIntegration.optimizationRecommendations && plotIntegration.optimizationRecommendations.length > 0) {
+                guidance.push(...plotIntegration.optimizationRecommendations.slice(0, 2));
+            }
+        }
+
+        // 概念特化ガイダンス
+        if (conceptName === 'ISSUE DRIVEN') {
+            guidance.push('課題解決プロセスをプロット展開の骨格として活用');
+            guidance.push('顧客視点の変化をキャラクター関係性の発展と連動させる');
+        }
+
+        return guidance;
+    }
+
+    /**
+     * 学習段階の進行率を計算
+     * @private
+     */
+    private calculateStageProgressRate(stage: LearningStage, chapterNumber: number): number {
+        const stageOrder = this.getStageOrder(stage);
+        const maxStages = Object.keys(LearningStage).length;
+        const baseProgress = (stageOrder - 1) / maxStages;
+        
+        // 章内での進行も考慮（簡易計算）
+        const withinStageProgress = (chapterNumber % 5) / 5;
+        
+        return Math.min(1.0, baseProgress + (withinStageProgress / maxStages));
+    }
+
+    /**
+     * 学習段階に応じた推奨プロット方向を取得
+     * @private
+     */
+    private getSuggestedPlotDirection(stage: LearningStage): string[] {
+        const directions: Record<LearningStage, string[]> = {
+            [LearningStage.MISCONCEPTION]: [
+                '既存のアプローチの限界を露呈する状況',
+                '問題の複雑さを段階的に明らかにする展開',
+                '簡単な解決策が通用しない現実の提示'
+            ],
+            [LearningStage.EXPLORATION]: [
+                '新しい情報源や視点との出会い',
+                '多様な選択肢や可能性の提示',
+                '探索を促進する状況の創出'
+            ],
+            [LearningStage.CONFLICT]: [
+                '価値観の対立を軸とした展開',
+                '選択を迫る重要な局面の設定',
+                '内的・外的対立の相互強化'
+            ],
+            [LearningStage.INSIGHT]: [
+                '洞察を促す決定的な出来事',
+                '点と点が繋がる瞬間の演出',
+                'ブレイクスルーを支援する状況'
+            ],
+            [LearningStage.APPLICATION]: [
+                '新しい理解の実践機会の提供',
+                '段階的な成功と挫折の体験',
+                'スキル向上の具体的な表現'
+            ],
+            [LearningStage.INTEGRATION]: [
+                '統合された理解の自然な発揮',
+                '次の学習段階への準備となる展開',
+                '達成感と新たな挑戦の提示'
+            ]
+        };
+
+        return directions[stage] || ['標準的なストーリー展開'];
+    }
+
+    /**
+     * 学習段階に応じたプロット制約を取得
+     * @private
+     */
+    private getPlotConstraints(stage: LearningStage): string[] {
+        const constraints: Record<LearningStage, string[]> = {
+            [LearningStage.MISCONCEPTION]: [
+                '簡単すぎる解決策の提示を避ける',
+                '学習機会を奪う過度な支援を控える'
+            ],
+            [LearningStage.EXPLORATION]: [
+                '結論を急がない展開を心がける',
+                '探索を阻害する早急な答えの提示を避ける'
+            ],
+            [LearningStage.CONFLICT]: [
+                '一方的な価値観の押し付けを避ける',
+                '葛藤を軽視した安易な解決を控える'
+            ],
+            [LearningStage.INSIGHT]: [
+                '洞察の瞬間を軽視した展開を避ける',
+                '気づきの価値を薄める情報過多を控える'
+            ],
+            [LearningStage.APPLICATION]: [
+                '完璧な実行への過度な期待を避ける',
+                '失敗や試行錯誤を否定する展開を控える'
+            ],
+            [LearningStage.INTEGRATION]: [
+                '統合への到達を軽視した展開を避ける',
+                '次の学習への継続性を阻害する完結を控える'
+            ]
+        };
+
+        return constraints[stage] || ['一般的な制約事項'];
+    }
+
+    /**
+     * 学習触媒要素を取得
+     * @private
+     */
+    private getLearningCatalysts(stage: LearningStage): string[] {
+        const catalysts: Record<LearningStage, string[]> = {
+            [LearningStage.MISCONCEPTION]: ['現実との摩擦', '予想外の結果', '他者からの指摘'],
+            [LearningStage.EXPLORATION]: ['新しい出会い', '多様な選択肢', '探索の機会'],
+            [LearningStage.CONFLICT]: ['価値観の衝突', '重要な選択', '内的な葛藤'],
+            [LearningStage.INSIGHT]: ['決定的な体験', '直感的な理解', '突然の気づき'],
+            [LearningStage.APPLICATION]: ['実践の機会', '具体的な挑戦', '段階的な成功'],
+            [LearningStage.INTEGRATION]: ['自然な適用', '他者への伝達', '新たな挑戦']
+        };
+
+        return catalysts[stage] || ['一般的な学習機会'];
+    }
+
+    /**
+     * 段階進展のトリガーを取得
+     * @private
+     */
+    private getStageAdvancementTriggers(stage: LearningStage): string[] {
+        const triggers: Record<LearningStage, string[]> = {
+            [LearningStage.MISCONCEPTION]: ['現状への疑問の芽生え', '限界の体験'],
+            [LearningStage.EXPLORATION]: ['新しい視点の発見', '選択肢の認識'],
+            [LearningStage.CONFLICT]: ['葛藤の深化', '選択への圧力'],
+            [LearningStage.INSIGHT]: ['洞察の獲得', '理解の飛躍'],
+            [LearningStage.APPLICATION]: ['実践の成功', 'スキルの向上'],
+            [LearningStage.INTEGRATION]: ['自然な適用', '次への準備']
+        };
+
+        return triggers[stage] || ['時間の経過'];
+    }
+
+    /**
+     * 統合スコアを計算
+     * @private
+     */
+    private calculateIntegrationScore(section: any, learningStage: LearningStage): number {
+        let score = 0.5; // ベースライン
+
+        // セクション情報による調整
+        if (section) {
+            if (section.plotEnhancement) {
+                score += 0.2;
+            }
+            if (section.learningPlotAlignment) {
+                score += section.learningPlotAlignment.plotLearningAlignment * 0.3;
+            }
+        }
+
+        // 学習段階による調整
+        if (learningStage === LearningStage.INSIGHT || learningStage === LearningStage.CONFLICT) {
+            score += 0.1; // 重要な段階での統合効果向上
+        }
+
+        return Math.min(1.0, score);
+    }
+
+    /**
+     * 最適化推奨事項を抽出
+     * @private
+     */
+    private extractOptimizationRecommendations(
+        plotSearchResult: any,
+        learningStage: LearningStage,
+        conceptName: string
+    ): string[] {
+        const recommendations = [];
+
+        try {
+            for (const result of plotSearchResult.results) {
+                if (result.data && result.data.plotOptimization) {
+                    recommendations.push(...result.data.plotOptimization.recommendations || []);
+                }
+
+                if (result.data && result.data.learningIntegration) {
+                    recommendations.push(...result.data.learningIntegration.suggestions || []);
+                }
+            }
+
+            // 学習段階特化の推奨事項
+            if (learningStage === LearningStage.CONFLICT) {
+                recommendations.push('葛藤段階では内的・外的対立の相互強化を重視');
+            }
+
+            if (conceptName === 'ISSUE DRIVEN') {
+                recommendations.push('課題解決プロセスとプロット展開の同期を強化');
+            }
+
+        } catch (error) {
+            logger.warn('Failed to extract optimization recommendations', { error });
+            recommendations.push('基本的な統合最適化を実施');
+        }
+
+        return recommendations.slice(0, 3); // 最大3つまで
+    }
+
     // ============================================================================
     // フォールバック対応ヘルパーメソッド群
     // ============================================================================
@@ -970,27 +1311,225 @@ export class LearningJourneySystem {
     }
 
     /**
-     * セクション取得（フォールバック対応）
+     * セクション取得（プロットシステム連携拡張対応）
      * @private
      */
     private async getSectionWithFallback(chapterNumber: number): Promise<any> {
         if (this.componentStatus.storyDesigner.functional) {
             try {
-                return this.storyDesigner.getSectionByChapter(chapterNumber);
+                const section = await this.storyDesigner.getSectionByChapter(chapterNumber);
+                
+                // プロットシステムからの追加情報を統合記憶システムから取得
+                const plotContextResult = await this.safeMemoryOperation(
+                    () => this.memoryManager.unifiedSearch(
+                        `plot section chapter${chapterNumber} storyArc phase`,
+                        [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                    ),
+                    { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                    'getSectionPlotContext'
+                );
+
+                // プロット情報でセクションを強化
+                if (plotContextResult.success && plotContextResult.totalResults > 0) {
+                    section.plotEnhancement = this.extractPlotEnhancementFromSearch(plotContextResult, chapterNumber);
+                    section.learningPlotAlignment = this.calculateLearningPlotAlignment(section, plotContextResult);
+                }
+
+                return section;
             } catch (error) {
                 logger.warn('Failed to get section from StoryDesigner', { error });
             }
         }
 
-        // フォールバック：デフォルトセクション
+        // プロットマネージャーからの直接取得を試行
+        if (this.memoryManager) {
+            try {
+                const plotDataResult = await this.safeMemoryOperation(
+                    () => this.memoryManager.unifiedSearch(
+                        `plot strategy chapter${chapterNumber} plotMode`,
+                        [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                    ),
+                    { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                    'getSectionPlotFallback'
+                );
+
+                if (plotDataResult.success && plotDataResult.totalResults > 0) {
+                    const plotBasedSection = this.buildSectionFromPlotData(plotDataResult, chapterNumber);
+                    if (plotBasedSection) {
+                        return plotBasedSection;
+                    }
+                }
+            } catch (error) {
+                logger.warn('Failed to get plot-based section', { error });
+            }
+        }
+
+        // フォールバック：デフォルトセクション（プロット連携情報付き）
         return {
             id: 'default-section',
             number: 1,
             title: '学びの始まり',
             mainConcept: 'ISSUE DRIVEN',
             startChapter: 1,
-            endChapter: 10
+            endChapter: 10,
+            plotEnhancement: {
+                currentPhase: 'introduction',
+                storyArc: 'learning_foundation',
+                plotMode: 'CONCRETE',
+                narrativePurpose: '概念学習の基盤を構築する'
+            },
+            learningPlotAlignment: {
+                plotLearningAlignment: 0.7,
+                tensionOptimization: 0.6,
+                storyProgressionSupport: 0.8
+            }
         };
+    }
+
+    /**
+     * 検索結果からプロット強化情報を抽出
+     * @private
+     */
+    private extractPlotEnhancementFromSearch(searchResult: any, chapterNumber: number): any {
+        try {
+            for (const result of searchResult.results) {
+                if (result.data && result.data.plotContext) {
+                    const plotContext = result.data.plotContext;
+                    return {
+                        currentPhase: plotContext.phase || 'unknown',
+                        storyArc: plotContext.currentArc?.name || 'main_arc',
+                        plotMode: plotContext.mode || 'CONCRETE',
+                        narrativePurpose: plotContext.narrativeContext || '',
+                        chapterSpecificGuidance: plotContext.shortTermGoals || []
+                    };
+                }
+
+                if (result.data && result.data.plotStrategy) {
+                    const strategy = result.data.plotStrategy;
+                    return {
+                        currentPhase: 'strategic_phase',
+                        storyArc: 'strategic_arc',
+                        plotMode: strategy.globalStrategy?.preferredMode || 'CONCRETE',
+                        narrativePurpose: '戦略的プロット展開',
+                        strategicGuidance: strategy.arcStrategies || []
+                    };
+                }
+            }
+
+            return {
+                currentPhase: 'default_phase',
+                storyArc: 'learning_arc',
+                plotMode: 'CONCRETE',
+                narrativePurpose: '学習旅程の進行'
+            };
+        } catch (error) {
+            logger.warn('Failed to extract plot enhancement from search', { error });
+            return {
+                currentPhase: 'error_recovery',
+                storyArc: 'recovery_arc',
+                plotMode: 'CONCRETE',
+                narrativePurpose: 'エラー回復からの学習'
+            };
+        }
+    }
+
+    /**
+     * 学習とプロットの整合度を計算
+     * @private
+     */
+    private calculateLearningPlotAlignment(section: any, plotSearchResult: any): any {
+        try {
+            let alignmentScore = 0.5; // ベースライン
+            let tensionScore = 0.5;
+            let supportScore = 0.5;
+
+            // プロット情報が利用可能な場合の調整
+            if (plotSearchResult.success && plotSearchResult.totalResults > 0) {
+                alignmentScore = 0.7; // プロット情報が利用可能
+                
+                for (const result of plotSearchResult.results) {
+                    if (result.data && result.data.plotContext) {
+                        const plotContext = result.data.plotContext;
+                        
+                        // アークの一致度で調整
+                        if (plotContext.currentArc && section.mainConcept) {
+                            if (plotContext.currentArc.theme === section.mainConcept) {
+                                alignmentScore = Math.min(1.0, alignmentScore + 0.2);
+                            }
+                        }
+
+                        // 緊張度の最適化
+                        if (plotContext.mode === 'CONFLICT' || plotContext.phase === 'climax') {
+                            tensionScore = 0.8;
+                        } else if (plotContext.mode === 'RESOLUTION') {
+                            tensionScore = 0.4;
+                        }
+
+                        // ストーリー進行支援度
+                        if (plotContext.shortTermGoals && plotContext.shortTermGoals.length > 0) {
+                            supportScore = 0.8;
+                        }
+                    }
+                }
+            }
+
+            return {
+                plotLearningAlignment: alignmentScore,
+                tensionOptimization: tensionScore,
+                storyProgressionSupport: supportScore
+            };
+        } catch (error) {
+            logger.warn('Failed to calculate learning-plot alignment', { error });
+            return {
+                plotLearningAlignment: 0.5,
+                tensionOptimization: 0.5,
+                storyProgressionSupport: 0.5
+            };
+        }
+    }
+
+    /**
+     * プロットデータからセクションを構築
+     * @private
+     */
+    private buildSectionFromPlotData(plotSearchResult: any, chapterNumber: number): any | null {
+        try {
+            for (const result of plotSearchResult.results) {
+                if (result.data && result.data.plotStrategy) {
+                    const strategy = result.data.plotStrategy;
+                    
+                    // 章範囲に基づいてセクションを推定
+                    let sectionNumber = Math.ceil(chapterNumber / 5); // 5章ごとにセクション
+                    let startChapter = (sectionNumber - 1) * 5 + 1;
+                    let endChapter = sectionNumber * 5;
+
+                    return {
+                        id: `plot-based-section-${sectionNumber}`,
+                        number: sectionNumber,
+                        title: `第${sectionNumber}篇`,
+                        mainConcept: 'ISSUE DRIVEN', // デフォルト概念
+                        startChapter,
+                        endChapter,
+                        plotEnhancement: {
+                            currentPhase: `section_${sectionNumber}`,
+                            storyArc: 'main_learning_arc',
+                            plotMode: strategy.globalStrategy?.preferredMode || 'CONCRETE',
+                            narrativePurpose: `第${sectionNumber}篇の学習目標達成`
+                        },
+                        learningPlotAlignment: {
+                            plotLearningAlignment: 0.8,
+                            tensionOptimization: 0.7,
+                            storyProgressionSupport: 0.9
+                        }
+                    };
+                }
+            }
+
+            return null;
+        } catch (error) {
+            logger.warn('Failed to build section from plot data', { error });
+            return null;
+        }
     }
 
     /**

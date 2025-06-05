@@ -242,7 +242,7 @@ export class EmotionalLearningIntegrator {
     }
 
     /**
-     * 学習段階に適した感情アークを設計する
+     * 学習段階に適した感情アークを設計する（プロット・キャラクター統合強化版）
      * 
      * @param conceptName 概念名
      * @param stage 学習段階
@@ -259,11 +259,50 @@ export class EmotionalLearningIntegrator {
         try {
             await this.ensureInitialized();
             
-            logger.info(`Designing emotional arc for concept ${conceptName} at stage ${stage}`);
+            logger.info(`Designing emotional arc for concept ${conceptName} at stage ${stage} with plot and character integration`);
             this.performanceStats.totalAnalyses++;
 
-            // 学習段階に適した感情アーク設計を生成
-            const emotionalArc = this.createStageBasedEmotionalArc(stage);
+            // プロット統合情報を取得
+            const plotIntegrationResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `plot context chapter ${chapterNumber} tension emotion`,
+                    [MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'getPlotIntegrationForEmotionalArc'
+            );
+
+            // キャラクター発達情報を取得
+            const characterDevelopmentResult = await this.safeMemoryOperation(
+                () => this.memoryManager.unifiedSearch(
+                    `character development psychology emotion chapter ${chapterNumber}`,
+                    [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM]
+                ),
+                { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
+                'getCharacterDevelopmentForEmotionalArc'
+            );
+
+            // 学習段階に適した基本感情アーク設計を生成
+            let emotionalArc = this.createStageBasedEmotionalArc(stage);
+
+            // プロット統合による感情アークの強化
+            if (plotIntegrationResult.success && plotIntegrationResult.totalResults > 0) {
+                emotionalArc = this.enhanceEmotionalArcWithPlotIntegration(
+                    emotionalArc, plotIntegrationResult, stage
+                );
+            }
+
+            // キャラクター発達による感情アークの調整
+            if (characterDevelopmentResult.success && characterDevelopmentResult.totalResults > 0) {
+                emotionalArc = this.adjustEmotionalArcForCharacterDevelopment(
+                    emotionalArc, characterDevelopmentResult, stage
+                );
+            }
+
+            // 感情×プロット×キャラクターの三者同期
+            const tripleIntegrationResult = await this.performTripleIntegrationSync(
+                emotionalArc, plotIntegrationResult, characterDevelopmentResult, conceptName, stage
+            );
 
             // 統合記憶システムを使用した情報保存
             await this.safeMemoryOperation(
@@ -272,7 +311,7 @@ export class EmotionalLearningIntegrator {
                     const chapter: Chapter = {
                         id: `arc-design-${chapterNumber}`,
                         chapterNumber,
-                        title: `感情アーク設計 - 第${chapterNumber}章`,
+                        title: `統合感情アーク設計 - 第${chapterNumber}章`,
                         content: `概念: ${conceptName}, 段階: ${stage}, 設計理由: ${emotionalArc.reason}`,
                         previousChapterSummary: '',
                         scenes: [],
@@ -281,10 +320,13 @@ export class EmotionalLearningIntegrator {
                         metadata: {
                             createdAt: new Date().toISOString(),
                             lastModified: new Date().toISOString(),
-                            status: 'emotional_arc_designed',
+                            status: 'integrated_emotional_arc_designed',
                             emotionalArc,
                             conceptName,
                             learningStage: stage,
+                            plotIntegration: plotIntegrationResult.success,
+                            characterIntegration: characterDevelopmentResult.success,
+                            tripleIntegrationScore: tripleIntegrationResult.integrationScore,
                             wordCount: emotionalArc.reason.length,
                             estimatedReadingTime: Math.ceil(emotionalArc.reason.length / 1000)
                         }
@@ -297,15 +339,18 @@ export class EmotionalLearningIntegrator {
                     return result;
                 },
                 null,
-                'storeEmotionalArcDesign'
+                'storeIntegratedEmotionalArcDesign'
             );
 
-            // イベント発行
+            // イベント発行（統合情報付き）
             this.eventBus.publish('emotional.arc.designed', {
                 conceptName,
                 stage,
                 chapterNumber,
-                arc: emotionalArc
+                arc: emotionalArc,
+                plotIntegrated: plotIntegrationResult.success,
+                characterIntegrated: characterDevelopmentResult.success,
+                tripleIntegrationScore: tripleIntegrationResult.integrationScore
             });
 
             const processingTime = Date.now() - startTime;
@@ -326,6 +371,372 @@ export class EmotionalLearningIntegrator {
             // エラー時はデフォルト設計を返す
             return this.createDefaultEmotionalArc();
         }
+    }
+
+    /**
+     * プロット統合による感情アークの強化
+     * @private
+     */
+    private enhanceEmotionalArcWithPlotIntegration(
+        emotionalArc: EmotionalArcDesign,
+        plotIntegrationResult: any,
+        stage: LearningStage
+    ): EmotionalArcDesign {
+        try {
+            const enhancedArc = { ...emotionalArc };
+            const plotData = this.extractPlotContextFromResults(plotIntegrationResult);
+
+            // プロット緊張度による感情レベルの調整
+            if (plotData.tensionLevel !== undefined) {
+                const tensionMultiplier = 1 + (plotData.tensionLevel - 0.5) * 0.4;
+                
+                enhancedArc.emotionalJourney.development = enhancedArc.emotionalJourney.development.map(dim => ({
+                    ...dim,
+                    level: Math.min(10, Math.max(1, Math.round(dim.level * tensionMultiplier)))
+                }));
+            }
+
+            // プロットフェーズによる感情アークの調整
+            if (plotData.currentPhase) {
+                switch (plotData.currentPhase) {
+                    case 'introduction':
+                        enhancedArc.emotionalJourney.opening = enhancedArc.emotionalJourney.opening.map(dim => ({
+                            ...dim,
+                            level: Math.min(8, dim.level + 1) // 導入部では感情を適度に抑制
+                        }));
+                        break;
+                    case 'rising_action':
+                        enhancedArc.emotionalJourney.development = enhancedArc.emotionalJourney.development.map(dim => ({
+                            ...dim,
+                            level: Math.min(10, dim.level + 2) // 上昇アクションでは感情を強化
+                        }));
+                        break;
+                    case 'climax':
+                        enhancedArc.emotionalJourney.conclusion = enhancedArc.emotionalJourney.conclusion.map(dim => ({
+                            ...dim,
+                            level: Math.min(10, dim.level + 3) // クライマックスでは感情を最大化
+                        }));
+                        break;
+                }
+            }
+
+            // プロットテーマによる感情トーンの調整
+            if (plotData.theme && plotData.theme.includes('conflict')) {
+                enhancedArc.recommendedTone += ' - プロット対立を反映した緊張感を追加';
+            }
+
+            enhancedArc.reason += ` プロット統合により${plotData.currentPhase || 'unknown'}フェーズの特性を反映。`;
+
+            return enhancedArc;
+        } catch (error) {
+            logger.warn('Failed to enhance emotional arc with plot integration', { error });
+            return emotionalArc;
+        }
+    }
+
+    /**
+     * キャラクター発達による感情アークの調整
+     * @private
+     */
+    private adjustEmotionalArcForCharacterDevelopment(
+        emotionalArc: EmotionalArcDesign,
+        characterDevelopmentResult: any,
+        stage: LearningStage
+    ): EmotionalArcDesign {
+        try {
+            const adjustedArc = { ...emotionalArc };
+            const characterData = this.extractCharacterDataFromResults(characterDevelopmentResult);
+
+            // キャラクター発達段階による感情レベルの調整
+            if (characterData.developmentStage !== undefined) {
+                const developmentModifier = this.calculateDevelopmentModifier(characterData.developmentStage, stage);
+                
+                // 発達段階に応じて感情の複雑さを調整
+                if (characterData.developmentStage >= 5) {
+                    // 高発達段階では感情の複雑さを増加
+                    adjustedArc.emotionalJourney.opening.push({
+                        dimension: "内省",
+                        level: 6 + developmentModifier
+                    });
+                }
+            }
+
+            // キャラクター心理による感情次元の追加
+            if (characterData.psychology) {
+                if (characterData.psychology.currentFears && characterData.psychology.currentFears.length > 0) {
+                    adjustedArc.emotionalJourney.opening.push({
+                        dimension: "不安",
+                        level: Math.min(8, 4 + characterData.psychology.currentFears.length)
+                    });
+                }
+
+                if (characterData.psychology.currentDesires && characterData.psychology.currentDesires.length > 0) {
+                    adjustedArc.emotionalJourney.conclusion.push({
+                        dimension: "希望",
+                        level: Math.min(9, 5 + characterData.psychology.currentDesires.length)
+                    });
+                }
+            }
+
+            // キャラクター関係性による感情の調整
+            if (characterData.relationships && Array.isArray(characterData.relationships)) {
+                const relationshipTension = this.calculateRelationshipEmotionalTension(characterData.relationships);
+                if (relationshipTension > 0.6) {
+                    adjustedArc.emotionalJourney.development.push({
+                        dimension: "関係性緊張",
+                        level: Math.round(relationshipTension * 10)
+                    });
+                }
+            }
+
+            adjustedArc.reason += ` キャラクター発達段階${characterData.developmentStage || 'unknown'}の特性を反映。`;
+
+            return adjustedArc;
+        } catch (error) {
+            logger.warn('Failed to adjust emotional arc for character development', { error });
+            return emotionalArc;
+        }
+    }
+
+    /**
+     * 感情×プロット×キャラクターの三者同期
+     * @private
+     */
+    private async performTripleIntegrationSync(
+        emotionalArc: EmotionalArcDesign,
+        plotResult: any,
+        characterResult: any,
+        conceptName: string,
+        stage: LearningStage
+    ): Promise<{
+        integrationScore: number;
+        recommendations: string[];
+        enhancements: string[];
+    }> {
+        try {
+            let integrationScore = 0.5; // ベースライン
+            const recommendations: string[] = [];
+            const enhancements: string[] = [];
+
+            // プロット統合スコアの計算
+            const plotScore = plotResult.success ? 0.3 : 0;
+            integrationScore += plotScore;
+
+            // キャラクター統合スコアの計算
+            const characterScore = characterResult.success ? 0.3 : 0;
+            integrationScore += characterScore;
+
+            // 感情×学習段階の適合度
+            const stageEmotionAlignment = this.calculateStageEmotionAlignment(emotionalArc, stage);
+            integrationScore += stageEmotionAlignment * 0.4;
+
+            // 統合品質による推奨事項の生成
+            if (integrationScore > 0.8) {
+                recommendations.push('高い統合度を活かした感情×学習×ストーリーの相乗効果を最大化');
+                enhancements.push('三者統合の優位性を活用した深い読者体験の創出');
+            } else if (integrationScore > 0.6) {
+                recommendations.push('統合要素を強化して相乗効果を向上させる');
+                enhancements.push('プロットまたはキャラクター要素との連携を深化');
+            } else {
+                recommendations.push('基本的な感情学習統合の安定化を優先');
+                enhancements.push('段階的な統合要素の追加検討');
+            }
+
+            // 概念特化の推奨事項
+            if (conceptName === 'ISSUE DRIVEN') {
+                recommendations.push('課題解決過程における感情変化とプロット進行の同期強化');
+                enhancements.push('顧客視点変化とキャラクター感情発達の統合表現');
+            }
+
+            return {
+                integrationScore: Math.min(1.0, integrationScore),
+                recommendations,
+                enhancements
+            };
+        } catch (error) {
+            logger.warn('Failed to perform triple integration sync', { error });
+            return {
+                integrationScore: 0.3,
+                recommendations: ['基本的な感情統合の実施'],
+                enhancements: ['段階的な統合改善']
+            };
+        }
+    }
+
+    /**
+     * プロットコンテキストの抽出
+     * @private
+     */
+    private extractPlotContextFromResults(plotResult: any): any {
+        const plotData: any = {
+            tensionLevel: 0.5,
+            currentPhase: null,
+            theme: null
+        };
+
+        try {
+            if (plotResult.success && plotResult.results) {
+                for (const result of plotResult.results) {
+                    if (result.data && result.data.plotContext) {
+                        const context = result.data.plotContext;
+                        plotData.tensionLevel = context.tensionLevel || plotData.tensionLevel;
+                        plotData.currentPhase = context.phase || context.currentPhase;
+                        plotData.theme = context.theme;
+                    }
+
+                    if (result.data && result.data.plotStrategy) {
+                        const strategy = result.data.plotStrategy;
+                        plotData.currentPhase = strategy.currentPhase || plotData.currentPhase;
+                    }
+                }
+            }
+        } catch (error) {
+            logger.warn('Failed to extract plot context from results', { error });
+        }
+
+        return plotData;
+    }
+
+    /**
+     * キャラクターデータの抽出
+     * @private
+     */
+    private extractCharacterDataFromResults(characterResult: any): any {
+        const characterData: any = {
+            developmentStage: null,
+            psychology: null,
+            relationships: null
+        };
+
+        try {
+            if (characterResult.success && characterResult.results) {
+                for (const result of characterResult.results) {
+                    if (result.data && result.data.character) {
+                        const character = result.data.character;
+                        characterData.developmentStage = character.state?.developmentStage;
+                        characterData.psychology = character.psychology;
+                        characterData.relationships = character.relationships;
+                    }
+
+                    if (result.data && result.data.characterAnalysis) {
+                        const analysis = result.data.characterAnalysis;
+                        characterData.developmentStage = analysis.developmentStage || characterData.developmentStage;
+                        characterData.psychology = analysis.psychology || characterData.psychology;
+                    }
+                }
+            }
+        } catch (error) {
+            logger.warn('Failed to extract character data from results', { error });
+        }
+
+        return characterData;
+    }
+
+    /**
+     * 発達修正値の計算
+     * @private
+     */
+    private calculateDevelopmentModifier(developmentStage: number, learningStage: LearningStage): number {
+        try {
+            const stageOrder = this.getStageOrder(learningStage);
+            const expectedDevelopment = stageOrder * 1.5;
+            const difference = developmentStage - expectedDevelopment;
+            
+            // -2から+2の範囲で修正値を返す
+            return Math.max(-2, Math.min(2, Math.round(difference / 2)));
+        } catch (error) {
+            return 0;
+        }
+    }
+
+    /**
+     * 関係性感情緊張度の計算
+     * @private
+     */
+    private calculateRelationshipEmotionalTension(relationships: any[]): number {
+        try {
+            if (!Array.isArray(relationships) || relationships.length === 0) {
+                return 0.5;
+            }
+
+            let totalTension = 0;
+            for (const rel of relationships) {
+                switch (rel.type) {
+                    case 'ENEMY':
+                    case 'RIVAL':
+                        totalTension += 0.9;
+                        break;
+                    case 'MENTOR':
+                    case 'PROTECTOR':
+                        totalTension += 0.3;
+                        break;
+                    case 'FRIEND':
+                    case 'ALLY':
+                        totalTension += 0.2;
+                        break;
+                    default:
+                        totalTension += 0.5;
+                }
+            }
+
+            return Math.min(1.0, totalTension / relationships.length);
+        } catch (error) {
+            return 0.5;
+        }
+    }
+
+    /**
+     * 学習段階と感情の整合度計算
+     * @private
+     */
+    private calculateStageEmotionAlignment(emotionalArc: EmotionalArcDesign, stage: LearningStage): number {
+        try {
+            // 各学習段階に期待される感情特性
+            const expectedEmotions: Record<LearningStage, string[]> = {
+                [LearningStage.MISCONCEPTION]: ['自信', '混乱', 'フラストレーション'],
+                [LearningStage.EXPLORATION]: ['好奇心', '発見', '期待'],
+                [LearningStage.CONFLICT]: ['葛藤', '緊張', '決断'],
+                [LearningStage.INSIGHT]: ['驚き', '興奮', '解放感'],
+                [LearningStage.APPLICATION]: ['自信', '集中', '達成感'],
+                [LearningStage.INTEGRATION]: ['調和', '満足感', '創造性']
+            };
+
+            const expected = expectedEmotions[stage] || [];
+            if (expected.length === 0) return 0.5;
+
+            // 実際の感情アークの次元を抽出
+            const actualDimensions = [
+                ...emotionalArc.emotionalJourney.opening,
+                ...emotionalArc.emotionalJourney.development,
+                ...emotionalArc.emotionalJourney.conclusion
+            ].map(dim => dim.dimension);
+
+            // 期待される感情との一致度を計算
+            const matches = expected.filter(exp => 
+                actualDimensions.some(actual => actual.includes(exp) || exp.includes(actual))
+            );
+
+            return matches.length / expected.length;
+        } catch (error) {
+            return 0.5;
+        }
+    }
+
+    /**
+     * 学習段階の順序を取得
+     * @private
+     */
+    private getStageOrder(stage: LearningStage): number {
+        const stageOrder: Record<LearningStage, number> = {
+            [LearningStage.MISCONCEPTION]: 1,
+            [LearningStage.EXPLORATION]: 2,
+            [LearningStage.CONFLICT]: 3,
+            [LearningStage.INSIGHT]: 4,
+            [LearningStage.APPLICATION]: 5,
+            [LearningStage.INTEGRATION]: 6
+        };
+
+        return stageOrder[stage] || 0;
     }
 
     /**
