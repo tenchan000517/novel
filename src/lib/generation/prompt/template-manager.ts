@@ -4,7 +4,7 @@
  * @description 動的テンプレート選択・最適化機能を搭載したテンプレートマネージャー
  */
 
-import { promises as fs } from 'fs';
+import { storageProvider } from '@/lib/storage';
 import { logger } from '@/lib/utils/logger';
 import path from 'path';
 import {
@@ -497,10 +497,28 @@ ${this.generateFinalQualityInstructions(integratedData, context)}
 
   private injectBusinessSpecificContent(template: string, integratedData: RevolutionaryIntegratedData): string {
     const businessContent = `
-### ビジネス小説特化指示
-- リアルなビジネスシーンの描写を重視してください
-- 専門知識を自然に物語に織り込んでください
-- キャラクターの成長とビジネス上の学びを連動させてください
+### 🎯 ビジネス学習統合特化指示
+
+#### ビジネスフレームワーク統合
+- ISSUE DRIVEN思考法を主人公の課題解決プロセスに自然に組み込んでください
+- 顧客中心設計の概念をキャラクターの視点転換として描写してください
+- データドリブン意思決定を対話や葛藤の中で体験的に学べるよう構成してください
+
+#### 学習体験デザイン
+- 【発見→理解→実践→振り返り】のサイクルを1章内で完結させてください
+- 失敗体験からビジネスフレームワークを学ぶ「なるほど！」ポイントを設計してください
+- メンターキャラクターによるソクラテス式対話で深い理解を促進してください
+
+#### 段階的知識統合
+- 基礎的思考法（ISSUE DRIVEN、0秒思考、フェルミ推定）から開始
+- 人間関係・心理学（アドラー、マズロー、カーネギー）への発展
+- 戦略・マネジメント（ドラッカー、孫氏）の実践的応用
+- 最終的な統合実践までの学習進歩を意識してください
+
+#### 実践的応用
+- 抽象的な理論を具体的なビジネスシーンで体験させてください
+- キャラクター間の対話でフレームワークの多角的理解を深めてください
+- 読者が主人公と共に「学んだ」と実感できる構成にしてください
 `;
     return template + businessContent;
   }
@@ -676,7 +694,7 @@ ${this.generateFinalQualityInstructions(integratedData, context)}
     try {
       if (this.isLoaded) return;
 
-      const data = await fs.readFile(this.templatePath, 'utf8');
+      const data = await storageProvider.readFile(this.templatePath);
       this.templates = JSON.parse(data);
       this.isLoaded = true;
       logger.info('🚀 Enhanced templates loaded successfully');

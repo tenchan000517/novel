@@ -1048,6 +1048,194 @@ export class EmotionalLearningIntegrator {
     }
 
     /**
+     * ビジネスフレームワーク特化感情アークを設計する
+     * @param frameworkName フレームワーク名
+     * @param stage 学習段階
+     * @param chapterNumber 章番号
+     * @returns フレームワーク特化感情アーク設計
+     */
+    async designBusinessFrameworkEmotionalArc(
+        frameworkName: string,
+        stage: LearningStage,
+        chapterNumber: number
+    ): Promise<EmotionalArcDesign> {
+        const startTime = Date.now();
+        
+        try {
+            await this.ensureInitialized();
+            
+            logger.info(`Designing business framework emotional arc for ${frameworkName} at stage ${stage}`);
+            this.performanceStats.totalAnalyses++;
+
+            let emotionalArc: EmotionalArcDesign;
+
+            // フレームワーク別の特化感情アーク設計
+            switch (frameworkName) {
+                case 'ISSUE_DRIVEN':
+                    emotionalArc = this.createIssueDriverEmotionalArc(stage, chapterNumber);
+                    break;
+                case 'SOCRATIC_DIALOGUE':
+                    emotionalArc = this.createSocraticDialogueEmotionalArc(stage, chapterNumber);
+                    break;
+                case 'ADLER_PSYCHOLOGY':
+                    emotionalArc = this.createAdlerPsychologyEmotionalArc(stage, chapterNumber);
+                    break;
+                case 'DRUCKER_MANAGEMENT':
+                    emotionalArc = this.createDruckerManagementEmotionalArc(stage, chapterNumber);
+                    break;
+                default:
+                    emotionalArc = this.createStageBasedEmotionalArc(stage);
+                    break;
+            }
+
+            // 4段階学習進行モデルに対応した調整
+            if (stage === LearningStage.INTRODUCTION || 
+                stage === LearningStage.THEORY_APPLICATION || 
+                stage === LearningStage.FAILURE_EXPERIENCE || 
+                stage === LearningStage.PRACTICAL_MASTERY) {
+                emotionalArc = this.enhanceEmotionalArcForBusinessStage(emotionalArc, stage, frameworkName);
+            }
+
+            // 統合記憶システムを使用した情報保存
+            await this.safeMemoryOperation(
+                async () => {
+                    const chapter: Chapter = {
+                        id: `business-emotional-arc-${chapterNumber}`,
+                        chapterNumber,
+                        title: `ビジネス感情アーク設計 - 第${chapterNumber}章`,
+                        content: `フレームワーク: ${frameworkName}, 段階: ${stage}, 設計理由: ${emotionalArc.reason}`,
+                        previousChapterSummary: '',
+                        scenes: [],
+                        createdAt: new Date(),
+                        updatedAt: new Date(),
+                        metadata: {
+                            createdAt: new Date().toISOString(),
+                            lastModified: new Date().toISOString(),
+                            status: 'business_framework_emotional_arc_designed',
+                            emotionalArc,
+                            frameworkName,
+                            learningStage: stage,
+                            businessFrameworkIntegration: true,
+                            wordCount: emotionalArc.reason.length,
+                            estimatedReadingTime: Math.ceil(emotionalArc.reason.length / 1000)
+                        }
+                    };
+
+                    const result = await this.memoryManager.processChapter(chapter);
+                    if (result.success) {
+                        this.performanceStats.memorySystemHits++;
+                    }
+                    return result;
+                },
+                null,
+                'storeBusinessFrameworkEmotionalArc'
+            );
+
+            // イベント発行（ビジネスフレームワーク統合情報付き）
+            this.eventBus.publish('business.emotional.arc.designed', {
+                frameworkName,
+                stage,
+                chapterNumber,
+                arc: emotionalArc,
+                businessFrameworkIntegrated: true
+            });
+
+            const processingTime = Date.now() - startTime;
+            this.updatePerformanceMetrics(processingTime, true);
+
+            return emotionalArc;
+
+        } catch (error) {
+            const processingTime = Date.now() - startTime;
+            this.updatePerformanceMetrics(processingTime, false);
+            
+            logger.error(`Failed to design business framework emotional arc for ${frameworkName}`, {
+                error: error instanceof Error ? error.message : String(error),
+                stage,
+                chapterNumber
+            });
+
+            return this.createDefaultEmotionalArc();
+        }
+    }
+
+    /**
+     * ビジネスフレームワーク特化共感ポイントを生成する
+     * @param frameworkName フレームワーク名
+     * @param stage 学習段階
+     * @param content 章内容（オプション）
+     * @returns フレームワーク特化共感ポイント
+     */
+    async generateBusinessFrameworkEmpatheticPoints(
+        frameworkName: string,
+        stage: LearningStage,
+        content?: string
+    ): Promise<EmpatheticPoint[]> {
+        const startTime = Date.now();
+        
+        try {
+            await this.ensureInitialized();
+            
+            logger.info(`Generating business framework empathetic points for ${frameworkName} at stage ${stage}`);
+            this.performanceStats.totalAnalyses++;
+
+            let empatheticPoints: EmpatheticPoint[] = [];
+
+            // フレームワーク別の特化共感ポイント生成
+            switch (frameworkName) {
+                case 'ISSUE_DRIVEN':
+                    empatheticPoints = this.createIssueDriverEmpatheticPoints(stage);
+                    break;
+                case 'SOCRATIC_DIALOGUE':
+                    empatheticPoints = this.createSocraticDialogueEmpatheticPoints(stage);
+                    break;
+                case 'ADLER_PSYCHOLOGY':
+                    empatheticPoints = this.createAdlerPsychologyEmpatheticPoints(stage);
+                    break;
+                case 'DRUCKER_MANAGEMENT':
+                    empatheticPoints = this.createDruckerManagementEmpatheticPoints(stage);
+                    break;
+                default:
+                    empatheticPoints = this.createDefaultEmpatheticPoints(stage);
+                    break;
+            }
+
+            // 4段階学習進行モデルに対応した追加共感ポイント
+            if (stage === LearningStage.INTRODUCTION || 
+                stage === LearningStage.THEORY_APPLICATION || 
+                stage === LearningStage.FAILURE_EXPERIENCE || 
+                stage === LearningStage.PRACTICAL_MASTERY) {
+                const businessStagePoints = this.createBusinessStageEmpatheticPoints(stage, frameworkName);
+                empatheticPoints = [...empatheticPoints, ...businessStagePoints];
+            }
+
+            // イベント発行
+            this.eventBus.publish('business.empathetic.points.generated', {
+                frameworkName,
+                stage,
+                points: empatheticPoints,
+                businessFrameworkIntegrated: true
+            });
+
+            const processingTime = Date.now() - startTime;
+            this.updatePerformanceMetrics(processingTime, true);
+
+            return empatheticPoints;
+
+        } catch (error) {
+            const processingTime = Date.now() - startTime;
+            this.updatePerformanceMetrics(processingTime, false);
+            
+            logger.error(`Failed to generate business framework empathetic points for ${frameworkName}`, {
+                error: error instanceof Error ? error.message : String(error),
+                stage
+            });
+
+            return this.createDefaultEmpatheticPoints(stage);
+        }
+    }
+
+    /**
      * 感情と学習の統合計画を生成する
      * 
      * @param conceptName 概念名

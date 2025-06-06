@@ -4,7 +4,7 @@
  * @description プロンプト生成に使用するテンプレートを管理するクラス
  */
 
-import { promises as fs } from 'fs';
+import { storageProvider } from '@/lib/storage';
 import { logger } from '@/lib/utils/logger';
 import path from 'path';
 
@@ -32,7 +32,7 @@ export class TemplateManager {
         return;
       }
 
-      const data = await fs.readFile(this.templatePath, 'utf8');
+      const data = await storageProvider.readFile(this.templatePath);
       this.templates = JSON.parse(data);
       this.isLoaded = true;
       logger.info('Templates loaded successfully');

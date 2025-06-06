@@ -51,312 +51,37 @@ backstory:
     実業家の父と医師の母を持つ裕福な家庭で育つ。幼い頃から父親の影響で起業家精神を育まれ、高校時代には既に小規模なビジネスを展開。有名私立大学に進学後も起業活動を継続し、メディアの注目を集める。外からは順風満帆に見えるが、父親の期待に応えなければならないというプレッシャーを常に抱えている。結果至上主義的な環境で育ったため、短期的な成果と外部からの評価を重視する傾向がある。
   motivations: 実績を残して認められたい。父親を超える起業家になりたい。短期間で大きな成功を収めたい。
   secrets: 外見上の自信とは裏腹に、自分の価値に対する不安を抱えている
-history:
-  appearances:
-    - chapterNumber: 10
-      context: プロジェクト内で注目を集めるチームのリーダーとして登場
-      significance: 0.6
-    - chapterNumber: 4
-      timestamp: 2025-05-13T05:42:47.536Z
-      significance: 0.5
-      summary: 中村大輔が章4に登場
-      emotionalImpact: 0.5
-    - chapterNumber: 5
-      timestamp: 2025-05-13T05:56:02.731Z
-      significance: 0.5
-      summary: 中村大輔が登場
-      emotionalImpact: 0.5
-    - chapterNumber: 5
-      timestamp: 2025-05-13T05:59:24.676Z
-      significance: 0.3
-      summary: 中村大輔は「誰のことだ？」と発言
-      emotionalImpact: 0.33999999999999997
-    - chapterNumber: 7
-      timestamp: 2025-05-13T06:21:48.168Z
-      significance: 0.3
-      summary: |-
-        中村大輔は、A技術を悪用しようとするのか？
-
-        そして、なぜ、山田一郎は、中村大輔に、A技術の設計図を託したのか？
-
-        誠の頭の中には、新たな疑問が湧き上がってきた
-      emotionalImpact: 0.22000000000000003
-    - chapterNumber: 4
-      timestamp: 2025-05-13T08:13:31.074Z
-      significance: 0.5
-      summary: 中村大輔が章4に登場
-      emotionalImpact: 0.5
-    - chapterNumber: 1
-      timestamp: 2025-05-13T08:21:38.628Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 1
-      timestamp: 2025-05-13T10:49:08.900Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.33999999999999997
-    - chapterNumber: 1
-      timestamp: 2025-05-14T12:01:42.314Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 1
-      timestamp: 2025-05-14T12:17:28.805Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.33999999999999997
-    - chapterNumber: 1
-      timestamp: 2025-05-14T14:53:00.620Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.33999999999999997
-    - chapterNumber: 9
-      timestamp: 2025-05-15T08:53:02.359Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.08000000000000002
-    - chapterNumber: 10
-      timestamp: 2025-05-15T09:01:36.727Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 10
-      timestamp: 2025-05-15T09:04:56.458Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 2
-      timestamp: 2025-05-15T10:15:45.560Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 3
-      timestamp: 2025-05-15T10:20:06.729Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 9
-      timestamp: 2025-05-15T10:56:53.383Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 10
-      timestamp: 2025-05-15T11:01:54.327Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 1
-      timestamp: 2025-05-15T11:27:56.099Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 4
-      timestamp: 2025-05-15T11:53:43.242Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 4
-      timestamp: 2025-05-15T11:56:49.511Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 5
-      timestamp: 2025-05-15T12:02:32.440Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 5
-      timestamp: 2025-05-15T12:06:01.009Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.08000000000000002
-    - chapterNumber: 5
-      timestamp: 2025-05-15T12:09:41.804Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 5
-      timestamp: 2025-05-15T12:14:23.845Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 6
-      timestamp: 2025-05-15T12:19:35.107Z
-      significance: 0.3
-      summary: 中村大輔は、若くして成功を収めた、カリスマ的な経営者として、メディアにも頻繁に登場していた、また待っていた
-      emotionalImpact: 0.36
-    - chapterNumber: 7
-      timestamp: 2025-05-15T12:24:22.029Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 8
-      timestamp: 2025-05-15T12:29:05.414Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.12
-    - chapterNumber: 8
-      timestamp: 2025-05-15T12:32:08.959Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.04000000000000001
-    - chapterNumber: 9
-      timestamp: 2025-05-15T12:38:09.245Z
-      significance: 0.5
-      summary: 中村大輔が登場
-      emotionalImpact: 0.54
-    - chapterNumber: 9
-      timestamp: 2025-05-15T12:41:03.295Z
-      significance: 0.5
-      summary: 中村大輔は、今回の件を指示したという証拠も手に入れた
-      emotionalImpact: 0.44
-    - chapterNumber: 10
-      timestamp: 2025-05-15T12:46:00.148Z
-      significance: 0.5
-      summary: 中村大輔が登場
-      emotionalImpact: 0.42
-    - chapterNumber: 11
-      timestamp: 2025-05-15T12:50:56.890Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0
-    - chapterNumber: 1
-      timestamp: 2025-05-18T21:52:10.647Z
-      significance: 0.5
-      summary: 中村大輔が章1に登場
-      emotionalImpact: 0.5
-    - chapterNumber: 3
-      timestamp: 2025-05-18T22:00:00.228Z
-      significance: 0.5
-      summary: 中村大輔が章3に登場
-      emotionalImpact: 0.5
-    - chapterNumber: 2
-      timestamp: 2025-05-19T01:46:50.804Z
-      significance: 0.5
-      summary: 中村大輔が章2に登場
-      emotionalImpact: 0.5
-    - chapterNumber: 4
-      timestamp: 2025-05-19T06:06:58.122Z
-      significance: 0.3
-      summary: 中村大輔が登場
-      emotionalImpact: 0.33999999999999997
-    - chapterNumber: 9
-      timestamp: 2025-05-19T07:40:10.044Z
-      significance: 0.3
-      summary: 中村大輔は、地元の農家たちとの連携を深めようと、日々奔走していた
-      emotionalImpact: 0.1
-    - chapterNumber: 9
-      timestamp: 2025-05-27T04:10:16.253Z
-      significance: 0.5
-      summary: 中村大輔が章9に登場
-    - chapterNumber: 10
-      timestamp: 2025-05-27T04:16:12.342Z
-      significance: 0.5
-      summary: 中村大輔が章10に登場
-    - chapterNumber: 9
-      timestamp: 2025-05-28T03:50:44.688Z
-      significance: 0.5
-      summary: 中村大輔が章9に登場
-    - chapterNumber: 9
-      timestamp: 2025-05-28T03:53:47.993Z
-      significance: 0.5
-      summary: '第9章に登場: 顧客理解への第一歩'
-    - chapterNumber: 9
-      timestamp: 2025-05-28T04:49:00.266Z
-      significance: 0.5
-      summary: 中村大輔が章9に登場
-    - chapterNumber: 9
-      timestamp: 2025-05-28T07:53:50.087Z
-      significance: 0.5
-      summary: 中村大輔が章9に登場
-    - chapterNumber: 9
-      timestamp: 2025-05-28T07:57:16.735Z
-      significance: 0.5
-      summary: '第9章に登場: 厳しい現実、揺らぐ理想'
-    - chapterNumber: 10
-      timestamp: 2025-05-28T08:00:08.817Z
-      significance: 0.5
-      summary: 中村大輔が章10に登場
-    - chapterNumber: 10
-      timestamp: 2025-05-28T08:03:44.852Z
-      significance: 0.5
-      summary: '第10章に登場: 顧客視点という羅針盤'
-    - chapterNumber: 9
-      timestamp: 2025-05-28T15:13:42.665Z
-      significance: 0.5
-      summary: 中村大輔が章9に登場
-    - chapterNumber: 9
-      timestamp: 2025-05-28T15:16:06.919Z
-      significance: 0.5
-      summary: '第9章に登場: 問いの再定義とライバルの影'
-    - chapterNumber: 10
-      timestamp: 2025-05-28T15:19:12.777Z
-      significance: 0.5
-      summary: 中村大輔が章10に登場
-    - chapterNumber: 10
-      timestamp: 2025-05-28T15:21:39.594Z
-      significance: 0.5
-      summary: '第10章に登場: 審査員の言葉'
-    - chapterNumber: 10
-      timestamp: 2025-05-28T15:22:41.281Z
-      significance: 0.5
-      summary: 中村大輔が章10に登場
-    - chapterNumber: 10
-      timestamp: 2025-05-28T15:23:47.299Z
-      significance: 0.5
-      summary: '第10章に登場: 審査員の言葉'
-    - chapterNumber: 11
-      timestamp: 2025-05-28T15:26:52.936Z
-      significance: 0.5
-      summary: 中村大輔が章11に登場
-    - chapterNumber: 11
-      timestamp: 2025-05-28T15:29:27.785Z
-      significance: 0.5
-      summary: '第11章に登場: 顧客の迷宮'
-  developmentPath: []
-  interactions:
-    - chapterNumber: 9
-      targetCharacterId: character-yamada
-      type: general_interaction
-      description: 第9章での相互作用
-      impact: 0.3
-      timestamp: 2025-05-28T07:57:16.813Z
-    - chapterNumber: 11
-      targetCharacterId: character-yamada
-      type: general_interaction
-      description: 第11章での相互作用
-      impact: 0.3
-      timestamp: 2025-05-28T15:29:27.922Z
-relationships: []
+developmentPath:
+  - stage: 0
+    description: 主人公のライバルとして競争し、互いに刺激を与え合う段階
+    achievedAt: 2024-04-01T10:00:00.000Z
+    chapterNumber: 1
 metadata:
   createdAt: 2024-04-01T00:00:00.000Z
-  lastUpdated: 2025-05-28T15:29:27.922Z
-  version: 61
+  lastUpdated: 2025-06-06T01:30:00.000Z
+  version: 2
   tags:
     - ライバル
-    - 野心家
-    - カリスマ的起業家
-    - 短期思考
+    - 起業家
+    - 競争相手
+    - カリスマ
 psychology:
   currentDesires:
-    - 更なる成功と名声の獲得
-    - 短期的な成果の最大化
-    - 主人公への優位性の誇示
-    - 周囲からの賞賛と承認
-    - 自身のビジネスの拡大と支配力の強化
+    - 短期間で大きな成功を収めたい
+    - 注目と評価を集めたい
+    - 父親を超える成果を出したい
+    - 競争に勝利したい
   currentFears:
-    - 自身のビジネスの持続可能性への失敗
-    - 短期的な成果が出なくなること
-    - 周囲からの評価の低下
-    - 主人公に負けること
+    - 失敗して評価を失うこと
+    - 父親の期待に応えられないこと
+    - 短期的成功の後の失墜
+    - 本当の価値が見抜かれること
   internalConflicts:
-    - 持続可能なビジネスモデルへの意識と、短期的な成果への執着
-    - 周囲からの期待に応えたい気持ちと、プレッシャーによる不安
-    - 自身の成功への自信と、将来への漠然とした不安
+    - 短期的成果と長期的持続可能性の間の葛藤
+    - 外向きの自信と内面の不安の格差
   emotionalState:
-    自信: 0.8
-    焦り: 0.6
-    不安: 0.4
-    優越感: 0.7
-  relationshipAttitudes: {}
+    野心: 0.9
+    プレッシャー: 0.8
+    自信: 0.7
+    不安: 0.6
+relationships: []

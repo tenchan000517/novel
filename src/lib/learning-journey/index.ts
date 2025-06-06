@@ -164,6 +164,10 @@ interface LocalMemorySystemStatus {
  * 統合記憶階層システムと完全統合し、最適化されたパフォーマンスとエラーハンドリングを提供。
  */
 export class LearningJourneySystem {
+    // Service Container初期化順序対応
+    static dependencies: string[] = []; // Tier 4: 独立システム
+    static initializationTier = 4;
+
     private initialized: boolean = false;
     private config: LearningJourneySystemConfig;
     
@@ -753,8 +757,8 @@ export class LearningJourneySystem {
                 
                 // プロット連携強化情報
                 plotIntegration: plotIntegration,
-                plotEnhancement: section?.plotEnhancement,
-                learningPlotAlignment: section?.learningPlotAlignment,
+                plotEnhancement: (section as any)?.plotEnhancement,
+                learningPlotAlignment: (section as any)?.learningPlotAlignment,
                 
                 // 統合効果の活用
                 integratedGuidance: this.generateIntegratedGuidance(
@@ -928,7 +932,22 @@ export class LearningJourneySystem {
             );
 
             // 基本統合情報
-            const baseIntegration = {
+            const baseIntegration: {
+                learningToPlotInfluence: {
+                    currentStage: LearningStage;
+                    progressRate: number;
+                    suggestedPlotDirection: string[];
+                    plotConstraints: string[];
+                };
+                plotToLearningInfluence: {
+                    currentPhase: string;
+                    tensionLevel: number;
+                    learningCatalysts: string[];
+                    stageAdvancementTriggers: string[];
+                };
+                integrationScore: number;
+                optimizationRecommendations: string[];
+            } = {
                 learningToPlotInfluence: {
                     currentStage: learningStage,
                     progressRate: this.calculateStageProgressRate(learningStage, chapterNumber),
@@ -936,8 +955,8 @@ export class LearningJourneySystem {
                     plotConstraints: this.getPlotConstraints(learningStage)
                 },
                 plotToLearningInfluence: {
-                    currentPhase: section?.plotEnhancement?.currentPhase || 'unknown',
-                    tensionLevel: section?.learningPlotAlignment?.tensionOptimization || 0.5,
+                    currentPhase: (section as any)?.plotEnhancement?.currentPhase || 'unknown',
+                    tensionLevel: (section as any)?.learningPlotAlignment?.tensionOptimization || 0.5,
                     learningCatalysts: this.getLearningCatalysts(learningStage),
                     stageAdvancementTriggers: this.getStageAdvancementTriggers(learningStage)
                 },
@@ -1039,6 +1058,22 @@ export class LearningJourneySystem {
         }
 
         return guidance;
+    }
+
+    /**
+     * 学習段階の順序を取得
+     * @private
+     */
+    private getStageOrder(stage: LearningStage): number {
+        const stageOrder: Record<LearningStage, number> = {
+            [LearningStage.MISCONCEPTION]: 1,
+            [LearningStage.EXPLORATION]: 2,
+            [LearningStage.CONFLICT]: 3,
+            [LearningStage.INSIGHT]: 4,
+            [LearningStage.APPLICATION]: 5,
+            [LearningStage.INTEGRATION]: 6
+        };
+        return stageOrder[stage] || 0;
     }
 
     /**
@@ -1200,7 +1235,7 @@ export class LearningJourneySystem {
         learningStage: LearningStage,
         conceptName: string
     ): string[] {
-        const recommendations = [];
+        const recommendations: string[] = [];
 
         try {
             for (const result of plotSearchResult.results) {

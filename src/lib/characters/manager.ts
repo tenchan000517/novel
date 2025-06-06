@@ -165,6 +165,10 @@ export interface EnhancedCharacterOptions {
  * - 拡張オプション対応
  */
 export class CharacterManager implements ICharacterManager {
+    // Service Container初期化順序対応
+    static dependencies: string[] = ['memoryManager']; // Tier 5: Memory依存
+    static initializationTier = 5;
+
     private readonly logger = new Logger({ serviceName: 'CharacterManager' });
     private ready = false;
 

@@ -42,6 +42,10 @@ interface ValidationStatistics {
  * MemoryManagerとの統合により、過去の章データとの一貫性チェックを高度化。
  */
 export class ValidationSystem {
+    // Service Container初期化順序対応
+    static dependencies: string[] = ['memoryManager']; // Tier 5: Memory依存
+    static initializationTier = 5;
+
     private memoryManager: MemoryManager;
     private consistencyChecker: ConsistencyChecker;
     private parameters: ValidationParameters;

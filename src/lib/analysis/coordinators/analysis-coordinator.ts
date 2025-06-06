@@ -128,6 +128,10 @@ export interface AnalysisCoordinatorOptions {
  * - プライベートプロパティアクセスの完全排除
  */
 export class AnalysisCoordinator {
+    // Service Container初期化順序対応
+    static dependencies: string[] = ['memoryManager']; // Tier 5: Memory依存
+    static initializationTier = 5;
+
     // サービスインスタンス
     private themeAnalysisService: ThemeAnalysisService;
     private styleAnalysisService: StyleAnalysisService;
@@ -544,16 +548,19 @@ export class AnalysisCoordinator {
 
     /**
      * 🎯 包括的章分析（新記憶階層システム完全対応版）
+     * 即座反映機能とリアルタイム品質向上フィードバックループ付き
      * 
      * @param content 章の内容
      * @param chapterNumber 章番号
      * @param context 生成コンテキスト
+     * @param enableRealTimeOptimization リアルタイム最適化の有効化
      * @returns 統合分析結果
      */
     async analyzeChapter(
         content: string,
         chapterNumber: number,
-        context: GenerationContext
+        context: GenerationContext,
+        enableRealTimeOptimization: boolean = true
     ): Promise<IntegratedAnalysisResult> {
         const startTime = Date.now();
         const cacheKey = this.generateCacheKey(content, chapterNumber, context);
@@ -595,9 +602,17 @@ export class AnalysisCoordinator {
                 context
             );
 
+            // 🎯 リアルタイム品質向上フィードバックループの実行
+            if (enableRealTimeOptimization) {
+                await this.executeRealTimeQualityOptimization(integratedResult, chapterNumber, context);
+            }
+
             // パフォーマンスメトリクスの記録
             const processingTime = Date.now() - startTime;
             this.recordPerformanceMetrics(chapterNumber, processingTime, integratedResult);
+
+            // 🎯 品質スコアをパフォーマンスメトリクスに記録（トレンド分析用）
+            this.performanceMetrics.set(`chapter-${chapterNumber}-qualityScore`, integratedResult.qualityMetrics.overall);
 
             // キャッシュに保存
             if (this.options.enableCache) {
@@ -1218,6 +1233,414 @@ export class AnalysisCoordinator {
             hash = hash & hash;
         }
         return hash.toString();
+    }
+
+    /**
+     * 🎯 リアルタイム品質向上フィードバックループ
+     * 分析結果に基づいて即座に改善提案を生成し、次回生成に反映させる
+     */
+    private async executeRealTimeQualityOptimization(
+        analysisResult: IntegratedAnalysisResult,
+        chapterNumber: number,
+        context: GenerationContext
+    ): Promise<void> {
+        try {
+            logger.info(`リアルタイム品質向上フィードバックループを実行中: 章${chapterNumber}`);
+
+            // 🎯 品質問題の自動検出
+            const qualityIssues = this.detectQualityIssues(analysisResult);
+
+            // 🎯 即座の修正提案生成
+            const immediateRecommendations = await this.generateImmediateRecommendations(
+                qualityIssues,
+                analysisResult,
+                chapterNumber,
+                context
+            );
+
+            // 🎯 推奨事項の統合記憶システムへの保存（次回生成に反映）
+            await this.saveRecommendationsForNextGeneration(
+                immediateRecommendations,
+                chapterNumber,
+                context
+            );
+
+            // 🎯 継続的学習・改善ループの更新
+            await this.updateContinuousLearningLoop(analysisResult, chapterNumber);
+
+            logger.info(`リアルタイム品質向上完了: 章${chapterNumber}`, {
+                qualityIssuesDetected: qualityIssues.length,
+                recommendationsGenerated: immediateRecommendations.length,
+                improvementScore: this.calculateImprovementScore(analysisResult)
+            });
+
+        } catch (error) {
+            logger.error('リアルタイム品質向上フィードバックループでエラー', {
+                error: error instanceof Error ? error.message : String(error),
+                chapterNumber
+            });
+        }
+    }
+
+    /**
+     * 🎯 品質問題の自動検出
+     */
+    private detectQualityIssues(analysisResult: IntegratedAnalysisResult): Array<{
+        type: string;
+        severity: 'low' | 'medium' | 'high' | 'critical';
+        description: string;
+        affectedAspect: string;
+        suggestedFix: string;
+    }> {
+        const issues: Array<{
+            type: string;
+            severity: 'low' | 'medium' | 'high' | 'critical';
+            description: string;
+            affectedAspect: string;
+            suggestedFix: string;
+        }> = [];
+
+        // キャラクター一貫性の問題
+        const characterConsistency = analysisResult.qualityMetrics.characterConsistency ?? analysisResult.qualityMetrics.consistency;
+        if (characterConsistency && characterConsistency < 0.6) {
+            issues.push({
+                type: 'character_consistency',
+                severity: 'high',
+                description: 'キャラクターの一貫性が低下しています',
+                affectedAspect: 'character',
+                suggestedFix: 'キャラクターの既確立された性格特性を参照し、行動や対話を調整してください'
+            });
+        }
+
+        // 文体の一貫性の問題
+        if (analysisResult.styleAnalysis.sentenceVariety < 0.4) {
+            issues.push({
+                type: 'style_monotony',
+                severity: 'medium',
+                description: '文体のバリエーションが不足しています',
+                affectedAspect: 'style',
+                suggestedFix: '文の長さや構造にバリエーションを加え、読みやすさを向上させてください'
+            });
+        }
+
+        // 読者エンゲージメントの問題
+        if (analysisResult.readerExperience.interestRetention < 6) {
+            issues.push({
+                type: 'engagement_low',
+                severity: 'high',
+                description: '読者の興味維持度が低下しています',
+                affectedAspect: 'engagement',
+                suggestedFix: '緊張感のある展開や感情的な要素を追加し、読者の関心を引き付けてください'
+            });
+        }
+
+        // テーマ一貫性の問題
+        if (analysisResult.themeAnalysis.overallCoherence < 6) {
+            issues.push({
+                type: 'theme_coherence',
+                severity: 'medium',
+                description: 'テーマの一貫性に改善の余地があります',
+                affectedAspect: 'theme',
+                suggestedFix: '主要テーマを明確に反映する場面や対話を強化してください'
+            });
+        }
+
+        // 品質メトリクス全般の問題
+        if (analysisResult.qualityMetrics.overall < 0.65) {
+            issues.push({
+                type: 'overall_quality',
+                severity: 'critical',
+                description: '全体的な品質が基準を下回っています',
+                affectedAspect: 'overall',
+                suggestedFix: '文章の推敲、キャラクター描写の深化、ストーリー展開の見直しを行ってください'
+            });
+        }
+
+        return issues;
+    }
+
+    /**
+     * 🎯 即座の修正提案生成
+     */
+    private async generateImmediateRecommendations(
+        qualityIssues: Array<{
+            type: string;
+            severity: 'low' | 'medium' | 'high' | 'critical';
+            description: string;
+            affectedAspect: string;
+            suggestedFix: string;
+        }>,
+        analysisResult: IntegratedAnalysisResult,
+        chapterNumber: number,
+        context: GenerationContext
+    ): Promise<string[]> {
+        const recommendations: string[] = [];
+
+        // 高優先度の問題から順番に対処
+        const prioritizedIssues = qualityIssues.sort((a, b) => {
+            const severityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
+            return severityOrder[b.severity] - severityOrder[a.severity];
+        });
+
+        for (const issue of prioritizedIssues.slice(0, 5)) { // 最大5つの問題に集中
+            switch (issue.type) {
+                case 'character_consistency':
+                    recommendations.push(
+                        `【即座改善】キャラクター一貫性: ${issue.suggestedFix}。` +
+                        `特に${analysisResult.characterAnalysis.characterAppearances.map(c => c.characterName).join('、')}の描写を見直してください。`
+                    );
+                    break;
+
+                case 'style_monotony':
+                    recommendations.push(
+                        `【即座改善】文体バリエーション: ${issue.suggestedFix}。` +
+                        `現在の平均文長${Math.round(analysisResult.styleAnalysis.avgSentenceLength)}文字に対し、短文と長文を効果的に組み合わせてください。`
+                    );
+                    break;
+
+                case 'engagement_low':
+                    recommendations.push(
+                        `【即座改善】読者エンゲージメント: ${issue.suggestedFix}。` +
+                        `現在の興味維持度${analysisResult.readerExperience.interestRetention}/10を8以上に改善するため、` +
+                        `意外性や感情的クライマックスを追加してください。`
+                    );
+                    break;
+
+                case 'theme_coherence':
+                    recommendations.push(
+                        `【即座改善】テーマ一貫性: ${issue.suggestedFix}。` +
+                        `主要テーマ「${analysisResult.themeAnalysis.dominantTheme}」をより明確に表現する要素を強化してください。`
+                    );
+                    break;
+
+                case 'overall_quality':
+                    recommendations.push(
+                        `【緊急改善】品質全般: ${issue.suggestedFix}。` +
+                        `現在の品質スコア${Math.round(analysisResult.qualityMetrics.overall * 100)}%を75%以上に改善してください。`
+                    );
+                    break;
+            }
+        }
+
+        // コンテキスト特化の推奨事項
+        if (context.targetLength && analysisResult.chapterAnalysis.textStats) {
+            const currentLength = analysisResult.chapterAnalysis.textStats.wordCount;
+            const targetLength = typeof context.targetLength === 'object' 
+                ? context.targetLength.min 
+                : context.targetLength;
+
+            if (currentLength < targetLength * 0.8) {
+                recommendations.push(
+                    `【長さ調整】現在${currentLength}文字ですが、目標${targetLength}文字に対して不足しています。` +
+                    `キャラクターの内面描写やシーンの詳細描写を追加してください。`
+                );
+            } else if (currentLength > targetLength * 1.2) {
+                recommendations.push(
+                    `【長さ調整】現在${currentLength}文字ですが、目標${targetLength}文字を超過しています。` +
+                    `冗長な表現を削除し、核心的な内容に集中してください。`
+                );
+            }
+        }
+
+        return recommendations;
+    }
+
+    /**
+     * 🎯 推奨事項の統合記憶システムへの保存（次回生成に反映）
+     */
+    private async saveRecommendationsForNextGeneration(
+        recommendations: string[],
+        chapterNumber: number,
+        context: GenerationContext
+    ): Promise<void> {
+        await this.safeMemoryOperation(
+            async () => {
+                const recommendationData = {
+                    chapterNumber: chapterNumber + 1, // 次章向け
+                    timestamp: new Date().toISOString(),
+                    recommendations,
+                    context: {
+                        previousChapter: chapterNumber,
+                        storyId: context.storyId,
+                        improveType: 'realtime_optimization'
+                    },
+                    metadata: {
+                        source: 'AnalysisCoordinator',
+                        type: 'quality_improvement_recommendations',
+                        urgency: 'immediate'
+                    }
+                };
+
+                // Chapter形式で保存
+                const recommendationChapter = {
+                    id: `recommendations-${chapterNumber + 1}-${Date.now()}`,
+                    chapterNumber: 0, // システムデータ
+                    title: `Quality Improvement Recommendations for Chapter ${chapterNumber + 1}`,
+                    content: JSON.stringify(recommendationData, null, 2),
+                    previousChapterSummary: '',
+                    scenes: [],
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                    metadata: {
+                        createdAt: new Date().toISOString(),
+                        lastModified: new Date().toISOString(),
+                        status: 'improvement_recommendations',
+                        dataType: 'qualityOptimization',
+                        wordCount: JSON.stringify(recommendationData).length,
+                        estimatedReadingTime: 1,
+                        targetChapter: chapterNumber + 1
+                    }
+                };
+
+                const result = await this.memoryManager.processChapter(recommendationChapter);
+                
+                if (result.success) {
+                    logger.info(`品質改善推奨事項を次章向けに保存: 章${chapterNumber + 1}`, {
+                        recommendationCount: recommendations.length,
+                        processingTime: result.processingTime
+                    });
+                } else {
+                    logger.warn('品質改善推奨事項の保存に失敗', {
+                        errors: result.errors,
+                        warnings: result.warnings
+                    });
+                }
+
+                return result;
+            },
+            null,
+            'saveRecommendationsForNextGeneration'
+        );
+    }
+
+    /**
+     * 🎯 継続的学習・改善ループの更新
+     */
+    private async updateContinuousLearningLoop(
+        analysisResult: IntegratedAnalysisResult,
+        chapterNumber: number
+    ): Promise<void> {
+        await this.safeMemoryOperation(
+            async () => {
+                const learningData = {
+                    chapterNumber,
+                    timestamp: new Date().toISOString(),
+                    qualityMetrics: analysisResult.qualityMetrics,
+                    learningInsights: {
+                        strengthsIdentified: analysisResult.readerExperience.strengths,
+                        weaknessesAddressed: analysisResult.readerExperience.weakPoints,
+                        improvementPatterns: this.identifyImprovementPatterns(analysisResult),
+                        qualityTrends: this.calculateQualityTrends(chapterNumber)
+                    },
+                    metadata: {
+                        source: 'AnalysisCoordinator',
+                        type: 'continuous_learning_update',
+                        version: '2.0'
+                    }
+                };
+
+                // 継続学習データの保存
+                const learningChapter = {
+                    id: `learning-loop-${chapterNumber}-${Date.now()}`,
+                    chapterNumber: 0, // システムデータ
+                    title: `Continuous Learning Update: Chapter ${chapterNumber}`,
+                    content: JSON.stringify(learningData, null, 2),
+                    previousChapterSummary: '',
+                    scenes: [],
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                    metadata: {
+                        createdAt: new Date().toISOString(),
+                        lastModified: new Date().toISOString(),
+                        status: 'learning_data',
+                        dataType: 'continuousLearning',
+                        wordCount: JSON.stringify(learningData).length,
+                        estimatedReadingTime: 1,
+                        sourceChapter: chapterNumber
+                    }
+                };
+
+                const result = await this.memoryManager.processChapter(learningChapter);
+                
+                if (result.success) {
+                    logger.info(`継続的学習ループを更新: 章${chapterNumber}`, {
+                        processingTime: result.processingTime,
+                        qualityScore: analysisResult.qualityMetrics.overall
+                    });
+                }
+
+                return result;
+            },
+            null,
+            'updateContinuousLearningLoop'
+        );
+    }
+
+    /**
+     * 改善パターンの特定
+     */
+    private identifyImprovementPatterns(analysisResult: IntegratedAnalysisResult): string[] {
+        const patterns: string[] = [];
+
+        // キャラクター改善パターン
+        if (analysisResult.qualityMetrics.characterDepiction > 0.7) {
+            patterns.push('キャラクター描写の質が向上している');
+        }
+
+        // 文体改善パターン  
+        if (analysisResult.styleAnalysis.sentenceVariety > 0.6) {
+            patterns.push('文体のバリエーションが効果的に使われている');
+        }
+
+        // エンゲージメント改善パターン
+        if (analysisResult.readerExperience.interestRetention >= 7) {
+            patterns.push('読者エンゲージメントが高いレベルを維持している');
+        }
+
+        // テーマ統合パターン
+        if (analysisResult.themeAnalysis.overallCoherence >= 7) {
+            patterns.push('テーマの一貫性が効果的に保たれている');
+        }
+
+        return patterns;
+    }
+
+    /**
+     * 品質トレンドの計算
+     */
+    private calculateQualityTrends(chapterNumber: number): any {
+        // 過去の章との比較による品質トレンド
+        const pastMetrics = this.performanceMetrics.get(`chapter-${chapterNumber - 1}-qualityScore`) || 0;
+        const currentScore = this.performanceMetrics.get(`chapter-${chapterNumber}-qualityScore`) || 0;
+
+        return {
+            trend: currentScore > pastMetrics ? 'improving' : 'declining',
+            changeRate: pastMetrics > 0 ? ((currentScore - pastMetrics) / pastMetrics) * 100 : 0,
+            recommendation: currentScore > pastMetrics 
+                ? '品質が向上しています。現在のアプローチを継続してください。'
+                : '品質に改善の余地があります。前章の成功要素を参考にしてください。'
+        };
+    }
+
+    /**
+     * 改善スコアの計算
+     */
+    private calculateImprovementScore(analysisResult: IntegratedAnalysisResult): number {
+        const weights = {
+            overall: 0.3,
+            character: 0.2,
+            engagement: 0.2,
+            style: 0.15,
+            theme: 0.15
+        };
+
+        return (
+            analysisResult.qualityMetrics.overall * weights.overall +
+            analysisResult.qualityMetrics.characterDepiction * weights.character +
+            (analysisResult.readerExperience.interestRetention / 10) * weights.engagement +
+            analysisResult.styleAnalysis.sentenceVariety * weights.style +
+            (analysisResult.themeAnalysis.overallCoherence / 10) * weights.theme
+        );
     }
 
     /**

@@ -16,6 +16,7 @@
 import { StorageProvider } from '@/lib/storage/types';
 import { storageProvider as defaultStorageProvider } from '@/lib/storage/index';
 import { logger } from '@/lib/utils/logger';
+import { logError } from '@/lib/utils/error-handler';
 
 // 分析結果メタデータ型
 interface AnalysisMetadata {

@@ -3,7 +3,7 @@
  * @description 生成されたプロンプトをMarkdown形式でdata/promptsディレクトリに保存
  */
 
-import { promises as fs } from 'fs';
+import { storageProvider } from '@/lib/storage';
 import path from 'path';
 import { GenerationContext } from '@/types/generation';
 import { logger } from '@/lib/utils/logger';
@@ -14,7 +14,7 @@ import { logger } from '@/lib/utils/logger';
 interface PromptMetadata {
   chapterNumber: number;
   timestamp: string;
-  targetLength: number;
+  targetLength: number | { min: number; max?: number };
   genre?: string;
   theme?: string;
   tension?: number;
@@ -48,11 +48,9 @@ export class PromptStorage {
    * プロンプトディレクトリの初期化
    */
   async ensurePromptsDirectory(): Promise<void> {
-    try {
-      await fs.access(this.promptsDir);
-    } catch (error) {
+    if (!(await storageProvider.directoryExists(this.promptsDir))) {
       logger.info('Creating prompts directory', { path: this.promptsDir });
-      await fs.mkdir(this.promptsDir, { recursive: true });
+      await storageProvider.createDirectory(this.promptsDir);
     }
   }
 
@@ -97,7 +95,7 @@ export class PromptStorage {
       const markdownContent = this.buildMarkdownContent(prompt, metadata, context);
 
       // ファイル保存
-      await fs.writeFile(filepath, markdownContent, 'utf-8');
+      await storageProvider.writeFile(filepath, markdownContent);
 
       logger.info('Prompt saved successfully', {
         chapterNumber,
@@ -143,11 +141,15 @@ ${metadataSection}`;
    * YAMLフロントマターの構築
    */
   private buildFrontMatter(metadata: PromptMetadata): string {
+    const targetLengthStr = typeof metadata.targetLength === 'object' 
+      ? `{min: ${metadata.targetLength.min}${metadata.targetLength.max ? `, max: ${metadata.targetLength.max}` : ''}}`
+      : metadata.targetLength;
+
     return `---
 title: "第${metadata.chapterNumber}章 - プロンプト生成記録"
 chapter: ${metadata.chapterNumber}
 timestamp: "${metadata.timestamp}"
-targetLength: ${metadata.targetLength}
+targetLength: ${targetLengthStr}
 genre: "${metadata.genre || 'unknown'}"
 theme: "${metadata.theme || 'unknown'}"
 tension: ${metadata.tension || 'null'}
@@ -180,7 +182,12 @@ ${prompt}
     // 基本情報
     sections.push('### 基本設定');
     sections.push(`- **章番号**: ${context.chapterNumber || 1}`);
-    sections.push(`- **目標文字数**: ${context.targetLength || 8000}文字`);
+    
+    const targetLengthDisplay = typeof context.targetLength === 'object'
+      ? `${context.targetLength.min}${context.targetLength.max ? `〜${context.targetLength.max}` : '以上'}文字`
+      : `${context.targetLength || 8000}文字`;
+    sections.push(`- **目標文字数**: ${targetLengthDisplay}`);
+    
     sections.push(`- **ジャンル**: ${context.genre || '未指定'}`);
     sections.push(`- **テーマ**: ${context.theme || '未指定'}`);
     sections.push(`- **語り口調**: ${context.narrativeStyle || '三人称視点'}`);
@@ -293,7 +300,7 @@ ${prompt}
     try {
       await this.ensurePromptsDirectory();
       
-      const files = await fs.readdir(this.promptsDir);
+      const files = await storageProvider.listFiles(this.promptsDir);
       const promptFiles = files
         .filter(file => file.endsWith('.md') && file.startsWith('chapter-'))
         .map(filename => {
@@ -332,7 +339,7 @@ ${prompt}
   async loadPrompt(filename: string): Promise<string | null> {
     try {
       const filepath = path.join(this.promptsDir, filename);
-      const content = await fs.readFile(filepath, 'utf-8');
+      const content = await storageProvider.readFile(filepath);
       return content;
     } catch (error) {
       logger.error('Failed to load prompt file', {

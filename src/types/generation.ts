@@ -803,6 +803,9 @@ export interface LearningJourneyContext {
  * 小説生成に必要なコンテキスト情報インターフェース
  */
 export interface GenerationContext {
+    /** ストーリーID */
+    storyId?: string;
+
     /** 章番号 */
     chapterNumber?: number;
 
@@ -823,7 +826,7 @@ export interface GenerationContext {
     }>;
 
     /** 目標文字数 */
-    targetLength?: number;
+    targetLength?: number | { min: number; max?: number };
 
     /** 語り口調（「一人称視点」「三人称視点」など） */
     narrativeStyle?: string;

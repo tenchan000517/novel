@@ -9,7 +9,7 @@ import { logger } from '@/lib/utils/logger';
 import { IGeminiAdapter } from './interfaces';
 import { GeminiClient } from '@/lib/generation/gemini-client';
 import { apiThrottler } from '@/lib/utils/api-throttle';
-import { GenerationError, ExternalServiceError } from '@/lib/utils/error-handler';
+import { GenerationError, ExternalServiceError, logError } from '@/lib/utils/error-handler';
 
 /**
  * @class GeminiAdapter
@@ -125,11 +125,11 @@ export class GeminiAdapter implements IGeminiAdapter {
       
       return processedResponse;
     } catch (error) {
-      // エラーログと変換
-      logger.error('GeminiAdapter generateText error', {
-        error: error instanceof Error ? error.message : String(error),
-        promptLength: prompt.length
-      });
+      // 統一エラーハンドリングシステムを使用
+      logError(error, { 
+        promptLength: prompt.length,
+        purpose: options?.purpose || 'default'
+      }, 'GeminiAdapter generateText error');
       
       if (error instanceof GenerationError || error instanceof ExternalServiceError) {
         throw error;

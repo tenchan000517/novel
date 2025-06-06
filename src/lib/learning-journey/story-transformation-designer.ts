@@ -657,6 +657,310 @@ export class StoryTransformationDesigner {
   }
 
   /**
+   * ビジネスフレームワーク特化シーン推奨を生成する
+   * @param frameworkName フレームワーク名
+   * @param stage 学習段階
+   * @param chapterNumber 章番号
+   * @returns フレームワーク特化シーン推奨
+   */
+  async generateBusinessFrameworkSceneRecommendations(
+    frameworkName: string,
+    stage: LearningStage,
+    chapterNumber: number
+  ): Promise<SceneRecommendation[]> {
+    try {
+      this.ensureInitialized();
+      logger.info(`Generating business framework scene recommendations for ${frameworkName} at stage ${stage}`);
+
+      const businessScenes: SceneRecommendation[] = [];
+
+      // フレームワーク別の特化推奨事項
+      switch (frameworkName) {
+        case 'ISSUE_DRIVEN':
+          businessScenes.push(...this.getIssueDriverSceneRecommendations(stage, chapterNumber));
+          break;
+        case 'SOCRATIC_DIALOGUE':
+          businessScenes.push(...this.getSocraticDialogueSceneRecommendations(stage, chapterNumber));
+          break;
+        case 'ADLER_PSYCHOLOGY':
+          businessScenes.push(...this.getAdlerPsychologySceneRecommendations(stage, chapterNumber));
+          break;
+        case 'DRUCKER_MANAGEMENT':
+          businessScenes.push(...this.getDruckerManagementSceneRecommendations(stage, chapterNumber));
+          break;
+        default:
+          businessScenes.push(...this.getDefaultBusinessSceneRecommendations(stage, chapterNumber));
+          break;
+      }
+
+      // 4段階学習進行モデルに対応した推奨事項を追加
+      if (stage === LearningStage.INTRODUCTION || 
+          stage === LearningStage.THEORY_APPLICATION || 
+          stage === LearningStage.FAILURE_EXPERIENCE || 
+          stage === LearningStage.PRACTICAL_MASTERY) {
+        businessScenes.push(...this.getBusinessStageSpecificRecommendations(stage, frameworkName, chapterNumber));
+      }
+
+      this.updatePerformanceStats('success', 'generateBusinessFrameworkSceneRecommendations');
+      return businessScenes;
+
+    } catch (error) {
+      this.updatePerformanceStats('error', 'generateBusinessFrameworkSceneRecommendations');
+      logger.error(`Failed to generate business framework scene recommendations for ${frameworkName}`, {
+        error: error instanceof Error ? error.message : String(error),
+        stage,
+        chapterNumber
+      });
+      return this.getDefaultBusinessSceneRecommendations(stage, chapterNumber);
+    }
+  }
+
+  /**
+   * ISSUE DRIVEN フレームワーク特化シーン推奨
+   * @private
+   */
+  private getIssueDriverSceneRecommendations(stage: LearningStage, chapterNumber: number): SceneRecommendation[] {
+    const recommendations: SceneRecommendation[] = [];
+
+    switch (stage) {
+      case LearningStage.MISCONCEPTION:
+        recommendations.push({
+          type: 'CUSTOMER_ASSUMPTION_CHALLENGE',
+          description: '顧客の「当たり前」だと思っていた前提が覆される場面を描写してください',
+          reason: '顧客中心思考への転換点を作るため'
+        });
+        break;
+      case LearningStage.EXPLORATION:
+        recommendations.push({
+          type: 'CUSTOMER_INTERVIEW_SCENE',
+          description: '実際の顧客との対話を通して真のニーズを探る場面を設けてください',
+          reason: 'ISSUE DRIVENの実践的体験を提供するため'
+        });
+        break;
+      case LearningStage.CONFLICT:
+        recommendations.push({
+          type: 'SOLUTION_VS_PROBLEM_CONFLICT',
+          description: '解決策に執着する自分と、問題の本質を見つめ直すべき声との内的葛藤を表現してください',
+          reason: '課題起点思考の核心的葛藤を体現するため'
+        });
+        break;
+      case LearningStage.INSIGHT:
+        recommendations.push({
+          type: 'CUSTOMER_PAIN_DISCOVERY',
+          description: '顧客の本当の痛みや課題に気づく決定的な瞬間を描いてください',
+          reason: 'ISSUE DRIVENの本質的な気づきを表現するため'
+        });
+        break;
+      case LearningStage.APPLICATION:
+        recommendations.push({
+          type: 'ISSUE_DRIVEN_PRACTICE',
+          description: '課題起点のアプローチを実際のビジネス場面で適用する実践シーンを描いてください',
+          reason: '学んだ概念の具体的な活用方法を示すため'
+        });
+        break;
+      case LearningStage.INTEGRATION:
+        recommendations.push({
+          type: 'NATURAL_CUSTOMER_FOCUS',
+          description: '意識せずとも顧客視点で物事を考える姿を自然に表現してください',
+          reason: 'ISSUE DRIVENが完全に体現された状態を示すため'
+        });
+        break;
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * ソクラテス式対話法特化シーン推奨
+   * @private
+   */
+  private getSocraticDialogueSceneRecommendations(stage: LearningStage, chapterNumber: number): SceneRecommendation[] {
+    const recommendations: SceneRecommendation[] = [];
+
+    switch (stage) {
+      case LearningStage.MISCONCEPTION:
+        recommendations.push({
+          type: 'QUESTIONING_ASSUMPTIONS',
+          description: '「なぜそう思うのか？」「本当にそうだろうか？」といった問いかけで前提を揺さぶる対話シーンを設けてください',
+          reason: 'ソクラテス式問答による気づきの入口を作るため'
+        });
+        break;
+      case LearningStage.EXPLORATION:
+        recommendations.push({
+          type: 'GUIDED_DISCOVERY',
+          description: '答えを直接与えずに、適切な問いかけで相手の発見を促す対話を描いてください',
+          reason: '自発的な学習プロセスを体現するため'
+        });
+        break;
+      case LearningStage.CONFLICT:
+        recommendations.push({
+          type: 'CONTRADICTION_REVELATION',
+          description: '対話を通して自分の考えの矛盾や不整合に気づく瞬間を表現してください',
+          reason: '認知的不協和による学習促進を図るため'
+        });
+        break;
+      case LearningStage.INSIGHT:
+        recommendations.push({
+          type: 'SELF_DISCOVERY_MOMENT',
+          description: '問いかけられた結果、自分自身で重要な答えに到達する瞬間を描いてください',
+          reason: 'ソクラテス式対話の本質的な成果を表現するため'
+        });
+        break;
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * アドラー心理学特化シーン推奨
+   * @private
+   */
+  private getAdlerPsychologySceneRecommendations(stage: LearningStage, chapterNumber: number): SceneRecommendation[] {
+    const recommendations: SceneRecommendation[] = [];
+
+    switch (stage) {
+      case LearningStage.MISCONCEPTION:
+        recommendations.push({
+          type: 'VICTIM_MINDSET_CHALLENGE',
+          description: '「これは誰のせいでもない、自分の選択の結果だ」という視点転換の場面を描いてください',
+          reason: 'アドラー心理学の自己責任概念の導入のため'
+        });
+        break;
+      case LearningStage.EXPLORATION:
+        recommendations.push({
+          type: 'PURPOSE_DISCOVERY',
+          description: '行動の背後にある目的や意図を探る内省的な場面を設けてください',
+          reason: '目的論的思考の体験を提供するため'
+        });
+        break;
+      case LearningStage.CONFLICT:
+        recommendations.push({
+          type: 'COURAGE_VS_FEAR',
+          description: '勇気を出して行動するか、安全な現状に留まるかの葛藤を描いてください',
+          reason: 'アドラー心理学の勇気概念と変化への抵抗の対立を表現するため'
+        });
+        break;
+      case LearningStage.INSIGHT:
+        recommendations.push({
+          type: 'CONTRIBUTION_REALIZATION',
+          description: '自分が共同体に貢献できることに気づく瞬間を表現してください',
+          reason: '共同体感覚の覚醒を描くため'
+        });
+        break;
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * ドラッカーマネジメント特化シーン推奨
+   * @private
+   */
+  private getDruckerManagementSceneRecommendations(stage: LearningStage, chapterNumber: number): SceneRecommendation[] {
+    const recommendations: SceneRecommendation[] = [];
+
+    switch (stage) {
+      case LearningStage.MISCONCEPTION:
+        recommendations.push({
+          type: 'EFFECTIVENESS_VS_EFFICIENCY',
+          description: '「正しいことをする」vs「物事を正しくする」の違いに気づく場面を描いてください',
+          reason: 'ドラッカーの効果性概念の理解を促すため'
+        });
+        break;
+      case LearningStage.EXPLORATION:
+        recommendations.push({
+          type: 'STRENGTH_FOCUS_DISCOVERY',
+          description: '自分や他者の強みに注目し、それを活かす方法を模索する場面を設けてください',
+          reason: '強みに基づくマネジメントの体験を提供するため'
+        });
+        break;
+      case LearningStage.CONFLICT:
+        recommendations.push({
+          type: 'TIME_MANAGEMENT_STRUGGLE',
+          description: '重要なことと緊急なことの区別に苦労し、優先順位の判断に迷う場面を描いてください',
+          reason: 'ドラッカーの時間管理概念の重要性を実感させるため'
+        });
+        break;
+      case LearningStage.INSIGHT:
+        recommendations.push({
+          type: 'INNOVATION_BREAKTHROUGH',
+          description: '「今日の成功が明日の失敗を招く」ことを理解し、継続的革新の必要性に気づく瞬間を表現してください',
+          reason: 'ドラッカーのイノベーション理論の核心を体現するため'
+        });
+        break;
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * ビジネス学習段階特化推奨事項
+   * @private
+   */
+  private getBusinessStageSpecificRecommendations(
+    stage: LearningStage, 
+    frameworkName: string, 
+    chapterNumber: number
+  ): SceneRecommendation[] {
+    const recommendations: SceneRecommendation[] = [];
+
+    switch (stage) {
+      case LearningStage.INTRODUCTION:
+        recommendations.push({
+          type: 'BUSINESS_FRAMEWORK_INTRODUCTION',
+          description: `${frameworkName}の基本概念を日常的なビジネス状況の中で自然に紹介してください`,
+          reason: '理論的説明ではなく、実践的な文脈での学習導入を図るため'
+        });
+        break;
+
+      case LearningStage.THEORY_APPLICATION:
+        recommendations.push({
+          type: 'FRAMEWORK_PRACTICAL_APPLICATION',
+          description: `${frameworkName}の理論を具体的なビジネス課題に適用する試行錯誤の過程を描いてください`,
+          reason: '理論と実践の架け橋となる学習体験を提供するため'
+        });
+        break;
+
+      case LearningStage.FAILURE_EXPERIENCE:
+        recommendations.push({
+          type: 'CONSTRUCTIVE_FAILURE_LEARNING',
+          description: `${frameworkName}の適用に失敗するが、その失敗から重要な学びを得る場面を設けてください`,
+          reason: '失敗を通した深い学習と成長の機会を創出するため'
+        });
+        break;
+
+      case LearningStage.PRACTICAL_MASTERY:
+        recommendations.push({
+          type: 'MASTERY_DEMONSTRATION',
+          description: `${frameworkName}を自在に活用し、複雑な状況でも適切に対応できる熟練を示してください`,
+          reason: '実践的習熟の完成形を表現し、読者の目標設定を促すため'
+        });
+        break;
+    }
+
+    return recommendations;
+  }
+
+  /**
+   * デフォルトビジネスシーン推奨
+   * @private
+   */
+  private getDefaultBusinessSceneRecommendations(stage: LearningStage, chapterNumber: number): SceneRecommendation[] {
+    return [
+      {
+        type: 'BUSINESS_LEARNING_FOCUS',
+        description: `${this.formatLearningStage(stage)}段階でのビジネス学習体験を重視したシーンを構成してください`,
+        reason: 'ビジネス教育としての価値を最大化するため'
+      },
+      {
+        type: 'PRACTICAL_APPLICATION',
+        description: '理論的な説明よりも、実際のビジネス場面での体験を通した学習を描いてください',
+        reason: '体験的学習による深い理解と定着を促進するため'
+      }
+    ];
+  }
+
+  /**
    * 学習段階に適したシーン推奨を生成する（プロット統合強化版）
    * @param conceptName 概念名
    * @param stage 学習段階

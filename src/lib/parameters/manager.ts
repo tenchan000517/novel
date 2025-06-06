@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import { storageProvider } from '@/lib/storage';
 import * as path from 'path';
 import { SystemParameters, ParameterPreset, ParameterHistory, ParameterChangeEvent } from '../../types/parameters';
 import { IParameterManager } from './types';
@@ -12,6 +12,10 @@ import { logError } from '../utils/error-handler';
  * システム全体の設定パラメータを一元管理するシングルトンクラス
  */
 export class ParameterManager implements IParameterManager {
+    // Service Container初期化順序対応
+    static dependencies: string[] = []; // Tier 4: 依存なし
+    static initializationTier = 4;
+
     private static instance: ParameterManager;
     private currentParameters: SystemParameters;
     private presets: Map<string, ParameterPreset> = new Map();
@@ -90,8 +94,8 @@ export class ParameterManager implements IParameterManager {
             ];
 
             for (const dir of directories) {
-                if (!fs.existsSync(dir)) {
-                    fs.mkdirSync(dir, { recursive: true });
+                if (!(await storageProvider.directoryExists(dir))) {
+                    await storageProvider.createDirectory(dir);
                     logger.info(`Created directory: ${dir}`);
                 }
             }
@@ -106,8 +110,8 @@ export class ParameterManager implements IParameterManager {
      */
     private async loadSavedParameters(): Promise<void> {
         try {
-            if (fs.existsSync(this.SYSTEM_PARAMETERS_PATH)) {
-                const content = await fs.promises.readFile(this.SYSTEM_PARAMETERS_PATH, 'utf8');
+            if (await storageProvider.fileExists(this.SYSTEM_PARAMETERS_PATH)) {
+                const content = await storageProvider.readFile(this.SYSTEM_PARAMETERS_PATH);
                 const saved = JSON.parse(content);
 
                 // ファイルの内容を詳細にログ出力
@@ -167,11 +171,11 @@ export class ParameterManager implements IParameterManager {
                 await this.initialize();
             }
 
-            if (!fs.existsSync(filePath)) {
+            if (!(await storageProvider.fileExists(filePath))) {
                 throw new Error(`File not found: ${filePath}`);
             }
 
-            const content = await fs.promises.readFile(filePath, 'utf8');
+            const content = await storageProvider.readFile(filePath);
             const data = JSON.parse(content);
 
             // バリデーション
@@ -217,8 +221,8 @@ export class ParameterManager implements IParameterManager {
 
             // ディレクトリが存在しない場合は作成
             const dir = path.dirname(targetPath);
-            if (!fs.existsSync(dir)) {
-                await fs.promises.mkdir(dir, { recursive: true });
+            if (!(await storageProvider.directoryExists(dir))) {
+                await storageProvider.createDirectory(dir);
             }
 
             // 保存データ作成
@@ -231,10 +235,9 @@ export class ParameterManager implements IParameterManager {
             };
 
             // 書き込み
-            await fs.promises.writeFile(
+            await storageProvider.writeFile(
                 targetPath,
-                JSON.stringify(saveData, null, 2),
-                'utf8'
+                JSON.stringify(saveData, null, 2)
             );
 
             // 履歴に記録
@@ -568,15 +571,14 @@ export class ParameterManager implements IParameterManager {
             this.presets.set(name, preset);
 
             // プリセット保存
-            if (!fs.existsSync(this.TEMPLATES_DIR)) {
-                await fs.promises.mkdir(this.TEMPLATES_DIR, { recursive: true });
+            if (!(await storageProvider.directoryExists(this.TEMPLATES_DIR))) {
+                await storageProvider.createDirectory(this.TEMPLATES_DIR);
             }
 
             const presetPath = path.join(this.TEMPLATES_DIR, `${preset.id}.json`);
-            await fs.promises.writeFile(
+            await storageProvider.writeFile(
                 presetPath,
-                JSON.stringify(preset, null, 2),
-                'utf8'
+                JSON.stringify(preset, null, 2)
             );
 
             logger.info(`Saved preset: ${name} to ${presetPath}`);
@@ -614,19 +616,19 @@ export class ParameterManager implements IParameterManager {
      */
     private async loadPresets(): Promise<void> {
         try {
-            if (!fs.existsSync(this.TEMPLATES_DIR)) {
+            if (!(await storageProvider.directoryExists(this.TEMPLATES_DIR))) {
                 logger.info('Templates directory does not exist yet');
                 return;
             }
 
-            const files = await fs.promises.readdir(this.TEMPLATES_DIR);
+            const files = await storageProvider.listFiles(this.TEMPLATES_DIR);
             let loadedCount = 0;
 
             for (const file of files) {
                 if (file.endsWith('.json')) {
                     try {
                         const filePath = path.join(this.TEMPLATES_DIR, file);
-                        const content = await fs.promises.readFile(filePath, 'utf8');
+                        const content = await storageProvider.readFile(filePath);
                         const preset = JSON.parse(content) as ParameterPreset;
 
                         // 日付文字列をDateオブジェクトに変換

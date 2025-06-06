@@ -147,6 +147,10 @@ export interface SystemOptimizationResult {
  * 全ての記憶階層とサポートシステムを統合し、統一されたAPIを提供します。
  */
 export class MemoryManager {
+    // Service Container初期化順序対応
+    static dependencies: string[] = []; // Tier 3: 依存なし（ストレージは直接アクセス）
+    static initializationTier = 3;
+
     private config: MemoryManagerConfig;
     private initialized: boolean = false;
 

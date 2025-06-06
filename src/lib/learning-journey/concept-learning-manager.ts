@@ -33,7 +33,12 @@ export enum LearningStage {
     CONFLICT = 'CONFLICT',             // 葛藤段階
     INSIGHT = 'INSIGHT',               // 気づき段階
     APPLICATION = 'APPLICATION',       // 応用段階
-    INTEGRATION = 'INTEGRATION'        // 統合段階
+    INTEGRATION = 'INTEGRATION',       // 統合段階
+    // 新しいビジネス学習特化段階
+    INTRODUCTION = 'INTRODUCTION',     // 導入段階（フレームワーク紹介）
+    THEORY_APPLICATION = 'THEORY_APPLICATION', // 理論適用段階
+    FAILURE_EXPERIENCE = 'FAILURE_EXPERIENCE', // 失敗体験段階
+    PRACTICAL_MASTERY = 'PRACTICAL_MASTERY'   // 実践習得段階
 }
 
 /**
@@ -870,14 +875,16 @@ export class ConceptLearningManager {
     }
 
     /**
-     * 章のための概念体現化計画を取得（統合記憶システム対応）
+     * 章のための概念体現化計画を取得（統合記憶システム対応・キャラクター連携強化版）
      * @param conceptName 概念名
      * @param chapterNumber 章番号
+     * @param characterManager キャラクター管理システム（オプション）
      * @returns 体現化計画
      */
     async getEmbodimentPlan(
         conceptName: string,
-        chapterNumber: number
+        chapterNumber: number,
+        characterManager?: any
     ): Promise<EmbodimentPlan> {
         try {
             logger.info(`Getting embodiment plan for concept: ${conceptName} at chapter ${chapterNumber}`);
@@ -902,6 +909,17 @@ export class ConceptLearningManager {
                 { success: false, totalResults: 0, processingTime: 0, results: [], suggestions: [] },
                 'getEmbodimentContext'
             );
+
+            // 🎯 キャラクターシステム統合による強化
+            let characterIntegrationData = null;
+            if (characterManager) {
+                characterIntegrationData = await this.integrateCharacterSystemData(
+                    characterManager,
+                    conceptName,
+                    currentStage,
+                    chapterNumber
+                );
+            }
 
             // 学習段階に応じた体現化計画を作成
             let plan: EmbodimentPlan;
@@ -932,6 +950,11 @@ export class ConceptLearningManager {
             // コンテキスト情報で計画を強化
             if (contextResult.success && contextResult.totalResults > 0) {
                 plan = this.enhancePlanWithContext(plan, contextResult);
+            }
+
+            // 🎯 キャラクターシステム統合による計画強化
+            if (characterIntegrationData) {
+                plan = this.enhancePlanWithCharacterIntegration(plan, characterIntegrationData);
             }
 
             // 体現化計画イベントを発行
@@ -1179,6 +1202,291 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
                 confidence: 0.3
             };
         }
+    }
+
+    /**
+     * ビジネスフレームワーク統合の学習段階を取得する
+     * @param frameworkName フレームワーク名
+     * @returns ビジネス学習段階配列
+     */
+    getBusinessFrameworkStages(frameworkName: string): LearningStage[] {
+        const frameworkStageMapping: Record<string, LearningStage[]> = {
+            'ISSUE_DRIVEN': [
+                LearningStage.INTRODUCTION,
+                LearningStage.MISCONCEPTION,
+                LearningStage.EXPLORATION,
+                LearningStage.CONFLICT,
+                LearningStage.INSIGHT,
+                LearningStage.THEORY_APPLICATION,
+                LearningStage.FAILURE_EXPERIENCE,
+                LearningStage.APPLICATION,
+                LearningStage.PRACTICAL_MASTERY,
+                LearningStage.INTEGRATION
+            ],
+            'SOCRATIC_DIALOGUE': [
+                LearningStage.INTRODUCTION,
+                LearningStage.EXPLORATION,
+                LearningStage.CONFLICT,
+                LearningStage.INSIGHT,
+                LearningStage.APPLICATION,
+                LearningStage.INTEGRATION
+            ],
+            'ADLER_PSYCHOLOGY': [
+                LearningStage.INTRODUCTION,
+                LearningStage.MISCONCEPTION,
+                LearningStage.EXPLORATION,
+                LearningStage.THEORY_APPLICATION,
+                LearningStage.FAILURE_EXPERIENCE,
+                LearningStage.PRACTICAL_MASTERY,
+                LearningStage.INTEGRATION
+            ],
+            'DRUCKER_MANAGEMENT': [
+                LearningStage.INTRODUCTION,
+                LearningStage.THEORY_APPLICATION,
+                LearningStage.FAILURE_EXPERIENCE,
+                LearningStage.PRACTICAL_MASTERY,
+                LearningStage.INTEGRATION
+            ],
+            'KOTLER_MARKETING': [
+                LearningStage.INTRODUCTION,
+                LearningStage.THEORY_APPLICATION,
+                LearningStage.APPLICATION,
+                LearningStage.PRACTICAL_MASTERY,
+                LearningStage.INTEGRATION
+            ],
+            'CARNEGIE_RELATIONS': [
+                LearningStage.INTRODUCTION,
+                LearningStage.MISCONCEPTION,
+                LearningStage.EXPLORATION,
+                LearningStage.THEORY_APPLICATION,
+                LearningStage.FAILURE_EXPERIENCE,
+                LearningStage.PRACTICAL_MASTERY,
+                LearningStage.INTEGRATION
+            ]
+        };
+
+        return frameworkStageMapping[frameworkName] || [
+            LearningStage.INTRODUCTION,
+            LearningStage.THEORY_APPLICATION,
+            LearningStage.PRACTICAL_MASTERY,
+            LearningStage.INTEGRATION
+        ];
+    }
+
+    /**
+     * 4段階学習進行モデルに基づく段階判定
+     * @param conceptName 概念名
+     * @param chapterNumber 章番号
+     * @param experienceType 経験タイプ
+     * @returns 推奨される学習段階
+     */
+    async determineFourStageProgression(
+        conceptName: string,
+        chapterNumber: number,
+        experienceType: 'theory' | 'failure' | 'practical' | 'integration'
+    ): Promise<LearningStage> {
+        try {
+            const currentStage = await this.determineLearningStage(conceptName, chapterNumber);
+            
+            // 4段階モデルに基づく進行
+            switch (experienceType) {
+                case 'theory':
+                    if (currentStage === LearningStage.INTRODUCTION) {
+                        return LearningStage.THEORY_APPLICATION;
+                    }
+                    return currentStage;
+                    
+                case 'failure':
+                    if (currentStage === LearningStage.THEORY_APPLICATION) {
+                        return LearningStage.FAILURE_EXPERIENCE;
+                    }
+                    return currentStage;
+                    
+                case 'practical':
+                    if (currentStage === LearningStage.FAILURE_EXPERIENCE) {
+                        return LearningStage.PRACTICAL_MASTERY;
+                    }
+                    return currentStage;
+                    
+                case 'integration':
+                    if (currentStage === LearningStage.PRACTICAL_MASTERY) {
+                        return LearningStage.INTEGRATION;
+                    }
+                    return currentStage;
+                    
+                default:
+                    return currentStage;
+            }
+        } catch (error) {
+            logger.error('Failed to determine four-stage progression', { error, conceptName, chapterNumber });
+            return LearningStage.INTRODUCTION;
+        }
+    }
+
+    /**
+     * ビジネス学習段階に対応した体現化プラン作成
+     * @param conceptName 概念名
+     * @param stage 学習段階
+     * @param chapterNumber 章番号
+     * @returns 体現化プラン
+     */
+    createBusinessLearningPlan(conceptName: string, stage: LearningStage, chapterNumber: number): EmbodimentPlan {
+        switch (stage) {
+            case LearningStage.INTRODUCTION:
+                return this.createIntroductionPlan(conceptName, chapterNumber);
+            case LearningStage.THEORY_APPLICATION:
+                return this.createTheoryApplicationPlan(conceptName, chapterNumber);
+            case LearningStage.FAILURE_EXPERIENCE:
+                return this.createFailureExperiencePlan(conceptName, chapterNumber);
+            case LearningStage.PRACTICAL_MASTERY:
+                return this.createPracticalMasteryPlan(conceptName, chapterNumber);
+            default:
+                return this.getEmbodimentPlan(conceptName, chapterNumber);
+        }
+    }
+
+    /**
+     * 導入段階プラン作成
+     * @private
+     */
+    private createIntroductionPlan(conceptName: string, chapterNumber: number): EmbodimentPlan {
+        return {
+            conceptName,
+            stage: LearningStage.INTRODUCTION,
+            chapterNumber,
+            expressionMethods: [
+                "概念の基本的な紹介と定義",
+                "日常的な場面での概念の必要性を示唆",
+                "キャラクターの現状と概念の関連性を暗示",
+                "概念への関心を自然に引き出す状況設定"
+            ],
+            keyElements: [
+                "概念の重要性を示す現実的な問題提起",
+                "キャラクターの既存知識との関連付け",
+                "学習への動機づけとなる状況",
+                "概念に対する興味と関心の芽生え"
+            ],
+            dialogueSuggestions: [
+                "これまでの方法では何か物足りない気がしている",
+                "もっと効果的なアプローチがあるような気がする",
+                "この考え方は面白そうだが、実際にはどう使うのだろう",
+                "理論は理解できるが、実践での活用法が見えない",
+                "これが本当に役立つなら、ぜひ身につけたい"
+            ],
+            tensionRecommendation: {
+                recommendedTension: 0.4,
+                reason: "導入段階では興味と関心を引く程度の穏やかな緊張感を設定",
+                direction: "increase"
+            }
+        };
+    }
+
+    /**
+     * 理論適用段階プラン作成
+     * @private
+     */
+    private createTheoryApplicationPlan(conceptName: string, chapterNumber: number): EmbodimentPlan {
+        return {
+            conceptName,
+            stage: LearningStage.THEORY_APPLICATION,
+            chapterNumber,
+            expressionMethods: [
+                "理論的知識の実際の場面への適用試行",
+                "教科書的な理解と現実のギャップの描写",
+                "理論に基づいた行動とその結果の観察",
+                "専門知識を実践で活用しようとする努力"
+            ],
+            keyElements: [
+                "理論的理解の実践への挑戦",
+                "期待と現実のギャップへの気づき",
+                "理論通りにいかない現実への困惑",
+                "より深い理解の必要性の認識"
+            ],
+            dialogueSuggestions: [
+                "理論では分かっているつもりだが、実際にやってみると難しい",
+                "教科書通りにやっているはずなのに、なぜうまくいかないのか",
+                "理論と実践の間には大きな壁があることを実感している",
+                "もっと実践的な知識や経験が必要だと感じる",
+                "理論だけでは足りない、何かが欠けている"
+            ],
+            tensionRecommendation: {
+                recommendedTension: 0.6,
+                reason: "理論適用段階では実践の困難さからくる適度な緊張感を表現",
+                direction: "increase"
+            }
+        };
+    }
+
+    /**
+     * 失敗体験段階プラン作成
+     * @private
+     */
+    private createFailureExperiencePlan(conceptName: string, chapterNumber: number): EmbodimentPlan {
+        return {
+            conceptName,
+            stage: LearningStage.FAILURE_EXPERIENCE,
+            chapterNumber,
+            expressionMethods: [
+                "理論的アプローチの失敗とその原因分析",
+                "失敗から学ぶ姿勢と内省の描写",
+                "挫折感と成長への転換点の表現",
+                "失敗を通じた深い気づきの瞬間"
+            ],
+            keyElements: [
+                "理論と実践のギャップによる失敗経験",
+                "失敗から学ぶ重要性の理解",
+                "挫折感から成長意欲への転換",
+                "より本質的な理解への気づき"
+            ],
+            dialogueSuggestions: [
+                "やはり理論だけでは通用しなかった。現実は厳しい",
+                "この失敗から何を学べるだろうか",
+                "うまくいかなかったが、なぜ失敗したのかが見えてきた",
+                "失敗は辛いが、重要な学びを与えてくれている",
+                "今度は違うアプローチを試してみよう"
+            ],
+            tensionRecommendation: {
+                recommendedTension: 0.7,
+                reason: "失敗体験段階では挫折感と学習意欲の相克による高い緊張感を設定",
+                direction: "peak"
+            }
+        };
+    }
+
+    /**
+     * 実践習得段階プラン作成
+     * @private
+     */
+    private createPracticalMasteryPlan(conceptName: string, chapterNumber: number): EmbodimentPlan {
+        return {
+            conceptName,
+            stage: LearningStage.PRACTICAL_MASTERY,
+            chapterNumber,
+            expressionMethods: [
+                "失敗経験を活かした改善されたアプローチ",
+                "理論と実践を統合した柔軟な対応",
+                "段階的な成功体験の積み重ね",
+                "実践的なスキルの向上と定着"
+            ],
+            keyElements: [
+                "失敗から学んだ知見の実践活用",
+                "理論と経験を統合した判断力",
+                "現実的で効果的なアプローチの習得",
+                "自信と確信を持った行動"
+            ],
+            dialogueSuggestions: [
+                "失敗から学んだことで、ようやく実践的なコツが分かってきた",
+                "理論と経験の両方があって初めて効果的に使えるようになった",
+                "以前とは比べものにならないほど上達している実感がある",
+                "今なら自信を持ってこのアプローチを使える",
+                "実践を通じて、概念の本当の価値が理解できた"
+            ],
+            tensionRecommendation: {
+                recommendedTension: 0.5,
+                reason: "実践習得段階では達成感と更なる向上への意欲のバランスを表現",
+                direction: "maintain"
+            }
+        };
     }
 
     /**
@@ -1816,6 +2124,282 @@ MISCONCEPTION, EXPLORATION, CONFLICT, INSIGHT, APPLICATION, INTEGRATION
             averageRetrievalTime: this.performanceStats.memorySystemIntegration.averageRetrievalTime,
             lastOperation: this.performanceStats.lastOptimization
         };
+    }
+
+    /**
+     * 🎯 キャラクターシステムとの統合データ取得
+     * @private
+     */
+    private async integrateCharacterSystemData(
+        characterManager: any,
+        conceptName: string,
+        learningStage: LearningStage,
+        chapterNumber: number
+    ): Promise<any> {
+        try {
+            logger.info(`キャラクターシステム統合データを取得中: ${conceptName}, stage: ${learningStage}`);
+
+            // キャラクター成長状態を取得
+            const characterStates = await this.safeCharacterOperation(
+                () => characterManager.getAllCharacterStates ? characterManager.getAllCharacterStates() : [],
+                [],
+                'getCharacterStates'
+            );
+
+            // キャラクター関係性データを取得
+            const relationships = await this.safeCharacterOperation(
+                () => characterManager.getAllRelationships ? characterManager.getAllRelationships() : [],
+                [],
+                'getCharacterRelationships'
+            );
+
+            // 現在の学習段階に適したキャラクター表現パターンを生成
+            const characterExpressionPatterns = this.generateCharacterExpressionPatterns(
+                characterStates,
+                learningStage,
+                conceptName
+            );
+
+            // キャラクター発達への影響分析
+            const characterDevelopmentImpact = this.analyzeCharacterDevelopmentImpact(
+                characterStates,
+                learningStage,
+                conceptName
+            );
+
+            return {
+                characterStates,
+                relationships,
+                characterExpressionPatterns,
+                characterDevelopmentImpact,
+                integrationMetrics: {
+                    charactersAnalyzed: characterStates.length,
+                    relationshipsConsidered: relationships.length,
+                    learningCharacterAlignment: this.calculateLearningCharacterAlignment(
+                        learningStage,
+                        characterStates
+                    )
+                }
+            };
+
+        } catch (error) {
+            logger.error('キャラクターシステム統合データ取得でエラー', {
+                error: error instanceof Error ? error.message : String(error),
+                conceptName,
+                learningStage
+            });
+            return null;
+        }
+    }
+
+    /**
+     * 🎯 キャラクターシステム統合による計画強化
+     * @private
+     */
+    private enhancePlanWithCharacterIntegration(plan: EmbodimentPlan, characterData: any): EmbodimentPlan {
+        try {
+            const enhancedPlan = { ...plan };
+
+            // キャラクター表現パターンを対話提案に統合
+            if (characterData.characterExpressionPatterns) {
+                enhancedPlan.dialogueSuggestions = [
+                    ...enhancedPlan.dialogueSuggestions,
+                    ...characterData.characterExpressionPatterns.dialoguePatterns.slice(0, 3)
+                ];
+            }
+
+            // キャラクター発達影響を重要要素に統合
+            if (characterData.characterDevelopmentImpact) {
+                enhancedPlan.keyElements = [
+                    ...enhancedPlan.keyElements,
+                    ...characterData.characterDevelopmentImpact.keyDevelopmentAspects.slice(0, 2)
+                ];
+            }
+
+            // キャラクター特化の表現方法を追加
+            if (characterData.characterStates && characterData.characterStates.length > 0) {
+                const mainCharacter = characterData.characterStates[0];
+                enhancedPlan.expressionMethods = [
+                    ...enhancedPlan.expressionMethods,
+                    `${mainCharacter.name || '主人公'}の内面変化を通した概念表現`,
+                    `キャラクター間の関係性を通じた概念の多面的描写`
+                ];
+            }
+
+            // 学習×キャラクター統合度に基づくテンション調整
+            if (characterData.integrationMetrics?.learningCharacterAlignment) {
+                const alignment = characterData.integrationMetrics.learningCharacterAlignment;
+                enhancedPlan.tensionRecommendation.recommendedTension = Math.min(1.0,
+                    enhancedPlan.tensionRecommendation.recommendedTension * (0.8 + alignment * 0.4)
+                );
+                enhancedPlan.tensionRecommendation.reason += ` (キャラクター統合度: ${Math.round(alignment * 100)}%)`;
+            }
+
+            logger.debug('キャラクターシステム統合による体現化計画強化完了', {
+                originalDialogueCount: plan.dialogueSuggestions.length,
+                enhancedDialogueCount: enhancedPlan.dialogueSuggestions.length,
+                characterAlignment: characterData.integrationMetrics?.learningCharacterAlignment || 0
+            });
+
+            return enhancedPlan;
+
+        } catch (error) {
+            logger.warn('キャラクターシステム統合による計画強化でエラー', { error });
+            return plan;
+        }
+    }
+
+    /**
+     * キャラクター表現パターン生成
+     * @private
+     */
+    private generateCharacterExpressionPatterns(
+        characterStates: any[],
+        learningStage: LearningStage,
+        conceptName: string
+    ): any {
+        const patterns = {
+            dialoguePatterns: [] as string[],
+            internalNarrationPatterns: [] as string[],
+            actionPatterns: [] as string[]
+        };
+
+        try {
+            // 学習段階別のキャラクター表現パターン
+            for (const character of characterStates.slice(0, 3)) { // 最大3キャラクターまで
+                const characterName = character.name || character.id || '登場人物';
+
+                switch (learningStage) {
+                    case LearningStage.MISCONCEPTION:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「これが正しいやり方のはずなのに、なぜ上手くいかないんだろう...」`
+                        );
+                        break;
+                    case LearningStage.EXPLORATION:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「もしかすると、別の方法があるのかもしれない」`
+                        );
+                        break;
+                    case LearningStage.CONFLICT:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「どちらを選ぶべきなのか、本当に分からない...」`
+                        );
+                        break;
+                    case LearningStage.INSIGHT:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「そうか！今まで見えていなかったものが、ようやく見えてきた」`
+                        );
+                        break;
+                    case LearningStage.APPLICATION:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「理解したことを、実際に試してみよう」`
+                        );
+                        break;
+                    case LearningStage.INTEGRATION:
+                        patterns.dialoguePatterns.push(
+                            `${characterName}: 「これが自然な考え方になっている。次の段階に進めそうだ」`
+                        );
+                        break;
+                }
+            }
+
+        } catch (error) {
+            logger.warn('キャラクター表現パターン生成でエラー', { error });
+        }
+
+        return patterns;
+    }
+
+    /**
+     * キャラクター発達影響分析
+     * @private
+     */
+    private analyzeCharacterDevelopmentImpact(
+        characterStates: any[],
+        learningStage: LearningStage,
+        conceptName: string
+    ): any {
+        return {
+            keyDevelopmentAspects: [
+                '学習段階に応じたキャラクターの内的成長',
+                'キャラクター間の関係性の変化と深化',
+                '概念理解がもたらすキャラクターの行動変化'
+            ],
+            impactLevel: this.calculateCharacterDevelopmentImpact(learningStage),
+            synchronizationRecommendations: [
+                '学習進行とキャラクター成長の同期',
+                'キャラクターの個性を活かした概念体現',
+                '関係性の発展による学習効果の増幅'
+            ]
+        };
+    }
+
+    /**
+     * 学習×キャラクター統合度計算
+     * @private
+     */
+    private calculateLearningCharacterAlignment(
+        learningStage: LearningStage,
+        characterStates: any[]
+    ): number {
+        // 基本統合度
+        let alignment = 0.6; // ベースライン
+
+        // 学習段階による調整
+        switch (learningStage) {
+            case LearningStage.CONFLICT:
+            case LearningStage.INSIGHT:
+                alignment += 0.2; // キャラクター発達との相性が良い段階
+                break;
+            case LearningStage.APPLICATION:
+            case LearningStage.INTEGRATION:
+                alignment += 0.1; // 実践段階でキャラクター行動との統合が重要
+                break;
+        }
+
+        // キャラクター数による調整
+        if (characterStates.length >= 2) {
+            alignment += 0.1; // 複数キャラクターでの相互作用効果
+        }
+
+        return Math.min(1.0, alignment);
+    }
+
+    /**
+     * キャラクター発達影響度計算
+     * @private
+     */
+    private calculateCharacterDevelopmentImpact(learningStage: LearningStage): number {
+        const impactLevels: Record<LearningStage, number> = {
+            [LearningStage.MISCONCEPTION]: 0.5,
+            [LearningStage.EXPLORATION]: 0.6,
+            [LearningStage.CONFLICT]: 0.8,
+            [LearningStage.INSIGHT]: 0.9,
+            [LearningStage.APPLICATION]: 0.7,
+            [LearningStage.INTEGRATION]: 0.6
+        };
+
+        return impactLevels[learningStage] || 0.5;
+    }
+
+    /**
+     * 安全なキャラクター操作
+     * @private
+     */
+    private async safeCharacterOperation<T>(
+        operation: () => Promise<T> | T,
+        fallbackValue: T,
+        operationName: string
+    ): Promise<T> {
+        try {
+            const result = await operation();
+            return result;
+        } catch (error) {
+            logger.warn(`${operationName} failed, using fallback`, {
+                error: error instanceof Error ? error.message : String(error)
+            });
+            return fallbackValue;
+        }
     }
 
     /**

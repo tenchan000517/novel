@@ -39,7 +39,7 @@ import { EVENT_TYPES } from '../core/constants';
 import { logger } from '@/lib/utils/logger';
 import { generateId } from '@/lib/utils/helpers';
 import { CharacterError, NotFoundError, ValidationError } from '../core/errors';
-import * as fs from 'fs/promises';
+import { storageProvider } from '@/lib/storage';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
 
@@ -1015,15 +1015,14 @@ export class CharacterService implements ICharacterService {
       try {
         // ディレクトリの存在確認
         const fullPath = path.resolve(dirPath);
-        const stats = await fs.stat(fullPath);
-
-        if (!stats.isDirectory()) {
-          logger.warn(`Not a directory: ${fullPath}`);
+        
+        if (!(await storageProvider.directoryExists(fullPath))) {
+          logger.warn(`Directory not found: ${fullPath}`);
           continue;
         }
 
         // ディレクトリ内のYAMLファイルを取得
-        const files = await fs.readdir(fullPath);
+        const files = await storageProvider.listFiles(fullPath);
         const yamlFiles = files.filter(file =>
           file.endsWith('.yaml') || file.endsWith('.yml')
         );
@@ -1054,7 +1053,7 @@ export class CharacterService implements ICharacterService {
    */
   private async loadCharacterFile(filePath: string): Promise<void> {
     try {
-      const fileContent = await fs.readFile(filePath, 'utf-8');
+      const fileContent = await storageProvider.readFile(filePath);
       const yamlData = yaml.load(fileContent) as any;
 
       if (!yamlData) {

@@ -17,6 +17,9 @@ import { applicationLifecycleManager } from '@/lib/lifecycle/application-lifecyc
  * @description 小説生成エンジンのファサードクラス（依存注入対応版）
  */
 class NovelGenerationEngine {
+  // Service Container初期化順序対応
+  static dependencies: string[] = ['memoryManager', 'geminiClient', 'characterManager', 'plotManager']; // Tier 5: 複数依存
+  static initializationTier = 5;
   private chapterGenerator: ChapterGenerator;
   private geminiClient: GeminiClient;
   private promptGenerator: PromptGenerator;

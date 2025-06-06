@@ -56,31 +56,31 @@ sections:
       emotionalPayoff: "自分の本質的な目的に気づき、行動への決意を得る満足感"
     
     characterDesign:
-      mainCharacters: ["田中誠", "佐藤哲也", "山本裕子", "鈴木美咲"]
+      mainCharacters: ["高橋誠", "山田哲也", "佐藤健太", "鈴木美咲"]
       characterRoles:
-        "田中誠":
+        "高橋誠":
           learningRole: "reflector"
           narrativeFunction: "読者の代理として学びを体験"
-        "佐藤哲也":
+        "山田哲也":
           learningRole: "mentor"
           narrativeFunction: "視点の転換を促す"
-        "山本裕子":
+        "佐藤健太":
           learningRole: "challenger"
           narrativeFunction: "盲点を指摘し成長を促す"
         "鈴木美咲":
           learningRole: "supporter"
           narrativeFunction: "共感と新たな視点を提供"
       relationshipDevelopments:
-        - characters: ["田中誠", "佐藤哲也"]
+        - characters: ["高橋誠", "山田哲也"]
           startingDynamic: "尊敬"
           evolution: "距離→再会→新たな信頼"
           endDynamic: "相互尊重"
-        - characters: ["田中誠", "山本裕子"]
+        - characters: ["高橋誠", "佐藤健太"]
           startingDynamic: "友情"
           evolution: "衝突→理解→相互尊重"
           endDynamic: "深い友情"
       characterTransformations:
-        "田中誠":
+        "高橋誠":
           startingState: "漠然とした不満"
           internalObstacles: ["社会的同調圧力", "失敗への恐れ", "自己価値への疑念"]
           growthMoments: ["自分の不満の本質に気づく", "失敗しても立ち直れると悟る", "深層の「なぜ」を発見する"]
@@ -229,18 +229,18 @@ sections:
       emotionalPayoff: "謙虚に顧客の声を聴くことで見えてくる新たな可能性と、本当の価値提供への希望"
     
     characterDesign:
-      mainCharacters: ["田中誠", "鈴木美咲", "高橋健太", "佐々木直子"]
+      mainCharacters: ["高橋誠", "鈴木美咲", "佐藤健太", "山田哲也"]
       characterRoles:
-        "田中誠":
+        "高橋誠":
           learningRole: "reflector"
           narrativeFunction: "思い込みと現実のギャップに苦しむ"
         "鈴木美咲":
           learningRole: "supporter"
           narrativeFunction: "共感しつつも新たな視点を提示"
-        "高橋健太":
+        "佐藤健太":
           learningRole: "mentor"
           narrativeFunction: "ISSUE DRIVENの実践例と知恵を提供"
-        "佐々木直子":
+        "中村大輔":
           learningRole: "reflector"
           narrativeFunction: "主人公の盲点を映し出す"
       relationshipDevelopments:
@@ -408,7 +408,7 @@ sections:
       emotionalPayoff: "断片的だった知識が統合され、実践的な知恵として定着する喜びと自信"
     
     characterDesign:
-      mainCharacters: ["田中誠", "鈴木美咲", "中村教授", "岡本隆"]
+      mainCharacters: ["田中誠", "鈴木美咲", "山田哲也", "佐藤健太"]
       characterRoles:
         "田中誠":
           learningRole: "reflector"
@@ -593,7 +593,7 @@ sections:
       emotionalPayoff: "個人の限界を超えた集合的創造性と深い信頼関係がもたらす充足感"
     
     characterDesign:
-      mainCharacters: ["田中誠", "鈴木美咲", "藤田健", "西村真理"]
+      mainCharacters: ["田中誠", "鈴木美咲", "佐藤健太", "山田哲也"]
       characterRoles:
         "田中誠":
           learningRole: "reflector"
@@ -772,7 +772,7 @@ sections:
       emotionalPayoff: "自己実現と社会貢献の統合による深い充足感と目的の達成"
     
     characterDesign:
-      mainCharacters: ["田中誠", "鈴木美咲", "山田雄一", "佐藤エミ"]
+      mainCharacters: ["田中誠", "鈴木美咲", "山田哲也", "中村大輔"]
       characterRoles:
         "田中誠":
           learningRole: "reflector"

@@ -71,6 +71,10 @@ import { requestQueue } from '../utils/request-queue';
  *   結果の返却
  */
 export class GeminiClient {
+    // Service Container初期化順序対応
+    static dependencies: string[] = []; // Tier 4: 依存なし
+    static initializationTier = 4;
+
     private client: GoogleGenerativeAI;
     private defaultModel: string;
     private modelMap: Record<string, string> = {}; // 用途別モデルマップ

@@ -172,6 +172,10 @@ export interface EightSystemPlotManagerDependencies {
  * の統合管理により、極めて高品質で一貫性のある物語生成を実現。
  */
 export class PlotManager {
+    // Service Container初期化順序対応
+    static dependencies: string[] = ['memoryManager', 'worldSettingsManager', 'geminiClient']; // Tier 5: 複数依存
+    static initializationTier = 5;
+
     private plotStorage: PlotStorage;
     private plotChecker: any;
     private plotContextBuilder: PlotContextBuilder;

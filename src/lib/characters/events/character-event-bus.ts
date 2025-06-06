@@ -5,6 +5,7 @@
 import { IEventBus } from '../core/interfaces';
 import { EventData, EventHandler, EventSubscription } from '../core/types';
 import { v4 as uuidv4 } from 'uuid';
+import { logger } from '@/lib/utils/logger';
 
 // サブスクリプション情報を内部で管理するためのインターフェース
 interface Subscription {
@@ -57,7 +58,7 @@ export class CharacterEventBus implements IEventBus {
      */
     public publish(eventType: string, data: EventData): void {
         if (this.debugMode) {
-            console.log(`[EventBus] Publishing event: ${eventType}`, data);
+            logger.debug(`[EventBus] Publishing event: ${eventType}`, data);
         }
 
         // イベントループ検出
@@ -99,7 +100,7 @@ export class CharacterEventBus implements IEventBus {
         this.subscriptions.get(eventType)!.push(subscription);
 
         if (this.debugMode) {
-            console.log(`[EventBus] Subscription added: ${eventType} (ID: ${id})`);
+            logger.debug(`[EventBus] Subscription added: ${eventType} (ID: ${id})`);
         }
 
         return {
@@ -127,7 +128,7 @@ export class CharacterEventBus implements IEventBus {
             subscriptions.splice(index, 1);
 
             if (this.debugMode) {
-                console.log(`[EventBus] Subscription removed: ${eventType} (ID: ${id})`);
+                logger.debug(`[EventBus] Subscription removed: ${eventType} (ID: ${id})`);
             }
 
             // サブスクリプションリストが空になったら削除
@@ -168,7 +169,7 @@ export class CharacterEventBus implements IEventBus {
                     onceSubscriptions.push(subscription.id);
                 }
             } catch (error) {
-                console.error(`[EventBus] Error in event handler for ${eventType}:`, error);
+                logger.error(`[EventBus] Error in event handler for ${eventType}:`, { error });
             }
         });
 
@@ -202,7 +203,7 @@ export class CharacterEventBus implements IEventBus {
 
         // しきい値を超えたらループとみなす
         if (count > this.maxLoopThreshold) {
-            console.warn(`[EventBus] Potential event loop detected for event type: ${eventType}`);
+            logger.warn(`[EventBus] Potential event loop detected for event type: ${eventType}`);
 
             // 開発環境では例外をスローしてデバッグを促す
             if (this.debugMode) {
@@ -233,7 +234,7 @@ export class CharacterEventBus implements IEventBus {
      */
     public async publishAsync(eventType: string, data: EventData): Promise<void> {
         if (this.debugMode) {
-            console.log(`[EventBus] Publishing event asynchronously: ${eventType}`, data);
+            logger.debug(`[EventBus] Publishing event asynchronously: ${eventType}`, data);
         }
 
         // タイムスタンプが設定されていない場合は設定

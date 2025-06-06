@@ -32,4 +32,20 @@ export enum SectionState {
     state: SectionState;           // 状態
     progress: number;              // 進捗 (0-1)
     completionMetrics?: SectionCompletionMetrics; // 完了メトリクス
+    
+    // プロット連携強化プロパティ（オプショナル）
+    plotEnhancement?: {
+      storyArcAlignment: number;
+      tensionCurveOptimization: number;
+      narrativeFlowImprovement: number;
+      plotIntegrationScore: number;
+    };
+    
+    // 学習プロット整合性（オプショナル）
+    learningPlotAlignment?: {
+      conceptPlotSync: number;
+      emotionalResonance: number;
+      progressionHarmony: number;
+      overallAlignment: number;
+    };
   }

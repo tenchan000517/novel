@@ -13,6 +13,7 @@ import {
 import { eventBus } from '../character-event-bus';
 import { ConsistencyError } from '../../core/errors';
 import { DEVELOPMENT_STAGE } from '../../core/constants';
+import { logger } from '@/lib/utils/logger';
 
 /**
  * キャラクター変更イベントハンドラークラス
@@ -28,7 +29,7 @@ export class CharacterChangeHandler {
   async (data) => {
     try {
       const character = data.character;
-      console.log(`Character created: ${character.name} (${character.id})`);
+      logger.info(`Character created: ${character.name} (${character.id})`);
       
       // キャラクター初期化に関連する処理
       // 1. 初期発展段階を設定
