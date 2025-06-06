@@ -115,7 +115,7 @@ interface PerformanceMetrics {
 export class EmotionalLearningIntegrator {
     private config: Required<EmotionalLearningIntegratorConfig>;
     private initialized: boolean = false;
-    
+
     // 内部統計（typeof this問題を回避するため明示的型定義）
     private performanceStats: PerformanceMetrics = {
         totalAnalyses: 0,
@@ -144,7 +144,7 @@ export class EmotionalLearningIntegrator {
         this.validateConfiguration(config);
         this.config = this.mergeWithDefaults(config);
         this.initializeInternalState();
-        
+
         logger.info('EmotionalLearningIntegrator initialized with unified memory integration');
     }
 
@@ -156,11 +156,11 @@ export class EmotionalLearningIntegrator {
         if (!this.memoryManager) {
             throw new Error('MemoryManager is required for EmotionalLearningIntegrator initialization');
         }
-        
+
         if (!this.geminiClient) {
             throw new Error('GeminiClient is required for EmotionalLearningIntegrator initialization');
         }
-        
+
         if (!this.eventBus) {
             throw new Error('EventBus is required for EmotionalLearningIntegrator initialization');
         }
@@ -233,7 +233,7 @@ export class EmotionalLearningIntegrator {
             if (!systemStatus.initialized) {
                 throw new Error('MemoryManager is not properly initialized');
             }
-            
+
             logger.debug('Memory system integration verified successfully');
         } catch (error) {
             logger.error('Memory system integration verification failed', { error });
@@ -255,10 +255,10 @@ export class EmotionalLearningIntegrator {
         chapterNumber: number
     ): Promise<EmotionalArcDesign> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Designing emotional arc for concept ${conceptName} at stage ${stage} with plot and character integration`);
             this.performanceStats.totalAnalyses++;
 
@@ -361,7 +361,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to design emotional arc for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage,
@@ -389,7 +389,7 @@ export class EmotionalLearningIntegrator {
             // プロット緊張度による感情レベルの調整
             if (plotData.tensionLevel !== undefined) {
                 const tensionMultiplier = 1 + (plotData.tensionLevel - 0.5) * 0.4;
-                
+
                 enhancedArc.emotionalJourney.development = enhancedArc.emotionalJourney.development.map(dim => ({
                     ...dim,
                     level: Math.min(10, Math.max(1, Math.round(dim.level * tensionMultiplier)))
@@ -450,7 +450,7 @@ export class EmotionalLearningIntegrator {
             // キャラクター発達段階による感情レベルの調整
             if (characterData.developmentStage !== undefined) {
                 const developmentModifier = this.calculateDevelopmentModifier(characterData.developmentStage, stage);
-                
+
                 // 発達段階に応じて感情の複雑さを調整
                 if (characterData.developmentStage >= 5) {
                     // 高発達段階では感情の複雑さを増加
@@ -563,6 +563,1121 @@ export class EmotionalLearningIntegrator {
         }
     }
 
+    private formatLearningStage(stage: LearningStage): string {
+        const japaneseStages: { [key in LearningStage]?: string } = {
+            [LearningStage.MISCONCEPTION]: '誤解段階',
+            [LearningStage.EXPLORATION]: '探索段階',
+            [LearningStage.CONFLICT]: '葛藤段階',
+            [LearningStage.INSIGHT]: '気づき段階',
+            [LearningStage.APPLICATION]: '応用段階',
+            [LearningStage.INTEGRATION]: '統合段階',
+            // 新しいビジネス学習段階
+            [LearningStage.INTRODUCTION]: '導入段階',
+            [LearningStage.THEORY_APPLICATION]: '理論適用段階',
+            [LearningStage.FAILURE_EXPERIENCE]: '失敗体験段階',
+            [LearningStage.PRACTICAL_MASTERY]: '実践習熟段階'
+        };
+
+        return japaneseStages[stage] || stage;
+    }
+
+
+    // ============================================================================
+    // Business Framework Specific Methods - ビジネスフレームワーク特化メソッド
+    // ============================================================================
+
+    /**
+     * ISSUE DRIVEN特化感情アークを作成
+     * @private
+     */
+    private createIssueDriverEmotionalArc(stage: LearningStage, chapterNumber: number): EmotionalArcDesign {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return {
+                    recommendedTone: "課題認識の甘さと問題発見時の衝撃",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "安心感", level: 7 },
+                            { dimension: "楽観", level: 6 }
+                        ],
+                        development: [
+                            { dimension: "困惑", level: 8 },
+                            { dimension: "危機感", level: 7 }
+                        ],
+                        conclusion: [
+                            { dimension: "問題意識", level: 8 },
+                            { dimension: "緊急性", level: 7 }
+                        ]
+                    },
+                    reason: "ISSUE DRIVEN思考では、表面的な安心感から真の課題発見による危機感への転換が重要"
+                };
+
+            case LearningStage.EXPLORATION:
+                return {
+                    recommendedTone: "仮説構築と検証への意欲",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "探究心", level: 8 },
+                            { dimension: "分析意欲", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "仮説形成", level: 8 },
+                            { dimension: "検証への期待", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "洞察", level: 7 },
+                            { dimension: "方向性", level: 8 }
+                        ]
+                    },
+                    reason: "課題を深く分析し、仮説を立てて検証する過程での知的興奮を表現"
+                };
+
+            case LearningStage.CONFLICT:
+                return {
+                    recommendedTone: "解決策選択時の判断ジレンマ",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "選択肢の重み", level: 7 },
+                            { dimension: "判断の困難", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "優先順位の葛藤", level: 9 },
+                            { dimension: "責任の重圧", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "決断", level: 9 },
+                            { dimension: "覚悟", level: 8 }
+                        ]
+                    },
+                    reason: "複数の解決策から最適解を選ぶ際の責任感と判断の重みを表現"
+                };
+
+            case LearningStage.INSIGHT:
+                return {
+                    recommendedTone: "根本原因発見時の突破感",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "集中", level: 8 },
+                            { dimension: "探求", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "発見", level: 9 },
+                            { dimension: "驚き", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "確信", level: 9 },
+                            { dimension: "解決への道筋", level: 8 }
+                        ]
+                    },
+                    reason: "真の課題とその解決策が見えた瞬間の突破感と確信を表現"
+                };
+
+            case LearningStage.APPLICATION:
+            case LearningStage.THEORY_APPLICATION:
+                return {
+                    recommendedTone: "解決策実行時の実践的緊張感",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "実行意欲", level: 8 },
+                            { dimension: "慎重さ", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "効果の実感", level: 8 },
+                            { dimension: "調整の必要性", level: 6 }
+                        ],
+                        conclusion: [
+                            { dimension: "成果", level: 8 },
+                            { dimension: "改善意識", level: 7 }
+                        ]
+                    },
+                    reason: "ISSUE DRIVEN解決策の実践とその効果測定における実用的な感情変化を表現"
+                };
+
+            case LearningStage.INTEGRATION:
+            case LearningStage.PRACTICAL_MASTERY:
+                return {
+                    recommendedTone: "課題解決思考の習慣化",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "自然な問題意識", level: 8 },
+                            { dimension: "体系的思考", level: 9 }
+                        ],
+                        development: [
+                            { dimension: "予防的発想", level: 8 },
+                            { dimension: "継続改善", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "問題解決力の自信", level: 9 },
+                            { dimension: "組織への貢献", level: 8 }
+                        ]
+                    },
+                    reason: "ISSUE DRIVEN思考が自然な習慣となり、組織全体の問題解決に貢献する状態を表現"
+                };
+
+            default:
+                return this.createDefaultEmotionalArc();
+        }
+    }
+
+    /**
+     * ソクラテス式対話特化感情アークを作成
+     * @private
+     */
+    private createSocraticDialogueEmotionalArc(stage: LearningStage, chapterNumber: number): EmotionalArcDesign {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return {
+                    recommendedTone: "自分の知識への過信と問いかけによる動揺",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "知識への自信", level: 8 },
+                            { dimension: "確信", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "問いかけへの困惑", level: 8 },
+                            { dimension: "答えられない焦り", level: 7 }
+                        ],
+                        conclusion: [
+                            { dimension: "無知の知", level: 6 },
+                            { dimension: "謙虚さ", level: 7 }
+                        ]
+                    },
+                    reason: "ソクラテス式対話の核心である「無知の知」への気づきプロセスを感情的に表現"
+                };
+
+            case LearningStage.EXPLORATION:
+                return {
+                    recommendedTone: "問いを通した自発的な探求意欲",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "好奇心", level: 8 },
+                            { dimension: "問いへの関心", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "自己探求", level: 9 },
+                            { dimension: "発見の喜び", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "より深い疑問", level: 7 },
+                            { dimension: "探求の継続意欲", level: 8 }
+                        ]
+                    },
+                    reason: "問いかけを通じて自分自身で答えを見つけていく過程の知的興奮を表現"
+                };
+
+            case LearningStage.CONFLICT:
+                return {
+                    recommendedTone: "内省による自己矛盾の発見",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "内省", level: 8 },
+                            { dimension: "自己審問", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "矛盾の発見", level: 9 },
+                            { dimension: "認知的不協和", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "整合性への意志", level: 8 },
+                            { dimension: "真理への渇望", level: 9 }
+                        ]
+                    },
+                    reason: "自己の思考の矛盾に気づき、真理を求める強い意志が生まれる過程を表現"
+                };
+
+            case LearningStage.INSIGHT:
+                return {
+                    recommendedTone: "自発的発見による深い理解",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "集中的思考", level: 8 },
+                            { dimension: "内的対話", level: 9 }
+                        ],
+                        development: [
+                            { dimension: "自己発見", level: 10 },
+                            { dimension: "理解の深化", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "知的満足", level: 9 },
+                            { dimension: "自律的学習の自信", level: 8 }
+                        ]
+                    },
+                    reason: "他者から教えられるのではなく、自分自身で重要な真理に到達した時の深い満足感を表現"
+                };
+
+            case LearningStage.APPLICATION:
+            case LearningStage.THEORY_APPLICATION:
+                return {
+                    recommendedTone: "対話技法の実践による他者との相互学習",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "対話への意欲", level: 8 },
+                            { dimension: "相互学習の期待", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "質問技術の向上", level: 8 },
+                            { dimension: "他者理解の深化", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "対話の満足感", level: 8 },
+                            { dimension: "共同探求の価値", level: 9 }
+                        ]
+                    },
+                    reason: "ソクラテス式対話を実践し、他者と共に学び合う価値を実感する過程を表現"
+                };
+
+            case LearningStage.INTEGRATION:
+            case LearningStage.PRACTICAL_MASTERY:
+                return {
+                    recommendedTone: "問いかける習慣の定着と知的謙虚さ",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "自然な問いかけ", level: 9 },
+                            { dimension: "知的謙虚さ", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "継続的学習", level: 9 },
+                            { dimension: "他者への問いかけ指導", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "知的成熟", level: 9 },
+                            { dimension: "真理探求の生活化", level: 8 }
+                        ]
+                    },
+                    reason: "問いかけることが自然な習慣となり、生涯にわたる学習者としての姿勢が確立された状態を表現"
+                };
+
+            default:
+                return this.createDefaultEmotionalArc();
+        }
+    }
+
+    /**
+     * アドラー心理学特化感情アークを作成
+     * @private
+     */
+    private createAdlerPsychologyEmotionalArc(stage: LearningStage, chapterNumber: number): EmotionalArcDesign {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return {
+                    recommendedTone: "他責思考と被害者意識からの脱却への抵抗",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "被害者意識", level: 7 },
+                            { dimension: "他者への不満", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "責任転嫁の習慣", level: 8 },
+                            { dimension: "変化への抵抗", level: 7 }
+                        ],
+                        conclusion: [
+                            { dimension: "自己責任への恐れ", level: 6 },
+                            { dimension: "変化の必要性認識", level: 5 }
+                        ]
+                    },
+                    reason: "アドラー心理学の課題の分離概念に触れる前の、他責的思考パターンの根深さを表現"
+                };
+
+            case LearningStage.EXPLORATION:
+                return {
+                    recommendedTone: "課題の分離概念への好奇心と自己責任の可能性",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "新しい視点への興味", level: 7 },
+                            { dimension: "自己変革の可能性", level: 6 }
+                        ],
+                        development: [
+                            { dimension: "課題分離の理解", level: 8 },
+                            { dimension: "自己決定の価値", level: 7 }
+                        ],
+                        conclusion: [
+                            { dimension: "自由への憧れ", level: 8 },
+                            { dimension: "勇気の必要性", level: 7 }
+                        ]
+                    },
+                    reason: "課題の分離により得られる自由と、それに必要な勇気への気づきプロセスを表現"
+                };
+
+            case LearningStage.CONFLICT:
+                return {
+                    recommendedTone: "承認欲求と自立への勇気の間の激しい葛藤",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "承認への執着", level: 8 },
+                            { dimension: "評価への不安", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "自立への憧れ", level: 7 },
+                            { dimension: "嫌われる勇気の必要性", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "勇気ある選択", level: 9 },
+                            { dimension: "自己受容", level: 7 }
+                        ]
+                    },
+                    reason: "承認欲求からの脱却という最も困難な課題への取り組みにおける激しい内的葛藤を表現"
+                };
+
+            case LearningStage.INSIGHT:
+                return {
+                    recommendedTone: "共同体感覚の発見と目的論的視点の獲得",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "孤立からの解放", level: 8 },
+                            { dimension: "つながりの実感", level: 9 }
+                        ],
+                        development: [
+                            { dimension: "貢献の喜び", level: 9 },
+                            { dimension: "目的の明確化", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "所属感", level: 9 },
+                            { dimension: "人生の意味", level: 8 }
+                        ]
+                    },
+                    reason: "アドラー心理学の究極目標である共同体感覚の体験と、目的論的人生観の獲得を表現"
+                };
+
+            case LearningStage.APPLICATION:
+            case LearningStage.THEORY_APPLICATION:
+                return {
+                    recommendedTone: "勇気ある行動の実践と他者貢献の体験",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "実践への勇気", level: 8 },
+                            { dimension: "変化への意志", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "課題分離の実践", level: 8 },
+                            { dimension: "他者貢献の手応え", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "自己効力感", level: 8 },
+                            { dimension: "人間関係の改善", level: 9 }
+                        ]
+                    },
+                    reason: "アドラー心理学の実践による具体的な変化と、他者貢献を通じた充実感を表現"
+                };
+
+            case LearningStage.INTEGRATION:
+            case LearningStage.PRACTICAL_MASTERY:
+                return {
+                    recommendedTone: "勇気と共同体感覚の生活化",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "自然な勇気", level: 9 },
+                            { dimension: "安定した自己受容", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "継続的な他者貢献", level: 9 },
+                            { dimension: "共同体への所属感", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "人生の充実感", level: 9 },
+                            { dimension: "幸福感", level: 8 }
+                        ]
+                    },
+                    reason: "アドラー心理学の生き方が自然となり、勇気と共同体感覚に基づく幸福な人生の実現を表現"
+                };
+
+            default:
+                return this.createDefaultEmotionalArc();
+        }
+    }
+
+    /**
+     * ドラッカーマネジメント特化感情アークを作成
+     * @private
+     */
+    private createDruckerManagementEmotionalArc(stage: LearningStage, chapterNumber: number): EmotionalArcDesign {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return {
+                    recommendedTone: "効率性重視の限界と真の効果性への目覚め",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "効率への自信", level: 7 },
+                            { dimension: "作業量への満足", level: 6 }
+                        ],
+                        development: [
+                            { dimension: "成果の疑問", level: 8 },
+                            { dimension: "方向性への不安", level: 7 }
+                        ],
+                        conclusion: [
+                            { dimension: "効果性の必要性", level: 8 },
+                            { dimension: "戦略的思考の重要性", level: 7 }
+                        ]
+                    },
+                    reason: "「正しくやる」から「正しいことをやる」への転換の必要性に気づく過程を表現"
+                };
+
+            case LearningStage.EXPLORATION:
+                return {
+                    recommendedTone: "強みの発見と活用への期待",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "自己分析への関心", level: 7 },
+                            { dimension: "可能性の探求", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "強みの発見", level: 9 },
+                            { dimension: "活用方法の模索", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "強み活用への確信", level: 8 },
+                            { dimension: "成果への期待", level: 9 }
+                        ]
+                    },
+                    reason: "ドラッカーの強みに基づくマネジメント理論の探求と、その可能性への期待を表現"
+                };
+
+            case LearningStage.CONFLICT:
+                return {
+                    recommendedTone: "時間管理と優先順位決定の困難",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "時間の制約", level: 8 },
+                            { dimension: "選択の困難", level: 7 }
+                        ],
+                        development: [
+                            { dimension: "重要性vs緊急性", level: 9 },
+                            { dimension: "決断の重圧", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "優先順位の明確化", level: 8 },
+                            { dimension: "集中の決意", level: 9 }
+                        ]
+                    },
+                    reason: "ドラッカーの時間管理理論における重要性と緊急性の判断の困難さと、集中の価値を表現"
+                };
+
+            case LearningStage.INSIGHT:
+                return {
+                    recommendedTone: "イノベーションの本質理解と継続革新の重要性",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "現状への疑問", level: 7 },
+                            { dimension: "変化の必要性", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "イノベーションの理解", level: 9 },
+                            { dimension: "継続革新の発見", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "変革への使命感", level: 9 },
+                            { dimension: "未来創造の意欲", level: 8 }
+                        ]
+                    },
+                    reason: "「今日の成功が明日の失敗を招く」というドラッカーの洞察と、継続的革新の重要性の理解を表現"
+                };
+
+            case LearningStage.APPLICATION:
+            case LearningStage.THEORY_APPLICATION:
+                return {
+                    recommendedTone: "マネジメント実践による成果創出",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "実践への意欲", level: 8 },
+                            { dimension: "責任感", level: 9 }
+                        ],
+                        development: [
+                            { dimension: "組織への影響", level: 8 },
+                            { dimension: "成果の実感", level: 9 }
+                        ],
+                        conclusion: [
+                            { dimension: "マネジメントの手応え", level: 9 },
+                            { dimension: "組織発展への貢献", level: 8 }
+                        ]
+                    },
+                    reason: "ドラッカー理論の実践を通じた組織への貢献と、マネジメントの醍醐味の体験を表現"
+                };
+
+            case LearningStage.INTEGRATION:
+            case LearningStage.PRACTICAL_MASTERY:
+                return {
+                    recommendedTone: "マネジメントの習慣化と組織の継続的発展",
+                    emotionalJourney: {
+                        opening: [
+                            { dimension: "自然な効果性思考", level: 9 },
+                            { dimension: "戦略的視点", level: 8 }
+                        ],
+                        development: [
+                            { dimension: "組織文化への影響", level: 9 },
+                            { dimension: "継続的イノベーション", level: 8 }
+                        ],
+                        conclusion: [
+                            { dimension: "マネジメントの誇り", level: 9 },
+                            { dimension: "社会への貢献", level: 8 }
+                        ]
+                    },
+                    reason: "ドラッカーマネジメントが自然な行動様式となり、組織と社会の発展に貢献する状態を表現"
+                };
+
+            default:
+                return this.createDefaultEmotionalArc();
+        }
+    }
+
+    /**
+     * ビジネス学習段階に応じた感情アークの強化
+     * @private
+     */
+    private enhanceEmotionalArcForBusinessStage(
+        emotionalArc: EmotionalArcDesign,
+        stage: LearningStage,
+        frameworkName: string
+    ): EmotionalArcDesign {
+        const enhancedArc = { ...emotionalArc };
+
+        switch (stage) {
+            case LearningStage.INTRODUCTION:
+                // 導入段階では期待感と学習意欲を強化
+                enhancedArc.emotionalJourney.opening.push({
+                    dimension: "学習意欲",
+                    level: 7
+                });
+                enhancedArc.emotionalJourney.conclusion.push({
+                    dimension: "次段階への期待",
+                    level: 6
+                });
+                enhancedArc.reason += ` ${frameworkName}導入段階として学習意欲を促進。`;
+                break;
+
+            case LearningStage.THEORY_APPLICATION:
+                // 理論適用段階では実践的緊張感と集中力を強化
+                enhancedArc.emotionalJourney.development.push({
+                    dimension: "実践的緊張感",
+                    level: 8
+                });
+                enhancedArc.emotionalJourney.development.push({
+                    dimension: "理論と実践の架け橋",
+                    level: 7
+                });
+                enhancedArc.reason += ` 理論適用段階として実践的な学習体験を重視。`;
+                break;
+
+            case LearningStage.FAILURE_EXPERIENCE:
+                // 失敗体験段階では建設的な失敗学習を強化
+                enhancedArc.emotionalJourney.opening.push({
+                    dimension: "挑戦意欲",
+                    level: 7
+                });
+                enhancedArc.emotionalJourney.development.push({
+                    dimension: "失敗からの学び",
+                    level: 8
+                });
+                enhancedArc.emotionalJourney.conclusion.push({
+                    dimension: "成長実感",
+                    level: 9
+                });
+                enhancedArc.reason += ` 失敗体験を通した深い学習プロセスを表現。`;
+                break;
+
+            case LearningStage.PRACTICAL_MASTERY:
+                // 実践的習熟段階では自信と応用力を強化
+                enhancedArc.emotionalJourney.development.push({
+                    dimension: "応用力",
+                    level: 9
+                });
+                enhancedArc.emotionalJourney.conclusion.push({
+                    dimension: "習熟の自信",
+                    level: 9
+                });
+                enhancedArc.emotionalJourney.conclusion.push({
+                    dimension: "指導力",
+                    level: 7
+                });
+                enhancedArc.reason += ` 実践的習熟段階として応用力と指導力を表現。`;
+                break;
+        }
+
+        // フレームワーク特有の強化
+        switch (frameworkName) {
+            case 'ISSUE_DRIVEN':
+                enhancedArc.recommendedTone += " - 課題解決思考を重視";
+                break;
+            case 'SOCRATIC_DIALOGUE':
+                enhancedArc.recommendedTone += " - 自発的発見を促進";
+                break;
+            case 'ADLER_PSYCHOLOGY':
+                enhancedArc.recommendedTone += " - 勇気と共同体感覚を強調";
+                break;
+            case 'DRUCKER_MANAGEMENT':
+                enhancedArc.recommendedTone += " - 効果性と継続革新を重視";
+                break;
+        }
+
+        return enhancedArc;
+    }
+
+    /**
+     * ISSUE DRIVEN特化共感ポイントを作成
+     * @private
+     */
+    private createIssueDriverEmpatheticPoints(stage: LearningStage): EmpatheticPoint[] {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return [
+                    {
+                        type: 'situation',
+                        position: 0.2,
+                        intensity: 0.8,
+                        description: '表面的な解決策で満足している自分への違和感'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.6,
+                        intensity: 0.7,
+                        description: '根本原因を見逃していたことへの気づき'
+                    },
+                    {
+                        type: 'character',
+                        position: 0.8,
+                        intensity: 0.6,
+                        description: '真の課題発見への責任感と緊張感'
+                    }
+                ];
+
+            case LearningStage.EXPLORATION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.3,
+                        intensity: 0.7,
+                        description: '課題の本質を探ろうとする探究心'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: 'データと現実の観察による仮説構築の興奮'
+                    },
+                    {
+                        type: 'decision',
+                        position: 0.7,
+                        intensity: 0.6,
+                        description: '多角的視点で課題を分析する決意'
+                    }
+                ];
+
+            case LearningStage.CONFLICT:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.9,
+                        description: '複数の解決策候補から最適解を選ぶ責任の重さ'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '限られた資源で最大効果を生む方法の模索'
+                    },
+                    {
+                        type: 'decision',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: 'リスクを取ってでも根本解決を目指す決断'
+                    }
+                ];
+
+            case LearningStage.INSIGHT:
+                return [
+                    {
+                        type: 'realization',
+                        position: 0.4,
+                        intensity: 0.9,
+                        description: '真の課題と解決策の全体像が見えた瞬間'
+                    },
+                    {
+                        type: 'character',
+                        position: 0.6,
+                        intensity: 0.8,
+                        description: '問題解決への道筋が明確になった安堵感'
+                    },
+                    {
+                        type: 'transformation',
+                        position: 0.8,
+                        intensity: 0.8,
+                        description: '課題発見能力への自信の獲得'
+                    }
+                ];
+
+            default:
+                return this.createDefaultEmpatheticPoints(stage);
+        }
+    }
+
+    /**
+     * ソクラテス式対話特化共感ポイントを作成
+     * @private
+     */
+    private createSocraticDialogueEmpatheticPoints(stage: LearningStage): EmpatheticPoint[] {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.8,
+                        description: '知っているつもりだったことを問われた時の戸惑い'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.7,
+                        description: 'シンプルな問いに答えられない自分への驚き'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: '本当は理解していなかったという謙虚な気づき'
+                    }
+                ];
+
+            case LearningStage.EXPLORATION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.3,
+                        intensity: 0.7,
+                        description: '問いかけを通して自分の内面を探る好奇心'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '対話によって新たな視点が開かれる喜び'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.7,
+                        intensity: 0.6,
+                        description: '自分で答えを見つけることの価値への気づき'
+                    }
+                ];
+
+            case LearningStage.CONFLICT:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.9,
+                        description: '自分の信念と論理の矛盾に直面した時の混乱'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '一貫した思考体系を求める内的な努力'
+                    },
+                    {
+                        type: 'decision',
+                        position: 0.8,
+                        intensity: 0.7,
+                        description: '真理を求めて思考を続ける意志の選択'
+                    }
+                ];
+
+            case LearningStage.INSIGHT:
+                return [
+                    {
+                        type: 'realization',
+                        position: 0.4,
+                        intensity: 0.9,
+                        description: '自分自身で重要な真理に到達した瞬間の感動'
+                    },
+                    {
+                        type: 'character',
+                        position: 0.6,
+                        intensity: 0.8,
+                        description: '自発的学習能力への深い自信の獲得'
+                    },
+                    {
+                        type: 'transformation',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: '問いかけることの習慣化による知的成長'
+                    }
+                ];
+
+            default:
+                return this.createDefaultEmpatheticPoints(stage);
+        }
+    }
+
+    /**
+     * アドラー心理学特化共感ポイントを作成
+     * @private
+     */
+    private createAdlerPsychologyEmpatheticPoints(stage: LearningStage): EmpatheticPoint[] {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.8,
+                        description: '他者のせいにする習慣から抜け出せない焦り'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.7,
+                        description: '被害者意識に囚われている自分への気づき'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.8,
+                        intensity: 0.6,
+                        description: '自己責任の重要性への最初の理解'
+                    }
+                ];
+
+            case LearningStage.EXPLORATION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.3,
+                        intensity: 0.7,
+                        description: '課題の分離概念への知的興味と解放感への期待'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '自分の課題と他者の課題を区別する練習'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.7,
+                        intensity: 0.7,
+                        description: '自己決定の自由がもたらす可能性への気づき'
+                    }
+                ];
+
+            case LearningStage.CONFLICT:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.9,
+                        description: '承認欲求を手放すことへの恐怖と葛藤'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '嫌われる勇気を持つか安全でいるかの選択'
+                    },
+                    {
+                        type: 'decision',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: '自分らしく生きるための勇気ある決断'
+                    }
+                ];
+
+            case LearningStage.INSIGHT:
+                return [
+                    {
+                        type: 'realization',
+                        position: 0.4,
+                        intensity: 0.9,
+                        description: '共同体感覚に目覚めた時の深いつながりの実感'
+                    },
+                    {
+                        type: 'character',
+                        position: 0.6,
+                        intensity: 0.8,
+                        description: '他者貢献によって得られる真の幸福感'
+                    },
+                    {
+                        type: 'transformation',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: '勇気を持って生きることへの確信'
+                    }
+                ];
+
+            default:
+                return this.createDefaultEmpatheticPoints(stage);
+        }
+    }
+
+    /**
+     * ドラッカーマネジメント特化共感ポイントを作成
+     * @private
+     */
+    private createDruckerManagementEmpatheticPoints(stage: LearningStage): EmpatheticPoint[] {
+        switch (stage) {
+            case LearningStage.MISCONCEPTION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.7,
+                        description: '忙しく働いているのに成果が出ない焦燥感'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '効率性を追求しても効果が上がらない疑問'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.8,
+                        intensity: 0.7,
+                        description: '「正しいことをやる」重要性への気づき'
+                    }
+                ];
+
+            case LearningStage.EXPLORATION:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.3,
+                        intensity: 0.8,
+                        description: '自分の強みを発見した時の驚きと喜び'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.7,
+                        description: '強みを活かした働き方への期待と興奮'
+                    },
+                    {
+                        type: 'realization',
+                        position: 0.7,
+                        intensity: 0.8,
+                        description: 'マネジメントの真の意味への理解'
+                    }
+                ];
+
+            case LearningStage.CONFLICT:
+                return [
+                    {
+                        type: 'character',
+                        position: 0.2,
+                        intensity: 0.9,
+                        description: '重要性と緊急性の判断に迷う責任の重圧'
+                    },
+                    {
+                        type: 'situation',
+                        position: 0.5,
+                        intensity: 0.8,
+                        description: '限られた時間で最大の成果を求められる緊張'
+                    },
+                    {
+                        type: 'decision',
+                        position: 0.8,
+                        intensity: 0.9,
+                        description: '集中すべき領域を決断する勇気'
+                    }
+                ];
+
+            case LearningStage.INSIGHT:
+                return [
+                    {
+                        type: 'realization',
+                        position: 0.4,
+                        intensity: 0.9,
+                        description: '継続的イノベーションの必要性を悟った瞬間'
+                    },
+                    {
+                        type: 'character',
+                        position: 0.6,
+                        intensity: 0.8,
+                        description: '組織の未来を創造する使命感の芽生え'
+                    },
+                    {
+                        type: 'transformation',
+                        position: 0.8,
+                        intensity: 0.8,
+                        description: 'マネジメントの醍醐味への深い理解'
+                    }
+                ];
+
+            default:
+                return this.createDefaultEmpatheticPoints(stage);
+        }
+    }
+
+    /**
+     * ビジネス学習段階特化共感ポイントを作成
+     * @private
+     */
+    private createBusinessStageEmpatheticPoints(stage: LearningStage, frameworkName: string): EmpatheticPoint[] {
+        const basePoints: EmpatheticPoint[] = [];
+
+        switch (stage) {
+            case LearningStage.INTRODUCTION:
+                basePoints.push({
+                    type: 'character',
+                    position: 0.1,
+                    intensity: 0.6,
+                    description: `${frameworkName}という新しい概念への好奇心と期待`
+                });
+                basePoints.push({
+                    type: 'situation',
+                    position: 0.5,
+                    intensity: 0.5,
+                    description: 'ビジネス学習への意欲と若干の不安'
+                });
+                break;
+
+            case LearningStage.THEORY_APPLICATION:
+                basePoints.push({
+                    type: 'character',
+                    position: 0.3,
+                    intensity: 0.7,
+                    description: '理論を実践に移そうとする緊張感と集中力'
+                });
+                basePoints.push({
+                    type: 'situation',
+                    position: 0.6,
+                    intensity: 0.8,
+                    description: '理論と現実のギャップに直面した時の戸惑い'
+                });
+                break;
+
+            case LearningStage.FAILURE_EXPERIENCE:
+                basePoints.push({
+                    type: 'character',
+                    position: 0.2,
+                    intensity: 0.8,
+                    description: '失敗から学ぼうとする建設的な姿勢'
+                });
+                basePoints.push({
+                    type: 'realization',
+                    position: 0.7,
+                    intensity: 0.9,
+                    description: '失敗が与えてくれた深い学びへの感謝'
+                });
+                break;
+
+            case LearningStage.PRACTICAL_MASTERY:
+                basePoints.push({
+                    type: 'character',
+                    position: 0.4,
+                    intensity: 0.8,
+                    description: '概念を自在に活用できる自信と満足感'
+                });
+                basePoints.push({
+                    type: 'transformation',
+                    position: 0.8,
+                    intensity: 0.9,
+                    description: '他者に教えられるレベルまで成長した充実感'
+                });
+                break;
+        }
+
+        return basePoints;
+    }
+
     /**
      * プロットコンテキストの抽出
      * @private
@@ -641,7 +1756,7 @@ export class EmotionalLearningIntegrator {
             const stageOrder = this.getStageOrder(learningStage);
             const expectedDevelopment = stageOrder * 1.5;
             const difference = developmentStage - expectedDevelopment;
-            
+
             // -2から+2の範囲で修正値を返す
             return Math.max(-2, Math.min(2, Math.round(difference / 2)));
         } catch (error) {
@@ -698,7 +1813,12 @@ export class EmotionalLearningIntegrator {
                 [LearningStage.CONFLICT]: ['葛藤', '緊張', '決断'],
                 [LearningStage.INSIGHT]: ['驚き', '興奮', '解放感'],
                 [LearningStage.APPLICATION]: ['自信', '集中', '達成感'],
-                [LearningStage.INTEGRATION]: ['調和', '満足感', '創造性']
+                [LearningStage.INTEGRATION]: ['調和', '満足感', '創造性'],
+                // 新しいビジネス学習段階
+                [LearningStage.INTRODUCTION]: ['関心', '期待', '学習意欲'],
+                [LearningStage.THEORY_APPLICATION]: ['実践意欲', '緊張感', '集中'],
+                [LearningStage.FAILURE_EXPERIENCE]: ['挑戦', '学び', '成長実感'],
+                [LearningStage.PRACTICAL_MASTERY]: ['自信', '応用力', '指導力']
             };
 
             const expected = expectedEmotions[stage] || [];
@@ -712,7 +1832,7 @@ export class EmotionalLearningIntegrator {
             ].map(dim => dim.dimension);
 
             // 期待される感情との一致度を計算
-            const matches = expected.filter(exp => 
+            const matches = expected.filter(exp =>
                 actualDimensions.some(actual => actual.includes(exp) || exp.includes(actual))
             );
 
@@ -733,7 +1853,12 @@ export class EmotionalLearningIntegrator {
             [LearningStage.CONFLICT]: 3,
             [LearningStage.INSIGHT]: 4,
             [LearningStage.APPLICATION]: 5,
-            [LearningStage.INTEGRATION]: 6
+            [LearningStage.INTEGRATION]: 6,
+            // 新しいビジネス学習段階
+            [LearningStage.INTRODUCTION]: 1,
+            [LearningStage.THEORY_APPLICATION]: 2,
+            [LearningStage.FAILURE_EXPERIENCE]: 3,
+            [LearningStage.PRACTICAL_MASTERY]: 4
         };
 
         return stageOrder[stage] || 0;
@@ -753,10 +1878,10 @@ export class EmotionalLearningIntegrator {
         chapterNumber: number
     ): Promise<CatharticExperience | null> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             // カタルシスが適切な学習段階かチェック
             if (!this.isCatharticAppropriateForStage(stage)) {
                 logger.info(`Cathartic experience not appropriate for stage ${stage}, skipping design`);
@@ -826,7 +1951,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to design cathartic experience for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage,
@@ -852,10 +1977,10 @@ export class EmotionalLearningIntegrator {
         stage: LearningStage
     ): Promise<EmotionLearningSyncMetrics> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Analyzing emotion-learning synchronization for ${conceptName} at stage ${stage}`);
             this.performanceStats.totalAnalyses++;
 
@@ -884,7 +2009,7 @@ export class EmotionalLearningIntegrator {
                         `synchronization analysis ${conceptName}`,
                         [MemoryLevel.MID_TERM]
                     );
-                    
+
                     if (searchResult.success) {
                         this.performanceStats.memorySystemHits++;
                     }
@@ -909,7 +2034,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to analyze synchronization for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage
@@ -934,10 +2059,10 @@ export class EmotionalLearningIntegrator {
         stage: LearningStage
     ): Promise<EmpatheticPoint[]> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Generating empathetic points for ${conceptName} at stage ${stage}`);
             this.performanceStats.totalAnalyses++;
 
@@ -974,7 +2099,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to generate empathetic points for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage
@@ -1001,10 +2126,10 @@ export class EmotionalLearningIntegrator {
         emotionalDimensions?: any;
     }> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Analyzing chapter emotion`);
             this.performanceStats.totalAnalyses++;
 
@@ -1034,7 +2159,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to analyze chapter emotion`, {
                 error: error instanceof Error ? error.message : String(error)
             });
@@ -1060,10 +2185,10 @@ export class EmotionalLearningIntegrator {
         chapterNumber: number
     ): Promise<EmotionalArcDesign> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Designing business framework emotional arc for ${frameworkName} at stage ${stage}`);
             this.performanceStats.totalAnalyses++;
 
@@ -1089,9 +2214,9 @@ export class EmotionalLearningIntegrator {
             }
 
             // 4段階学習進行モデルに対応した調整
-            if (stage === LearningStage.INTRODUCTION || 
-                stage === LearningStage.THEORY_APPLICATION || 
-                stage === LearningStage.FAILURE_EXPERIENCE || 
+            if (stage === LearningStage.INTRODUCTION ||
+                stage === LearningStage.THEORY_APPLICATION ||
+                stage === LearningStage.FAILURE_EXPERIENCE ||
                 stage === LearningStage.PRACTICAL_MASTERY) {
                 emotionalArc = this.enhanceEmotionalArcForBusinessStage(emotionalArc, stage, frameworkName);
             }
@@ -1132,7 +2257,7 @@ export class EmotionalLearningIntegrator {
             );
 
             // イベント発行（ビジネスフレームワーク統合情報付き）
-            this.eventBus.publish('business.emotional.arc.designed', {
+            this.eventBus.publish('emotional.arc.designed' as any, {
                 frameworkName,
                 stage,
                 chapterNumber,
@@ -1148,7 +2273,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to design business framework emotional arc for ${frameworkName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage,
@@ -1172,10 +2297,10 @@ export class EmotionalLearningIntegrator {
         content?: string
     ): Promise<EmpatheticPoint[]> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Generating business framework empathetic points for ${frameworkName} at stage ${stage}`);
             this.performanceStats.totalAnalyses++;
 
@@ -1201,16 +2326,16 @@ export class EmotionalLearningIntegrator {
             }
 
             // 4段階学習進行モデルに対応した追加共感ポイント
-            if (stage === LearningStage.INTRODUCTION || 
-                stage === LearningStage.THEORY_APPLICATION || 
-                stage === LearningStage.FAILURE_EXPERIENCE || 
+            if (stage === LearningStage.INTRODUCTION ||
+                stage === LearningStage.THEORY_APPLICATION ||
+                stage === LearningStage.FAILURE_EXPERIENCE ||
                 stage === LearningStage.PRACTICAL_MASTERY) {
                 const businessStagePoints = this.createBusinessStageEmpatheticPoints(stage, frameworkName);
                 empatheticPoints = [...empatheticPoints, ...businessStagePoints];
             }
 
             // イベント発行
-            this.eventBus.publish('business.empathetic.points.generated', {
+            this.eventBus.publish('empathetic.points.generated' as any, {
                 frameworkName,
                 stage,
                 points: empatheticPoints,
@@ -1225,7 +2350,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to generate business framework empathetic points for ${frameworkName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage
@@ -1254,10 +2379,10 @@ export class EmotionalLearningIntegrator {
         syncRecommendations: string[];
     }> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Creating integrated emotion-learning plan for ${conceptName} at stage ${stage}`);
             this.performanceStats.totalAnalyses++;
 
@@ -1322,7 +2447,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to create integrated plan for ${conceptName}`, {
                 error: error instanceof Error ? error.message : String(error),
                 stage,
@@ -1349,10 +2474,10 @@ export class EmotionalLearningIntegrator {
         emotionalDesign: any
     ): Promise<void> {
         const startTime = Date.now();
-        
+
         try {
             await this.ensureInitialized();
-            
+
             logger.info(`Synchronizing emotional design for section ${sectionId}`);
 
             // 統合記憶システムを使用してセクション関連データを保存
@@ -1404,7 +2529,7 @@ export class EmotionalLearningIntegrator {
         } catch (error) {
             const processingTime = Date.now() - startTime;
             this.updatePerformanceMetrics(processingTime, false);
-            
+
             logger.error(`Failed to synchronize emotional design with section`, {
                 error: error instanceof Error ? error.message : String(error),
                 sectionId
@@ -1459,7 +2584,7 @@ export class EmotionalLearningIntegrator {
                     null,
                     'getSystemStatus'
                 );
-                
+
                 if (result) {
                     memorySystemStatus = result;
                 } else {
@@ -1593,11 +2718,11 @@ export class EmotionalLearningIntegrator {
             } catch (error) {
                 retries++;
                 logger.error(`${operationName} failed (attempt ${retries}/${maxRetries})`, { error });
-                
+
                 if (retries >= maxRetries) {
                     return fallbackValue;
                 }
-                
+
                 // 指数バックオフで再試行
                 await new Promise(resolve => setTimeout(resolve, Math.pow(2, retries) * 1000));
             }
@@ -1614,8 +2739,8 @@ export class EmotionalLearningIntegrator {
         if (!content || typeof content !== 'string') {
             return '';
         }
-        
-        return content.length > maxLength 
+
+        return content.length > maxLength
             ? content.substring(0, maxLength) + '...(truncated)'
             : content;
     }
@@ -1726,11 +2851,11 @@ export class EmotionalLearningIntegrator {
 
         // 平均処理時間の更新
         const totalAnalyses = this.performanceStats.totalAnalyses;
-        this.performanceStats.averageProcessingTime = 
+        this.performanceStats.averageProcessingTime =
             ((this.performanceStats.averageProcessingTime * (totalAnalyses - 1)) + processingTime) / totalAnalyses;
 
         // キャッシュ効率率の更新
-        this.performanceStats.cacheEfficiencyRate = 
+        this.performanceStats.cacheEfficiencyRate =
             this.performanceStats.successfulAnalyses / this.performanceStats.totalAnalyses;
     }
 
@@ -2335,18 +3460,5 @@ JSON形式で出力してください：
                     '重要な理解の瞬間に感情的な高まりを設計する'
                 ];
         }
-    }
-
-    private formatLearningStage(stage: LearningStage): string {
-        const japaneseStages: { [key in LearningStage]?: string } = {
-            [LearningStage.MISCONCEPTION]: '誤解段階',
-            [LearningStage.EXPLORATION]: '探索段階',
-            [LearningStage.CONFLICT]: '葛藤段階',
-            [LearningStage.INSIGHT]: '気づき段階',
-            [LearningStage.APPLICATION]: '応用段階',
-            [LearningStage.INTEGRATION]: '統合段階'
-        };
-
-        return japaneseStages[stage] || stage;
     }
 }
