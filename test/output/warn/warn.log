@@ -2304,3 +2304,42 @@
     "category": "memory_system"
   }
 }
+{
+  "timestamp": "2025-06-06T05:22:13.898Z",
+  "level": "warn",
+  "message": "[API_CONNECTION] Retrying after error: Request failed with status code 500",
+  "stage": "api_connection",
+  "category": "system_init",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "system_init",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T05:22:34.022Z",
+  "level": "warn",
+  "message": "[API_CONNECTION] Retrying after error: Request failed with status code 500",
+  "stage": "api_connection",
+  "category": "system_init",
+  "metadata": {
+    "retriesLeft": 1,
+    "delayMs": 40000,
+    "category": "system_init",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T06:00:28.280Z",
+  "level": "warn",
+  "message": "[API_CONNECTION] Retrying after error: Request failed with status code 500",
+  "stage": "api_connection",
+  "category": "system_init",
+  "metadata": {
+    "retriesLeft": 2,
+    "delayMs": 20000,
+    "category": "system_init",
+    "stage": "api_connection"
+  }
+}

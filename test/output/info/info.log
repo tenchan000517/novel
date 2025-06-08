@@ -8050,3 +8050,93 @@
     "stage": "chapter_generation"
   }
 }
+{
+  "timestamp": "2025-06-06T05:22:09.504Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T05:22:09.507Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-06T05:22:09.507Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T05:22:09.508Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T06:00:24.806Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Starting novel generation with unified memory system",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "apiUrl": "http://localhost:3000/api/generation/chapter",
+    "startingChapter": 1,
+    "totalChapters": 12,
+    "delayBetweenChapters": "120 seconds",
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T06:00:24.809Z",
+  "level": "info",
+  "message": "[FILE_SAVING] Output directories created",
+  "stage": "file_saving",
+  "category": "unknown",
+  "metadata": {
+    "outputDir": "C:\\novel-automation-system\\test\\output",
+    "stage": "file_saving"
+  }
+}
+{
+  "timestamp": "2025-06-06T06:00:24.810Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Unified memory system API status check attempt 1/3",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}
+{
+  "timestamp": "2025-06-06T06:00:24.811Z",
+  "level": "info",
+  "message": "[API_CONNECTION] Testing unified memory system API endpoint: http://localhost:3000/api/generation/chapter",
+  "stage": "api_connection",
+  "category": "unknown",
+  "metadata": {
+    "stage": "api_connection"
+  }
+}

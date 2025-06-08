@@ -41,6 +41,8 @@ import {
     UnifiedSearchResult
 } from './types';
 
+
+
 /**
  * メモリマネージャー設定
  */
@@ -405,7 +407,300 @@ export class MemoryManager {
         }
     }
 
+    /**
+     * 統合記憶コンテキストの取得
+     * @param chapterNumber 対象の章番号
+     * @returns 統合記憶コンテキスト
+     */
+    async getUnifiedContext(chapterNumber: number): Promise<UnifiedMemoryContext> {
+        try {
+            await this.ensureInitialized();
 
+            logger.debug(`Getting unified context for chapter ${chapterNumber}`);
+
+            // 統一アクセスAPIを使用してコンテキストを取得
+            const accessRequest: MemoryAccessRequest = {
+                chapterNumber,
+                requestType: MemoryRequestType.INTEGRATED_CONTEXT,
+                targetLayers: [MemoryLevel.SHORT_TERM, MemoryLevel.MID_TERM, MemoryLevel.LONG_TERM],
+                filters: {},
+                options: {
+                    includeCache: true,
+                    resolveDuplicates: true,
+                    optimizeAccess: true
+                }
+            };
+
+            const accessResult = await this.unifiedAccessAPI.processRequest(accessRequest);
+
+            if (accessResult.success && accessResult.context) {
+                return accessResult.context;
+            }
+
+            // フォールバック：基本的な統合コンテキストを作成
+            return this.createFallbackUnifiedContext(chapterNumber);
+
+        } catch (error) {
+            logger.error(`Failed to get unified context for chapter ${chapterNumber}`, {
+                error: error instanceof Error ? error.message : String(error)
+            });
+
+            // エラー時もフォールバックコンテキストを返す
+            return this.createFallbackUnifiedContext(chapterNumber);
+        }
+    }
+
+    /**
+     * フォールバック統合コンテキストの作成
+     * @private
+     */
+    private createFallbackUnifiedContext(chapterNumber: number): UnifiedMemoryContext {
+        return {
+            chapterNumber,
+            timestamp: new Date().toISOString(),
+            shortTerm: {
+                recentChapters: [],
+                immediateCharacterStates: new Map(),
+                keyPhrases: [],
+                processingBuffers: []
+            },
+            midTerm: {
+                narrativeProgression: {
+                    storyState: [],
+                    chapterProgression: new Map(),
+                    arcProgression: new Map(),
+                    tensionHistory: new Map(),
+                    turningPointsHistory: []
+                },
+                analysisResults: [],
+                characterEvolution: [],
+                systemStatistics: {
+                    promptGenerationStats: [],
+                    templateUsageStats: [],
+                    tensionOptimizationStats: [],
+                    componentPerformanceStats: new Map(),
+                    systemIntegrationStats: []
+                },
+                qualityMetrics: {
+                    chapterQualityHistory: [],
+                    systemQualityMetrics: [],
+                    diagnosticHistory: [],
+                    systemHealthMetrics: []
+                }
+            },
+            longTerm: {
+                consolidatedSettings: {
+                    worldSettingsMaster: { consolidatedSettings: {}, sources: [], lastUpdate: '' },
+                    genreSettingsMaster: { consolidatedGenre: {}, sources: [], lastUpdate: '' },
+                    templateMaster: { consolidatedTemplates: {}, sources: [], lastUpdate: '' },
+                    systemConfigMaster: { consolidatedConfig: {}, sources: [], lastUpdate: '' }
+                },
+                knowledgeDatabase: {
+                    characters: new Map(),
+                    worldKnowledge: { knowledge: {}, categories: [], lastUpdate: '' },
+                    conceptDefinitions: new Map(),
+                    foreshadowingDatabase: { foreshadowing: [], categories: [], lastUpdate: '' },
+                    sectionDefinitions: new Map()
+                },
+                systemKnowledgeBase: {
+                    promptGenerationPatterns: [],
+                    effectiveTemplatePatterns: [],
+                    analysisPatterns: [],
+                    optimizationStrategies: [],
+                    errorPatterns: [],
+                    qualityImprovementStrategies: []
+                },
+                completedRecords: {
+                    completedSections: new Map(),
+                    completedArcs: new Map(),
+                    longTermEffectivenessRecords: []
+                }
+            },
+            integration: {
+                resolvedDuplicates: [],
+                cacheStatistics: {
+                    hitRatio: 0,
+                    missRatio: 0,
+                    totalRequests: 0,
+                    cacheSize: 0,
+                    lastOptimization: '',
+                    evictionCount: 0
+                },
+                accessOptimizations: []
+            }
+        };
+    }
+
+    /**
+     * キャラクター短期記憶データ取得メソッドも追加
+     */
+    async getCharacterShortTermData(characterId: string): Promise<CharacterShortTermData> {
+        try {
+            await this.ensureInitialized();
+
+            // 短期記憶からキャラクターデータを取得
+            const shortTermData = await this.shortTermMemory.getCharacterData?.(characterId);
+
+            if (shortTermData) {
+                return {
+                    recentStates: shortTermData.states || [],
+                    immediateChanges: shortTermData.changes || [],
+                    activeEmotions: shortTermData.emotions || [],
+                    recentInteractions: shortTermData.interactions || [],
+                    processingEvents: shortTermData.events || []
+                };
+            }
+
+            return this.createFallbackShortTermData();
+
+        } catch (error) {
+            logger.warn('Failed to get character short term data, using fallback', { error, characterId });
+            return this.createFallbackShortTermData();
+        }
+    }
+
+    /**
+     * キャラクター中期記憶データ取得メソッドも追加
+     */
+    async getCharacterMidTermData(characterId: string): Promise<CharacterMidTermData> {
+        try {
+            await this.ensureInitialized();
+
+            // 中期記憶からキャラクターデータを取得
+            const midTermData = await this.midTermMemory.getCharacterAnalysis?.(characterId);
+
+            if (midTermData) {
+                return {
+                    developmentAnalysis: midTermData.development || {
+                        stage: 0,
+                        direction: 'stable',
+                        factors: [],
+                        projections: []
+                    },
+                    relationshipEvolution: midTermData.relationships || {
+                        changes: [],
+                        patterns: [],
+                        predictions: []
+                    },
+                    patterns: midTermData.patterns || [],
+                    trends: midTermData.trends || [],
+                    analysisResults: midTermData.results || []
+                };
+            }
+
+            return this.createFallbackMidTermData();
+
+        } catch (error) {
+            logger.warn('Failed to get character mid term data, using fallback', { error, characterId });
+            return this.createFallbackMidTermData();
+        }
+    }
+
+    /**
+     * キャラクター長期記憶データ取得メソッドも追加
+     */
+    async getCharacterLongTermData(characterId: string): Promise<CharacterLongTermData> {
+        try {
+            await this.ensureInitialized();
+
+            // 長期記憶からキャラクターデータを取得
+            const longTermData = await this.longTermMemory.getCharacterProfile?.(characterId);
+
+            if (longTermData) {
+                return {
+                    consolidatedProfile: longTermData.profile || {
+                        coreTraits: [],
+                        establishedPatterns: [],
+                        permanentChanges: [],
+                        masterNarrative: ''
+                    },
+                    knowledgeBase: longTermData.knowledge || {
+                        knowledgeAreas: [],
+                        expertise: [],
+                        experiences: [],
+                        memories: []
+                    },
+                    persistentTraits: longTermData.traits || [],
+                    lifetimeDevelopment: longTermData.development || {
+                        phases: [],
+                        milestones: [],
+                        transformations: [],
+                        growth: []
+                    },
+                    masterRecord: longTermData.record || {
+                        consolidatedCharacter: null,
+                        sources: [],
+                        lastUpdate: new Date().toISOString()
+                    }
+                };
+            }
+
+            return this.createFallbackLongTermData();
+
+        } catch (error) {
+            logger.warn('Failed to get character long term data, using fallback', { error, characterId });
+            return this.createFallbackLongTermData();
+        }
+    }
+
+    // フォールバックデータ作成メソッド
+    private createFallbackShortTermData(): CharacterShortTermData {
+        return {
+            recentStates: [],
+            immediateChanges: [],
+            activeEmotions: [],
+            recentInteractions: [],
+            processingEvents: []
+        };
+    }
+
+    private createFallbackMidTermData(): CharacterMidTermData {
+        return {
+            developmentAnalysis: {
+                stage: 0,
+                direction: 'stable',
+                factors: [],
+                projections: []
+            },
+            relationshipEvolution: {
+                changes: [],
+                patterns: [],
+                predictions: []
+            },
+            patterns: [],
+            trends: [],
+            analysisResults: []
+        };
+    }
+
+    private createFallbackLongTermData(): CharacterLongTermData {
+        return {
+            consolidatedProfile: {
+                coreTraits: [],
+                establishedPatterns: [],
+                permanentChanges: [],
+                masterNarrative: ''
+            },
+            knowledgeBase: {
+                knowledgeAreas: [],
+                expertise: [],
+                experiences: [],
+                memories: []
+            },
+            persistentTraits: [],
+            lifetimeDevelopment: {
+                phases: [],
+                milestones: [],
+                transformations: [],
+                growth: []
+            },
+            masterRecord: {
+                consolidatedCharacter: null,
+                sources: [],
+                lastUpdate: new Date().toISOString()
+            }
+        };
+    }
 
     /**
      * 統合検索の実行
