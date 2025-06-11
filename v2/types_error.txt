@@ -1,0 +1,1025 @@
+459   qualityCheck: WorldQualityCheck;
+                    ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:460:28 - error TS2304: Cannot find name 'ConsistencyVerification'.
+
+460   consistencyVerification: ConsistencyVerification;
+                               ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:461:27 - error TS2304: Cannot find name 'CompletenessAssessment'.
+
+461   completenessAssessment: CompletenessAssessment;
+                              ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:462:22 - error TS2304: Cannot find name 'LogicalCoherence'.
+
+462   logical_coherence: LogicalCoherence;
+                         ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:463:28 - error TS2304: Cannot find name 'NarrativeCompatibility'.
+
+463   narrative_compatibility: NarrativeCompatibility;
+                               ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:464:26 - error TS2304: Cannot find name 'GenreAppropriateness'.
+
+464   genre_appropriateness: GenreAppropriateness;
+                             ~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:465:23 - error TS2304: Cannot find name 'TechnicalAccuracy'.
+
+465   technical_accuracy: TechnicalAccuracy;
+                          ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:466:25 - error TS2304: Cannot find name 'CulturalSensitivity'.
+
+466   cultural_sensitivity: CulturalSensitivity;
+                            ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:467:20 - error TS2304: Cannot find name 'ValidationRecommendation'.
+
+467   recommendations: ValidationRecommendation[];
+                       ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:476:15 - error TS2304: Cannot find name 'WorldStateDirective'.
+
+476   worldState: WorldStateDirective;
+                  ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:477:26 - error TS2304: Cannot find name 'EnvironmentalDirective'.
+
+477   environmentalElements: EnvironmentalDirective[];
+                             ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:478:19 - error TS2304: Cannot find name 'SocialDirective'.
+
+478   socialElements: SocialDirective[];
+                      ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:479:21 - error TS2304: Cannot find name 'CulturalDirective'.
+
+479   culturalElements: CulturalDirective[];
+                        ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:480:21 - error TS2304: Cannot find name 'LocationGuidance'.
+
+480   locationGuidance: LocationGuidance[];
+                        ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:481:20 - error TS2304: Cannot find name 'TimeProgressionDirective'.
+
+481   timeProgression: TimeProgressionDirective;
+                       ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:482:24 - error TS2304: Cannot find name 'AtmosphericGuidance'.
+
+482   atmosphericGuidance: AtmosphericGuidance;
+                           ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:483:30 - error TS2304: Cannot find name 'WorldBuildingRequirement'.
+
+483   worldBuildingRequirements: WorldBuildingRequirement[];
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:484:27 - error TS2304: Cannot find name 'ConsistencyMaintenance'.
+
+484   consistencyMaintenance: ConsistencyMaintenance[];
+                              ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:486:21 - error TS2304: Cannot find name 'ImmersionFactor'.
+
+486   immersionFactors: ImmersionFactor[];
+                        ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:487:16 - error TS2304: Cannot find name 'WorldConstraint'.
+
+487   constraints: WorldConstraint[];
+                   ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:488:13 - error TS2304: Cannot find name 'DirectiveMetadata'.
+
+488   metadata: DirectiveMetadata;
+                ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:503:25 - error TS2304: Cannot find name 'ModificationRecord'.
+
+503   modification_history: ModificationRecord[];
+                            ~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:508:20 - error TS2304: Cannot find name 'TargetAudience'.
+
+508   target_audience: TargetAudience;
+                       ~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:509:19 - error TS2304: Cannot find name 'ContentRating'.
+
+509   content_rating: ContentRating;
+                      ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:511:25 - error TS2304: Cannot find name 'FantasticalElement'.
+
+511   fantastical_elements: FantasticalElement[];
+                            ~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:512:24 - error TS2304: Cannot find name 'InspirationSource'.
+
+512   inspiration_sources: InspirationSource[];
+                           ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:513:19 - error TS2304: Cannot find name 'ResearchBasis'.
+
+513   research_basis: ResearchBasis[];
+                      ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:514:19 - error TS2304: Cannot find name 'AccuracyNote'.
+
+514   accuracy_notes: AccuracyNote[];
+                      ~~~~~~~~~~~~
+
+src/systems/world/types.ts:525:12 - error TS2304: Cannot find name 'SnapshotTrigger'.
+
+525   trigger: SnapshotTrigger;
+               ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:527:16 - error TS2304: Cannot find name 'CompressionInfo'.
+
+527   compression: CompressionInfo;
+                   ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:528:14 - error TS2304: Cannot find name 'IntegrityCheck'.
+
+528   integrity: IntegrityCheck;
+                 ~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:529:23 - error TS2304: Cannot find name 'RestorationPoint'.
+
+529   restoration_points: RestorationPoint[];
+                          ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:530:17 - error TS2304: Cannot find name 'SnapshotDependency'.
+
+530   dependencies: SnapshotDependency[];
+                    ~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:531:13 - error TS2304: Cannot find name 'SnapshotMetadata'.
+
+531   metadata: SnapshotMetadata;
+                ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:542:10 - error TS2304: Cannot find name 'WorldLevel'.
+
+542   world: WorldLevel;
+             ~~~~~~~~~~
+
+src/systems/world/types.ts:543:15 - error TS2304: Cannot find name 'ContinentLevel'.
+
+543   continents: ContinentLevel[];
+                  ~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:544:12 - error TS2304: Cannot find name 'RegionLevel'.
+
+544   regions: RegionLevel[];
+               ~~~~~~~~~~~
+
+src/systems/world/types.ts:545:14 - error TS2304: Cannot find name 'CountryLevel'.
+
+545   countries: CountryLevel[];
+                 ~~~~~~~~~~~~
+
+src/systems/world/types.ts:546:14 - error TS2304: Cannot find name 'ProvinceLevel'.
+
+546   provinces: ProvinceLevel[];
+                 ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:547:11 - error TS2304: Cannot find name 'CityLevel'.
+
+547   cities: CityLevel[];
+              ~~~~~~~~~
+
+src/systems/world/types.ts:548:14 - error TS2304: Cannot find name 'DistrictLevel'.
+
+548   districts: DistrictLevel[];
+                 ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:549:18 - error TS2304: Cannot find name 'NeighborhoodLevel'.
+
+549   neighborhoods: NeighborhoodLevel[];
+                     ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:550:14 - error TS2304: Cannot find name 'BuildingLevel'.
+
+550   buildings: BuildingLevel[];
+                 ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:551:10 - error TS2304: Cannot find name 'RoomLevel'.
+
+551   rooms: RoomLevel[];
+             ~~~~~~~~~
+
+src/systems/world/types.ts:560:9 - error TS2304: Cannot find name 'FeatureType'.
+
+560   type: FeatureType;
+            ~~~~~~~~~~~
+
+src/systems/world/types.ts:561:16 - error TS2304: Cannot find name 'Coordinates'.
+
+561   coordinates: Coordinates;
+                   ~~~~~~~~~~~
+
+src/systems/world/types.ts:562:9 - error TS2304: Cannot find name 'FeatureSize'.
+
+562   size: FeatureSize;
+            ~~~~~~~~~~~
+
+src/systems/world/types.ts:563:14 - error TS2304: Cannot find name 'GeologicalFormation'.
+
+563   formation: GeologicalFormation;
+                 ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:564:8 - error TS2304: Cannot find name 'GeologicalAge'.
+
+564   age: GeologicalAge;
+           ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:565:16 - error TS2304: Cannot find name 'MaterialComposition'.
+
+565   composition: MaterialComposition;
+                   ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:566:12 - error TS2304: Cannot find name 'EcosystemInfo'.
+
+566   ecology: EcosystemInfo;
+               ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:567:14 - error TS2304: Cannot find name 'FeatureResource'.
+
+567   resources: FeatureResource[];
+                 ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:568:18 - error TS2304: Cannot find name 'AccessibilityLevel'.
+
+568   accessibility: AccessibilityLevel;
+                     ~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:569:17 - error TS2304: Cannot find name 'GeographicalSignificance'.
+
+569   significance: GeographicalSignificance;
+                    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:570:12 - error TS2304: Cannot find name 'NaturalThreat'.
+
+570   threats: NaturalThreat[];
+               ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:571:24 - error TS2304: Cannot find name 'ConservationStatus'.
+
+571   conservation_status: ConservationStatus;
+                           ~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:572:17 - error TS2304: Cannot find name 'HumanImpact'.
+
+572   human_impact: HumanImpact;
+                    ~~~~~~~~~~~
+
+src/systems/world/types.ts:583:20 - error TS2304: Cannot find name 'ClimateCharacteristic'.
+
+583   characteristics: ClimateCharacteristic[];
+                       ~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:584:23 - error TS2304: Cannot find name 'SeasonalVariation'.
+
+584   seasonal_variation: SeasonalVariation;
+                          ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:585:22 - error TS2304: Cannot find name 'TemperatureRange'.
+
+585   temperature_range: TemperatureRange;
+                         ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:586:18 - error TS2304: Cannot find name 'PrecipitationPattern'.
+
+586   precipitation: PrecipitationPattern;
+                     ~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:587:13 - error TS2304: Cannot find name 'HumidityLevel'.
+
+587   humidity: HumidityLevel;
+                ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:588:18 - error TS2304: Cannot find name 'WindPattern'.
+
+588   wind_patterns: WindPattern[];
+                     ~~~~~~~~~~~
+
+src/systems/world/types.ts:589:19 - error TS2304: Cannot find name 'ExtremeWeatherEvent'.
+
+589   extreme_events: ExtremeWeatherEvent[];
+                      ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:590:11 - error TS2304: Cannot find name 'ClimateTrend'.
+
+590   trends: ClimateTrend[];
+              ~~~~~~~~~~~~
+
+src/systems/world/types.ts:591:15 - error TS2304: Cannot find name 'ClimateInfluence'.
+
+591   influences: ClimateInfluence[];
+                  ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:592:21 - error TS2304: Cannot find name 'EcosystemImpact'.
+
+592   ecosystem_impact: EcosystemImpact;
+                        ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:593:21 - error TS2304: Cannot find name 'HumanAdaptation'.
+
+593   human_adaptation: HumanAdaptation[];
+                        ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:603:13 - error TS2304: Cannot find name 'ResourceCategory'.
+
+603   category: ResourceCategory;
+                ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:605:14 - error TS2304: Cannot find name 'AbundanceLevel'.
+
+605   abundance: AbundanceLevel;
+                 ~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:606:12 - error TS2304: Cannot find name 'ResourceQuality'.
+
+606   quality: ResourceQuality;
+               ~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:607:18 - error TS2304: Cannot find name 'ExtractionDifficulty'.
+
+607   accessibility: ExtractionDifficulty;
+                     ~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:608:17 - error TS2304: Cannot find name 'RenewalRate'.
+
+608   renewal_rate: RenewalRate;
+                    ~~~~~~~~~~~
+
+src/systems/world/types.ts:609:23 - error TS2304: Cannot find name 'ExtractionMethod'.
+
+609   extraction_methods: ExtractionMethod[];
+                          ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:610:28 - error TS2304: Cannot find name 'ProcessingRequirement'.
+
+610   processing_requirements: ProcessingRequirement[];
+                               ~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:611:19 - error TS2304: Cannot find name 'EconomicValue'.
+
+611   economic_value: EconomicValue;
+                      ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:612:25 - error TS2304: Cannot find name 'StrategicImportance'.
+
+612   strategic_importance: StrategicImportance;
+                            ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:613:25 - error TS2304: Cannot find name 'EnvironmentalImpact'.
+
+613   environmental_impact: EnvironmentalImpact;
+                            ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:614:19 - error TS2304: Cannot find name 'DepletionRisk'.
+
+614   depletion_risk: DepletionRisk;
+                      ~~~~~~~~~~~~~
+
+src/systems/world/types.ts:615:17 - error TS2304: Cannot find name 'AlternativeResource'.
+
+615   alternatives: AlternativeResource[];
+                    ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:616:14 - error TS2304: Cannot find name 'ResourceConflict'.
+
+616   conflicts: ResourceConflict[];
+                 ~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:623:19 - error TS2304: Cannot find name 'TransportationInfrastructure'.
+
+623   transportation: TransportationInfrastructure;
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:624:18 - error TS2304: Cannot find name 'CommunicationInfrastructure'.
+
+624   communication: CommunicationInfrastructure;
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:625:11 - error TS2304: Cannot find name 'EnergyInfrastructure'.
+
+625   energy: EnergyInfrastructure;
+              ~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:626:10 - error TS2304: Cannot find name 'WaterInfrastructure'.
+
+626   water: WaterInfrastructure;
+             ~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:627:10 - error TS2304: Cannot find name 'WasteManagementInfrastructure'.
+
+627   waste: WasteManagementInfrastructure;
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:628:15 - error TS2304: Cannot find name 'HealthcareInfrastructure'.
+
+628   healthcare: HealthcareInfrastructure;
+                  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:629:14 - error TS2304: Cannot find name 'EducationalInfrastructure'.
+
+629   education: EducationalInfrastructure;
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:630:15 - error TS2304: Cannot find name 'GovernanceInfrastructure'.
+
+630   governance: GovernanceInfrastructure;
+                  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:631:13 - error TS2304: Cannot find name 'SecurityInfrastructure'.
+
+631   security: SecurityInfrastructure;
+                ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:632:15 - error TS2304: Cannot find name 'CommercialInfrastructure'.
+
+632   commercial: CommercialInfrastructure;
+                  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:633:15 - error TS2304: Cannot find name 'IndustrialInfrastructure'.
+
+633   industrial: IndustrialInfrastructure;
+                  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:634:17 - error TS2304: Cannot find name 'AgriculturalInfrastructure'.
+
+634   agricultural: AgriculturalInfrastructure;
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:635:16 - error TS2304: Cannot find name 'ResidentialInfrastructure'.
+
+635   residential: ResidentialInfrastructure;
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:636:17 - error TS2304: Cannot find name 'RecreationalInfrastructure'.
+
+636   recreational: RecreationalInfrastructure;
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:637:13 - error TS2304: Cannot find name 'CulturalInfrastructure'.
+
+637   cultural: CulturalInfrastructure;
+                ~~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:638:12 - error TS2304: Cannot find name 'InfrastructureQuality'.
+
+638   quality: InfrastructureQuality;
+               ~~~~~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:639:16 - error TS2304: Cannot find name 'MaintenanceStatus'.
+
+639   maintenance: MaintenanceStatus;
+                   ~~~~~~~~~~~~~~~~~
+
+src/systems/world/types.ts:640:22 - error TS2304: Cannot find name 'DevelopmentPlan'.
+
+640   development_plans: DevelopmentPlan[];
+                         ~~~~~~~~~~~~~~~
+
+
+Found 747 errors in 27 files.
+
+Errors  Files
+    22  src/core/container/service-container.ts:67
+     2  src/core/lifecycle/application-lifecycle.ts:62
+     4  src/generation/context/collectors/world-collector.ts:546
+     7  src/systems/analysis/core/analysis-manager.ts:92
+    18  src/systems/analysis/index.ts:107
+     2  src/systems/analysis/types.ts:85
+    10  src/systems/configuration/core/configuration-manager.ts:76
+    44  src/systems/configuration/index.ts:103
+    29  src/systems/expression/core/expression-manager.ts:93
+    25  src/systems/expression/index.ts:167
+     1  src/systems/expression/interfaces.ts:25
+     2  src/systems/expression/types.ts:189
+     5  src/systems/foreshadowing/core/foreshadowing-manager.ts:76
+    29  src/systems/foreshadowing/index.ts:98
+     1  src/systems/foreshadowing/interfaces.ts:27
+    42  src/systems/genre/core/genre-manager.ts:39
+    33  src/systems/genre/index.ts:24
+     4  src/systems/plot/core/plot-manager.ts:29
+     3  src/systems/plot/index.ts:58
+   123  src/systems/plot/types.ts:53
+     2  src/systems/theme/core/theme-manager.ts:548
+     3  src/systems/theme/index.ts:81
+     1  src/systems/theme/types.ts:67
+     4  src/systems/world/core/world-manager.ts:674
+     4  src/systems/world/index.ts:56
+     5  src/systems/world/interfaces.ts:27
+   322  src/systems/world/types.ts:17
+
+tench@URUSHIBATA MINGW64 /c/novel-automation-system/v2 (main)
+$ npx tsc --noEmit 2>&1 | grep 'Cannot find name'
+src/systems/analysis/index.ts(167,4): error TS2304: Cannot find name 'AnalysisEngine'.
+src/systems/analysis/index.ts(168,14): error TS2304: Cannot find name 'AnalysisEngine'.
+src/systems/analysis/index.ts(186,21): error TS2304: Cannot find name 'AnalysisContext'.
+src/systems/analysis/index.ts(187,4): error TS2304: Cannot find name 'AnalysisContext'.
+src/systems/analysis/index.ts(194,20): error TS2304: Cannot find name 'AnalysisDepth'.
+src/systems/analysis/index.ts(205,21): error TS2304: Cannot find name 'ReaderProfile'.
+src/systems/analysis/index.ts(206,4): error TS2304: Cannot find name 'ReaderProfile'.
+src/systems/analysis/index.ts(210,22): error TS2304: Cannot find name 'ExperienceLevel'.
+src/systems/analysis/index.ts(222,21): error TS2304: Cannot find name 'QualityGoals'.
+src/systems/analysis/index.ts(223,4): error TS2304: Cannot find name 'QualityGoals'.
+src/systems/analysis/index.ts(235,21): error TS2304: Cannot find name 'ReaderExpectations'.
+src/systems/analysis/index.ts(236,4): error TS2304: Cannot find name 'ReaderExpectations'.
+src/systems/analysis/types.ts(85,16): error TS2304: Cannot find name 'ReadabilityMetrics'.
+src/systems/analysis/types.ts(86,15): error TS2304: Cannot find name 'EngagementMetrics'.
+src/systems/configuration/index.ts(153,4): error TS2304: Cannot find name 'ConfigurationManager'.
+src/systems/configuration/index.ts(154,14): error TS2304: Cannot find name 'ConfigurationManager'.
+src/systems/expression/index.ts(210,4): error TS2304: Cannot find name 'ExpressionManager'.
+src/systems/expression/index.ts(211,14): error TS2304: Cannot find name 'ExpressionManager'.
+src/systems/expression/index.ts(225,10): error TS2304: Cannot find name 'SceneType'.
+src/systems/expression/index.ts(226,9): error TS2304: Cannot find name 'MoodType'.
+src/systems/expression/index.ts(227,21): error TS2304: Cannot find name 'StyleContext'.
+src/systems/expression/index.ts(228,4): error TS2304: Cannot find name 'StyleContext'.
+src/systems/expression/index.ts(232,21): error TS2304: Cannot find name 'AudienceType'.
+src/systems/expression/index.ts(234,24): error TS2304: Cannot find name 'NarrativeDistance'.
+src/systems/expression/index.ts(235,13): error TS2304: Cannot find name 'PacingType'.
+src/systems/expression/index.ts(244,19): error TS2304: Cannot find name 'EmotionType'.
+src/systems/expression/index.ts(245,14): error TS2304: Cannot find name 'EmotionalIntensity'.
+src/systems/expression/index.ts(246,21): error TS2304: Cannot find name 'EmotionalContext'.
+src/systems/expression/index.ts(247,4): error TS2304: Cannot find name 'EmotionalContext'.
+src/systems/expression/index.ts(263,18): error TS2304: Cannot find name 'VarietyLevel'.
+src/systems/expression/index.ts(264,21): error TS2304: Cannot find name 'DiversificationOptions'.
+src/systems/expression/index.ts(265,4): error TS2304: Cannot find name 'DiversificationOptions'.
+src/systems/expression/index.ts(271,22): error TS2304: Cannot find name 'CreativityLevel'.
+src/systems/expression/index.ts(281,21): error TS2304: Cannot find name 'ExpressionGenerationContext'.
+src/systems/expression/index.ts(282,4): error TS2304: Cannot find name 'ExpressionGenerationContext'.
+src/systems/expression/interfaces.ts(25,59): error TS2304: Cannot find name 'ExpressionContext'.
+src/systems/foreshadowing/index.ts(159,4): error TS2304: Cannot find name 'ForeshadowingManager'.
+src/systems/foreshadowing/index.ts(160,14): error TS2304: Cannot find name 'ForeshadowingManager'.
+src/systems/genre/index.ts(134,4): error TS2304: Cannot find name 'GenreManager'.
+src/systems/genre/index.ts(135,14): error TS2304: Cannot find name 'GenreManager'.
+src/systems/plot/index.ts(58,52): error TS2304: Cannot find name 'PlotManagerConfig'.
+src/systems/plot/index.ts(58,73): error TS2304: Cannot find name 'PlotManager'.
+src/systems/plot/index.ts(59,14): error TS2304: Cannot find name 'PlotManager'.
+src/systems/plot/types.ts(53,17): error TS2304: Cannot find name 'ChapterRange'.
+src/systems/plot/types.ts(54,15): error TS2304: Cannot find name 'SectionArc'.
+src/systems/plot/types.ts(57,21): error TS2304: Cannot find name 'ThematicElement'.
+src/systems/plot/types.ts(58,17): error TS2304: Cannot find name 'SectionTransition'.
+src/systems/plot/types.ts(59,18): error TS2304: Cannot find name 'SectionTransition'.
+src/systems/plot/types.ts(60,19): error TS2304: Cannot find name 'SectionQualityMetrics'.
+src/systems/plot/types.ts(74,21): error TS2304: Cannot find name 'CharacterAction'.
+src/systems/plot/types.ts(75,19): error TS2304: Cannot find name 'DialoguePoint'.
+src/systems/plot/types.ts(76,24): error TS2304: Cannot find name 'DescriptiveElement'.
+src/systems/plot/types.ts(80,19): error TS2304: Cannot find name 'ChapterQualityMetrics'.
+src/systems/plot/types.ts(158,12): error TS2304: Cannot find name 'SceneSetting'.
+src/systems/plot/types.ts(159,15): error TS2304: Cannot find name 'SceneCharacter'.
+src/systems/plot/types.ts(160,11): error TS2304: Cannot find name 'SceneEvent'.
+src/systems/plot/types.ts(161,13): error TS2304: Cannot find name 'DialogueExchange'.
+src/systems/plot/types.ts(162,9): error TS2304: Cannot find name 'Mood'.
+src/systems/plot/types.ts(163,11): error TS2304: Cannot find name 'ScenePacing'.
+src/systems/plot/types.ts(164,17): error TS2304: Cannot find name 'SceneTransition'.
+src/systems/plot/types.ts(165,18): error TS2304: Cannot find name 'SceneTransition'.
+src/systems/plot/types.ts(166,19): error TS2304: Cannot find name 'VisualElement'.
+src/systems/plot/types.ts(167,19): error TS2304: Cannot find name 'SensoryDetail'.
+src/systems/plot/types.ts(181,15): error TS2304: Cannot find name 'Milestone'.
+src/systems/plot/types.ts(195,11): error TS2304: Cannot find name 'EventDirective'.
+src/systems/plot/types.ts(196,24): error TS2304: Cannot find name 'CharacterDirective'.
+src/systems/plot/types.ts(197,20): error TS2304: Cannot find name 'SceneDirective'.
+src/systems/plot/types.ts(198,18): error TS2304: Cannot find name 'TonalGuidance'.
+src/systems/plot/types.ts(199,19): error TS2304: Cannot find name 'PacingGuidance'.
+src/systems/plot/types.ts(200,24): error TS2304: Cannot find name 'QualityRequirement'.
+src/systems/plot/types.ts(201,16): error TS2304: Cannot find name 'PlotConstraint'.
+src/systems/plot/types.ts(202,13): error TS2304: Cannot find name 'DirectiveMetadata'.
+src/systems/plot/types.ts(213,22): error TS2304: Cannot find name 'DevelopmentStage'.
+src/systems/plot/types.ts(214,14): error TS2304: Cannot find name 'DevelopmentCatalyst'.
+src/systems/plot/types.ts(215,14): error TS2304: Cannot find name 'DevelopmentObstacle'.
+src/systems/plot/types.ts(216,15): error TS2304: Cannot find name 'DevelopmentMilestone'.
+src/systems/plot/types.ts(217,13): error TS2304: Cannot find name 'DevelopmentTimeline'.
+src/systems/plot/types.ts(232,24): error TS2304: Cannot find name 'StructuralIntegrity'.
+src/systems/plot/types.ts(233,23): error TS2304: Cannot find name 'NarrativeCoherence'.
+src/systems/plot/types.ts(234,25): error TS2304: Cannot find name 'CharacterConsistency'.
+src/systems/plot/types.ts(235,24): error TS2304: Cannot find name 'ThematicConsistency'.
+src/systems/plot/types.ts(236,20): error TS2304: Cannot find name 'ValidationRecommendation'.
+src/systems/plot/types.ts(254,20): error TS2304: Cannot find name 'DetailedQualityMetrics'.
+src/systems/plot/types.ts(255,24): error TS2304: Cannot find name 'BenchmarkComparison'.
+src/systems/plot/types.ts(263,21): error TS2304: Cannot find name 'LayerConsistencyReport'.
+src/systems/plot/types.ts(264,24): error TS2304: Cannot find name 'TemporalConsistencyReport'.
+src/systems/plot/types.ts(265,25): error TS2304: Cannot find name 'CharacterConsistencyReport'.
+src/systems/plot/types.ts(266,24): error TS2304: Cannot find name 'ThematicConsistencyReport'.
+src/systems/plot/types.ts(267,20): error TS2304: Cannot find name 'PlotConsistencyReport'.
+src/systems/plot/types.ts(268,21): error TS2304: Cannot find name 'WorldConsistencyReport'.
+src/systems/plot/types.ts(269,11): error TS2304: Cannot find name 'ConsistencyIssue'.
+src/systems/plot/types.ts(270,20): error TS2304: Cannot find name 'ConsistencyRecommendation'.
+src/systems/plot/types.ts(284,13): error TS2304: Cannot find name 'AdaptationTrigger'.
+src/systems/plot/types.ts(285,12): error TS2304: Cannot find name 'AdaptationAction'.
+src/systems/plot/types.ts(286,15): error TS2304: Cannot find name 'AdaptationCondition'.
+src/systems/plot/types.ts(287,21): error TS2304: Cannot find name 'ExpectedOutcome'.
+src/systems/plot/types.ts(288,19): error TS2304: Cannot find name 'RiskAssessment'.
+src/systems/plot/types.ts(289,19): error TS2304: Cannot find name 'SuccessMetric'.
+src/systems/plot/types.ts(290,23): error TS2304: Cannot find name 'FallbackStrategy'.
+src/systems/plot/types.ts(301,13): error TS2304: Cannot find name 'SystemMapping'.
+src/systems/plot/types.ts(302,20): error TS2304: Cannot find name 'DataTransformation'.
+src/systems/plot/types.ts(303,16): error TS2304: Cannot find name 'BridgeValidation'.
+src/systems/plot/types.ts(304,20): error TS2304: Cannot find name 'QualityControl'.
+src/systems/plot/types.ts(305,23): error TS2304: Cannot find name 'BridgePerformanceMetrics'.
+src/systems/plot/types.ts(321,23): error TS2304: Cannot find name 'ValidationCriterion'.
+src/systems/plot/types.ts(331,16): error TS2304: Cannot find name 'ScenePacingDetail'.
+src/systems/plot/types.ts(332,17): error TS2304: Cannot find name 'TensionPoint'.
+src/systems/plot/types.ts(334,22): error TS2304: Cannot find name 'PacingTransition'.
+src/systems/plot/types.ts(335,21): error TS2304: Cannot find name 'EngagementLevel'.
+src/systems/plot/types.ts(343,17): error TS2304: Cannot find name 'TransitionDetail'.
+src/systems/plot/types.ts(344,11): error TS2304: Cannot find name 'TransitionDetail'.
+src/systems/plot/types.ts(345,23): error TS2304: Cannot find name 'ContinuityElement'.
+src/systems/plot/types.ts(346,19): error TS2304: Cannot find name 'MoodTransition'.
+src/systems/plot/types.ts(347,20): error TS2304: Cannot find name 'ThemeTransition'.
+src/systems/plot/types.ts(348,29): error TS2304: Cannot find name 'CharacterStateTransition'.
+src/systems/plot/types.ts(349,20): error TS2304: Cannot find name 'PlotAdvancement'.
+src/systems/plot/types.ts(359,14): error TS2304: Cannot find name 'TimeFrame'.
+src/systems/plot/types.ts(360,14): error TS2304: Cannot find name 'Geography'.
+src/systems/plot/types.ts(361,12): error TS2304: Cannot find name 'Society'.
+src/systems/plot/types.ts(362,15): error TS2304: Cannot find name 'Technology'.
+src/systems/plot/types.ts(363,10): error TS2304: Cannot find name 'MagicSystem'.
+src/systems/plot/types.ts(364,12): error TS2304: Cannot find name 'Culture'.
+src/systems/plot/types.ts(365,13): error TS2304: Cannot find name 'Politics'.
+src/systems/plot/types.ts(366,12): error TS2304: Cannot find name 'Economy'.
+src/systems/plot/types.ts(367,14): error TS2304: Cannot find name 'WorldConflict'.
+src/systems/plot/types.ts(368,10): error TS2304: Cannot find name 'WorldRule'.
+src/systems/plot/types.ts(383,24): error TS2304: Cannot find name 'ModificationRecord'.
+src/systems/plot/types.ts(407,19): error TS2304: Cannot find name 'GenerationInfo'.
+src/systems/plot/types.ts(418,17): error TS2304: Cannot find name 'ThemeIntroduction'.
+src/systems/plot/types.ts(419,16): error TS2304: Cannot find name 'ThemeDevelopmentStage'.
+src/systems/plot/types.ts(420,11): error TS2304: Cannot find name 'ThemeClimax'.
+src/systems/plot/types.ts(421,15): error TS2304: Cannot find name 'ThemeResolution'.
+src/systems/plot/types.ts(422,18): error TS2304: Cannot find name 'ThemeReinforcement'.
+src/systems/plot/types.ts(423,15): error TS2304: Cannot find name 'ThemeSubtlety'.
+src/systems/plot/types.ts(424,19): error TS2304: Cannot find name 'ReaderGuidance'.
+src/systems/plot/types.ts(432,9): error TS2304: Cannot find name 'Act'.
+src/systems/plot/types.ts(433,14): error TS2304: Cannot find name 'Sequence'.
+src/systems/plot/types.ts(434,11): error TS2304: Cannot find name 'SceneStructure'.
+src/systems/plot/types.ts(435,13): error TS2304: Cannot find name 'NarrativeTimeline'.
+src/systems/plot/types.ts(436,16): error TS2304: Cannot find name 'PointOfView'.
+src/systems/plot/types.ts(437,19): error TS2304: Cannot find name 'NarrativeVoice'.
+src/systems/plot/types.ts(448,15): error TS2304: Cannot find name 'QualityPriority'.
+src/systems/plot/types.ts(449,15): error TS2304: Cannot find name 'QualityBenchmark'.
+src/systems/plot/types.ts(450,12): error TS2304: Cannot find name 'QualityMetricDefinition'.
+src/systems/plot/types.ts(451,14): error TS2304: Cannot find name 'QualityStandard'.
+src/systems/plot/types.ts(465,11): error TS2304: Cannot find name 'ValidationIssue'.
+src/systems/plot/types.ts(466,13): error TS2304: Cannot find name 'ValidationWarning'.
+src/systems/plot/types.ts(467,16): error TS2304: Cannot find name 'ValidationSuggestion'.
+src/systems/plot/types.ts(468,12): error TS2304: Cannot find name 'ValidationDetail'.
+src/systems/plot/types.ts(475,12): error TS2304: Cannot find name 'ConsistencyAspect'.
+src/systems/plot/types.ts(477,19): error TS2304: Cannot find name 'CriticalIssue'.
+src/systems/plot/types.ts(478,13): error TS2304: Cannot find name 'ConsistencyWarning'.
+src/systems/plot/types.ts(479,20): error TS2304: Cannot find name 'ConsistencyRecommendation'.
+src/systems/plot/types.ts(480,17): error TS2304: Cannot find name 'CheckResult'.
+src/systems/plot/types.ts(487,15): error TS2304: Cannot find name 'QualityDimension'.
+src/systems/plot/types.ts(489,14): error TS2304: Cannot find name 'QualityStrength'.
+src/systems/plot/types.ts(490,15): error TS2304: Cannot find name 'QualityWeakness'.
+src/systems/plot/types.ts(491,17): error TS2304: Cannot find name 'QualityImprovement'.
+src/systems/plot/types.ts(492,15): error TS2304: Cannot find name 'QualityComparison'.
+src/systems/plot/types.ts(548,11): error TS2304: Cannot find name 'ProgressionPoint'.
+src/systems/plot/types.ts(567,11): error TS2304: Cannot find name 'EmotionalPoint'.
+src/systems/plot/types.ts(573,13): error TS2304: Cannot find name 'PhysicalState'.
+src/systems/plot/types.ts(574,14): error TS2304: Cannot find name 'EmotionalState'.
+src/systems/plot/types.ts(575,11): error TS2304: Cannot find name 'MentalState'.
+src/systems/plot/types.ts(576,11): error TS2304: Cannot find name 'SocialState'.
+src/systems/plot/types.ts(577,14): error TS2304: Cannot find name 'SpiritualState'.
+src/systems/theme/index.ts(81,36): error TS2304: Cannot find name 'ThemeManager'.
+src/systems/theme/index.ts(112,4): error TS2304: Cannot find name 'ThemeManager'.
+src/systems/theme/index.ts(113,14): error TS2304: Cannot find name 'ThemeManager'.
+src/systems/theme/types.ts(67,20): error TS2304: Cannot find name 'ThemeRecommendation'.
+src/systems/world/index.ts(69,53): error TS2304: Cannot find name 'WorldManagerConfig'.
+src/systems/world/index.ts(69,75): error TS2304: Cannot find name 'WorldManager'.
+src/systems/world/index.ts(70,14): error TS2304: Cannot find name 'WorldManager'.
+src/systems/world/types.ts(17,16): error TS2304: Cannot find name 'WorldTime'.
+src/systems/world/types.ts(19,11): error TS2304: Cannot find name 'SocialState'.
+src/systems/world/types.ts(20,13): error TS2304: Cannot find name 'CulturalState'.
+src/systems/world/types.ts(21,18): error TS2304: Cannot find name 'TechnologicalState'.
+src/systems/world/types.ts(22,14): error TS2304: Cannot find name 'PoliticalState'.
+src/systems/world/types.ts(23,13): error TS2304: Cannot find name 'EconomicState'.
+src/systems/world/types.ts(24,17): error TS2304: Cannot find name 'ActiveEvent'.
+src/systems/world/types.ts(26,14): error TS2304: Cannot find name 'StabilityMetrics'.
+src/systems/world/types.ts(27,13): error TS2304: Cannot find name 'WorldStateMetadata'.
+src/systems/world/types.ts(40,14): error TS2304: Cannot find name 'TimeFrame'.
+src/systems/world/types.ts(43,12): error TS2304: Cannot find name 'PhysicsRules'.
+src/systems/world/types.ts(44,16): error TS2304: Cannot find name 'MagicSystem'.
+src/systems/world/types.ts(49,22): error TS2304: Cannot find name 'CulturalFramework'.
+src/systems/world/types.ts(52,13): error TS2304: Cannot find name 'Faction'.
+src/systems/world/types.ts(56,10): error TS2304: Cannot find name 'WorldRule'.
+src/systems/world/types.ts(57,16): error TS2304: Cannot find name 'WorldConstraint'.
+src/systems/world/types.ts(58,13): error TS2304: Cannot find name 'WorldSettingsMetadata'.
+src/systems/world/types.ts(65,18): error TS2304: Cannot find name 'Season'.
+src/systems/world/types.ts(66,12): error TS2304: Cannot find name 'WeatherCondition'.
+src/systems/world/types.ts(67,14): error TS2304: Cannot find name 'TimeOfDay'.
+src/systems/world/types.ts(68,26): error TS2304: Cannot find name 'AtmosphericCondition'.
+src/systems/world/types.ts(69,21): error TS2304: Cannot find name 'NaturalPhenomenon'.
+src/systems/world/types.ts(71,14): error TS2304: Cannot find name 'PollutionLevel'.
+src/systems/world/types.ts(72,21): error TS2304: Cannot find name 'NaturalDisaster'.
+src/systems/world/types.ts(73,23): error TS2304: Cannot find name 'BiologicalActivity'.
+src/systems/world/types.ts(74,16): error TS2304: Cannot find name 'EnergyFlow'.
+src/systems/world/types.ts(81,14): error TS2304: Cannot find name 'SocialHierarchy'.
+src/systems/world/types.ts(82,12): error TS2304: Cannot find name 'SocialClass'.
+src/systems/world/types.ts(83,17): error TS2304: Cannot find name 'SocialInstitution'.
+src/systems/world/types.ts(84,15): error TS2304: Cannot find name 'Population'.
+src/systems/world/types.ts(85,17): error TS2304: Cannot find name 'Demographics'.
+src/systems/world/types.ts(86,19): error TS2304: Cannot find name 'SocialMobility'.
+src/systems/world/types.ts(87,20): error TS2304: Cannot find name 'EducationSystem'.
+src/systems/world/types.ts(88,21): error TS2304: Cannot find name 'HealthcareSystem'.
+src/systems/world/types.ts(89,19): error TS2304: Cannot find name 'LawEnforcementSystem'.
+src/systems/world/types.ts(90,16): error TS2304: Cannot find name 'SocialNorm'.
+src/systems/world/types.ts(91,14): error TS2304: Cannot find name 'SocialConflict'.
+src/systems/world/types.ts(92,14): error TS2304: Cannot find name 'SocialMovement'.
+src/systems/world/types.ts(99,20): error TS2304: Cannot find name 'Culture'.
+src/systems/world/types.ts(100,16): error TS2304: Cannot find name 'Subculture'.
+src/systems/world/types.ts(102,11): error TS2304: Cannot find name 'CulturalValue'.
+src/systems/world/types.ts(103,12): error TS2304: Cannot find name 'Belief'.
+src/systems/world/types.ts(104,12): error TS2304: Cannot find name 'Ritual'.
+src/systems/world/types.ts(105,14): error TS2304: Cannot find name 'Festival'.
+src/systems/world/types.ts(106,9): error TS2304: Cannot find name 'ArtForm'.
+src/systems/world/types.ts(107,15): error TS2304: Cannot find name 'LiteraryTradition'.
+src/systems/world/types.ts(108,10): error TS2304: Cannot find name 'MusicalTradition'.
+src/systems/world/types.ts(109,12): error TS2304: Cannot find name 'CulinaryTradition'.
+src/systems/world/types.ts(110,13): error TS2304: Cannot find name 'ClothingTradition'.
+src/systems/world/types.ts(111,17): error TS2304: Cannot find name 'ArchitecturalStyle'.
+src/systems/world/types.ts(112,21): error TS2304: Cannot find name 'CulturalExchange'.
+src/systems/world/types.ts(113,22): error TS2304: Cannot find name 'CulturalConflict'.
+src/systems/world/types.ts(124,15): error TS2304: Cannot find name 'Continent'.
+src/systems/world/types.ts(125,12): error TS2304: Cannot find name 'Region'.
+src/systems/world/types.ts(126,17): error TS2304: Cannot find name 'TerrainType'.
+src/systems/world/types.ts(127,16): error TS2304: Cannot find name 'WaterBody'.
+src/systems/world/types.ts(128,14): error TS2304: Cannot find name 'MountainRange'.
+src/systems/world/types.ts(129,12): error TS2304: Cannot find name 'Forest'.
+src/systems/world/types.ts(130,12): error TS2304: Cannot find name 'Desert'.
+src/systems/world/types.ts(131,17): error TS2304: Cannot find name 'ClimateZone'.
+src/systems/world/types.ts(132,21): error TS2304: Cannot find name 'NaturalLandmark'.
+src/systems/world/types.ts(133,12): error TS2304: Cannot find name 'GeographicalBorder'.
+src/systems/world/types.ts(143,16): error TS2304: Cannot find name 'Coordinates'.
+src/systems/world/types.ts(146,17): error TS2304: Cannot find name 'LocationSignificance'.
+src/systems/world/types.ts(147,16): error TS2304: Cannot find name 'LocalEnvironment'.
+src/systems/world/types.ts(149,19): error TS2304: Cannot find name 'LocalInfrastructure'.
+src/systems/world/types.ts(150,15): error TS2304: Cannot find name 'LocalGovernance'.
+src/systems/world/types.ts(151,12): error TS2304: Cannot find name 'LocalEconomy'.
+src/systems/world/types.ts(152,12): error TS2304: Cannot find name 'LocalCulture'.
+src/systems/world/types.ts(153,12): error TS2304: Cannot find name 'LocationHistory'.
+src/systems/world/types.ts(154,16): error TS2304: Cannot find name 'LocationConnection'.
+src/systems/world/types.ts(155,13): error TS2304: Cannot find name 'LocationFeature'.
+src/systems/world/types.ts(156,11): error TS2304: Cannot find name 'LocationEvent'.
+src/systems/world/types.ts(157,18): error TS2304: Cannot find name 'AccessibilityInfo'.
+src/systems/world/types.ts(158,11): error TS2304: Cannot find name 'SafetyLevel'.
+src/systems/world/types.ts(159,14): error TS2304: Cannot find name 'LocalResource'.
+src/systems/world/types.ts(160,13): error TS2304: Cannot find name 'LocalService'.
+src/systems/world/types.ts(161,14): error TS2304: Cannot find name 'Landmark'.
+src/systems/world/types.ts(168,19): error TS2304: Cannot find name 'GlobalClimatePattern'.
+src/systems/world/types.ts(169,23): error TS2304: Cannot find name 'RegionalClimate'.
+src/systems/world/types.ts(170,19): error TS2304: Cannot find name 'SeasonalCycle'.
+src/systems/world/types.ts(171,20): error TS2304: Cannot find name 'WeatherPattern'.
+src/systems/world/types.ts(172,19): error TS2304: Cannot find name 'ExtremeWeatherEvent'.
+src/systems/world/types.ts(173,18): error TS2304: Cannot find name 'ClimateChangeIndicator'.
+src/systems/world/types.ts(174,18): error TS2304: Cannot find name 'Microclimate'.
+src/systems/world/types.ts(175,22): error TS2304: Cannot find name 'ClimateInfluence'.
+src/systems/world/types.ts(182,15): error TS2304: Cannot find name 'AirQuality'.
+src/systems/world/types.ts(183,17): error TS2304: Cannot find name 'WaterQuality'.
+src/systems/world/types.ts(184,16): error TS2304: Cannot find name 'SoilQuality'.
+src/systems/world/types.ts(185,17): error TS2304: Cannot find name 'BiodiversityIndex'.
+src/systems/world/types.ts(186,20): error TS2304: Cannot find name 'EcosystemHealth'.
+src/systems/world/types.ts(187,21): error TS2304: Cannot find name 'NaturalResourceAvailability'.
+src/systems/world/types.ts(188,14): error TS2304: Cannot find name 'PollutionMetrics'.
+src/systems/world/types.ts(189,17): error TS2304: Cannot find name 'ConservationStatus'.
+src/systems/world/types.ts(190,19): error TS2304: Cannot find name 'SustainabilityMetrics'.
+src/systems/world/types.ts(191,25): error TS2304: Cannot find name 'EnvironmentalThreat'.
+src/systems/world/types.ts(203,15): error TS2304: Cannot find name 'Leadership'.
+src/systems/world/types.ts(204,21): error TS2304: Cannot find name 'PoliticalParty'.
+src/systems/world/types.ts(205,14): error TS2304: Cannot find name 'ElectoralSystem'.
+src/systems/world/types.ts(206,9): error TS2304: Cannot find name 'LegalSystem'.
+src/systems/world/types.ts(207,17): error TS2304: Cannot find name 'Constitution'.
+src/systems/world/types.ts(208,16): error TS2304: Cannot find name 'Bureaucracy'.
+src/systems/world/types.ts(209,22): error TS2304: Cannot find name 'MilitaryStructure'.
+src/systems/world/types.ts(210,14): error TS2304: Cannot find name 'DiplomaticRelations'.
+src/systems/world/types.ts(211,11): error TS2304: Cannot find name 'Alliance'.
+src/systems/world/types.ts(212,12): error TS2304: Cannot find name 'Hostility'.
+src/systems/world/types.ts(213,18): error TS2304: Cannot find name 'NeutralRelation'.
+src/systems/world/types.ts(214,23): error TS2304: Cannot find name 'PoliticalStability'.
+src/systems/world/types.ts(215,15): error TS2304: Cannot find name 'CorruptionLevel'.
+src/systems/world/types.ts(216,16): error TS2304: Cannot find name 'CivilRights'.
+src/systems/world/types.ts(217,23): error TS2304: Cannot find name 'PoliticalConflict'.
+src/systems/world/types.ts(225,13): error TS2304: Cannot find name 'Currency'.
+src/systems/world/types.ts(226,12): error TS2304: Cannot find name 'Market'.
+src/systems/world/types.ts(227,15): error TS2304: Cannot find name 'Industry'.
+src/systems/world/types.ts(228,16): error TS2304: Cannot find name 'TradeRoute'.
+src/systems/world/types.ts(229,22): error TS2304: Cannot find name 'CommercialCenter'.
+src/systems/world/types.ts(230,12): error TS2304: Cannot find name 'BankingSystem'.
+src/systems/world/types.ts(231,13): error TS2304: Cannot find name 'TaxationSystem'.
+src/systems/world/types.ts(232,15): error TS2304: Cannot find name 'EmploymentStatistics'.
+src/systems/world/types.ts(233,23): error TS2304: Cannot find name 'EconomicIndicator'.
+src/systems/world/types.ts(234,21): error TS2304: Cannot find name 'EconomicPolicy'.
+src/systems/world/types.ts(235,19): error TS2304: Cannot find name 'EconomicCrisis'.
+src/systems/world/types.ts(236,19): error TS2304: Cannot find name 'GrowthMetrics'.
+src/systems/world/types.ts(237,15): error TS2304: Cannot find name 'InequalityMetrics'.
+src/systems/world/types.ts(238,16): error TS2304: Cannot find name 'BlackMarketActivity'.
+src/systems/world/types.ts(246,15): error TS2304: Cannot find name 'TechnologyCategory'.
+src/systems/world/types.ts(247,16): error TS2304: Cannot find name 'Innovation'.
+src/systems/world/types.ts(248,13): error TS2304: Cannot find name 'ResearchActivity'.
+src/systems/world/types.ts(249,13): error TS2304: Cannot find name 'TechnologyAdoption'.
+src/systems/world/types.ts(250,19): error TS2304: Cannot find name 'TechnologicalInfrastructure'.
+src/systems/world/types.ts(251,18): error TS2304: Cannot find name 'CommunicationTechnology'.
+src/systems/world/types.ts(252,19): error TS2304: Cannot find name 'TransportationTechnology'.
+src/systems/world/types.ts(253,12): error TS2304: Cannot find name 'MedicalTechnology'.
+src/systems/world/types.ts(254,13): error TS2304: Cannot find name 'MilitaryTechnology'.
+src/systems/world/types.ts(255,11): error TS2304: Cannot find name 'EnergyTechnology'.
+src/systems/world/types.ts(256,18): error TS2304: Cannot find name 'ManufacturingTechnology'.
+src/systems/world/types.ts(257,16): error TS2304: Cannot find name 'AgriculturalTechnology'.
+src/systems/world/types.ts(258,16): error TS2304: Cannot find name 'InformationTechnology'.
+src/systems/world/types.ts(259,16): error TS2304: Cannot find name 'TechnologicalLimitation'.
+src/systems/world/types.ts(260,10): error TS2304: Cannot find name 'TechnologicalRisk'.
+src/systems/world/types.ts(273,11): error TS2304: Cannot find name 'LanguageFamily'.
+src/systems/world/types.ts(276,13): error TS2304: Cannot find name 'Dialect'.
+src/systems/world/types.ts(277,18): error TS2304: Cannot find name 'WritingSystem'.
+src/systems/world/types.ts(278,12): error TS2304: Cannot find name 'GrammarStructure'.
+src/systems/world/types.ts(279,15): error TS2304: Cannot find name 'VocabularyStats'.
+src/systems/world/types.ts(280,11): error TS2304: Cannot find name 'LanguageStatus'.
+src/systems/world/types.ts(281,14): error TS2304: Cannot find name 'LanguageEvolution'.
+src/systems/world/types.ts(282,15): error TS2304: Cannot find name 'LanguageInfluence'.
+src/systems/world/types.ts(283,17): error TS2304: Cannot find name 'PreservationEffort'.
+src/systems/world/types.ts(284,15): error TS2304: Cannot find name 'LanguageLiterature'.
+src/systems/world/types.ts(293,9): error TS2304: Cannot find name 'ReligionType'.
+src/systems/world/types.ts(295,12): error TS2304: Cannot find name 'ReligiousBelief'.
+src/systems/world/types.ts(296,14): error TS2304: Cannot find name 'ReligiousPractice'.
+src/systems/world/types.ts(297,11): error TS2304: Cannot find name 'ClergyStructure'.
+src/systems/world/types.ts(298,10): error TS2304: Cannot find name 'ReligiousText'.
+src/systems/world/types.ts(299,14): error TS2304: Cannot find name 'ReligiousFestival'.
+src/systems/world/types.ts(300,15): error TS2304: Cannot find name 'PilgrimageSite'.
+src/systems/world/types.ts(301,15): error TS2304: Cannot find name 'MoralCode'.
+src/systems/world/types.ts(302,14): error TS2304: Cannot find name 'AfterlifeBelief'.
+src/systems/world/types.ts(303,18): error TS2304: Cannot find name 'CreationMyth'.
+src/systems/world/types.ts(304,15): error TS2304: Cannot find name 'Prophecy'.
+src/systems/world/types.ts(305,12): error TS2304: Cannot find name 'ReligiousSchism'.
+src/systems/world/types.ts(306,25): error TS2304: Cannot find name 'InterfaithRelation'.
+src/systems/world/types.ts(315,9): error TS2304: Cannot find name 'TraditionType'.
+src/systems/world/types.ts(316,11): error TS2304: Cannot find name 'TraditionOrigin'.
+src/systems/world/types.ts(317,17): error TS2304: Cannot find name 'TraditionSignificance'.
+src/systems/world/types.ts(318,13): error TS2304: Cannot find name 'TraditionPractice'.
+src/systems/world/types.ts(319,17): error TS2304: Cannot find name 'TraditionParticipant'.
+src/systems/world/types.ts(320,14): error TS2304: Cannot find name 'TraditionFrequency'.
+src/systems/world/types.ts(321,13): error TS2304: Cannot find name 'TraditionLocation'.
+src/systems/world/types.ts(322,14): error TS2304: Cannot find name 'TraditionMaterial'.
+src/systems/world/types.ts(323,14): error TS2304: Cannot find name 'TraditionSymbolism'.
+src/systems/world/types.ts(324,14): error TS2304: Cannot find name 'TraditionEvolution'.
+src/systems/world/types.ts(325,17): error TS2304: Cannot find name 'TraditionPreservation'.
+src/systems/world/types.ts(326,15): error TS2304: Cannot find name 'TraditionVariation'.
+src/systems/world/types.ts(327,20): error TS2304: Cannot find name 'CulturalImpact'.
+src/systems/world/types.ts(328,21): error TS2304: Cannot find name 'ModernRelevance'.
+src/systems/world/types.ts(339,20): error TS2304: Cannot find name 'TimeProgression'.
+src/systems/world/types.ts(340,25): error TS2304: Cannot find name 'EnvironmentalChange'.
+src/systems/world/types.ts(341,20): error TS2304: Cannot find name 'SocialEvolution'.
+src/systems/world/types.ts(342,29): error TS2304: Cannot find name 'TechnologicalAdvancement'.
+src/systems/world/types.ts(343,26): error TS2304: Cannot find name 'PoliticalDevelopment'.
+src/systems/world/types.ts(344,24): error TS2304: Cannot find name 'EconomicTransition'.
+src/systems/world/types.ts(345,19): error TS2304: Cannot find name 'CulturalShift'.
+src/systems/world/types.ts(346,22): error TS2304: Cannot find name 'PopulationChange'.
+src/systems/world/types.ts(347,30): error TS2304: Cannot find name 'InfrastructureDevelopment'.
+src/systems/world/types.ts(348,24): error TS2304: Cannot find name 'ConflictProgression'.
+src/systems/world/types.ts(349,17): error TS2304: Cannot find name 'WorldAchievement'.
+src/systems/world/types.ts(350,13): error TS2304: Cannot find name 'WorldSetback'.
+src/systems/world/types.ts(359,13): error TS2304: Cannot find name 'ChangeCategory'.
+src/systems/world/types.ts(362,13): error TS2304: Cannot find name 'ChangeDuration'.
+src/systems/world/types.ts(363,10): error TS2304: Cannot find name 'ChangeCause'.
+src/systems/world/types.ts(366,23): error TS2304: Cannot find name 'PopulationGroup'.
+src/systems/world/types.ts(367,21): error TS2304: Cannot find name 'ImmediateEffect'.
+src/systems/world/types.ts(368,20): error TS2304: Cannot find name 'LongTermEffect'.
+src/systems/world/types.ts(369,19): error TS2304: Cannot find name 'CascadeEffect'.
+src/systems/world/types.ts(370,18): error TS2304: Cannot find name 'ReversibilityLevel'.
+src/systems/world/types.ts(371,15): error TS2304: Cannot find name 'Probability'.
+src/systems/world/types.ts(373,11): error TS2304: Cannot find name 'ChangeStatus'.
+src/systems/world/types.ts(383,9): error TS2304: Cannot find name 'WorldDate'.
+src/systems/world/types.ts(384,13): error TS2304: Cannot find name 'EventDuration'.
+src/systems/world/types.ts(386,17): error TS2304: Cannot find name 'EventParticipant'.
+src/systems/world/types.ts(388,17): error TS2304: Cannot find name 'EventSignificance'.
+src/systems/world/types.ts(389,11): error TS2304: Cannot find name 'EventCause'.
+src/systems/world/types.ts(390,17): error TS2304: Cannot find name 'EventConsequence'.
+src/systems/world/types.ts(391,23): error TS2304: Cannot find name 'HistoricalContext'.
+src/systems/world/types.ts(392,18): error TS2304: Cannot find name 'EventDocumentation'.
+src/systems/world/types.ts(393,16): error TS2304: Cannot find name 'HistoricalReliability'.
+src/systems/world/types.ts(394,16): error TS2304: Cannot find name 'HistoricalPerspective'.
+src/systems/world/types.ts(395,11): error TS2304: Cannot find name 'EventLegacy'.
+src/systems/world/types.ts(438,28): error TS2304: Cannot find name 'GeographicalConsistency'.
+src/systems/world/types.ts(439,24): error TS2304: Cannot find name 'CulturalConsistency'.
+src/systems/world/types.ts(440,22): error TS2304: Cannot find name 'SocialConsistency'.
+src/systems/world/types.ts(441,25): error TS2304: Cannot find name 'PoliticalConsistency'.
+src/systems/world/types.ts(442,24): error TS2304: Cannot find name 'EconomicConsistency'.
+src/systems/world/types.ts(443,29): error TS2304: Cannot find name 'TechnologicalConsistency'.
+src/systems/world/types.ts(444,26): error TS2304: Cannot find name 'HistoricalConsistency'.
+src/systems/world/types.ts(445,24): error TS2304: Cannot find name 'TemporalConsistency'.
+src/systems/world/types.ts(446,11): error TS2304: Cannot find name 'ConsistencyIssue'.
+src/systems/world/types.ts(447,20): error TS2304: Cannot find name 'ConsistencyRecommendation'.
+src/systems/world/types.ts(448,21): error TS2304: Cannot find name 'CriticalProblem'.
+src/systems/world/types.ts(449,13): error TS2304: Cannot find name 'ConsistencyWarning'.
+src/systems/world/types.ts(458,22): error TS2304: Cannot find name 'WorldValidationResult'.
+src/systems/world/types.ts(459,17): error TS2304: Cannot find name 'WorldQualityCheck'.
+src/systems/world/types.ts(460,28): error TS2304: Cannot find name 'ConsistencyVerification'.
+src/systems/world/types.ts(461,27): error TS2304: Cannot find name 'CompletenessAssessment'.
+src/systems/world/types.ts(462,22): error TS2304: Cannot find name 'LogicalCoherence'.
+src/systems/world/types.ts(463,28): error TS2304: Cannot find name 'NarrativeCompatibility'.
+src/systems/world/types.ts(464,26): error TS2304: Cannot find name 'GenreAppropriateness'.
+src/systems/world/types.ts(465,23): error TS2304: Cannot find name 'TechnicalAccuracy'.
+src/systems/world/types.ts(466,25): error TS2304: Cannot find name 'CulturalSensitivity'.
+src/systems/world/types.ts(467,20): error TS2304: Cannot find name 'ValidationRecommendation'.
+src/systems/world/types.ts(476,15): error TS2304: Cannot find name 'WorldStateDirective'.
+src/systems/world/types.ts(477,26): error TS2304: Cannot find name 'EnvironmentalDirective'.
+src/systems/world/types.ts(478,19): error TS2304: Cannot find name 'SocialDirective'.
+src/systems/world/types.ts(479,21): error TS2304: Cannot find name 'CulturalDirective'.
+src/systems/world/types.ts(480,21): error TS2304: Cannot find name 'LocationGuidance'.
+src/systems/world/types.ts(481,20): error TS2304: Cannot find name 'TimeProgressionDirective'.
+src/systems/world/types.ts(482,24): error TS2304: Cannot find name 'AtmosphericGuidance'.
+src/systems/world/types.ts(483,30): error TS2304: Cannot find name 'WorldBuildingRequirement'.
+src/systems/world/types.ts(484,27): error TS2304: Cannot find name 'ConsistencyMaintenance'.
+src/systems/world/types.ts(486,21): error TS2304: Cannot find name 'ImmersionFactor'.
+src/systems/world/types.ts(487,16): error TS2304: Cannot find name 'WorldConstraint'.
+src/systems/world/types.ts(488,13): error TS2304: Cannot find name 'DirectiveMetadata'.
+src/systems/world/types.ts(503,25): error TS2304: Cannot find name 'ModificationRecord'.
+src/systems/world/types.ts(508,20): error TS2304: Cannot find name 'TargetAudience'.
+src/systems/world/types.ts(509,19): error TS2304: Cannot find name 'ContentRating'.
+src/systems/world/types.ts(511,25): error TS2304: Cannot find name 'FantasticalElement'.
+src/systems/world/types.ts(512,24): error TS2304: Cannot find name 'InspirationSource'.
+src/systems/world/types.ts(513,19): error TS2304: Cannot find name 'ResearchBasis'.
+src/systems/world/types.ts(514,19): error TS2304: Cannot find name 'AccuracyNote'.
+src/systems/world/types.ts(525,12): error TS2304: Cannot find name 'SnapshotTrigger'.
+src/systems/world/types.ts(527,16): error TS2304: Cannot find name 'CompressionInfo'.
+src/systems/world/types.ts(528,14): error TS2304: Cannot find name 'IntegrityCheck'.
+src/systems/world/types.ts(529,23): error TS2304: Cannot find name 'RestorationPoint'.
+src/systems/world/types.ts(530,17): error TS2304: Cannot find name 'SnapshotDependency'.
+src/systems/world/types.ts(531,13): error TS2304: Cannot find name 'SnapshotMetadata'.
+src/systems/world/types.ts(542,10): error TS2304: Cannot find name 'WorldLevel'.
+src/systems/world/types.ts(543,15): error TS2304: Cannot find name 'ContinentLevel'.
+src/systems/world/types.ts(544,12): error TS2304: Cannot find name 'RegionLevel'.
+src/systems/world/types.ts(545,14): error TS2304: Cannot find name 'CountryLevel'.
+src/systems/world/types.ts(546,14): error TS2304: Cannot find name 'ProvinceLevel'.
+src/systems/world/types.ts(547,11): error TS2304: Cannot find name 'CityLevel'.
+src/systems/world/types.ts(548,14): error TS2304: Cannot find name 'DistrictLevel'.
+src/systems/world/types.ts(549,18): error TS2304: Cannot find name 'NeighborhoodLevel'.
+src/systems/world/types.ts(550,14): error TS2304: Cannot find name 'BuildingLevel'.
+src/systems/world/types.ts(551,10): error TS2304: Cannot find name 'RoomLevel'.
+src/systems/world/types.ts(560,9): error TS2304: Cannot find name 'FeatureType'.
+src/systems/world/types.ts(561,16): error TS2304: Cannot find name 'Coordinates'.
+src/systems/world/types.ts(562,9): error TS2304: Cannot find name 'FeatureSize'.
+src/systems/world/types.ts(563,14): error TS2304: Cannot find name 'GeologicalFormation'.
+src/systems/world/types.ts(564,8): error TS2304: Cannot find name 'GeologicalAge'.
+src/systems/world/types.ts(565,16): error TS2304: Cannot find name 'MaterialComposition'.
+src/systems/world/types.ts(566,12): error TS2304: Cannot find name 'EcosystemInfo'.
+src/systems/world/types.ts(567,14): error TS2304: Cannot find name 'FeatureResource'.
+src/systems/world/types.ts(568,18): error TS2304: Cannot find name 'AccessibilityLevel'.
+src/systems/world/types.ts(569,17): error TS2304: Cannot find name 'GeographicalSignificance'.
+src/systems/world/types.ts(570,12): error TS2304: Cannot find name 'NaturalThreat'.
+src/systems/world/types.ts(571,24): error TS2304: Cannot find name 'ConservationStatus'.
+src/systems/world/types.ts(572,17): error TS2304: Cannot find name 'HumanImpact'.
+src/systems/world/types.ts(583,20): error TS2304: Cannot find name 'ClimateCharacteristic'.
+src/systems/world/types.ts(584,23): error TS2304: Cannot find name 'SeasonalVariation'.
+src/systems/world/types.ts(585,22): error TS2304: Cannot find name 'TemperatureRange'.
+src/systems/world/types.ts(586,18): error TS2304: Cannot find name 'PrecipitationPattern'.
+src/systems/world/types.ts(587,13): error TS2304: Cannot find name 'HumidityLevel'.
+src/systems/world/types.ts(588,18): error TS2304: Cannot find name 'WindPattern'.
+src/systems/world/types.ts(589,19): error TS2304: Cannot find name 'ExtremeWeatherEvent'.
+src/systems/world/types.ts(590,11): error TS2304: Cannot find name 'ClimateTrend'.
+src/systems/world/types.ts(591,15): error TS2304: Cannot find name 'ClimateInfluence'.
+src/systems/world/types.ts(592,21): error TS2304: Cannot find name 'EcosystemImpact'.
+src/systems/world/types.ts(593,21): error TS2304: Cannot find name 'HumanAdaptation'.
+src/systems/world/types.ts(603,13): error TS2304: Cannot find name 'ResourceCategory'.
+src/systems/world/types.ts(605,14): error TS2304: Cannot find name 'AbundanceLevel'.
+src/systems/world/types.ts(606,12): error TS2304: Cannot find name 'ResourceQuality'.
+src/systems/world/types.ts(607,18): error TS2304: Cannot find name 'ExtractionDifficulty'.
+src/systems/world/types.ts(608,17): error TS2304: Cannot find name 'RenewalRate'.
+src/systems/world/types.ts(609,23): error TS2304: Cannot find name 'ExtractionMethod'.
+src/systems/world/types.ts(610,28): error TS2304: Cannot find name 'ProcessingRequirement'.
+src/systems/world/types.ts(611,19): error TS2304: Cannot find name 'EconomicValue'.
+src/systems/world/types.ts(612,25): error TS2304: Cannot find name 'StrategicImportance'.
+src/systems/world/types.ts(613,25): error TS2304: Cannot find name 'EnvironmentalImpact'.
+src/systems/world/types.ts(614,19): error TS2304: Cannot find name 'DepletionRisk'.
+src/systems/world/types.ts(615,17): error TS2304: Cannot find name 'AlternativeResource'.
+src/systems/world/types.ts(616,14): error TS2304: Cannot find name 'ResourceConflict'.
+src/systems/world/types.ts(623,19): error TS2304: Cannot find name 'TransportationInfrastructure'.
+src/systems/world/types.ts(624,18): error TS2304: Cannot find name 'CommunicationInfrastructure'.
+src/systems/world/types.ts(625,11): error TS2304: Cannot find name 'EnergyInfrastructure'.
+src/systems/world/types.ts(626,10): error TS2304: Cannot find name 'WaterInfrastructure'.
+src/systems/world/types.ts(627,10): error TS2304: Cannot find name 'WasteManagementInfrastructure'.
+src/systems/world/types.ts(628,15): error TS2304: Cannot find name 'HealthcareInfrastructure'.
+src/systems/world/types.ts(629,14): error TS2304: Cannot find name 'EducationalInfrastructure'.
+src/systems/world/types.ts(630,15): error TS2304: Cannot find name 'GovernanceInfrastructure'.
+src/systems/world/types.ts(631,13): error TS2304: Cannot find name 'SecurityInfrastructure'.
+src/systems/world/types.ts(632,15): error TS2304: Cannot find name 'CommercialInfrastructure'.
+src/systems/world/types.ts(633,15): error TS2304: Cannot find name 'IndustrialInfrastructure'.
+src/systems/world/types.ts(634,17): error TS2304: Cannot find name 'AgriculturalInfrastructure'.
+src/systems/world/types.ts(635,16): error TS2304: Cannot find name 'ResidentialInfrastructure'.
+src/systems/world/types.ts(636,17): error TS2304: Cannot find name 'RecreationalInfrastructure'.
+src/systems/world/types.ts(637,13): error TS2304: Cannot find name 'CulturalInfrastructure'.
+src/systems/world/types.ts(638,12): error TS2304: Cannot find name 'InfrastructureQuality'.
+src/systems/world/types.ts(639,16): error TS2304: Cannot find name 'MaintenanceStatus'.
+src/systems/world/types.ts(640,22): error TS2304: Cannot find name 'DevelopmentPlan'.
+
+tench@URUSHIBATA MINGW64 /c/novel-automation-system/v2 (main)
+$
